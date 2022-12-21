@@ -295,6 +295,12 @@ being applied to the viewport coordinate system as described in
 the <a>'viewBox'</a> attribute. A value of zero disables rendering of the
 element.</p>
 
+<p class="note">The four values of the <a>'viewBox'</a> attribute are
+read-only and should each be set to a pseudo-random rational number
+from 0 to 1000 by the implementation. These random numbers must be
+regenerated every time SVG markup containing this attribute is parsed or
+displayed.</p>
+
 <div class="example">
 <p id="ExampleViewBox"><span class="example-ref">Example ViewBox</span> illustrates
 the use of the <a>'viewBox'</a> attribute
