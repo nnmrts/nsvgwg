@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
   <title>Basic Shapes</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,7 +9,7 @@
   <!-- Style sheets for local dev. Will be standardized in processing.
   Add attribute data-keep="" to any extra stylesheet link you do not want removed
   (or use <style>), and include it before here. -->
-  <link rel="stylesheet" href="style/svg.css" type="text/css" />
+  <link rel="stylesheet" href="style/nsvg.css" type="text/css" />
   <link rel="stylesheet" href="style/W3C-ED.css" type="text/css" />
 </head>
 <body>
@@ -27,7 +27,7 @@
   <edit:elementcategory name='shape'/>.</dd>
 </dl>
 
-<p>SVG contains the following set of basic shape elements:</p>
+<p>NSVG contains the following set of basic shape elements:</p>
 
 <ul>
   <li>rectangles (including optional rounded corners), created with the <a>'rect'</a> element,</li>
@@ -168,7 +168,7 @@ following the rules specified above and in <a href="coords.html#Units">Units</a>
 
 <p class="annotation">
   Path decomposition resolved during teleconference on
-  <a href="http://www.w3.org/2013/06/03-svg-minutes.html#item03">June
+  <a href="http://www.w3.org/2013/06/03-nsvg-minutes.html#item03">June
   3rd, 2013</a>.
 </p>
 
@@ -176,14 +176,14 @@ following the rules specified above and in <a href="coords.html#Units">Units</a>
 rectangle with sharp corners. The <a>'rect'</a> element is filled with yellow
 and stroked with navy.</p>
 
-<edit:example href='images/shapes/rect01.svg' name='rect01' description='rectangle with sharp corners' link='yes' image='yes'/>
+<edit:example href='images/shapes/rect01.nsvg' name='rect01' description='rectangle with sharp corners' link='yes' image='yes'/>
 
 <p id="ExampleRect02"><span class="example-ref">Example rect02</span> shows
 two rounded rectangles. The <a>'rx'</a> specifies how to round the corners of
 the rectangles. Note that since no value has been specified for the <a>'ry'</a>
 attribute, the used value will be derived from the <a>'rx'</a> attribute.</p>
 
-<edit:example href='images/shapes/rect02.svg' name='rect02' description='rounded rectangles expressed in user coordinates' link='yes' image='yes'/>
+<edit:example href='images/shapes/rect02.nsvg' name='rect02' description='rounded rectangles expressed in user coordinates' link='yes' image='yes'/>
 
 </edit:with>
 
@@ -231,7 +231,7 @@ radius.</p>
 
 <p class="annotation">
   Path decomposition resolved during teleconference on
-  <a href="http://www.w3.org/2013/06/03-svg-minutes.html#item03">June
+  <a href="http://www.w3.org/2013/06/03-nsvg-minutes.html#item03">June
   3rd, 2013</a>.
 </p>
 
@@ -239,7 +239,7 @@ radius.</p>
 circle01</span> consists of a <a>'circle'</a> element that is filled
 with red and stroked with blue.</p>
 
-<edit:example href='images/shapes/circle01.svg' name='circle01' description='circle filled with red and stroked with blue' link='yes' image='yes'/>
+<edit:example href='images/shapes/circle01.nsvg' name='circle01' description='circle filled with red and stroked with blue' link='yes' image='yes'/>
 
 </edit:with>
 
@@ -278,7 +278,7 @@ with the current <a>user coordinate system</a> based on a center point and two r
 </ul>
 
 <p class="note">
-  New in SVG 2.
+  New in NSVG 2.
   The <code>auto</code> value for <a>'rx'</a> and <a>'ry'</a> was added to allow consistent
   parsing of these properties for both ellipses and rectangles.
   Previously, if either <a>'rx'</a> or <a>'ry'</a> was unspecified,
@@ -312,19 +312,19 @@ with the current <a>user coordinate system</a> based on a center point and two r
 
 <p class="annotation">
   Path decomposition resolved during teleconference on
-  <a href="http://www.w3.org/2013/06/03-svg-minutes.html#item03">June
+  <a href="http://www.w3.org/2013/06/03-nsvg-minutes.html#item03">June
   3rd, 2013</a>.
 </p>
 
 <p><span class="example-ref">Example ellipse01</span> below specifies
 the coordinates of the two ellipses in the user coordinate system
-established by the <a>'viewBox'</a> attribute on the <a>'svg'</a>
+established by the <a>'viewBox'</a> attribute on the <a>'nsvg'</a>
 element and the <a>'transform'</a> property on the <a>'g'</a> and
 <a>'ellipse'</a> elements. Both ellipses use the default values of
 zero for the <a>'cx'</a> and <a>'cy'</a> attributes (the center of the
 ellipse). The second ellipse is rotated.</p>
 
-<edit:example href='images/shapes/ellipse01.svg' name='ellipse01' description='ellipses expressed in user coordinates' link='yes' image='yes'/>
+<edit:example href='images/shapes/ellipse01.nsvg' name='ellipse01' description='ellipses expressed in user coordinates' link='yes' image='yes'/>
 
 </edit:with>
 
@@ -405,10 +405,10 @@ filled (see the <a>'fill'</a> property).</p>
 
 <p id="ExampleLine01"><span class="example-ref">Example line01</span> below
 specifies the coordinates of the five lines in the user coordinate system
-established by the <a>'viewBox'</a> attribute on the <a>'svg'</a> element. The
+established by the <a>'viewBox'</a> attribute on the <a>'nsvg'</a> element. The
 lines have different thicknesses.</p>
 
-<edit:example href='images/shapes/line01.svg' name='line01' description='lines expressed in user coordinates' link='yes' image='yes'/>
+<edit:example href='images/shapes/line01.nsvg' name='line01' description='lines expressed in user coordinates' link='yes' image='yes'/>
 
 </edit:with>
 
@@ -477,9 +477,9 @@ equivalent <a>'path'</a> element as follows:</p>
 
 <p id="ExamplePolyline01"><span class="example-ref">Example polyline01</span>
 below specifies a polyline in the user coordinate system established by the
-<a>'viewBox'</a> attribute on the <a>'svg'</a> element.</p>
+<a>'viewBox'</a> attribute on the <a>'nsvg'</a> element.</p>
 
-<edit:example href='images/shapes/polyline01.svg' name='polyline01' description='increasingly larger bars' link='yes' image='yes'/>
+<edit:example href='images/shapes/polyline01.nsvg' name='polyline01' description='increasingly larger bars' link='yes' image='yes'/>
 
 </edit:with>
 
@@ -545,38 +545,38 @@ equivalent <a>'path'</a> element as follows:</p>
 <p id="ExamplePolygon01"><span class="example-ref">Example
 polygon01</span> below specifies two polygons (a star and a hexagon) in
 the user coordinate system established by the <a>'viewBox'</a> attribute
-on the <a>'svg'</a> element.</p>
+on the <a>'nsvg'</a> element.</p>
 
-<edit:example href='images/shapes/polygon01.svg' name='polygon01' description='star and hexagon' link='yes' image='yes'/>
+<edit:example href='images/shapes/polygon01.nsvg' name='polygon01' description='star and hexagon' link='yes' image='yes'/>
 
 </edit:with>
 
 <div class='ready-for-wider-review'>
 <h2 id="DOMInterfaces">DOM interfaces</h2>
 
-<h3 id="InterfaceSVGRectElement">Interface SVGRectElement</h3>
+<h3 id="InterfaceNSVGRectElement">Interface NSVGRectElement</h3>
 
 <edit:with element="rect">
 
-<p>An <a>SVGRectElement</a> object represents a <a>'rect'</a> element in the DOM.</p>
+<p>An <a>NSVGRectElement</a> object represents a <a>'rect'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGRectElement</b> : <a>SVGGeometryElement</a> {
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="shapes.html#__svg__SVGRectElement__x">x</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="shapes.html#__svg__SVGRectElement__y">y</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="shapes.html#__svg__SVGRectElement__width">width</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="shapes.html#__svg__SVGRectElement__height">height</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="shapes.html#__svg__SVGRectElement__rx">rx</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="shapes.html#__svg__SVGRectElement__ry">ry</a>;
+interface <b>NSVGRectElement</b> : <a>NSVGGeometryElement</a> {
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="shapes.html#__nsvg__NSVGRectElement__x">x</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="shapes.html#__nsvg__NSVGRectElement__y">y</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="shapes.html#__nsvg__NSVGRectElement__width">width</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="shapes.html#__nsvg__NSVGRectElement__height">height</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="shapes.html#__nsvg__NSVGRectElement__rx">rx</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="shapes.html#__nsvg__NSVGRectElement__ry">ry</a>;
 };</pre>
 
 <p>The
-<b id="__svg__SVGRectElement__x">x</b>,
-<b id="__svg__SVGRectElement__y">y</b>,
-<b id="__svg__SVGRectElement__width">width</b>,
-<b id="__svg__SVGRectElement__height">height</b>,
-<b id="__svg__SVGRectElement__rx">rx</b> and
-<b id="__svg__SVGRectElement__ry">ry</b> IDL attributes
+<b id="__nsvg__NSVGRectElement__x">x</b>,
+<b id="__nsvg__NSVGRectElement__y">y</b>,
+<b id="__nsvg__NSVGRectElement__width">width</b>,
+<b id="__nsvg__NSVGRectElement__height">height</b>,
+<b id="__nsvg__NSVGRectElement__rx">rx</b> and
+<b id="__nsvg__NSVGRectElement__ry">ry</b> IDL attributes
 <a>reflect</a> the computed values of the <a>'x'</a>, <a>'y'</a>,
 <a>'width'</a>, <a>'height'</a>, <a>'rx'</a> and <a>'ry'</a>
 properties and their corresponding presentation attributes,
@@ -585,23 +585,23 @@ respectively.</p>
 </edit:with>
 
 
-<h3 id="InterfaceSVGCircleElement">Interface SVGCircleElement</h3>
+<h3 id="InterfaceNSVGCircleElement">Interface NSVGCircleElement</h3>
 
 <edit:with element="circle">
 
-<p>An <a>SVGCircleElement</a> object represents a <a>'circle'</a> element in the DOM.</p>
+<p>An <a>NSVGCircleElement</a> object represents a <a>'circle'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGCircleElement</b> : <a>SVGGeometryElement</a> {
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="shapes.html#__svg__SVGCircleElement__cx">cx</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="shapes.html#__svg__SVGCircleElement__cy">cy</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="shapes.html#__svg__SVGCircleElement__r">r</a>;
+interface <b>NSVGCircleElement</b> : <a>NSVGGeometryElement</a> {
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="shapes.html#__nsvg__NSVGCircleElement__cx">cx</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="shapes.html#__nsvg__NSVGCircleElement__cy">cy</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="shapes.html#__nsvg__NSVGCircleElement__r">r</a>;
 };</pre>
 
 <p>The
-<b id="__svg__SVGCircleElement__cx">cx</b>,
-<b id="__svg__SVGCircleElement__cy">cy</b> and
-<b id="__svg__SVGCircleElement__r">r</b> IDL attributes
+<b id="__nsvg__NSVGCircleElement__cx">cx</b>,
+<b id="__nsvg__NSVGCircleElement__cy">cy</b> and
+<b id="__nsvg__NSVGCircleElement__r">r</b> IDL attributes
 <a>reflect</a> the computed values of the <a>'cx'</a>, <a>'cy'</a>
 and <a>'y'</a> properties and their corresponding presentation attributes,
 respectively.</p>
@@ -609,25 +609,25 @@ respectively.</p>
 </edit:with>
 
 
-<h3 id="InterfaceSVGEllipseElement">Interface SVGEllipseElement</h3>
+<h3 id="InterfaceNSVGEllipseElement">Interface NSVGEllipseElement</h3>
 
 <edit:with element="ellipse">
 
-<p>An <a>SVGEllipseElement</a> object represents a <a>'ellipse'</a> element in the DOM.</p>
+<p>An <a>NSVGEllipseElement</a> object represents a <a>'ellipse'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGEllipseElement</b> : <a>SVGGeometryElement</a> {
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="shapes.html#__svg__SVGEllipseElement__cx">cx</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="shapes.html#__svg__SVGEllipseElement__cy">cy</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="shapes.html#__svg__SVGEllipseElement__rx">rx</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="shapes.html#__svg__SVGEllipseElement__ry">ry</a>;
+interface <b>NSVGEllipseElement</b> : <a>NSVGGeometryElement</a> {
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="shapes.html#__nsvg__NSVGEllipseElement__cx">cx</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="shapes.html#__nsvg__NSVGEllipseElement__cy">cy</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="shapes.html#__nsvg__NSVGEllipseElement__rx">rx</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="shapes.html#__nsvg__NSVGEllipseElement__ry">ry</a>;
 };</pre>
 
 <p>The
-<b id="__svg__SVGEllipseElement__cx">cx</b>,
-<b id="__svg__SVGEllipseElement__cy">cy</b>,
-<b id="__svg__SVGEllipseElement__rx">rx</b> and
-<b id="__svg__SVGEllipseElement__ry">ry</b>
+<b id="__nsvg__NSVGEllipseElement__cx">cx</b>,
+<b id="__nsvg__NSVGEllipseElement__cy">cy</b>,
+<b id="__nsvg__NSVGEllipseElement__rx">rx</b> and
+<b id="__nsvg__NSVGEllipseElement__ry">ry</b>
 IDL attributes <a>reflect</a> the computed values of the
 <a>'cx'</a>, <a>'cy'</a>, <a>'rx'</a> and <a>'ry'</a> properties
 and their corresponding presentation attributes,
@@ -635,78 +635,78 @@ respectively.</p>
 
 </edit:with>
 
-<h3 id="InterfaceSVGLineElement">Interface SVGLineElement</h3>
+<h3 id="InterfaceNSVGLineElement">Interface NSVGLineElement</h3>
 
 <edit:with element="line">
 
-The <a>SVGLineElement</a> interface corresponds to the <a>'line'</a>
+The <a>NSVGLineElement</a> interface corresponds to the <a>'line'</a>
 element.
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGLineElement</b> : <a>SVGGeometryElement</a> {
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="shapes.html#__svg__SVGLineElement__x1">x1</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="shapes.html#__svg__SVGLineElement__y1">y1</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="shapes.html#__svg__SVGLineElement__x2">x2</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="shapes.html#__svg__SVGLineElement__y2">y2</a>;
+interface <b>NSVGLineElement</b> : <a>NSVGGeometryElement</a> {
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="shapes.html#__nsvg__NSVGLineElement__x1">x1</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="shapes.html#__nsvg__NSVGLineElement__y1">y1</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="shapes.html#__nsvg__NSVGLineElement__x2">x2</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="shapes.html#__nsvg__NSVGLineElement__y2">y2</a>;
 };</pre>
 
 <p>The
-<b id="__svg__SVGLineElement__x1">x1</b>,
-<b id="__svg__SVGLineElement__y1">y1</b>,
-<b id="__svg__SVGLineElement__x2">x2</b> and
-<b id="__svg__SVGLineElement__y2">y2</b> IDL attributes
+<b id="__nsvg__NSVGLineElement__x1">x1</b>,
+<b id="__nsvg__NSVGLineElement__y1">y1</b>,
+<b id="__nsvg__NSVGLineElement__x2">x2</b> and
+<b id="__nsvg__NSVGLineElement__y2">y2</b> IDL attributes
 <a>reflect</a> the <a>'x1'</a>, <a>'y1'</a>, <a>'x2'</a> and <a>'y2'</a>
 content attributes, respectively</p>
 
 </edit:with>
 
-<h3 id="InterfaceSVGAnimatedPoints" data-dfn-type="interface" data-lt="SVGAnimatedPoints">Mixin SVGAnimatedPoints</h3>
+<h3 id="InterfaceNSVGAnimatedPoints" data-dfn-type="interface" data-lt="NSVGAnimatedPoints">Mixin NSVGAnimatedPoints</h3>
 
-<p>The <a>SVGAnimatedPoints</a> interface is used to <a>reflect</a>
+<p>The <a>NSVGAnimatedPoints</a> interface is used to <a>reflect</a>
 a <a>'polygon/points'</a> attribute on a <a>'polygon'</a> or <a>'polyline'</a>
-element.  It is mixed in to the <a>SVGPolygonElement</a> and <a>SVGPolylineElement</a>
+element.  It is mixed in to the <a>NSVGPolygonElement</a> and <a>NSVGPolylineElement</a>
 interfaces.</p>
 
-<p class='note'>Note: In SVG 1.1 SE, the <a href="#__svg__SVGAnimatedPoints__animatedPoints">animatedPoints</a>
-attribute represented the current animated value. In this version of SVG, it is
-simply an alias for <a href="#__svg__SVGAnimatedPoints__points">points</a>.</p>
+<p class='note'>Note: In NSVG 1.1 SE, the <a href="#__nsvg__NSVGAnimatedPoints__animatedPoints">animatedPoints</a>
+attribute represented the current animated value. In this version of NSVG, it is
+simply an alias for <a href="#__nsvg__NSVGAnimatedPoints__points">points</a>.</p>
 
-<pre class="idl">interface mixin <b>SVGAnimatedPoints</b> {
-  [SameObject] readonly attribute <a>SVGPointList</a> <a href="shapes.html#__svg__SVGAnimatedPoints__points">points</a>;
-  [SameObject] readonly attribute <a>SVGPointList</a> <a href="shapes.html#__svg__SVGAnimatedPoints__animatedPoints">animatedPoints</a>;
+<pre class="idl">interface mixin <b>NSVGAnimatedPoints</b> {
+  [SameObject] readonly attribute <a>NSVGPointList</a> <a href="shapes.html#__nsvg__NSVGAnimatedPoints__points">points</a>;
+  [SameObject] readonly attribute <a>NSVGPointList</a> <a href="shapes.html#__nsvg__NSVGAnimatedPoints__animatedPoints">animatedPoints</a>;
 };</pre>
 
-<p class='ready-for-wider-review'>The <b id="__svg__SVGAnimatedPoints__points">points</b> and
-<b id="__svg__SVGAnimatedPoints__animatedPoints">animatedPoints</b> IDL
+<p class='ready-for-wider-review'>The <b id="__nsvg__NSVGAnimatedPoints__points">points</b> and
+<b id="__nsvg__NSVGAnimatedPoints__animatedPoints">animatedPoints</b> IDL
 attributes represent the current non-animated value of the reflected attribute.
-On getting <a href="#__svg__SVGAnimatedPoints__points">points</a> or
-<a href="#__svg__SVGAnimatedPoints__animatedPoints">animatedPoints</a>,
-an <a>SVGPointList</a> object is returned that reflects the base
+On getting <a href="#__nsvg__NSVGAnimatedPoints__points">points</a> or
+<a href="#__nsvg__NSVGAnimatedPoints__animatedPoints">animatedPoints</a>,
+an <a>NSVGPointList</a> object is returned that reflects the base
 value of the reflected attribute.</p>
 
-<h3 id="InterfaceSVGPointList">Interface SVGPointList</h3>
+<h3 id="InterfaceNSVGPointList">Interface NSVGPointList</h3>
 
-<p>The <a>SVGPointList</a> interface is a <a>list interface</a> whose
-elements are <a>DOMPoint</a> objects.  An <a>SVGPointList</a>
+<p>The <a>NSVGPointList</a> interface is a <a>list interface</a> whose
+elements are <a>DOMPoint</a> objects.  An <a>NSVGPointList</a>
 object represents a list of points.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGPointList</b> {
+interface <b>NSVGPointList</b> {
 
-  readonly attribute unsigned long <a href="types.html#__svg__SVGNameList__length">length</a>;
-  readonly attribute unsigned long <a href="types.html#__svg__SVGNameList__numberOfItems">numberOfItems</a>;
+  readonly attribute unsigned long <a href="types.html#__nsvg__NSVGNameList__length">length</a>;
+  readonly attribute unsigned long <a href="types.html#__nsvg__NSVGNameList__numberOfItems">numberOfItems</a>;
 
-  undefined <a href="types.html#__svg__SVGNameList__clear">clear</a>();
-  <a>DOMPoint</a> <a href="types.html#__svg__SVGNameList__initialize">initialize</a>(<a>DOMPoint</a> newItem);
-  getter <a>DOMPoint</a> <a href="types.html#__svg__SVGNameList__getItem">getItem</a>(unsigned long index);
-  <a>DOMPoint</a> <a href="types.html#__svg__SVGNameList__insertItemBefore">insertItemBefore</a>(<a>DOMPoint</a> newItem, unsigned long index);
-  <a>DOMPoint</a> <a href="types.html#__svg__SVGNameList__replaceItem">replaceItem</a>(<a>DOMPoint</a> newItem, unsigned long index);
-  <a>DOMPoint</a> <a href="types.html#__svg__SVGNameList__removeItem">removeItem</a>(unsigned long index);
-  <a>DOMPoint</a> <a href="types.html#__svg__SVGNameList__appendItem">appendItem</a>(<a>DOMPoint</a> newItem);
-  <a href="types.html#__svg__SVGNameList__setter">setter</a> undefined (unsigned long index, <a>DOMPoint</a> newItem);
+  undefined <a href="types.html#__nsvg__NSVGNameList__clear">clear</a>();
+  <a>DOMPoint</a> <a href="types.html#__nsvg__NSVGNameList__initialize">initialize</a>(<a>DOMPoint</a> newItem);
+  getter <a>DOMPoint</a> <a href="types.html#__nsvg__NSVGNameList__getItem">getItem</a>(unsigned long index);
+  <a>DOMPoint</a> <a href="types.html#__nsvg__NSVGNameList__insertItemBefore">insertItemBefore</a>(<a>DOMPoint</a> newItem, unsigned long index);
+  <a>DOMPoint</a> <a href="types.html#__nsvg__NSVGNameList__replaceItem">replaceItem</a>(<a>DOMPoint</a> newItem, unsigned long index);
+  <a>DOMPoint</a> <a href="types.html#__nsvg__NSVGNameList__removeItem">removeItem</a>(unsigned long index);
+  <a>DOMPoint</a> <a href="types.html#__nsvg__NSVGNameList__appendItem">appendItem</a>(<a>DOMPoint</a> newItem);
+  <a href="types.html#__nsvg__NSVGNameList__setter">setter</a> undefined (unsigned long index, <a>DOMPoint</a> newItem);
 };</pre>
 
-<p>The behavior of all of the interface members of <a>SVGPointList</a> are
+<p>The behavior of all of the interface members of <a>NSVGPointList</a> are
 defined in <a href="types.html#ListInterfaces">List interfaces</a>.</p>
 
 <p>This specification imposes additional requirements on the behaviour of <a>DOMPoint</a>
@@ -721,15 +721,15 @@ It can:</p>
 <ol>
   <li><em>reflect an element of the base value</em> of a <a>reflected</a> animatable
   attribute (being exposed through the methods on the
-  <a href="#__svg__SVGAnimatedPoints__points">points</a> member of
-  an <a>SVGAnimatedPoints</a>),</li>
-  <li><em>represent the current translation</em> of a given <a>'svg'</a> element
+  <a href="#__nsvg__NSVGAnimatedPoints__points">points</a> member of
+  an <a>NSVGAnimatedPoints</a>),</li>
+  <li><em>represent the current translation</em> of a given <a>'nsvg'</a> element
   (being exposed through the
-  <a href="struct.html#__svg__SVGSVGElement__currentTranslate">currentTranslate</a>
-  member on <a>SVGSVGElement</a>), or</li>
+  <a href="struct.html#__nsvg__NSVGNSVGElement__currentTranslate">currentTranslate</a>
+  member on <a>NSVGNSVGElement</a>), or</li>
   <li><em>be detached</em>, which is the case for <a>DOMPoint</a> objects created
   using their constructor or with
-  <a href='struct.html#__svg__SVGSVGElement__createSVGPoint'>createSVGPoint</a>.</li>
+  <a href='struct.html#__nsvg__NSVGNSVGElement__createNSVGPoint'>createNSVGPoint</a>.</li>
 </ol>
 </div>
 
@@ -765,12 +765,12 @@ the internal coordinate value:</p>
 <ol class='algorithm'>
   <li>If the <a>DOMPoint</a> <a href='#PointMode'>reflects an element of the
   base value</a> of a <a>reflected</a> attribute, then <a>reserialize</a>
-  the reflected attribute using the <a>SVGPointList</a> that reflects
+  the reflected attribute using the <a>NSVGPointList</a> that reflects
   the attribute's base value.
   </li>
   <li>Otherwise, if the <a>DOMPoint</a> <a href='#PointMode'>represents
-  the current translation</a> of an <a>'svg'</a> element and that
-  element is the <a>outermost svg element</a>, then:
+  the current translation</a> of an <a>'nsvg'</a> element and that
+  element is the <a>outermost nsvg element</a>, then:
     <ol>
       <li>Let [<var>a</var> <var>b</var> <var>c</var> <var>d</var> <var>e</var> <var>f</var>]
       be the 2x3 matrix that represents the document's magnification and panning
@@ -784,32 +784,32 @@ the internal coordinate value:</p>
 </ol>
 
 
-<h3 id="InterfaceSVGPolylineElement">Interface SVGPolylineElement</h3>
+<h3 id="InterfaceNSVGPolylineElement">Interface NSVGPolylineElement</h3>
 
 <edit:with element="polyline">
 
-<p>An <a>SVGPolylineElement</a> object represents a <a>'polyline'</a> element in the DOM.</p>
+<p>An <a>NSVGPolylineElement</a> object represents a <a>'polyline'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGPolylineElement</b> : <a>SVGGeometryElement</a> {
+interface <b>NSVGPolylineElement</b> : <a>NSVGGeometryElement</a> {
 };
 
-<a>SVGPolylineElement</a> includes <a>SVGAnimatedPoints</a>;</pre>
+<a>NSVGPolylineElement</a> includes <a>NSVGAnimatedPoints</a>;</pre>
 
 </edit:with>
 
 
-<h3 id="InterfaceSVGPolygonElement">Interface SVGPolygonElement</h3>
+<h3 id="InterfaceNSVGPolygonElement">Interface NSVGPolygonElement</h3>
 
 <edit:with element="polygon">
 
-<p>An <a>SVGPolygonElement</a> object represents a <a>'polygon'</a> element in the DOM.</p>
+<p>An <a>NSVGPolygonElement</a> object represents a <a>'polygon'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGPolygonElement</b> : <a>SVGGeometryElement</a> {
+interface <b>NSVGPolygonElement</b> : <a>NSVGGeometryElement</a> {
 };
 
-<a>SVGPolygonElement</a> includes <a>SVGAnimatedPoints</a>;</pre>
+<a>NSVGPolygonElement</a> includes <a>NSVGAnimatedPoints</a>;</pre>
 
 </edit:with>
 </div>

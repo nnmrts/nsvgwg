@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
   <title>Styling</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,16 +9,16 @@
   <!-- Style sheets for local dev. Will be standardized in processing.
   Add attribute data-keep="" to any extra stylesheet link you do not want removed
   (or use <style>), and include it before here. -->
-  <link rel="stylesheet" href="style/svg.css" type="text/css" />
+  <link rel="stylesheet" href="style/nsvg.css" type="text/css" />
   <link rel="stylesheet" href="style/W3C-ED.css" type="text/css" />
 </head>
 <body class="ready-for-wider-review">
 
 <h1>Styling</h1>
 
-<h2 id="StylingUsingCSS">Styling SVG content using CSS</h2>
+<h2 id="StylingUsingCSS">Styling NSVG content using CSS</h2>
 
-<p>Elements in an SVG document can be styled using CSS.
+<p>Elements in an NSVG document can be styled using CSS.
 Most visual characteristics and some aspects of element
 geometry are controlled using CSS <dfn id="TermProperty" data-dfn-type="dfn">properties</dfn>.
 For example, the <a>'fill'</a> property controls the paint used to
@@ -26,41 +26,41 @@ fill the inside of a shape, and the <a>'width'</a> and
 <a>'height'</a> properties are used to control the size
 of a <a>'rect'</a> element.</p>
 
-<p>SVG user agents must support all of the CSS styling
+<p>NSVG user agents must support all of the CSS styling
 mechanisms described in this chapter.</p>
 
-<p class="note">In SVG 1.1, support for inline style sheets
+<p class="note">In NSVG 1.1, support for inline style sheets
 using the <a>'style element'</a> element and
-<a>'style attribute'</a> was not required.  In SVG 2,
+<a>'style attribute'</a> was not required.  In NSVG 2,
 these are required.</p>
 
 
 <h2 id="StyleElement">Inline style sheets: the <span class='element-name'>'style'</span> element</h2>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
-      <td>Add HTML5 <span class='element-name'>'style'</span> element attributes to SVG's <a>'style element'</a> element.</td>
+      <th>NSVG 2 Requirement:</th>
+      <td>Add HTML5 <span class='element-name'>'style'</span> element attributes to NSVG's <a>'style element'</a> element.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/10/28-svg-irc#T18-45-45">SVG 2 <span class='element-name'>'style'</span> element shall be aligned with the HTML5 <span class='element-name'>'style'</span> element.</a></td>
+      <td><a href="http://www.w3.org/2011/10/28-nsvg-irc#T18-45-45">NSVG 2 <span class='element-name'>'style'</span> element shall be aligned with the HTML5 <span class='element-name'>'style'</span> element.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
-      <td>To not surprise authors with different behavior for the <span class='element-name'>'style'</span> element in HTML and SVG content.</td>
+      <td>To not surprise authors with different behavior for the <span class='element-name'>'style'</span> element in HTML and NSVG content.</td>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Cameron (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3277">ACTION-3277</a>)</td>
+      <td>Cameron (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3277">ACTION-3277</a>)</td>
     </tr>
   </table>
 </div>
 
 <p>The <a>'style element'</a> element allows
-style sheets to be embedded directly within SVG content.
-SVG's <a>'style element'</a> element has the same
+style sheets to be embedded directly within NSVG content.
+NSVG's <a>'style element'</a> element has the same
 attributes as the
 <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-style-element">corresponding
 element in HTML</a>.</p>
@@ -154,19 +154,19 @@ and this declaration must have importance over any other CSS rule or presentatio
 <h2 id="LinkElement">External style sheets: the effect of the HTML <span class='element-name'>'link'</span> element</h2>
 
 <p>An <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML
-<span class='element-name'>'link'</span> element</a> in an SVG document (that is,
+<span class='element-name'>'link'</span> element</a> in an NSVG document (that is,
 an element in the HTML namespace with local name "link")
 with its <span class='attr-name'>'rel'</span>
 attribute set to <span class='attr-value'>'stylesheet'</span> must be processed
 as defined in the HTML specification and cause external style sheets to be
 loaded and applied to the document.  Such elements in HTML documents outside
-of an inline SVG fragment must also apply to the SVG content.</p>
+of an inline NSVG fragment must also apply to the NSVG content.</p>
 
 <p class='note'>Because the element is required to be in the HTML namespace, it
 is not possible for an <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML
 <span class='element-name'>'link'</span> element</a> to be parsed as
-part of an inline SVG fragment in a text/html document.  However, when
-parsing an SVG document using XML syntax, XML namespace declarations
+part of an inline NSVG fragment in a text/html document.  However, when
+parsing an NSVG document using XML syntax, XML namespace declarations
 can be used to place the element in the HTML namespace.</p>
 
 <div class='note'>
@@ -175,19 +175,19 @@ can be used to place the element in the HTML namespace.</p>
   <span class='element-name'>'link'</span> element</a> is to use an @import
   rule in an inline style sheet.  For example:</p>
 
-  <pre><![CDATA[<svg xmlns="http://www.w3.org/2000/svg">
+  <pre><![CDATA[<nsvg xmlns="http://www.w3.org/2000/nsvg">
   <style>
     @import url(mystyles.css);
   </style>
   <rect .../>
-</svg>]]></pre>
+</nsvg>]]></pre>
 
   <p>would behave similarly to:</p>
 
-  <pre><![CDATA[<svg xmlns="http://www.w3.org/2000/svg">
+  <pre><![CDATA[<nsvg xmlns="http://www.w3.org/2000/nsvg">
   <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="mystyles.css" type="text/css"/>
   <rect .../>
-</svg>]]></pre>
+</nsvg>]]></pre>
 
   <p>Or, in XML documents, external CSS style sheets may be included using the
   <a href="https://www.w3.org/TR/xml-stylesheet">&lt;?xml-stylesheet?&gt;</a>
@@ -196,16 +196,16 @@ can be used to place the element in the HTML namespace.</p>
 
 <h2 id='StyleSheetsInHTMLDocuments'>Style sheets in HTML documents</h2>
 
-<p>When an SVG <a>'style element'</a> or an HTML
+<p>When an NSVG <a>'style element'</a> or an HTML
 <span class='attr-name'>'style'</span> element is used in an HTML
 document, those style sheets must apply to all HTML and
-inline SVG content in the document.  Similarly, any HTML
-<span class='attr-name'>'style'</span> element used in an SVG
+inline NSVG content in the document.  Similarly, any HTML
+<span class='attr-name'>'style'</span> element used in an NSVG
 document must also apply its style sheet to the document.</p>
 
 <h2 id="ElementSpecificStyling">Element-specific styling: the <span class='attr-name'>'class'</span> and <span class='attr-name'>'style'</span> attributes</h2>
 
-<p>As with HTML, SVG supports the <a>'class'</a> and <a>'style attribute'</a>
+<p>As with HTML, NSVG supports the <a>'class'</a> and <a>'style attribute'</a>
 attributes on all elements to support element-specific styling.</p>
 
 <p><em>Attribute definitions:</em></p>
@@ -255,8 +255,8 @@ attributes on all elements to support element-specific styling.</p>
 </dl>
 
 <p>Aside from the way that the <a>'class'</a> attribute is reflected in the
-SVG DOM (in the <a href="types.html#__svg__SVGElement__className">className</a>
-IDL attribute on <a>SVGElement</a>), the semantics and behavior of the
+NSVG DOM (in the <a href="types.html#__nsvg__NSVGElement__className">className</a>
+IDL attribute on <a>NSVGElement</a>), the semantics and behavior of the
 <a>'class'</a> and <a>'style attribute'</a> attributes must be the same
 as that for <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes">the corresponding
 attributes in HTML</a>.</p>
@@ -317,12 +317,12 @@ within a presentation attribute will cause it to have an <a>invalid value</a>.
 See <a href="types.html#presentation-attribute-css-value">Attribute syntax</a>
 for details on how presentation attributes are parsed.</p>
 
-<p>Not all style properties that can affect SVG rendering have a corresponding
+<p>Not all style properties that can affect NSVG rendering have a corresponding
 presentation attribute.
 Other attributes (which happen to share the name of a style property) must not be parsed as a
 presentation attribute and must not affect CSS cascading and inheritance.
-Also, only elements in the SVG namespace support presentation attributes.
-Most SVG presentation attributes may be specified on any element in the SVG namespace
+Also, only elements in the NSVG namespace support presentation attributes.
+Most NSVG presentation attributes may be specified on any element in the NSVG namespace
 where there is not a name clash with an existing attribute.
 However, the <a>geometry properties</a> only have equivalent presentation attributes
 on designated elements.
@@ -355,7 +355,7 @@ the presentation attribute name is the same as the property name, in lower-case 
       <a>'foreignObject'</a>,
       <a>'image'</a>,
       <a>'rect'</a>,
-      <a>'svg'</a>,
+      <a>'nsvg'</a>,
       <a>'symbol'</a>, and
       <a>'use'</a>
     </td>
@@ -389,7 +389,7 @@ the presentation attribute name is the same as the property name, in lower-case 
       <a>'fill'</a>
     </td>
     <td>
-      Any element in the SVG namespace except for <a>animation elements</a>,
+      Any element in the NSVG namespace except for <a>animation elements</a>,
       which have a different <a>'animate/fill'</a> attribute.
     </td>
   </tr>
@@ -398,11 +398,11 @@ the presentation attribute name is the same as the property name, in lower-case 
       <a>'transform'</a>
     </td>
     <td>
-      For historical reasons, the <a>'transform'</a> property gets represented by different presentation attributes depending on the SVG element it applies to:
+      For historical reasons, the <a>'transform'</a> property gets represented by different presentation attributes depending on the NSVG element it applies to:
       <dl>
         <dt><a>'transform'</a></dt>
         <dd>
-          Any element in the SVG namespace with the exception of the <a>'pattern'</a>,
+          Any element in the NSVG namespace with the exception of the <a>'pattern'</a>,
           <a>'linearGradient'</a> and <a>'radialGradient'</a> elements.
         </dd>
         <dt><a>'pattern/patternTransform'</a></dt>
@@ -483,7 +483,7 @@ the presentation attribute name is the same as the property name, in lower-case 
       <a>'writing-mode'</a>
     </td>
     <td>
-      Any element in the SVG namespace.
+      Any element in the NSVG namespace.
     </td>
   </tr>
 </table>
@@ -517,17 +517,17 @@ their property.</p>
 -->
 
 <p class='note'>In the future, any new properties that apply
-to SVG content will not gain presentation attributes.  Therefore,
+to NSVG content will not gain presentation attributes.  Therefore,
 authors are suggested to use styling properties, either through
 inline <a>'style attribute'</a> properties or style sheets,
-rather than presentation attributes, for styling SVG content.</p>
+rather than presentation attributes, for styling NSVG content.</p>
 
 <p>Animation of presentation attributes is equivalent to
 animating the corresponding property.</p>
 
 <h2 id="RequiredProperties">Required properties</h2>
 
-<p>The following properties must be supported by all SVG user agents:</p>
+<p>The following properties must be supported by all NSVG user agents:</p>
 
 <ul>
   <li>all properties defined in this specification</li>
@@ -588,16 +588,16 @@ animating the corresponding property.</p>
 <h2 id="UAStyleSheet">User agent style sheet</h2>
 
 <p>The following <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/cascade.html#cascade">user
-agent style sheet</a> must be applied in all SVG user agents.</p>
+agent style sheet</a> must be applied in all NSVG user agents.</p>
 
 <pre>
-@namespace url(http://www.w3.org/2000/svg);
+@namespace url(http://www.w3.org/2000/nsvg);
 @namespace xml url(http://www.w3.org/XML/1998/namespace);
 
-svg:not(:root), image, marker, pattern, symbol { overflow: hidden; }
+nsvg:not(:root), image, marker, pattern, symbol { overflow: hidden; }
 
-*:not(svg),
-*:not(foreignObject) > svg {
+*:not(nsvg),
+*:not(foreignObject) > nsvg {
   transform-origin: 0 0;
 }
 
@@ -647,25 +647,25 @@ The other elements, and their child content, are never rendered directly.
 
 <p class='note'>CSS Transforms defines that the initial value for
 <a>'transform-origin'</a> is <span class='prop-value' style='white-space: nowrap'>50% 50%</span>.
-Since elements in SVG must, by default, transform around their origin at (0, 0),
+Since elements in NSVG must, by default, transform around their origin at (0, 0),
 <a>'transform-origin'</a> is overridden and set to a default value of
-<span class='prop-value' style='white-space: nowrap'>0 0</span> for all SVG elements
-(except for root <a>'svg'</a> elements and <a>'svg'</a> elements that are the child of a
-<a>'foreignObject'</a> element or an element in a non-SVG namespace; these elements
+<span class='prop-value' style='white-space: nowrap'>0 0</span> for all NSVG elements
+(except for root <a>'nsvg'</a> elements and <a>'nsvg'</a> elements that are the child of a
+<a>'foreignObject'</a> element or an element in a non-NSVG namespace; these elements
 must transform around their center).
 [<a href="refs.html#ref-css-transforms-1">css-transforms-1</a>]</p>
 
 <div class="note">
   <p>The OpenType specification
-    <a href="https://www.microsoft.com/typography/otspec/svg.htm">requires an additional user agent style sheet</a>
+    <a href="https://www.microsoft.com/typography/otspec/nsvg.htm">requires an additional user agent style sheet</a>
     to be applied when processing
     [<a href="refs.html#ref-opentype">OPENTYPE</a>].
     It is as follows:
   </p>
 
-  <pre style="background-color: #eee; padding: 0.5em">@namespace svg url(http://www.w3.org/2000/svg);
+  <pre style="background-color: #eee; padding: 0.5em">@namespace nsvg url(http://www.w3.org/2000/nsvg);
 
-svg|text, svg|foreignObject {
+nsvg|text, nsvg|foreignObject {
   display: none !important;
 }
 
@@ -694,7 +694,7 @@ svg|text, svg|foreignObject {
 <h2 id="RequiredCSSFeatures">Required CSS features</h2>
 
 <p>Besides the features described above, the following CSS features must be
-also supported in SVG user agents:</p>
+also supported in NSVG user agents:</p>
 
 <ul>
   <li>in XML documents, external CSS style sheets using the
@@ -718,26 +718,26 @@ also supported in SVG user agents:</p>
 
 <h2 id="DOMInterfaces">DOM interfaces</h2>
 
-<h3 id="InterfaceSVGStyleElement">Interface SVGStyleElement</h3>
+<h3 id="InterfaceNSVGStyleElement">Interface NSVGStyleElement</h3>
 
 <edit:with element="style">
 
-<p>An <a>SVGStyleElement</a> object represents a <a>'style element'</a> element
+<p>An <a>NSVGStyleElement</a> object represents a <a>'style element'</a> element
 in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGStyleElement</b> : <a>SVGElement</a> {
-  attribute DOMString <a href="styling.html#__svg__SVGStyleElement__type">type</a>;
-  attribute DOMString <a href="styling.html#__svg__SVGStyleElement__media">media</a>;
-  attribute DOMString <a href="styling.html#__svg__SVGStyleElement__title">title</a>;
-  attribute boolean <a href="styling.html#__svg__SVGStyleElement__disabled">disabled</a>;
+interface <b>NSVGStyleElement</b> : <a>NSVGElement</a> {
+  attribute DOMString <a href="styling.html#__nsvg__NSVGStyleElement__type">type</a>;
+  attribute DOMString <a href="styling.html#__nsvg__NSVGStyleElement__media">media</a>;
+  attribute DOMString <a href="styling.html#__nsvg__NSVGStyleElement__title">title</a>;
+  attribute boolean <a href="styling.html#__nsvg__NSVGStyleElement__disabled">disabled</a>;
 };
 
-<a>SVGStyleElement</a> includes <a>LinkStyle</a>;</pre>
+<a>NSVGStyleElement</a> includes <a>LinkStyle</a>;</pre>
 
-<p>The <b id="__svg__SVGStyleElement__type">type</b>,
-<b id="__svg__SVGStyleElement__media">media</b> and
-<b id="__svg__SVGStyleElement__title">title</b> IDL attributes
+<p>The <b id="__nsvg__NSVGStyleElement__type">type</b>,
+<b id="__nsvg__NSVGStyleElement__media">media</b> and
+<b id="__nsvg__NSVGStyleElement__title">title</b> IDL attributes
 <a>reflect</a> the <a>'type'</a>, <a>'media'</a> and <a>'title'</a>
 content attributes, respectively.</p>
 

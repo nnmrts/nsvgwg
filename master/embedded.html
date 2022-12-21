@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
   <title>Embedded Content</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,7 +9,7 @@
   <!-- Style sheets for local dev. Will be standardized in processing.
   Add attribute data-keep="" to any extra stylesheet link you do not want removed
   (or use <style>), and include it before here. -->
-  <link rel="stylesheet" href="style/svg.css" type="text/css" />
+  <link rel="stylesheet" href="style/nsvg.css" type="text/css" />
   <link rel="stylesheet" href="style/W3C-ED.css" type="text/css" />
 </head>
 <body>
@@ -20,7 +20,7 @@
 <p>Embedded content is content that imports another resource into the document, or content from another vocabulary that is inserted into the document.
 This is the same definition as <a href="https://html.spec.whatwg.org/multipage/">HTML's</a> <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#embedded-content">embedded content</a>.</p>
 
-<p>SVG supports embedded content with the use of <a>'image'</a> and <a>'foreignObject'</a> elements.</p>
+<p>NSVG supports embedded content with the use of <a>'image'</a> and <a>'foreignObject'</a> elements.</p>
 
 <p class="note">Content embedded with <a>'image'</a> is compatible with <a href="https://www.w3.org/TR/resource-hints/">Resource Hints</a> for prioritizing downloading of external resources. </p>
 
@@ -56,7 +56,7 @@ This is the same definition as <a href="https://html.spec.whatwg.org/multipage/"
     <a href="https://www.w3.org/TR/CSS21/visuren.html#containing-block">containing block</a> for laying out the child content using CSS.
     The scale of the containing block is defined in the current coordinate system,
     including all explicit and implicit (e.g., <a>'viewBox'</a>) transformations.
-    The <a>'foreignObject'</a>, or other element that is positioned using SVG layout attributes,
+    The <a>'foreignObject'</a>, or other element that is positioned using NSVG layout attributes,
     is implicitly <a href="https://www.w3.org/TR/CSS21/visuren.html#propdef-position">absolutely-positioned</a> for the purposes of CSS layout.
     As a result, any absolutely-positioned child elements
     are positioned relative to this containing block.
@@ -76,7 +76,7 @@ This is the same definition as <a href="https://html.spec.whatwg.org/multipage/"
     it is assumed to have a width of 300px and a height of 150px.
   </p>
   <p>
-    CSS positioning properties (e.g. <span class="prop-name">top</span> and <span class="prop-name">margin</span>) have no effect when positioning the embedded content element in the SVG coordinate system.
+    CSS positioning properties (e.g. <span class="prop-name">top</span> and <span class="prop-name">margin</span>) have no effect when positioning the embedded content element in the NSVG coordinate system.
     They can, however, be used to position child elements of a <a>'foreignObject'</a> or HTML embedding element.
   </p>
 
@@ -91,11 +91,11 @@ indicates that the contents of a complete file are to be
 rendered into a given rectangle within the current user
 coordinate system. The <a>'image'</a> element can refer to raster
 image files such as PNG or JPEG or to files with MIME type of
-"image/svg+xml". <a
-href="conform.html#ConformingSVGViewers">Conforming SVG
-viewers</a> need to support at least PNG, JPEG and SVG format
+"image/nsvg+xml". <a
+href="conform.html#ConformingNSVGViewers">Conforming NSVG
+viewers</a> need to support at least PNG, JPEG and NSVG format
 files.
-SVG files must be processed in <a>secure animated mode</a>
+NSVG files must be processed in <a>secure animated mode</a>
 if the current document supports animation,
 or in <a>secure static mode</a> if the current document is static.
 </p>
@@ -117,9 +117,9 @@ into the <a>concrete object size</a> determined from the
 <a>positioning rectangle</a> and the <a>'object-fit'</a> and <a>'object-position'</a> properties.
 The result of applying this attribute defines an <dfn id="TermImageRenderingRectangle"  data-dfn-type="dfn" data-export="">image-rendering rectangle</dfn>
 used for actual image rendering.
-When the referenced image is an SVG,
+When the referenced image is an NSVG,
 the <a>image-rendering rectangle</a> defines
-the <a>SVG viewport</a> used for rendering that SVG.
+the <a>NSVG viewport</a> used for rendering that NSVG.
 </p>
 
 <p class="note">
@@ -143,13 +143,13 @@ the <a>SVG viewport</a> used for rendering that SVG.
 The aspect ratio to use when
 evaluating the <a>'preserveAspectRatio'</a> attribute is
 defined by the <a>intrinsic aspect ratio</a> of the referenced content.
-For an SVG file, the aspect ratio is defined
-in <a href="coords.html#SizingSVGInCSS">Intrinsic sizing properties of SVG content"</a>.
+For an NSVG file, the aspect ratio is defined
+in <a href="coords.html#SizingNSVGInCSS">Intrinsic sizing properties of NSVG content"</a>.
 For most raster content (PNG, JPEG) the pixel width and height of the image file
 define an intrinsic aspect ratio.
 Where the embedded image does not have an <a>intrinsic aspect ratio</a>
-(e.g. an SVG file with neither <a>'viewBox'</a> attribute nor explicit dimensions for the
-<a>outermost svg element</a>) the <a>'preserveAspectRatio'</a> attribute is
+(e.g. an NSVG file with neither <a>'viewBox'</a> attribute nor explicit dimensions for the
+<a>outermost nsvg element</a>) the <a>'preserveAspectRatio'</a> attribute is
 ignored;
 the embedded image is drawn to fill the <a>positioning rectangle</a> defined by the geometry properties
 on the <a>'image'</a> element.
@@ -171,9 +171,9 @@ raster exactly aligns with coordinate (<a>'x'</a>, <a>'y'</a>) and the bottom/ri
 the raster exactly aligns with coordinate (<a>'x'</a>+<a>'width'</a>, <a>'y'</a>+<a>'height'</a>).</p>
 
 <p>
-For <a>'image'</a> elements embedding an SVG image,
+For <a>'image'</a> elements embedding an NSVG image,
 the <a>'preserveAspectRatio'</a> attribute on the root
-element in the referenced SVG image must be ignored,
+element in the referenced NSVG image must be ignored,
 and instead treated as if it had a value of <span class="attr-value">none</span>.
 (see <a>'preserveAspectRatio'</a> for details).
 This ensures that the <a>'preserveAspectRatio'</a> attribute on
@@ -186,8 +186,8 @@ When the value of the <a>'preserveAspectRatio'</a> attribute on the <a>'image'</
 is <em>not</em> <span class="attr-value">none</span>,
 the <a>image-rendering rectangle</a> determined
 from the properties of the <a>'image'</a> element
-will exactly match the embedded SVG's intrinsic aspect ratio.
-Ignoring the <a>'preserveAspectRatio'</a> attribute from the embedded SVG
+will exactly match the embedded NSVG's intrinsic aspect ratio.
+Ignoring the <a>'preserveAspectRatio'</a> attribute from the embedded NSVG
 will therefore not usually have any effect.
 The exception is if the aspect ratio of that image
 is determined from absolute values for the <a>'width'</a> and <a>'height'</a> attributes
@@ -203,25 +203,25 @@ the <a>positioning rectangle</a> defined by the geometry properties.
 </p>
 
 <p>
-For <a>'image'</a> elements embedding an SVG image,
+For <a>'image'</a> elements embedding an NSVG image,
 two different <a>'overflow'</a> values apply.
 The value specified on the <a>'image'</a> element determines
 whether the <a>image-rendering rectangle</a> is clipped to the <a>positioning rectangle</a>.
-The value on the root element of the referenced SVG
+The value on the root element of the referenced NSVG
 determines whether the graphics are clipped to the <a>image-rendering rectangle</a>.
 </p>
 
 <p class="note">
-New in SVG 2.
-Previous versions of SVG required that the <a>'overflow'</a> (and also <a>'clip'</a>)
-property on the embedded SVG be ignored.
+New in NSVG 2.
+Previous versions of NSVG required that the <a>'overflow'</a> (and also <a>'clip'</a>)
+property on the embedded NSVG be ignored.
 The new rules ensure that an overflowing <span class="attr-value">slice</span> layout
 can be safely used without compromising the overflow control from the referenced image.
 </p>
 
 <p>
-  To link into particular view of an embedded SVG image,
-  authors can use media fragments as defined in <a href="linking.html#LinksIntoSVG">Linking into SVG content</a>.
+  To link into particular view of an embedded NSVG image,
+  authors can use media fragments as defined in <a href="linking.html#LinksIntoNSVG">Linking into NSVG content</a>.
   To crop to a specific section of a raster image,
   authors can use <em>Basic media fragments identifiers</em> [<a href="refs.html#ref-media-frags">Media Fragments URI 1.0 (basic)</a>].
   Either type of fragment may affect the <a>intrinsic dimensions</a> and/or <a>intrinsic aspect ratio</a> of the image.
@@ -233,17 +233,17 @@ document object model (if the resource is XML). Thus, there is
 no inheritance of properties into the image.</p>
 
 <p>Unlike <a>'use'</a>, the <a>'image'</a> element cannot reference
-elements within an SVG file.</p>
+elements within an NSVG file.</p>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Support auto-sized images.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/10/27-svg-irc#T18-52-24">We will allow auto-sized images in SVG 2.</a></td>
+      <td><a href="http://www.w3.org/2011/10/27-nsvg-irc#T18-52-24">We will allow auto-sized images in NSVG 2.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -251,20 +251,20 @@ elements within an SVG file.</p>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Cameron (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3340">ACTION-3340</a>)</td>
+      <td>Cameron (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3340">ACTION-3340</a>)</td>
     </tr>
   </table>
 </div>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Support selecting part of an <a>'image'</a> for display.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/10/27-svg-irc#T18-45-13">We will have a method for <span class='element-name'>'image'</span> to select a part of an image to display, maybe by allowing <span class='attr-name'>'viewBox'</span> on it.</a></td>
+      <td><a href="http://www.w3.org/2011/10/27-nsvg-irc#T18-45-13">We will have a method for <span class='element-name'>'image'</span> to select a part of an image to display, maybe by allowing <span class='attr-name'>'viewBox'</span> on it.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -277,15 +277,15 @@ elements within an SVG file.</p>
   </table>
 </div>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Support the <span class='property'>'object-fit'</span> and <span class='property'>'object-position'</span> properties from css-images-3.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/07/29-svg-minutes.html#item08">SVG 2 will depend on CSS3 Image Values and CSS4 Image Values.</a></td>
+      <td><a href="http://www.w3.org/2011/07/29-nsvg-minutes.html#item08">NSVG 2 will depend on CSS3 Image Values and CSS4 Image Values.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -352,15 +352,15 @@ elements within an SVG file.</p>
 <div class="example">
 <pre>
 &lt;?xml version="1.0" standalone="no"?&gt;
-&lt;svg width="4in" height="3in"
-     xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;nsvg width="4in" height="3in"
+     xmlns="http://www.w3.org/2000/nsvg"&gt;
   &lt;desc&gt;This graphic links to an external image
   &lt;/desc&gt;
   &lt;image x="200" y="200" width="100px" height="100px"
          href="myimage.png"&gt;
     &lt;title&gt;My image&lt;/title&gt;
   &lt;/image&gt;
-&lt;/svg&gt;
+&lt;/nsvg&gt;
 </pre>
 </div>
 
@@ -373,7 +373,7 @@ elements within an SVG file.</p>
   preventing infinite recursion.
 </p>
 
-  <edit:example href='images/embedded/recursive-image.svg' name='recursive-image' description='an SVG that embeds itself, creating a bulls-eye pattern' image='yes' link='yes'/>
+  <edit:example href='images/embedded/recursive-image.nsvg' name='recursive-image' description='an NSVG that embeds itself, creating a bulls-eye pattern' image='yes' link='yes'/>
 
 </edit:with>
 
@@ -381,33 +381,33 @@ elements within an SVG file.</p>
 
 <edit:elementsummary name='foreignObject' />
 
-<p>SVG is designed to be compatible with other XML languages
+<p>NSVG is designed to be compatible with other XML languages
 for describing and rendering other types of content.
 The <a>'foreignObject'</a>
-element allows for inclusion of elements in a non-SVG namespace which
-is rendered within a region of the SVG graphic using other user agent processes. The
-included foreign graphical content is subject to SVG
+element allows for inclusion of elements in a non-NSVG namespace which
+is rendered within a region of the NSVG graphic using other user agent processes. The
+included foreign graphical content is subject to NSVG
 transformations, filters, clipping, masking and compositing.
 Examples include
 inserting a <a
 href="https://www.w3.org/TR/2003/REC-MathML2-20031021/">MathML</a> expression into
-an SVG drawing [<a href="refs.html#ref-mathml3">MathML3</a>],
+an NSVG drawing [<a href="refs.html#ref-mathml3">MathML3</a>],
 or adding a block of complex CSS-formatted HTML text or form inputs.
 </p>
 
 <p class="note">
   The HTML parser treats elements inside the <a>'foreignObject'</a>
   equivalent to elements inside an HTML document fragment.
-  Any <code>svg</code> or <code>math</code> element,
+  Any <code>nsvg</code> or <code>math</code> element,
   and their descendents,
-  will be parsed as being in the SVG or MathML namespace, respectively;
+  will be parsed as being in the NSVG or MathML namespace, respectively;
   all other tags will be parsed as being in the HTML namespace.
 </p>
 
 <p>
-SVG-namespaced elements within a <a>'foreignObject'</a> will not be rendered,
-except in the situation where a properly defined SVG
-fragment, including a root <a>'svg'</a> element is
+NSVG-namespaced elements within a <a>'foreignObject'</a> will not be rendered,
+except in the situation where a properly defined NSVG
+fragment, including a root <a>'nsvg'</a> element is
 defined as a descendent of the <a>'foreignObject'</a>.</p>
 
 <p>A <a>'foreignObject'</a>
@@ -423,26 +423,26 @@ available.</p>
   a future specification may do so.
 </p>
 
-<p>It is not required that SVG user agent support the ability
+<p>It is not required that NSVG user agent support the ability
 to invoke other arbitrary user agents to handle embedded
-foreign object types; however, all conforming SVG user agents
+foreign object types; however, all conforming NSVG user agents
 would need to support the <a>'switch'</a> element and
-must be able to render valid SVG elements when they appear as
+must be able to render valid NSVG elements when they appear as
 one of the alternatives within a <a>'switch'</a>
 element.</p>
 
 <p>It is expected that commercial Web browsers will
-support the ability for SVG to embed
+support the ability for NSVG to embed
 CSS-formatted HTML and also MathML content,
-with the rendered content subject to transformations and compositing defined in the SVG fragment.
+with the rendered content subject to transformations and compositing defined in the NSVG fragment.
 At this time, such a capability is not a requirement.</p>
 
 <div class="example">
 
 <pre><![CDATA[
 <?xml version="1.0" standalone="yes"?>
-<svg width="4in" height="3in"
- xmlns = 'http://www.w3.org/2000/svg'>
+<nsvg width="4in" height="3in"
+ xmlns = 'http://www.w3.org/2000/nsvg'>
   <desc>This example uses the 'switch' element to provide a
         fallback graphical representation of an paragraph, if
         XMHTML is not supported.</desc>
@@ -451,15 +451,15 @@ At this time, such a capability is not a requirement.</p>
   <switch>
     <!-- Process the embedded XHTML if the requiredExtensions attribute
          evaluates to true (i.e., the user agent supports XHTML
-         embedded within SVG). -->
+         embedded within NSVG). -->
     <foreignObject width="100" height="50"
-                   requiredExtensions="http://example.com/SVGExtensions/EmbeddedXHTML">
+                   requiredExtensions="http://example.com/NSVGExtensions/EmbeddedXHTML">
       <!-- XHTML content goes here -->
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>Here is a paragraph that requires word wrap</p>
       </body>
     </foreignObject>
-    <!-- Else, process the following alternate SVG.
+    <!-- Else, process the following alternate NSVG.
          Note that there are no testing attributes on the 'text' element.
          If no testing attributes are provided, it is as if there
          were testing attributes and they evaluated to true.-->
@@ -468,7 +468,7 @@ At this time, such a capability is not a requirement.</p>
       <tspan x="10" y="20">requires word wrap.</tspan>
     </text>
   </switch>
-</svg>
+</nsvg>
 ]]></pre>
 </div>
 
@@ -476,61 +476,61 @@ At this time, such a capability is not a requirement.</p>
 <div class='ready-for-wider-review'>
 <h2 id="DOMInterfaces">DOM interfaces</h2>
 
-<h3 id="InterfaceSVGImageElement">Interface SVGImageElement</h3>
+<h3 id="InterfaceNSVGImageElement">Interface NSVGImageElement</h3>
 
 <edit:with element="image">
 
-<p>An <a>SVGImageElement</a> object represents an <a>'image'</a> element in the DOM.</p>
+<p>An <a>NSVGImageElement</a> object represents an <a>'image'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGImageElement</b> : <a>SVGGraphicsElement</a> {
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="embedded.html#__svg__SVGImageElement__x">x</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="embedded.html#__svg__SVGImageElement__y">y</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="embedded.html#__svg__SVGImageElement__width">width</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="embedded.html#__svg__SVGImageElement__height">height</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedPreserveAspectRatio</a> <a href="embedded.html#__svg__SVGImageElement__preserveAspectRatio">preserveAspectRatio</a>;
-  attribute DOMString? <a href="embedded.html#__svg__SVGImageElement__crossOrigin">crossOrigin</a>;
+interface <b>NSVGImageElement</b> : <a>NSVGGraphicsElement</a> {
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="embedded.html#__nsvg__NSVGImageElement__x">x</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="embedded.html#__nsvg__NSVGImageElement__y">y</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="embedded.html#__nsvg__NSVGImageElement__width">width</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="embedded.html#__nsvg__NSVGImageElement__height">height</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedPreserveAspectRatio</a> <a href="embedded.html#__nsvg__NSVGImageElement__preserveAspectRatio">preserveAspectRatio</a>;
+  attribute DOMString? <a href="embedded.html#__nsvg__NSVGImageElement__crossOrigin">crossOrigin</a>;
 };
 
-<a>SVGImageElement</a> includes <a>SVGURIReference</a>;</pre>
+<a>NSVGImageElement</a> includes <a>NSVGURIReference</a>;</pre>
 
 <p>The
-<b id="__svg__SVGImageElement__x">x</b>,
-<b id="__svg__SVGImageElement__y">y</b>,
-<b id="__svg__SVGImageElement__width">width</b> and
-<b id="__svg__SVGImageElement__height">height</b> IDL attributes
+<b id="__nsvg__NSVGImageElement__x">x</b>,
+<b id="__nsvg__NSVGImageElement__y">y</b>,
+<b id="__nsvg__NSVGImageElement__width">width</b> and
+<b id="__nsvg__NSVGImageElement__height">height</b> IDL attributes
 <a>reflect</a> the computed values of the <a>'x'</a>, <a>'y'</a>, <a>'width'</a> and
 <a>'height'</a> properties and their corresponding
 presentation attributes, respectively.</p>
 
-<p>The <b id="__svg__SVGImageElement__preserveAspectRatio">preserveAspectRatio</b>
+<p>The <b id="__nsvg__NSVGImageElement__preserveAspectRatio">preserveAspectRatio</b>
 IDL attribute <a>reflects</a> the <a>'preserveAspectRatio'</a> content attribute.</p>
 
-<p>The <b id="__svg__SVGImageElement__crossOrigin">crossOrigin</b> IDL attribute
+<p>The <b id="__nsvg__NSVGImageElement__crossOrigin">crossOrigin</b> IDL attribute
 <a>reflects</a> the <a>'crossorigin'</a> content attribute.</p>
 
 </edit:with>
 
-<h3 id="InterfaceSVGForeignObjectElement">Interface SVGForeignObjectElement</h3>
+<h3 id="InterfaceNSVGForeignObjectElement">Interface NSVGForeignObjectElement</h3>
 
 <edit:with element="foreignObject">
 
-<p>An <a>SVGForeignObjectElement</a> object represents a <a>'foreignObject'</a>
+<p>An <a>NSVGForeignObjectElement</a> object represents a <a>'foreignObject'</a>
 in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGForeignObjectElement</b> : <a>SVGGraphicsElement</a> {
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="embedded.html#__svg__SVGForeignObjectElement__x">x</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="embedded.html#__svg__SVGForeignObjectElement__y">y</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="embedded.html#__svg__SVGForeignObjectElement__width">width</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="embedded.html#__svg__SVGForeignObjectElement__height">height</a>;
+interface <b>NSVGForeignObjectElement</b> : <a>NSVGGraphicsElement</a> {
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="embedded.html#__nsvg__NSVGForeignObjectElement__x">x</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="embedded.html#__nsvg__NSVGForeignObjectElement__y">y</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="embedded.html#__nsvg__NSVGForeignObjectElement__width">width</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="embedded.html#__nsvg__NSVGForeignObjectElement__height">height</a>;
 };</pre>
 
 <p>The
-<b id="__svg__SVGForeignObjectElement__x">x</b>,
-<b id="__svg__SVGForeignObjectElement__y">y</b>,
-<b id="__svg__SVGForeignObjectElement__width">width</b> and
-<b id="__svg__SVGForeignObjectElement__height">height</b> IDL attributes
+<b id="__nsvg__NSVGForeignObjectElement__x">x</b>,
+<b id="__nsvg__NSVGForeignObjectElement__y">y</b>,
+<b id="__nsvg__NSVGForeignObjectElement__width">width</b> and
+<b id="__nsvg__NSVGForeignObjectElement__height">height</b> IDL attributes
 <a>reflect</a> the computed values of the <a>'x'</a>, <a>'y'</a>, <a>'width'</a> and
 <a>'height'</a> properties and their corresponding
 presentation attributes, respectively.</p>

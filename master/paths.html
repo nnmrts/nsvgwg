@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
   <title>Paths</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,7 +9,7 @@
   <!-- Style sheets for local dev. Will be standardized in processing.
   Add attribute data-keep="" to any extra stylesheet link you do not want removed
   (or use <style>), and include it before here. -->
-  <link rel="stylesheet" href="style/svg.css" type="text/css" />
+  <link rel="stylesheet" href="style/nsvg.css" type="text/css" />
   <link rel="stylesheet" href="style/W3C-ED.css" type="text/css" />
 </head>
 <body>
@@ -27,7 +27,7 @@
   these functions at the same time. (See
   <a href="painting.html">Filling, Stroking and Paint Servers</a>,
   <a href="render.html#ClippingAndMasking">Clipping and Masking</a>,
-  Animation (<a href="https://svgwg.org/specs/animations/#AnimateMotionElement">'animateMotion'</a>),
+  Animation (<a href="https://nsvgwg.org/specs/animations/#AnimateMotionElement">'animateMotion'</a>),
   and <a href="text.html#TextLayoutPath">Text on a Path</a>.)
 </p>
 
@@ -48,13 +48,13 @@ Compound paths (i.e., a path with multiple subpaths) are
 possible to allow effects such as "donut holes" in objects.</p>
 
 <p>This chapter describes the syntax, behavior and DOM
-interfaces for SVG paths. Various implementation notes for SVG
+interfaces for NSVG paths. Various implementation notes for NSVG
 paths can be found in <a
 href="paths.html#PathElementImplementationNotes"><span
 class="element-name">'path'</span> element implementation
 Notes</a>.</p>
 
-<p>A path is defined in SVG using the <a>'path'</a> element.</p>
+<p>A path is defined in NSVG using the <a>'path'</a> element.</p>
 
 <p>The <a>basic shapes</a> are all described in terms of what their
 <dfn id="TermEquivalentPath">equivalent path</dfn> is, which is
@@ -89,7 +89,7 @@ specifies a path in the shape of a triangle. (The
 <strong>L</strong>s indicate <em>lineto</em>s, and the
 <strong>z</strong> indicates a <em>closepath</em>).</p>
 
-<edit:example href='images/paths/triangle01.svg' link='yes' image='yes' name='triangle01' description="simple example of a 'path'"/>
+<edit:example href='images/paths/triangle01.nsvg' link='yes' image='yes' name='triangle01' description="simple example of a 'path'"/>
 
 <p>Path data can contain newline characters and thus can be
 broken up into multiple lines to improve readability.
@@ -97,8 +97,8 @@ Newlines inside attributes in markup will be normalized to space
 characters while parsing.</p>
 
 <p>The syntax of path data is concise in order to allow for
-minimal file size and efficient downloads, since many SVG files
-will be dominated by their path data. Some of the ways that SVG
+minimal file size and efficient downloads, since many NSVG files
+will be dominated by their path data. Some of the ways that NSVG
 attempts to minimize the size of path data are as follows:</p>
 
 <ul>
@@ -225,7 +225,7 @@ being in <a>user units</a> in the current user coordinate system.</p>
 
 <p>The <span class='prop-value'><a>&lt;string&gt;</a></span> value
 specifies a shape using a path data string.  The contents of the
-<a>&lt;string&gt;</a> value must match the <a href="#PathDataBNF">svg-path</a>
+<a>&lt;string&gt;</a> value must match the <a href="#PathDataBNF">nsvg-path</a>
 <a href="types.html#syntax">EBNF grammar</a> defined below, and errors within the string are handled according to
 the rules in the <a href="paths.html#PathDataErrorHandling">Path Data Error Handling</a> section.
 If the path data string contains no valid commands, then the behavior
@@ -256,7 +256,7 @@ is the same as the <span class='prop-value'>none</span> value.</p>
 <p class="annotation">
   Resolved that "d will become a presentation attribute (no name
   change) with path data string as value" at
-  <a href="https://www.w3.org/2016/04/21-svg-minutes.html">London
+  <a href="https://www.w3.org/2016/04/21-nsvg-minutes.html">London
   Editor's Meeting</a>.
 </p>
 
@@ -577,7 +577,7 @@ computed automatically as the reflection of the control point
 for the previous "C" command relative to the start point of the
 "S" command.</p>
 
-<edit:example href='images/paths/cubic01.svg' name='cubic01' description='cubic Bézier comamnds in path data' image='yes' link='yes'/>
+<edit:example href='images/paths/cubic01.nsvg' name='cubic01' description='cubic Bézier comamnds in path data' image='yes' link='yes'/>
 
 <p>The following picture shows some how cubic Bézier
 curves change their shape depending on the position of the
@@ -587,8 +587,8 @@ right shows a "C" command followed by an "S" command.</p>
 <p><img
 alt="Example cubic02 - cubic Bézier commands in path data"
  src="images/paths/cubic02.png" width="355" height="355" /></p>
-<p class="view-as-svg"><a href="images/paths/cubic02.svg">View
-this example as SVG (SVG-enabled browsers only)</a><br />
+<p class="view-as-nsvg"><a href="images/paths/cubic02.nsvg">View
+this example as NSVG (NSVG-enabled browsers only)</a><br />
  &nbsp;</p>
 
 <h3 id="PathDataQuadraticBezierCommands">The quadratic Bézier curve commands</h3>
@@ -655,19 +655,19 @@ automatically as the reflection of the control point for the
 previous "Q" command relative to the start point of the "T"
 command.</p>
 
-<edit:example href='images/paths/quad01.svg' name='quad01' description='quadratic Bézier commands in path data' image='yes' link='yes'/>
+<edit:example href='images/paths/quad01.nsvg' name='quad01' description='quadratic Bézier commands in path data' image='yes' link='yes'/>
 
 <h3 id="PathDataEllipticalArcCommands">The elliptical arc curve commands</h3>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
-      <td>Make it simpler to draw arcs in SVG path syntax.</td>
+      <th>NSVG 2 Requirement:</th>
+      <td>Make it simpler to draw arcs in NSVG path syntax.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/11/04-svg-minutes.html#item08">Make arcs in paths easier.</a></td>
+      <td><a href="http://www.w3.org/2011/11/04-nsvg-minutes.html#item08">Make arcs in paths easier.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -675,7 +675,7 @@ command.</p>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Cameron (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3151">ACTION-3151</a>)</td>
+      <td>Cameron (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3151">ACTION-3151</a>)</td>
     </tr>
   </table>
 </div>
@@ -721,7 +721,7 @@ of the arc is (<var>cpx</var> + <var>x</var>,
 <p><span class="example-ref">Example arcs01</span> shows some
 simple uses of arc commands within a path.</p>
 
-<edit:example href='images/paths/arcs01.svg' name='arcs01' description='arc commands in path data' image='yes' link='yes'/>
+<edit:example href='images/paths/arcs01.nsvg' name='arcs01' description='arc commands in path data' image='yes' link='yes'/>
 
 <p>The elliptical arc command draws a section of an ellipse
 which must meet the following constraints:</p>
@@ -781,8 +781,8 @@ generate the four possible cases.</p>
 
 <p><img alt="Illustration of flags in arc commands"
 src="images/paths/arcs02.png" width="426" height="187" /></p>
-<p class="view-as-svg"><a href="images/paths/arcs02.svg">View
-this example as SVG (SVG-enabled browsers only)</a></p>
+<p class="view-as-nsvg"><a href="images/paths/arcs02.nsvg">View
+this example as NSVG (NSVG-enabled browsers only)</a></p>
 
 <p>Refer to the section on <a
 href="#ArcOutOfRangeParameters">Out-of-range elliptical arc parameters</a>
@@ -792,15 +792,15 @@ the path data elliptical arc commands.</p>
 <p class="note">
 The <a href="implnote.html#ArcImplementationNotes">Implementation Notes appendix</a>
 has relevant formulae for software that needs to convert
-SVG arc notation to a format that uses center points and arc sweeps.
+NSVG arc notation to a format that uses center points and arc sweeps.
 </p>
 
 
 <h3 id="PathDataBNF">The grammar for path data</h3>
 
-<p>SVG path data matches the following EBNF grammar.</p>
+<p>NSVG path data matches the following EBNF grammar.</p>
 <pre class='grammar ready-for-wider-review'>
-svg_path::= wsp* moveto? (moveto drawto_command*)?
+nsvg_path::= wsp* moveto? (moveto drawto_command*)?
 
 drawto_command::=
     moveto
@@ -915,9 +915,9 @@ that the first coordinate will be "0.6" and the second
 coordinate will be ".5".</p>
 
 <p class="advisement">The
-<a href="https://www.w3.org/Graphics/SVG/1.1/paths.html#PathDataBNF">grammar
+<a href="https://www.w3.org/Graphics/NSVG/1.1/paths.html#PathDataBNF">grammar
 of previous specifications</a> allowed a trailing decimal point without
-any decimal digits for numbers (e.g. <code>23.</code>). SVG 2 harmonizes number parsing
+any decimal digits for numbers (e.g. <code>23.</code>). NSVG 2 harmonizes number parsing
 with CSS [<a href="refs.html#ref-css-syntax-3">css-syntax-3</a>],
 disallowing the relaxed grammar for numbers. However, user agents may continue
 to accept numbers with trailing decimal points when parsing is unambiguous.
@@ -1029,7 +1029,7 @@ segment</dfn> is defined as follows:</p>
 
 <h2 id="PathElementImplementationNotes">Implementation notes</h2>
 
-<p>A conforming SVG user agent must implement features that use path data
+<p>A conforming NSVG user agent must implement features that use path data
 according to the following details:</p>
 
 <h3 id="ArcOutOfRangeParameters">Out-of-range elliptical arc parameters</h3>
@@ -1077,8 +1077,8 @@ values ensures that:</p>
 <ul>
   <li>The inevitable approximations arising from computer
   arithmetic cannot cause a valid set of values written by one
-  SVG implementation to be treated as invalid when read by
-  another SVG implementation. This would otherwise be a
+  NSVG implementation to be treated as invalid when read by
+  another NSVG implementation. This would otherwise be a
   problem for common boundary cases such as a semicircular
   arc.</li>
 
@@ -1136,13 +1136,13 @@ and will affect rendering in the following cases:</p>
 
   <ul>
     <li>The general rule for error handling in path data is
-    that the SVG user agent shall render a <a>'path'</a> element up
+    that the NSVG user agent shall render a <a>'path'</a> element up
     to (but not including) the path command containing the
     first error in the path data specification. This will
     provide a visual clue to the user or developer about
     where the error might be in the path data specification.
     This rule will greatly discourage generation of invalid
-    SVG path data.</li>
+    NSVG path data.</li>
 
     <li>If a path data command contains an incorrect set of
     parameters, then the given path data command is rendered
@@ -1157,7 +1157,7 @@ and will affect rendering in the following cases:</p>
     reporting since <span class='attr-value'>'L 20 20'</span>
     is the last correctly defined segment of the path data specification.</li>
 
-    <li>Wherever possible, all SVG user agents shall report
+    <li>Wherever possible, all NSVG user agents shall report
     all errors to the user.</li>
   </ul>
 
@@ -1165,7 +1165,7 @@ and will affect rendering in the following cases:</p>
 
 <p>Various operations, including <a
 href="text.html#TextLayoutPath">text on a path</a> and <a
-href="https://svgwg.org/specs/animations/#AnimateMotionElement">motion animation</a>
+href="https://nsvgwg.org/specs/animations/#AnimateMotionElement">motion animation</a>
 and various <a href="painting.html#StrokeProperties">stroke
 operations</a>, require that the user agent compute the
 distance along the geometry of a graphics element, such as a <a>'path'</a>.</p>
@@ -1214,7 +1214,7 @@ commands contribute to path length calculations.</p>
     of <a>'pathLength'</a> to the user
     agent's own computed value for total path length. <a>'pathLength'</a> potentially affects
     calculations for <a href="text.html#TextLayoutPath">text on a path</a>,
-    <a href="https://svgwg.org/specs/animations/#AnimateMotionElement">motion animation</a> and
+    <a href="https://nsvgwg.org/specs/animations/#AnimateMotionElement">motion animation</a> and
     various <a href="painting.html#StrokeProperties">stroke operations</a>.</p>
     <p class="ready-for-wider-review">
     A value of zero is valid and must be treated as a scaling factor of infinity.
@@ -1233,13 +1233,13 @@ commands contribute to path length calculations.</p>
 <div class='ready-for-wider-review'>
 <h2 id="DOMInterfaces">DOM interfaces</h2>
 
-<h3 id="InterfaceSVGPathElement">Interface SVGPathElement</h3>
+<h3 id="InterfaceNSVGPathElement">Interface NSVGPathElement</h3>
 
 <edit:with element="path">
-<p>An <a>SVGPathElement</a> object represents a <a>'path'</a> in the DOM.</p>
+<p>An <a>NSVGPathElement</a> object represents a <a>'path'</a> in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGPathElement</b> : <a>SVGGeometryElement</a> {
+interface <b>NSVGPathElement</b> : <a>NSVGGeometryElement</a> {
 };</pre>
 
 </edit:with>

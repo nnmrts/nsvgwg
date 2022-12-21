@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
   <title>Coordinate Systems, Transformations and Units</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,7 +9,7 @@
   <!-- Style sheets for local dev. Will be standardized in processing.
   Add attribute data-keep="" to any extra stylesheet link you do not want removed
   (or use <style>), and include it before here. -->
-  <link rel="stylesheet" href="style/svg.css" type="text/css" />
+  <link rel="stylesheet" href="style/nsvg.css" type="text/css" />
   <link rel="stylesheet" href="style/W3C-ED.css" type="text/css" />
 </head>
 <body>
@@ -19,27 +19,27 @@
 <h2 id="Introduction">Introduction</h2>
 <div class="ready-for-wider-review">
 
-<p>All SVG content is drawn inside
-<dfn id="TermSVGViewport" data-dfn-type="dfn" data-export="">SVG viewports</dfn>.
-Every SVG viewport defines a drawing region characterized by a size
+<p>All NSVG content is drawn inside
+<dfn id="TermNSVGViewport" data-dfn-type="dfn" data-export="">NSVG viewports</dfn>.
+Every NSVG viewport defines a drawing region characterized by a size
 (width, height), and an origin, measured in abstract
 <dfn id="TermUserUnits" data-dfn-type="dfn" data-export="">user units</dfn>.</p>
 
-<p class="note">Note that the term SVG viewport is distinct from the
+<p class="note">Note that the term NSVG viewport is distinct from the
 <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/visuren.html#viewport">"viewport"</a>
 term used in CSS.</p>
 
 <p>The <dfn id="TermInitialViewport" data-dfn-type="dfn" data-export="">initial viewport</dfn> is a top-level
-SVG viewport that establishes a mapping between the coordinate system used
+NSVG viewport that establishes a mapping between the coordinate system used
 by the containing environment (for example, CSS pixels in web browsers)
 and <a>user units</a>. Establishing an initial viewport is described in more
 detail in <a href="#ViewportSpace">The initial viewport</a>.</p>
 
-<p>SVG viewports are only established by elements. See
-<a href="#EstablishingANewSVGViewport">Establishing a new SVG viewport</a> for information
+<p>NSVG viewports are only established by elements. See
+<a href="#EstablishingANewNSVGViewport">Establishing a new NSVG viewport</a> for information
 on which elements generate viewports.</p>
 
-<p>Each SVG viewport generates a
+<p>Each NSVG viewport generates a
 <dfn id="TermViewportCoordinateSystem" data-dfn-type="dfn" data-export="">viewport coordinate system</dfn>
 and a <dfn id="TermUserCoordinateSystem" data-dfn-type="dfn" data-export="">user coordinate system</dfn>, initially identical.
 Providing a <a>'viewBox'</a> on a viewport's element transforms the user coordinate system
@@ -48,40 +48,40 @@ The <a>'viewBox'</a> attribute. Child elements of a viewport can
 further modify the <a>user coordinate system</a>, for example by specifying
 the <a>'transform'</a> property.</p>
 
-<p>SVG viewports can be nested. Percentage units are resolved with reference
+<p>NSVG viewports can be nested. Percentage units are resolved with reference
 to the user coordinate system of the nearest ancestral viewport-defining element,
 as defined in <a href="#Units">the section on Units</a>.
 Hence, nesting
-SVG viewports provides an opportunity to redefine the meaning of percentage
+NSVG viewports provides an opportunity to redefine the meaning of percentage
 units and provide a new reference rectangle for "fitting" a graphic relative
 to a particular rectangular area. The
-<dfn id="TermFurthestAncestorSVGViewport" data-dfn-type="dfn" data-export="">
-furthest ancestral SVG viewport</dfn> is the top most root SVG viewport with
-out leaving the <a>SVG context</a>. An ancestor SVG viewport might not be
+<dfn id="TermFurthestAncestorNSVGViewport" data-dfn-type="dfn" data-export="">
+furthest ancestral NSVG viewport</dfn> is the top most root NSVG viewport with
+out leaving the <a>NSVG context</a>. An ancestor NSVG viewport might not be
 independent of the DOM tree order. E.g. for <a>'linearGradient'</a>,
 <a>'radialGradient'</a>, <a>'pattern'</a>, <a>'mask element'</a>, <a>'clipPath'</a>
 <a>'symbol'</a> or <a>'use'</a> elements.</p>
 
-<p>An <dfn id="TermSVGContext" data-dfn-type="dfn" data-export="">SVG
+<p>An <dfn id="TermNSVGContext" data-dfn-type="dfn" data-export="">NSVG
 context</dfn> is a document fragment where all elements within the fragment
-have the <a>SVGElement</a> as prototype.</p>
+have the <a>NSVGElement</a> as prototype.</p>
 
-<p>The width, height and origin of SVG viewports is established by a negotiation
-process between the SVG document fragment generating the SVG viewport, and the
+<p>The width, height and origin of NSVG viewports is established by a negotiation
+process between the NSVG document fragment generating the NSVG viewport, and the
 parent of that fragment (whether real or implicit). See
-<a href="#EstablishingANewSVGViewport">Establishing a new SVG viewport</a> for a
+<a href="#EstablishingANewNSVGViewport">Establishing a new NSVG viewport</a> for a
 description of this negotiation process.</p>
 
-<p>By default, a nested SVG viewport's <a>viewport coordinate system</a> is equivalent to the local
-coordinate system of the parent element, translated by the origin of the SVG viewport's
-element. However, a <a>'transform'</a> property on an SVG viewport's element will modify
+<p>By default, a nested NSVG viewport's <a>viewport coordinate system</a> is equivalent to the local
+coordinate system of the parent element, translated by the origin of the NSVG viewport's
+element. However, a <a>'transform'</a> property on an NSVG viewport's element will modify
 the <a>viewport coordinate system</a> relative to the parent element's user coordinate system.</p>
 
-<p>Abstractly, all SVG viewports are embedded in the
+<p>Abstractly, all NSVG viewports are embedded in the
 <dfn id="TermCanvas" data-dfn-type="dfn" data-export="">canvas</dfn>,
 a drawing region that is infinitely large in all relevant dimensions.</p>
 
-<h2 id="ComputingAViewportsTransform">Computing the equivalent transform of an SVG viewport</h2>
+<h2 id="ComputingAViewportsTransform">Computing the equivalent transform of an NSVG viewport</h2>
 
 <p>This process converts the min-x, min-y, width and height values of a viewBox attribute,
 the position and size of the element on which the viewBox attribute is defined,
@@ -123,13 +123,13 @@ translate(<var>translate-x</var>, <var>translate-y</var>) scale(<var>scale-x</va
 <h2 id="ViewportSpace">The initial viewport</h2>
 
 <p>The initial viewport's width, must be the value of the <a>'width'</a>
-presentation attribute on the <a>outermost svg element</a>, unless the
+presentation attribute on the <a>outermost nsvg element</a>, unless the
 following conditions are met:</p>
 
 <ul>
-  <li>the SVG content is a separately stored resource that is
+  <li>the NSVG content is a separately stored resource that is
   embedded by reference (such as the <span
-  class="element-name">'object'</span> element in HTML), or the SVG
+  class="element-name">'object'</span> element in HTML), or the NSVG
   content is embedded inline within a containing document;</li>
 
   <li>and the referencing element or containing document is
@@ -139,7 +139,7 @@ following conditions are met:</p>
   ([<a href="refs.html#ref-css2">CSS2</a>], section 9.3)
    specified on the referencing element (e.g.,
   the <span class="element-name">'object'</span> element) or on
-  the containing document's <a>outermost svg element</a> that are sufficient
+  the containing document's <a>outermost nsvg element</a> that are sufficient
   to establish the width of the viewport.</li>
 </ul>
 
@@ -149,24 +149,24 @@ positioning properties.</p>
 <p>Similarly, if there are
 <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/visuren.html#positioning-scheme">positioning properties</a>
 specified on the referencing element or on the
-<a>outermost svg element</a> that are
+<a>outermost nsvg element</a> that are
 sufficient to establish the height of the viewport, then these
 positioning properties must establish the viewport's height;
 otherwise, the initial viewport's height must be the value of the <a>'height'</a>
-presentation attribute on the <a>outermost svg element</a>.</p>
+presentation attribute on the <a>outermost nsvg element</a>.</p>
 
 <p>If the <a>'width'</a> or <a>'height'</a>
-presentation attributes on the <a>outermost svg element</a>
+presentation attributes on the <a>outermost nsvg element</a>
 are in <a>user units</a> (i.e., no unit
 identifier has been provided), then the value is assumed to be
 equivalent to the same number of "px" units (see <a
 href="coords.html#Units">Units</a>).</p>
 
 <div class="example">
-<p>In the following example, an SVG graphic is embedded inline
+<p>In the following example, an NSVG graphic is embedded inline
 within a parent XML document which is formatted using CSS
 layout rules. Since CSS positioning properties are not provided
-on the <a>outermost svg element</a>,
+on the <a>outermost nsvg element</a>,
 the <span class="attr-value">width="100px"</span> and
 <span class="attr-value">height="200px"</span> attributes
 determine the size of the initial viewport:</p>
@@ -175,12 +175,12 @@ determine the size of the initial viewport:</p>
 &lt;?xml version="1.0" standalone="yes"?&gt;
 &lt;parent xmlns="http://some.url"&gt;
 
-   &lt;!-- SVG graphic --&gt;
-   &lt;svg xmlns='http://www.w3.org/2000/svg'
+   &lt;!-- NSVG graphic --&gt;
+   &lt;nsvg xmlns='http://www.w3.org/2000/nsvg'
       width="100px" height="200px"&gt;
       &lt;path d="M100,100 Q200,400,300,100"/&gt;
-      &lt;!-- rest of SVG graphic would go here --&gt;
-   &lt;/svg&gt;
+      &lt;!-- rest of NSVG graphic would go here --&gt;
+   &lt;/nsvg&gt;
 
 &lt;/parent&gt;
 </pre>
@@ -188,17 +188,17 @@ determine the size of the initial viewport:</p>
 
 <h2 id="InitialCoordinateSystem">The initial coordinate system</h2>
 
-<p>For the <a>outermost svg element</a>, the SVG user
+<p>For the <a>outermost nsvg element</a>, the NSVG user
 agent must determine an initial <a>viewport coordinate system</a> and an
 initial <a>user coordinate system</a> such that the
 two coordinates systems are identical. The origin of both
-coordinate systems must be at the origin of the SVG viewport, and one
+coordinate systems must be at the origin of the NSVG viewport, and one
 unit in the initial coordinate system must equal one
 <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/syndata.html#length-units">CSS 2.1 px</a>
 ([<a href="refs.html#ref-css2">CSS2</a>], section 4.3.2)
-in the SVG viewport.
+in the NSVG viewport.
 
-In stand-alone SVG documents and in SVG document fragments embedded
+In stand-alone NSVG documents and in NSVG document fragments embedded
 (by reference or inline) within parent documents where the parent's
 layout is determined by CSS [<a href="refs.html#ref-css2">CSS2</a>],
 the initial viewport
@@ -212,9 +212,9 @@ scripts have the top edge of the corresponding glyphs oriented
 upwards and the right edge of the corresponding glyphs oriented
 to the right.</p>
 
-<p>If the SVG implementation is part of a user agent which
+<p>If the NSVG implementation is part of a user agent which
 supports styling documents using CSS 2.1 compatible
-<em>px</em> units, then the SVG user agent should set its
+<em>px</em> units, then the NSVG user agent should set its
 initial value for the size of a <em>px</em> unit in real world
 units to match the value used for other styling operations;
 otherwise, if the user agent can determine the size of a
@@ -231,7 +231,7 @@ pointing down. The initial user coordinate system has one user
 unit equal to the parent (implicit or explicit) user agent's
 "pixel".</p>
 
-<edit:example href='images/coords/InitialCoords.svg' name='InitialCoords' description="SVG's initial coordinate system" image='yes' link='yes'/>
+<edit:example href='images/coords/InitialCoords.nsvg' name='InitialCoords' description="NSVG's initial coordinate system" image='yes' link='yes'/>
 
 <div class="ready-for-wider-review">
 
@@ -253,7 +253,7 @@ as defined in [<a href="refs.html#ref-css-transforms-1">css-transforms-1</a>].</
         <th>Animatable</th>
       </tr>
       <tr>
-        <td><dfn id="TermViewBox" data-dfn-type="element-attr" data-dfn-for="svg" data-export="">viewBox</dfn></td>
+        <td><dfn id="TermViewBox" data-dfn-type="element-attr" data-dfn-for="nsvg" data-export="">viewBox</dfn></td>
         <td>[<span class="attr-value">&lt;min-x&gt;</span>,?
             <span class="attr-value">&lt;min-y&gt;</span>,?
             <span class="attr-value">&lt;width&gt;</span>,?
@@ -268,13 +268,13 @@ as defined in [<a href="refs.html#ref-css-transforms-1">css-transforms-1</a>].</
   </dd>
 </dl>
 
-<p class="annotation">Transform on the <a>'svg'</a> element is a bit special due to the <a>'viewBox'</a> attribute. The transform should be applied as if the <a>'svg'</a> had a parent element with that transform set.
-<br/><br/><a href="http://www.w3.org/2015/01/08-svg-minutes.html">RESOLUTION: transform property applies conceptually to the outside of the 'svg' element and there is no difference between
+<p class="annotation">Transform on the <a>'nsvg'</a> element is a bit special due to the <a>'viewBox'</a> attribute. The transform should be applied as if the <a>'nsvg'</a> had a parent element with that transform set.
+<br/><br/><a href="http://www.w3.org/2015/01/08-nsvg-minutes.html">RESOLUTION: transform property applies conceptually to the outside of the 'nsvg' element and there is no difference between
 presentation attribute and style property</a> (in terms of the visual result).</p>
 
 <p class="note">The <a>'viewBox'</a> attribute, in conjunction with the
 <a>'preserveAspectRatio'</a> attribute, provides the capability to
-stretch an SVG viewport to fit a particular container element.</p>
+stretch an NSVG viewport to fit a particular container element.</p>
 
 <p>The value of the <a>'viewBox'</a> attribute is a list of four
 numbers <span class="attr-value">&lt;min-x&gt;</span>, <span
@@ -282,12 +282,12 @@ class="attr-value">&lt;min-y&gt;</span>, <span
 class="attr-value">&lt;width&gt;</span> and <span
 class="attr-value">&lt;height&gt;</span>, separated by
 whitespace and/or a comma, that specify a rectangle in user
-space that should be mapped to the bounds of the SVG viewport
+space that should be mapped to the bounds of the NSVG viewport
 established by the given element, taking into account the
 <a>'preserveAspectRatio'</a> attribute.
 The presence of the <a>'viewBox'</a> attribute results in a transformation
 being applied to the viewport coordinate system as described in
-<a href="#ComputingAViewportsTransform">Computing the equivalent transform of an SVG viewport</a>.
+<a href="#ComputingAViewportsTransform">Computing the equivalent transform of an NSVG viewport</a>.
 </p>
 
 <p>A negative value for <span class="attr-value">&lt;width&gt;</span> or
@@ -298,32 +298,32 @@ element.</p>
 <div class="example">
 <p id="ExampleViewBox"><span class="example-ref">Example ViewBox</span> illustrates
 the use of the <a>'viewBox'</a> attribute
-on the <a>outermost svg element</a> to specify that
-the SVG content should stretch to fit bounds of the
-SVG viewport.</p>
+on the <a>outermost nsvg element</a> to specify that
+the NSVG content should stretch to fit bounds of the
+NSVG viewport.</p>
 
 <pre>
 &lt;?xml version="1.0" standalone="no"?&gt;
-&lt;svg width="300px" height="200px"
+&lt;nsvg width="300px" height="200px"
      viewBox="0 0 1500 1000" preserveAspectRatio="none"
-     xmlns="http://www.w3.org/2000/svg"&gt;
+     xmlns="http://www.w3.org/2000/nsvg"&gt;
   &lt;desc&gt;Example ViewBox - uses the viewBox
    attribute to automatically create an initial user coordinate
    system which causes the graphic to scale to fit into the
-   SVG viewport no matter what size the SVG viewport is.&lt;/desc&gt;
+   NSVG viewport no matter what size the NSVG viewport is.&lt;/desc&gt;
   &lt;!-- This rectangle goes from (0,0) to (1500,1000) in user coordinate system.
        Because of the viewBox attribute above,
        the rectangle will end up filling the entire area
-       reserved for the SVG content. --&gt;
+       reserved for the NSVG content. --&gt;
   &lt;rect x="0" y="0" width="1500" height="1000"
         fill="yellow" stroke="blue" stroke-width="12"  /&gt;
   &lt;!-- A large, red triangle --&gt;
   &lt;path fill="red"  d="M 750,100 L 250,900 L 1250,900 z"/&gt;
-  &lt;!-- A text string that spans most of the SVG viewport --&gt;
+  &lt;!-- A text string that spans most of the NSVG viewport --&gt;
   &lt;text x="100" y="600" font-size="200" font-family="Verdana" &gt;
     Stretch to fit
   &lt;/text&gt;
-&lt;/svg&gt;
+&lt;/nsvg&gt;
 </pre>
 
 <table >
@@ -332,12 +332,12 @@ SVG viewport.</p>
   </caption>
   <tr>
     <th>Rendered into<br />
-     SVG viewport with<br />
+     NSVG viewport with<br />
      width=300px,<br />
      height=200px</th>
     <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
     <th>Rendered into<br />
-     SVG viewport with<br />
+     NSVG viewport with<br />
      width=150px,<br />
      height=200px</th>
   </tr>
@@ -352,46 +352,46 @@ SVG viewport.</p>
   </tr>
 </table>
 
-<p class="view-as-svg"><a href="images/coords/ViewBox.svg">View
-this example as SVG (SVG-enabled browsers only)</a><br />
+<p class="view-as-nsvg"><a href="images/coords/ViewBox.nsvg">View
+this example as NSVG (NSVG-enabled browsers only)</a><br />
  &nbsp;</p>
 
 <p>The effect of the <a>'viewBox'</a>
 attribute is that the user agent automatically supplies the
 appropriate transformation matrix to map the specified
 rectangle in user coordinate system to the bounds of a designated region
-(often, the SVG viewport). To achieve the effect of the example on
-the left, with SVG viewport dimensions of 300 by 200 pixels, the
+(often, the NSVG viewport). To achieve the effect of the example on
+the left, with NSVG viewport dimensions of 300 by 200 pixels, the
 user agent needs to automatically insert a transformation which
 scales both X and Y by 0.2. The effect is equivalent to having
-an SVG viewport of size 300px by 200px and the following
+an NSVG viewport of size 300px by 200px and the following
 supplemental transformation in the document, as follows:</p>
 
 <pre>
 &lt;?xml version="1.0" standalone="no"?&gt;
-&lt;svg width="300px" height="200px"
-     xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;nsvg width="300px" height="200px"
+     xmlns="http://www.w3.org/2000/nsvg"&gt;
   <strong>&lt;g transform="scale(0.2)"&gt;</strong>
     &lt;!-- Rest of document goes here --&gt;
   <strong>&lt;/g&gt;</strong>
-&lt;/svg&gt;
+&lt;/nsvg&gt;
 </pre>
 
 <p>To achieve the effect of the example on the right, with
-SVG viewport dimensions of 150 by 200 pixels, the user agent needs
+NSVG viewport dimensions of 150 by 200 pixels, the user agent needs
 to automatically insert a transformation which scales X by 0.1
-and Y by 0.2. The effect is equivalent to having an SVG viewport of
+and Y by 0.2. The effect is equivalent to having an NSVG viewport of
 size 150px by 200px and the following supplemental
 transformation in the document, as follows:</p>
 
 <pre>
 &lt;?xml version="1.0" standalone="no"?&gt;
-&lt;svg width="150px" height="200px"
-     xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;nsvg width="150px" height="200px"
+     xmlns="http://www.w3.org/2000/nsvg"&gt;
   <strong>&lt;g transform="scale(0.1 0.2)"&gt;</strong>
     &lt;!-- Rest of document goes here --&gt;
   <strong>&lt;/g&gt;</strong>
-&lt;/svg&gt;
+&lt;/nsvg&gt;
 </pre>
 </div>
 
@@ -399,7 +399,7 @@ transformation in the document, as follows:</p>
 <p>Note that in some cases the user agent will need to supply a
 <strong>translate</strong> transformation in addition to a
 <strong>scale</strong> transformation. For example, on an
-<a>outermost svg element</a>, a
+<a>outermost nsvg element</a>, a
 <strong>translate</strong> transformation will be needed if the
 <a>'viewBox'</a> attributes specifies
 values other than zero for <span
@@ -427,7 +427,7 @@ the <a>'marker element'</a> element, the
 <a>'marker/markerWidth'</a> and <a>'marker/markerHeight'</a> attributes) on the
 element with the <a>'viewBox'</a>
 attribute. Thus, in the example above which shows an
-<a>'svg'</a> element which has
+<a>'nsvg'</a> element which has
 <a>'width'</a> and <a>'height'</a> presentation attributes
 and a <a>'viewBox'</a> attribute,
 the <a>'width'</a> and <a>'height'</a>
@@ -450,7 +450,7 @@ attribute</h2>
         <th>Animatable</th>
       </tr>
       <tr>
-        <td><dfn id="TermPreserveAspectRatio" data-dfn-type="element-attr" data-dfn-for="svg" data-export="">preserveAspectRatio</dfn></td>
+        <td><dfn id="TermPreserveAspectRatio" data-dfn-type="element-attr" data-dfn-for="nsvg" data-export="">preserveAspectRatio</dfn></td>
         <td><span class="attr-value">&lt;align&gt;</span> <span class="attr-value">&lt;meetOrSlice&gt;</span>?</td>
         <td>xMidYMid meet</td>
         <td>yes</td>
@@ -465,9 +465,9 @@ attribute</h2>
     | xMinYMax | xMidYMax | xMaxYMax</pre>
     <pre>&lt;meetOrSlice&gt; = meet | slice</pre>
     <p>Indicates whether or not to force uniform scaling. Applies to all
-    elements that establish a new SVG viewport (see <a
+    elements that establish a new NSVG viewport (see <a
     href="coords.html#ElementsThatEstablishViewports">elements that
-    establish SVG viewports</a>), plus the
+    establish NSVG viewports</a>), plus the
     <a>'image'</a>,
     <a>'marker element'</a>,
     <a>'pattern'</a> and
@@ -478,13 +478,13 @@ attribute</h2>
 <p>In some cases, typically when using the
 <a>'viewBox'</a> attribute, it is desirable that the graphics stretch to
 fit non-uniformly to take up the
-entire SVG viewport. In other cases, it is desirable that uniform
+entire NSVG viewport. In other cases, it is desirable that uniform
 scaling be used for the purposes of preserving the aspect ratio
 of the graphics.</p>
 
-<p>For elements that establish a new SVG viewport (see <a
+<p>For elements that establish a new NSVG viewport (see <a
 href="coords.html#ElementsThatEstablishViewports">elements that
-establish SVG viewports</a>), plus the
+establish NSVG viewports</a>), plus the
 <a>'marker element'</a>,
 <a>'pattern'</a> and
 <a>'view'</a> elements,
@@ -504,7 +504,7 @@ current user coordinate system.</p>
 <p id="DataTypeAlign">The <span class="attr-value">&lt;align&gt;</span> parameter
 indicates whether to force uniform scaling and, if so, the
 alignment method to use in case the aspect ratio of the <a>'viewBox'</a>
- doesn't match the aspect ratio of the SVG viewport. The <span
+ doesn't match the aspect ratio of the NSVG viewport. The <span
 class="attr-value">&lt;align&gt;</span> parameter must be one
 of the following strings:</p>
 
@@ -512,7 +512,7 @@ of the following strings:</p>
   <li><span class="attr-value">none</span> - Do not force
   uniform scaling. Scale the graphic content of the given
   element non-uniformly if necessary such that the element's
-  bounding box exactly matches the SVG viewport rectangle.<br />
+  bounding box exactly matches the NSVG viewport rectangle.<br />
    (Note: if <span class="attr-value">&lt;align&gt;</span> is
   <span class="attr-value">none</span>, then the optional <span
   class="attr-value">&lt;meetOrSlice&gt;</span> value is
@@ -522,84 +522,84 @@ of the following strings:</p>
   scaling.<br />
    Align the <span class="attr-value">&lt;min-x&gt;</span> of
   the element's <a>'viewBox'</a> with the smallest X
-  value of the SVG viewport.<br />
+  value of the NSVG viewport.<br />
    Align the <span class="attr-value">&lt;min-y&gt;</span> of
   the element's <a>'viewBox'</a> with the smallest Y
-  value of the SVG viewport.</li>
+  value of the NSVG viewport.</li>
 
   <li><span class="attr-value">xMidYMin</span> - Force uniform
   scaling.<br />
    Align the midpoint X value of the element's
-   <a>'viewBox'</a> with the midpoint X value of the SVG viewport.<br />
+   <a>'viewBox'</a> with the midpoint X value of the NSVG viewport.<br />
    Align the <span class="attr-value">&lt;min-y&gt;</span> of
   the element's <a>'viewBox'</a> with the smallest Y
-  value of the SVG viewport.</li>
+  value of the NSVG viewport.</li>
 
   <li><span class="attr-value">xMaxYMin</span> - Force uniform
   scaling.<br />
    Align the <span
   class="attr-value">&lt;min-x&gt;+&lt;width&gt;</span> of the
   element's <a>'viewBox'</a> with the maximum X value
-  of the SVG viewport.<br />
+  of the NSVG viewport.<br />
    Align the <span class="attr-value">&lt;min-y&gt;</span> of
   the element's <a>'viewBox'</a> with the smallest Y
-  value of the SVG viewport.</li>
+  value of the NSVG viewport.</li>
 
   <li><span class="attr-value">xMinYMid</span> - Force uniform
   scaling.<br />
    Align the <span class="attr-value">&lt;min-x&gt;</span> of
   the element's <a>'viewBox'</a> with the smallest X
-  value of the SVG viewport.<br />
+  value of the NSVG viewport.<br />
    Align the midpoint Y value of the element's <a>'viewBox'</a>
    with the midpoint Y
-  value of the SVG viewport.</li>
+  value of the NSVG viewport.</li>
 
   <li><span class="attr-value">xMidYMid</span> (the <a>initial value</a>) -
   Force uniform scaling.<br />
    Align the midpoint X value of the element's <a>'viewBox'</a>
-   with the midpoint X value of the SVG viewport.<br />
+   with the midpoint X value of the NSVG viewport.<br />
    Align the midpoint Y value of the element's <a>'viewBox'</a>
-   with the midpoint Y value of the SVG viewport.</li>
+   with the midpoint Y value of the NSVG viewport.</li>
 
   <li><span class="attr-value">xMaxYMid</span> - Force uniform
   scaling.<br />
    Align the <span
   class="attr-value">&lt;min-x&gt;+&lt;width&gt;</span> of the
   element's <a>'viewBox'</a>
-   with the maximum X value of the SVG viewport.<br />
+   with the maximum X value of the NSVG viewport.<br />
    Align the midpoint Y value of the element's <a>'viewBox'</a>
    with the midpoint Y
-  value of the SVG viewport.</li>
+  value of the NSVG viewport.</li>
 
   <li><span class="attr-value">xMinYMax</span> - Force uniform
   scaling.<br />
    Align the <span class="attr-value">&lt;min-x&gt;</span> of
   the element's <a>'viewBox'</a> with the smallest X
-  value of the SVG viewport.<br />
+  value of the NSVG viewport.<br />
    Align the <span
   class="attr-value">&lt;min-y&gt;+&lt;height&gt;</span> of the
   element's <a>'viewBox'</a> with the maximum Y value
-  of the SVG viewport.</li>
+  of the NSVG viewport.</li>
 
   <li><span class="attr-value">xMidYMax</span> - Force uniform
   scaling.<br />
    Align the midpoint X value of the element's <a>'viewBox'</a>
-   with the midpoint X value of the SVG viewport.<br />
+   with the midpoint X value of the NSVG viewport.<br />
    Align the <span
   class="attr-value">&lt;min-y&gt;+&lt;height&gt;</span> of the
   element's <a>'viewBox'</a> with the maximum Y value
-  of the SVG viewport.</li>
+  of the NSVG viewport.</li>
 
   <li><span class="attr-value">xMaxYMax</span> - Force uniform
   scaling.<br />
    Align the <span
   class="attr-value">&lt;min-x&gt;+&lt;width&gt;</span> of the
   element's <a>'viewBox'</a> with the maximum X value
-  of the SVG viewport.<br />
+  of the NSVG viewport.<br />
    Align the <span
   class="attr-value">&lt;min-y&gt;+&lt;height&gt;</span> of the
   element's <a>'viewBox'</a> with the maximum Y value
-  of the SVG viewport.</li>
+  of the NSVG viewport.</li>
 </ul>
 
 <p>The <span class="attr-value">&lt;meetOrSlice&gt;</span>
@@ -615,16 +615,16 @@ more spaces and then must be one of the following strings:</p>
     <ul>
       <li>aspect ratio is preserved</li>
       <li>the entire <a>'viewBox'</a> is visible within
-      the SVG viewport</li>
+      the NSVG viewport</li>
       <li>the <a>'viewBox'</a> is scaled up as much
       as possible, while still meeting the other criteria</li>
     </ul>
 
     <p>In this case, if the aspect ratio of the graphic does not
-    match the SVG viewport, some of the SVG viewport will extend beyond
+    match the NSVG viewport, some of the NSVG viewport will extend beyond
     the bounds of the <a>'viewBox'</a> (i.e., the area into
     which the <a>'viewBox'</a> will draw will be
-    smaller than the SVG viewport).</p>
+    smaller than the NSVG viewport).</p>
   </li>
 
   <li>
@@ -633,59 +633,59 @@ more spaces and then must be one of the following strings:</p>
 
     <ul>
       <li>aspect ratio is preserved</li>
-      <li>the entire SVG viewport is covered by the <a>'viewBox'</a></li>
+      <li>the entire NSVG viewport is covered by the <a>'viewBox'</a></li>
       <li>the <a>'viewBox'</a> is scaled down as
       much as possible, while still meeting the other
       criteria</li>
     </ul>
 
     <p>In this case, if the aspect ratio of the <a>'viewBox'</a> does not match the
-    SVG viewport, some of the <a>'viewBox'</a> will extend beyond the
-    bounds of the SVG viewport (i.e., the area into which the <a>'viewBox'</a> will draw is larger
-    than the SVG viewport).</p>
+    NSVG viewport, some of the <a>'viewBox'</a> will extend beyond the
+    bounds of the NSVG viewport (i.e., the area into which the <a>'viewBox'</a> will draw is larger
+    than the NSVG viewport).</p>
   </li>
 </ul>
 
 <div class="example">
 <p id="ExamplePreserveAspectRatio"><span class="example-ref">Example PreserveAspectRatio</span>
 illustrates the various options on <a>'preserveAspectRatio'</a>.
-The example creates several new SVG viewports by
-including <a>'svg'</a> sub-elements embedded
-inside the <a>outermost svg element</a> (see <a
-href="coords.html#EstablishingANewSVGViewport">Establishing a new
-SVG viewport</a>).</p>
+The example creates several new NSVG viewports by
+including <a>'nsvg'</a> sub-elements embedded
+inside the <a>outermost nsvg element</a> (see <a
+href="coords.html#EstablishingANewNSVGViewport">Establishing a new
+NSVG viewport</a>).</p>
 
-<edit:includefile href='images/coords/PreserveAspectRatio.svg' name='PreserveAspectRatio' description="demonstrate available options" image='yes' link='yes'/>
+<edit:includefile href='images/coords/PreserveAspectRatio.nsvg' name='PreserveAspectRatio' description="demonstrate available options" image='yes' link='yes'/>
 <div class="figure"><img alt="Example PreserveAspectRatio — demonstrate available options" src="images/coords/PreserveAspectRatio.png"/><p class="caption">Example PreserveAspectRatio</p></div>
 </div>
 
-<h2 id="EstablishingANewSVGViewport">Establishing a new SVG viewport</h2>
+<h2 id="EstablishingANewNSVGViewport">Establishing a new NSVG viewport</h2>
 
-<p>Including an <a>'svg'</a> element inside SVG content
-creates a new SVG viewport into which all contained
+<p>Including an <a>'nsvg'</a> element inside NSVG content
+creates a new NSVG viewport into which all contained
 graphics are drawn; this implicitly establishes both
 a new viewport coordinate system and a new user coordinate system.
 Additionally, there is a new meaning for percentage units therein,
-because a new SVG viewport has been established
+because a new NSVG viewport has been established
 (see <a href="coords.html#Units">Units</a>).</p>
 
-<p>The bounds of the new SVG viewport are defined by the <span
+<p>The bounds of the new NSVG viewport are defined by the <span
 class="attr-name">'x'</span>, <span class="attr-name">'y'</span>,
 <span class="attr-name">'width'</span> and <span
 class="attr-name">'height'</span> attributes on the element
-establishing the new SVG viewport, such as an <a>'svg'</a> element. Both the new
+establishing the new NSVG viewport, such as an <a>'nsvg'</a> element. Both the new
 viewport coordinate system and the new user coordinate system
 have their origins at (<span class="attr-name">'x'</span>, <span
 class="attr-name">'y'</span>), where <span
 class="attr-name">'x'</span> and <span class="attr-name">'y'</span>
 represent the value of the corresponding attributes on the
-element establishing the SVG viewport. The orientation of the new
+element establishing the NSVG viewport. The orientation of the new
 viewport coordinate system and the new user coordinate system
 correspond to the orientation of the current user coordinate
-system for the element establishing the SVG viewport. A single unit
+system for the element establishing the NSVG viewport. A single unit
 in the new viewport coordinate system and the new user
 coordinate system are the same size as a single unit in the
-current user coordinate system for the element establishing the SVG
+current user coordinate system for the element establishing the NSVG
 viewport.</p>
 
 <div class="example">
@@ -693,28 +693,28 @@ viewport.</p>
 
 <pre>
 &lt;?xml version="1.0" standalone="no"?&gt;
-&lt;svg width="4in" height="3in"
-     xmlns="http://www.w3.org/2000/svg"&gt;
-  &lt;desc&gt;This SVG drawing embeds another one,
-    thus establishing a new SVG viewport
+&lt;nsvg width="4in" height="3in"
+     xmlns="http://www.w3.org/2000/nsvg"&gt;
+  &lt;desc&gt;This NSVG drawing embeds another one,
+    thus establishing a new NSVG viewport
   &lt;/desc&gt;
-  &lt;!-- The following statement establishing a new SVG viewport
-       and renders SVG drawing B into that SVG viewport --&gt;
-  &lt;svg x="25%" y="25%" width="50%" height="50%"&gt;
+  &lt;!-- The following statement establishing a new NSVG viewport
+       and renders NSVG drawing B into that NSVG viewport --&gt;
+  &lt;nsvg x="25%" y="25%" width="50%" height="50%"&gt;
      &lt;!-- drawing B goes here --&gt;
-  &lt;/svg&gt;
-&lt;/svg&gt;
+  &lt;/nsvg&gt;
+&lt;/nsvg&gt;
 </pre>
 
-<p>For an extensive example of creating new SVG viewports, see <a
+<p>For an extensive example of creating new NSVG viewports, see <a
 href="coords.html#ExamplePreserveAspectRatio">Example
 PreserveAspectRatio</a>.</p>
 </div>
 
-<p id="ElementsThatEstablishViewports">The following elements establish new SVG viewports:</p>
+<p id="ElementsThatEstablishViewports">The following elements establish new NSVG viewports:</p>
 
 <ul>
-  <li>The <a>'svg'</a> element</li>
+  <li>The <a>'nsvg'</a> element</li>
 
   <li>A <a>'symbol'</a> element
     that is instanced by a <a>'use'</a> element.</li>
@@ -736,48 +736,48 @@ PreserveAspectRatio</a>.</p>
   for its child content.
   This has some effects similar to a new viewport,
   resetting the scope of layout for child content.
-  However, in order to render SVG elements that are descendents of <a>'foreignObject'</a>,
-  a new <a>'svg'</a> element must establish an SVG document fragment and SVG viewport.
+  However, in order to render NSVG elements that are descendents of <a>'foreignObject'</a>,
+  a new <a>'nsvg'</a> element must establish an NSVG document fragment and NSVG viewport.
 </p>
 <p>
   An <a>'image'</a> creates a new
   <a href="https://www.w3.org/TR/css-position-3/#vp">document viewport</a>
   for the referenced document.
-  If the referenced document is a SVG file, it will of course establish its own SVG viewport.
+  If the referenced document is a NSVG file, it will of course establish its own NSVG viewport.
 </p>
 
-<p>Whether a new SVG viewport also establishes a new additional
+<p>Whether a new NSVG viewport also establishes a new additional
 clipping path is determined by the value of the <a>'overflow'</a> property on the element
-that establishes the new SVG viewport.</p>
+that establishes the new NSVG viewport.</p>
 
 <h2 id="Units">Units</h2>
 
-<p>SVG follows the description and definition of common values and
+<p>NSVG follows the description and definition of common values and
 units from the CSS Values and Units Module
 [<a href="refs.html#ref-css-values-3">css-values</a>] for attributes,
 presentation attributes and CSS properties. Each attribute and property
 must specify the used component value type. Subsequent or extending
-specifications published by the CSS WG or SVG WG may extend basic data
+specifications published by the CSS WG or NSVG WG may extend basic data
 types or add new data types.</p>
 
 <p>For <a>&lt;percentage&gt;</a> values that are defined to be relative
-to the size of SVG viewport:</p>
+to the size of NSVG viewport:</p>
 
 <ul class='ready-for-wider-review'>
   <li>For any x-coordinate value or width value expressed as a percentage of the
-  <a>SVG viewport</a>, the value to use must be the percentage, in user
+  <a>NSVG viewport</a>, the value to use must be the percentage, in user
   units, of the width parameter of the <a>'viewBox'</a> applied to that viewport.
   If no <a>'viewBox'</a> is specified, then the value to use must be the percentage, in
-  user units, of the width of the <a>SVG viewport</a>.</li>
+  user units, of the width of the <a>NSVG viewport</a>.</li>
   <li>For any y-coordinate value or height value expressed as a percentage of the
-  <a>SVG viewport</a>, the value to use must be the percentage, in user
+  <a>NSVG viewport</a>, the value to use must be the percentage, in user
   units, of the height parameter of the <a>'viewBox'</a> applied to that viewport.
   If no <a>'viewBox'</a> is specified, then the value to use must be the percentage, in
-  user units, of the height of the <a>SVG viewport</a>.</li>
+  user units, of the height of the <a>NSVG viewport</a>.</li>
   <li id="Units_viewport_percentage">For any other length value expressed as a
-  percentage of the <a>SVG viewport</a>, the percentage must be calculated as a
+  percentage of the <a>NSVG viewport</a>, the percentage must be calculated as a
   percentage of the normalized diagonal of the <a>'viewBox'</a> applied to that viewport.
-  If no <a>'viewBox'</a> is specified, then the normalized diagonal of the <a>SVG viewport</a>
+  If no <a>'viewBox'</a> is specified, then the normalized diagonal of the <a>NSVG viewport</a>
   must be used. The normalized diagonal length must be calculated with
   <code>sqrt((<em>width</em>)**2 + (<em>height</em>)**2)/sqrt(2)</code>.</li>
 </ul>
@@ -787,7 +787,7 @@ to the size of SVG viewport:</p>
 illustrates some of the processing rules for different types of
 units.</p>
 
-<edit:includefile href='images/coords/Units.svg' name='PreserveAspectRatio' description="demonstrate available options" image='yes' link='yes'/>
+<edit:includefile href='images/coords/Units.nsvg' name='PreserveAspectRatio' description="demonstrate available options" image='yes' link='yes'/>
 <div class="figure"><img alt="Example Units — demonstrate available options" src="images/coords/Units.png"/><p class="caption">Example Units</p></div>
 
 <p>The three rectangles on the left demonstrate the use of one
@@ -811,9 +811,9 @@ rectangle. The bottom rectangle of the group illustrates what
 happens when values specified in "em" units are scaled.</p>
 
 <p>The three rectangles on the right demonstrate the use of
-percentages. Note that the width and height of the SVG viewport in
-the user coordinate system for the SVG viewport element (in this
-case, the <a>outermost svg element</a>) are 4000 and
+percentages. Note that the width and height of the NSVG viewport in
+the user coordinate system for the NSVG viewport element (in this
+case, the <a>outermost nsvg element</a>) are 4000 and
 2000, respectively, because processing the <a>'viewBox'</a> attribute results in a
 transformed user coordinate system. The topmost rectangle,
 which is specified in percentage units, is exactly the same
@@ -870,7 +870,7 @@ than the curve edge, from the non-enclosing side of the curve edge, must be
 excluded from the bounding box.</p>
 
 <div class="figure">
-  <img src="images/coords/bbox01.svg"
+  <img src="images/coords/bbox01.nsvg"
        alt="Image showing the object bounding box of a quadratic Bézier curve." />
   <p class="caption">The path <span class='attr-value'>'M20,50 L35,100 H120 V50 Q70,10 20,50'</span>
   is shown in light blue.  On the left, a correct object bounding box of the path is
@@ -883,7 +883,7 @@ excluded from the bounding box.</p>
 <span class='prop-value'>'display: none'</span>, within a <a>'defs'</a>
 element, not usually rendered like a <a>'symbol'</a> element or not
 currently present in the document tree – it still has a bounding box.
-A call to <a href="types.html#__svg__SVGGraphicsElement__getBBox">getBBox</a>
+A call to <a href="types.html#__nsvg__NSVGGraphicsElement__getBBox">getBBox</a>
 on the element will return the same rectangle as if the element were
 rendered.  However, an element that is not in the <a>rendering tree</a>
 does not contribute to the bounding box of any ancestor element.</p>
@@ -892,7 +892,7 @@ does not contribute to the bounding box of any ancestor element.</p>
   <p>The following example defines a number of elements.  The expected
   <a>object bounding box</a> for each element with an ID is shown below.</p>
 
-  <edit:includefile href='images/coords/bbox-calc.svg'/>
+  <edit:includefile href='images/coords/bbox-calc.nsvg'/>
 
   <table class='vert'>
     <thead>
@@ -964,7 +964,7 @@ included in that element's geometry for the sake of the bounding box.</p>
 point (0,0) for the purposes of calculating a bounding box.</p>
 </edit:with>
 
-<p>Note that elements whose DOM object does not derive from <a>SVGGraphicsElement</a>
+<p>Note that elements whose DOM object does not derive from <a>NSVGGraphicsElement</a>
 (such as gradient elements) do not have a bounding box, and thus have no
 interface to request a bounding box.</p>
 
@@ -1015,7 +1015,7 @@ element.  The inputs to the algorithm are:</p>
             <ol>
               <li>If <var>child</var> has an ancestor element within the <a>'marker element'</a> that is
               <span class='prop-value'>'display: none'</span>, has a failing <a>conditional processing attribute</a>,
-              or is not an <a>'a'</a>, <a>'g'</a>, <a>'svg'</a> or <a>'switch'</a> element, then
+              or is not an <a>'a'</a>, <a>'g'</a>, <a>'nsvg'</a> or <a>'switch'</a> element, then
               continue to the next descendant <a>graphics element</a>.</li>
               <li>Otherwise, set <var>box</var> to be the union of <var>box</var> and the result of invoking the
               algorithm to compute a bounding box with <var>child</var> as the element,
@@ -1267,8 +1267,8 @@ ignored.</p>
 </div>
 
 <div class='ready-for-wider-review'>
-<h2 id="SizingSVGInCSS">Intrinsic sizing properties of SVG content</h2>
-<p>To enable inclusion of SVG in host documents formatted with CSS, a <a>concrete
+<h2 id="SizingNSVGInCSS">Intrinsic sizing properties of NSVG content</h2>
+<p>To enable inclusion of NSVG in host documents formatted with CSS, a <a>concrete
 object size</a> must be calculated.
 The <a>concrete object size</a> must be calculated using the
 <a>Default Sizing Algorithm</a>
@@ -1276,7 +1276,7 @@ defined in CSS Images 3 [<a href="refs.html#ref-css-images-3">css-images-3</a>],
 with the following inputs:</p>
 
 <p>The <a>specified size</a> must be determined from the used values for the
-<a>'width'</a> and <a>'height'</a> sizing properties of the <a>'svg'</a>
+<a>'width'</a> and <a>'height'</a> sizing properties of the <a>'nsvg'</a>
 element.</p>
 
 <p>The <a>intrinsic dimensions</a> must also be determined from the <a>'width'</a>
@@ -1289,33 +1289,33 @@ determine an <a>intrinsic width</a> or <a>intrinsic height</a>.</p>
 With bitmap image formats, the <a>intrinsic dimensions</a> are fixed in
 the image file, and the specified size is defined in the host document as needed
 to scale the image.
-SVG, being inherently scalable, adapts the <a>intrinsic width</a> and
+NSVG, being inherently scalable, adapts the <a>intrinsic width</a> and
 <a>intrinsic height</a> to be the width and height of the <a>specified size</a>.
 Therefore, when specified as a length, the <a>'width'</a> and
-<a>'height'</a> sizing properties of the <a>'svg'</a> element control the
-<a>intrinsic dimensions</a> of the SVG image and the <a>specified size</a> that
-is used when placing the SVG image in a host document.</p>
+<a>'height'</a> sizing properties of the <a>'nsvg'</a> element control the
+<a>intrinsic dimensions</a> of the NSVG image and the <a>specified size</a> that
+is used when placing the NSVG image in a host document.</p>
 
 <p> The <a>intrinsic aspect ratio</a> must be calculated using the following
 algorithm. If the algorithm returns null, then there is no intrinsic aspect ratio.</p>
 
 <ol class='algorithm'>
 <li>If the <a>'width'</a> and <a>'height'</a> sizing properties on the
-    <a>'svg'</a> element are both absolute values:
+    <a>'nsvg'</a> element are both absolute values:
     <ol>
         <li>return width / height</li>
     </ol>
 </li>
-<li>If an <a href="linking.html#LinksIntoSVG">SVG View</a> is active:
+<li>If an <a href="linking.html#LinksIntoNSVG">NSVG View</a> is active:
     <ol>
-        <li>let <var>viewbox</var> be the viewbox defined by the active SVG View</li>
+        <li>let <var>viewbox</var> be the viewbox defined by the active NSVG View</li>
         <li>return <var>viewbox</var>.width / <var>viewbox</var>.height</li>
     </ol>
 </li>
-<li>If the <a>'viewBox'</a> on the <a>'svg'</a> element is correctly specified:
+<li>If the <a>'viewBox'</a> on the <a>'nsvg'</a> element is correctly specified:
     <ol>
         <li>let <var>viewbox</var> be the viewbox defined by the <a>'viewBox'</a>
-            attribute on the <a>'svg'</a> element</li>
+            attribute on the <a>'nsvg'</a> element</li>
         <li>return <var>viewbox</var>.width / <var>viewbox</var>.height</li>
     </ol>
 </li>
@@ -1324,7 +1324,7 @@ algorithm. If the algorithm returns null, then there is no intrinsic aspect rati
 
 <p>The behaviour defined in this section is specific to CSS, but may be adapted
 to other host contexts. In all host contexts, the <a>intrinsic aspect ratio</a>,
-where available, must be respected when sizing the SVG viewport.</p>
+where available, must be respected when sizing the NSVG viewport.</p>
 </div>
 
 <p>Examples:</p>
@@ -1335,14 +1335,14 @@ where available, must be respected when sizing the SVG viewport.</p>
 </div>
 
 <div class="examplesource">
-<pre><![CDATA[<svg xmlns="http://www.w3.org/2000/svg"
+<pre><![CDATA[<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="10cm" height="5cm">
   ...
-</svg>]]></pre>
+</nsvg>]]></pre>
 </div>
 </div>
 
-<p>In this example the intrinsic aspect ratio of the <a>SVG viewport</a> is 2:1. The
+<p>In this example the intrinsic aspect ratio of the <a>NSVG viewport</a> is 2:1. The
 intrinsic width is 10cm and the intrinsic height is 5cm.</p>
 
 <div class="example">
@@ -1351,14 +1351,14 @@ intrinsic width is 10cm and the intrinsic height is 5cm.</p>
 </div>
 
 <div class="examplesource">
-<pre><![CDATA[<svg xmlns="http://www.w3.org/2000/svg"
+<pre><![CDATA[<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="100%" height="50%" viewBox="0 0 200 200">
   ...
-</svg>]]></pre>
+</nsvg>]]></pre>
 </div>
 </div>
 
-<p>In this example the intrinsic aspect ratio of the outermost <a>SVG viewport</a> is
+<p>In this example the intrinsic aspect ratio of the outermost <a>NSVG viewport</a> is
 1:1. An aspect ratio calculation in this case allows embedding in an
 object within a containing block that is only constrained in one direction.</p>
 
@@ -1368,10 +1368,10 @@ object within a containing block that is only constrained in one direction.</p>
 </div>
 
 <div class="examplesource">
-<pre><![CDATA[<svg xmlns="http://www.w3.org/2000/svg"
+<pre><![CDATA[<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="10cm" viewBox="0 0 200 200">
   ...
-</svg>]]></pre>
+</nsvg>]]></pre>
 </div>
 </div>
 
@@ -1383,10 +1383,10 @@ object within a containing block that is only constrained in one direction.</p>
 </div>
 
 <div class="examplesource">
-<pre><![CDATA[<svg xmlns="http://www.w3.org/2000/svg"
+<pre><![CDATA[<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="75%" height="10cm" viewBox="0 0 200 200">
   ...
-</svg>]]></pre>
+</nsvg>]]></pre>
 </div>
 </div>
 
@@ -1397,15 +1397,15 @@ object within a containing block that is only constrained in one direction.</p>
 provided by David Vest.</p>
 
 <h2 id="VectorEffects">Vector effects</h2>
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
-      <td><a href="http://www.w3.org/Graphics/SVG/WG/wiki/SVG2_Requirements_Input#Constrained_Transformations">SVG 2 will have constrained transformations based on SVG 1.2 Tiny.</a></td>
+      <th>NSVG 2 Requirement:</th>
+      <td><a href="http://www.w3.org/Graphics/NSVG/WG/wiki/NSVG2_Requirements_Input#Constrained_Transformations">NSVG 2 will have constrained transformations based on NSVG 1.2 Tiny.</a></td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2014/04/09-svg-minutes.html#item06">Add vector effects extension proposal to SVG 2 specification.</a></td>
+      <td><a href="http://www.w3.org/2014/04/09-nsvg-minutes.html#item06">Add vector effects extension proposal to NSVG 2 specification.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -1413,7 +1413,7 @@ provided by David Vest.</p>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Satoru Takagi (<a href="https://www.w3.org/Graphics/SVG/WG/track/actions/3619">ACTION-3619</a>)</td>
+      <td>Satoru Takagi (<a href="https://www.w3.org/Graphics/NSVG/WG/track/actions/3619">ACTION-3619</a>)</td>
     </tr>
   </table>
 </div>
@@ -1426,17 +1426,17 @@ user zooms into the map, or introductory notes on the graphic chart in which
 panning is possible. </p>
 
 <p>To offer such effects regarding special coordinate transformations and
-graphic drawings, SVG Tiny 1.2 introduced the <a>'vector-effect'</a> property.
-Although SVG Tiny 1.2 introduced only non-scaling stroke behavior, this version
+graphic drawings, NSVG Tiny 1.2 introduced the <a>'vector-effect'</a> property.
+Although NSVG Tiny 1.2 introduced only non-scaling stroke behavior, this version
 introduces a number of additional effects. Furthermore, since these effects
 can be specified in combination, they show more various effects. And, future
-versions of the SVG language will allow for more powerful vector effects
+versions of the NSVG language will allow for more powerful vector effects
 through this property.</p>
 
 <p class="issue" data-issue="31">
   Values of <a>'vector-effect'</a> other than
   <span class="prop-value">non-scaling-stroke</span> and <span class="prop-value">none</span>
-  are at risk of being dropped from SVG 2 due to a lack of implementations.
+  are at risk of being dropped from NSVG 2 due to a lack of implementations.
   Feedback from implementers is requested,
   regarding the practicality of implementing them as currently specified,
   during the implementation period.
@@ -1484,7 +1484,7 @@ through this property.</p>
 <dl>
   <dt class="prop-value">none</dt>
   <dd>Specifies that no vector effect shall be applied, i.e. the default rendering behaviour
-  from SVG 1.1 is used which is to first fill the geometry of a shape with a specified
+  from NSVG 1.1 is used which is to first fill the geometry of a shape with a specified
   paint, then stroke the outline with a specified paint.</dd>
   <dt class="prop-value">non-scaling-stroke</dt>
   <dd>Please refer to <a href="painting.html#non-scaling-stroke">this description</a> of vector effect on painting.</dd>
@@ -1525,9 +1525,9 @@ through this property.</p>
 characteristics simultaneously can be specified.</p>
 
 <p>The host coordinate space for <a>'vector-effect'</a> is the <a>viewport
-coordinate system</a> of the <a>furthest ancestral SVG viewport</a>.</p>
+coordinate system</a> of the <a>furthest ancestral NSVG viewport</a>.</p>
 
-<p class="note">Note: Future versions of SVG may allow ways to specify the device coordinate system.</p>
+<p class="note">Note: Future versions of NSVG may allow ways to specify the device coordinate system.</p>
 
 <h3 id="VectorEffectsCalculation">Computing the vector effects</h3>
 
@@ -2961,7 +2961,7 @@ the preceding chapter, and the following formulas.</p>
 <div class="example">
   <p>Below is an example of the <span class="prop-value">non-scaling-stroke</span> <a><span class="prop-name">'vector-effect'</span></a>.</p>
 
-  <edit:includefile href='images/painting/non-scaling-stroke.svg' link="yes" image="yes"/>
+  <edit:includefile href='images/painting/non-scaling-stroke.nsvg' link="yes" image="yes"/>
 </div>
 
 <div class="example">
@@ -2969,22 +2969,22 @@ the preceding chapter, and the following formulas.</p>
   <table>
     <tr><td>Before changing CTM</td><td>After changing CTM</td></tr>
     <tr>
-      <td><img class="bordered" src="images/painting/vectorEffects/ve-initial.svg" alt="Image showing none vector effect"/></td>
-      <td><img class="bordered" src="images/painting/vectorEffects/ve-none.svg" alt="Image showing none vector effect"/></td>
+      <td><img class="bordered" src="images/painting/vectorEffects/ve-initial.nsvg" alt="Image showing none vector effect"/></td>
+      <td><img class="bordered" src="images/painting/vectorEffects/ve-none.nsvg" alt="Image showing none vector effect"/></td>
     </tr>
   </table>
 
   <p>Source code </p>
   <pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50,-50,500,500" height="500" width="500">
+<nsvg xmlns="http://www.w3.org/2000/nsvg" viewBox="-50,-50,500,500" height="500" width="500">
 
   <rect x="-50" y="-50" width="500" height="500" stroke="orange" stroke-width="3" fill="none"/>
 
   <!-- Nested user coordinate system is transformed by this transform attribute -->
   <g transform="matrix(2.1169438081370817,0.3576047954311102,-0.3576047954311102,1.4700998667618626,0,0)
                 translate(-50,-50)">
-    <svg viewBox="-50,-50,500,500" height="500" width="500">
-      <!-- Graph paper on the this svg's base user coordinate system -->
+    <nsvg viewBox="-50,-50,500,500" height="500" width="500">
+      <!-- Graph paper on the this nsvg's base user coordinate system -->
       <g stroke="green" stroke-width="1" fill="none">
         <circle cx="0" cy="0" r="10"/>
         <circle cx="150" cy="150" r="7"/>
@@ -3014,9 +3014,9 @@ the preceding chapter, and the following formulas.</p>
             stroke="red" stroke-width="3" fill="none"
             transform="matrix(1,0,0,1,150,150)"
             d="M-50,-50 L50,-50 50,-100 150,0 50,100 50,50 -50,50 -50,-50z M5 0 L0 -5 -5 0 0 5z"/>
-    </svg>
+    </nsvg>
   </g>
-</svg>
+</nsvg>
 ]]></pre>
 </div>
 
@@ -3025,8 +3025,8 @@ the preceding chapter, and the following formulas.</p>
   <table>
     <tr><td>Before changing CTM</td><td>After changing CTM</td></tr>
     <tr>
-      <td><img class="bordered" src="images/painting/vectorEffects/ve-initial.svg" alt="Image showing appearance before the effect of the vector effect showing up"/></td>
-      <td><img class="bordered" src="images/painting/vectorEffects/ve-nonScalingSize.svg" alt="Image showing non-scaling-size vector effect"/></td>
+      <td><img class="bordered" src="images/painting/vectorEffects/ve-initial.nsvg" alt="Image showing appearance before the effect of the vector effect showing up"/></td>
+      <td><img class="bordered" src="images/painting/vectorEffects/ve-nonScalingSize.nsvg" alt="Image showing non-scaling-size vector effect"/></td>
     </tr>
   </table>
 
@@ -3042,8 +3042,8 @@ the preceding chapter, and the following formulas.</p>
   <table>
     <tr><td>Before changing CTM</td><td>After changing CTM</td></tr>
     <tr>
-      <td><img class="bordered" src="images/painting/vectorEffects/ve-initial.svg" alt="Image showing appearance before the effect of the vector effect showing up"/></td>
-      <td><img class="bordered" src="images/painting/vectorEffects/ve-nonRotation.svg" alt="Image showing non-rotation vector effect"/></td>
+      <td><img class="bordered" src="images/painting/vectorEffects/ve-initial.nsvg" alt="Image showing appearance before the effect of the vector effect showing up"/></td>
+      <td><img class="bordered" src="images/painting/vectorEffects/ve-nonRotation.nsvg" alt="Image showing non-rotation vector effect"/></td>
     </tr>
   </table>
 
@@ -3059,8 +3059,8 @@ the preceding chapter, and the following formulas.</p>
   <table>
     <tr><td>Before changing CTM</td><td>After changing CTM</td></tr>
     <tr>
-      <td><img class="bordered" src="images/painting/vectorEffects/ve-initial.svg" alt="Image showing appearance before the effect of the vector effect showing up"/></td>
-      <td><img class="bordered" src="images/painting/vectorEffects/ve-nonScalingSize-nonRotation.svg" alt="Image showing non-scaling-size non-rotation vector effect"/></td>
+      <td><img class="bordered" src="images/painting/vectorEffects/ve-initial.nsvg" alt="Image showing appearance before the effect of the vector effect showing up"/></td>
+      <td><img class="bordered" src="images/painting/vectorEffects/ve-nonScalingSize-nonRotation.nsvg" alt="Image showing non-scaling-size non-rotation vector effect"/></td>
     </tr>
   </table>
 
@@ -3076,8 +3076,8 @@ the preceding chapter, and the following formulas.</p>
   <table>
     <tr><td>Before changing CTM</td><td>After changing CTM</td></tr>
     <tr>
-      <td><img class="bordered" src="images/painting/vectorEffects/ve-initial.svg" alt="Image showing appearance before the effect of the vector effect showing up"/></td>
-      <td><img class="bordered" src="images/painting/vectorEffects/ve-fixedPosition.svg" alt="Image showing fixed-position vector effect"/></td>
+      <td><img class="bordered" src="images/painting/vectorEffects/ve-initial.nsvg" alt="Image showing appearance before the effect of the vector effect showing up"/></td>
+      <td><img class="bordered" src="images/painting/vectorEffects/ve-fixedPosition.nsvg" alt="Image showing fixed-position vector effect"/></td>
     </tr>
   </table>
 
@@ -3093,8 +3093,8 @@ the preceding chapter, and the following formulas.</p>
   <table>
     <tr><td>Before changing CTM</td><td>After changing CTM</td></tr>
     <tr>
-      <td><img class="bordered" src="images/painting/vectorEffects/ve-initial.svg" alt="Image showing appearance before the effect of the vector effect showing up"/></td>
-      <td><img class="bordered" src="images/painting/vectorEffects/ve-nonScalingSize-fixedPosition.svg" alt="Image showing non-scaling-size fixed-position vector effect"/></td>
+      <td><img class="bordered" src="images/painting/vectorEffects/ve-initial.nsvg" alt="Image showing appearance before the effect of the vector effect showing up"/></td>
+      <td><img class="bordered" src="images/painting/vectorEffects/ve-nonScalingSize-fixedPosition.nsvg" alt="Image showing non-scaling-size fixed-position vector effect"/></td>
     </tr>
   </table>
 
@@ -3110,8 +3110,8 @@ the preceding chapter, and the following formulas.</p>
   <table>
     <tr><td>Before changing CTM</td><td>After changing CTM</td></tr>
     <tr>
-      <td><img class="bordered" src="images/painting/vectorEffects/ve-initial.svg" alt="Image showing appearance before the effect of the vector effect showing up"/></td>
-      <td><img class="bordered" src="images/painting/vectorEffects/ve-nonRotation-fixedPosition.svg" alt="Image showing non-rotation fixed-position vector effect"/></td>
+      <td><img class="bordered" src="images/painting/vectorEffects/ve-initial.nsvg" alt="Image showing appearance before the effect of the vector effect showing up"/></td>
+      <td><img class="bordered" src="images/painting/vectorEffects/ve-nonRotation-fixedPosition.nsvg" alt="Image showing non-rotation fixed-position vector effect"/></td>
     </tr>
   </table>
 
@@ -3127,8 +3127,8 @@ the preceding chapter, and the following formulas.</p>
   <table>
     <tr><td>Before changing CTM</td><td>After changing CTM</td></tr>
     <tr>
-      <td><img class="bordered" src="images/painting/vectorEffects/ve-initial.svg" alt="Image showing appearance before the effect of the vector effect showing up"/></td>
-      <td><img class="bordered" src="images/painting/vectorEffects/ve-nonScalingSize-nonRotation-fixedPosition.svg" alt="Image showing non-scaling-size non-rotation fixed-position vector effect"/></td>
+      <td><img class="bordered" src="images/painting/vectorEffects/ve-initial.nsvg" alt="Image showing appearance before the effect of the vector effect showing up"/></td>
+      <td><img class="bordered" src="images/painting/vectorEffects/ve-nonScalingSize-nonRotation-fixedPosition.nsvg" alt="Image showing non-scaling-size non-rotation fixed-position vector effect"/></td>
     </tr>
   </table>
 
@@ -3142,107 +3142,107 @@ the preceding chapter, and the following formulas.</p>
 <div class='ready-for-wider-review'>
 <h2 id="DOMInterfaces">DOM interfaces</h2>
 
-<h3 id="InterfaceSVGTransform">Interface SVGTransform</h3>
+<h3 id="InterfaceNSVGTransform">Interface NSVGTransform</h3>
 
-<p>The <a>SVGTransform</a> interface is used to represent
+<p>The <a>NSVGTransform</a> interface is used to represent
 <a href='https://drafts.csswg.org/css-transforms-1/#typedef-transform-function'>&lt;transform-function&gt;</a>
 values that appear in the <a>'transform'</a> property
 and its presentation attributes <span class='attr-name'>'transform'</span>,
 <a>'linearGradient/gradientTransform'</a> and
-<a>'pattern/patternTransform'</a>.  An <a>SVGTransform</a>
+<a>'pattern/patternTransform'</a>.  An <a>NSVGTransform</a>
 represents a single component in a transform list,
 such as a single <span class="prop-value">scale(…)</span>
 or <span class="prop-value">matrix(…)</span> value.</p>
 
-<p id="ReadOnlyTransform">An <a>SVGTransform</a> object can be designated as <em>read only</em>,
+<p id="ReadOnlyTransform">An <a>NSVGTransform</a> object can be designated as <em>read only</em>,
 which means that attempts to modify the object will result in an exception
 being thrown, as described below.</p>
 
-<p id="TransformAssociatedElement">An <a>SVGTransform</a> object can be <em>associated</em>
+<p id="TransformAssociatedElement">An <a>NSVGTransform</a> object can be <em>associated</em>
 with a particular element.  The associated element is used to
 determine which element's <span class='attr-name'>'transform'</span>
 presentation attribute to update if the object <a>reflects</a>
-that attribute.  Unless otherwise described, an <a>SVGTransform</a> object is
+that attribute.  Unless otherwise described, an <a>NSVGTransform</a> object is
 not associated with any element.</p>
 
 <div class='ready-for-wider-review'>
-<p id="TransformMode">Every <a>SVGTransform</a> object operates in one of
+<p id="TransformMode">Every <a>NSVGTransform</a> object operates in one of
 two modes.  It can:</p>
 
 <ol>
   <li><em>reflect an element of a presentation attribute value</em>
   (being exposed through the methods on the
-  <a href="#__svg__SVGAnimatedTransformList__baseVal">baseVal</a> member of
-  an <a>SVGAnimatedTransformList</a>),</li>
-  <li><em>be detached</em>, which is the case for <a>SVGTransform</a> objects created
-  with <a href='struct.html#__svg__SVGSVGElement__createSVGTransform'>createSVGTransform</a>
-  and <a href='struct.html#__svg__SVGSVGElement__createSVGTransformFromMatrix'>createSVGTransformFromMatrix</a>.</li>
+  <a href="#__nsvg__NSVGAnimatedTransformList__baseVal">baseVal</a> member of
+  an <a>NSVGAnimatedTransformList</a>),</li>
+  <li><em>be detached</em>, which is the case for <a>NSVGTransform</a> objects created
+  with <a href='struct.html#__nsvg__NSVGNSVGElement__createNSVGTransform'>createNSVGTransform</a>
+  and <a href='struct.html#__nsvg__NSVGNSVGElement__createNSVGTransformFromMatrix'>createNSVGTransformFromMatrix</a>.</li>
 </ol>
 </div>
 
-<p>An <a>SVGTransform</a> object maintains an internal
+<p>An <a>NSVGTransform</a> object maintains an internal
 <a href='https://drafts.csswg.org/css-transforms-1/#typedef-transform-function'>&lt;transform-function&gt;</a>
 value, which is called its <dfn id="TransformValue" data-dfn-type="dfn">value</dfn>.
 It also maintains a <a>DOMMatrix</a> object,
 which is called its <dfn id="TransformMatrixObject" data-dfn-type="dfn" data-export="">matrix object</dfn>,
-which is the object returned from the <a href="#__svg__SVGTransform__matrix">matrix</a>
-IDL attribute.  An <a>SVGTransform</a> object's
+which is the object returned from the <a href="#__nsvg__NSVGTransform__matrix">matrix</a>
+IDL attribute.  An <a>NSVGTransform</a> object's
 <a href="#TransformMatrixObject">matrix object</a>
 is always kept synchronized with its <a href="#TransformValue">value</a>.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGTransform</b> {
+interface <b>NSVGTransform</b> {
 
   // Transform Types
-  const unsigned short <a href="coords.html#__svg__SVGTransform__SVG_TRANSFORM_UNKNOWN">SVG_TRANSFORM_UNKNOWN</a> = 0;
-  const unsigned short <a href="coords.html#__svg__SVGTransform__SVG_TRANSFORM_MATRIX">SVG_TRANSFORM_MATRIX</a> = 1;
-  const unsigned short <a href="coords.html#__svg__SVGTransform__SVG_TRANSFORM_TRANSLATE">SVG_TRANSFORM_TRANSLATE</a> = 2;
-  const unsigned short <a href="coords.html#__svg__SVGTransform__SVG_TRANSFORM_SCALE">SVG_TRANSFORM_SCALE</a> = 3;
-  const unsigned short <a href="coords.html#__svg__SVGTransform__SVG_TRANSFORM_ROTATE">SVG_TRANSFORM_ROTATE</a> = 4;
-  const unsigned short <a href="coords.html#__svg__SVGTransform__SVG_TRANSFORM_SKEWX">SVG_TRANSFORM_SKEWX</a> = 5;
-  const unsigned short <a href="coords.html#__svg__SVGTransform__SVG_TRANSFORM_SKEWY">SVG_TRANSFORM_SKEWY</a> = 6;
+  const unsigned short <a href="coords.html#__nsvg__NSVGTransform__NSVG_TRANSFORM_UNKNOWN">NSVG_TRANSFORM_UNKNOWN</a> = 0;
+  const unsigned short <a href="coords.html#__nsvg__NSVGTransform__NSVG_TRANSFORM_MATRIX">NSVG_TRANSFORM_MATRIX</a> = 1;
+  const unsigned short <a href="coords.html#__nsvg__NSVGTransform__NSVG_TRANSFORM_TRANSLATE">NSVG_TRANSFORM_TRANSLATE</a> = 2;
+  const unsigned short <a href="coords.html#__nsvg__NSVGTransform__NSVG_TRANSFORM_SCALE">NSVG_TRANSFORM_SCALE</a> = 3;
+  const unsigned short <a href="coords.html#__nsvg__NSVGTransform__NSVG_TRANSFORM_ROTATE">NSVG_TRANSFORM_ROTATE</a> = 4;
+  const unsigned short <a href="coords.html#__nsvg__NSVGTransform__NSVG_TRANSFORM_SKEWX">NSVG_TRANSFORM_SKEWX</a> = 5;
+  const unsigned short <a href="coords.html#__nsvg__NSVGTransform__NSVG_TRANSFORM_SKEWY">NSVG_TRANSFORM_SKEWY</a> = 6;
 
-  readonly attribute unsigned short <a href="coords.html#__svg__SVGTransform__type">type</a>;
-  [SameObject] readonly attribute <a>DOMMatrix</a> <a href="coords.html#__svg__SVGTransform__matrix">matrix</a>;
-  readonly attribute float <a href="coords.html#__svg__SVGTransform__angle">angle</a>;
+  readonly attribute unsigned short <a href="coords.html#__nsvg__NSVGTransform__type">type</a>;
+  [SameObject] readonly attribute <a>DOMMatrix</a> <a href="coords.html#__nsvg__NSVGTransform__matrix">matrix</a>;
+  readonly attribute float <a href="coords.html#__nsvg__NSVGTransform__angle">angle</a>;
 
-  undefined <a href="coords.html#__svg__SVGTransform__setMatrix">setMatrix</a>(optional <a>DOMMatrix2DInit</a> matrix = {});
-  undefined <a href="coords.html#__svg__SVGTransform__setTranslate">setTranslate</a>(float tx, float ty);
-  undefined <a href="coords.html#__svg__SVGTransform__setScale">setScale</a>(float sx, float sy);
-  undefined <a href="coords.html#__svg__SVGTransform__setRotate">setRotate</a>(float angle, float cx, float cy);
-  undefined <a href="coords.html#__svg__SVGTransform__setSkewX">setSkewX</a>(float angle);
-  undefined <a href="coords.html#__svg__SVGTransform__setSkewY">setSkewY</a>(float angle);
+  undefined <a href="coords.html#__nsvg__NSVGTransform__setMatrix">setMatrix</a>(optional <a>DOMMatrix2DInit</a> matrix = {});
+  undefined <a href="coords.html#__nsvg__NSVGTransform__setTranslate">setTranslate</a>(float tx, float ty);
+  undefined <a href="coords.html#__nsvg__NSVGTransform__setScale">setScale</a>(float sx, float sy);
+  undefined <a href="coords.html#__nsvg__NSVGTransform__setRotate">setRotate</a>(float angle, float cx, float cy);
+  undefined <a href="coords.html#__nsvg__NSVGTransform__setSkewX">setSkewX</a>(float angle);
+  undefined <a href="coords.html#__nsvg__NSVGTransform__setSkewY">setSkewY</a>(float angle);
 };</pre>
 
-<p>The numeric transform type constants defined on <a>SVGTransform</a> are used
-to represent the type of an <a>SVGTransform</a>'s <a href='#TransformValue'>value</a>.
+<p>The numeric transform type constants defined on <a>NSVGTransform</a> are used
+to represent the type of an <a>NSVGTransform</a>'s <a href='#TransformValue'>value</a>.
 Their meanings are as follows:</p>
 
 <table class='vert'>
   <tr><th>Constant</th><th>Meaning</th></tr>
-  <tr><td><b id="__svg__SVGTransform__SVG_TRANSFORM_MATRIX">SVG_TRANSFORM_MATRIX</b></td><td>A <span class='prop-value'>matrix(…)</span> value.</td></tr>
-  <tr><td><b id="__svg__SVGTransform__SVG_TRANSFORM_TRANSLATE">SVG_TRANSFORM_TRANSLATE</b></td><td>A <span class='prop-value'>translate(…)</span> value.</td></tr>
-  <tr><td><b id="__svg__SVGTransform__SVG_TRANSFORM_SCALE">SVG_TRANSFORM_SCALE</b></td><td>A <span class='prop-value'>scale(…)</span> value.</td></tr>
-  <tr><td><b id="__svg__SVGTransform__SVG_TRANSFORM_ROTATE">SVG_TRANSFORM_ROTATE</b></td><td>A <span class='prop-value'>rotate(…)</span> value.</td></tr>
-  <tr><td><b id="__svg__SVGTransform__SVG_TRANSFORM_SKEWX">SVG_TRANSFORM_SKEWX</b></td><td>A <span class='prop-value'>skewX(…)</span> value.</td></tr>
-  <tr><td><b id="__svg__SVGTransform__SVG_TRANSFORM_SKEWY">SVG_TRANSFORM_SKEWY</b></td><td>A <span class='prop-value'>skewY(…)</span> value.</td></tr>
-  <tr><td><b id="__svg__SVGTransform__SVG_TRANSFORM_UNKNOWN">SVG_TRANSFORM_UNKNOWN</b></td><td>Some other type of value.</td></tr>
+  <tr><td><b id="__nsvg__NSVGTransform__NSVG_TRANSFORM_MATRIX">NSVG_TRANSFORM_MATRIX</b></td><td>A <span class='prop-value'>matrix(…)</span> value.</td></tr>
+  <tr><td><b id="__nsvg__NSVGTransform__NSVG_TRANSFORM_TRANSLATE">NSVG_TRANSFORM_TRANSLATE</b></td><td>A <span class='prop-value'>translate(…)</span> value.</td></tr>
+  <tr><td><b id="__nsvg__NSVGTransform__NSVG_TRANSFORM_SCALE">NSVG_TRANSFORM_SCALE</b></td><td>A <span class='prop-value'>scale(…)</span> value.</td></tr>
+  <tr><td><b id="__nsvg__NSVGTransform__NSVG_TRANSFORM_ROTATE">NSVG_TRANSFORM_ROTATE</b></td><td>A <span class='prop-value'>rotate(…)</span> value.</td></tr>
+  <tr><td><b id="__nsvg__NSVGTransform__NSVG_TRANSFORM_SKEWX">NSVG_TRANSFORM_SKEWX</b></td><td>A <span class='prop-value'>skewX(…)</span> value.</td></tr>
+  <tr><td><b id="__nsvg__NSVGTransform__NSVG_TRANSFORM_SKEWY">NSVG_TRANSFORM_SKEWY</b></td><td>A <span class='prop-value'>skewY(…)</span> value.</td></tr>
+  <tr><td><b id="__nsvg__NSVGTransform__NSVG_TRANSFORM_UNKNOWN">NSVG_TRANSFORM_UNKNOWN</b></td><td>Some other type of value.</td></tr>
 </table>
 
 <p class="note">The use of numeric transform type constants is an anti-pattern and
 new constant values will not be introduced for any transform types supported by
-<a>SVGTransform</a>.  If other types of transforms are supported and used, the <a>SVGTransform</a>
-uses the <a href="#__svg__SVGTransform__SVG_TRANSFORM_UNKNOWN">SVG_TRANSFORM_UNKNOWN</a>
-type.  See below for details on how the other properties of an <a>SVGTransform</a>
+<a>NSVGTransform</a>.  If other types of transforms are supported and used, the <a>NSVGTransform</a>
+uses the <a href="#__nsvg__NSVGTransform__NSVG_TRANSFORM_UNKNOWN">NSVG_TRANSFORM_UNKNOWN</a>
+type.  See below for details on how the other properties of an <a>NSVGTransform</a>
 operate with these types of transforms.</p>
 
-<p>The <b id="__svg__SVGTransform__type">type</b> IDL attribute represents
-the type of transform item that the <a>SVGTransform</a>'s <a href='#TransformValue'>value</a> is.
-On getting <a href='#__svg__SVGTransform__type'>type</a>, the following steps
+<p>The <b id="__nsvg__NSVGTransform__type">type</b> IDL attribute represents
+the type of transform item that the <a>NSVGTransform</a>'s <a href='#TransformValue'>value</a> is.
+On getting <a href='#__nsvg__NSVGTransform__type'>type</a>, the following steps
 are run:</p>
 
 <ol class='algorithm'>
-  <li>If the <a>SVGTransform</a>'s <a href='#TransformValue'>value</a>
+  <li>If the <a>NSVGTransform</a>'s <a href='#TransformValue'>value</a>
   is a
   <span class='prop-value'>matrix(…)</span>,
   <span class='prop-value'>translate(…)</span>,
@@ -3252,28 +3252,28 @@ are run:</p>
   <span class='prop-value'>skewY(…)</span> function,
   then return the corresponding constant
   value from the transform type table above.</li>
-  <li>Otherwise, return <a href="#__svg__SVGTransform__SVG_TRANSFORM_UNKNOWN">SVG_TRANSFORM_UNKNOWN</a>.
+  <li>Otherwise, return <a href="#__nsvg__NSVGTransform__NSVG_TRANSFORM_UNKNOWN">NSVG_TRANSFORM_UNKNOWN</a>.
     <p class='note'>For example, for a <span class='prop-value'>scaleX(…)</span>
     or <span class='prop-value'>translate3d(…)</span> transform,
-    <a href="#__svg__SVGTransform__SVG_TRANSFORM_UNKNOWN">SVG_TRANSFORM_UNKNOWN</a>
+    <a href="#__nsvg__NSVGTransform__NSVG_TRANSFORM_UNKNOWN">NSVG_TRANSFORM_UNKNOWN</a>
     would be returned.</p>
   </li>
 </ol>
 
-<p>The <b id="__svg__SVGTransform__matrix">matrix</b> IDL attribute
+<p>The <b id="__nsvg__NSVGTransform__matrix">matrix</b> IDL attribute
 represents the transform as a 4x4 homogeneous matrix, and on getting
-returns the <a>SVGTransform</a>'s <a href="#TransformMatrixObject">matrix object</a>.
+returns the <a>NSVGTransform</a>'s <a href="#TransformMatrixObject">matrix object</a>.
 When the <a href="#TransformMatrixObject">matrix object</a> is first created, its
-values are set to match the <a>SVGTransform</a>'s transform
+values are set to match the <a>NSVGTransform</a>'s transform
 function <a href="#TransformValue">value</a>, and is set to
-<a href="#MatrixMode">reflects the SVGTransform</a>.</p>
+<a href="#MatrixMode">reflects the NSVGTransform</a>.</p>
 
 <p class="note">See the
 <a href="https://drafts.csswg.org/css-transforms-1/#mathematical-description">CSS Transforms</a>
 specification for a description of how the different transform function types
 correspond to particular matrix values.</p>
 
-<p>The <b id="__svg__SVGTransform__angle">angle</b> IDL attribute
+<p>The <b id="__nsvg__NSVGTransform__angle">angle</b> IDL attribute
 represents the angle parameter of a
 <span class="prop-value">rotate(…)</span>,
 <span class="prop-value">skewX(…)</span> or
@@ -3281,7 +3281,7 @@ represents the angle parameter of a
 On getting, the following steps are run:</p>
 
 <ol class='algorithm'>
-  <li>If the <a>SVGTransform</a> object's <a href="#TransformValue">value</a>
+  <li>If the <a>NSVGTransform</a> object's <a href="#TransformValue">value</a>
   is a <span class="prop-value">rotate(…)</span>,
   <span class="prop-value">skewX(…)</span> or
   <span class="prop-value">skewY(…)</span> function,
@@ -3289,44 +3289,44 @@ On getting, the following steps are run:</p>
   <li>Otherwise, return 0.</li>
 </ol>
 
-<p>The <b id="__svg__SVGTransform__setMatrix">setMatrix</b> method is used
-to set the <a>SVGTransform</a> to a given matrix value.  When
+<p>The <b id="__nsvg__NSVGTransform__setMatrix">setMatrix</b> method is used
+to set the <a>NSVGTransform</a> to a given matrix value.  When
 setMatrix(<var>matrix</var>) is called, the following steps are run:</p>
 
 <ol class='algorithm'>
-  <li>If the <a>SVGTransform</a> object is <a href='#ReadOnlyTransform'>read only</a>, then
+  <li>If the <a>NSVGTransform</a> object is <a href='#ReadOnlyTransform'>read only</a>, then
   <a>throw</a> a <a>NoModificationAllowedError</a>.</li>
   <li>Let <var>newMatrix</var> be the result of <code><a>DOMMatrixReadOnly</a>.fromMatrix(<var>matrix</var>)</code>,
   including the <a href="https://drafts.fxtf.org/geometry/#dommatrixinit-dictionary">validate and fix-up</a> steps for missing values.
   If that method throws an error, then re-throw that error and abort these steps.</li>
   <li>If <var>newMatrix</var>.is2D() would return true,
-  then set the <a>SVGTransform</a> object's
+  then set the <a>NSVGTransform</a> object's
   <a href='#TransformValue'>value</a> to a <span class='prop-value'>matrix(…)</span>
   value that represents the same matrix as <var>newMatrix</var>.</li>
-  <li>Otherwise, set the <a>SVGTransform</a> object's
+  <li>Otherwise, set the <a>NSVGTransform</a> object's
   <a href='#TransformValue'>value</a> to a <span class='prop-value'>matrix3d(…)</span>
   value that represents the same matrix as <var>newMatrix</var>.</li>
   <li>In either case, <a href="#TransformMatrixObject">matrix object</a> gets synchronized
-  to the <a>SVGTransform</a> object's <a href='#TransformValue'>value</a>.</li>
-  <li>If the <a>SVGTransform</a> object
+  to the <a>NSVGTransform</a> object's <a href='#TransformValue'>value</a>.</li>
+  <li>If the <a>NSVGTransform</a> object
   <a href="#TransformMode">reflects a presentation attribute value of an element</a>,
   then <a>reserialize</a> the reflected attribute.</li>
 </ol>
 
 <p>The
-<b id="__svg__SVGTransform__setTranslate">setTranslate</b>,
-<b id="__svg__SVGTransform__setScale">setScale</b>,
-<b id="__svg__SVGTransform__setRotate">setRotate</b>,
-<b id="__svg__SVGTransform__setSkewX">setSkewX</b> and
-<b id="__svg__SVGTransform__setSkewY">setSkewY</b> methods are used
-to set the <a>SVGTransform</a> to a new transform function
+<b id="__nsvg__NSVGTransform__setTranslate">setTranslate</b>,
+<b id="__nsvg__NSVGTransform__setScale">setScale</b>,
+<b id="__nsvg__NSVGTransform__setRotate">setRotate</b>,
+<b id="__nsvg__NSVGTransform__setSkewX">setSkewX</b> and
+<b id="__nsvg__NSVGTransform__setSkewY">setSkewY</b> methods are used
+to set the <a>NSVGTransform</a> to a new transform function
 value.  When one of these methods is called,
 the following steps are run:</p>
 
 <ol class='algorithm'>
-  <li>If the <a>SVGTransform</a> object is <a href='#ReadOnlyTransform'>read only</a>, then
+  <li>If the <a>NSVGTransform</a> object is <a href='#ReadOnlyTransform'>read only</a>, then
   <a>throw</a> a <a>NoModificationAllowedError</a>.</li>
-  <li>Set the <a>SVGTransform</a> object's
+  <li>Set the <a>NSVGTransform</a> object's
   <a href='#TransformValue'>value</a> to a new transform function
   value, depending on which method was called:
     <dl class='switch'>
@@ -3342,10 +3342,10 @@ the following steps are run:</p>
       <dd>the new transform function value is <span class='prop-value'>skewY(<var>angle</var>)</span></dd>
     </dl>
   </li>
-  <li>Set the components of the <a>SVGTransform</a> object's
+  <li>Set the components of the <a>NSVGTransform</a> object's
   <a href="#TransformMatrixObject">matrix object</a> to
   match the new transform function <a href='#TransformValue'>value</a>.</li>
-  <li>If the <a>SVGTransform</a> object
+  <li>If the <a>NSVGTransform</a> object
   <a href="#TransformMode">reflects an element of a
   presentation attribute value</a>, then <a>reserialize</a> the
   reflected attribute.</li>
@@ -3361,12 +3361,12 @@ that take transform values.</p>
 It can:</p>
 
 <ol>
-  <li><em>reflect an <a>SVGTransform</a></em> (being exposed through the
-  <a href="#__svg__SVGTransform__matrix">matrix</a> IDL attribute on
-  an <a>SVGTransform</a>), or</li>
+  <li><em>reflect an <a>NSVGTransform</a></em> (being exposed through the
+  <a href="#__nsvg__NSVGTransform__matrix">matrix</a> IDL attribute on
+  an <a>NSVGTransform</a>), or</li>
   <li><em>be detached</em>, which is the case for <a>DOMMatrix</a> objects
   created using their constructor or with
-  <a href="struct.html#__svg__SVGSVGElement__createSVGMatrix">createSVGMatrix</a>.</li>
+  <a href="struct.html#__nsvg__NSVGNSVGElement__createNSVGMatrix">createNSVGMatrix</a>.</li>
 </ol>
 
 <p id="ReadOnlyMatrix">A <a>DOMMatrix</a> can be designated as <em>read only</em>,
@@ -3385,18 +3385,18 @@ IDL attributes, or when invoking any of its mutable transform methods,
 the following steps are run after updating the internal matrix value:</p>
 
 <ol class='algorithm'>
-  <li>If the <a>DOMMatrix</a> <a href='#MatrixMode'>reflects an SVGTransform</a>,
+  <li>If the <a>DOMMatrix</a> <a href='#MatrixMode'>reflects an NSVGTransform</a>,
   then:
     <ol>
       <li>If the <a>DOMMatrix</a> would return true from its
       <a href="https://www.w3.org/TR/2014/WD-geometry-1-20140522/#dom-dommatrixreadonly-is2d">is2d</a>
-      method, then set the <a>SVGTransform</a> object's
+      method, then set the <a>NSVGTransform</a> object's
       <a href='#TransformValue'>value</a> to a <span class='prop-value'>matrix(…)</span>
       value that represents the same matrix as the <a>DOMMatrix</a>.</li>
-      <li>Otherwise, set the <a>SVGTransform</a> object's
+      <li>Otherwise, set the <a>NSVGTransform</a> object's
       <a href='#TransformValue'>value</a> to a <span class='prop-value'>matrix3d(…)</span>
       value that represents the same matrix as the <a>DOMMatrix</a>.</li>
-      <li>If the <a>SVGTransform</a> object
+      <li>If the <a>NSVGTransform</a> object
       <a href="#TransformMode">reflects an element of a
       presentation attribute value</a>, then <a>reserialize</a> the
       reflected attribute.</li>
@@ -3404,64 +3404,64 @@ the following steps are run after updating the internal matrix value:</p>
   </li>
 </ol>
 
-<h3 id="InterfaceSVGTransformList">Interface SVGTransformList</h3>
+<h3 id="InterfaceNSVGTransformList">Interface NSVGTransformList</h3>
 
-<p>The <a>SVGTransformList</a> interface is a <a>list interface</a>
-whose elements are <a>SVGTransform</a> objects.  An <a>SVGTransformList</a>
+<p>The <a>NSVGTransformList</a> interface is a <a>list interface</a>
+whose elements are <a>NSVGTransform</a> objects.  An <a>NSVGTransformList</a>
 represents a value that the <a>'transform'</a> property can take, namely
 either a <a href="https://drafts.csswg.org/css-transforms-1/#typedef-transform-list">&lt;transform-list&gt;</a>
 or the keyword <span class='prop-value'>none</span>.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGTransformList</b> {
+interface <b>NSVGTransformList</b> {
 
-  readonly attribute unsigned long <a href="types.html#__svg__SVGNameList__length">length</a>;
-  readonly attribute unsigned long <a href="types.html#__svg__SVGNameList__numberOfItems">numberOfItems</a>;
+  readonly attribute unsigned long <a href="types.html#__nsvg__NSVGNameList__length">length</a>;
+  readonly attribute unsigned long <a href="types.html#__nsvg__NSVGNameList__numberOfItems">numberOfItems</a>;
 
-  undefined <a href="types.html#__svg__SVGNameList__clear">clear</a>();
-  <a>SVGTransform</a> <a href="types.html#__svg__SVGNameList__initialize">initialize</a>(<a>SVGTransform</a> newItem);
-  getter <a>SVGTransform</a> <a href="types.html#__svg__SVGNameList__getItem">getItem</a>(unsigned long index);
-  <a>SVGTransform</a> <a href="types.html#__svg__SVGNameList__insertItemBefore">insertItemBefore</a>(<a>SVGTransform</a> newItem, unsigned long index);
-  <a>SVGTransform</a> <a href="types.html#__svg__SVGNameList__replaceItem">replaceItem</a>(<a>SVGTransform</a> newItem, unsigned long index);
-  <a>SVGTransform</a> <a href="types.html#__svg__SVGNameList__removeItem">removeItem</a>(unsigned long index);
-  <a>SVGTransform</a> <a href="types.html#__svg__SVGNameList__appendItem">appendItem</a>(<a>SVGTransform</a> newItem);
-  <a href="types.html#__svg__SVGNameList__setter">setter</a> undefined (unsigned long index, <a>SVGTransform</a> newItem);
+  undefined <a href="types.html#__nsvg__NSVGNameList__clear">clear</a>();
+  <a>NSVGTransform</a> <a href="types.html#__nsvg__NSVGNameList__initialize">initialize</a>(<a>NSVGTransform</a> newItem);
+  getter <a>NSVGTransform</a> <a href="types.html#__nsvg__NSVGNameList__getItem">getItem</a>(unsigned long index);
+  <a>NSVGTransform</a> <a href="types.html#__nsvg__NSVGNameList__insertItemBefore">insertItemBefore</a>(<a>NSVGTransform</a> newItem, unsigned long index);
+  <a>NSVGTransform</a> <a href="types.html#__nsvg__NSVGNameList__replaceItem">replaceItem</a>(<a>NSVGTransform</a> newItem, unsigned long index);
+  <a>NSVGTransform</a> <a href="types.html#__nsvg__NSVGNameList__removeItem">removeItem</a>(unsigned long index);
+  <a>NSVGTransform</a> <a href="types.html#__nsvg__NSVGNameList__appendItem">appendItem</a>(<a>NSVGTransform</a> newItem);
+  <a href="types.html#__nsvg__NSVGNameList__setter">setter</a> undefined (unsigned long index, <a>NSVGTransform</a> newItem);
 
   <span class='comment'>// Additional methods not common to other list interfaces.</span>
-  <a>SVGTransform</a> <a href="coords.html#__svg__SVGTransformList__createSVGTransformFromMatrix">createSVGTransformFromMatrix</a>(optional <a>DOMMatrix2DInit</a> matrix = {});
-  <a>SVGTransform</a>? <a href="coords.html#__svg__SVGTransformList__consolidate">consolidate</a>();
+  <a>NSVGTransform</a> <a href="coords.html#__nsvg__NSVGTransformList__createNSVGTransformFromMatrix">createNSVGTransformFromMatrix</a>(optional <a>DOMMatrix2DInit</a> matrix = {});
+  <a>NSVGTransform</a>? <a href="coords.html#__nsvg__NSVGTransformList__consolidate">consolidate</a>();
 };</pre>
 
-<p>The <b id="__svg__SVGTransformList__createSVGTransformFromMatrix">createSVGTransformFromMatrix</b>
-method is used to create a new <a>SVGTransform</a> object from a matrix object.
-When the createSVGTransformFromMatrix(<var>matrix</var>) method is called,
+<p>The <b id="__nsvg__NSVGTransformList__createNSVGTransformFromMatrix">createNSVGTransformFromMatrix</b>
+method is used to create a new <a>NSVGTransform</a> object from a matrix object.
+When the createNSVGTransformFromMatrix(<var>matrix</var>) method is called,
 the following steps are run:</p>
 
 <ol class="algorithm">
-  <li>Let <var>transform</var> be a newly created <a>SVGTransform</a> object
+  <li>Let <var>transform</var> be a newly created <a>NSVGTransform</a> object
   that is <a href="#TransformMode">detached</a>.</li>
-  <li>Follow the steps that would be run if the <a href="#__svg__SVGTransform__setMatrix">setMatrix</a>
+  <li>Follow the steps that would be run if the <a href="#__nsvg__NSVGTransform__setMatrix">setMatrix</a>
   method on <var>transform</var> were called, passing <var>matrix</var>
   as its argument.</li>
   <li>Return <var>transform</var>.</li>
 </ol>
 
-<p>The <b id="__svg__SVGTransformList__consolidate">consolidate</b>
+<p>The <b id="__nsvg__NSVGTransformList__consolidate">consolidate</b>
 method is used to convert the transform list into an equivalent
 transformation using a single transform function.  When the
 consolidate() method is called, the following steps are run:</p>
 
 <ol class="algorithm">
-  <li>If the <a>SVGTransformList</a> object is <a href="types.html#ReadOnlyList">read only</a>,
+  <li>If the <a>NSVGTransformList</a> object is <a href="types.html#ReadOnlyList">read only</a>,
   then <a>throw</a> a <a>NoModificationAllowedError</a>.</li>
   <li>If the list is empty, return null.</li>
   <li><a>Detach</a> and then remove all elements in the list.</li>
-  <li>Let <var>transform</var> be a newly created <a>SVGTransform</a>
+  <li>Let <var>transform</var> be a newly created <a>NSVGTransform</a>
   object.</li>
   <li>Let <var>matrix</var> be the matrix value obtained by beginning
   with an identity matrix, and then post-multiplying the
   value of the <a href="#TransformMatrixObject">matrix object</a> for each
-  <a>SVGTransform</a> in the list, in order.</li>
+  <a>NSVGTransform</a> in the list, in order.</li>
   <li>Set the components of <var>transform</var>'s
   <a href="#TransformMatrixObject">matrix object</a> to the component values in
   <var>matrix</var>.</li>
@@ -3474,112 +3474,112 @@ consolidate() method is called, the following steps are run:</p>
   <li>Otherwise, set <var>transform</var>'s
   <a href='#TransformValue'>value</a> to a <span class='prop-value'>matrix3d(…)</span>
   value that represents the same matrix as the <a href="#TransformMatrixObject">matrix object</a>.</li>
-  <li><a>Attach</a> <var>transform</var> to this <a>SVGTransformList</a>.</li>
+  <li><a>Attach</a> <var>transform</var> to this <a>NSVGTransformList</a>.</li>
   <li>Append <var>transform</var> to this list.</li>
   <li>If the list <a>reflects</a> a presentation attribute, then
   <a>reserialize</a> the reflected attribute.</li>
   <li>Return <var>transform</var>.</li>
 </ol>
 
-<p>The behavior of all other interface members of <a>SVGLengthList</a> are
+<p>The behavior of all other interface members of <a>NSVGLengthList</a> are
 defined in <a href="types.html#ListInterfaces">List interfaces</a>.</p>
 
 
-<h3 id="InterfaceSVGAnimatedTransformList">Interface SVGAnimatedTransformList</h3>
+<h3 id="InterfaceNSVGAnimatedTransformList">Interface NSVGAnimatedTransformList</h3>
 
-<p>An <a>SVGAnimatedTransformList</a> object is used to <a>reflect</a> the
+<p>An <a>NSVGAnimatedTransformList</a> object is used to <a>reflect</a> the
 <a>'transform'</a> property and its corresponding presentation attribute
 (which, depending on the element, is <span class='attr-name'>'transform'</span>,
 <a>'linearGradient/gradientTransform'</a> or
 <a>'pattern/patternTransform'</a>).</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGAnimatedTransformList</b> {
-  [SameObject] readonly attribute <a>SVGTransformList</a> <a href="coords.html#__svg__SVGAnimatedTransformList__baseVal">baseVal</a>;
-  [SameObject] readonly attribute <a>SVGTransformList</a> <a href="coords.html#__svg__SVGAnimatedTransformList__animVal">animVal</a>;
+interface <b>NSVGAnimatedTransformList</b> {
+  [SameObject] readonly attribute <a>NSVGTransformList</a> <a href="coords.html#__nsvg__NSVGAnimatedTransformList__baseVal">baseVal</a>;
+  [SameObject] readonly attribute <a>NSVGTransformList</a> <a href="coords.html#__nsvg__NSVGAnimatedTransformList__animVal">animVal</a>;
 };</pre>
 
-<p class='ready-for-wider-review'>The <b id="__svg__SVGAnimatedTransformList__baseVal">baseVal</b> and
-<b id="__svg__SVGAnimatedTransformList__animVal">animVal</b> IDL attributes
+<p class='ready-for-wider-review'>The <b id="__nsvg__NSVGAnimatedTransformList__baseVal">baseVal</b> and
+<b id="__nsvg__NSVGAnimatedTransformList__animVal">animVal</b> IDL attributes
 represent the value of the reflected presentation attribute.
-On getting <a href="#__svg__SVGAnimatedTransformList__baseVal">baseVal</a> or
-<a href="#__svg__SVGAnimatedTransformList__animVal">animVal</a>, an
-<a>SVGTransformList</a> object is returned that reflects the given
+On getting <a href="#__nsvg__NSVGAnimatedTransformList__baseVal">baseVal</a> or
+<a href="#__nsvg__NSVGAnimatedTransformList__animVal">animVal</a>, an
+<a>NSVGTransformList</a> object is returned that reflects the given
 presentation attribute.</p>
 
-<h3 id="InterfaceSVGPreserveAspectRatio">Interface SVGPreserveAspectRatio</h3>
+<h3 id="InterfaceNSVGPreserveAspectRatio">Interface NSVGPreserveAspectRatio</h3>
 
-<p>The <a>SVGPreserveAspectRatio</a> interface is used to represent
+<p>The <a>NSVGPreserveAspectRatio</a> interface is used to represent
 values for the <a>'preserveAspectRatio'</a> attribute.</p>
 
-<p id="ReadOnlyPreserveAspectRatio">An <a>SVGPreserveAspectRatio</a> object can be designated as <em>read only</em>,
+<p id="ReadOnlyPreserveAspectRatio">An <a>NSVGPreserveAspectRatio</a> object can be designated as <em>read only</em>,
 which means that attempts to modify the object will result in an exception
 being thrown, as described below.</p>
 
-<p id="PreserveAspectRatioMode" class='ready-for-wider-review'>Every <a>SVGPreserveAspectRatio</a> object
+<p id="PreserveAspectRatioMode" class='ready-for-wider-review'>Every <a>NSVGPreserveAspectRatio</a> object
 <em>reflects the base value</em> of a <a>reflected</a> <a>'preserveAspectRatio'</a>
 attribute (being exposed through the methods on the
-<a href="#__svg__SVGAnimatedPreserveAspectRatio__baseVal">baseVal</a> or
-<a href="#__svg__SVGAnimatedPreserveAspectRatio__animVal">animVal</a> member of
-an <a>SVGAnimatedPreserveAspectRatio</a>).</p>
+<a href="#__nsvg__NSVGAnimatedPreserveAspectRatio__baseVal">baseVal</a> or
+<a href="#__nsvg__NSVGAnimatedPreserveAspectRatio__animVal">animVal</a> member of
+an <a>NSVGAnimatedPreserveAspectRatio</a>).</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGPreserveAspectRatio</b> {
+interface <b>NSVGPreserveAspectRatio</b> {
 
   // Alignment Types
-  const unsigned short <a href="coords.html#__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_UNKNOWN">SVG_PRESERVEASPECTRATIO_UNKNOWN</a> = 0;
-  const unsigned short <a href="coords.html#__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_NONE">SVG_PRESERVEASPECTRATIO_NONE</a> = 1;
-  const unsigned short <a href="coords.html#__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMINYMIN">SVG_PRESERVEASPECTRATIO_XMINYMIN</a> = 2;
-  const unsigned short <a href="coords.html#__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMIDYMIN">SVG_PRESERVEASPECTRATIO_XMIDYMIN</a> = 3;
-  const unsigned short <a href="coords.html#__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMAXYMIN">SVG_PRESERVEASPECTRATIO_XMAXYMIN</a> = 4;
-  const unsigned short <a href="coords.html#__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMINYMID">SVG_PRESERVEASPECTRATIO_XMINYMID</a> = 5;
-  const unsigned short <a href="coords.html#__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMIDYMID">SVG_PRESERVEASPECTRATIO_XMIDYMID</a> = 6;
-  const unsigned short <a href="coords.html#__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMAXYMID">SVG_PRESERVEASPECTRATIO_XMAXYMID</a> = 7;
-  const unsigned short <a href="coords.html#__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMINYMAX">SVG_PRESERVEASPECTRATIO_XMINYMAX</a> = 8;
-  const unsigned short <a href="coords.html#__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMIDYMAX">SVG_PRESERVEASPECTRATIO_XMIDYMAX</a> = 9;
-  const unsigned short <a href="coords.html#__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMAXYMAX">SVG_PRESERVEASPECTRATIO_XMAXYMAX</a> = 10;
+  const unsigned short <a href="coords.html#__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_UNKNOWN">NSVG_PRESERVEASPECTRATIO_UNKNOWN</a> = 0;
+  const unsigned short <a href="coords.html#__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_NONE">NSVG_PRESERVEASPECTRATIO_NONE</a> = 1;
+  const unsigned short <a href="coords.html#__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMINYMIN">NSVG_PRESERVEASPECTRATIO_XMINYMIN</a> = 2;
+  const unsigned short <a href="coords.html#__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMIDYMIN">NSVG_PRESERVEASPECTRATIO_XMIDYMIN</a> = 3;
+  const unsigned short <a href="coords.html#__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMAXYMIN">NSVG_PRESERVEASPECTRATIO_XMAXYMIN</a> = 4;
+  const unsigned short <a href="coords.html#__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMINYMID">NSVG_PRESERVEASPECTRATIO_XMINYMID</a> = 5;
+  const unsigned short <a href="coords.html#__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMIDYMID">NSVG_PRESERVEASPECTRATIO_XMIDYMID</a> = 6;
+  const unsigned short <a href="coords.html#__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMAXYMID">NSVG_PRESERVEASPECTRATIO_XMAXYMID</a> = 7;
+  const unsigned short <a href="coords.html#__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMINYMAX">NSVG_PRESERVEASPECTRATIO_XMINYMAX</a> = 8;
+  const unsigned short <a href="coords.html#__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMIDYMAX">NSVG_PRESERVEASPECTRATIO_XMIDYMAX</a> = 9;
+  const unsigned short <a href="coords.html#__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMAXYMAX">NSVG_PRESERVEASPECTRATIO_XMAXYMAX</a> = 10;
 
   // Meet-or-slice Types
-  const unsigned short <a href="coords.html#__svg__SVGPreserveAspectRatio__SVG_MEETORSLICE_UNKNOWN">SVG_MEETORSLICE_UNKNOWN</a> = 0;
-  const unsigned short <a href="coords.html#__svg__SVGPreserveAspectRatio__SVG_MEETORSLICE_MEET">SVG_MEETORSLICE_MEET</a> = 1;
-  const unsigned short <a href="coords.html#__svg__SVGPreserveAspectRatio__SVG_MEETORSLICE_SLICE">SVG_MEETORSLICE_SLICE</a> = 2;
+  const unsigned short <a href="coords.html#__nsvg__NSVGPreserveAspectRatio__NSVG_MEETORSLICE_UNKNOWN">NSVG_MEETORSLICE_UNKNOWN</a> = 0;
+  const unsigned short <a href="coords.html#__nsvg__NSVGPreserveAspectRatio__NSVG_MEETORSLICE_MEET">NSVG_MEETORSLICE_MEET</a> = 1;
+  const unsigned short <a href="coords.html#__nsvg__NSVGPreserveAspectRatio__NSVG_MEETORSLICE_SLICE">NSVG_MEETORSLICE_SLICE</a> = 2;
 
-  attribute unsigned short <a href="coords.html#__svg__SVGPreserveAspectRatio__align">align</a>;
-  attribute unsigned short <a href="coords.html#__svg__SVGPreserveAspectRatio__meetOrSlice">meetOrSlice</a>;
+  attribute unsigned short <a href="coords.html#__nsvg__NSVGPreserveAspectRatio__align">align</a>;
+  attribute unsigned short <a href="coords.html#__nsvg__NSVGPreserveAspectRatio__meetOrSlice">meetOrSlice</a>;
 };</pre>
 
-<p>The numeric alignment type constants defined on <a>SVGPreserveAspectRatio</a>
+<p>The numeric alignment type constants defined on <a>NSVGPreserveAspectRatio</a>
 are used to represent the alignment keyword values that <a>'preserveAspectRatio'</a>
 can take.  Their meanings are as follows:</p>
 
 <table class='vert'>
   <tr><th>Constant</th><th>Meaning</th></tr>
-  <tr><td><b id="__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_NONE">SVG_PRESERVEASPECTRATIO_NONE</b></td><td>The <span class='attr-value'>none</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMINYMIN">SVG_PRESERVEASPECTRATIO_XMINYMIN</b></td><td>The <span class='attr-value'>xMinYMin</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMIDYMIN">SVG_PRESERVEASPECTRATIO_XMIDYMIN</b></td><td>The <span class='attr-value'>xMidYMin</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMAXYMIN">SVG_PRESERVEASPECTRATIO_XMAXYMIN</b></td><td>The <span class='attr-value'>xMaxYMin</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMINYMID">SVG_PRESERVEASPECTRATIO_XMINYMID</b></td><td>The <span class='attr-value'>xMinYMid</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMIDYMID">SVG_PRESERVEASPECTRATIO_XMIDYMID</b></td><td>The <span class='attr-value'>xMidYMid</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMAXYMID">SVG_PRESERVEASPECTRATIO_XMAXYMID</b></td><td>The <span class='attr-value'>xMaxYMid</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMINYMAX">SVG_PRESERVEASPECTRATIO_XMINYMAX</b></td><td>The <span class='attr-value'>xMinYMax</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMIDYMAX">SVG_PRESERVEASPECTRATIO_XMIDYMAX</b></td><td>The <span class='attr-value'>xMidYMax</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_XMAXYMAX">SVG_PRESERVEASPECTRATIO_XMAXYMAX</b></td><td>The <span class='attr-value'>xMaxYMax</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_UNKNOWN">SVG_PRESERVEASPECTRATIO_UNKNOWN</b></td><td>Some other type of value.</td></tr>
+  <tr><td><b id="__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_NONE">NSVG_PRESERVEASPECTRATIO_NONE</b></td><td>The <span class='attr-value'>none</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMINYMIN">NSVG_PRESERVEASPECTRATIO_XMINYMIN</b></td><td>The <span class='attr-value'>xMinYMin</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMIDYMIN">NSVG_PRESERVEASPECTRATIO_XMIDYMIN</b></td><td>The <span class='attr-value'>xMidYMin</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMAXYMIN">NSVG_PRESERVEASPECTRATIO_XMAXYMIN</b></td><td>The <span class='attr-value'>xMaxYMin</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMINYMID">NSVG_PRESERVEASPECTRATIO_XMINYMID</b></td><td>The <span class='attr-value'>xMinYMid</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMIDYMID">NSVG_PRESERVEASPECTRATIO_XMIDYMID</b></td><td>The <span class='attr-value'>xMidYMid</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMAXYMID">NSVG_PRESERVEASPECTRATIO_XMAXYMID</b></td><td>The <span class='attr-value'>xMaxYMid</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMINYMAX">NSVG_PRESERVEASPECTRATIO_XMINYMAX</b></td><td>The <span class='attr-value'>xMinYMax</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMIDYMAX">NSVG_PRESERVEASPECTRATIO_XMIDYMAX</b></td><td>The <span class='attr-value'>xMidYMax</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_XMAXYMAX">NSVG_PRESERVEASPECTRATIO_XMAXYMAX</b></td><td>The <span class='attr-value'>xMaxYMax</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_UNKNOWN">NSVG_PRESERVEASPECTRATIO_UNKNOWN</b></td><td>Some other type of value.</td></tr>
 </table>
 
 <p>Similarly, the numeric meet-or-slice type constants defined on
-<a>SVGPreserveAspectRatio</a> are used to represent the meet-or-slice
+<a>NSVGPreserveAspectRatio</a> are used to represent the meet-or-slice
 keyword values that <a>'preserveAspectRatio'</a> can take.  Their
 meanings are as follows:</p>
 
 <table class='vert'>
   <tr><th>Constant</th><th>Meaning</th></tr>
-  <tr><td><b id="__svg__SVGPreserveAspectRatio__SVG_MEETORSLICE_MEET">SVG_MEETORSLICE_MEET</b></td><td>The <span class='attr-value'>meet</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGPreserveAspectRatio__SVG_MEETORSLICE_SLICE">SVG_MEETORSLICE_SLICE</b></td><td>The <span class='attr-value'>slice</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGPreserveAspectRatio__SVG_MEETORSLICE_UNKNOWN">SVG_MEETORSLICE_UNKNOWN</b></td><td>Some other type of value.</td></tr>
+  <tr><td><b id="__nsvg__NSVGPreserveAspectRatio__NSVG_MEETORSLICE_MEET">NSVG_MEETORSLICE_MEET</b></td><td>The <span class='attr-value'>meet</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGPreserveAspectRatio__NSVG_MEETORSLICE_SLICE">NSVG_MEETORSLICE_SLICE</b></td><td>The <span class='attr-value'>slice</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGPreserveAspectRatio__NSVG_MEETORSLICE_UNKNOWN">NSVG_MEETORSLICE_UNKNOWN</b></td><td>Some other type of value.</td></tr>
 </table>
 
-<p>The <b id="__svg__SVGPreserveAspectRatio__align">align</b> IDL attribute
+<p>The <b id="__nsvg__NSVGPreserveAspectRatio__align">align</b> IDL attribute
 represents the alignment keyword part of the <a>'preserveAspectRatio'</a>
 value.  On getting, the following steps are run:</p>
 
@@ -3596,13 +3596,13 @@ value.  On getting, the following steps are run:</p>
 </ol>
 </div>
 
-<p>On setting <a href="#__svg__SVGPreserveAspectRatio__align">align</a>, the
+<p>On setting <a href="#__nsvg__NSVGPreserveAspectRatio__align">align</a>, the
 following steps are run:</p>
 
 <ol class='algorithm'>
-  <li>If the <a>SVGPreserveAspectRatio</a> is <a href="#ReadOnlyPreserveAspectRatio">read only</a>, then <a>throw</a> a <a>NoModificationAllowedError</a>.</li>
+  <li>If the <a>NSVGPreserveAspectRatio</a> is <a href="#ReadOnlyPreserveAspectRatio">read only</a>, then <a>throw</a> a <a>NoModificationAllowedError</a>.</li>
   <li>If <var>value</var> is
-  <a href="#__svg__SVGPreserveAspectRatio__SVG_PRESERVEASPECTRATIO_UNKNOWN">SVG_PRESERVEASPECTRATIO_UNKNOWN</a>
+  <a href="#__nsvg__NSVGPreserveAspectRatio__NSVG_PRESERVEASPECTRATIO_UNKNOWN">NSVG_PRESERVEASPECTRATIO_UNKNOWN</a>
   or does not have a corresponding entry in the
   alignment keyword table above, then throw a <a>TypeError</a>.</li>
   <li>Let <var>string</var> be the corresponding keyword
@@ -3610,14 +3610,14 @@ following steps are run:</p>
   <li>Append a single U+0020 SPACE character to <var>string</var>.</li>
   <li>Let <var>meet or slice</var> be the value that would be
   returned from the
-  <a href="#__svg__SVGPreserveAspectRatio__meetOrSlice">meetOrSlice</a>
-  member on this <a>SVGPreserveAspectRatio</a>.</li>
+  <a href="#__nsvg__NSVGPreserveAspectRatio__meetOrSlice">meetOrSlice</a>
+  member on this <a>NSVGPreserveAspectRatio</a>.</li>
   <li>Append to <var>string</var> the corresponding keyword
   in the meet-or-slice keyword table above for <var>meet or slice</var>.</li>
   <li>Set the reflected <a>'preserveAspectRatio'</a> attribute to <var>string</var>.</li>
 </ol>
 
-<p>The <b id="__svg__SVGPreserveAspectRatio__meetOrSlice">meetOrSlice</b> IDL attribute
+<p>The <b id="__nsvg__NSVGPreserveAspectRatio__meetOrSlice">meetOrSlice</b> IDL attribute
 represents the alignment keyword part of the <a>'preserveAspectRatio'</a>
 value.  On getting, the following steps are run:</p>
 
@@ -3628,26 +3628,26 @@ value.  On getting, the following steps are run:</p>
   attribute <var>value</var> is the current non-animated value of the attribute.
   </li>
   <li>If the meet-or-slice value is not present in <var>value</var>,
-  then return <a href="#__svg__SVGPreserveAspectRatio__SVG_MEETORSLICE_MEET">SVG_MEETORSLICE_MEET</a>.</li>
+  then return <a href="#__nsvg__NSVGPreserveAspectRatio__NSVG_MEETORSLICE_MEET">NSVG_MEETORSLICE_MEET</a>.</li>
   <li>Otherwise, the meet-or-slice value is present.  Return the constant
   value as specified in the meet-or-slice constant table above for the meet-or-slice
   keyword in <var>value</var>.</li>
 </ol>
 </div>
 
-<p>On setting <a href="#__svg__SVGPreserveAspectRatio__meetOrSlice">meetOrSlice</a>, the
+<p>On setting <a href="#__nsvg__NSVGPreserveAspectRatio__meetOrSlice">meetOrSlice</a>, the
 following steps are run:</p>
 
 <ol class='algorithm'>
-  <li>If the <a>SVGPreserveAspectRatio</a> is <a href="#ReadOnlyPreserveAspectRatio">read only</a>, then <a>throw</a> a <a>NoModificationAllowedError</a>.</li>
+  <li>If the <a>NSVGPreserveAspectRatio</a> is <a href="#ReadOnlyPreserveAspectRatio">read only</a>, then <a>throw</a> a <a>NoModificationAllowedError</a>.</li>
   <li>If <var>value</var> is
-  <a href="#__svg__SVGPreserveAspectRatio__SVG_MEETORSLICE_UNKNOWN">SVG_MEETORSLICE_UNKNOWN</a>
+  <a href="#__nsvg__NSVGPreserveAspectRatio__NSVG_MEETORSLICE_UNKNOWN">NSVG_MEETORSLICE_UNKNOWN</a>
   or does not have a corresponding entry in the
   meet-or-slice keyword table above, then throw a <a>TypeError</a>.</li>
   <li>Let <var>align</var> be the value that would be
   returned from the
-  <a href="#__svg__SVGPreserveAspectRatio__align">align</a>
-  member on this <a>SVGPreserveAspectRatio</a>.</li>
+  <a href="#__nsvg__NSVGPreserveAspectRatio__align">align</a>
+  member on this <a>NSVGPreserveAspectRatio</a>.</li>
   <li>Let <var>string</var> be the corresponding keyword
   in the alignment keyword table above for <var>align</var>.</li>
   <li>Append a single U+0020 SPACE character to <var>string</var>.</li>
@@ -3657,26 +3657,26 @@ following steps are run:</p>
 </ol>
 
 
-<h3 id="InterfaceSVGAnimatedPreserveAspectRatio">Interface SVGAnimatedPreserveAspectRatio</h3>
+<h3 id="InterfaceNSVGAnimatedPreserveAspectRatio">Interface NSVGAnimatedPreserveAspectRatio</h3>
 
-<p>An <a>SVGAnimatedPreserveAspectRatio</a> object is used to <a>reflect</a>
+<p>An <a>NSVGAnimatedPreserveAspectRatio</a> object is used to <a>reflect</a>
 the <a>'preserveAspectRatio'</a> attribute.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGAnimatedPreserveAspectRatio</b> {
-  [SameObject] readonly attribute <a>SVGPreserveAspectRatio</a> <a href="coords.html#__svg__SVGAnimatedPreserveAspectRatio__baseVal">baseVal</a>;
-  [SameObject] readonly attribute <a>SVGPreserveAspectRatio</a> <a href="coords.html#__svg__SVGAnimatedPreserveAspectRatio__animVal">animVal</a>;
+interface <b>NSVGAnimatedPreserveAspectRatio</b> {
+  [SameObject] readonly attribute <a>NSVGPreserveAspectRatio</a> <a href="coords.html#__nsvg__NSVGAnimatedPreserveAspectRatio__baseVal">baseVal</a>;
+  [SameObject] readonly attribute <a>NSVGPreserveAspectRatio</a> <a href="coords.html#__nsvg__NSVGAnimatedPreserveAspectRatio__animVal">animVal</a>;
 };</pre>
 
-<p class='ready-for-wider-review'>The <b id="__svg__SVGAnimatedPreserveAspectRatio__baseVal">baseVal</b> and
-<b id="__svg__SVGAnimatedPreserveAspectRatio__animVal">animVal</b> IDL
+<p class='ready-for-wider-review'>The <b id="__nsvg__NSVGAnimatedPreserveAspectRatio__baseVal">baseVal</b> and
+<b id="__nsvg__NSVGAnimatedPreserveAspectRatio__animVal">animVal</b> IDL
 attributes represent the current non-animated value of the reflected <a>'preserveAspectRatio'</a>
-attribute.  On getting <a href="#__svg__SVGAnimatedPreserveAspectRatio__baseVal">baseVal</a>
-or <a href="#__svg__SVGAnimatedPreserveAspectRatio__animVal">animVal</a>,
-an <a>SVGPreserveAspectRatio</a> object is returned that
+attribute.  On getting <a href="#__nsvg__NSVGAnimatedPreserveAspectRatio__baseVal">baseVal</a>
+or <a href="#__nsvg__NSVGAnimatedPreserveAspectRatio__animVal">animVal</a>,
+an <a>NSVGPreserveAspectRatio</a> object is returned that
 <a href="#PreserveAspectRatioMode">reflects the base value</a> of the <a>'preserveAspectRatio'</a>
-attribute on the SVG element that the object with the reflecting IDL attribute
-of type <a>SVGAnimatedPreserveAspectRatio</a> was obtained from.</p>
+attribute on the NSVG element that the object with the reflecting IDL attribute
+of type <a>NSVGAnimatedPreserveAspectRatio</a> was obtained from.</p>
 
 </div>
 

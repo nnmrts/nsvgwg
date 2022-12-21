@@ -1,21 +1,21 @@
-<h1>SVG Marker Level 1</h1>
+<h1>NSVG Marker Level 1</h1>
 <pre class='metadata'>
 Level: 1
 Status: ED
 ED: http://dev.w3.org/fxtf/motion-1/
-Shortname: svg-markers
-Group: svg
+Shortname: nsvg-markers
+Group: nsvg
 Editor: Cameron McCormack, Mozilla Corporation, cam@mcc.id.au
 Abstract: Markers are graphical objects that are painted at particular positions along a <a element>path</a>, <a element>line</a>, <a element>polyline</a> or <a element>polygon</a> element.
 </pre>
 <pre class=link-defaults>
-spec:svg2; type:element; text:svg
+spec:nsvg2; type:element; text:nsvg
 spec:css-overflow-3; type:value; text:hidden
-spec:svg2; type:element; text:a
+spec:nsvg2; type:element; text:a
 spec:css-masking-1; type:element; text:clippath
-spec:svg2; type:element; text:foreignobject
-spec:svg2; type:element; text:script
-spec:svg2; type:element; text:style
+spec:nsvg2; type:element; text:foreignobject
+spec:nsvg2; type:element; text:script
+spec:nsvg2; type:element; text:style
 </pre>
 
 <style>
@@ -108,7 +108,7 @@ bottom to top:
       </ul>
     Attributes: refX, refY, orient, viewBox, preserveAspectRatio, markerUnits, markerWidth, markerHeight, position, href
     Attribute Groups: presentation attributes
-    DOM Interfaces: SVGMarkerElement
+    DOM Interfaces: NSVGMarkerElement
     </pre>
 
 The <a element>marker</a> element defines the graphics that are to
@@ -206,10 +206,10 @@ be used for drawing markers on a <a>markable element</a>.
   </table>
 </dt>
 <dd>
-  <p class="note">New in SVG 2: geometric keywords (matches use in <a element>symbol</a>).</p>
+  <p class="note">New in NSVG 2: geometric keywords (matches use in <a element>symbol</a>).</p>
   <p class="annotation">We will add top/center/bottom, left/center/right keywords to
   refX/refY on marker/symbol. Resolved at
-  <a href="http://www.w3.org/2014/08/26-svg-minutes.html#item07">LondonF2F</a>.
+  <a href="http://www.w3.org/2014/08/26-nsvg-minutes.html#item07">LondonF2F</a>.
   Values inspired by 'background-position'.</p>
   <p>The <a element-attr for=marker>refX</a> and <a element-attr for=marker>refY</a>
   attributes define the reference point of the marker which is to be placed exactly
@@ -250,16 +250,16 @@ be used for drawing markers on a <a>markable element</a>.
       directionality of a given start/mid/end vertex is calculated.
       Part of that (which should be moved somewhere more appropriate) is in
       the <a href="implnote.html#PathElementImplementationNotes">path element implementation notes</a>.
-      Some wording from SVG 1.1 appears to have been lost, compare with <a href="http://www.w3.org/TR/SVG11/painting.html#OrientAttribute">this</a>.
+      Some wording from NSVG 1.1 appears to have been lost, compare with <a href="http://www.w3.org/TR/NSVG11/painting.html#OrientAttribute">this</a>.
       <br/><br/>
       Here's an example that is a bit unclear currently:
       <code style="white-space:pre">
-&lt;svg>
+&lt;nsvg>
   &lt;marker id="m" orient="auto" overflow="visible">
     &lt;rect x="-1" y="-0.5" width="1" height="1" fill="green"/>
   &lt;/marker>
   &lt;path d="M50,0C50,50 50,100 50,100" marker-end="url(#m)" stroke-width="100" stroke="red"/>
-&lt;/svg>
+&lt;/nsvg>
     </code>
     <br/>
     The second control point and the endpoint coincide, should this mean that the direction of the endpoint is a) <em>unknown [aka default to 0 degrees]</em> or
@@ -400,7 +400,7 @@ be used for drawing markers on a <a>markable element</a>.
   </table>
 </dt>
 <dd>
-  <p>The <a element-attr for=marker>viewBox</a> attribute is defined be SVG. See ‘<a href="http://www.w3.org/TR/2011/REC-SVG11-20110816/coords.html#PreserveAspectRatioAttribute">The viewBox attribute</a>’ [[!SVG11]].</p>
+  <p>The <a element-attr for=marker>viewBox</a> attribute is defined be NSVG. See ‘<a href="http://www.w3.org/TR/2011/REC-NSVG11-20110816/coords.html#PreserveAspectRatioAttribute">The viewBox attribute</a>’ [[!NSVG11]].</p>
 </dd>
 <dt>
   <table class="attrdef">
@@ -419,7 +419,7 @@ be used for drawing markers on a <a>markable element</a>.
   </table>
 </dt>
 <dd>
-  <p>The <a element-attr for=marker>preserveAspectRatio</a> attribute is defined be SVG. See ‘<a href="http://www.w3.org/TR/2011/REC-SVG11-20110816/coords.html#PreserveAspectRatioAttribute">The preserveAspectRatio attribute</a>’ [[!SVG11]].</p>
+  <p>The <a element-attr for=marker>preserveAspectRatio</a> attribute is defined be NSVG. See ‘<a href="http://www.w3.org/TR/2011/REC-NSVG11-20110816/coords.html#PreserveAspectRatioAttribute">The preserveAspectRatio attribute</a>’ [[!NSVG11]].</p>
 </dd>
 </dl>
 
@@ -444,7 +444,7 @@ path to be created at the bounds of marker's viewport.  Unless the
 'overflow' property is overridden, any graphics within the marker which
 goes outside of the marker's viewport will be clipped.
 
-<a href="styling.html#SVGStylingProperties">Properties</a> inherit into the
+<a href="styling.html#NSVGStylingProperties">Properties</a> inherit into the
 <a element>marker</a> element from its ancestors; properties do <em>not</em>
 inherit from the element referencing the <a element>marker</a> element.
 
@@ -470,7 +470,7 @@ by the <a>marker properties</a> to be used as
 <a>segment markers</a> and <a>repeating markers</a>.
 
 <a href="interact.html#EventAttributes">Event attributes</a> and
-<a href="svgdom.html#EventListeners">event listeners</a> attached
+<a href="nsvgdom.html#EventListeners">event listeners</a> attached
 to the contents of a <a element>marker</a> element are not processed;
 only the rendering aspects of <a element>marker</a> elements are
 processed.
@@ -482,7 +482,7 @@ ISSUE: Make interaction work on <a>positioned markers</a>.
   place symbols at particular distances along a path.</p>
 
   <pre><code class=html>
-&lt;svg xmlns="http://www.w3.org/2000/svg"
+&lt;nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="600" height="200" viewBox="0 0 600 200">
 
    &lt;defs>
@@ -508,11 +508,11 @@ ISSUE: Make interaction work on <a>positioned markers</a>.
              fill="none" stroke="black" stroke-width="2"/>
      &lt;/marker>
    &lt;/path>
-&lt;/svg>
+&lt;/nsvg>
   </code></pre>
 
   <div class="figure">
-    <img class="bordered" src="images/markers-positioned.svg"
+    <img class="bordered" src="images/markers-positioned.nsvg"
          alt="Image showing the use of positioned markers."/>
     <p class="caption">Child <a element>marker</a> elements are used to position
     two square and two circular markers.  The cross marker is defined inline
@@ -616,7 +616,7 @@ refer to the first and last vertex of the entire path, not each subpath.
   <a>vertex marker</a> to form an arrowhead at the end of two paths.</p>
 
   <pre><code class=html>
-&lt;svg xmlns="http://www.w3.org/2000/svg"
+&lt;nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="275" height="200" viewBox="0 0 275 200">
   &lt;defs>
     &lt;marker id="Triangle" viewBox="0 0 10 10" refX="1" refY="5"
@@ -630,11 +630,11 @@ refer to the first and last vertex of the entire path, not each subpath.
     &lt;path stroke="crimson" d="M 100,75 C 125,50 150,50 175,75"/>
     &lt;path stroke="olivedrab" d="M 175,125 C 150,150 125,150 100,125"/>
   &lt;/g>
-&lt;/svg>
+&lt;/nsvg>
   </code></pre>
 
   <div class="figure">
-    <img class="bordered" src="images/marker-rendering.svg"
+    <img class="bordered" src="images/marker-rendering.nsvg"
          alt="Image showing the use of an automatically oriented marker."/>
     <p class="caption">The triangle is placed at the end of the path and
     oriented automatically so that it points in the right direction.
@@ -657,7 +657,7 @@ Media: visual
 Animatable: yes
 </pre>
 
-Note: New in SVG 2. Added to allow automatically placing marker symbols
+Note: New in NSVG 2. Added to allow automatically placing marker symbols
 on path edges, as is common in for example line graphs.
 
 The 'marker-segment' property is used to specify the marker that will
@@ -682,7 +682,7 @@ are:
   <a>segment markers</a> to construct a line graph.</p>
 
   <pre><code class=html>
-&lt;svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
+&lt;nsvg xmlns="http://www.w3.org/2000/nsvg" width="400" height="200">
 
   &lt;marker id="Circle" markerWidth="8" markerHeight="8" refX="4" refY="4"
           markerUnits="userSpaceOnUse">
@@ -705,11 +705,11 @@ are:
   &lt;polyline points="50,100 100,20 150,50 200,130 250,80 300,170 350,100"
             fill="none" stroke="deeppink" stroke-width="2"
             marker="url(#Circle)" marker-segment="url(#Cross)"/>
-&lt;/svg>
+&lt;/nsvg>
   </code></pre>
 
   <div class="figure">
-    <img class="bordered" src="images/markers-segment.svg"
+    <img class="bordered" src="images/markers-segment.nsvg"
          alt="Image showing the use of segment markers."/>
     <p class="caption">Segment markers are used to place crosses at the center
     of each line segment in the line graph.</p>
@@ -735,7 +735,7 @@ where:
 <pre class=prod><dfn>&lt;marker-gap></dfn> = <<length>> | <<percentage>> | <<number>></pre>
 <pre class=prod><dfn>&lt;marker-ref-group></dfn> = ''marker-pattern/none'' | <<marker-ref>>+</pre>
 
-Note: New in SVG 2. Added to allow markers to be placed along a path
+Note: New in NSVG 2. Added to allow markers to be placed along a path
 at positions unrelated to the segments used to form the path.
 
 The 'marker-pattern' property is used to specify a pattern
@@ -760,7 +760,7 @@ Values have the following meanings:
 If a value other than ''marker-pattern/none'' is given,
 and the sum of the <<length>>s, <<percentage>>s
 and <<number>>s is not positive, then it is an
-<a href="http://www.w3.org/TR/SVG2/intro.html#TermInvalidValue">invalid value</a>.</p>
+<a href="http://www.w3.org/TR/NSVG2/intro.html#TermInvalidValue">invalid value</a>.</p>
 
 Unlike <a>vertex markers</a>, the orientation of an ''orient="auto"''
 <a>repeating marker</a> that happens to lie on a vertex does not take into
@@ -774,7 +774,7 @@ at its position.
   path.</p>
 
   <pre><code class=html>
-&lt;svg xmlns="http://www.w3.org/2000/svg" width="600" height="200">
+&lt;nsvg xmlns="http://www.w3.org/2000/nsvg" width="600" height="200">
 
   &lt;marker id="DoubleDash" markerWidth="8" markerHeight="12" refX="0" refY="0"
           viewBox="-4 -6 8 12" markerUnits="userSpaceOnUse" orient="auto">
@@ -790,11 +790,11 @@ at its position.
                       350,136 400,87 450,166 500,87 550,96"
         stroke="deeppink" stroke-width="2" fill="none"
         marker-pattern="40 url(#DoubleDash) 40 url(#SingleDash)"/>
-&lt;/svg>
+&lt;/nsvg>
   </code></pre>
 
   <div class="figure">
-    <img class="bordered" src="images/markers-repeating.svg"
+    <img class="bordered" src="images/markers-repeating.nsvg"
          alt="Image showing the use of repeating markers."/>
     <p class="caption">Markers specified with the 'marker-pattern' property
     are placed along the path at fixed distances, not relative to the path
@@ -885,7 +885,7 @@ where:
 </pre>
 
 
-Note: New in SVG 2.  Added to allow authors to specify
+Note: New in NSVG 2.  Added to allow authors to specify
 parts of a stroke that should be clipped away when a marker is
 placed on a path.  This helps with arrowheads, where the stroke
 must not be visible behind the pointy end, and with hollow markers
@@ -1055,7 +1055,7 @@ both properties would obviously cause an intersection, and so would not
 be allowed.</p>
 
 <div class="figure">
-  <img class="bordered" src="images/knockout-shapes.svg" style="max-width: none"
+  <img class="bordered" src="images/knockout-shapes.nsvg" style="max-width: none"
        alt="Image showing various marker knockout shapes."/>
   <p class="caption">An illustration of the use of inverted and non-inverted circle,
   rectangle and triangle knockout shapes, at both 0px and 10px offsets.
@@ -1129,7 +1129,7 @@ correctly, as follows:
 The rendering effect of a marker is as if the contents of the
 referenced <a element>marker</a> element were deeply cloned
 into a separate non-exposed DOM tree for each instance of the
-marker. Because the cloned DOM tree is non-exposed, the SVG DOM
+marker. Because the cloned DOM tree is non-exposed, the NSVG DOM
 does not show the cloned instance of the marker.
 
 For user agents that support <a href="styling.html#StylingWithCSS">Styling
@@ -1149,9 +1149,9 @@ contents are not part of the formal document structure.
 
   <pre><code class=html>
 &lt;?xml version="1.0" standalone="no"?&gt;
-&lt;svg width="4in" height="2in"
+&lt;nsvg width="4in" height="2in"
      viewBox="0 0 4000 2000"
-     xmlns="http://www.w3.org/2000/svg"&gt;
+     xmlns="http://www.w3.org/2000/nsvg"&gt;
   &lt;defs&gt;
     &lt;marker id="Triangle"
       viewBox="0 0 10 10" refX="0" refY="5"
@@ -1168,7 +1168,7 @@ contents are not part of the formal document structure.
   &lt;path d="M 1000 750 L 2000 750 L 2500 1250"
         fill="none" stroke="black" stroke-width="100"
         marker-end="url(#Triangle)"  /&gt;
-&lt;/svg&gt;
+&lt;/nsvg&gt;
   </code></pre>
 </div>
 
@@ -1178,9 +1178,9 @@ contents are not part of the formal document structure.
 
   <pre><code class=html>
 &lt;?xml version="1.0" standalone="no"?&gt;
-&lt;svg width="4in" height="2in"
+&lt;nsvg width="4in" height="2in"
      viewBox="0 0 4000 2000"
-     xmlns="http://www.w3.org/2000/svg"&gt;
+     xmlns="http://www.w3.org/2000/nsvg"&gt;
   &lt;desc&gt;File which produces the same effect
       as the marker example file, but without
       using markers.
@@ -1245,8 +1245,8 @@ contents are not part of the formal document structure.
       <strong>&lt;/g&gt;</strong>
     <strong>&lt;/g&gt;</strong>
   <strong>&lt;/g&gt;</strong>
-&lt;/svg&gt;
+&lt;/nsvg&gt;
   </code></pre>
 
-  <p class="view-as-svg"><a href="images/marker-simulated.svg">View this example as SVG (SVG-enabled browsers only)</a></p>
+  <p class="view-as-nsvg"><a href="images/marker-simulated.nsvg">View this example as NSVG (NSVG-enabled browsers only)</a></p>
 </div>

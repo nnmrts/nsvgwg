@@ -69,14 +69,14 @@
         // multiple working groups. It includes updating the patent section
         // prose to say "groups" instead of "group" etc.
         // name of the WG
-        wg: "SVG Working Group (part of the Graphics Activity)",
+        wg: "NSVG Working Group (part of the Graphics Activity)",
 
         // URI of the public WG page
         wgURI: "http://www.w3.org/Graphics/",
 
         // name (without the @w3c.org) of the public mailing to which comments
         // are due
-        wgPublicList: "www-svg",
+        wgPublicList: "www-nsvg",
 
         // URI of the patent status for this WG, for Rec-track documents
         // !!!! IMPORTANT !!!!
@@ -95,7 +95,7 @@
       This specification defines an element-based markup for defining
       animation and time-related changes to a Web page.
       It is intended to replace the animation features of <a
-      href="http://www.w3.org/TR/SVG11/">SVG 1.1</a> by building on the model
+      href="http://www.w3.org/TR/NSVG11/">NSVG 1.1</a> by building on the model
       defined in <a href="http://www.w3.org/TR/web-animations/">Web
       Animations</a>.
     </section>
@@ -266,7 +266,7 @@
           hide them in turn creating the illusion of movement.
         </p>
         <p>
-          Supposing each drawn image is contained in an SVG
+          Supposing each drawn image is contained in an NSVG
           <code>&lt;g&gt;</code> element, the animation could be produced as
           follows:
         </p>
@@ -330,10 +330,10 @@
         </div>
       </section>
       <section>
-        <h2>Relationship to SVG 1.1 Animation</h2>
+        <h2>Relationship to NSVG 1.1 Animation</h2>
         <p>
           This specification is intended to be backwards-compatible with the
-          animation features defined in SVG 1.1 Second Edition [[SVG11]] with
+          animation features defined in NSVG 1.1 Second Edition [[NSVG11]] with
           the following exceptions:
         </p>
         <ul>
@@ -347,10 +347,10 @@
               and as a result was implemented inconsistently in every user
               agent.
           <li>The <span class="elem">animateColor</span> element has been
-              removed since it was deprecated in SVG 1.1.
+              removed since it was deprecated in NSVG 1.1.
         </ul>
         <p>
-          The following features defined in SVG 1.1 have been deprecated in this
+          The following features defined in NSVG 1.1 have been deprecated in this
           specification:
         </p>
         <ul>
@@ -361,7 +361,7 @@
               <span class="elem">animateTransform</span>.
         </ul>
         <p>
-          The following additional features not present in SVG 1.1 have been
+          The following additional features not present in NSVG 1.1 have been
           added to this specification:
         </p>
         <ul>
@@ -387,7 +387,7 @@
               href="#attributes-to-identify-the-target-elements-for-a-timed-element"
               class="sectionRef"></a>).
           <li>The <span class="attr">href</span> attribute no longer requires
-              the XLink namespace in keeping with changes made in SVG 2.0
+              the XLink namespace in keeping with changes made in NSVG 2.0
               (see <a
               href="#attributes-to-identify-the-target-elements-for-a-timed-element"
               class="sectionRef"></a>).
@@ -440,7 +440,7 @@
       <section>
         <h2>Relationship to SMIL Animation</h2>
         <p>
-          To the extent that this specification is backwards-compatible with SVG
+          To the extent that this specification is backwards-compatible with NSVG
           1.1's animation features, most of which are defined in terms of SMIL
           Animation [[SMIL-ANIMATION]], this specification defines many features
           similar to those defined in SMIL Animation.
@@ -460,24 +460,24 @@
       <section>
         <h2>Features yet to integrate</h2>
         <div class="note">
-          <p>The following requirements for SVG2 still need to be integrated
+          <p>The following requirements for NSVG2 still need to be integrated
              into this specification.</p>
           <ul>
             <li>Support for non-negative speed on time containers</li>
             <li>Support path-based animations of pairs of attributes</li>
-            <li>Define all explicitly undefined parts of the SVG 1.1 spec (wrt
+            <li>Define all explicitly undefined parts of the NSVG 1.1 spec (wrt
                 to to-animations)</li>
             <li>Support motion animation of a specified speed</li>
-            <li>Apply the changes from SVG Tiny 1.2 Animations chapter</li>
+            <li>Apply the changes from NSVG Tiny 1.2 Animations chapter</li>
           </ul>
           <p>Corresponding resolutions:</p>
           <ul>
-            <li><a href="http://www.w3.org/2012/01/10-svg-irc#T05-49-00">We will solve animation reversing in SVG 2.</a></li>
-            <li><a href="http://www.w3.org/2012/01/10-svg-irc#T05-49-00">We will have support for non-negative speed="" on time containers (if we decide to include time containers) in SVG 2.</a></li>
-            <li><a href="http://www.w3.org/2011/12/08-svg-irc#T20-53-32">We will support path-based animation of pairs of attributes.</a></li>
-            <li><a href="http://www.w3.org/2012/01/10-svg-irc#T05-09-32">We will allow <code>&lt;animateTransform type="matrix"&gt;</code> in SVG 2.</a></li>
-            <li><a href="http://www.w3.org/2012/01/13-svg-irc#T23-16-28">We will support motion animation of a specified speed in SVG 2.</a></li>
-            <li><a href="http://www.w3.org/2012/03/08-svg-irc#T21-18-10">SVG 2 will apply the changes from SVG 1.2 Tiny to the SVG animation section.</a></li>
+            <li><a href="http://www.w3.org/2012/01/10-nsvg-irc#T05-49-00">We will solve animation reversing in NSVG 2.</a></li>
+            <li><a href="http://www.w3.org/2012/01/10-nsvg-irc#T05-49-00">We will have support for non-negative speed="" on time containers (if we decide to include time containers) in NSVG 2.</a></li>
+            <li><a href="http://www.w3.org/2011/12/08-nsvg-irc#T20-53-32">We will support path-based animation of pairs of attributes.</a></li>
+            <li><a href="http://www.w3.org/2012/01/10-nsvg-irc#T05-09-32">We will allow <code>&lt;animateTransform type="matrix"&gt;</code> in NSVG 2.</a></li>
+            <li><a href="http://www.w3.org/2012/01/13-nsvg-irc#T23-16-28">We will support motion animation of a specified speed in NSVG 2.</a></li>
+            <li><a href="http://www.w3.org/2012/03/08-nsvg-irc#T21-18-10">NSVG 2 will apply the changes from NSVG 1.2 Tiny to the NSVG animation section.</a></li>
           </ul>
         </div>
       </section>
@@ -533,8 +533,8 @@
             elements</a> [[!DOM4]] beginning with the <a
             href="http://www.w3.org/TR/dom/#concept-tree-parent">parent</a>
             [[!DOM4]] of <var>A</var> and without leaving the current <a
-            href="http://www.w3.org/TR/SVG2/intro.html#TermSVGContext">SVG
-            context</a> [[!SVG2]].
+            href="http://www.w3.org/TR/NSVG2/intro.html#TermNSVGContext">NSVG
+            context</a> [[!NSVG2]].
           </dd>
           <dt><dfn>child timed element</dfn></dt>
           <dd>
@@ -551,12 +551,12 @@
         <h2>Namespace</h2>
         <p>
           The <a>timed elements</a> defined in this specification belong to the
-          SVG namespace as defined in [[!SVG11]].
+          NSVG namespace as defined in [[!NSVG11]].
         </p>
         <div class="issue">
-          <p>If SVG2 allows SVG elements to exist outside the SVG namespace then
+          <p>If NSVG2 allows NSVG elements to exist outside the NSVG namespace then
              we will reflect that here as well.</p>
-          <p>Furthermore, SVG2 aside, it may be worth investigating allowing
+          <p>Furthermore, NSVG2 aside, it may be worth investigating allowing
              these elements directly in HTML.</p>
         </div>
       </section>
@@ -907,12 +907,12 @@
     </section>
 
     <section>
-      <h2>Integration with SVG</h2>
+      <h2>Integration with NSVG</h2>
       <section>
         <h2>Start of the timeline</h2>
       </section>
       <section>
-        <h2>The <span class="elem">svg</span> element</h2>
+        <h2>The <span class="elem">nsvg</span> element</h2>
       </section>
       <section>
         <h2>Reclaiming resources</h2>
@@ -935,8 +935,8 @@
           The Media Fragments specification [[!MEDIA-FRAGMENTS]] defines a means
           for addressing a temporal range of a media resource.
           The application of the temporal parameters to documents with the <a
-          href="http://www.w3.org/TR/SVG/intro.html#MIMEType">SVG MIME type</a>
-          [[!SVG11] is as follows.
+          href="http://www.w3.org/TR/NSVG/intro.html#MIMEType">NSVG MIME type</a>
+          [[!NSVG11] is as follows.
         </p>
         <ul>
           <li>If there is a begin time, seek the document controller to
@@ -960,9 +960,9 @@
         <p class="note">
           Note that media fragments are defined to operate on resources based on
           their MIME type.
-          As a result, temporal addressing may not have any effect for SVG
+          As a result, temporal addressing may not have any effect for NSVG
           content that is served in a document with a MIME type other than the
-          SVG MIME type such as SVG embedded in HTML.
+          NSVG MIME type such as NSVG embedded in HTML.
         </p>
       </section>
     </section>
@@ -995,11 +995,11 @@
         </p>
         <div class="issue">
           <p>
-            Need to add <code>ownerSVGElement</code> from
-            <code>SVGElement</code> interface?
+            Need to add <code>ownerNSVGElement</code> from
+            <code>NSVGElement</code> interface?
           </p>
           <p>
-            Add other attributes from <code>SVGElement</code> for backwards
+            Add other attributes from <code>NSVGElement</code> for backwards
             compatibility?
           </p>
         </div>

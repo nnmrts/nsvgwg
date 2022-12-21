@@ -1,4 +1,4 @@
-# Makefile for specs under https://github.com/w3c/svgwg/tree/main/specs.
+# Makefile for specs under https://github.com/w3c/nsvgwg/tree/main/specs.
 
 TOOLS?=../../tools
 

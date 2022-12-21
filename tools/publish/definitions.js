@@ -221,8 +221,8 @@ Definitions.prototype.formatTermLink = function(name, n) {
     return this.interfaces[name].formatLink();
   }
   var interfaceName = findClosestInterfaceDefinition(n);
-  if (interfaceName && n.ownerDocument.getElementById('__svg__' + interfaceName + '__' + name)) {
-    return utils.parse('<a href="#__svg__{{interface}}__{{name}}">{{prefix}}{{name}}</a>',
+  if (interfaceName && n.ownerDocument.getElementById('__nsvg__' + interfaceName + '__' + name)) {
+    return utils.parse('<a href="#__nsvg__{{interface}}__{{name}}">{{prefix}}{{name}}</a>',
                        { interface: interfaceName,
                          name: name,
                          prefix: n.getAttributeNS(namespaces.edit, 'format') == 'expanded' ? interfaceName + '::' : '' });

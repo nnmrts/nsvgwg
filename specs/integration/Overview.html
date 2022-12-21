@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang=en><head>
   <meta content="text/html; charset=utf-8" http-equiv=Content-Type>
-  <title>SVG Integration Module Level 1</title>
+  <title>NSVG Integration Module Level 1</title>
   <link href=../default.css rel=stylesheet type=text/css>
   <link href=https://www.w3.org/StyleSheets/TR/W3C-ED rel=stylesheet type=text/css>
 </head>
@@ -9,14 +9,14 @@
   <p data-fill-with=logo><a class=logo href=http://www.w3.org/>
     <img alt=W3C height=48 src=http://www.w3.org/Icons/w3c_home width=72>
 </a></p>
-  <h1 class="p-name no-ref" id=title>SVG Integration Module Level 1</h1>
+  <h1 class="p-name no-ref" id=title>NSVG Integration Module Level 1</h1>
   <h2 class="no-num no-toc no-ref heading settled heading" id=subtitle><span class=content>Editor’s Draft,
     <span class=dt-updated><span class=value-title title=20131101>1 November 2013</span></span></span></h2>
-  <div data-fill-with=spec-metadata><dl><dt>This version:<dd><a class=u-url href=https://svgwg.org/specs/integration/>https://svgwg.org/specs/integration/</a><dt>Editor’s Draft:<dd><a href=https://svgwg.org/specs/integration/>https://svgwg.org/specs/integration/</a>
+  <div data-fill-with=spec-metadata><dl><dt>This version:<dd><a class=u-url href=https://nsvgwg.org/specs/integration/>https://nsvgwg.org/specs/integration/</a><dt>Editor’s Draft:<dd><a href=https://nsvgwg.org/specs/integration/>https://nsvgwg.org/specs/integration/</a>
     <dt>Feedback:</dt>
-        <dd><a href="mailto:www-svg@w3.org?subject=%5Bsvg-integration%5D%20feedback">www-svg@w3.org</a>
+        <dd><a href="mailto:www-nsvg@w3.org?subject=%5Bnsvg-integration%5D%20feedback">www-nsvg@w3.org</a>
             with subject line
-            “<kbd>[svg-integration] <var>… message topic …</var></kbd>”(<a href=http://lists.w3.org/Archives/Public/www-svg/ rel=discussion>archives</a>)<dt>Test Suite:<dd>None Yet<dt>Editors:
+            “<kbd>[nsvg-integration] <var>… message topic …</var></kbd>”(<a href=http://lists.w3.org/Archives/Public/www-nsvg/ rel=discussion>archives</a>)<dt>Test Suite:<dd>None Yet<dt>Editors:
 <dd class="p-author h-card vcard"><a class="p-name fn u-email email" href=mailto:dschulze@adobe.com>Dirk Schulze</a> (<span class="p-org org">Adobe Systems Inc.</span>)<dd class="p-author h-card vcard"><a class="p-name fn u-email email" href=mailto:schepers@w3.org>Doug Schepers</a> (<span class="p-org org">W3C</span>)<dd class="p-author h-card vcard"><a class="p-name fn u-email email" href=mailto:cam@mcc.id.au>Cameron McCormack</a> (<span class="p-org org">Mozilla Corporation</span>)</dl></div>
   <div data-fill-with=warning></div>
   <p class=copyright data-fill-with=copyright><a href=http://www.w3.org/Consortium/Legal/ipr-notice#Copyright>Copyright</a> © 2013 <a href=http://www.w3.org/><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href=http://www.csail.mit.edu/><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href=http://www.ercim.eu/><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href=http://www.keio.ac.jp/>Keio</a>, <a href=http://ev.buaa.edu.cn/>Beihang</a>), All Rights Reserved. W3C <a href=http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer>liability</a>, <a href=http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks>trademark</a> and <a href=http://www.w3.org/Consortium/Legal/copyright-documents>document use</a> rules apply.</p>
@@ -24,7 +24,7 @@
 </div>
 
 <h2 class="no-num no-toc no-ref heading settled heading" id=abstract><span class=content>Abstract</span></h2>
-<p class=p-summary data-fill-with=abstract>This specification provides referencing modes and the respective fetching policies for SVG. Furthermore it gives guidance for host languages and applications or devices with special needs by providing different referencing modes for SVG.
+<p class=p-summary data-fill-with=abstract>This specification provides referencing modes and the respective fetching policies for NSVG. Furthermore it gives guidance for host languages and applications or devices with special needs by providing different referencing modes for NSVG.
 </p>
 
 <h2 class="no-num no-toc no-ref heading settled heading" id=status><span class=content>Status of this document</span></h2>
@@ -36,24 +36,24 @@
 	index at http://www.w3.org/TR/.</a></em>
 
 <p>
-	This document is the 1 November 2013 <strong>Editor’s Draft</strong> of SVG Integration Module Level 1. A document providing guidance how to reference SVG.
+	This document is the 1 November 2013 <strong>Editor’s Draft</strong> of NSVG Integration Module Level 1. A document providing guidance how to reference NSVG.
 
 <p>
 	Comments on this Editor’s Draft are welcome. Comments can be sent to
-	<a href="mailto:www-svg@w3.org?Subject=%5Bsvg-integration%5D%20PUT%20SUBJECT%20HERE">www-svg@w3.org</a>,
+	<a href="mailto:www-nsvg@w3.org?Subject=%5Bnsvg-integration%5D%20PUT%20SUBJECT%20HERE">www-nsvg@w3.org</a>,
 	the public email list for issues related to vector graphics on the Web. This list is
-	<a href=http://lists.w3.org/Archives/Public/www-svg/>archived</a> and senders must agree to have their message
+	<a href=http://lists.w3.org/Archives/Public/www-nsvg/>archived</a> and senders must agree to have their message
 	publicly archived from their first posting. To subscribe send an email to
-	<a href="mailto:www-svg-request@w3.org?Subject=subscribe">www-svg-request@w3.org</a> with the word <code>subscribe</code>
+	<a href="mailto:www-nsvg-request@w3.org?Subject=subscribe">www-nsvg-request@w3.org</a> with the word <code>subscribe</code>
 	in the subject line.
 
 <p>
-	This document has been produced by the <a href=http://www.w3.org/Graphics/SVG/WG>SVG Working Group</a> as part of the
+	This document has been produced by the <a href=http://www.w3.org/Graphics/NSVG/WG>NSVG Working Group</a> as part of the
 	<a href=http://www.w3.org/Graphics/Activity>Graphics Activity</a> within the
-	<a href=http://www.w3.org/Interaction/>W3C Interaction Domain</a>. The goals of the W3C SVG Working Group are discussed in the
-	<a href=https://www.w3.org/Graphics/SVG/svg-2019.html>W3C SVG Charter</a>. The W3C SVG Working Group maintains a
-	public Web page, <a href=http://www.w3.org/Graphics/SVG/>http://www.w3.org/Graphics/SVG/</a>, that contains further
-	background information. The authors of this document are the SVG Working Group participants.
+	<a href=http://www.w3.org/Interaction/>W3C Interaction Domain</a>. The goals of the W3C NSVG Working Group are discussed in the
+	<a href=https://www.w3.org/Graphics/NSVG/nsvg-2019.html>W3C NSVG Charter</a>. The W3C NSVG Working Group maintains a
+	public Web page, <a href=http://www.w3.org/Graphics/NSVG/>http://www.w3.org/Graphics/NSVG/</a>, that contains further
+	background information. The authors of this document are the NSVG Working Group participants.
 
 <p>
 	This document was produced by a group operating under 
@@ -73,7 +73,7 @@
 <div data-fill-with=at-risk></div>
 
 <h2 class="no-num no-toc no-ref heading settled heading" id=contents><span class=content>Table of contents</span></h2>
-<div data-fill-with=table-of-contents><ul class=toc><li><a href=#intro><span class=secno>1</span>Introduction</a><li><a href=#placement><span class=secno>2</span>Module interactions</a><li><a href=#referecing-modes><span class=secno>3</span>Referencing modes</a><li><a href=#fetching><span class=secno>4</span>Fetching</a><li><a href=#available-features-by-referencing-mode><span class=secno>5</span>Available features by referencing mode</a><li><a href=#svg-elements-attributes-and-properties><span class=secno>6</span>SVG Elements, Attributes, and Properties</a><ul class=toc><li><a href=#svg-elements><span class=secno>6.1</span>SVG Elements</a><li><a href=#svg-attributes><span class=secno>6.2</span>SVG Attributes</a><li><a href=#properties><span class=secno>6.3</span>Properties</a></ul><li><a href=#acknowledgments><span class=secno></span>Acknowledgments</a><li><a href=#conformance><span class=secno></span>
+<div data-fill-with=table-of-contents><ul class=toc><li><a href=#intro><span class=secno>1</span>Introduction</a><li><a href=#placement><span class=secno>2</span>Module interactions</a><li><a href=#referecing-modes><span class=secno>3</span>Referencing modes</a><li><a href=#fetching><span class=secno>4</span>Fetching</a><li><a href=#available-features-by-referencing-mode><span class=secno>5</span>Available features by referencing mode</a><li><a href=#nsvg-elements-attributes-and-properties><span class=secno>6</span>NSVG Elements, Attributes, and Properties</a><ul class=toc><li><a href=#nsvg-elements><span class=secno>6.1</span>NSVG Elements</a><li><a href=#nsvg-attributes><span class=secno>6.2</span>NSVG Attributes</a><li><a href=#properties><span class=secno>6.3</span>Properties</a></ul><li><a href=#acknowledgments><span class=secno></span>Acknowledgments</a><li><a href=#conformance><span class=secno></span>
 Conformance</a><ul class=toc><li><a href=#conventions><span class=secno></span>
 Document conventions</a><li><a href=#conformance-classes><span class=secno></span>
 Conformance classes</a><li><a href=#partial><span class=secno></span>
@@ -92,40 +92,40 @@ Property index</a><li><a href=#issues-index><span class=secno></span>Issues Inde
 
 <p><em>This section is informative.</em>
 
-<p>SVG is a vector graphic markup language to express art work and to create interactive, content rich applications. The vector graphics is described by geometry primitives like <a class=css-code data-link-type=type title="<circle>">&lt;circle&gt;</a>, <a class=css-code data-link-type=type title="<rect>">&lt;rect&gt;</a> or <a class=css-code data-link-type=type title="<path>">&lt;path&gt;</a>. Furthermore, SVG describes <i data-link-type=dfn title="svg resources">SVG resources</i> like <a class=css-code data-link-type=type title="<lineargradient>">&lt;linearGradient&gt;</a> and <a class=css-code data-link-type=type title="<pattern>">&lt;pattern&gt;</a> but also <a class=css-code data-link-type=type title="<mask>">&lt;mask&gt;</a> and <a class=css-code data-link-type=type title="<filter>">&lt;filter&gt;</a>. SVG makes use of image references, stylesheets like CSS, allows scripting with JavaScript and declarative animations with CSS Transitions, CSS Animations and SVG Animations giving it its actual strength. Geometries, SVG resources, stylesheets and scripts can be modularized and referenced.
+<p>NSVG is a vector graphic markup language to express art work and to create interactive, content rich applications. The vector graphics is described by geometry primitives like <a class=css-code data-link-type=type title="<circle>">&lt;circle&gt;</a>, <a class=css-code data-link-type=type title="<rect>">&lt;rect&gt;</a> or <a class=css-code data-link-type=type title="<path>">&lt;path&gt;</a>. Furthermore, NSVG describes <i data-link-type=dfn title="nsvg resources">NSVG resources</i> like <a class=css-code data-link-type=type title="<lineargradient>">&lt;linearGradient&gt;</a> and <a class=css-code data-link-type=type title="<pattern>">&lt;pattern&gt;</a> but also <a class=css-code data-link-type=type title="<mask>">&lt;mask&gt;</a> and <a class=css-code data-link-type=type title="<filter>">&lt;filter&gt;</a>. NSVG makes use of image references, stylesheets like CSS, allows scripting with JavaScript and declarative animations with CSS Transitions, CSS Animations and NSVG Animations giving it its actual strength. Geometries, NSVG resources, stylesheets and scripts can be modularized and referenced.
 
-<p>In the last years, user agents were confronted with several attacking patterns to reveal privacy data of users. These attacks lead to a new understanding of the protection of privacy for the web platform. This specification extends SVG with existing security mechanisms to protect the privacy of the user.
+<p>In the last years, user agents were confronted with several attacking patterns to reveal privacy data of users. These attacks lead to a new understanding of the protection of privacy for the web platform. This specification extends NSVG with existing security mechanisms to protect the privacy of the user.
 
-<p>SVG can also be used in a lot of different situations. Some might not be suited for devices or use cases with special needs. The section <a href=available-features-by-referencing-mode>"Available features by referencing mode"</a> provides a guidance with several predefined modes that combine certain features.
+<p>NSVG can also be used in a lot of different situations. Some might not be suited for devices or use cases with special needs. The section <a href=available-features-by-referencing-mode>"Available features by referencing mode"</a> provides a guidance with several predefined modes that combine certain features.
 
 <p class=issue id=issue-3f0b3bc1><a class=self-link href=#issue-3f0b3bc1></a>Examples for different devices/use cases missing.</p>
 
-<p>The specification is also meant to be a reference for all SVG elements, SVG attributes and CSS properties used or defined by all SVG recommendations.
+<p>The specification is also meant to be a reference for all NSVG elements, NSVG attributes and CSS properties used or defined by all NSVG recommendations.
 
 <h2 class="heading settled heading" data-level=2 id=placement><span class=secno>2 </span><span class=content>Module interactions</span><a class=self-link href=#placement></a></h2>
 
-<p>This specification extends the W3C recommendations SVG 1.1 <a data-biblio-type=normative data-link-type=biblio href=#svg11 title=svg11>[SVG11]</a>, SVG 1.2 Tiny [SVGT12] and future recommendations of SVG. Furthermore, this specification provides a security model for referencing SVG and is meant to be a normative reference for every host language embedding SVG.
+<p>This specification extends the W3C recommendations NSVG 1.1 <a data-biblio-type=normative data-link-type=biblio href=#nsvg11 title=nsvg11>[NSVG11]</a>, NSVG 1.2 Tiny [NSVGT12] and future recommendations of NSVG. Furthermore, this specification provides a security model for referencing NSVG and is meant to be a normative reference for every host language embedding NSVG.
 
 <h2 class="heading settled heading" data-level=3 id=referecing-modes><span class=secno>3 </span><span class=content>Referencing modes</span><a class=self-link href=#referecing-modes></a></h2>
 
-<p>SVG is a markup language that can be fetched and displayed as a root document. Furthermore, it can also be referenced or embedded by another host language such as HTML. This following <dfn data-dfn-type=dfn data-noexport="" id=document-referencing-mode>document referencing mode<a class=self-link href=#document-referencing-mode></a></dfn>s apply:
+<p>NSVG is a markup language that can be fetched and displayed as a root document. Furthermore, it can also be referenced or embedded by another host language such as HTML. This following <dfn data-dfn-type=dfn data-noexport="" id=document-referencing-mode>document referencing mode<a class=self-link href=#document-referencing-mode></a></dfn>s apply:
 
 <dl>
-  <dt><dfn data-dfn-type=dfn data-noexport="" id=svg-embedding-mode>SVG embedding mode<a class=self-link href=#svg-embedding-mode></a></dfn></dt>
+  <dt><dfn data-dfn-type=dfn data-noexport="" id=nsvg-embedding-mode>NSVG embedding mode<a class=self-link href=#nsvg-embedding-mode></a></dfn></dt>
   <dd>
-    <p>The SVG document is embedded in a <i data-link-type=dfn title="nested browsing context">nested browsing context</i> of a host language such as the <a class=css-code data-link-type=type title="<iframe>">&lt;iframe&gt;</a> tag or the <a class=css-code data-link-type=type title="<object>">&lt;object&gt;</a> tag in HTML or integration points such as for the <a class=css-code data-link-type=type title="<embed>">&lt;embed&gt;</a> tag in HTML or the <a class=css-code data-link-type=type title="<foreignobject>">&lt;foreignObject&gt;</a> element in SVG. 
-    <p class=note>Note: The <a class=css-code data-link-type=type title="<object>">&lt;object&gt;</a> tag treats external resources as either a <i data-link-type=dfn title="nested browsing context">nested browsing context</i> or as an image. SVG documents are always treated as a <i data-link-type=dfn title="nested browsing context">nested browsing context</i>.
-    <p class=issue id=issue-b613f525><a class=self-link href=#issue-b613f525></a>Research the behavior on referencing SVG by <a class=css-code data-link-type=type title="<embed>">&lt;embed&gt;</a>. Is it less restrictive than <a class=css-code data-link-type=type title="<object>">&lt;object&gt;</a>?
+    <p>The NSVG document is embedded in a <i data-link-type=dfn title="nested browsing context">nested browsing context</i> of a host language such as the <a class=css-code data-link-type=type title="<iframe>">&lt;iframe&gt;</a> tag or the <a class=css-code data-link-type=type title="<object>">&lt;object&gt;</a> tag in HTML or integration points such as for the <a class=css-code data-link-type=type title="<embed>">&lt;embed&gt;</a> tag in HTML or the <a class=css-code data-link-type=type title="<foreignobject>">&lt;foreignObject&gt;</a> element in NSVG. 
+    <p class=note>Note: The <a class=css-code data-link-type=type title="<object>">&lt;object&gt;</a> tag treats external resources as either a <i data-link-type=dfn title="nested browsing context">nested browsing context</i> or as an image. NSVG documents are always treated as a <i data-link-type=dfn title="nested browsing context">nested browsing context</i>.
+    <p class=issue id=issue-b613f525><a class=self-link href=#issue-b613f525></a>Research the behavior on referencing NSVG by <a class=css-code data-link-type=type title="<embed>">&lt;embed&gt;</a>. Is it less restrictive than <a class=css-code data-link-type=type title="<object>">&lt;object&gt;</a>?
   </dd>
-  <dt><dfn data-dfn-type=dfn data-noexport="" id=inline-svg-mode>Inline SVG mode<a class=self-link href=#inline-svg-mode></a></dfn></dt>
+  <dt><dfn data-dfn-type=dfn data-noexport="" id=inline-nsvg-mode>Inline NSVG mode<a class=self-link href=#inline-nsvg-mode></a></dfn></dt>
   <dd>
-    <p>The host language can define an integration point to embed SVG as part of its own document. Scripts, styles and the global time line are shared between the document of the host language and the included SVG markup. Both, the SVG markup and the host languages markup share the same document context. Events, such as "onload" rely on the event handling of the host language.
+    <p>The host language can define an integration point to embed NSVG as part of its own document. Scripts, styles and the global time line are shared between the document of the host language and the included NSVG markup. Both, the NSVG markup and the host languages markup share the same document context. Events, such as "onload" rely on the event handling of the host language.
     <p class=issue id=issue-22e419eb><a class=self-link href=#issue-22e419eb></a>Events might not depend on host language to fire onload event.
   </dd>
-  <dt><dfn data-dfn-type=dfn data-noexport="" id=svg-resource-mode>SVG resource mode<a class=self-link href=#svg-resource-mode></a></dfn></dt>
-  <dd>Stylesheets such as CSS can reference certain parts of an SVG document by fragment identifiers. Often these SVG documents need to be fetched to serve as a source of resources.</dd>
-  <dt><dfn data-dfn-type=dfn data-noexport="" id=svg-image-mode>SVG image mode<a class=self-link href=#svg-image-mode></a></dfn></dt>
-  <dd>A host language such as HTML or CSS can reference SVG documents as images.</dd>
+  <dt><dfn data-dfn-type=dfn data-noexport="" id=nsvg-resource-mode>NSVG resource mode<a class=self-link href=#nsvg-resource-mode></a></dfn></dt>
+  <dd>Stylesheets such as CSS can reference certain parts of an NSVG document by fragment identifiers. Often these NSVG documents need to be fetched to serve as a source of resources.</dd>
+  <dt><dfn data-dfn-type=dfn data-noexport="" id=nsvg-image-mode>NSVG image mode<a class=self-link href=#nsvg-image-mode></a></dfn></dt>
+  <dd>A host language such as HTML or CSS can reference NSVG documents as images.</dd>
 </dl>
 
 <h2 class="heading settled heading" data-level=4 id=fetching><span class=secno>4 </span><span class=content>Fetching</span><a class=self-link href=#fetching></a></h2>
@@ -134,25 +134,25 @@ Property index</a><li><a href=#issues-index><span class=secno></span>Issues Inde
 
 <p class=issue id=issue-ee578070><a class=self-link href=#issue-ee578070></a>Add fetching modes based on the fetching algorithm from HTML5
 
-<p class=issue id=issue-dd2e329f><a class=self-link href=#issue-dd2e329f></a>SVG not tainting canvas all the time
+<p class=issue id=issue-dd2e329f><a class=self-link href=#issue-dd2e329f></a>NSVG not tainting canvas all the time
 
 <h2 class="heading settled heading" data-level=5 id=available-features-by-referencing-mode><span class=secno>5 </span><span class=content>Available features by referencing mode</span><a class=self-link href=#available-features-by-referencing-mode></a></h2>
 
-<h2 class="heading settled heading" data-level=6 id=svg-elements-attributes-and-properties><span class=secno>6 </span><span class=content>SVG Elements, Attributes, and Properties</span><a class=self-link href=#svg-elements-attributes-and-properties></a></h2>
+<h2 class="heading settled heading" data-level=6 id=nsvg-elements-attributes-and-properties><span class=secno>6 </span><span class=content>NSVG Elements, Attributes, and Properties</span><a class=self-link href=#nsvg-elements-attributes-and-properties></a></h2>
 
-<p>This is a comprehensive list of all SVG elements from the SVG 1.1 <a data-biblio-type=normative data-link-type=biblio href=#svg11 title=svg11>[SVG11]</a> and SVG Tiny 1.2 [SVGT12] specifications. This document will be updated as new elements are minted.
+<p>This is a comprehensive list of all NSVG elements from the NSVG 1.1 <a data-biblio-type=normative data-link-type=biblio href=#nsvg11 title=nsvg11>[NSVG11]</a> and NSVG Tiny 1.2 [NSVGT12] specifications. This document will be updated as new elements are minted.
 
-<h3 class="heading settled heading" data-level=6.1 id=svg-elements><span class=secno>6.1 </span><span class=content>SVG Elements</span><a class=self-link href=#svg-elements></a></h3>
+<h3 class="heading settled heading" data-level=6.1 id=nsvg-elements><span class=secno>6.1 </span><span class=content>NSVG Elements</span><a class=self-link href=#nsvg-elements></a></h3>
 
-<p class=issue id=issue-7b06d40a><a class=self-link href=#issue-7b06d40a></a>Add all SVG elements and the usage in specs.</p>
+<p class=issue id=issue-7b06d40a><a class=self-link href=#issue-7b06d40a></a>Add all NSVG elements and the usage in specs.</p>
 
-<h3 class="heading settled heading" data-level=6.2 id=svg-attributes><span class=secno>6.2 </span><span class=content>SVG Attributes</span><a class=self-link href=#svg-attributes></a></h3>
+<h3 class="heading settled heading" data-level=6.2 id=nsvg-attributes><span class=secno>6.2 </span><span class=content>NSVG Attributes</span><a class=self-link href=#nsvg-attributes></a></h3>
 
-<p class=issue id=issue-e7509f6f><a class=self-link href=#issue-e7509f6f></a>Add all SVG attribtues and the usage in specs.</p>
+<p class=issue id=issue-e7509f6f><a class=self-link href=#issue-e7509f6f></a>Add all NSVG attribtues and the usage in specs.</p>
 
 <h3 class="heading settled heading" data-level=6.3 id=properties><span class=secno>6.3 </span><span class=content>Properties</span><a class=self-link href=#properties></a></h3>
 
-<p class=issue id=issue-3b578549><a class=self-link href=#issue-3b578549></a>Add all CSS properties defined by SVG specs.</p>
+<p class=issue id=issue-3b578549><a class=self-link href=#issue-3b578549></a>Add all CSS properties defined by NSVG specs.</p>
 
 <h2 class="no-num heading settled heading" id=acknowledgments><span class=content>Acknowledgments</span><a class=self-link href=#acknowledgments></a></h2>
 
@@ -282,7 +282,7 @@ References</span><a class=self-link href=#references></a></h2>
 
 <h3 class="no-num no-ref heading settled heading" id=normative><span class=content>
 Normative References</span><a class=self-link href=#normative></a></h3>
-<div data-fill-with=normative-references><dl><dt id=rfc2119 title=RFC2119><a class=self-link href=#rfc2119></a>[RFC2119]<dd>S. Bradner. <a href=http://www.ietf.org/rfc/rfc2119.txt>Key words for use in RFCs to Indicate Requirement Levels</a>. URL: <a href=http://www.ietf.org/rfc/rfc2119.txt>http://www.ietf.org/rfc/rfc2119.txt</a><dt id=svg11 title=SVG11><a class=self-link href=#svg11></a>[SVG11]<dd>Erik Dahlström; et al. <a href=http://www.w3.org/TR/2011/REC-SVG11-20110816/>Scalable Vector Graphics (SVG) 1.1 (Second Edition)</a>. 16 August 2011. W3C Recommendation. URL: <a href=http://www.w3.org/TR/2011/REC-SVG11-20110816/>http://www.w3.org/TR/2011/REC-SVG11-20110816/</a></dl></div>
+<div data-fill-with=normative-references><dl><dt id=rfc2119 title=RFC2119><a class=self-link href=#rfc2119></a>[RFC2119]<dd>S. Bradner. <a href=http://www.ietf.org/rfc/rfc2119.txt>Key words for use in RFCs to Indicate Requirement Levels</a>. URL: <a href=http://www.ietf.org/rfc/rfc2119.txt>http://www.ietf.org/rfc/rfc2119.txt</a><dt id=nsvg11 title=NSVG11><a class=self-link href=#nsvg11></a>[NSVG11]<dd>Erik Dahlström; et al. <a href=http://www.w3.org/TR/2011/REC-NSVG11-20110816/>Not Scalable Vector Graphics (NSVG) 1.1 (Second Edition)</a>. 16 August 2011. W3C Recommendation. URL: <a href=http://www.w3.org/TR/2011/REC-NSVG11-20110816/>http://www.w3.org/TR/2011/REC-NSVG11-20110816/</a></dl></div>
 
 <h3 class="no-num no-ref heading settled heading" id=informative><span class=content>
 Informative References</span><a class=self-link href=#informative></a></h3>
@@ -292,10 +292,10 @@ Informative References</span><a class=self-link href=#informative></a></h3>
 Index</span><a class=self-link href=#index></a></h2>
 <div data-fill-with=index><ul class=indexlist>
 <li>document referencing mode, <a href=#document-referencing-mode title="section 3">3</a>
-<li>Inline SVG mode, <a href=#inline-svg-mode title="section 3">3</a>
-<li>SVG embedding mode, <a href=#svg-embedding-mode title="section 3">3</a>
-<li>SVG image mode, <a href=#svg-image-mode title="section 3">3</a>
-<li>SVG resource mode, <a href=#svg-resource-mode title="section 3">3</a>
+<li>Inline NSVG mode, <a href=#inline-nsvg-mode title="section 3">3</a>
+<li>NSVG embedding mode, <a href=#nsvg-embedding-mode title="section 3">3</a>
+<li>NSVG image mode, <a href=#nsvg-image-mode title="section 3">3</a>
+<li>NSVG resource mode, <a href=#nsvg-resource-mode title="section 3">3</a>
 </ul></div>
 
 <h2 class="no-num no-ref heading settled heading" id=property-index><span class=content>
@@ -306,16 +306,16 @@ Property index</span><a class=self-link href=#property-index></a></h2>
 
 <h2 class="no-num heading settled" id=issues-index><span class=content>Issues Index</span><a class=self-link href=#issues-index></a></h2><div style="counter-reset: issue"><p class=issue>Examples for different devices/use cases missing.<a href=#issue-3f0b3bc1> ↵ </a></p>
 
-<p class=issue>Research the behavior on referencing SVG by <a class=css-code data-link-type=type title="<embed>">&lt;embed&gt;</a>. Is it less restrictive than <a class=css-code data-link-type=type title="<object>">&lt;object&gt;</a>?
+<p class=issue>Research the behavior on referencing NSVG by <a class=css-code data-link-type=type title="<embed>">&lt;embed&gt;</a>. Is it less restrictive than <a class=css-code data-link-type=type title="<object>">&lt;object&gt;</a>?
   <a href=#issue-b613f525> ↵ </a><p class=issue>Events might not depend on host language to fire onload event.
   <a href=#issue-22e419eb> ↵ </a><p class=issue>Add fetching modes based on the fetching algorithm from HTML5
 
-<a href=#issue-ee578070> ↵ </a><p class=issue>SVG not tainting canvas all the time
+<a href=#issue-ee578070> ↵ </a><p class=issue>NSVG not tainting canvas all the time
 
-<a href=#issue-dd2e329f> ↵ </a><p class=issue>Add all SVG elements and the usage in specs.<a href=#issue-7b06d40a> ↵ </a></p>
+<a href=#issue-dd2e329f> ↵ </a><p class=issue>Add all NSVG elements and the usage in specs.<a href=#issue-7b06d40a> ↵ </a></p>
 
-<p class=issue>Add all SVG attribtues and the usage in specs.<a href=#issue-e7509f6f> ↵ </a></p>
+<p class=issue>Add all NSVG attribtues and the usage in specs.<a href=#issue-e7509f6f> ↵ </a></p>
 
-<p class=issue>Add all CSS properties defined by SVG specs.<a href=#issue-3b578549> ↵ </a></p>
+<p class=issue>Add all CSS properties defined by NSVG specs.<a href=#issue-3b578549> ↵ </a></p>
 
 </div>

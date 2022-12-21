@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
   <title>Text</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,7 +9,7 @@
   <!-- Style sheets for local dev. Will be standardized in processing.
   Add attribute data-keep="" to any extra stylesheet link you do not want removed
   (or use <style>), and include it before here. -->
-  <link rel="stylesheet" href="style/svg.css" type="text/css" />
+  <link rel="stylesheet" href="style/nsvg.css" type="text/css" />
   <link rel="stylesheet" href="style/W3C-ED.css" type="text/css" />
 </head>
 <body>
@@ -19,7 +19,7 @@
 <h2 id="Introduction">Introduction</h2>
 
   <p>
-    Text that is to be rendered as part of an SVG document fragment is
+    Text that is to be rendered as part of an NSVG document fragment is
     specified using the <a>'text'</a> element. The text within a
     <a>'text'</a> element can be rendered:
   </p>
@@ -43,18 +43,18 @@
   </p>
 
   <p class="note">
-    Rules for text layout in SVG 1.1 are mostly defined within the SVG
+    Rules for text layout in NSVG 1.1 are mostly defined within the NSVG
     1.1 specification. The rules mirror to a large extent those found
-    in CSS. In SVG 2, the dependence on CSS is more explicit. In
+    in CSS. In NSVG 2, the dependence on CSS is more explicit. In
     practice the resulting layout is the same. The change to directly
-    relying on CSS specifications simplifies the SVG specification
+    relying on CSS specifications simplifies the NSVG specification
     while making it more obvious that rendering agents can use the
-    same code to render both text in HTML and in SVG. In particular,
-    SVG 2 auto-wrapped text is based on CSS text layout.
+    same code to render both text in HTML and in NSVG. In particular,
+    NSVG 2 auto-wrapped text is based on CSS text layout.
   </p>
 
   <p>
-    SVG's <a>'text'</a> elements are rendered like other graphics
+    NSVG's <a>'text'</a> elements are rendered like other graphics
     elements. Thus, <a href="coords.html">coordinate system
     transformations</a>, <a href="painting.html">painting</a>,
     <a href="render.html#ClippingAndMasking">clipping</a> and
@@ -65,7 +65,7 @@
   </p>
 
   <p>
-    SVG text supports advanced typographic features including:
+    NSVG text supports advanced typographic features including:
   </p>
   <ul>
     <li>choice of typeface,</li>
@@ -76,7 +76,7 @@
   </ul>
 
   <p>
-    SVG text supports international text processing needs such as:
+    NSVG text supports international text processing needs such as:
   </p>
   <ul>
     <li>horizontal and vertical orientation of text,</li>
@@ -101,7 +101,7 @@
   </ul>
 
   <p>
-    Multi-language SVG content is possible by
+    Multi-language NSVG content is possible by
     <a href="struct.html#SwitchElement">substituting different
     text strings based on the user's preferred language</a>.
   </p>
@@ -114,7 +114,7 @@
 
   <ul>
     <li>
-      Text data in SVG content is readily accessible to the visually
+      Text data in NSVG content is readily accessible to the visually
       impaired (see <a href="access.html">Accessibility
       Support</a>).
     </li>
@@ -128,7 +128,7 @@
 
     <li>
       XML-compatible Web search engines will find text strings in
-      SVG content with no additional effort over what they need to
+      NSVG content with no additional effort over what they need to
       do to find text strings in other XML documents.
     </li>
   </ul>
@@ -141,7 +141,7 @@
     a text element that provides a visible label for part of a diagram
     should have an <a>'id'</a> that is referenced by
     an <a>'aria-labelledby'</a> attribute on the relevant group or path element.
-    See <a href="access.html">SVG
+    See <a href="access.html">NSVG
     accessibility guidelines</a> for more information.
   </p>
 
@@ -164,7 +164,7 @@
     <dt><dfn id="TermAddressableCharacter" data-dfn-type="dfn" data-export="">addressable character</dfn></dt>
     <dd>
       A <a>character</a> that is addressable by text positioning
-      attributes and SVG DOM text methods.
+      attributes and NSVG DOM text methods.
 
       Characters discarded during layout such as
       <a href="https://www.w3.org/TR/css-text-3/#white-space-phase-1">collapsed
@@ -175,7 +175,7 @@
       Addressable characters are addressed by their index. Indexes are
       determined prior to applying any <a>'text-transform'</a>
       conversions, as described for the methods in the
-      <a>SVGTextContentElement</a> interface.
+      <a>NSVGTextContentElement</a> interface.
 
       There are two methods to map an index to a character; the choice of
       which to use depends on purpose:
@@ -189,7 +189,7 @@
           one character).
         </li>
         <li>
-          For the purposes of SVG DOM text methods, the index is
+          For the purposes of NSVG DOM text methods, the index is
           measured in UTF-16 code units (thus, a single Unicode code
           point above U+FFFF will map to two addressable characters as
           a UTF-16 code unit consists of 16 bits).
@@ -197,14 +197,14 @@
       </ol>
 
       <p class="note">
-        The different methods are backwards compatible with SVG
-        1.1. The use of UTF-16 code units for SVG DOM text methods is
+        The different methods are backwards compatible with NSVG
+        1.1. The use of UTF-16 code units for NSVG DOM text methods is
         required from the definition of DOMString in the DOM 2
         specification.
       </p>
 
       <p class="annotation">
-        The SVG working group is interested in implementer feedback on
+        The NSVG working group is interested in implementer feedback on
         the possibility of using grapheme clusters as defined by the
         Unicode Standard Annex #29 to replace Unicode code points in
         mapping text positioning attributes. Note, the use of the
@@ -257,8 +257,8 @@
 
     <dt><dfn id="TermTextContentElement" data-dfn-type="dfn" data-export="">text content element</dfn></dt>
     <dd>
-      A text content element is an SVG element that causes a text
-      string to be rendered onto the canvas. The SVG text content
+      A text content element is an NSVG element that causes a text
+      string to be rendered onto the canvas. The NSVG text content
       elements are:
       <edit:elementcategory name='text content'/>.
     </dd>
@@ -267,7 +267,7 @@
     <dd>
       A text content child element is a <a>text content element</a>
       that is allowed as a descendant of another <a>text content
-      element</a>. In SVG the text content child elements are:
+      element</a>. In NSVG the text content child elements are:
       <edit:elementcategory name='text content child'/>.
     </dd>
 
@@ -278,11 +278,11 @@
       which may optionally contain certain child <a>text content
       elements</a> (e.g.
       <a href="text.html#TextElement"><span class="element-name">'tspan'</span></a>).
-      <!--SVG Tiny 1.2 defines two text content block elements:
+      <!--NSVG Tiny 1.2 defines two text content block elements:
 	<a href="text.html#TextElement"><span class="element-name">'text'</span></a>
 	and
 	<a href="text.html#TextAreaElement"><span class="element-name">'textArea'</span></a>-->
-      SVG 2 defines a single text content block element: <a>'text'</a>.
+      NSVG 2 defines a single text content block element: <a>'text'</a>.
     </dd>
 
     <dt><dfn id="TermContentArea">content area</dfn></dt>
@@ -325,7 +325,7 @@
       </p>
     </dd>
 
-    <!-- The following two terms are taken from CSS Writing Modes 3, simplified for SVG.-->
+    <!-- The following two terms are taken from CSS Writing Modes 3, simplified for NSVG.-->
     <dt><dfn id="TermInlineBaseDirection">inline-base direction</dfn></dt>
     <dd>
       The primary direction in which content is ordered within a line
@@ -443,7 +443,7 @@
       ([<a href="refs.html#ref-css-text-3">css-text-3</a>]).
       </p>
       <p>
-      SVG attributes such as <a>'tspan/dx'</a>, <a>'textLength'</a>,
+      NSVG attributes such as <a>'tspan/dx'</a>, <a>'textLength'</a>,
       and <a>'textPath/spacing'</a> (in <a>'textPath'</a>) that may
       reposition <a>typographic characters</a> do not break discretionary
       ligatures.
@@ -459,15 +459,15 @@
   </ul>
 
 
-  <div class="annotation svg2-requirement">
+  <div class="annotation nsvg2-requirement">
     <table>
       <tr>
-	<th>SVG 2 Requirement:</th>
+	<th>NSVG 2 Requirement:</th>
 	<td>Include explicit support for Web Open Font Format (WOFF).</td>
       </tr>
       <tr>
 	<th>Resolution:</th>
-	<td><a href="http://www.w3.org/2011/03/01-svg-minutes.html#item03">We will mandate WOFF support in SVG 2.</a></td>
+	<td><a href="http://www.w3.org/2011/03/01-nsvg-minutes.html#item03">We will mandate WOFF support in NSVG 2.</a></td>
       </tr>
       <tr>
 	<th>Purpose:</th>
@@ -486,7 +486,7 @@
 
   <p>
     Proper text rendering may depend on using the same font as used
-    during authoring. For this reason SVG requires support for
+    during authoring. For this reason NSVG requires support for
     downloadable fonts as defined in the
     <a href="https://www.w3.org/TR/css-fonts-3/#font-resources">Font
     Resources</a> section of the
@@ -496,7 +496,7 @@
   </p>
 
   <p class="note">
-    New in SVG 2, WOFF allows authors to provide the fonts needed to
+    New in NSVG 2, WOFF allows authors to provide the fonts needed to
     properly render their content. This includes ensuring that the
     fonts have the proper OpenType tables to support complex scripts,
     discretionary ligatures, swashes, old-style numbers, and so
@@ -509,7 +509,7 @@
   <p>
     Glyph selection and positioning is normally handled according to
     the rules of CSS. In some cases, however, the final layout of text
-    in SVG requires knowledge of the geometry properties of individual
+    in NSVG requires knowledge of the geometry properties of individual
     glyphs.
   </p>
 
@@ -543,7 +543,7 @@
   </p>
 
   <div class="figure">
-    <img class="bordered" src="images/text/font_embox.svg"
+    <img class="bordered" src="images/text/font_embox.nsvg"
          alt="An 'M' inside an EM box showing the coordinate system, baseline,
 	      ascent and descent."/>
     <p class="caption">
@@ -554,7 +554,7 @@
   </div>
 
   <p>
-    SVG assumes that the font tables will provide at least three font
+    NSVG assumes that the font tables will provide at least three font
     characteristics: an ascent, a descent and a set of
     baseline-tables. The ascent is the distance to the top of the EM
     box from the (0,0) point of the font; the descent is the distance
@@ -597,7 +597,7 @@
   </p>
 
   <div class="figure">
-    <img class="bordered" src="images/text/font_baseline.svg"
+    <img class="bordered" src="images/text/font_baseline.nsvg"
          alt="Baseline example in three different scripts."/>
     <p class="caption">
       Example baselines (red lines) in three different scripts. From
@@ -622,7 +622,7 @@
   </p>
 
   <div class="figure">
-    <img class="bordered" src="images/text/font_metrics.svg"
+    <img class="bordered" src="images/text/font_metrics.nsvg"
          alt="Baseline example in three different scripts."/>
     <p class="caption">
       Example of font metrics. The blue boxes show the geometric
@@ -701,7 +701,7 @@
   </p>
 
   <div class="figure">
-    <img class="bordered" src="images/text/vertical_align.svg"
+    <img class="bordered" src="images/text/vertical_align.nsvg"
          alt="Examples of using the 'vertical-align' property. Left shows '[[z]]' where the inner brackets are smaller. Right shows 'x2' where the '2' is a superscript."/>
     <p class="caption">
       Examples of using the 'vertical-align' property.
@@ -718,7 +718,7 @@
   </div>
 
   <p>
-    SVG further assumes that for each glyph in the font data for a
+    NSVG further assumes that for each glyph in the font data for a
     font, there are two width values, two alignment-baselines and two
     alignment points, one each for horizontal writing-modes and the
     other for vertical writing-modes. (Even though it is specified as
@@ -737,15 +737,15 @@
     [<a href="refs.html#ref-css-writing-modes-3">css-writing-modes-3</a>])
   </p>
 
-  <div class="annotation svg2-requirement">
+  <div class="annotation nsvg2-requirement">
     <table>
       <tr>
-	<th>SVG 2 Requirement:</th>
+	<th>NSVG 2 Requirement:</th>
 	<td>Support text aligned to different baselines.</td>
       </tr>
       <tr>
 	<th>Resolution:</th>
-	<td><a href="http://www.w3.org/2012/03/15-svg-irc#T21-07-21">SVG 2 will support glyphs being aligned to different baselines, perhaps by using existing or improved CSS properties.</a></td>
+	<td><a href="http://www.w3.org/2012/03/15-nsvg-irc#T21-07-21">NSVG 2 will support glyphs being aligned to different baselines, perhaps by using existing or improved CSS properties.</a></td>
       </tr>
       <tr>
 	<th>Purpose:</th>
@@ -769,13 +769,13 @@
     the maximum descent of all the glyphs in a line of text after
     applying the effect of the <a>'line-height'</a> property.  The
     width of a <a>line box</a> is normally the width of the containing
-    text block. In SVG, when the containing text block does not have a
+    text block. In NSVG, when the containing text block does not have a
     fixed geometry (as with pre-formatted text), the <a>line box</a>
     tightly wraps the glyph boxes within the box.
   </p>
 
   <div class="figure">
-    <img class="bordered" src="images/text/line_box.svg"
+    <img class="bordered" src="images/text/line_box.nsvg"
          alt="The sentence 'A big word.' where 'big' is in a larger font."/>
     <p class="caption">
       Example of determining the height of a <a>line box</a>.
@@ -962,9 +962,9 @@
       canvas using the Verdana font family with the glyphs filled
       with the color blue.
     </p>
-    <edit:includefile href='images/text/text01.svg' image='yes' link='yes'/>
+    <edit:includefile href='images/text/text01.nsvg' image='yes' link='yes'/>
     <div class="figure">
-      <img class="bordered" src="images/text/text01.svg"
+      <img class="bordered" src="images/text/text01.nsvg"
 	   alt="Image showing the blue text."/>
     </div>
   </div>
@@ -973,9 +973,9 @@
     <p>
       A <a>'tspan'</a> is used to change the styling of the word <q>not</q>.
     </p>
-    <edit:includefile href='images/text/tspan01.svg' image='yes' link='yes'/>
+    <edit:includefile href='images/text/tspan01.nsvg' image='yes' link='yes'/>
     <div class="figure">
-      <img class="bordered" src="images/text/tspan01.svg"
+      <img class="bordered" src="images/text/tspan01.nsvg"
 	   alt="Blue text except the word 'not' is red."/>
     </div>
   </div>
@@ -990,24 +990,24 @@
       support <a href="text.html#TextSelection">text selection and
       clipboard operations</a>.
     </p>
-    <edit:includefile href='images/text/tspan02.svg' image='yes' link='yes'/>
+    <edit:includefile href='images/text/tspan02.nsvg' image='yes' link='yes'/>
     <div class="figure">
-      <img class="bordered" src="images/text/tspan02.svg"
+      <img class="bordered" src="images/text/tspan02.nsvg"
 	   alt="A sentence with several shifted words."/>
     </div>
   </div>
 
   <edit:with element='text'>
   <edit:elementsummary name='text'/>
-  <div class="annotation svg2-requirement">
+  <div class="annotation nsvg2-requirement">
     <table>
       <tr>
-	<th>SVG 2 Requirement:</th>
+	<th>NSVG 2 Requirement:</th>
 	<td>Allow transforms on <a>'tspan'</a>.</td>
       </tr>
       <tr>
 	<th>Resolution:</th>
-	<td><a href="http://www.w3.org/2011/12/01-svg-irc#T21-02-34">SVG 2 will allow transforms on <span class="element-name">'tspan'</span>.</a></td>
+	<td><a href="http://www.w3.org/2011/12/01-nsvg-irc#T21-02-34">NSVG 2 will allow transforms on <span class="element-name">'tspan'</span>.</a></td>
       </tr>
       <tr>
 	<th>Purpose:</th>
@@ -1024,10 +1024,10 @@
     </table>
     <p>
       This decision was reversed. See
-      <a href="https://github.com/w3c/svgwg/issues/210">GitHub Issue
+      <a href="https://github.com/w3c/nsvgwg/issues/210">GitHub Issue
 	210</a>. CSS/HTML does not allow transforms on inline elements
 	and no renderer supports transforms on the <a>'a'</a> element
-	when inline (in both SVG and HTML).
+	when inline (in both NSVG and HTML).
     </p>
   </div>
 
@@ -1035,7 +1035,7 @@
 
 <h3 id="TSpanAttributes">Attributes</h3>
 
-  <dl class="attrdef-list-svg2">
+  <dl class="attrdef-list-nsvg2">
 
     <dt>
       <table class="attrdef def">
@@ -1097,10 +1097,10 @@
         </li>
       </ol>
       <p class="note">
-	In SVG 2, the <a>'text'</a> and <a>'tspan'</a> <a>'text/x'</a>
+	In NSVG 2, the <a>'text'</a> and <a>'tspan'</a> <a>'text/x'</a>
 	and <a>'text/y'</a> attributes are not presentation attributes
 	and cannot be set via CSS. This may change in a future version
-	of SVG.
+	of NSVG.
       </p>
     </dd>
 
@@ -1382,7 +1382,7 @@
     adjustments between characters or for major positioning
     adjustments, such as moving a section of text to a new location to
     achieve the visual effect of a new line of text (compatible with
-    SVG 1.1). Note that the <a>'x'</a>, <a>'y'</a>, <a>'dx'</a>,
+    NSVG 1.1). Note that the <a>'x'</a>, <a>'y'</a>, <a>'dx'</a>,
     <a>'dy'</a>, and <a>'rotate'</a> attributes are
     ignored for auto-wrapped text (except for the initial <a>current
     text position</a> when the <a>content area</a> is specified by
@@ -1397,14 +1397,14 @@
 
   <p>
     In situations where micro-level positioning adjustment are
-    necessary for advanced typographic control, the SVG content
+    necessary for advanced typographic control, the NSVG content
     designer needs to ensure that the necessary font will be available
     for all viewers of the document (e.g., package up the necessary
-    font data in the form of an SVG font or an alternative WebFont
-    format which is stored at the same Web site as the SVG content)
+    font data in the form of an NSVG font or an alternative WebFont
+    format which is stored at the same Web site as the NSVG content)
     and that the viewing software will process the font in the
     expected way (the capabilities, characteristics and font layout
-    mechanisms vary greatly from system to system). If the SVG content
+    mechanisms vary greatly from system to system). If the NSVG content
     contains <a>'x'</a>, <a>'y'</a>, <a>'dx'</a>, or
     <a>'dy'</a> attribute values which are meant to correspond to a
     particular font processed by a particular set of viewing software
@@ -1532,7 +1532,7 @@
     characters in the string.
   </p>
 
-  <edit:example href='images/text/tspan04.svg' name='tspan04' description="simple rotation of characters in a tspan element" image='yes' link='yes'/>
+  <edit:example href='images/text/tspan04.nsvg' name='tspan04' description="simple rotation of characters in a tspan element" image='yes' link='yes'/>
 
   <p>
     <span class="example-ref">Example tspan05</span> specifies the
@@ -1542,7 +1542,7 @@
     <a>'rotate'</a> attribute.
   </p>
 
-  <edit:example href='images/text/tspan05.svg' name='tspan05' description="propagation of rotation values to nested tspan elements" image='yes' link='yes'/>
+  <edit:example href='images/text/tspan05.nsvg' name='tspan05' description="propagation of rotation values to nested tspan elements" image='yes' link='yes'/>
 
   <p>
     Rotation of red text inside the <a>'text'</a> element:
@@ -1662,15 +1662,15 @@
 
 <h2 id="TextLayout">Text layout – Introduction</h2>
 
-  <div class="annotation svg2-requirement">
+  <div class="annotation nsvg2-requirement">
     <table>
       <tr>
-	<th>SVG 2 Requirement:</th>
-	<td>Include text layout improvements from SVG Tiny 1.2.</td>
+	<th>NSVG 2 Requirement:</th>
+	<td>Include text layout improvements from NSVG Tiny 1.2.</td>
       </tr>
       <tr>
 	<th>Resolution:</th>
-	<td><a href="http://www.w3.org/2012/02/02-svg-minutes.html#item10">SVG 2 will include the improved text from SVG Tiny 1.2 on characters and glyphs, text layout, text selection, text search.</a></td>
+	<td><a href="http://www.w3.org/2012/02/02-nsvg-minutes.html#item10">NSVG 2 will include the improved text from NSVG Tiny 1.2 on characters and glyphs, text layout, text selection, text search.</a></td>
       </tr>
       <tr>
 	<th>Purpose:</th>
@@ -1678,20 +1678,20 @@
       </tr>
       <tr>
 	<th>Owner:</th>
-	<td>Chris (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3236">ACTION-3236</a>)</td>
+	<td>Chris (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3236">ACTION-3236</a>)</td>
       </tr>
     </table>
   </div>
 
-  <div class="annotation svg2-requirement">
+  <div class="annotation nsvg2-requirement">
     <table>
       <tr>
-	<th>SVG 2 Requirement:</th>
+	<th>NSVG 2 Requirement:</th>
 	<td>Support text in shapes.</td>
       </tr>
       <tr>
 	<th>Resolution:</th>
-	<td><a href="http://www.w3.org/2011/11/17-svg-irc#T22-04-11">SVG 2 will require automatic text wrapping compatible with CSS.</a></td>
+	<td><a href="http://www.w3.org/2011/11/17-nsvg-irc#T22-04-11">NSVG 2 will require automatic text wrapping compatible with CSS.</a></td>
       </tr>
       <tr>
 	<th>Purpose:</th>
@@ -1705,13 +1705,13 @@
   </div>
 
   <p>
-    This section gives a short overview of SVG text layout. It is
+    This section gives a short overview of NSVG text layout. It is
     followed by sections that cover different aspects of text layout
     in more detail.
   </p>
 
   <p>
-    Text layout in SVG is a multi-stage process that takes as input
+    Text layout in NSVG is a multi-stage process that takes as input
     a <a>'text'</a> element subtree and its property values and
     produces a sequence of glyphs to render and their positions in
     each <a>text content element</a>'s coordinate system.
@@ -1730,7 +1730,7 @@
     The <a>content area</a> may be explicitly declared by setting the
     <a>'inline-size'</a> property, or by setting
     the <a>'shape-inside'</a> property that defines or references an
-    SVG <a>shape</a>. If a <a>content area</a> is not declared, it
+    NSVG <a>shape</a>. If a <a>content area</a> is not declared, it
     defaults to a rectangle of infinite width and height.
   </p>
 
@@ -1770,7 +1770,7 @@
 	<p>An example of multi-line pre-formatted text.</p>
 
 	<pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg"
+<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="300" height="100" viewBox="0 0 300 100">
 
      <text x="20" y="45" style="font: 24px sans-serif;">
@@ -1778,11 +1778,11 @@
        <tspan x="20" y="75">pre-formatted text.</tspan>
      </text>
 
-</svg>
+</nsvg>
 ]]></pre>
 
 	<div class="figure">
-	  <img class="bordered" src="images/text/text-preformatted.svg"
+	  <img class="bordered" src="images/text/text-preformatted.nsvg"
                alt="Image showing two lines of pre-formatted text."/>
 	  <p class="caption">Pre-formatted text where a <a>'tspan'</a> element has
 	    been used to create multi-line text.</p>
@@ -1798,17 +1798,17 @@
 	<p>An example of auto-wrapped text.</p>
 
 	<pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg"
+<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="300" height="100" viewBox="0 0 300 100">
 
   <text x="20" y="45" style="font: 24px sans-serif; inline-size: 250px;">
     Example of text auto-wrapped.</text>
 
-</svg>
+</nsvg>
 ]]></pre>
 
 	<div class="figure">
-	  <img class="bordered" src="images/text/text-wrapped.svg"
+	  <img class="bordered" src="images/text/text-wrapped.nsvg"
                alt="Image showing auto-wrapped text on two lines."/>
 	  <p class="caption">Auto-wrapped text. The <a>'inline-size'</a>
 	    property defines a rectangular content area of infinite height
@@ -1824,7 +1824,7 @@
 	<p>An example of text on a path.</p>
 
 	<pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg"
+<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="300" height="100" viewBox="0 0 300 100">
 
   <path id="MyPath" stroke="lightblue" fill="none"
@@ -1834,11 +1834,11 @@
     <textPath href="#MyPath">Text on a path.</textPath>
   </text>
 
-</svg>
+</nsvg>
 ]]></pre>
 
 	<div class="figure">
-	  <img class="bordered" src="images/text/text-path.svg"
+	  <img class="bordered" src="images/text/text-path.nsvg"
                alt="Image showing text following a path."/>
 	  <p class="caption">Text on a path. The <a>'textPath'</a>
 	    element references a <a>'path element'</a> element (shown in light
@@ -1850,31 +1850,31 @@
   </dl>
 
   <p class="note">
-    SVG 2 introduces the ability to automatically wrap text inside a
+    NSVG 2 introduces the ability to automatically wrap text inside a
     rectangle or other shape by specifying a <a>content area</a>. The
-    design of SVG wrapped text is motivated by the desire that SVG
+    design of NSVG wrapped text is motivated by the desire that NSVG
     text wrapping be as compatible as possible with text wrapping in
     CSS in order that renderers that support CSS text wrapping can
-    implement SVG text wrapping easily (but without requiring non-HTML
-    compatible SVG renderers to implement HTML). There are several
-    differences between SVG and CSS text wrapping. The most important
-    is that in SVG, a <a>content area</a> must be explicitly provided
-    as SVG does not have an automatic finite (or semi-finite)
+    implement NSVG text wrapping easily (but without requiring non-HTML
+    compatible NSVG renderers to implement HTML). There are several
+    differences between NSVG and CSS text wrapping. The most important
+    is that in NSVG, a <a>content area</a> must be explicitly provided
+    as NSVG does not have an automatic finite (or semi-finite)
     <a>content area</a> (provided in CSS by the box model). Another
-    difference is that SVG does not have the &lt;p&gt;&lt;/p&gt; and
-    &lt;br/&gt; elements which create line breaks. Instead, SVG relies
+    difference is that NSVG does not have the &lt;p&gt;&lt;/p&gt; and
+    &lt;br/&gt; elements which create line breaks. Instead, NSVG relies
     on the <span class="prop-value">pre</span> and
     <span class="prop-value">pre-line</span> values of
-    <a>'white-space'</a> to provide line breaks. SVG wrapped text also
+    <a>'white-space'</a> to provide line breaks. NSVG wrapped text also
     allows a content-creation tool to provide a natural fallback for
-    SVG 1.1 renderers that do not support wrapped text (by use of
+    NSVG 1.1 renderers that do not support wrapped text (by use of
     <a>'text/x'</a> and <a>'text/y'</a> attributes in the <a>'text'</a> and
-    <a>'tspan'</a> elements, which are ignored by SVG 2 renderers for
+    <a>'tspan'</a> elements, which are ignored by NSVG 2 renderers for
     auto-wrapped text).
   </p>
 
   <p class="note">
-    SVG's text layout options are designed to cover most general use
+    NSVG's text layout options are designed to cover most general use
     cases. If more complex layout is required (bulleted lists, tables,
     etc.), text can be rendered in another XML namespace such as XHTML
     [<a href="refs.html#ref-html">HTML</a>] embedded inline within a
@@ -1887,7 +1887,7 @@
     A <dfn>content area</dfn> is defined by specifying in
     a <a>'text'</a> element an <a>'inline-size'</a> property,
     or a <a>'shape-inside'</a> property that defines
-    or references an SVG <a>shape</a>. If no <a>content area</a> is
+    or references an NSVG <a>shape</a>. If no <a>content area</a> is
     provided, the <a>content area</a> defaults to a rectangle of
     infinite width and height (see the
     <a href="text.html#TextLayoutPre">pre-formatted text</a> section).
@@ -1917,18 +1917,18 @@
 
   <div class="note">
     <p>
-      Constructing equivalent wrapping areas in SVG and HTML. The text
+      Constructing equivalent wrapping areas in NSVG and HTML. The text
       inside the wrapping areas is rendered the same in both cases.
     </p>
     <div class="figure">
-      <img class="bordered" src="images/text/text-layout-svg.svg"
+      <img class="bordered" src="images/text/text-layout-nsvg.nsvg"
            alt="Image showing the creation of an hour glass shape
            using a circle with two semicircles spaced out
            horizontally. Text is wrapped in the circle after
            the left and right semicircles exclude part of the
            circle."/>
       <p class="caption">
-	Defining a <a>wrapping area</a> in SVG.
+	Defining a <a>wrapping area</a> in NSVG.
 
 	The <a>'text'</a> element has both a <a>'shape-inside'</a>
 	property and a <a>'shape-subtract'</a> property.
@@ -1941,7 +1941,7 @@
       </p>
     </div>
     <div class="figure">
-      <img class="bordered" src="images/text/text-layout-html.svg"
+      <img class="bordered" src="images/text/text-layout-html.nsvg"
            alt="Image showing the creation of an hour glass shape
            using a circle with two semicircles spaced out
            horizontally. Text is wrapped in the circle after
@@ -1971,11 +1971,11 @@
 
   <p class="annotation">
     'extent' added by resolution from
-    <a href="http://www.w3.org/2015/02/12-svg-minutes.html#action17">February
+    <a href="http://www.w3.org/2015/02/12-nsvg-minutes.html#action17">February
       12th, 2015</a>. 'extent' replaces the 'width' and 'height'
     attributes, added by resolution from June 27th, 2013.
     Replaced by 'inline-size' presentation attribute per resolution from
-    <a href="http://www.w3.org/2015/06/11-svg-minutes.html#item09">Linkoping
+    <a href="http://www.w3.org/2015/06/11-nsvg-minutes.html#item09">Linkoping
       F2F, June 11, 2015</a>.
   </p>
 
@@ -2012,7 +2012,7 @@
 
   <p class="note">
     The <a>'inline-size'</a> property method to wrap text is an
-    extension to pre-formatted SVG text where the author simply gives
+    extension to pre-formatted NSVG text where the author simply gives
     a limit to the width or height of the block of text; thus the use
     of the <a>'tspan/x'</a> and <a>'tspan/y'</a> attributes along with
     the <a>'direction'</a> and <a>'text-anchor'</a> properties to
@@ -2044,7 +2044,7 @@
     </tr>
     <tr>
       <th>Percentages:</th>
-      <td>Refer to the width (for horizontal text) or height (for vertical text) of the current SVG viewport
+      <td>Refer to the width (for horizontal text) or height (for vertical text) of the current NSVG viewport
 	(see <a href="coords.html#Units">Units</a>)</td>
     </tr>
     <tr>
@@ -2065,18 +2065,18 @@
     <p>An example of using <a>'inline-size'</a> for wrapping horizontal text.</p>
 
     <pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg"
+<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="300" height="100" viewBox="0 0 300 100">
 
   <text x="50" y="30" style="font: 20px sans-serif; inline-size: 200px">
     This text wraps at 200 pixels.
   </text>
 
-</svg>
+</nsvg>
 ]]></pre>
 
     <div class="figure">
-      <img class="bordered" src="images/text/text-wrap-horizontal.svg"
+      <img class="bordered" src="images/text/text-wrap-horizontal.nsvg"
            alt="Image showing English text wrapped into two lines."/>
       <p class="caption">
 	Horizontal text wrapping. The light-blue lines indicate the
@@ -2091,18 +2091,18 @@
     <p>An example of using <a>'inline-size'</a> for wrapping right to left horizontal text.</p>
 
     <pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg"
+<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="300" height="100" viewBox="0 0 300 100">
 
   <text x="250" y="30"
 	style="font: 20px PakType Naqsh; inline-size: 200px; direction: rtl;">
     هذا النص يلتف في 200 بكسل.</text>
 
-</svg>
+</nsvg>
 ]]></pre>
 
     <div class="figure">
-      <img class="bordered" src="images/text/text-wrap-horizontal-rl.svg"
+      <img class="bordered" src="images/text/text-wrap-horizontal-rl.nsvg"
            alt="Image showing Arabic text wrapped into two lines."/>
       <p class="caption">
 	Horizontal text wrapping for right to left text.
@@ -2114,7 +2114,7 @@
       </p>
     </div>
     <p class="annotation">Some browser may not render this
-      SVG 1.1 figure correctly. Batik and Firefox seems to get it
+      NSVG 1.1 figure correctly. Batik and Firefox seems to get it
       right. Bug filed against Chrome.
     </p>
   </div>
@@ -2123,18 +2123,18 @@
     <p>An example of using <a>'inline-size'</a> for wrapping vertical text.</p>
 
     <pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg"
+<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="100" height="300" viewBox="0 0 100 300">
 
   <text x="62.5" y="25" inline-size="200"
 	style="font: 25px IPAMincho; inline-size: 200px; writing-mode: vertical-rl;">
     テキストは１０文字後に折り返されます。</text>
 
-</svg>
+</nsvg>
 ]]></pre>
 
     <div class="figure">
-      <img class="bordered" src="images/text/text-wrap-vertical.svg"
+      <img class="bordered" src="images/text/text-wrap-vertical.nsvg"
            alt="Image showing vertical Japanese text wrapped into two columns."/>
       <p class="caption">
 	Vertical text wrapping. The light-blue lines indicate the
@@ -2144,7 +2144,7 @@
 	  position</a>.
       </p>
     </div>
-    <p class="annotation">This SVG 1.1 image doesn't work in
+    <p class="annotation">This NSVG 1.1 image doesn't work in
       Firefox, even nightly. Firefox does not support the presentation
       attribute 'writing-mode'. Bug filed against Firefox.
     </p>
@@ -2155,18 +2155,18 @@
     <p>An example of using <a>'inline-size'</a> for wrapping horizontal text, anchored in the middle.</p>
 
     <pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg"
+<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="300" height="100" viewBox="0 0 300 100">
 
   <text x="50" y="30" style="font: 20px sans-serif; inline-size: 200px; text-anchor: middle">
     This text wraps at 200 pixels.
   </text>
 
-</svg>
+</nsvg>
 ]]></pre>
 
     <div class="figure">
-      <img class="bordered" src="images/text/text-wrap-anchored.svg"
+      <img class="bordered" src="images/text/text-wrap-anchored.nsvg"
            alt="Image showing English text wrapped into two lines, anchored in the center."/>
       <p class="caption">
 	Horizontal text wrapping. The light-blue lines indicate the
@@ -2182,14 +2182,14 @@
   <p>
     The <a>'shape-inside'</a> property allows one to set the
     <a>content area</a> to a <a>CSS basic shape</a> or to an
-    SVG <a>shape</a>.
+    NSVG <a>shape</a>.
   </p>
   <p class="note">
     In CSS/HTML <a>'shape-inside'</a> applies to block-level elements
     and absolute and percentage values are defined relative to the
     block-level element.
 
-    In SVG absolute and percentage values are defined relative to the
+    In NSVG absolute and percentage values are defined relative to the
     current <a>user coordinate system</a> and the <a>'viewBox'</a>.
   </p>
 
@@ -2237,7 +2237,7 @@
   <dl>
     <dt><span class="attr-value">auto</span></dt>
     <dd>
-      For the purposes of SVG, the 'auto' value indicates that the
+      For the purposes of NSVG, the 'auto' value indicates that the
       content area should be defined using the <a>'inline-size'</a>
       property or as for pre-formatted text.
     </dd>
@@ -2246,7 +2246,7 @@
     <dd>
       The shape is computed based on the values of one of 'circle()',
       'ellipse()' or 'polygon()'. The CSS value of 'inset()' is
-      invalid for SVG.
+      invalid for NSVG.
 
       <div class="example">
 	<p>
@@ -2254,7 +2254,7 @@
 	</p>
 
 	<pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg"
+<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="300" height="300" viewBox="0 0 300 300">
 
   <text style="font: 20px/25px sans-serif;
@@ -2262,7 +2262,7 @@
                shape-inside: circle(120px at 150px 150px);">
     Lorem ipsum dolor sit amet, consec-tetuer adipiscing elit...</text>
 
-</svg>
+</nsvg>
 ]]></pre>
 
 	<div class="figure">
@@ -2280,22 +2280,22 @@
 
     <dt><span class="attr-value">&lt;uri&gt;</span></dt>
     <dd>
-      If the &lt;uri&gt; references an SVG <a>shape</a> element,
+      If the &lt;uri&gt; references an NSVG <a>shape</a> element,
       that element defines the shape. Otherwise, if the &lt;uri&gt;
       references an image, the shape is extracted and computed based
       on the alpha channel of the specified image using the
       <a>'shape-image-threshold'</a>. If the
-      &lt;uri&gt; does not reference an SVG shape element or an
+      &lt;uri&gt; does not reference an NSVG shape element or an
       image, the effect is as if the value ‘auto’ had been
       specified.
 
       <div class="example">
 	<p>
-	  An example of using a reference to an SVG <a>shape</a> for wrapping horizontal text.
+	  An example of using a reference to an NSVG <a>shape</a> for wrapping horizontal text.
 	</p>
 
 	<pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg"
+<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="300" height="100" viewBox="0 0 300 100">
 
   <defs>
@@ -2305,14 +2305,14 @@
   <text style="font: 20px sans-serif; shape-inside: url(#wrap);">
     This text wraps in a rectangle.</text>
 
-</svg>
+</nsvg>
 ]]></pre>
 
 	<div class="figure">
-	  <img class="bordered" src="images/text/text-wrap-rectangle.svg"
+	  <img class="bordered" src="images/text/text-wrap-rectangle.nsvg"
 	       alt="Image showing text wrapped inside a rectangle."/>
 	  <p class="caption">
-	    Horizontal text wrapping inside an SVG rectangle shape.
+	    Horizontal text wrapping inside an NSVG rectangle shape.
 	    The light-blue lines indicate the limits of the
 	    <a>content area</a>.
 	  </p>
@@ -2324,11 +2324,11 @@
 
   <p>
     The CSS values of 'outside-shape', 'shape-box', and 'display' are
-    invalid for SVG.
+    invalid for NSVG.
   </p>
 
   <p>
-    SVG allows the <a>'shape-inside'</a> property to have a list of
+    NSVG allows the <a>'shape-inside'</a> property to have a list of
     shapes. Each shape defines an independent <a>content area</a>.
     Text is first laid out in the content area of the first shape. If
     the text overflows the first shape, the overflow text is laid out
@@ -2354,7 +2354,7 @@
   <p class="annotation">
     'shape-inside' was removed when the CSS Exclusions and Shapes
     Module was split into separate Exclusions and Shapes modules. At
-    the Tokyo joint SVG/CSS F2F meeting, it was agreed that it would
+    the Tokyo joint NSVG/CSS F2F meeting, it was agreed that it would
     reappear in CSS Shapes Module Level 2.
   </p>
 
@@ -2364,7 +2364,7 @@
     The <a>'shape-subtract'</a> property allows one to exclude part of
     the <a>content area</a> from the <a>wrapping area</a>. The
     excluded area is the addition of all the areas defined in a list
-    of <a>CSS basic shape</a>s and/or SVG <a>shapes</a>.
+    of <a>CSS basic shape</a>s and/or NSVG <a>shapes</a>.
   </p>
   <p class="annotation">
     It was resolved at the 2016 Sydney F2F that 'shape-subtract' should
@@ -2425,14 +2425,14 @@
 
     <dt><span class="attr-value">&lt;uri&gt;</span></dt>
     <dd>
-      For any &lt;uri&gt; that references an SVG <a>shape</a> element,
+      For any &lt;uri&gt; that references an NSVG <a>shape</a> element,
       that element defines the contributing shape,
       expanded by the value of its <a>'shape-margin'</a> distance.
       For any &lt;uri&gt;
       that references an image, the contributing shape is extracted
       and computed based on the alpha channel of the specified image
       using the <a>'shape-image-threshold'</a>. If an &lt;uri&gt; does
-      not reference an SVG shape element or an image, that &lt;uri&gt;
+      not reference an NSVG shape element or an image, that &lt;uri&gt;
       is ignored.
     </dd>
 
@@ -2444,7 +2444,7 @@
     </p>.
 
     <pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg"
+<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="450" height="300" viewBox="0 0 450 300">
 
   <rect id="rect1" x="25"  y="25"  width="225" height="175" fill="white" stroke="black"/>
@@ -2464,7 +2464,7 @@
 	       font-size:12px;
 	       text-align:justified;
 	       line-height:110%">Lorem ipsum ...</text>
-</svg>
+</nsvg>
 ]]></pre>
 
     <div class="figure">
@@ -2490,7 +2490,7 @@
   </p>
 
   <p>
-    For the purposes of SVG, this property applies to <a>'text'</a> elements.
+    For the purposes of NSVG, this property applies to <a>'text'</a> elements.
   </p>
 
   <p class="note">
@@ -2568,7 +2568,7 @@
     <p>An example of using <a>'shape-padding'</a></p>.
 
     <pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg"
+<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="300" height="300" viewBox="0 0 300 300">
 
   <circle id="circle" cx="150" cy="150" r="125" fill="none" stroke="black"/>
@@ -2577,11 +2577,11 @@
 	       font: 18px DejaVu Sans;
 	       text-align: justified;
 	       line-height: 110%;">This is an
-  example of wrapped text in SVG 2! There should
+  example of wrapped text in NSVG 2! There should
   be 25 pixel padding around the text. The text is
   justified on both sides. It looks good!</text>
 
-</svg>
+</nsvg>
 ]]></pre>
 
     <div class="figure">
@@ -2594,7 +2594,7 @@
 	the <a>wrapping area</a>.
       </p>
     </div>
-    <p class="annotation">This image is a PNG. Figure out how to make a good SVG.
+    <p class="annotation">This image is a PNG. Figure out how to make a good NSVG.
       Note: Chrome supports 'textLength' on 'tspan' but Firefox does not.</p>
   </div>
 
@@ -2639,7 +2639,7 @@
       area</a>.
 
       <p class="note">
-	SVG allows the <a>'shape-inside'</a> property to reference
+	NSVG allows the <a>'shape-inside'</a> property to reference
 	more than one shape. Each shape should be filled in turn until
 	there is no more text or no more shapes.
       </p>
@@ -2659,14 +2659,14 @@
       </p>
     </li>
     <li>
-      For all other text (SVG 1.1 compatible text and SVG 1.1
+      For all other text (NSVG 1.1 compatible text and NSVG 1.1
       like multi-line text), layout the text in a CSS content box that
       is unconstrained in width and height.
     </li>
   </ul>
 
   <p>
-    A number of CSS properties have no or limited effect on SVG text
+    A number of CSS properties have no or limited effect on NSVG text
     layout:
   </p>
 
@@ -2730,7 +2730,7 @@
   </ul>
 
   <p>
-    Various SVG attributes and properties may reposition the
+    Various NSVG attributes and properties may reposition the
     <a>typographic characters</a> depending on how the <a>content
     area</a> is defined:
   </p>
@@ -2749,7 +2749,7 @@
       No further post-processing is performed.
     </li>
     <li>
-      For all other text (SVG 1.1 compatible text and SVG 1.1 like
+      For all other text (NSVG 1.1 compatible text and NSVG 1.1 like
       multi-line text), the positions of the <a>typographic
       characters</a> are adjusted according to the algorithm that
       follows.
@@ -2757,7 +2757,7 @@
   </ul>
 
   <p>
-    The following SVG text layout algorithm returns output information
+    The following NSVG text layout algorithm returns output information
     about each character in the DOM in the <a>'text'</a> element's
     subtree. That information includes:
   </p>
@@ -2781,7 +2781,7 @@
     <li>
       an "addressable" flag, which represents whether it is
       an <a>addressable character</a>, that is, addressable by text
-      positioning attributes and SVG DOM text methods;
+      positioning attributes and NSVG DOM text methods;
     </li>
     <li>
       a "middle" flag, which represents whether it is the second or
@@ -2795,7 +2795,7 @@
   </ul>
 
   <p class="note">
-    The arrays given in the SVG attributes <a>'tspan/x'</a>,
+    The arrays given in the NSVG attributes <a>'tspan/x'</a>,
     <a>'tspan/y'</a>, <a>'tspan/dx'</a>, <a>'tspan/dy'</a>,
     and <a>'tspan/rotate'</a> are indexed by <a>addressable
     characters</a>. However, repositioning is applied to
@@ -2814,7 +2814,7 @@
   </p>
 
   <p>
-    The SVG specific text layout algorithm is as follows:
+    The NSVG specific text layout algorithm is as follows:
   </p>
 
   <ol class='algorithm'>
@@ -3781,24 +3781,24 @@
 
   <hr/>
 
-  <div class="annotation svg2-requirement">
+  <div class="annotation nsvg2-requirement">
     <table>
       <tr>
-	<th>SVG 2 Requirement:</th>
+	<th>NSVG 2 Requirement:</th>
 	<td>Align with CSS for text layout functionality.</td>
       </tr>
       <tr>
 	<th>Resolution:</th>
-	<td><a href="http://www.w3.org/2011/07/29-svg-minutes.html#item08">SVG 2 Will use CSS3 definitions for text layout (white space, bidi, etc.) that is not specific to SVG.</a></td>
+	<td><a href="http://www.w3.org/2011/07/29-nsvg-minutes.html#item08">NSVG 2 Will use CSS3 definitions for text layout (white space, bidi, etc.) that is not specific to NSVG.</a></td>
       </tr>
       <tr>
 	<th>Purpose:</th>
-	<td>To facilitate shared specification and implementation of text layout in HTML and SVG.</td>
+	<td>To facilitate shared specification and implementation of text layout in HTML and NSVG.</td>
       </tr>
       <tr>
 	<th>Owner:</th>
-	<td>Cameron and Chris (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3004">ACTION-3004</a>,
-          <a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3005">ACTION-3005</a>)</td>
+	<td>Cameron and Chris (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3004">ACTION-3004</a>,
+          <a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3005">ACTION-3005</a>)</td>
       </tr>
     </table>
   </div>
@@ -3806,7 +3806,7 @@
 <h2 id="TextLayoutPre">Pre-formatted text</h2>
 
   <p class="note">
-    This option corresponds to basic SVG 1.1 text layout.
+    This option corresponds to basic NSVG 1.1 text layout.
   </p>
 
   <p>
@@ -3827,7 +3827,7 @@
       or <span class="prop-value">pre-line</span>. Line spacing is set
       by <a>'line-height'</a>.
 
-      <p class="note">New in SVG 2.</p>
+      <p class="note">New in NSVG 2.</p>
     </li>
 
     <li>
@@ -3869,7 +3869,7 @@
 
   <p>
     After text is laid out according to the basic CSS text layout
-    rules, <a>typographic characters</a> can be repositioned using SVG
+    rules, <a>typographic characters</a> can be repositioned using NSVG
     specific rules.  Absolute repositioning can be prescribed by
     giving absolute coordinates in the <a>'tspan/x'</a>
     and <a>'tspan/y'</a> attributes or by forced line breaks. Absolute
@@ -3921,13 +3921,13 @@
 
   <p class="note">
     The attributes <a>'text/x'</a> and <a>'text/y'</a> can provide a
-    natural fallback mechanism for SVG1.1 renderers for wrapped text.
+    natural fallback mechanism for NSVG1.1 renderers for wrapped text.
     Content producers may wish to pre-layout text by breaking up
     lines into <a>'tspan'</a> elements with <a>'text/x'</a> and
     <a>'text/y'</a> attributes. Then, for example, if a fallback font
-    is used to render the text, an SVG2 renderer will ignore
+    is used to render the text, an NSVG2 renderer will ignore
     the <a>'text/x'</a> and <a>'text/y'</a> attributes and reflow the
-    text using the font metrics of the fallback font. An SVG1.1
+    text using the font metrics of the fallback font. An NSVG1.1
     renderer will use the <a>'text/x'</a> and <a>'text/y'</a>
     attributes in rendering the text which will usually result in
     readable text even if the rendering doesn't match the shape.
@@ -3963,7 +3963,7 @@
   </p>
 
   <div class="figure">
-    <img class="bordered" src="images/text/text-layout-firstline.svg"
+    <img class="bordered" src="images/text/text-layout-firstline.nsvg"
          alt="Image showing two lines of text, the first line is 'The' and
               the next line is 'first line'."/>
     <p class="caption">
@@ -3977,7 +3977,7 @@
   </div>
 
   <p class="annotation">
-    This appears to be different from the SVG 1.2 draft in which the
+    This appears to be different from the NSVG 1.2 draft in which the
     top of the wrapping area served as the origin of a line grid.
     The first line was moved down by the line height until it fit
     inside the shape.
@@ -3994,7 +3994,7 @@
     calculated by looking at all glyphs in the line of text.
   </p>
   <p class="annotation">
-    This default behavior was agreed to at the CSS/SVG joint working
+    This default behavior was agreed to at the CSS/NSVG joint working
     group meeting in Sydney 2016.
   </p>
   <p class="note">
@@ -4004,7 +4004,7 @@
   </p>
 
   <div class="figure">
-    <img class="bordered" src="images/text/text-layout-brokenline.svg"
+    <img class="bordered" src="images/text/text-layout-brokenline.nsvg"
          alt="Image showing text laidout inside a 'V' shape."/>
     <p class="caption">
       The top line is split into two <a>line boxes</a> (light-blue
@@ -4018,7 +4018,7 @@
 <edit:with element='textPath'>
 
   <p>
-    SVG can place text along a path defined either by a <a>'path element'</a>
+    NSVG can place text along a path defined either by a <a>'path element'</a>
     element or the path equivalent of a <a>basic shape</a>. This is
     specified by including text within a <a>'textPath'</a> element
     that has either an <a>'href'</a> attribute with an <a>URL
@@ -4028,19 +4028,19 @@
   </p>
 
   <p class="note">
-    The ability to place text along a basic shape is new in SVG 2.
+    The ability to place text along a basic shape is new in NSVG 2.
   </p>
 
   <p class="annotation">
     Placing text along a basic shape was resolved at the
-    <a href="http://www.w3.org/2015/02/12-svg-minutes.html#item05">Sydney
+    <a href="http://www.w3.org/2015/02/12-nsvg-minutes.html#item05">Sydney
     (2015)</a> meeting.
   </p>
 
   <p class="annotation">
     Directly using a 'd' attribute to specify the path was added to
-    SVG 2. The 'd' attribute was renamed to 'path' by decision at the
-    <a href="https://www.w3.org/2016/04/21-svg-minutes.html">London
+    NSVG 2. The 'd' attribute was renamed to 'path' by decision at the
+    <a href="https://www.w3.org/2016/04/21-nsvg-minutes.html">London
       (2016)</a> editor's meeting at the same time 'd' was promoted
     to being a presentation attribute.
   </p>
@@ -4057,15 +4057,15 @@
 
   <edit:elementsummary name='textPath'/>
 
-  <div class="annotation svg2-requirement">
+  <div class="annotation nsvg2-requirement">
     <table>
       <tr>
-	<th>SVG 2 Requirement:</th>
+	<th>NSVG 2 Requirement:</th>
 	<td>Have a more precise explanation of text path stretch methods.</td>
       </tr>
       <tr>
 	<th>Resolution:</th>
-	<td><a href="http://www.w3.org/2011/11/17-svg-irc#T22-23-10">We will clarify <span class='attr-value'>method="stretch"</span> on <span class="element-name">>'textPath'</span> elements.</a></td>
+	<td><a href="http://www.w3.org/2011/11/17-nsvg-irc#T22-23-10">We will clarify <span class='attr-value'>method="stretch"</span> on <span class="element-name">>'textPath'</span> elements.</a></td>
       </tr>
       <tr>
 	<th>Purpose:</th>
@@ -4100,7 +4100,7 @@
 
 <h3 id="TextPathAttributes">Attributes</h3>
 
-  <dl class="attrdef-list-svg2">
+  <dl class="attrdef-list-nsvg2">
 
     <dt id="TextPathElementStartOffsetAttribute"><span class="adef">startOffset</span></dt>
     <dd>
@@ -4142,7 +4142,7 @@
       <div class="figure">
 	<img alt="Three paths with various values of 'startOffset' showing clipping
 		  when glyphs are outside path region."
-	     src="images/text/text-path-startoffset.svg" />
+	     src="images/text/text-path-startoffset.nsvg" />
 	<p class="caption">
 	  Rendering for different values of the <a>'startOffset'</a>
 	  attribute. From top to bottom: default value, 50%, -50%.
@@ -4175,7 +4175,7 @@
       <div class="figure">
 	<img alt="Two circular path with different values of
 		  'startOffset' showing that all glyphs are rendered."
-		  src="images/text/text-path-startoffset2.svg" />
+		  src="images/text/text-path-startoffset2.nsvg" />
 	<p class="caption">
 	  Rendering for text on a path referencing a <a>'circle'</a>
 	  with different values of the <a>'startOffset'</a>
@@ -4188,7 +4188,7 @@
       <div class="figure">
 	<img alt="Three circular path with different values of
 		  'text-anchor' showing how glyphs are rendered."
-		  src="images/text/text-path-startoffset3.svg" />
+		  src="images/text/text-path-startoffset3.nsvg" />
 	<p class="caption">
 	  Rendering for text on a path referencing a <a>'circle'</a>
 	  with different values of the <a>'text-anchor'</a>
@@ -4211,15 +4211,15 @@
 
       <p class="annotation">
 	Rendering all glyphs was agreed to for basic shapes at the
-	<a href="http://www.w3.org/2015/02/12-svg-minutes.html#item05">Sydney
+	<a href="http://www.w3.org/2015/02/12-nsvg-minutes.html#item05">Sydney
 	  (2015)</a> meeting (but missing in minutes). Limiting the
 	wrapping to a path with a single closed sub-path and to one
 	loop, effected by the 'startOffset' attribute agreed to at the
-	<a href="https://www.w3.org/2016/04/22-svg-minutes.html#item02">London
+	<a href="https://www.w3.org/2016/04/22-nsvg-minutes.html#item02">London
 	  (2016)</a> Editor's Meeting.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd><a>&lt;length-percentage&gt;</a> | <a>&lt;number&gt;</a></dd>
 	<dt><a>Initial value</a></dt>  <dd>0</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -4271,7 +4271,7 @@
 	</p>
       </div>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd>align | stretch</dd>
 	<dt><a>Initial value</a></dt>  <dd>align</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -4299,7 +4299,7 @@
         in order to achieve visually appealing results.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd>auto | exact</dd>
 	<dt><a>Initial value</a></dt> <dd>exact</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -4318,7 +4318,7 @@
 	<img alt="Two circular path with different values of 'side'
 		  showing glyphs rendered outside the circle for
 		  'left' and inside the circle for 'right'."
-		  src="images/text/text-path-side.svg" />
+		  src="images/text/text-path-side.nsvg" />
 	<p class="caption">
 	  Rendering for text on a path referencing a <a>'circle'</a>
 	  with different values of the <a>'side'</a>
@@ -4328,17 +4328,17 @@
       </div>
 
       <p class="note">
-	Added in SVG 2 to allow text either inside or outside
+	Added in NSVG 2 to allow text either inside or outside
 	<a>closed subpaths</a> and <a>basic shapes</a> (e.g. rectangles,
 	circles, and ellipses).
       </p>
       <p class="annotation">
 	Adding 'side' was resolved at the
-	<a href="http://www.w3.org/2015/02/12-svg-minutes.html#item05">Sydney
+	<a href="http://www.w3.org/2015/02/12-nsvg-minutes.html#item05">Sydney
 	  (2015)</a> meeting.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd>left | right</dd>
 	<dt><a>Initial value</a></dt>  <dd>left</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -4357,7 +4357,7 @@
         If the attribute is not specified,
         the path specified with <a>'href'</a> is used instead.
       </p>
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                  <dd><a href="paths.html#PathDataBNF" class="syntax">path data</a></dd>
 	<dt><a>Initial value</a></dt>   <dd>(none)</dd>
 	<dt><a>Animatable</a></dt>      <dd>yes</dd>
@@ -4382,7 +4382,7 @@
         <a href="linking.html#XLinkRefAttrs">deprecated XLink attributes</a>.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd>URL <a href="types.html#attribute-url" class="syntax">[URL]</a></dd>
 	<dt><a>Initial value</a></dt>  <dd>See above.</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -4404,11 +4404,11 @@
     coordinate system for the current <a>'text'</a> element, including
     any adjustments to the current user coordinate system due to a
     possible <a>'transform'</a> property on the current <a>'text'</a>
-    element.  For example, the following fragment of SVG content:
+    element.  For example, the following fragment of NSVG content:
   </p>
 
   <pre>
-&lt;svg xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;nsvg xmlns="http://www.w3.org/2000/nsvg"&gt;
   &lt;g <span
 style="font-weight:bold; color:red">transform="translate(25,25)"</span>&gt;
     &lt;defs&gt;
@@ -4420,7 +4420,7 @@ style="font-weight:bold; color:green">transform="scale(2)"</span> path="M0,10 L4
 style="font-weight:bold; color:blue">transform="rotate(45)"</span>&gt;
     &lt;textPath href="#path1"&gt;Text on a path&lt;/textPath&gt;
   &lt;/text&gt;
-&lt;/svg&gt;
+&lt;/nsvg&gt;
   </pre>
 
   <p>
@@ -4428,7 +4428,7 @@ style="font-weight:bold; color:blue">transform="rotate(45)"</span>&gt;
   </p>
 
   <pre>
-&lt;svg xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;nsvg xmlns="http://www.w3.org/2000/nsvg"&gt;
   &lt;g <span
 style="font-weight:bold; color:blue">transform="rotate(45)"</span>&gt;
     &lt;defs&gt;
@@ -4439,7 +4439,7 @@ style="font-weight:bold; color:green">transform="scale(2)"</span> path="M0,10 L4
       &lt;textPath href="#path1"&gt;Text on a path&lt;/textPath&gt;
     &lt;/text&gt;
   &lt;/g&gt;
-&lt;/svg&gt;
+&lt;/nsvg&gt;
   </pre>
 
   <p>
@@ -4447,13 +4447,13 @@ style="font-weight:bold; color:green">transform="scale(2)"</span> path="M0,10 L4
   </p>
 
   <pre>
-&lt;svg xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;nsvg xmlns="http://www.w3.org/2000/nsvg"&gt;
   &lt;text <span style="font-weight:bold; color:blue">transform="rotate(45)"</span>&gt;
     &lt;textPath <span
 style="font-weight:bold; color:green">path="M0,20 L80,40 160,20"</span>
             &gt;Text on a path&lt;/textPath&gt;
   &lt;/text&gt;
-&lt;/svg&gt;
+&lt;/nsvg&gt;
   </pre>
 
   <p>
@@ -4474,7 +4474,7 @@ style="font-weight:bold; color:green">path="M0,20 L80,40 160,20"</span>
     simple example of text on a path:
   </p>
 
-  <edit:example href='images/text/toap01.svg' name='toap01' description="simple text on a path" image='yes' link='yes'/>
+  <edit:example href='images/text/toap01.nsvg' name='toap01' description="simple text on a path" image='yes' link='yes'/>
 
   <p id="ExampleToap02">
     <span class="example-ref">Example toap02</span> shows
@@ -4495,7 +4495,7 @@ style="font-weight:bold; color:green">path="M0,20 L80,40 160,20"</span>
     rules</a>).
   </p>
 
-  <edit:example href='images/text/toap02.svg' name='toap02' description="tspan within textPath" image='yes' link='yes'/>
+  <edit:example href='images/text/toap02.nsvg' name='toap02' description="tspan within textPath" image='yes' link='yes'/>
 
   <p id="ExampleToap03">
     <span class="example-ref">Example toap03</span> demonstrates the
@@ -4507,7 +4507,7 @@ style="font-weight:bold; color:green">path="M0,20 L80,40 160,20"</span>
     rules</a>).
   </p>
 
-  <edit:example href='images/text/toap03.svg' name='toap03' description="text on a path with startOffset attribute" image='yes' link='yes'/>
+  <edit:example href='images/text/toap03.nsvg' name='toap03' description="text on a path with startOffset attribute" image='yes' link='yes'/>
 
 <h3 id="TextpathLayoutRules">Text on a path layout rules</h3>
 
@@ -4541,7 +4541,7 @@ style="font-weight:bold; color:green">path="M0,20 L80,40 160,20"</span>
   </p>
 
   <div class="figure">
-    <img class="bordered" src="images/text/glyph-textpath.svg"
+    <img class="bordered" src="images/text/glyph-textpath.nsvg"
          alt="Left, horizontal text with the character 'A' on a path.
 	      Right, vertical text with the character '字' on a path."/>
     <p class="caption">
@@ -4558,7 +4558,7 @@ style="font-weight:bold; color:green">path="M0,20 L80,40 160,20"</span>
     text.
   </p>
 
-  <edit:example href='images/text/toap04.svg' name='toap04' description="text on a path layout rules" image='yes' link='yes'/>
+  <edit:example href='images/text/toap04.nsvg' name='toap04' description="text on a path layout rules" image='yes' link='yes'/>
 
   <p>
     The following picture does an initial zoom in on the first glyph
@@ -4833,7 +4833,7 @@ style="font-weight:bold; color:green">path="M0,20 L80,40 160,20"</span>
   <div class="figure">
     <img alt="Text on a path showing the starting point for
 	      rendering text after the &lt;textPath&gt; element."
-	 src="images/text/text-path-nonpath-text.svg" />
+	 src="images/text/text-path-nonpath-text.nsvg" />
     <p class="caption">
       The starting point for text after the <a>'textPath'</a> element
       without explicit positioning information is at the end of the
@@ -4846,9 +4846,9 @@ style="font-weight:bold; color:green">path="M0,20 L80,40 160,20"</span>
     The choice of the end of the path over the position of the
     last character was chosen as it is more author predictable
     (not depending on font, etc.) Decided at the
-    <a href="https://www.w3.org/2016/04/22-svg-minutes.html#item08">London
+    <a href="https://www.w3.org/2016/04/22-nsvg-minutes.html#item08">London
       (2016)</a> editor's meeting. See also
-    <a href="https://github.com/w3c/svgwg/issues/104">GitHub Issue 84</a>.
+    <a href="https://github.com/w3c/nsvgwg/issues/104">GitHub Issue 84</a>.
   </p>
 
 </edit:with>
@@ -4872,7 +4872,7 @@ is filled and stroked as if it were a single path.</p>
 consists of one subpath per glyph within that chunk.</p>
 
 <p class="note">Since the <a>'fill-rule'</a> property does not apply
-to SVG text elements, the specific order of the subpaths within
+to NSVG text elements, the specific order of the subpaths within
 the <a>equivalent path</a> does not matter.</p>
 
 <p>The specific position of the start of each subpath, and the direction
@@ -4888,7 +4888,7 @@ the dash pattern at the same positions across different implementations.</p>
 
   <p>
     CSS offers a multitude of properties for styling text. In
-    general, only two sets of properties are applicable to SVG: those
+    general, only two sets of properties are applicable to NSVG: those
     that determine which glyphs are to be rendered
     (<a>'font-family'</a>, <a>'font-style'</a>, etc.) and those that
     apply at the <em>paragraph</em> level (<a>'direction'</a>,
@@ -4897,7 +4897,7 @@ the dash pattern at the same positions across different implementations.</p>
   </p>
 
   <p>
-    The list of CSS properties that must be supported on SVG text
+    The list of CSS properties that must be supported on NSVG text
     elements can be found in the
     <a href="styling.html#RequiredProperties">Styling</a> chapter.
   </p>
@@ -4944,19 +4944,19 @@ the dash pattern at the same positions across different implementations.</p>
 
   <p>
     Other CSS properties that affect text layout and rendering may
-    also be supported by an SVG user agent; their effect should be
+    also be supported by an NSVG user agent; their effect should be
     taken into account as part of the CSS text layout step of the
-    overall SVG text layout process.
+    overall NSVG text layout process.
   </p>
 
   <p class="note">
-    For example, while SVG 2 does not require support for the
-    <a>'text-combine-upright'</a> property, its behavior in an SVG
+    For example, while NSVG 2 does not require support for the
+    <a>'text-combine-upright'</a> property, its behavior in an NSVG
     context should be obvious.
   </p>
 
   <p>
-    A number of CSS properties must not have any effect on SVG text elements:
+    A number of CSS properties must not have any effect on NSVG text elements:
   </p>
 
   <ul>
@@ -4964,15 +4964,15 @@ the dash pattern at the same positions across different implementations.</p>
       Border properties (such as <a>'border-top-style'</a>).  Boxes
       generated by the CSS layout process must not be sized as if they
       had any borders.  The used value for all of
-      the <a>'border-style'</a> component longhand properties on SVG
+      the <a>'border-style'</a> component longhand properties on NSVG
       text elements is <span class='prop-value'>none</span>.
     </li>
 
     <li>
       Display property values other than
       <span class='prop-value'>none</span> and
-      <span class='prop-value'>inline</span>. Like all other SVG
-      elements, any value of <a>'display'</a> on an SVG text element
+      <span class='prop-value'>inline</span>. Like all other NSVG
+      elements, any value of <a>'display'</a> on an NSVG text element
       other than <span class='prop-value'>none</span> is handled just
       as if it were <span class='prop-value'>inline</span>.  Thus it
       is not possible for a single <a>'text'</a> element to have any
@@ -4980,36 +4980,36 @@ the dash pattern at the same positions across different implementations.</p>
     </li>
 
     <li>
-      The <a>'float'</a> property, whose used value on SVG text
+      The <a>'float'</a> property, whose used value on NSVG text
       elements is <span class='prop-value'>none</span>.
     </li>
 
     <li>
-      The <a>'position'</a> property, whose used value on SVG text
+      The <a>'position'</a> property, whose used value on NSVG text
       elements is <span class='prop-value'>static</span>.
     </li>
 
     <li>
       Margin properties (such as <a>'margin-top'</a>), whose used
-      values on SVG text elements are
+      values on NSVG text elements are
       <span class='prop-value'>0</span>.
     </li>
 
     <li>
       The <a>'text-align'</a> property when text is pre-formatted,
-      whose used value on such SVG text
+      whose used value on such NSVG text
       elements is <span class='prop-value'>start</span>.
     </li>
 
     <li>
-      The <a>'content'</a> property, whose used value on SVG text
+      The <a>'content'</a> property, whose used value on NSVG text
       elements is <span class='prop-value'>none</span>.
     </li>
   </ul>
 
   <p>
     Additionally, the ::before and ::after generated content pseudo-elements
-    must not apply to SVG text elements.
+    must not apply to NSVG text elements.
   </p>
 
   <p class="note">
@@ -5018,11 +5018,11 @@ the dash pattern at the same positions across different implementations.</p>
     authors should not rely on them being ignored.
   </p>
 
-<h3 id="TextPropertiesSVG">SVG properties</h3>
+<h3 id="TextPropertiesNSVG">NSVG properties</h3>
 
   <p>
     This section covers properties that are not covered elsewhere in this
-    specification and that are specific to SVG.
+    specification and that are specific to NSVG.
   </p>
 
 <h4 id="TextAnchoringProperties">Text alignment, the <span class='property'>'text-anchor'</span> property</h4>
@@ -5146,7 +5146,7 @@ the dash pattern at the same positions across different implementations.</p>
     <p>An example of using <a>'text-anchor'</a> on multi-line text.</p>
 
     <pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg"
+<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="300" height="100" viewBox="0 0 300 100">
 
   <text x="150" y="30" style="font: 20px sans-serif; white-space: pre-line;
@@ -5154,11 +5154,11 @@ the dash pattern at the same positions across different implementations.</p>
     This multi-line text is
     anchored to the middle.</text>
 
-</svg>
+</nsvg>
 ]]></pre>
 
     <div class="figure">
-      <img class="bordered" src="images/text/text-anchor-middle.svg"
+      <img class="bordered" src="images/text/text-anchor-middle.nsvg"
            alt="Image showing two lines of text centered via text-anchor."/>
       <p class="caption">
 	The preserved line-feed creates two <a>text chunks</a>, each
@@ -5171,17 +5171,17 @@ the dash pattern at the same positions across different implementations.</p>
     <p>Another example of using <a>'text-anchor'</a> on multi-line text.</p>
 
     <pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg"
+<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="200" height="150" viewBox="0 0 200 150">
   <path d="m 100,0 0,150" style="fill:none;stroke:#add8e6"/>
   <text x="100 100 100" y="50 95 140"
-	style="font-size: 42px; text-anchor: middle">I❤SVG</text>
-</svg>
+	style="font-size: 42px; text-anchor: middle">I❤NSVG</text>
+</nsvg>
 ]]></pre>
 
     <div class="figure">
-      <img class="bordered" src="images/text/text-anchor-chunks.svg"
-	   alt="Image showing three lines of text divided as 'I', '❤', 'SVG'."/>
+      <img class="bordered" src="images/text/text-anchor-chunks.nsvg"
+	   alt="Image showing three lines of text divided as 'I', '❤', 'NSVG'."/>
       <p class="caption">
 	The text is divided into three <a>text chunks</a> (due to the
 	three coordinates in the <a>'tspan/x'</a> and <a>'tspan/y'</a>
@@ -5194,15 +5194,15 @@ the dash pattern at the same positions across different implementations.</p>
   <h4 id='GlyphOrientationHorizontalProperty'>The <span class="property">'glyph-orientation-horizontal'</span> property</h4>
 
   <p class="note">
-    This property has been removed in SVG 2.
+    This property has been removed in NSVG 2.
   </p>
 
   <h4 id='GlyphOrientationVerticalProperty'>The <span class="property">'glyph-orientation-vertical'</span> property</h4>
 
   <p>
     This property applies only to vertical text. It has been obsoleted
-    in SVG 2 and partially replaced by the <a>'text-orientation'</a>
-    property of CSS Writing Modes Level 3. The following SVG 1.1
+    in NSVG 2 and partially replaced by the <a>'text-orientation'</a>
+    property of CSS Writing Modes Level 3. The following NSVG 1.1
     values must still be supported by aliasing the property
     as a shorthand to <a>'text-orientation'</a> as follows:
   </p>
@@ -5231,16 +5231,16 @@ the dash pattern at the same positions across different implementations.</p>
 
   <p class="note">
     The <span class="property">'kerning'</span> property has been
-    removed in SVG 2.
+    removed in NSVG 2.
   </p>
   <p>
-    SVG 1.1 uses the 'kerning' property to determine if the font
+    NSVG 1.1 uses the 'kerning' property to determine if the font
     kerning tables should be used to adjust inter-glyph
     spacing. It also allows a
     <span class="prop-value">&lt;length&gt;</span> value which
     if given is added to the spacing between glyphs (supplemental
     to any from the <a>'letter-spacing'</a> property). This
-    property is replaced in SVG 2 by the
+    property is replaced in NSVG 2 by the
     CSS <a>'font-kerning'</a> property which solely controls
     turning on/off the use of the font kerning tables.
   </p>
@@ -5248,23 +5248,23 @@ the dash pattern at the same positions across different implementations.</p>
     Chrome's UseCounter data showed a use of 0.01% in 2014. See GitHub issue 80.
   </p>
 
-<h3 id="TextPropertiesAdaptions">SVG adaptions</h3>
+<h3 id="TextPropertiesAdaptions">NSVG adaptions</h3>
 
   <p>
     This section covers CSS properties that are not covered elsewhere in this
-    specification and have either SVG specific adaptions or are significantly
-    altered from SVG 1.1.
+    specification and have either NSVG specific adaptions or are significantly
+    altered from NSVG 1.1.
   </p>
 
-  <div class="annotation svg2-requirement">
+  <div class="annotation nsvg2-requirement">
     <table>
       <tr>
-	<th>SVG 2 Requirement:</th>
+	<th>NSVG 2 Requirement:</th>
 	<td>Reference CSS3 Fonts.</td>
       </tr>
       <tr>
 	<th>Resolution:</th>
-	<td><a href="http://www.w3.org/2011/07/29-svg-minutes.html#item08">SVG 2 will depend on CSS3 Fonts.</a></td>
+	<td><a href="http://www.w3.org/2011/07/29-nsvg-minutes.html#item08">NSVG 2 will depend on CSS3 Fonts.</a></td>
       </tr>
       <tr>
 	<th>Purpose:</th>
@@ -5273,7 +5273,7 @@ the dash pattern at the same positions across different implementations.</p>
       </tr>
       <tr>
 	<th>Owner:</th>
-	<td>Chris (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3123">ACTION-3123</a>)</td>
+	<td>Chris (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3123">ACTION-3123</a>)</td>
       </tr>
     </table>
   </div>
@@ -5295,13 +5295,13 @@ the dash pattern at the same positions across different implementations.</p>
   </p>
 
   <p>
-    SVG 2 supports all <a>'font-variant'</a> longhand properties (e.g. <a>'font-variant-ligatures'</a>).
+    NSVG 2 supports all <a>'font-variant'</a> longhand properties (e.g. <a>'font-variant-ligatures'</a>).
   </p>
 
   <h4 id='LineHeightProperty'>The <span class="property">'line-height'</span> property</h4>
 
   <p>
-    SVG uses the <a>'line-height'</a> property to determine the amount
+    NSVG uses the <a>'line-height'</a> property to determine the amount
     of leading space which is added between lines in multi-line text
     (both for horizontal and vertical text). It is not applicable to
     text on a path.
@@ -5333,23 +5333,23 @@ the dash pattern at the same positions across different implementations.</p>
     also determines if the text has a horizontal or vertical orientation.
   </p>
   <p class="annotation">
-    SVG 2 references
+    NSVG 2 references
     <a href="https://www.w3.org/TR/css-writing-modes-3">CSS Writing
       Modes Level 3</a> for the definition of the
     <a href="https://www.w3.org/TR/css-writing-modes-3/#block-flow">'writing-mode'</a>
     property. That specification introduces new values for the property.
-    The SVG 1.1 values are obsolete but must still be supported by
+    The NSVG 1.1 values are obsolete but must still be supported by
     converting the specified values to computed values as follows:
   </p>
 
   <p class="annotation"><!-- This could be an annotation. -->
-    In SVG 1.0, this property could be interpreted as to also setting the
+    In NSVG 1.0, this property could be interpreted as to also setting the
     <a>inline-base direction</a> leading to confusion about its role
-    relative to the <a>'direction'</a> property. SVG 1.1 was a bit
+    relative to the <a>'direction'</a> property. NSVG 1.1 was a bit
     more specific about the role of <a>'direction'</a>
     (e.g. that <a>'direction'</a> set the reference point for
     the <a>'text-anchor'</a> property) but still was open to
-    interpretation. The fact that neither SVG 1.0 nor SVG 1.1 allowed
+    interpretation. The fact that neither NSVG 1.0 nor NSVG 1.1 allowed
     multi-line text added to the confusion.
   </p>
 
@@ -5391,18 +5391,18 @@ the dash pattern at the same positions across different implementations.</p>
     result automatically, and in such cases the author does not need
     to use these properties. For other cases, such as when using
     right-to-left languages, it may be sufficient to add the
-    <a>'direction'</a> property to the <a>outermost svg element</a>,
+    <a>'direction'</a> property to the <a>outermost nsvg element</a>,
     and allow that direction to inherit to all text elements, as in the
     following example (which may be used as a template):
   </p>
 
-  <edit:example href="images/text/rtl-text.svg" link="yes" image="yes"/>
+  <edit:example href="images/text/rtl-text.nsvg" link="yes" image="yes"/>
 
   <p>
     Below is another example, where implicit bidi reordering is not sufficient:
   </p>
 
-  <edit:example href="images/text/rtl-complex.svg" link="yes" image="yes"/>
+  <edit:example href="images/text/rtl-complex.nsvg" link="yes" image="yes"/>
 
 
 <h4 id='DominantBaselineProperty'>The <span class="property">'dominant-baseline'</span> property</h4>
@@ -5414,7 +5414,7 @@ the dash pattern at the same positions across different implementations.</p>
   </p>
 
   <p>
-    SVG 2 introduces some changes to the definition of this property.
+    NSVG 2 introduces some changes to the definition of this property.
     In particular:
   </p>
   <ul>
@@ -5431,7 +5431,7 @@ the dash pattern at the same positions across different implementations.</p>
   </ul>
 
   <p class="note">
-    SVG uses the value of the <a>'dominant-baseline'</a> property to
+    NSVG uses the value of the <a>'dominant-baseline'</a> property to
     align glyphs relative to the <a>'tspan/x'</a> and <a>'tspan/y'</a>
     attributes. For the <a>'text-orientation'</a> value
     <span class="prop-value">sideways</span>, the
@@ -5448,7 +5448,7 @@ the dash pattern at the same positions across different implementations.</p>
   </p>
 
   <!-- <p class="annotation">
-    The SVG 1.1 definition of the <a>'dominant-baseline'</a> property
+    The NSVG 1.1 definition of the <a>'dominant-baseline'</a> property
     was derived from the <a href="https://www.w3.org/TR/2006/REC-xsl11-20061205/">XSL</a>
     specification. (See
     <a href="https://www.w3.org/TR/2006/REC-xsl11-20061205/#dominant-baseline">XSL 'dominant-baseline'</a>.)
@@ -5469,7 +5469,7 @@ the dash pattern at the same positions across different implementations.</p>
   </p>
 
   <p>
-    SVG 2 introduces some changes to the definition of this property.
+    NSVG 2 introduces some changes to the definition of this property.
     In particular: the values 'auto', 'before-edge', and 'after-edge'
     have been removed. For backwards compatibility, 'text-before-edge'
     should be mapped to 'text-top' and 'text-after-edge' should be
@@ -5498,15 +5498,15 @@ the dash pattern at the same positions across different implementations.</p>
     and it is redundant with a length value of '0'.
   </p>
 
-  <div class="annotation svg2-requirement">
+  <div class="annotation nsvg2-requirement">
     <table>
       <tr>
-	<th>SVG 2 Requirement:</th>
+	<th>NSVG 2 Requirement:</th>
 	<td>Align with CSS for baseline alignment functionality.</td>
       </tr>
       <tr>
 	<th>Resolution:</th>
-	<td><a href="http://www.w3.org/2012/01/13-svg-irc#T03-24-06">SVG 2 will deprecate <span class="property">'baseline-shift'</span> and use <span class="property">'vertical-align'</span> instead.</a></td>
+	<td><a href="http://www.w3.org/2012/01/13-nsvg-irc#T03-24-06">NSVG 2 will deprecate <span class="property">'baseline-shift'</span> and use <span class="property">'vertical-align'</span> instead.</a></td>
       </tr>
       <tr>
 	<th>Purpose:</th>
@@ -5514,7 +5514,7 @@ the dash pattern at the same positions across different implementations.</p>
       </tr>
       <tr>
 	<th>Owner:</th>
-	<td>Cameron (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3281">ACTION-3281</a>)</td>
+	<td>Cameron (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3281">ACTION-3281</a>)</td>
       </tr>
     </table>
   </div>
@@ -5537,8 +5537,8 @@ the dash pattern at the same positions across different implementations.</p>
     <a>'letter-spacing'</a>.([<a href="refs.html#ref-css-text-3">css-text-3</a>]).
   </p>
   <p class="annotation">
-    SVG 1.1 allowed percentage values in the <a>'letter-spacing'</a> property. Percentage values based on the SVG viewport are not seen as
-    useful, so this was removed in SVG 2. This brings the definition of 'letter-spacing' in line with
+    NSVG 1.1 allowed percentage values in the <a>'letter-spacing'</a> property. Percentage values based on the NSVG viewport are not seen as
+    useful, so this was removed in NSVG 2. This brings the definition of 'letter-spacing' in line with
     CSS.
   </p>
 
@@ -5550,11 +5550,11 @@ the dash pattern at the same positions across different implementations.</p>
     <a>'word-spacing'</a>.([<a href="refs.html#ref-css-text-3">css-text-3</a>]).
   </p>
   <p class="annotation">
-    SVG 2 changes the meaning of percentage values for the
-    <a>'word-spacing'</a> property. In SVG 1.1, percentages define
-    additional spacing as a percentage of the <a>SVG viewport</a>
-    size. Percentage values based on the SVG viewport are not seen as
-    useful. In SVG 2, following CSS Text Level 3, percentages define
+    NSVG 2 changes the meaning of percentage values for the
+    <a>'word-spacing'</a> property. In NSVG 1.1, percentages define
+    additional spacing as a percentage of the <a>NSVG viewport</a>
+    size. Percentage values based on the NSVG viewport are not seen as
+    useful. In NSVG 2, following CSS Text Level 3, percentages define
     additional spacing as a percentage of the affected character's
     width.
     This brings the definition of 'word-spacing' in line with
@@ -5563,15 +5563,15 @@ the dash pattern at the same positions across different implementations.</p>
 
 <h4 id='TextOverflowProperty'>The <span class="property">'text-overflow'</span> property</h4>
 
-  <div class="annotation svg2-requirement">
+  <div class="annotation nsvg2-requirement">
     <table>
       <tr>
-	<th>SVG 2 Requirement:</th>
+	<th>NSVG 2 Requirement:</th>
 	<td>Add <a>'text-overflow'</a> functionality.</td>
       </tr>
       <tr>
 	<th>Resolution:</th>
-	<td><a href="http://www.w3.org/2011/03/03-svg-minutes.html#item04">We will add text-overflow in SVG 2.</a></td>
+	<td><a href="http://www.w3.org/2011/03/03-nsvg-minutes.html#item04">We will add text-overflow in NSVG 2.</a></td>
       </tr>
       <tr>
 	<th>Purpose:</th>
@@ -5579,16 +5579,16 @@ the dash pattern at the same positions across different implementations.</p>
       </tr>
       <tr>
 	<th>Owner:</th>
-	<td>Erik (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3003">ACTION-3003</a>)</td>
+	<td>Erik (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3003">ACTION-3003</a>)</td>
       </tr>
     </table>
   </div>
 
   <p class="note">
-    New in SVG 2.
+    New in NSVG 2.
 
     Added to allow user agents to handle text strings that overflow a
-    predefined wrapping area in a more useful way.  Aligns SVG and HTML/CSS
+    predefined wrapping area in a more useful way.  Aligns NSVG and HTML/CSS
     text processing.
   </p>
 
@@ -5599,7 +5599,7 @@ the dash pattern at the same positions across different implementations.</p>
   </p>
 
   <p>
-    SVG uses the <a>'text-overflow'</a> property to control
+    NSVG uses the <a>'text-overflow'</a> property to control
     how <a>text content block elements</a> render when text
     overflows <a>line boxes</a> as, for example, can happen when the
     <a>'white-space'</a> property has the value
@@ -5608,7 +5608,7 @@ the dash pattern at the same positions across different implementations.</p>
   </p>
 
   <p>
-    In SVG <a>'text-overflow'</a> has an effect if there is a validly
+    In NSVG <a>'text-overflow'</a> has an effect if there is a validly
     specified <a>wrapping area</a>, regardless of the computed value
     of the <a>'overflow'</a> property on the <a>text content block
     element</a>.
@@ -5662,7 +5662,7 @@ the dash pattern at the same positions across different implementations.</p>
     </p>
 
     <pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg"
+<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="300" height="150" viewBox="0 0 300 150">
   <style>
     text { font: 25px sans-serif; white-space: pre; }
@@ -5672,15 +5672,15 @@ the dash pattern at the same positions across different implementations.</p>
   <path d="m  50,0 0,150"/>
   <path d="m 200,0 0,150"/>
 
-  <text x="50" y="35"  inline-size="100" style="overflow:visible">SVG is awesome</text>
-  <text x="50" y="85"  inline-size="100" style="text-overflow:clip">SVG is awesome</text>
-  <text x="50" y="135" inline-size="100" style="text-overflow:ellipsis">SVG is awesome</text>
+  <text x="50" y="35"  inline-size="100" style="overflow:visible">NSVG is awesome</text>
+  <text x="50" y="85"  inline-size="100" style="text-overflow:clip">NSVG is awesome</text>
+  <text x="50" y="135" inline-size="100" style="text-overflow:ellipsis">NSVG is awesome</text>
 
-</svg>
+</nsvg>
 ]]></pre>
 
     <div class="figure">
-      <img class="bordered" src="images/text/text-overflow-ref.svg"
+      <img class="bordered" src="images/text/text-overflow-ref.nsvg"
            alt="Image showing the use of the text-overflow property."/>
       <p class="caption">The <a>'text-overflow'</a> property used on
       text elements, the bottom line showing text with an ellipsis
@@ -5698,16 +5698,16 @@ the dash pattern at the same positions across different implementations.</p>
 <h3 id="WhiteSpace">White space</h3>
 
   <p class="note">
-    New in SVG 2. Added <a>'white-space'</a> to allow a more useful
-    way to control white-space handling.  Aligns SVG and HTML/CSS text
+    New in NSVG 2. Added <a>'white-space'</a> to allow a more useful
+    way to control white-space handling.  Aligns NSVG and HTML/CSS text
     processing. <a>'xml:space'</a> deprecated in new content, retained
     for backwards compatibility.
   </p>
 
-  <h4 id="TextWhiteSpace">SVG 2 Preferred white space handling, the <span class='property'>'white-space'</span> property</h4>
+  <h4 id="TextWhiteSpace">NSVG 2 Preferred white space handling, the <span class='property'>'white-space'</span> property</h4>
 
   <p>
-    Rendering of white space in SVG 2 is controlled by the <a>'white-space'</a>
+    Rendering of white space in NSVG 2 is controlled by the <a>'white-space'</a>
     property. This specifies two things:
   </p>
   <ul>
@@ -5728,7 +5728,7 @@ the dash pattern at the same positions across different implementations.</p>
     </p>
 
     <pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg">
+<nsvg xmlns="http://www.w3.org/2000/nsvg">
      width="200" height="200" viewBox="0 0 200 200">
 
      <text x="150" y="30" style="font: 20px IPAMincho; writing-mode: vertical-rl;
@@ -5739,11 +5739,11 @@ the dash pattern at the same positions across different implementations.</p>
        耶万計不己衣天
        阿佐伎喩女美之
        恵比毛勢須</text>
-</svg>
+</nsvg>
 ]]></pre>
 
     <div class="figure">
-      <img class="bordered" src="images/text/text-whitespace-vertical.svg"
+      <img class="bordered" src="images/text/text-whitespace-vertical.nsvg"
            alt="Japanese poem showing traditional line-breaking after every seven kanji."/>
       <p class="caption">
 	Example of multi-line vertical text with line breaks. The text
@@ -5757,7 +5757,7 @@ the dash pattern at the same positions across different implementations.</p>
 <h4 id="LegacyXMLSpace">Legacy white-space handling, the <span class='property'>'xml:space'</span> property</h4>
 
   <p id="XMLSpaceAttribute">
-    For compatibility, SVG 2 also supports the  XML attribute
+    For compatibility, NSVG 2 also supports the  XML attribute
     <a>'xml:space'</a> to specify the handling of white space
     characters within a given <a>'text'</a> element's character
     data. New content should not use <a>'xml:space'</a> but
@@ -5777,13 +5777,13 @@ the dash pattern at the same positions across different implementations.</p>
     <span class="prop-value">xml:space=preserve</span>.
     (<a href="https://log.csswg.org/irc.w3.org/css/2015-02-08/#e519951">fantasai
     agreed</a> to add an appropriate value for <a>'white-space'</a> to
-    match SVG 1.1's odd xml:space="preserve" behavior.)
+    match NSVG 1.1's odd xml:space="preserve" behavior.)
   </p>
 
   <p>
     Note that any child element of a <a>'text'</a> element may also
     have an <a>'xml:space'</a> attribute which will apply to that
-    child element's text content.  The SVG user agent has special
+    child element's text content.  The NSVG user agent has special
     processing rules associated with this attribute as described
     below. These are behaviors that occur subsequent to XML parsing
     [<a href="https://www.w3.org/TR/2008/REC-xml-20081126/">XML</a>]
@@ -5799,7 +5799,7 @@ the dash pattern at the same positions across different implementations.</p>
     <dt><span class='attr-value'>'default'</span></dt>
     <dd>
       (The initial/default value for <a>'xml:space'</a>.) When
-      <span class='attr-value'>xml:space="default"</span>, the SVG
+      <span class='attr-value'>xml:space="default"</span>, the NSVG
       user agent will do the following using a copy of the original
       character data content. First, it will remove all newline
       characters. Then it will convert all tab characters into space
@@ -5811,7 +5811,7 @@ the dash pattern at the same positions across different implementations.</p>
     <dt><span class='attr-value'>'preserve'</span></dt>
     <dd>
       When <span class='attr-value'>xml:space="preserve"</span>, the
-      SVG user agent will do the following using a copy of the
+      NSVG user agent will do the following using a copy of the
       original character data content. It will convert all newline and
       tab characters into space characters. Then, it will draw all
       space characters, including leading, trailing and multiple
@@ -5895,7 +5895,7 @@ the dash pattern at the same positions across different implementations.</p>
     two-character sequence "U+000D U+000A", CARRIAGE-RETURN LINE-FEED
     or the stand-alone literals U+000D or U+000A) into the single
     character U+000A before passing character data to the
-    application. Thus, each newline in SVG will be represented by the
+    application. Thus, each newline in NSVG will be represented by the
     single character U+000A, no matter what representation for
     newlines might have been used in the original resource. (See
     <a href="https://www.w3.org/TR/2008/REC-xml-20081126/#sec-line-ends">XML
@@ -5903,7 +5903,7 @@ the dash pattern at the same positions across different implementations.</p>
   </p>
 
   <p>
-    Any features in the SVG language or the SVG DOM that are based
+    Any features in the NSVG language or the NSVG DOM that are based
     on character position number, such as the <a>'tspan/x'</a>,
     <a>'tspan/y'</a>, <a>'tspan/dx'</a>, <a>'tspan/dy'</a> and
     <a>'tspan/rotate'</a> attributes on the <a>'text'</a> and <a>'tspan'</a>
@@ -5930,14 +5930,14 @@ the dash pattern at the same positions across different implementations.</p>
     The <a>'xml:space'</a> attribute is:
   </p>
   <p>
-    &nbsp;&nbsp;&nbsp;&nbsp;<span class="anim-target"><a href="https://svgwg.org/specs/animations/#Animatable">Animatable</a>:
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="anim-target"><a href="https://nsvgwg.org/specs/animations/#Animatable">Animatable</a>:
     no.</span>
   </p>
 
 <h4 id="DuplicateWhiteSpace">Duplicate white-space directives</h4>
 
   <p>
-    Older, SVG 1.1 content will use <a>'xml:space'</a>. New content,
+    Older, NSVG 1.1 content will use <a>'xml:space'</a>. New content,
     and older content that is being reworked, will use
     <a>'white-space'</a> and remove any existing
     <a>'xml:space'</a>. However, user agents may come across content
@@ -5951,7 +5951,7 @@ the dash pattern at the same positions across different implementations.</p>
 <h2 id="TextDecorationProperties">Text decoration</h2>
 
   <p>
-    Text in SVG can be <em>decorated</em> with an underline, overline,
+    Text in NSVG can be <em>decorated</em> with an underline, overline,
     and/or strike-through. The position and style of the decoration is
     determined respectively by the <a>'text-decoration-line'</a> and
     <a>'text-decoration-style'</a> properties, or by
@@ -5972,8 +5972,8 @@ the dash pattern at the same positions across different implementations.</p>
 
   <p class="note">
     The <a>'text-decoration-line'</a> and
-    <a>'text-decoration-style'</a> properties are new in SVG 2. The
-    SVG 1.1/CSS 2.1 <a>'text-decoration'</a> property is transformed
+    <a>'text-decoration-style'</a> properties are new in NSVG 2. The
+    NSVG 1.1/CSS 2.1 <a>'text-decoration'</a> property is transformed
     in a backwards compatible way to a short hand for these
     properties.
   </p>
@@ -6014,13 +6014,13 @@ the dash pattern at the same positions across different implementations.</p>
     (i.e., yellow fill, darkgreen stroke):
   </p>
 
-  <edit:example href='images/text/textdecoration01.svg' name='textdecoration01' description="behavior of 'text-decoration' property" image='yes' link='yes'/>
+  <edit:example href='images/text/textdecoration01.nsvg' name='textdecoration01' description="behavior of 'text-decoration' property" image='yes' link='yes'/>
 
 
 <h2 id="TextSelection">Text selection and clipboard operations</h2>
 
   <p>
-    <a href="conform.html#ConformingSVGViewers">Conforming SVG
+    <a href="conform.html#ConformingNSVGViewers">Conforming NSVG
     viewers</a> on systems which have the capacity for text selection (e.g.,
     systems which are equipped with a pointer device such as a mouse) and
     which have system clipboards for copy/paste operations are required to
@@ -6028,7 +6028,7 @@ the dash pattern at the same positions across different implementations.</p>
   </p>
 
   <ul>
-    <li>user selection of text strings in SVG content</li>
+    <li>user selection of text strings in NSVG content</li>
     <li>the ability to copy selected text strings to the system clipboard</li>
   </ul>
 
@@ -6065,7 +6065,7 @@ the dash pattern at the same positions across different implementations.</p>
     As the text selection operation proceeds (e.g., the user continues
     to press the given mouse button), all associated events with other
     graphics elements are ignored (i.e., the text selection operation
-    is modal) and the SVG user agent shall dynamically indicate which
+    is modal) and the NSVG user agent shall dynamically indicate which
     characters are selected by applying styles for the <code>::selection</code> pseudo-class.
     As the
     pointer is moved during the text selection process, the end glyph
@@ -6093,12 +6093,12 @@ the dash pattern at the same positions across different implementations.</p>
   </p>
 
   <p>
-    For systems which have system clipboards, the SVG user agent is
+    For systems which have system clipboards, the NSVG user agent is
     required to provide a user interface for initiating a copy of the
     currently selected text to the system clipboard. It is sufficient
-    for the SVG user agent to post the selected text string in the
+    for the NSVG user agent to post the selected text string in the
     system's appropriate clipboard format for plain text, but it is
-    preferable if the SVG user agent also posts a rich text
+    preferable if the NSVG user agent also posts a rich text
     alternative which captures the various font properties associated
     with the given text string.
   </p>
@@ -6118,9 +6118,9 @@ the dash pattern at the same positions across different implementations.</p>
   </p>
 
   <p>
-    SVG authors and <a>SVG generators</a> should
+    NSVG authors and <a>NSVG generators</a> should
     order their text strings to facilitate properly ordered text
-    selection within SVG viewing applications such as Web browsers;
+    selection within NSVG viewing applications such as Web browsers;
     in other words, the DOM order of the text should match
     the natural reading order of the text.
   </p>
@@ -6152,7 +6152,7 @@ where the resulting text selection consists of either:</p>
 </ul>
 
 <p>On systems with pointer devices, to determine the <em>start
-selection position</em>, the SVG user agent determines which
+selection position</em>, the NSVG user agent determines which
 boundary between characters corresponding to rendered glyphs is
 the best target (e.g., closest) based on the current pointer
 location at the time of the event that initiates the selection
@@ -6199,15 +6199,15 @@ links.</p>
 
 <h2 id="DOMInterfaces">DOM interfaces</h2>
 
-  <div class="annotation svg2-requirement">
+  <div class="annotation nsvg2-requirement">
     <table>
       <tr>
-	<th>SVG 2 Requirement:</th>
+	<th>NSVG 2 Requirement:</th>
 	<td>Have a DOM method to convert a <a>'text'</a> element to outline path data.</td>
       </tr>
       <tr>
 	<th>Resolution:</th>
-	<td><a href="http://www.w3.org/2012/01/13-svg-irc#T05-07-07">We will add a DOM method to convert a <span class='element-name'>'text'</span> element to outline path data, possibly moving the functionality to the FXTF.</a></td>
+	<td><a href="http://www.w3.org/2012/01/13-nsvg-irc#T05-07-07">We will add a DOM method to convert a <span class='element-name'>'text'</span> element to outline path data, possibly moving the functionality to the FXTF.</a></td>
       </tr>
       <tr>
 	<th>Purpose:</th>
@@ -6215,19 +6215,19 @@ links.</p>
       </tr>
       <tr>
 	<th>Owner:</th>
-	<td>Cameron (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3076">ACTION-3076</a>)</td>
+	<td>Cameron (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3076">ACTION-3076</a>)</td>
       </tr>
       <tr>
 	<th>Status:</th>
-	<td><a href="https://github.com/w3c/svgwg/issues/221">Future wish list</a></td>
+	<td><a href="https://github.com/w3c/nsvgwg/issues/221">Future wish list</a></td>
       </tr>
     </table>
   </div>
 
 <div class='ready-for-wider-review'>
-<h3 id="InterfaceSVGTextContentElement">Interface SVGTextContentElement</h3>
+<h3 id="InterfaceNSVGTextContentElement">Interface NSVGTextContentElement</h3>
 
-<p>The <a>SVGTextContentElement</a> interface is implemented by elements
+<p>The <a>NSVGTextContentElement</a> interface is implemented by elements
 that support rendering child text content.</p>
 
 <p>For the methods on this interface that refer to an index to a
@@ -6238,44 +6238,44 @@ Level 2 Core, where methods on the <a>CharacterData</a> interface
 use UTF-16 code units as indexes and counts within the character
 data. Thus for example, if the text content of a <a>'text'</a>
 element is a single non-BMP character, such as U+10000, then
-invoking <a>SVGTextContentElement::getNumberOfChars</a> on that
+invoking <a>NSVGTextContentElement::getNumberOfChars</a> on that
 element will return 2 since there are two UTF-16 code units (the
 surrogate pair) used to represent that one character.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGTextContentElement</b> : <a>SVGGraphicsElement</a> {
+interface <b>NSVGTextContentElement</b> : <a>NSVGGraphicsElement</a> {
 
   // lengthAdjust Types
-  const unsigned short <a href="text.html#__svg__SVGTextContentElement__LENGTHADJUST_UNKNOWN">LENGTHADJUST_UNKNOWN</a> = 0;
-  const unsigned short <a href="text.html#__svg__SVGTextContentElement__LENGTHADJUST_SPACING">LENGTHADJUST_SPACING</a> = 1;
-  const unsigned short <a href="text.html#__svg__SVGTextContentElement__LENGTHADJUST_SPACINGANDGLYPHS">LENGTHADJUST_SPACINGANDGLYPHS</a> = 2;
+  const unsigned short <a href="text.html#__nsvg__NSVGTextContentElement__LENGTHADJUST_UNKNOWN">LENGTHADJUST_UNKNOWN</a> = 0;
+  const unsigned short <a href="text.html#__nsvg__NSVGTextContentElement__LENGTHADJUST_SPACING">LENGTHADJUST_SPACING</a> = 1;
+  const unsigned short <a href="text.html#__nsvg__NSVGTextContentElement__LENGTHADJUST_SPACINGANDGLYPHS">LENGTHADJUST_SPACINGANDGLYPHS</a> = 2;
 
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="text.html#__svg__SVGTextContentElement__textLength">textLength</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedEnumeration</a> <a href="text.html#__svg__SVGTextContentElement__lengthAdjust">lengthAdjust</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="text.html#__nsvg__NSVGTextContentElement__textLength">textLength</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedEnumeration</a> <a href="text.html#__nsvg__NSVGTextContentElement__lengthAdjust">lengthAdjust</a>;
 
-  long <a href="text.html#__svg__SVGTextContentElement__getNumberOfChars">getNumberOfChars</a>();
-  float <a href="text.html#__svg__SVGTextContentElement__getComputedTextLength">getComputedTextLength</a>();
-  float <a href="text.html#__svg__SVGTextContentElement__getSubStringLength">getSubStringLength</a>(unsigned long charnum, unsigned long nchars);
-  <a>DOMPoint</a> <a href="text.html#__svg__SVGTextContentElement__getStartPositionOfChar">getStartPositionOfChar</a>(unsigned long charnum);
-  <a>DOMPoint</a> <a href="text.html#__svg__SVGTextContentElement__getEndPositionOfChar">getEndPositionOfChar</a>(unsigned long charnum);
-  <a>DOMRect</a> <a href="text.html#__svg__SVGTextContentElement__getExtentOfChar">getExtentOfChar</a>(unsigned long charnum);
-  float <a href="text.html#__svg__SVGTextContentElement__getRotationOfChar">getRotationOfChar</a>(unsigned long charnum);
-  long <a href="text.html#__svg__SVGTextContentElement__getCharNumAtPosition">getCharNumAtPosition</a>(optional <a>DOMPointInit</a> point = {});
-  undefined <a href="text.html#__svg__SVGTextContentElement__selectSubString">selectSubString</a>(unsigned long charnum, unsigned long nchars);
+  long <a href="text.html#__nsvg__NSVGTextContentElement__getNumberOfChars">getNumberOfChars</a>();
+  float <a href="text.html#__nsvg__NSVGTextContentElement__getComputedTextLength">getComputedTextLength</a>();
+  float <a href="text.html#__nsvg__NSVGTextContentElement__getSubStringLength">getSubStringLength</a>(unsigned long charnum, unsigned long nchars);
+  <a>DOMPoint</a> <a href="text.html#__nsvg__NSVGTextContentElement__getStartPositionOfChar">getStartPositionOfChar</a>(unsigned long charnum);
+  <a>DOMPoint</a> <a href="text.html#__nsvg__NSVGTextContentElement__getEndPositionOfChar">getEndPositionOfChar</a>(unsigned long charnum);
+  <a>DOMRect</a> <a href="text.html#__nsvg__NSVGTextContentElement__getExtentOfChar">getExtentOfChar</a>(unsigned long charnum);
+  float <a href="text.html#__nsvg__NSVGTextContentElement__getRotationOfChar">getRotationOfChar</a>(unsigned long charnum);
+  long <a href="text.html#__nsvg__NSVGTextContentElement__getCharNumAtPosition">getCharNumAtPosition</a>(optional <a>DOMPointInit</a> point = {});
+  undefined <a href="text.html#__nsvg__NSVGTextContentElement__selectSubString">selectSubString</a>(unsigned long charnum, unsigned long nchars);
 };</pre>
 
-<p>The numeric length adjustment type constants defined on <a>SVGTextContentElement</a>
+<p>The numeric length adjustment type constants defined on <a>NSVGTextContentElement</a>
 are used to represent the keyword values that the <a>'lengthAdjust'</a> attribute
 can take.  Their meanings are as follows:</p>
 
 <table class='vert'>
   <tr><th>Constant</th><th>Meaning</th></tr>
-  <tr><td><b id="__svg__SVGTextContentElement__LENGTHADJUST_SPACING">LENGTHADJUST_SPACING</b></td><td>The <span class="attr-value">spacing</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGTextContentElement__LENGTHADJUST_SPACINGANDGLYPHS">LENGTHADJUST_SPACINGANDGLYPHS</b></td><td>The <span class="attr-value">spacingAndGlyphs</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGTextContentElement__LENGTHADJUST_UNKNOWN">LENGTHADJUST_UNKNOWN</b></td><td>Some other value.</td></tr>
+  <tr><td><b id="__nsvg__NSVGTextContentElement__LENGTHADJUST_SPACING">LENGTHADJUST_SPACING</b></td><td>The <span class="attr-value">spacing</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGTextContentElement__LENGTHADJUST_SPACINGANDGLYPHS">LENGTHADJUST_SPACINGANDGLYPHS</b></td><td>The <span class="attr-value">spacingAndGlyphs</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGTextContentElement__LENGTHADJUST_UNKNOWN">LENGTHADJUST_UNKNOWN</b></td><td>Some other value.</td></tr>
 </table>
 
-<p>The <b id="__svg__SVGTextContentElement__textLength">textLength</b> IDL attribute
+<p>The <b id="__nsvg__NSVGTextContentElement__textLength">textLength</b> IDL attribute
 <a>reflects</a> the <a>'textLength'</a> content attribute.</p>
 
 <p class="note">
@@ -6283,17 +6283,17 @@ The initial value of the <a>'textLength'</a> content attribute
 is defined to equal the user-agent's calculated length for the element.
 In other words, when the content attribute is not present,
 the IDL property is initialized with a base length equal to
-the return-value of <a>SVGTextContentElement::getComputedTextLength</a>
+the return-value of <a>NSVGTextContentElement::getComputedTextLength</a>
 on the same element, as a length in user units.
 </p>
 
-<p>The <b id="__svg__SVGTextContentElement__lengthAdjust">lengthAdjust</b> IDL attribute
+<p>The <b id="__nsvg__NSVGTextContentElement__lengthAdjust">lengthAdjust</b> IDL attribute
 <a>reflects</a> the <a>'lengthAdjust'</a> content attribute.  The <a>numeric type values</a>
 for <a>'lengthAdjust'</a> are as described above in the numeric length adjust type
 constant table.</p>
 
 <div class='ready-for-wider-review'>
-<p>The <b id="__svg__SVGTextContentElement__getNumberOfChars">getNumberOfChars</b>
+<p>The <b id="__nsvg__NSVGTextContentElement__getNumberOfChars">getNumberOfChars</b>
 method returns the total number of <a>addressable characters</a> available for
 rendering within the current element, regardless of whether they will be rendered.
 When getNumberOfChars() is called, the following steps are run:</p>
@@ -6321,21 +6321,21 @@ When getNumberOfChars() is called, the following steps are run:</p>
 </ol>
 </div>
 
-<p>The <b id="__svg__SVGTextContentElement__getComputedTextLength">getComputedTextLength</b>
+<p>The <b id="__nsvg__NSVGTextContentElement__getComputedTextLength">getComputedTextLength</b>
 method is used to compute a "length" for the text within the element.
 When getComputedTextLength() is called, the following steps are run:</p>
 
 <ol class='algorithm'>
   <li>Let <var>count</var> be the value that would be returned if
-  the <a href="#__svg__SVGTextContentElement__getNumberOfChars">getNumberOfChars</a>
+  the <a href="#__nsvg__NSVGTextContentElement__getNumberOfChars">getNumberOfChars</a>
   method were called on this element.</li>
   <li>Let <var>length</var> be the value that would be returned
-  if the <a href="#__svg__SVGTextContentElement__getSubStringLength">getSubStringLength</a>
+  if the <a href="#__nsvg__NSVGTextContentElement__getSubStringLength">getSubStringLength</a>
   method were called on this element, passing 0 and <var>count</var> as arguments.</li>
   <li>Return <var>length</var>.</li>
 </ol>
 
-<p>The <b id="__svg__SVGTextContentElement__getSubStringLength">getSubStringLength</b>
+<p>The <b id="__nsvg__NSVGTextContentElement__getSubStringLength">getSubStringLength</b>
 method is used to compute the formatted text advance distance for a substring of text within the
 element.  When getSubStringLength(<var>charnum</var>, <var>nchars</var>)
 is called, the following steps are run:</p>
@@ -6370,7 +6370,7 @@ is called, the following steps are run:</p>
   <li>Return <var>length</var>.</li>
 </ol>
 <p class="note">
-  Previous versions of SVG required that this method
+  Previous versions of NSVG required that this method
   and <a>getComputedTextLength</a>
   also include
   positioning adjustments in the inline direction due to
@@ -6384,7 +6384,7 @@ is called, the following steps are run:</p>
 </p>
 
 <p class="annotation">
-  Change to text length methods <a href="https://lists.w3.org/Archives/Public/www-svg/2015Aug/att-0009/SVGWG-F2F-minutes-20150824.html#item04">resolved at August 2015 Paris face-to-face</a>.
+  Change to text length methods <a href="https://lists.w3.org/Archives/Public/www-nsvg/2015Aug/att-0009/NSVGWG-F2F-minutes-20150824.html#item04">resolved at August 2015 Paris face-to-face</a>.
 </p>
 
 <p>To <dfn id="TermFindTypographicCharacterForCharacter" data-dfn-type="dfn" data-export="">find the typographic
@@ -6408,7 +6408,7 @@ element <var>element</var>, the following steps are run:</p>
   <var>charnum</var>.</li>
 </ol>
 
-<p>The <b id="__svg__SVGTextContentElement__getStartPositionOfChar">getStartPositionOfChar</b>
+<p>The <b id="__nsvg__NSVGTextContentElement__getStartPositionOfChar">getStartPositionOfChar</b>
 method is used to get the position of a <a>typographic character</a> after text
 layout has been performed.  When getStartPositionOfChar(<var>charnum</var>) is
 called, the following steps are run:</p>
@@ -6428,7 +6428,7 @@ called, the following steps are run:</p>
   <a>DOMPoint</a> object representing the point <var>p</var>.</li>
 </ol>
 
-<p>The <b id="__svg__SVGTextContentElement__getEndPositionOfChar">getEndPositionOfChar</b>
+<p>The <b id="__nsvg__NSVGTextContentElement__getEndPositionOfChar">getEndPositionOfChar</b>
 method is used to get the trailing position of a <a>typographic character</a> after text
 layout has been performed.  When getEndPositionOfChar(<var>charnum</var>) is
 called, the following steps are run:</p>
@@ -6457,7 +6457,7 @@ called, the following steps are run:</p>
   <a>DOMPoint</a> object representing the point <var>p</var>.</li>
 </ol>
 
-<p>The <b id="__svg__SVGTextContentElement__getExtentOfChar">getExtentOfChar</b>
+<p>The <b id="__nsvg__NSVGTextContentElement__getExtentOfChar">getExtentOfChar</b>
 method is used to compute a tight bounding box of the glyph cell
 that corresponds to a given <a>typographic character</a>.  When getExtentOfChar(<var>charnum</var>)
 is called, the following steps are run:</p>
@@ -6479,7 +6479,7 @@ is called, the following steps are run:</p>
   rectangle <var>rect</var>.</li>
 </ol>
 
-<p>The <b id="__svg__SVGTextContentElement__getRotationOfChar">getRotationOfChar</b>
+<p>The <b id="__nsvg__NSVGTextContentElement__getRotationOfChar">getRotationOfChar</b>
 method is used to get the rotation of <a>typographic character</a>.  When
 getRotationOfChar(<var>charnum</var>) is called, the following steps are run:</p>
 
@@ -6501,7 +6501,7 @@ getRotationOfChar(<var>charnum</var>) is called, the following steps are run:</p
   <li>Return <var>direction</var>.</li>
 </ol>
 
-<p>The <b id="__svg__SVGTextContentElement__getCharNumAtPosition">getCharNumAtPosition</b>
+<p>The <b id="__nsvg__NSVGTextContentElement__getCharNumAtPosition">getCharNumAtPosition</b>
 method is used to find which character caused a text glyph to
 be rendered at a given position in the coordinate system.
 Because the relationship between characters and glyphs is not one-to-one,
@@ -6530,7 +6530,7 @@ is called, the following steps are run:</p>
 </div>
 
 <div class='ready-for-wider-review'>
-<p>The <b id="__svg__SVGTextContentElement__selectSubString">selectSubString</b>
+<p>The <b id="__nsvg__NSVGTextContentElement__selectSubString">selectSubString</b>
 method is used to select text within the element.  When
 selectSubString(<var>charnum</var>, <var>nchars</var>) is called, the
 following steps are run:</p>
@@ -6572,113 +6572,113 @@ selection.addRange(range);</pre>
 
 
 <div class='ready-for-wider-review'>
-<h3 id="InterfaceSVGTextPositioningElement">Interface SVGTextPositioningElement</h3>
+<h3 id="InterfaceNSVGTextPositioningElement">Interface NSVGTextPositioningElement</h3>
 
-<p>The <a>SVGTextPositioningElement</a> interface is implemented by elements
+<p>The <a>NSVGTextPositioningElement</a> interface is implemented by elements
 that support attributes that position individual text glyphs.  It is inherited by
-<a>SVGTextElement</a> and <a>SVGTSpanElement</a>.</p>
+<a>NSVGTextElement</a> and <a>NSVGTSpanElement</a>.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGTextPositioningElement</b> : <a>SVGTextContentElement</a> {
-  [SameObject] readonly attribute <a>SVGAnimatedLengthList</a> <a href="text.html#__svg__SVGTextPositioningElement__x">x</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLengthList</a> <a href="text.html#__svg__SVGTextPositioningElement__y">y</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLengthList</a> <a href="text.html#__svg__SVGTextPositioningElement__dx">dx</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLengthList</a> <a href="text.html#__svg__SVGTextPositioningElement__dy">dy</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedNumberList</a> <a href="text.html#__svg__SVGTextPositioningElement__rotate">rotate</a>;
+interface <b>NSVGTextPositioningElement</b> : <a>NSVGTextContentElement</a> {
+  [SameObject] readonly attribute <a>NSVGAnimatedLengthList</a> <a href="text.html#__nsvg__NSVGTextPositioningElement__x">x</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLengthList</a> <a href="text.html#__nsvg__NSVGTextPositioningElement__y">y</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLengthList</a> <a href="text.html#__nsvg__NSVGTextPositioningElement__dx">dx</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLengthList</a> <a href="text.html#__nsvg__NSVGTextPositioningElement__dy">dy</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedNumberList</a> <a href="text.html#__nsvg__NSVGTextPositioningElement__rotate">rotate</a>;
 };</pre>
 
 <p>The
-<b id="__svg__SVGTextPositioningElement__x">x</b>,
-<b id="__svg__SVGTextPositioningElement__y">y</b>,
-<b id="__svg__SVGTextPositioningElement__dx">dx</b>,
-<b id="__svg__SVGTextPositioningElement__dy">dy</b> and
-<b id="__svg__SVGTextPositioningElement__rotate">rotate</b> IDL attributes
+<b id="__nsvg__NSVGTextPositioningElement__x">x</b>,
+<b id="__nsvg__NSVGTextPositioningElement__y">y</b>,
+<b id="__nsvg__NSVGTextPositioningElement__dx">dx</b>,
+<b id="__nsvg__NSVGTextPositioningElement__dy">dy</b> and
+<b id="__nsvg__NSVGTextPositioningElement__rotate">rotate</b> IDL attributes
 <a>reflect</a> the <a>'tspan/x'</a>, <a>'tspan/y'</a>,
 <a>'tspan/dx'</a>, <a>'tspan/dy'</a> and <a>'tspan/rotate'</a>
 content attributes, respectively.</p>
 
 
-<h3 id="InterfaceSVGTextElement">Interface SVGTextElement</h3>
+<h3 id="InterfaceNSVGTextElement">Interface NSVGTextElement</h3>
 
 <edit:with element="text">
 
-<p>An <a>SVGTextElement</a> object represents a <a>'text'</a> element in the DOM.</p>
+<p>An <a>NSVGTextElement</a> object represents a <a>'text'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGTextElement</b> : <a>SVGTextPositioningElement</a> {
+interface <b>NSVGTextElement</b> : <a>NSVGTextPositioningElement</a> {
 };</pre>
 
 </edit:with>
 
-<h3 id="InterfaceSVGTSpanElement">Interface SVGTSpanElement</h3>
+<h3 id="InterfaceNSVGTSpanElement">Interface NSVGTSpanElement</h3>
 
 <edit:with element="tspan">
 
-<p>An <a>SVGTSpanElement</a> object represents a <a>'tspan'</a> element in the DOM.</p>
+<p>An <a>NSVGTSpanElement</a> object represents a <a>'tspan'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGTSpanElement</b> : <a>SVGTextPositioningElement</a> {
+interface <b>NSVGTSpanElement</b> : <a>NSVGTextPositioningElement</a> {
 };</pre>
 
 </edit:with>
 
-<h3 id="InterfaceSVGTextPathElement">Interface SVGTextPathElement</h3>
+<h3 id="InterfaceNSVGTextPathElement">Interface NSVGTextPathElement</h3>
 
 <edit:with element="textPath">
 
-<p>An <a>SVGTextPathElement</a> object represents a <a>'textPath'</a> element in the DOM.</p>
+<p>An <a>NSVGTextPathElement</a> object represents a <a>'textPath'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGTextPathElement</b> : <a>SVGTextContentElement</a> {
+interface <b>NSVGTextPathElement</b> : <a>NSVGTextContentElement</a> {
 
   // textPath Method Types
-  const unsigned short <a href="text.html#__svg__SVGTextPathElement__TEXTPATH_METHODTYPE_UNKNOWN">TEXTPATH_METHODTYPE_UNKNOWN</a> = 0;
-  const unsigned short <a href="text.html#__svg__SVGTextPathElement__TEXTPATH_METHODTYPE_ALIGN">TEXTPATH_METHODTYPE_ALIGN</a> = 1;
-  const unsigned short <a href="text.html#__svg__SVGTextPathElement__TEXTPATH_METHODTYPE_STRETCH">TEXTPATH_METHODTYPE_STRETCH</a> = 2;
+  const unsigned short <a href="text.html#__nsvg__NSVGTextPathElement__TEXTPATH_METHODTYPE_UNKNOWN">TEXTPATH_METHODTYPE_UNKNOWN</a> = 0;
+  const unsigned short <a href="text.html#__nsvg__NSVGTextPathElement__TEXTPATH_METHODTYPE_ALIGN">TEXTPATH_METHODTYPE_ALIGN</a> = 1;
+  const unsigned short <a href="text.html#__nsvg__NSVGTextPathElement__TEXTPATH_METHODTYPE_STRETCH">TEXTPATH_METHODTYPE_STRETCH</a> = 2;
 
   // textPath Spacing Types
-  const unsigned short <a href="text.html#__svg__SVGTextPathElement__TEXTPATH_SPACINGTYPE_UNKNOWN">TEXTPATH_SPACINGTYPE_UNKNOWN</a> = 0;
-  const unsigned short <a href="text.html#__svg__SVGTextPathElement__TEXTPATH_SPACINGTYPE_AUTO">TEXTPATH_SPACINGTYPE_AUTO</a> = 1;
-  const unsigned short <a href="text.html#__svg__SVGTextPathElement__TEXTPATH_SPACINGTYPE_EXACT">TEXTPATH_SPACINGTYPE_EXACT</a> = 2;
+  const unsigned short <a href="text.html#__nsvg__NSVGTextPathElement__TEXTPATH_SPACINGTYPE_UNKNOWN">TEXTPATH_SPACINGTYPE_UNKNOWN</a> = 0;
+  const unsigned short <a href="text.html#__nsvg__NSVGTextPathElement__TEXTPATH_SPACINGTYPE_AUTO">TEXTPATH_SPACINGTYPE_AUTO</a> = 1;
+  const unsigned short <a href="text.html#__nsvg__NSVGTextPathElement__TEXTPATH_SPACINGTYPE_EXACT">TEXTPATH_SPACINGTYPE_EXACT</a> = 2;
 
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="text.html#__svg__SVGTextPathElement__startOffset">startOffset</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedEnumeration</a> <a href="text.html#__svg__SVGTextPathElement__method">method</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedEnumeration</a> <a href="text.html#__svg__SVGTextPathElement__spacing">spacing</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="text.html#__nsvg__NSVGTextPathElement__startOffset">startOffset</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedEnumeration</a> <a href="text.html#__nsvg__NSVGTextPathElement__method">method</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedEnumeration</a> <a href="text.html#__nsvg__NSVGTextPathElement__spacing">spacing</a>;
 };
 
-<a>SVGTextPathElement</a> includes <a>SVGURIReference</a>;</pre>
+<a>NSVGTextPathElement</a> includes <a>NSVGURIReference</a>;</pre>
 
-<p>The numeric method type constants defined on <a>SVGTextPathElement</a>
+<p>The numeric method type constants defined on <a>NSVGTextPathElement</a>
 are used to represent the keyword values that the <a>'method'</a>
 attribute can take.  Their meanings are as follows:</p>
 
 <table class='vert'>
   <tr><th>Constant</th><th>Meaning</th></tr>
-  <tr><td><b id="__svg__SVGTextPathElement__TEXTPATH_METHODTYPE_ALIGN">TEXTPATH_METHODTYPE_ALIGN</b></td><td>The <span class="attr-value">align</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGTextPathElement__TEXTPATH_METHODTYPE_STRETCH">TEXTPATH_METHODTYPE_STRETCH</b></td><td>The <span class="attr-value">stretch</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGTextPathElement__TEXTPATH_METHODTYPE_UNKNOWN">TEXTPATH_METHODTYPE_UNKNOWN</b></td><td>Some other value.</td></tr>
+  <tr><td><b id="__nsvg__NSVGTextPathElement__TEXTPATH_METHODTYPE_ALIGN">TEXTPATH_METHODTYPE_ALIGN</b></td><td>The <span class="attr-value">align</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGTextPathElement__TEXTPATH_METHODTYPE_STRETCH">TEXTPATH_METHODTYPE_STRETCH</b></td><td>The <span class="attr-value">stretch</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGTextPathElement__TEXTPATH_METHODTYPE_UNKNOWN">TEXTPATH_METHODTYPE_UNKNOWN</b></td><td>Some other value.</td></tr>
 </table>
 
-<p>The numeric spacing type constants defined on <a>SVGTextPathElement</a>
+<p>The numeric spacing type constants defined on <a>NSVGTextPathElement</a>
 are used to represent the keyword values that the <a>'spacing'</a>
 attribute can take.  Their meanings are as follows:</p>
 
 <table class='vert'>
   <tr><th>Constant</th><th>Meaning</th></tr>
-  <tr><td><b id="__svg__SVGTextPathElement__TEXTPATH_SPACINGTYPE_AUTO">TEXTPATH_SPACINGTYPE_AUTO</b></td><td>The <span class="attr-value">auto</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGTextPathElement__TEXTPATH_SPACINGTYPE_EXACT">TEXTPATH_SPACINGTYPE_EXACT</b></td><td>The <span class="attr-value">exact</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGTextPathElement__TEXTPATH_SPACINGTYPE_UNKNOWN">TEXTPATH_SPACINGTYPE_UNKNOWN</b></td><td>Some other value.</td></tr>
+  <tr><td><b id="__nsvg__NSVGTextPathElement__TEXTPATH_SPACINGTYPE_AUTO">TEXTPATH_SPACINGTYPE_AUTO</b></td><td>The <span class="attr-value">auto</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGTextPathElement__TEXTPATH_SPACINGTYPE_EXACT">TEXTPATH_SPACINGTYPE_EXACT</b></td><td>The <span class="attr-value">exact</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGTextPathElement__TEXTPATH_SPACINGTYPE_UNKNOWN">TEXTPATH_SPACINGTYPE_UNKNOWN</b></td><td>Some other value.</td></tr>
 </table>
 
-<p>The <b id="__svg__SVGTextPathElement__startOffset">startOffset</b> IDL attribute
+<p>The <b id="__nsvg__NSVGTextPathElement__startOffset">startOffset</b> IDL attribute
 <a>reflects</a> the <a>'startOffset'</a> content attribute.</p>
 
-<p>The <b id="__svg__SVGTextPathElement__method">method</b> IDL attribute
+<p>The <b id="__nsvg__NSVGTextPathElement__method">method</b> IDL attribute
 <a>reflects</a> the <a>'method'</a> content attribute.  The
 <a>numeric type values</a> for <a>'method'</a> are as described
 above in the numeric method type constant table.</p>
 
-<p>The <b id="__svg__SVGTextPathElement__spacing">spacing</b> IDL attribute
+<p>The <b id="__nsvg__NSVGTextPathElement__spacing">spacing</b> IDL attribute
 <a>reflects</a> the <a>'spacing'</a> content attribute.  The
 <a>numeric type values</a> for <a>'spacing'</a> are as described
 above in the numeric spacing type constant table.</p>

@@ -5,7 +5,7 @@
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   
   
-  <title>svg:transform for mapping</title>
+  <title>nsvg:transform for mapping</title>
   
   
   <link href="../default.css" rel="stylesheet" type="text/css">
@@ -24,7 +24,7 @@
   
    <p data-fill-with="logo"></p>
   
-   <h1 class="p-name no-ref" id="title">svg:transform for mapping</h1>
+   <h1 class="p-name no-ref" id="title">nsvg:transform for mapping</h1>
   
    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft,
     <time class="dt-updated" datetime="2015-02-13">13 February 2015</time></span></h2>
@@ -34,7 +34,7 @@
      <dt>This version:
      <dd><a class="u-url" href="http://dev.w3.org/fxtf/motion-1/">http://dev.w3.org/fxtf/motion-1/</a>
      <dt>Feedback:
-     <dd><span><a href="mailto:www-svg@w3.org?subject=%5Btransform-mapping%5D%20feedback">www-svg@w3.org</a> with subject line “<kbd>[transform-mapping] <var>… message topic …</var></kbd>” (<a href="http://lists.w3.org/Archives/Public/www-svg/" rel="discussion">archives</a>)</span>
+     <dd><span><a href="mailto:www-nsvg@w3.org?subject=%5Btransform-mapping%5D%20feedback">www-nsvg@w3.org</a> with subject line “<kbd>[transform-mapping] <var>… message topic …</var></kbd>” (<a href="http://lists.w3.org/Archives/Public/www-nsvg/" rel="discussion">archives</a>)</span>
      <dt class="editor">Editor:
      <dd class="editor">
       <div class="p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:sa-takagi@kddi.com">Satoru Takagi</a> (<span class="p-org org">KDDI Corporation</span>)</div>
@@ -53,7 +53,7 @@
   <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
 
   <div class="p-summary" data-fill-with="abstract">
-   <p>This specification gives guidance how the SVG transform attribute in the SVG namespace can be used in other context than SVG.</p>
+   <p>This specification gives guidance how the NSVG transform attribute in the NSVG namespace can be used in other context than NSVG.</p>
 
 </div>
 
@@ -70,26 +70,26 @@
 
 </p>
    <p>
-	This document is the 13 February 2015 <strong>Editor’s Draft</strong> of svg:transform for mapping. 
+	This document is the 13 February 2015 <strong>Editor’s Draft</strong> of nsvg:transform for mapping. 
 
 </p>
    <p>
 	Comments on this Editor’s Draft are welcome. Comments can be sent to
-	<a href="mailto:www-svg@w3.org?Subject=%5Btransform-mapping%5D%20PUT%20SUBJECT%20HERE">www-svg@w3.org</a>,
+	<a href="mailto:www-nsvg@w3.org?Subject=%5Btransform-mapping%5D%20PUT%20SUBJECT%20HERE">www-nsvg@w3.org</a>,
 	the public email list for issues related to vector graphics on the Web. This list is
-	<a href="http://lists.w3.org/Archives/Public/www-svg/">archived</a> and senders must agree to have their message
+	<a href="http://lists.w3.org/Archives/Public/www-nsvg/">archived</a> and senders must agree to have their message
 	publicly archived from their first posting. To subscribe send an email to
-	<a href="mailto:www-svg-request@w3.org?Subject=subscribe">www-svg-request@w3.org</a> with the word <code>subscribe</code>
+	<a href="mailto:www-nsvg-request@w3.org?Subject=subscribe">www-nsvg-request@w3.org</a> with the word <code>subscribe</code>
 	in the subject line.
 
 </p>
    <p>
-	This document has been produced by the <a href="http://www.w3.org/Graphics/SVG/WG">SVG Working Group</a> as part of the
+	This document has been produced by the <a href="http://www.w3.org/Graphics/NSVG/WG">NSVG Working Group</a> as part of the
 	<a href="http://www.w3.org/Graphics/Activity">Graphics Activity</a> within the
-	<a href="http://www.w3.org/Interaction/">W3C Interaction Domain</a>. The goals of the W3C SVG Working Group are discussed in the
-	<a href="https://www.w3.org/Graphics/SVG/svg-2019.html">W3C SVG Charter</a>. The W3C SVG Working Group maintains a
-	public Web page, <a href="http://www.w3.org/Graphics/SVG/">http://www.w3.org/Graphics/SVG/</a>, that contains further
-	background information. The authors of this document are the SVG Working Group participants.
+	<a href="http://www.w3.org/Interaction/">W3C Interaction Domain</a>. The goals of the W3C NSVG Working Group are discussed in the
+	<a href="https://www.w3.org/Graphics/NSVG/nsvg-2019.html">W3C NSVG Charter</a>. The W3C NSVG Working Group maintains a
+	public Web page, <a href="http://www.w3.org/Graphics/NSVG/">http://www.w3.org/Graphics/NSVG/</a>, that contains further
+	background information. The authors of this document are the NSVG Working Group participants.
 
 </p>
    <p>
@@ -117,7 +117,7 @@
   <div data-fill-with="table-of-contents" role="navigation">
    <ul class="toc" role="directory">
     <li><a href="#GeographicCoordinates"><span class="secno">1</span> <span class="content">Geographic coordinate systems</span></a>
-    <li><a href="#SVGGlobalTransformAttribute"><span class="secno">2</span> <span class="content">The <span class="attr-name">'svg:transform'</span> attribute</span></a>
+    <li><a href="#NSVGGlobalTransformAttribute"><span class="secno">2</span> <span class="content">The <span class="attr-name">'nsvg:transform'</span> attribute</span></a>
     <li><a href="#conformance"><span class="secno"></span> <span class="content">
 Conformance</span></a>
      <ul class="toc">
@@ -149,17 +149,17 @@ Non-experimental implementations</span></a>
    <h2 class="heading settled" data-level="1" id="GeographicCoordinates"><span class="secno">1. </span><span class="content">Geographic coordinate systems</span><a class="self-link" href="#GeographicCoordinates"></a></h2>
 
 
-   <p>In order to allow interoperability between SVG content generators
-and user agents dealing with maps encoded in SVG, the use of a common
+   <p>In order to allow interoperability between NSVG content generators
+and user agents dealing with maps encoded in NSVG, the use of a common
 metadata definition for describing the coordinate system used to
-generate SVG documents is encouraged.</p>
+generate NSVG documents is encouraged.</p>
 
 
-   <p>Such metadata must be added under the <a data-link-type="element" href="https://svgwg.org/svg2-draft/metadata.html#elementdef-metadata">metadata</a> element of
-the topmost <a data-link-type="element" href="https://svgwg.org/svg2-draft/struct.html#NewDocument">svg</a> element describing the map, consisting of an
+   <p>Such metadata must be added under the <a data-link-type="element" href="https://nsvgwg.org/nsvg2-draft/metadata.html#elementdef-metadata">metadata</a> element of
+the topmost <a data-link-type="element" href="https://nsvgwg.org/nsvg2-draft/struct.html#NewDocument">nsvg</a> element describing the map, consisting of an
 RDF description of the Coordinate Reference System definition used to
-generate the SVG map <a data-link-type="biblio" href="#biblio-rdf-primer">[RDF-PRIMER]</a>. Note that
-the presence of this metadata does not affect the rendering of the SVG
+generate the NSVG map <a data-link-type="biblio" href="#biblio-rdf-primer">[RDF-PRIMER]</a>. Note that
+the presence of this metadata does not affect the rendering of the NSVG
 in any way; it merely provides added semantic value for applications
 that make use of combined maps.</p>
 
@@ -168,28 +168,28 @@ that make use of combined maps.</p>
 <a href="http://portal.opengeospatial.org/files/?artifact_id=20509"><cite>GML 3.2.1</cite></a>,
 an OpenGIS Standard for encoding common CRS data types in XML
 [<a href="refs.html#ref-GML">GML</a>]. In order to correctly map
-the 2-dimensional data used by SVG, the CRS must be of subtype
+the 2-dimensional data used by NSVG, the CRS must be of subtype
 <strong>ProjectedCRS</strong> or <strong>Geographic2dCRS</strong>. The
-first axis of the described CRS maps the SVG <var>x</var>-axis and the
-second axis maps the SVG <var>y</var>-axis.</p>
+first axis of the described CRS maps the NSVG <var>x</var>-axis and the
+second axis maps the NSVG <var>y</var>-axis.</p>
 
 
    <p>The main purpose of such metadata is to indicate to the user agent
-that two or more SVG documents can be overlayed or merged into a single
+that two or more NSVG documents can be overlayed or merged into a single
 document. Obviously, if two maps reference the same Coordinate Reference
-System definition and have the same SVG <a class="property" data-link-type="propdesc" href="http://dev.w3.org/csswg/css-transforms-1/#propdef-transform">transform</a> property
+System definition and have the same NSVG <a class="property" data-link-type="propdesc" href="http://dev.w3.org/csswg/css-transforms-1/#propdef-transform">transform</a> property
 value then they can be overlayed without reprojecting the data. If
 the maps reference different Coordinate Reference Systems and/or have
-different SVG <a class="property" data-link-type="propdesc" href="http://dev.w3.org/csswg/css-transforms-1/#propdef-transform">transform</a> property values, then a specialized
+different NSVG <a class="property" data-link-type="propdesc" href="http://dev.w3.org/csswg/css-transforms-1/#propdef-transform">transform</a> property values, then a specialized
 cartographic user agent may choose to transform the coordinate data to
-overlay the data. However, typical SVG user agents are not required
+overlay the data. However, typical NSVG user agents are not required
 to perform these types of transformations, or even recognize the
 metadata. It is described in this specification so that the connection
-between geographic coordinate systems and the SVG coordinate system is
+between geographic coordinate systems and the NSVG coordinate system is
 clear.</p>
 
 
-   <h2 class="heading settled" data-level="2" id="SVGGlobalTransformAttribute"><span class="secno">2. </span><span class="content">The <span class="attr-name">'svg:transform'</span> attribute</span><a class="self-link" href="#SVGGlobalTransformAttribute"></a></h2>
+   <h2 class="heading settled" data-level="2" id="NSVGGlobalTransformAttribute"><span class="secno">2. </span><span class="content">The <span class="attr-name">'nsvg:transform'</span> attribute</span><a class="self-link" href="#NSVGGlobalTransformAttribute"></a></h2>
 
 
    <div class="adef-list">
@@ -198,7 +198,7 @@ clear.</p>
   
     <dl>
     
-     <dt id="SVGGlobalTransformAttributeDefinition"><a class="self-link" href="#SVGGlobalTransformAttributeDefinition"></a><dfn data-dfn-type="dfn" data-noexport="" id="svgtransform">svg:transform<a class="self-link" href="#svgtransform"></a></dfn> = <a class="production css" data-link-type="type" href="http://dev.w3.org/csswg/css-transforms-1/#typedef-transform-list">&lt;transform-list></a> | <span class="css">none</span>
+     <dt id="NSVGGlobalTransformAttributeDefinition"><a class="self-link" href="#NSVGGlobalTransformAttributeDefinition"></a><dfn data-dfn-type="dfn" data-noexport="" id="nsvgtransform">nsvg:transform<a class="self-link" href="#nsvgtransform"></a></dfn> = <a class="production css" data-link-type="type" href="http://dev.w3.org/csswg/css-transforms-1/#typedef-transform-list">&lt;transform-list></a> | <span class="css">none</span>
      
     
      <dd>
@@ -226,7 +226,7 @@ clear.</p>
         <p>Specifies that no supplemental affine transformation has been
           applied to the map data.  Using this value has the same meaning as
           specifying the identity matrix, which in turn is just the same as
-          not specifying the <a data-link-type="dfn" href="#svgtransform">svg:transform</a> the attribute at all.</p>
+          not specifying the <a data-link-type="dfn" href="#nsvgtransform">nsvg:transform</a> the attribute at all.</p>
         
         
        
@@ -250,32 +250,32 @@ mapping. This attribute may be added to the OpenGIS
 that, unlike the <a class="property" data-link-type="propdesc" href="http://dev.w3.org/csswg/css-transforms-1/#propdef-transform">transform</a> property, it does not indicate that
 a transformation is to <em>be applied</em> to the data within the file.
 Instead, it simply describes the transformation that <em>was already
-applied</em> to the data when being encoded in SVG.</p>
+applied</em> to the data when being encoded in NSVG.</p>
 
 
-   <p>There are three typical uses for the <a data-link-type="dfn" href="#svgtransform">svg:transform</a>
+   <p>There are three typical uses for the <a data-link-type="dfn" href="#nsvgtransform">nsvg:transform</a>
 global attribute. These are described below and used in the examples.</p>
 
 
    <ul>
   
     <li>Most ProjectedCRS have the north direction represented by
-  positive values of the second axis and conversely SVG has a
+  positive values of the second axis and conversely NSVG has a
   <var>y</var>-down coordinate system. That’s why, in order to follow the
   usual way to represent a map with the north at its top, it is
   recommended for that kind of ProjectedCRS to use the
-  <a data-link-type="dfn" href="#svgtransform">svg:transform</a>
+  <a data-link-type="dfn" href="#nsvgtransform">nsvg:transform</a>
   global attribute with a <span class="css">scale(1, -1)</span> value as in the
   third example below.
 
   
     <li>Most Geographic2dCRS have the latitude as their first
   axis rather than the longitude, which means that the
-  south-north axis would be represented by the <var>x</var>-axis in SVG
+  south-north axis would be represented by the <var>x</var>-axis in NSVG
   instead of the usual <var>y</var>-axis. That’s why, in order to follow
   the usual way to represent a map with the north at its top,
   it is recommended for that kind of Geographic2dCRS to use the
-  <a data-link-type="dfn" href="#svgtransform">svg:transform'</a>
+  <a data-link-type="dfn" href="#nsvgtransform">nsvg:transform'</a>
   global attribute with a <span class="css">rotate(-90)</span> value as in the
   first example (while also adding the <span class="css">scale(1, -1)</span> as for
   ProjectedCRS).
@@ -284,10 +284,10 @@ global attribute. These are described below and used in the examples.</p>
     <li>In addition, when converting for profiles which place
   restrictions on precision of real number values, it may be
   useful to add an additional scaling factor to retain good
-  precision for a specific area. When generating an SVG
+  precision for a specific area. When generating an NSVG
   document from WGS84 geographic coordinates (EPGS 4326), we
   recommend the use of an additional 100 times scaling factor
-  corresponding to an <a data-link-type="dfn" href="#svgtransform">svg:transform</a>
+  corresponding to an <a data-link-type="dfn" href="#nsvgtransform">nsvg:transform</a>
   global attribute with a <span class="css">rotate(-90) scale(100)</span>
   value (shown in the second example).
   Different scaling values may be required depending on the
@@ -303,7 +303,7 @@ URI.</p>
    <div class="example">
  
     <pre><code class="html">&lt;?xml version="1.0"?>
-&lt;svg xmlns="http://www.w3.org/2000/svg"
+&lt;nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="100" height="100" viewBox="0 0 1000 1000">
 
   &lt;desc>An example that references coordinate data.&lt;/desc>
@@ -311,19 +311,19 @@ URI.</p>
   &lt;metadata>
     &lt;rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
              xmlns:crs="http://www.ogc.org/crs"
-             xmlns:svg="http://www.w3.org/2000/svg">
+             xmlns:nsvg="http://www.w3.org/2000/nsvg">
       &lt;rdf:Description rdf:about="">
         &lt;!-- The Coordinate Reference System is described
              through a URI. -->
         &lt;crs:CoordinateReferenceSystem
-            svg:transform="rotate(-90)"
+            nsvg:transform="rotate(-90)"
             rdf:resource="http://www.example.org/srs/epsg.xml#4326"/>
       &lt;/rdf:Description>
     &lt;/rdf:RDF>
   &lt;/metadata>
 
   &lt;!-- The actual map content -->
-&lt;/svg>
+&lt;/nsvg>
 </code></pre>
 </div>
 
@@ -336,7 +336,7 @@ document have had the supplied transform applied.</p>
    <div class="example">
   
     <pre><code class="html">&lt;?xml version="1.0"?>
-&lt;svg xmlns="http://www.w3.org/2000/svg"
+&lt;nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="100" height="100" viewBox="0 0 1000 1000">
 
   &lt;desc>Example using a well known coordinate system.&lt;/desc>
@@ -344,11 +344,11 @@ document have had the supplied transform applied.</p>
   &lt;metadata>
     &lt;rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
              xmlns:crs="http://www.ogc.org/crs"
-             xmlns:svg="http://www.w3.org/2000/svg">
+             xmlns:nsvg="http://www.w3.org/2000/nsvg">
       &lt;rdf:Description rdf:about="">
         &lt;!-- In case of a well-known Coordinate Reference System
              an 'Identifier' is enough to describe the CRS -->
-        &lt;crs:CoordinateReferenceSystem svg:transform="rotate(-90) scale(100, 100)">
+        &lt;crs:CoordinateReferenceSystem nsvg:transform="rotate(-90) scale(100, 100)">
           &lt;crs:Identifier>
             &lt;crs:code>4326&lt;/crs:code>
             &lt;crs:codeSpace>EPSG&lt;/crs:codeSpace>
@@ -360,30 +360,30 @@ document have had the supplied transform applied.</p>
   &lt;/metadata>
 
   &lt;!-- The actual map content -->
-&lt;/svg>
+&lt;/nsvg>
 </code></pre>
 </div>
 
 
    <p>The third example defines the coordinate system completely
-within the SVG document.</p>
+within the NSVG document.</p>
 
 
    <div class="example">
   
     <pre><code class="html">&lt;?xml version="1.0"?>
-&lt;svg xmlns="http://www.w3.org/2000/svg"
+&lt;nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="100" height="100" viewBox="0 0 1000 1000">
 
-  &lt;desc>Coordinate metadata defined within the SVG document&lt;/desc>
+  &lt;desc>Coordinate metadata defined within the NSVG document&lt;/desc>
 
   &lt;metadata>
     &lt;rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
              xmlns:crs="http://www.ogc.org/crs"
-             xmlns:svg="http://www.w3.org/2000/svg">
+             xmlns:nsvg="http://www.w3.org/2000/nsvg">
       &lt;rdf:Description rdf:about="">
         &lt;!-- For other CRS it should be entirely defined -->
-        &lt;crs:CoordinateReferenceSystem svg:transform="scale(1,-1)">
+        &lt;crs:CoordinateReferenceSystem nsvg:transform="scale(1,-1)">
           &lt;crs:NameSet>
             &lt;crs:name>Mercator projection of WGS84&lt;/crs:name>
           &lt;/crs:NameSet>
@@ -494,7 +494,7 @@ within the SVG document.</p>
   &lt;/metadata>
 
   &lt;!-- the actual map content -->
-&lt;/svg>
+&lt;/nsvg>
 </code></pre>
 </div>
 </main>
@@ -676,6 +676,6 @@ Non-experimental implementations</span><a class="self-link" href="#testing"></a>
   </dl>
   <h2 class="no-num heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <ul class="indexlist">
-   <li>svg:transform, <a href="#svgtransform">2</a>
+   <li>nsvg:transform, <a href="#nsvgtransform">2</a>
   </ul></body>
 </html>

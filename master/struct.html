@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
   <title>Document Structure</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,119 +9,119 @@
   <!-- Style sheets for local dev. Will be standardized in processing.
   Add attribute data-keep="" to any extra stylesheet link you do not want removed
   (or use <style>), and include it before here. -->
-  <link rel="stylesheet" href="style/svg.css" type="text/css" />
+  <link rel="stylesheet" href="style/nsvg.css" type="text/css" />
   <link rel="stylesheet" href="style/W3C-ED.css" type="text/css" />
 </head>
 <body>
 
 <h1>Document Structure</h1>
 
-<h2 id="NewDocument">Defining an SVG document fragment: the <span class='element-name'>'svg'</span> element</h2>
+<h2 id="NewDocument">Defining an NSVG document fragment: the <span class='element-name'>'nsvg'</span> element</h2>
 
-<edit:with element='svg'>
+<edit:with element='nsvg'>
 
 <h3 id="NewDocumentOverview">Overview</h3>
 
-<p>An <a>SVG document fragment</a> consists of any number of SVG elements
-contained within an <a>'svg'</a> element.</p>
+<p>An <a>NSVG document fragment</a> consists of any number of NSVG elements
+contained within an <a>'nsvg'</a> element.</p>
 
-<p>An SVG document fragment can range from an empty fragment (i.e.,
-no content inside of the <a>'svg'</a> element), to a very simple SVG
-document fragment containing a single SVG <a>graphics element</a>
+<p>An NSVG document fragment can range from an empty fragment (i.e.,
+no content inside of the <a>'nsvg'</a> element), to a very simple NSVG
+document fragment containing a single NSVG <a>graphics element</a>
 such as a <a>'rect'</a>, to a complex, deeply nested collection of
 <a>container elements</a> and <a>graphics elements</a>.</p>
 
-<p>An SVG document fragment can stand by itself as a self-contained
-file or resource, in which case the SVG document fragment is an <a>SVG
+<p>An NSVG document fragment can stand by itself as a self-contained
+file or resource, in which case the NSVG document fragment is an <a>NSVG
 document</a>, or it can be embedded inline as a fragment within a parent
 HTML or XML document.</p>
 
-<p id="EmbeddedSVGExample">The following example shows simple SVG
+<p id="EmbeddedNSVGExample">The following example shows simple NSVG
 content embedded inline as a fragment within a parent XML document.
-Note the use of XML namespaces to indicate that the <a>'svg'</a> and
-<a>'ellipse'</a> elements belong to the <a>SVG namespace</a>:</p>
+Note the use of XML namespaces to indicate that the <a>'nsvg'</a> and
+<a>'ellipse'</a> elements belong to the <a>NSVG namespace</a>:</p>
 
 <pre class='xml'><![CDATA[
 <?xml version="1.0" standalone="yes"?>
 <parent xmlns="http://example.org"
-        xmlns:svg="http://www.w3.org/2000/svg">
+        xmlns:nsvg="http://www.w3.org/2000/nsvg">
    <!-- parent contents here -->
-   <svg:svg width="4cm" height="8cm">
-      <svg:ellipse cx="2cm" cy="4cm" rx="2cm" ry="1cm" />
-   </svg:svg>
+   <nsvg:nsvg width="4cm" height="8cm">
+      <nsvg:ellipse cx="2cm" cy="4cm" rx="2cm" ry="1cm" />
+   </nsvg:nsvg>
    <!-- ... -->
 </parent>
 ]]></pre>
 
 <p>This example shows a slightly more complex (i.e., it contains
-multiple rectangles) stand-alone, self-contained SVG document:</p>
+multiple rectangles) stand-alone, self-contained NSVG document:</p>
 
-<edit:example href='images/struct/StandAlone01.svg' image='no'/>
+<edit:example href='images/struct/StandAlone01.nsvg' image='no'/>
 
-<p><a>'svg'</a> elements can appear in the middle of SVG content. This
-is the mechanism by which SVG document fragments can be embedded within
-other SVG document fragments.</p>
+<p><a>'nsvg'</a> elements can appear in the middle of NSVG content. This
+is the mechanism by which NSVG document fragments can be embedded within
+other NSVG document fragments.</p>
 
-<p>Another use for <a>'svg'</a> elements within the middle
-of SVG content is to establish a new SVG viewport. (See
-<a href="coords.html#EstablishingANewSVGViewport">Establishing a new
-SVG viewport</a>.)</p>
+<p>Another use for <a>'nsvg'</a> elements within the middle
+of NSVG content is to establish a new NSVG viewport. (See
+<a href="coords.html#EstablishingANewNSVGViewport">Establishing a new
+NSVG viewport</a>.)</p>
 
 <h3 id="Namespace">Namespace</h3>
 
-<p>When SVG is parsed as a XML, for compliance with the
+<p>When NSVG is parsed as a XML, for compliance with the
 <a href="https://www.w3.org/TR/2006/REC-xml-names-20060816/"><cite>Namespaces in XML</cite></a> Recommendation
-[<a href="refs.html#ref-xml-names">xml-names</a>], an SVG namespace
-declaration must be provided so that all SVG elements are identified
-as belonging to the SVG namespace.</p>
+[<a href="refs.html#ref-xml-names">xml-names</a>], an NSVG namespace
+declaration must be provided so that all NSVG elements are identified
+as belonging to the NSVG namespace.</p>
 
 <p>When using the HTML syntax, the namespace is provided automatically by the HTML parser.</p>
 
 <pre class='html'><![CDATA[
 <html>
-<svg viewBox="0 0 100 100">
+<nsvg viewBox="0 0 100 100">
   <circle cx="50" cy="50" r="50" fill="green">
-</svg>
+</nsvg>
 </html>
 ]]></pre>
 
 <p>As the example shows there's no need to have an <span class='attr-name'>'xmlns'</span>
-  attribute declaring that the element is in the SVG namespace when using the HTML parser.
-  The HTML parser will automatically create the SVG elements in the proper namespace.
+  attribute declaring that the element is in the NSVG namespace when using the HTML parser.
+  The HTML parser will automatically create the NSVG elements in the proper namespace.
 </p>
 
 <p class="issue" data-issue="1">This section should talk about how a document's behavior
 is defined in terms of the DOM, and also explain how the HTML parser can
-create SVG fragments.</p>
+create NSVG fragments.</p>
 
-<p>The SVG 2 namespace is <code>http://www.w3.org/2000/svg</code>,
-which is the same as for earlier versions of SVG.</p>
+<p>The NSVG 2 namespace is <code>http://www.w3.org/2000/nsvg</code>,
+which is the same as for earlier versions of NSVG.</p>
 
 <p>The following are possible ways to
-provide a namespace declaration when SVG is parsed as XML. An <span class='attr-name'>'xmlns'</span>
+provide a namespace declaration when NSVG is parsed as XML. An <span class='attr-name'>'xmlns'</span>
 attribute without a namespace prefix could be specified on an
-<a>'svg'</a> element, which means that SVG is the default namespace
+<a>'nsvg'</a> element, which means that NSVG is the default namespace
 for all elements within the scope of the element with the <span class='attr-name'>'xmlns'</span> attribute:</p>
 
 <pre class='xml'><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<nsvg xmlns="http://www.w3.org/2000/nsvg" viewBox="0 0 100 100">
   <rect x="10" y="10" width="80" height="80" fill="green" />
-</svg>
+</nsvg>
 ]]></pre>
 
 <p>If a namespace prefix is specified on the <span class='attr-name'>'xmlns'</span>
-attribute (e.g., <code class='xml'>xmlns:svg="http://www.w3.org/2000/svg"</code>),
+attribute (e.g., <code class='xml'>xmlns:nsvg="http://www.w3.org/2000/nsvg"</code>),
 then the corresponding namespace is not the default namespace, so an
 explicit namespace prefix must be assigned to the elements:</p>
 
 <pre class='xml'><![CDATA[
-<svg:svg xmlns:svg="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <svg:rect x="10" y="10" width="80" height="80" fill="green" />
-</svg:svg>
+<nsvg:nsvg xmlns:nsvg="http://www.w3.org/2000/nsvg" viewBox="0 0 100 100">
+  <nsvg:rect x="10" y="10" width="80" height="80" fill="green" />
+</nsvg:nsvg>
 ]]></pre>
 
 <p>Namespace prefixes can be specified on ancestor elements (illustrated
-in the <a href="#EmbeddedSVGExample">above example</a>). For more
+in the <a href="#EmbeddedNSVGExample">above example</a>). For more
 information, refer to the <a href="https://www.w3.org/TR/2006/REC-xml-names-20060816/"><cite>Namespaces in XML</cite></a> Recommendation
 [<a href="refs.html#ref-xml-names">xml-names</a>].</p>
 
@@ -130,7 +130,7 @@ information, refer to the <a href="https://www.w3.org/TR/2006/REC-xml-names-2006
 <dl class="definitions">
   <dt><dfn id="TermStructuralElement" data-dfn-type="dfn" data-export="">structural element</dfn></dt>
   <dd>The structural elements are those which define the primary
-  structure of an SVG document.  Specifically, the following
+  structure of an NSVG document.  Specifically, the following
   elements are structural elements:
   <edit:elementcategory name='structural'/>.</dd>
 
@@ -140,30 +140,30 @@ information, refer to the <a href="https://www.w3.org/TR/2006/REC-xml-names-2006
   they have an <span class="attr-name">'href'</span> attribute:
   <edit:elementcategory name='structurally external'/>.</dd>
 
-  <dt><dfn id="TermCurrentSVGDocumentFragment" data-dfn-type="dfn" data-export="">current SVG document fragment</dfn></dt>
+  <dt><dfn id="TermCurrentNSVGDocumentFragment" data-dfn-type="dfn" data-export="">current NSVG document fragment</dfn></dt>
   <dd>The document sub-tree which starts with the outermost
-  ancestor <a>'svg'</a> element of a given SVG
+  ancestor <a>'nsvg'</a> element of a given NSVG
   element, with the requirement that all container elements
-  between the outermost <a>'svg'</a> and the given element are
-  all elements in the SVG namespace.</dd>
+  between the outermost <a>'nsvg'</a> and the given element are
+  all elements in the NSVG namespace.</dd>
 
-  <dt><dfn id="TermOutermostSVGElement" data-dfn-type="dfn" data-export="">outermost svg element</dfn></dt>
-  <dd>The furthest <a>'svg'</a> ancestor element that remains in the
-  <a>current SVG document fragment</a>.</dd>
+  <dt><dfn id="TermOutermostNSVGElement" data-dfn-type="dfn" data-export="">outermost nsvg element</dfn></dt>
+  <dd>The furthest <a>'nsvg'</a> ancestor element that remains in the
+  <a>current NSVG document fragment</a>.</dd>
 
-  <dt><dfn id="TermSVGDocumentFragment" data-dfn-type="dfn" data-export="">SVG document fragment</dfn></dt>
-  <dd>A document sub-tree which starts with an <a>'svg'</a>
+  <dt><dfn id="TermNSVGDocumentFragment" data-dfn-type="dfn" data-export="">NSVG document fragment</dfn></dt>
+  <dd>A document sub-tree which starts with an <a>'nsvg'</a>
   element which is either the root element of the document or whose parent
-  element is not in the SVG namespace.
-  An SVG document fragment can consist of a stand-alone SVG document,
-  or a fragment of a parent document enclosed by an <a>'svg'</a>
+  element is not in the NSVG namespace.
+  An NSVG document fragment can consist of a stand-alone NSVG document,
+  or a fragment of a parent document enclosed by an <a>'nsvg'</a>
   element.
-  Howevere, an <a>'svg'</a> element that is a direct child of another SVG-namespaced element
-  is not the root of an SVG document fragment.
+  Howevere, an <a>'nsvg'</a> element that is a direct child of another NSVG-namespaced element
+  is not the root of an NSVG document fragment.
   </dd>
 
-  <dt><dfn id="TermSVGElements" data-dfn-type="dfn" data-export="">SVG elements</dfn></dt>
-  <dd>Any element in the <a>SVG namespace</a>.</dd>
+  <dt><dfn id="TermNSVGElements" data-dfn-type="dfn" data-export="">NSVG elements</dfn></dt>
+  <dd>Any element in the <a>NSVG namespace</a>.</dd>
 
   <dt id="TermGraphicsElement"><dfn id="graphics-element" data-dfn-type="dfn" data-export="">graphics element</dfn></dt>
   <dd>One of the element types that can cause graphics to be
@@ -177,21 +177,21 @@ information, refer to the <a href="https://www.w3.org/TR/2006/REC-xml-names-2006
 
 </dl>
 
-<h3 id="SVGElement">The <span class='element-name'>'svg'</span> element</h3>
+<h3 id="NSVGElement">The <span class='element-name'>'nsvg'</span> element</h3>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
-      <td>Support transforming <a>'svg'</a> elements.</td>
+      <th>NSVG 2 Requirement:</th>
+      <td>Support transforming <a>'nsvg'</a> elements.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/10/28-svg-irc#T00-23-44">We will allow <span class='attr-name'>'transform'</span> on <span class='element-name'>'svg'</span> in SVG 2.</a></td>
+      <td><a href="http://www.w3.org/2011/10/28-nsvg-irc#T00-23-44">We will allow <span class='attr-name'>'transform'</span> on <span class='element-name'>'nsvg'</span> in NSVG 2.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
-      <td>To allow transforms on nested <a>'svg'</a> elements, in line with author expectations.</td>
+      <td>To allow transforms on nested <a>'nsvg'</a> elements, in line with author expectations.</td>
     </tr>
     <tr>
       <th>Owner:</th>
@@ -204,35 +204,35 @@ information, refer to the <a href="https://www.w3.org/TR/2006/REC-xml-names-2006
   </table>
 </div>
 
-<edit:elementsummary name='svg'/>
+<edit:elementsummary name='nsvg'/>
 <p>
   The <a>'x'</a> and <a>'y'</a> attributes specify the
   top-left corner of the rectangular region into which an
-  embedded <a>'svg'</a> element is placed.  On an <a>outermost svg element</a>,
+  embedded <a>'nsvg'</a> element is placed.  On an <a>outermost nsvg element</a>,
   these attributes have no effect.
 </p>
 
 <p>
-  For <a>outermost svg elements</a>,
+  For <a>outermost nsvg elements</a>,
   the <a>'width property'</a> and <a>'height property'</a> attributes specify
-  the intrinsic size of the SVG document fragment.
-  For embedded <a>'svg'</a> elements, they specify the size
-  of the rectangular region into which the <a>'svg'</a> element
+  the intrinsic size of the NSVG document fragment.
+  For embedded <a>'nsvg'</a> elements, they specify the size
+  of the rectangular region into which the <a>'nsvg'</a> element
   is placed.
   In either case, a computed style of <span class="prop-value">auto</span>
   is treated equivalent to <span class="prop-value">100%</span>.
 </p>
 
-<p>If an SVG document is likely to be referenced as a component
+<p>If an NSVG document is likely to be referenced as a component
 of another document, the author will often want to include a
-<a>'viewBox'</a> attribute on the <a>outermost svg element</a> of the
+<a>'viewBox'</a> attribute on the <a>outermost nsvg element</a> of the
 referenced document. This attribute provides a convenient way to design
-SVG documents to scale-to-fit into an arbitrary SVG viewport.</p>
+NSVG documents to scale-to-fit into an arbitrary NSVG viewport.</p>
 
-<p id="SVGElementEventHandlerAttributes">The <a>'svg'</a> element exposes as <a>event handler content attributes</a> a number of the <a>event handlers</a> of the <a>Window</a> object. It also mirrors their <a>event handler IDL attributes</a>.</p>
+<p id="NSVGElementEventHandlerAttributes">The <a>'nsvg'</a> element exposes as <a>event handler content attributes</a> a number of the <a>event handlers</a> of the <a>Window</a> object. It also mirrors their <a>event handler IDL attributes</a>.</p>
 
-<p>The <a href="interact.html">onblur</a>, <a>'onerror'</a>, <a href="interact.html">onfocus</a>, <a>'onload'</a>, and <a>'onscroll'</a> <a>event handlers</a> of the <a>Window</a> object, exposed on the <a>'svg'</a> element,
-replace the generic <a>event handlers</a> with the same names normally supported by <a>SVG elements</a>.</p>
+<p>The <a href="interact.html">onblur</a>, <a>'onerror'</a>, <a href="interact.html">onfocus</a>, <a>'onload'</a>, and <a>'onscroll'</a> <a>event handlers</a> of the <a>Window</a> object, exposed on the <a>'nsvg'</a> element,
+replace the generic <a>event handlers</a> with the same names normally supported by <a>NSVG elements</a>.</p>
 
 </edit:with>
 
@@ -256,7 +256,7 @@ several purposes such as animation and re-usable objects.</p>
 
 <p>An example:</p>
 
-<edit:example href='images/struct/grouping01.svg' image='no' link='yes'/>
+<edit:example href='images/struct/grouping01.nsvg' image='no' link='yes'/>
 
 <p>A <a>'g'</a> element can contain other <a>'g'</a> elements nested
 within it, to an arbitrary depth.</p>
@@ -270,8 +270,8 @@ within it, to an arbitrary depth.</p>
 
 <h3 id="Overview">Overview</h3>
 
-<p>SVG allows a graphical object to be defined for later reuse.
-To do this, SVG makes extensive use of the <a>URL reference</a>
+<p>NSVG allows a graphical object to be defined for later reuse.
+To do this, NSVG makes extensive use of the <a>URL reference</a>
 construct [<a href="refs.html#ref-rfc3987">rfc3987</a>].
 For example, to fill a rectangle with a linear gradient, a
 <a>'linearGradient'</a> element may be defined with an
@@ -283,7 +283,7 @@ the rectangle's <a>'fill'</a> property, as in the following:</p>
 <rect style="fill:url(#MyGradient)"/>
 ]]></pre>
 
-<p>Some types of element, such as gradients, will not by themselves produce a graphical result. They can therefore be placed anywhere convenient. However, sometimes it is desired to define a graphical object and prevent it from being directly rendered. it is only there to be referenced elsewhere. To do this, and to allow convenient grouping defined content, SVG provides the <span class='element-name'>'defs'</span> element.</p>
+<p>Some types of element, such as gradients, will not by themselves produce a graphical result. They can therefore be placed anywhere convenient. However, sometimes it is desired to define a graphical object and prevent it from being directly rendered. it is only there to be referenced elsewhere. To do this, and to allow convenient grouping defined content, NSVG provides the <span class='element-name'>'defs'</span> element.</p>
 
 <p>It is recommended that, where possible, referenced elements be defined
 prior to the elements that use them, in document order.
@@ -330,12 +330,12 @@ directly.</p>
   for the graphics it contains.
   When a symbol is instantiated
   as the <a>referenced element</a> of a <a>'use'</a> element,
-  it is therefore rendered very similarly to a nested <a>'svg'</a> element.</p>
+  it is therefore rendered very similarly to a nested <a>'nsvg'</a> element.</p>
 
 <edit:elementsummary name='symbol'/>
 
 <p>The <a>'x'</a>, <a>'y'</a>, <a>'width'</a>, and <a>'height'</a> geometry properties
-  have the same effect as on an <a>'svg'</a> element,
+  have the same effect as on an <a>'nsvg'</a> element,
   when the <a>'symbol'</a> is instantiated by a <a>'use'</a> element.
   In particular, if <a>'width'</a> and <a>'height'</a>
   compute to <span class="prop-value">auto</span>
@@ -344,7 +344,7 @@ directly.</p>
 </p>
 
 <p class="note">
-  New in SVG 2.
+  New in NSVG 2.
   Allowing geometry properties to be specified on a symbol
   provides a more consistent rendering model,
   and allows authors to set a default size for each symbol
@@ -380,20 +380,20 @@ directly.</p>
   </dt>
   <dd>
     <p class="note">
-      New in SVG 2. Added to make it easier to align symbols to a
+      New in NSVG 2. Added to make it easier to align symbols to a
       particular point, as is often done in maps. Similar to the
       matching attributes on <a>'marker element'</a>.
     </p>
 
     <p class="annotation">
       Add refX/refY to symbol element. Resolved at
-      <a href="http://www.w3.org/2014/04/08-svg-minutes.html#item12">Leipzig F2F</a>.
+      <a href="http://www.w3.org/2014/04/08-nsvg-minutes.html#item12">Leipzig F2F</a>.
       Status: Done.
     </p>
     <p class="annotation">
       We will add top/center/bottom, left/center/right keywords to
       refX/refY on marker/symbol. Resolved at
-      <a href="http://www.w3.org/2014/08/26-svg-minutes.html#item07">London
+      <a href="http://www.w3.org/2014/08/26-nsvg-minutes.html#item07">London
       F2F</a>. Values inspired by
       <a href="https://www.w3.org/TR/css3-background/#the-background-position">'background-position'</a>.
       Status: Done.
@@ -444,7 +444,7 @@ times in the same document adds structure and semantics.
 Closely related to the <a>'symbol'</a> element are the
 <a>'marker element'</a> and <a>'pattern'</a> elements;
 all three define a container of graphical content
-that can be rendered repeatedly at various positions and scales in the SVG.
+that can be rendered repeatedly at various positions and scales in the NSVG.
 However, while <a>re-used graphics</a> in a pattern and marker
 provide a graphical effect on another element,
 the content in a <a>'symbol'</a> will be embedded
@@ -454,9 +454,9 @@ as fully interactive content, within a <a>use-element shadow tree</a>.
 <p>The <a href="styling.html#UAStyleSheet">user agent style sheet</a> sets
 the <a>'overflow'</a> property for <a>'symbol element'</a> elements to
 <span class="prop-value">hidden</span>, which causes a rectangular clipping
-path to be created at the bounds of symbol's SVG viewport.  Unless the
+path to be created at the bounds of symbol's NSVG viewport.  Unless the
 <a>'overflow'</a> property is overridden, any graphics within the symbol which
-goes outside of the symbol's SVG viewport will be clipped.</p>
+goes outside of the symbol's NSVG viewport will be clipped.</p>
 
 <p><a>'symbol'</a> elements must never be rendered directly;
 their only usage is as something that can be referenced
@@ -495,15 +495,15 @@ behaves as a symbol definition, and must not be rendered.
 
 <h2 id="UseElement">The <span class='element-name'>'use'</span> element</h2>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Allow <a>'use'</a> to reference an external document's root element by omitting the fragment.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/10/28-svg-irc#T00-33-43">We will relax referencing requirements to particular elements to allow dropping fragments to mean referencing root element, where it makes sense, such as with use, in SVG 2.</a></td>
+      <td><a href="http://www.w3.org/2011/10/28-nsvg-irc#T00-33-43">We will relax referencing requirements to particular elements to allow dropping fragments to mean referencing root element, where it makes sense, such as with use, in NSVG 2.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -511,7 +511,7 @@ behaves as a symbol definition, and must not be rendered.
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Cameron (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3417">ACTION-3417</a>)</td>
+      <td>Cameron (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3417">ACTION-3417</a>)</td>
     </tr>
     <tr>
       <th>Status:</th>
@@ -529,7 +529,7 @@ references another element, a copy of which
 is rendered in place of the <a>'use'</a> in the document.
 The <a>referenced element</a> may be a <a>container element</a>,
 in which case a copy of
-the complete SVG document subtree rooted at that element is used.
+the complete NSVG document subtree rooted at that element is used.
 </p>
 <p>
 The cloned content inherits styles from the <a>'use'</a> element
@@ -545,7 +545,7 @@ also apply in the scope of the cloned <a>shadow tree</a>.
     geometric properties specify the positioning of the referenced element.
     The <a>'width'</a> and <a>'height'</a> attributes
     only have an effect if the <a>referenced element</a>
-    defines a viewport (i.e., if it is a <a>'svg'</a> or <a>'symbol'</a>);
+    defines a viewport (i.e., if it is a <a>'nsvg'</a> or <a>'symbol'</a>);
     if so, a value other than <span class="prop-value">auto</span>
     for the <a>'use'</a> element overrides the value
     of the corresponding geometric property on that element.
@@ -581,9 +581,9 @@ also apply in the scope of the cloned <a>shadow tree</a>.
   </dt>
   <dd>
     <p>An <a href="linking.html#URLReference">URL reference</a> to the
-    element/fragment within an SVG document to be cloned for
+    element/fragment within an NSVG document to be cloned for
     rendering.</p>
-    <p>The <a>'use'</a> element can reference an entire SVG document
+    <p>The <a>'use'</a> element can reference an entire NSVG document
     by specifying an <a>'href'</a> value without a fragment.
     Such references are taken to be referring to the root element
     of the referenced document.</p>
@@ -593,8 +593,8 @@ also apply in the scope of the cloned <a>shadow tree</a>.
   </dd>
 </dl>
 
-<p class="note">New in SVG 2.
-An <a>'href'</a> without a fragment allows an entire SVG document to be referenced
+<p class="note">New in NSVG 2.
+An <a>'href'</a> without a fragment allows an entire NSVG document to be referenced
 without having to ensure that it has an ID on its root element.</p>
 
 <p>
@@ -611,7 +611,7 @@ The target element that results from URL processing is the <a>referenced element
 </p>
 
 <p>If the <a>referenced element</a> that results from resolving the URL
-  is not an SVG element,
+  is not an NSVG element,
   then the reference is <a>invalid</a> and the <a>'use'</a> element is in error.
 </p>
 <p>
@@ -636,16 +636,16 @@ The target element that results from URL processing is the <a>referenced element
 <p>The <a>re-used graphics</a> generated by a <a>'use'</a> element
 are defined in terms of a <a>shadow tree</a>.
 In terms of interactivity and style inheritance,
-they are therefore quite different from other types of <a>re-used graphics</a> in SVG,
+they are therefore quite different from other types of <a>re-used graphics</a> in NSVG,
 such as <a>'pattern'</a> and <a>'marker element'</a> content.
 </p>
 
 <p>
 Elements in the shadow tree are rendered as if
 the <a>'use'</a> element was a container and they were its children.
-However, the SVG Document Object Model (DOM) only contains
+However, the NSVG Document Object Model (DOM) only contains
 the <a>'use'</a> element and its attributes.
-The SVG DOM does not include the
+The NSVG DOM does not include the
 element instances as children of the <a>'use'</a> element.
 </p>
 
@@ -755,9 +755,9 @@ Within a <a>use-element shadow tree</a>,
 </p>
 
 <p class="note">
-  Previous versions of SVG restricted the contents
-  of the shadow tree to SVG graphics elements.
-  This specification allows any valid SVG document subtree
+  Previous versions of NSVG restricted the contents
+  of the shadow tree to NSVG graphics elements.
+  This specification allows any valid NSVG document subtree
   to be cloned.
   Cloning non-graphical content, however,
   will not usually have any visible effect.
@@ -843,7 +843,7 @@ or from their effect in CSS box layout.
   The <a>'width'</a> and <a>'height'</a> properties
   on the <a>'use'</a> element
   override the values for the corresponding properties
-  on a referenced <a>'svg'</a> or <a>'symbol'</a> element
+  on a referenced <a>'nsvg'</a> or <a>'symbol'</a> element
   when determining the used value for that property on the <a>instance root</a> element.
   However, if the computed value for the property on the <a>'use'</a> element is <span class="prop-value">auto</span>,
   then the property is computed as normal for the element instance.
@@ -854,13 +854,13 @@ or from their effect in CSS box layout.
   each time it is re-used.
   Because <span class="prop-value">auto</span> is the initial value,
   if dimensions are not explicitly set on the <a>'use'</a> element,
-  the values set on the <a>'svg'</a> or <a>'symbol'</a> will be used as defaults.
+  the values set on the <a>'nsvg'</a> or <a>'symbol'</a> will be used as defaults.
 </p>
 <p>
   The <a>'width'</a> and <a>'height'</a> properties
   on the <a>'use'</a> element have no effect
   if the <a>referenced element</a> does not
-  <a href="coords.html#EstablishingANewSVGViewport">establish a new viewport</a>.
+  <a href="coords.html#EstablishingANewNSVGViewport">establish a new viewport</a>.
   In particular, the <a>'use'</a> element does not itself establish a new viewport,
   and therefore does not affect the interpretation of percentages in the re-used graphics.
 </p>
@@ -959,7 +959,7 @@ or from their effect in CSS box layout.
     such as <code>nth-of-type</code> and <code>nth-child</code>
     may apply to one element but not the other.
     This represents a change
-    from how style cloning was defined in previous versions of SVG.
+    from how style cloning was defined in previous versions of NSVG.
   </p>
 
   <p>
@@ -974,7 +974,7 @@ or from their effect in CSS box layout.
     <li><a>'fill'</a> color is not set directly on the circle, so is inherited from the style set on the containing <a>'g'</a> element (blue).</li>
   </ul>
   <p>
-    In the SVG 1.1 style-cloning model,
+    In the NSVG 1.1 style-cloning model,
     the <a href="https://www.w3.org/TR/css-cascade-3/#specified">specified style values</a>
     would be cloned from the original element to the element instance.
     The re-used circle would have the same styles as the original,
@@ -982,7 +982,7 @@ or from their effect in CSS box layout.
     instead of from the <a>'g'</a> (blue).
   </p>
   <p>
-    In the shadow DOM model required by SVG 2,
+    In the shadow DOM model required by NSVG 2,
     the styles for the re-used circle are calculated as follows:
   </p>
   <ul>
@@ -995,10 +995,10 @@ or from their effect in CSS box layout.
     The re-used circle therefore differs from the original in both fill color (because it inherits from a different element) and stroke color (because the complex selector no longer matches).
   </p>
 
-  <edit:example href='images/struct/Use-changed-styles.svg' name='Use-changed-styles' description="A 'use' element copying a 'circle', with various style matching rules demonstrated" link='yes' image='yes'/>
+  <edit:example href='images/struct/Use-changed-styles.nsvg' name='Use-changed-styles' description="A 'use' element copying a 'circle', with various style matching rules demonstrated" link='yes' image='yes'/>
 
   <p>
-    Previous versions of SVG
+    Previous versions of NSVG
     were not clear about how dynamic pseudo-classes
     (such as <code>:hover</code>)
     should apply to element instances.
@@ -1035,7 +1035,7 @@ or from their effect in CSS box layout.
 .eyes {
   visibility: visible;
 }
-svg:hover .dark, svg:focus .dark {
+nsvg:hover .dark, nsvg:focus .dark {
   visibility: visible;
 }
 </pre>
@@ -1054,7 +1054,7 @@ svg:hover .dark, svg:focus .dark {
     <p class="caption">Example Use-visibility-hidden, interactive styles</p>
   </div>
 
-  <p class="view-as-svg"><a href="images/struct/Use-visibility-inheritance.svg">View this example as SVG</a></p>
+  <p class="view-as-nsvg"><a href="images/struct/Use-visibility-inheritance.nsvg">View this example as NSVG</a></p>
 
   <p>
     The example also demonstrates inheritance of other style properties
@@ -1070,8 +1070,8 @@ svg:hover .dark, svg:focus .dark {
 <p>
   The <a href="https://www.w3.org/TR/web-animations-1/">Web Animations API</a>
   [<a href="refs.html#ref-web-animations-1">web-animations-1</a>]
-  and the <a href="https://svgwg.org/specs/animations/">SVG Animations</a> specification
-  [<a href="refs.html#ref-svg-animation">svg-animation</a>]
+  and the <a href="https://nsvgwg.org/specs/animations/">NSVG Animations</a> specification
+  [<a href="refs.html#ref-nsvg-animation">nsvg-animation</a>]
   define non-CSS ways to animate attributes and styles
   on targetted elements without directly manipulating DOM properties
   (see the <a href="animate.html">Animation appendix</a> for details).
@@ -1144,7 +1144,7 @@ svg:hover .dark, svg:focus .dark {
 </p>
 
 <p>
-  For each <a>animation element</a> [<a href="refs.html#ref-svg-animation">svg-animation</a>]
+  For each <a>animation element</a> [<a href="refs.html#ref-nsvg-animation">nsvg-animation</a>]
   that targets an element in the
   <a>referenced document subtree</a>,
   the user agent must ensure that an equivalent animation element
@@ -1218,7 +1218,7 @@ svg:hover .dark, svg:focus .dark {
     will display the animation.
   </p>
   <p>
-    This is a change from previous versions of SVG,
+    This is a change from previous versions of NSVG,
     which required all animations on the <a>corresponding element</a> to be mirrored,
     regardless of user interaction,
     but which did not offer clear guidance for responding to
@@ -1255,7 +1255,7 @@ svg:hover .dark, svg:focus .dark {
 </p>
 
 <p class="note">
-  Event retargeting is new in SVG 2.
+  Event retargeting is new in NSVG 2.
   It provides consistency with the Shadow DOM specification,
   with existing implementations,
   and with the expectations of authors who are only concerned with elements in the main DOM.
@@ -1324,8 +1324,8 @@ svg:hover .dark, svg:focus .dark {
     <a>corresponding element</a>)
     will receive the event with its <a href="https://www.w3.org/TR/dom/#dom-event-target"><code>target</code></a>
     pointing to a read-only <a>element instance</a> in the shadow tree.
-    The <a>SVGElementInstance::correspondingElement</a>
-    and <a>SVGElementInstance::correspondingUseElement</a>
+    The <a>NSVGElementInstance::correspondingElement</a>
+    and <a>NSVGElementInstance::correspondingUseElement</a>
     properties of that <a>element instance</a>
     can be used to connect it to the modifiable elements in the main DOM.
   </p>
@@ -1338,7 +1338,7 @@ svg:hover .dark, svg:focus .dark {
 
 <h3 id="ConditionalProcessingOverview">Conditional processing overview</h3>
 
-<p>SVG contains a <a>'switch'</a> element along with
+<p>NSVG contains a <a>'switch'</a> element along with
 attributes <a>'requiredExtensions'</a> and <a>'systemLanguage'</a> to provide an
 ability to specify alternate viewing depending on the
 capabilities of a given user agent or the user's language.</p>
@@ -1374,10 +1374,10 @@ other elements (such as via a <a>'use'</a>).</p>
 </ul>
 
 <div class="note">
-  <p>Previous versions of SVG included a third conditional processing attribute,
+  <p>Previous versions of NSVG included a third conditional processing attribute,
   <code>requiredFeatures</code>.
   This was intended to allow authors to provide fallback behavior for user agents
-  that only implemented parts of the SVG specification.
+  that only implemented parts of the NSVG specification.
   Unfortunately, poor specification and implementation of this attribute made it unreliable
   as a test of feature support.
   </p>
@@ -1391,7 +1391,7 @@ other elements (such as via a <a>'use'</a>).</p>
   but not all, may have conditional processing attributes specified
   on them.  See <a href="struct.html#ConditionalProcessing">Conditional processing</a>
   for details.  The conditional processing attributes defined in
-  SVG 2 are <edit:attributecategory name='conditional processing'/>.</dd>
+  NSVG 2 are <edit:attributecategory name='conditional processing'/>.</dd>
 </dl>
 
 <h3 id="SwitchElement">The <span class='element-name'>'switch'</span> element</h3>
@@ -1408,7 +1408,7 @@ not rendered. If the child element is a container element such as a
 bypassed/not rendered.</p>
 
 <p class='ready-for-wider-review'>
-In SVG, when evaluating the <a>'systemLanguage'</a> attribute, the order of
+In NSVG, when evaluating the <a>'systemLanguage'</a> attribute, the order of
 evaluation of descendant elements of the <a>'switch'</a> element must be as if the
 <a href="https://www.w3.org/TR/REC-smil/smil-content.html#adef-allowReorder">'allowReorder'</a>
 attribute, defined in the SMIL specification [<a href="refs.html#ref-SMIL">SMIL</a>]
@@ -1481,7 +1481,7 @@ situations, then it represents a simple switch on the given
 element whether to render the element or not.</p>
 
 <p>The URL names for the extension should include versioning
-information, such as "http://example.org/SVGExtensionXYZ/1.0",
+information, such as "http://example.org/NSVGExtensionXYZ/1.0",
 so that script writers can distinguish between different
 versions of a given extension.</p>
 
@@ -1586,11 +1586,11 @@ and <span class='element-name'>'title'</span> elements</h2>
 <p class="note">Multilingual descriptive text selection, based on the <a>'lang'</a> attribute, was added to allow internationalization
 of the <a>'desc'</a> and <a>'title element'</a> elements.</p>
 
-<p class="annotation">New in SVG 2. Adding 'lang' resolved at Rigi Kaltbad face-to-face.
+<p class="annotation">New in NSVG 2. Adding 'lang' resolved at Rigi Kaltbad face-to-face.
 Removed text that limited number of 'desc' and 'title' elements. Status: Done.</p>
 
 <div class="ready-for-wider-review">
-<p>Any <a>container element</a> or <a>graphics element</a> in an SVG document
+<p>Any <a>container element</a> or <a>graphics element</a> in an NSVG document
 can have zero or more <a>'desc'</a> and/or <a>'title'</a> elements as children,
 whose content is text. <a>'desc'</a> and <a>'title'</a> elements are
 not visually rendered as part of the graphics.
@@ -1617,14 +1617,14 @@ If no match exists for either 'title' or 'desc', the first element of that type 
     The example assumes that the HTML document as a whole has a correctly-declared language of <code>en</code> (English without a specified country code).
   </p>
   <pre>
-&lt;svg&gt;
+&lt;nsvg&gt;
   &lt;use href="#star"&gt;
     &lt;title&gt;Favourite&lt;/title&gt;
     &lt;title lang="en-us"&gt;Favorite&lt;/title&gt;
     &lt;title lang="nl"&gt;Favoriet&lt;/title&gt;
     &lt;title lang=""&gt;★&lt;/title&gt;
   &lt;/use&gt;
-&lt;/svg&gt;
+&lt;/nsvg&gt;
   </pre>
   <p>
     The first <code>title</code> element inherits the language of the document (<code>en</code>); the others have explicitly-declared languages for each element.
@@ -1634,10 +1634,10 @@ If no match exists for either 'title' or 'desc', the first element of that type 
     If the user does not understand either Dutch or English, the title will be the star symbol character—which is not ideal (most screen readers will read it as a localized version of "black star"), but better than no text alternative at all.
   </p>
   <p class="note">
-    Authors should be aware that SVG 1.1-supporting user agents
+    Authors should be aware that NSVG 1.1-supporting user agents
     that have not yet implemented multi-lingual descriptive text
     will normally select the first element of each type, regardless of user preferences.
-    SVG 1.1 user agents may also fail to recognize a <code>title</code> element that is not the first child of its parent,
+    NSVG 1.1 user agents may also fail to recognize a <code>title</code> element that is not the first child of its parent,
     or a <code>desc</code> element that has previous siblings that are not other descriptive elements.
   </p>
 </div>
@@ -1645,10 +1645,10 @@ If no match exists for either 'title' or 'desc', the first element of that type 
 <p class="issue" data-issue="67">The use of more than one <a>'title'</a> or <a>'desc'</a> element to
 provide localised information is at risk, with no known implementations.</p>
 
-<p>User agents must make the text content of selected 'title' and 'desc' elements available to platform accessibility APIs as part of the name and description computation for the parent element, as defined in the <a href="https://www.w3.org/TR/svg-aam-1.0/"><cite>SVG Accessibility API Mappings [SVG-AAM]</cite></a> specification.</p>
+<p>User agents must make the text content of selected 'title' and 'desc' elements available to platform accessibility APIs as part of the name and description computation for the parent element, as defined in the <a href="https://www.w3.org/TR/nsvg-aam-1.0/"><cite>NSVG Accessibility API Mappings [NSVG-AAM]</cite></a> specification.</p>
 
 <p>Inclusion of any 'title' or 'desc' elements as a direct child of a <a>rendered element</a> indicates that the rendered element is of semantic importance in the graphic.
-Authors should not, and <a>SVG generators</a> must not, include empty 'title' or 'desc' elements with no text content or whitespace-only text content,
+Authors should not, and <a>NSVG generators</a> must not, include empty 'title' or 'desc' elements with no text content or whitespace-only text content,
 as this will result in a nameless object being presented to assistive technology users.
 </p>
 
@@ -1661,7 +1661,7 @@ and neither defines an object nor provides meaningful grouping structure,
 it does not need alternative text.</p>
 
 <p>
-  Descriptive text elements whose parent is <a>not rendered</a> may be used by authors or authoring tools as reference information; authors are warned that this data is not normally available to end users viewing the graphic through assistive technologies.  Nonetheless, a <a>non-rendered element</a> may be referenced as part of the accessible name or description of a rendered element (as defined in <a href="https://www.w3.org/TR/svg-aam-1.0/">SVG-AAM</a>), and the recursive computation will use descriptive child elements of the referenced element.
+  Descriptive text elements whose parent is <a>not rendered</a> may be used by authors or authoring tools as reference information; authors are warned that this data is not normally available to end users viewing the graphic through assistive technologies.  Nonetheless, a <a>non-rendered element</a> may be referenced as part of the accessible name or description of a rendered element (as defined in <a href="https://www.w3.org/TR/nsvg-aam-1.0/">NSVG-AAM</a>), and the recursive computation will use descriptive child elements of the referenced element.
 </p>
 
 <p>Description and title elements may contain marked-up text
@@ -1701,15 +1701,15 @@ using an <a>'aria-labelledby'</a> attribute.</p>
 existing user agents commonly render <a>'title'</a> elements as
 a tooltip on hovering the parent element.</p>
 
-<p>Authors should provide a <a>'title'</a> child element to the root svg
-element within a stand-alone SVG document. Since users often consult documents
+<p>Authors should provide a <a>'title'</a> child element to the root nsvg
+element within a stand-alone NSVG document. Since users often consult documents
 out of context, authors should provide context-rich titles. Thus, instead of a
 title such as "Introduction", which doesn't provide much contextual background,
 authors should supply a title such as "Introduction to Medieval Bee-Keeping"
 instead. For reasons of accessibility, user agents should always make the
-content of the ‘title’ child element to the root svg element available to
+content of the ‘title’ child element to the root nsvg element available to
 users.
-However, this is typically done through other means than the tooltips used for nested SVG and graphics elements, e.g., by displaying in a browser tab.</p>
+However, this is typically done through other means than the tooltips used for nested NSVG and graphics elements, e.g., by displaying in a browser tab.</p>
 
 <div id='DescElement'>
 <edit:elementsummary name='desc'/>
@@ -1724,7 +1724,7 @@ technologies to provide more detailed information, such as a description of the 
 Authors may associate detailed information, including visible text, with part of the graphic
 using <a>'aria-describedby'</a> attribute
 (on the described element or a parent container),
-with the value being an ID reference to one or more SVG or HTML elements containing the description.
+with the value being an ID reference to one or more NSVG or HTML elements containing the description.
 The <a>'aria-describedby'</a> attribute takes precedence
 over the child <a>'desc'</a> when providing a description.
 If an element has both visible description and a child <a>'desc'</a> element providing supplementary information,
@@ -1737,14 +1737,14 @@ authors should explicitly include the <a>'id'</a> of the element itself in its o
 
 <h2 id="MetadataElement">The <span class="element-name">'metadata'</span> element</h2>
 
-<p>Metadata which is included with SVG content should be
+<p>Metadata which is included with NSVG content should be
 specified within <a>'metadata'</a>
 elements. The contents of the <a>'metadata'</a> should be elements from
 other XML namespaces, with these elements from these namespaces
 expressed in a manner conforming with the <a href="https://www.w3.org/TR/2006/REC-xml-names-20060816/"><cite>Namespaces in XML</cite></a> Recommendation
 [<a href="refs.html#ref-xml-names">xml-names</a>].</p>
 
-<p class="annotation">SVG 2 removes the recommendation to structure metadata
+<p class="annotation">NSVG 2 removes the recommendation to structure metadata
 elements in any particular way. </p>
 
 <edit:elementsummary name='metadata'/>
@@ -1756,15 +1756,15 @@ by the <a>user agent style sheet</a>,
 and this declaration must have importance over any other CSS rule or presentation attribute.
 </p>
 
-<p>Here is an example of how metadata can be included in an SVG
+<p>Here is an example of how metadata can be included in an NSVG
 document. The example uses the Dublin Core version 1.1 schema.
 (Other XML-compatible metadata languages, including ones not
 based on RDF, can be used also.)</p>
 
 <pre><![CDATA[
 <?xml version="1.0" standalone="yes"?>
-<svg width="4in" height="3in"
-    xmlns = 'http://www.w3.org/2000/svg'>
+<nsvg width="4in" height="3in"
+    xmlns = 'http://www.w3.org/2000/nsvg'>
     <desc xmlns:myfoo="http://example.org/myfoo">
       <myfoo:title>This is a financial report</myfoo:title>
       <myfoo:descr>The global description uses markup from the
@@ -1783,7 +1783,7 @@ based on RDF, can be used also.)</p>
              dc:description="$three $bar $thousands $dollars $from 1998 $through 2000"
              dc:publisher="Example Organization"
              dc:date="2000-04-11"
-             dc:format="image/svg+xml"
+             dc:format="image/nsvg+xml"
              dc:language="en" >
           <dc:creator>
             <rdf:Bag>
@@ -1794,14 +1794,14 @@ based on RDF, can be used also.)</p>
         </rdf:Description>
       </rdf:RDF>
     </metadata>
-</svg>
+</nsvg>
 ]]></pre>
 
 
 <h2 id="HTMLMetadataElements">HTML metadata elements</h2>
 
 <p>For user agents that support HTML, the following HTML elements (in
-the HTML namespace) must be supported in SVG documents:</p>
+the HTML namespace) must be supported in NSVG documents:</p>
 
 <ul>
   <li>the <a class="html" href="https://html.spec.whatwg.org/multipage/semantics.html#the-base-element"><code>base</code></a> element</li>
@@ -1825,9 +1825,9 @@ regardless of any changes to the document base URL.
 <h2 id="ForeignNamespaces">Foreign namespaces and private data</h2>
 
 <p>
-SVG allows inclusion of elements from foreign namespaces
-anywhere within the SVG content.
-In general, the SVG user agent
+NSVG allows inclusion of elements from foreign namespaces
+anywhere within the NSVG content.
+In general, the NSVG user agent
 must include the unknown foreign-namespaced elements in the DOM
 but will ignore and exclude them for rendering purposes.
 </p>
@@ -1838,9 +1838,9 @@ Types</a>.
 </p>
 
 <p>
-Additionally, SVG allows inclusion of attributes from
-foreign namespaces on any SVG element.
-The SVG user agent must
+Additionally, NSVG allows inclusion of attributes from
+foreign namespaces on any NSVG element.
+The NSVG user agent must
 include unknown attributes in the DOM but should otherwise ignore
 unknown attributes.
 </p>
@@ -1856,17 +1856,17 @@ unknown attributes.
   To add custom attributes in a way that will result in consistent parsing
   in both XML and HTML documents,
   authors may use the <a href="#DataAttributes"><span class='attr-name'>'data-*'</span> attributes</a>.
-  These can be added to SVG <a>'metadata'</a> elements
+  These can be added to NSVG <a>'metadata'</a> elements
   if the information they encode is not associated with any other element in the document.
   </p>
 </div>
 
-<p>SVG's ability to include foreign namespaces can be used for
+<p>NSVG's ability to include foreign namespaces can be used for
 the following purposes:</p>
 
 <ul>
   <li>Application-specific information so that authoring
-  applications can include model-level data in the SVG content
+  applications can include model-level data in the NSVG content
   to serve their "roundtripping" purposes (i.e., the ability to
   write, then read a file without loss of higher-level
   information).</li>
@@ -1874,14 +1874,14 @@ the following purposes:</p>
   <li>Supplemental data for extensibility. For example, suppose
   there is an extension which extrudes 2D graphics
   into three dimensions according to certain parameters;
-  these parameters may be included in the SVG content
+  these parameters may be included in the NSVG content
   by inserting elements from the extension's
   namespace.</li>
 </ul>
 
 <p>
 For example, a business graphics authoring application
-might want to include some private data within an SVG document
+might want to include some private data within an NSVG document
 so that it could properly reassemble the chart (a pie chart in
 this case) upon reading it back in:
 </p>
@@ -1889,8 +1889,8 @@ this case) upon reading it back in:
 <div class="example">
 <pre><![CDATA[
 <?xml version="1.0" standalone="yes"?>
-<svg width="4in" height="3in"
-     xmlns = 'http://www.w3.org/2000/svg'>
+<nsvg width="4in" height="3in"
+     xmlns = 'http://www.w3.org/2000/nsvg'>
   <defs>
     <myapp:piechart xmlns:myapp="http://example.org/myapp"
                     title="Sales by Region">
@@ -1903,9 +1903,9 @@ this case) upon reading it back in:
   </defs>
   <desc>This chart includes private data in another namespace
   </desc>
-  <!-- In here would be the actual SVG graphics elements which
+  <!-- In here would be the actual NSVG graphics elements which
        draw the pie chart -->
-</svg>
+</nsvg>
 ]]></pre>
 </div>
 
@@ -1917,7 +1917,7 @@ this case) upon reading it back in:
 
   <dt><dfn id="TermCoreAttribute" data-dfn-type="dfn" data-export="">core attributes</dfn></dt>
   <dd>The core attributes are those attributes that can be specified
-  on any SVG element.
+  on any NSVG element.
   The core attributes are <edit:attributecategory name='core'/>, along with all
   <a href="struct.html#DataAttributes">custom data attributes</a>.
   </dd>
@@ -1926,7 +1926,7 @@ this case) upon reading it back in:
 
 <h3 id="Core.attrib">Attributes common to all elements: <span class='attr-name'>'id'</span></h3>
 
-<p>The <a>'id'</a> attribute is available on all SVG elements:</p>
+<p>The <a>'id'</a> attribute is available on all NSVG elements:</p>
 
 <dl class="attrdef-list">
   <dt>
@@ -1956,17 +1956,17 @@ this case) upon reading it back in:
       Additional requirements apply in order for
       the <a>'id'</a> attribute to be valid in XML documents,
       as defined in the specification for the relevant version of XML.
-      A stand-alone SVG document uses XML 1.0 syntax [<a href="refs.html#ref-xml">xml</a>],
+      A stand-alone NSVG document uses XML 1.0 syntax [<a href="refs.html#ref-xml">xml</a>],
       which specifies that valid <a>'id'</a> values are <a href="https://www.w3.org/TR/xml/#NT-Name">XML name tokens</a>.
       Valid XML 1.0 names only include designated characters (letters, digits, and a few punctuation marks),
       and do not start with a digit, a full stop (.) character, or a hyphen-minus (-) character.
     </p>
     <p>
-      User agents should process <a>'id'</a> values in SVG files irrespective of XML validity.
+      User agents should process <a>'id'</a> values in NSVG files irrespective of XML validity.
     </p>
     <p>
       Authors should avoid the use of <a>'id'</a> values that would be parsed
-      as an <a href="linking.html#SVGViewSpecification">SVG view specification</a>
+      as an <a href="linking.html#NSVGViewSpecification">NSVG view specification</a>
       or a <a href="linking.html#MediaFragments">basic media fragment</a>
       when used as a URL target fragment.
     </p>
@@ -1980,7 +1980,7 @@ for any of the element's attributes that contain text.
 </p>
 <p>The <span class='attr-name'>'lang'</span> attribute in the XML namespace is defined in XML [<a href="refs.html#ref-xml">xml</a>].</p>
 <p>If these attributes are omitted from an element, then the language of this element is the same as the language of its parent element, if any.</p>
-<p>The <span class='attr-name'>'lang'</span> attribute in the XML namespace may be used on SVG elements in XML documents.
+<p>The <span class='attr-name'>'lang'</span> attribute in the XML namespace may be used on NSVG elements in XML documents.
 If both the <span class='attr-name'>'lang'</span> attribute in no namespace and the <span class='attr-name'>'lang'</span> attribute
 in the XML namespace are specified on the same element, they must have exactly the same value when compared in an ASCII case-insensitive manner.
 </p>
@@ -2018,15 +2018,15 @@ or the empty string. Setting the attribute to the empty string indicates that th
 </dl>
 
 <h3 id="WhitespaceProcessingXMLSpaceAttribute">The <span class="attr-name">'xml:space'</span> attribute</h3>
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Deprecate the use of <span class='attr-name'>'xml:space'</span> to affect text layout and use the <span class='property'>'white-space'</span> property instead.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/03/03-svg-minutes.html#item04">We drop xml:space from SVG 2 and remove the relating tests from the SVG 1.1. test suite.</a></td>
+      <td><a href="http://www.w3.org/2011/03/03-nsvg-minutes.html#item04">We drop xml:space from NSVG 2 and remove the relating tests from the NSVG 1.1. test suite.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -2034,8 +2034,8 @@ or the empty string. Setting the attribute to the empty string indicates that th
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Chris (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3004">ACTION-3004</a>, done; and
-                 <a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3005">ACTION-3005</a>, done)</td>
+      <td>Chris (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3004">ACTION-3004</a>, done; and
+                 <a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3005">ACTION-3005</a>, done)</td>
     </tr>
     <tr>
       <th>Status</th>
@@ -2068,7 +2068,7 @@ or the empty string. Setting the attribute to the empty string indicates that th
     <a href="https://www.w3.org/TR/2008/REC-xml-20081126/"><cite>Extensible Markup Language (XML) 1.0</cite></a>
     Recommendation [<a href="refs.html#ref-xml">xml</a>] and to the
     discussion <a href="text.html#WhiteSpace">white space
-    handling</a> in SVG.</p>
+    handling</a> in NSVG.</p>
     <p>New content should use the <a>'white-space'</a> property instead.</p>
   </dd>
 </dl>
@@ -2085,7 +2085,7 @@ or the empty string. Setting the attribute to the empty string indicates that th
         <th>Animatable</th>
       </tr>
       <tr>
-        <td><dfn id="SVGElementTabindexAttribute" data-dfn-for="core-attributes" data-dfn-type="element-attr">tabindex</dfn></td>
+        <td><dfn id="NSVGElementTabindexAttribute" data-dfn-for="core-attributes" data-dfn-type="element-attr">tabindex</dfn></td>
         <td><a href="https://html.spec.whatwg.org/#valid-integer">valid integer</a> <span class="syntax">[HTML]</span></td>
         <td>(none)</td>
         <td>no</td>
@@ -2117,7 +2117,7 @@ or the empty string. Setting the attribute to the empty string indicates that th
         <th>Animatable</th>
       </tr>
       <tr>
-        <td><dfn id="SVGElementAutofocusAttribute" data-dfn-for="core-attributes" data-dfn-type="element-attr">autofocus</dfn></td>
+        <td><dfn id="NSVGElementAutofocusAttribute" data-dfn-for="core-attributes" data-dfn-type="element-attr">autofocus</dfn></td>
         <td><a href="https://html.spec.whatwg.org/C/#boolean-attribute">boolean attribute</a> <span class="syntax">[HTML]</span></td>
         <td>(none)</td>
         <td>no</td>
@@ -2138,7 +2138,7 @@ or the empty string. Setting the attribute to the empty string indicates that th
 <div class='ready-for-wider-review'>
 <h3 id="DataAttributes">The <span class='attr-name'>'data-*'</span> attributes</h3>
 
-<p>All SVG elements support
+<p>All NSVG elements support
 <a href="https://www.w3.org/TR/2014/CR-html5-20140204/dom.html#custom-data-attribute">custom data attributes</a>,
 which are those in no namespace whose names begin with the string "data-".
 See the <a href="https://www.w3.org/TR/2014/CR-html5-20140204/dom.html#embedding-custom-non-visible-data-with-the-data-*-attributes">requirements
@@ -2174,7 +2174,7 @@ These tokens are role values defined in
 ([<a href="refs.html#ref-wai-aria">wai-aria</a>], section 5.4) and <a href="https://www.w3.org/TR/graphics-aria-1.0/#roles">Graphics Roles</a>
 ([<a href="refs.html#ref-graphics-aria-1.0">graphics-aria-1.0</a>], section 4).</p>
 
-<p>The WAI-ARIA role that an SVG element has assigned to it is the first valid
+<p>The WAI-ARIA role that an NSVG element has assigned to it is the first valid
 role found in the list of tokens generated when the role attribute
 is split on spaces.
 A valid role is a recognized, non-abstract role that is <a href="#implicit-aria-semantics">allowed for the element type</a>.</p>
@@ -2202,15 +2202,15 @@ A valid role is a recognized, non-abstract role that is <a href="#implicit-aria-
     <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions">Definition of Roles</a> ([<a href="refs.html#ref-wai-aria">wai-aria</a>], section 5.4).
     </p>
     <p>The role value is a set of white-space separated machine-extractable semantic information used to define the purpose of the element.</p>
-    <p>The <a>initial value</a> for the <a>'role'</a> attribute, for each SVG element, is the corresponding
-    <a href="#implicit-aria-semantics">default implied ARIA semantic for SVG elements</a>.</p>
+    <p>The <a>initial value</a> for the <a>'role'</a> attribute, for each NSVG element, is the corresponding
+    <a href="#implicit-aria-semantics">default implied ARIA semantic for NSVG elements</a>.</p>
   </dd>
 </dl>
 
 <p>To be valid and useful, many element roles require additional information to be provided
 in the form of an accessible name
 or explicit <a href="#ARIAStateandPropertyAttributes">state and property values</a>.
-Accessible names may be provided using SVG <a>descriptive elements</a> or <a>ARIA attributes</a>.
+Accessible names may be provided using NSVG <a>descriptive elements</a> or <a>ARIA attributes</a>.
 The requirements for each role are indicated where the role is defined, e.g., in
 <a href="https://www.w3.org/TR/wai-aria-1.1/#role_definitions">WAI-ARIA</a>
 ([<a href="refs.html#ref-wai-aria">WAI-ARIA</a>]) or the <a href="https://www.w3.org/TR/graphics-aria-1.0/#roles">WAI-ARIA Graphics Module</a>
@@ -2218,16 +2218,16 @@ The requirements for each role are indicated where the role is defined, e.g., in
 
 <h3 id="ARIAStateandPropertyAttributes">State and property attributes (all aria- attributes)</h3>
 
-<p>WAI-ARIA state and property attributes may be specified on SVG elements.
+<p>WAI-ARIA state and property attributes may be specified on NSVG elements.
 These attributes are defined by ARIA in
 <a href="https://www.w3.org/TR/wai-aria-1.1/#state_prop_def">Definitions of States and Properties (all aria-* attributes)</a>
 ([<a href="refs.html#ref-wai-aria">wai-aria</a>], section 6.6).</p>
 
 <p>These attributes, if specified, must have a value that is the WAI-ARIA value
 type in the "Value" field of the definition for the state or property, mapped to
-the appropriate SVG value type according to
+the appropriate NSVG value type according to
 <a href="https://www.w3.org/TR/wai-aria-1.1/#typemapping">Mapping WAI-ARIA Value types to languages</a>
-using the SVG mapping ([<a href="refs.html#ref-wai-aria">wai-aria</a>], section 10.2).</p>
+using the NSVG mapping ([<a href="refs.html#ref-wai-aria">wai-aria</a>], section 10.2).</p>
 
 <p>The attributes are animatable;
   if animation is used to change the state of the graphic,
@@ -2240,24 +2240,24 @@ using the SVG mapping ([<a href="refs.html#ref-wai-aria">wai-aria</a>], section 
 not always meaningful, however, and in such cases user agents might not perform
 any processing aside from including them in the DOM. State and property attributes are
 processed according to the <a href="https://www.w3.org/TR/wai-aria-1.1/"><cite>ARIA</cite></a> and
-<a href="https://www.w3.org/TR/svg-aam-1.0/"><cite>SVG Accessibility API Mappings</cite></a> specification
-specifications. [<a href="refs.html#ref-wai-aria">wai-aria</a>] [<a href="refs.html#ref-svg-aam-1.0">svg-aam-1.0</a>]</p>
+<a href="https://www.w3.org/TR/nsvg-aam-1.0/"><cite>NSVG Accessibility API Mappings</cite></a> specification
+specifications. [<a href="refs.html#ref-wai-aria">wai-aria</a>] [<a href="refs.html#ref-nsvg-aam-1.0">nsvg-aam-1.0</a>]</p>
 
 <h3 id="implicit-aria-semantics">Implicit and Allowed ARIA Semantics</h3>
 <p>The following table defines the <span>default implicit ARIA
-  semantics</span> that apply to <a href="eltindex.html">SVG elements</a>. Each
+  semantics</span> that apply to <a href="eltindex.html">NSVG elements</a>. Each
   language feature (element) in a cell in the first
   column implies the ARIA semantics (role, states, and/or properties)
   given in the cell in the second column of the same row. The third column defines restrictions as to what WAI-ARIA semantic (role, state, or property) may or may not apply.</p>
 <p>For many graphics elements, an implicit role is only assigned
   if the author provides information that indicates semantic importance.
   The complete <dfn id="TermInclusionCriteria" data-dfn-type="dfn" data-export="">inclusion criteria</dfn> for the accessibility tree
-  are defined by the <a href="https://www.w3.org/TR/svg-aam-1.0/"><cite>SVG Accessibility API Mappings</cite></a> specification for user agents [<a href="refs.html#ref-svg-aam-1.0">svg-aam-1.0</a>].
+  are defined by the <a href="https://www.w3.org/TR/nsvg-aam-1.0/"><cite>NSVG Accessibility API Mappings</cite></a> specification for user agents [<a href="refs.html#ref-nsvg-aam-1.0">nsvg-aam-1.0</a>].
   For authors, the preferred means of indicating semantic importance is to provide an accessible name for the element.
   This can be done through a direct child <a>'title'</a> element,
   or through the <a>'aria-label'</a> or <a>'aria-labelledby'</a> attributes.
   Authors should use one of these methods to provide an accessible name
-  for any content that is essential to the comprehension of the SVG,
+  for any content that is essential to the comprehension of the NSVG,
   and especially for any interactive content.
 </p>
 
@@ -2542,7 +2542,7 @@ specifications. [<a href="refs.html#ref-wai-aria">wai-aria</a>] [<a href="refs.h
       <td>no role may be applied</td>
     </tr>
     <tr>
-      <td><a>'svg'</a></td>
+      <td><a>'nsvg'</a></td>
       <td><code>graphics-document</code> role</td>
       <td>no restrictions</td>
     </tr>
@@ -2563,7 +2563,7 @@ specifications. [<a href="refs.html#ref-wai-aria">wai-aria</a>] [<a href="refs.h
       <td><a>'text'</a></td>
       <td><code>group</code>role,
         with platform-specific role mappings,
-        as defined in the <a href="https://w3c.github.io/svg-aam/#details-id-69">SVG Accessibility API Mappings</a> specification</td>
+        as defined in the <a href="https://w3c.github.io/nsvg-aam/#details-id-69">NSVG Accessibility API Mappings</a> specification</td>
       <td>no restrictions</td>
     </tr>
     <tr>
@@ -2606,33 +2606,33 @@ specifications. [<a href="refs.html#ref-wai-aria">wai-aria</a>] [<a href="refs.h
 <h3 id="InterfaceDocumentExtensions">Extensions to the Document interface</h3>
 
 <p>The DOM Core specification defines a <a>Document</a> interface, which this specification extends.</p>
-<p class="note">In the case where an SVG document is embedded by reference,
+<p class="note">In the case where an NSVG document is embedded by reference,
 such as when an HTML document has an <span class="element-name">'object'</span>
-element whose <span class="attr-name">'data'</span> attribute references an SVG
-document (i.e., a document whose MIME type is "image/svg+xml"
-and whose root element is thus an <a>'svg'</a> element), there will exist
+element whose <span class="attr-name">'data'</span> attribute references an NSVG
+document (i.e., a document whose MIME type is "image/nsvg+xml"
+and whose root element is thus an <a>'nsvg'</a> element), there will exist
 two distinct DOM hierarchies. The first DOM hierarchy will be for the
 referencing document (e.g., an XHTML document). The second DOM hierarchy
-will be for the referenced SVG document.</p>
+will be for the referenced NSVG document.</p>
 
 <pre class="idl">partial interface <a>Document</a> {
-  readonly attribute <a>SVGSVGElement</a>? <a href="struct.html#__svg__SVGDocument__rootElement">rootElement</a>;
+  readonly attribute <a>NSVGNSVGElement</a>? <a href="struct.html#__nsvg__NSVGDocument__rootElement">rootElement</a>;
 };</pre>
 
-<p>The <b id="__svg__SVGDocument__rootElement">rootElement</b> IDL attribute
-represents the root <a>'svg'</a> element.  On getting
-<a href="#__svg__SVGDocument__rootElement">rootElement</a>, the root element
-of the document is returned, if it is an <a>'svg'</a> element, or null
+<p>The <b id="__nsvg__NSVGDocument__rootElement">rootElement</b> IDL attribute
+represents the root <a>'nsvg'</a> element.  On getting
+<a href="#__nsvg__NSVGDocument__rootElement">rootElement</a>, the root element
+of the document is returned, if it is an <a>'nsvg'</a> element, or null
 otherwise.</p>
 
-<p class="note">This attribute is deprecated, and may be removed in a future SVG specification.
+<p class="note">This attribute is deprecated, and may be removed in a future NSVG specification.
 Authors are encouraged to use the <a href="https://www.w3.org/TR/dom/#dom-document-documentelement">documentElement</a> attribute on <a>Document</a> instead.</p>
 <!--<p class="issue" data-issue="47">Data point: <a href="https://www.chromestatus.com/metrics/feature/timeline/popularity/251">UseCounter in blink</a> shows ~0.010.</p>-->
 
-<p>SVG implementations that implement HTML must support the
+<p>NSVG implementations that implement HTML must support the
 <a href="https://html.spec.whatwg.org/multipage/dom.html#the-document-object">HTML extensions to the document interface</a>.
 
-Other SVG implementations must support the following IDL fragment.
+Other NSVG implementations must support the following IDL fragment.
 </p>
 
 <pre class="idl" edit:excludefromidl="true"><span class="comment">// must only be implemented in certain implementations</span>
@@ -2640,112 +2640,112 @@ partial interface <a>Document</a> {
   readonly attribute DOMString title;
   readonly attribute DOMString referrer;
   readonly attribute DOMString domain;
-  readonly attribute Element? <a href="struct.html#__svg__SVGDocument__activeElement">activeElement</a>;
+  readonly attribute Element? <a href="struct.html#__nsvg__NSVGDocument__activeElement">activeElement</a>;
 };</pre>
 
-<p>The title, referrer, domain and <span id="__svg__SVGDocument__activeElement">activeElement</span> IDL attributes must behave the same as
+<p>The title, referrer, domain and <span id="__nsvg__NSVGDocument__activeElement">activeElement</span> IDL attributes must behave the same as
 <a href="https://html.spec.whatwg.org/multipage/dom.html#the-document-object">the corresponding IDL attributes defined in HTML</a>.</p>
 
-<h3 id="InterfaceSVGSVGElement">Interface SVGSVGElement</h3>
+<h3 id="InterfaceNSVGNSVGElement">Interface NSVGNSVGElement</h3>
 
-<edit:with element="svg">
+<edit:with element="nsvg">
 
-<p>An <a>SVGSVGElement</a> object represents an <a>'svg'</a> element
-in the DOM.  The <a>SVGSVGElement</a> interface also contains
+<p>An <a>NSVGNSVGElement</a> object represents an <a>'nsvg'</a> element
+in the DOM.  The <a>NSVGNSVGElement</a> interface also contains
 miscellaneous utility methods, such as data type object factory methods.</p>
 
-<p>An <a>SVGSVGElement</a> object maintains an internal
+<p>An <a>NSVGNSVGElement</a> object maintains an internal
 <a>DOMPoint</a> object, called its
 <dfn id="CurrentTranslatePointObject" data-dfn-type="dfn" data-export="">current translate point object</dfn>,
-which is the object returned from the <a href="#__svg__SVGSVGElement__currentTranslate">currentTranslate</a>
+which is the object returned from the <a href="#__nsvg__NSVGNSVGElement__currentTranslate">currentTranslate</a>
 IDL attribute.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGSVGElement</b> : <a>SVGGraphicsElement</a> {
+interface <b>NSVGNSVGElement</b> : <a>NSVGGraphicsElement</a> {
 
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="struct.html#__svg__SVGSVGElement__x">x</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="struct.html#__svg__SVGSVGElement__y">y</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="struct.html#__svg__SVGSVGElement__width">width</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="struct.html#__svg__SVGSVGElement__height">height</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="struct.html#__nsvg__NSVGNSVGElement__x">x</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="struct.html#__nsvg__NSVGNSVGElement__y">y</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="struct.html#__nsvg__NSVGNSVGElement__width">width</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="struct.html#__nsvg__NSVGNSVGElement__height">height</a>;
 
-  attribute float <a href="struct.html#__svg__SVGSVGElement__currentScale">currentScale</a>;
-  [SameObject] readonly attribute <a>DOMPointReadOnly</a> <a href="struct.html#__svg__SVGSVGElement__currentTranslate">currentTranslate</a>;
+  attribute float <a href="struct.html#__nsvg__NSVGNSVGElement__currentScale">currentScale</a>;
+  [SameObject] readonly attribute <a>DOMPointReadOnly</a> <a href="struct.html#__nsvg__NSVGNSVGElement__currentTranslate">currentTranslate</a>;
 
-  <a>NodeList</a> <a href="struct.html#__svg__SVGSVGElement__getIntersectionList">getIntersectionList</a>(<a>DOMRectReadOnly</a> rect, <a>SVGElement</a>? referenceElement);
-  <a>NodeList</a> <a href="struct.html#__svg__SVGSVGElement__getEnclosureList">getEnclosureList</a>(<a>DOMRectReadOnly</a> rect, <a>SVGElement</a>? referenceElement);
-  boolean <a href="struct.html#__svg__SVGSVGElement__checkIntersection">checkIntersection</a>(<a>SVGElement</a> element, <a>DOMRectReadOnly</a> rect);
-  boolean <a href="struct.html#__svg__SVGSVGElement__checkEnclosure">checkEnclosure</a>(<a>SVGElement</a> element, <a>DOMRectReadOnly</a> rect);
+  <a>NodeList</a> <a href="struct.html#__nsvg__NSVGNSVGElement__getIntersectionList">getIntersectionList</a>(<a>DOMRectReadOnly</a> rect, <a>NSVGElement</a>? referenceElement);
+  <a>NodeList</a> <a href="struct.html#__nsvg__NSVGNSVGElement__getEnclosureList">getEnclosureList</a>(<a>DOMRectReadOnly</a> rect, <a>NSVGElement</a>? referenceElement);
+  boolean <a href="struct.html#__nsvg__NSVGNSVGElement__checkIntersection">checkIntersection</a>(<a>NSVGElement</a> element, <a>DOMRectReadOnly</a> rect);
+  boolean <a href="struct.html#__nsvg__NSVGNSVGElement__checkEnclosure">checkEnclosure</a>(<a>NSVGElement</a> element, <a>DOMRectReadOnly</a> rect);
 
-  undefined <a href="struct.html#__svg__SVGSVGElement__deselectAll">deselectAll</a>();
+  undefined <a href="struct.html#__nsvg__NSVGNSVGElement__deselectAll">deselectAll</a>();
 
-  <a>SVGNumber</a> <a href="struct.html#__svg__SVGSVGElement__createSVGNumber">createSVGNumber</a>();
-  <a>SVGLength</a> <a href="struct.html#__svg__SVGSVGElement__createSVGLength">createSVGLength</a>();
-  <a>SVGAngle</a> <a href="struct.html#__svg__SVGSVGElement__createSVGAngle">createSVGAngle</a>();
-  <a>DOMPoint</a> <a href="struct.html#__svg__SVGSVGElement__createSVGPoint">createSVGPoint</a>();
-  <a>DOMMatrix</a> <a href="struct.html#__svg__SVGSVGElement__createSVGMatrix">createSVGMatrix</a>();
-  <a>DOMRect</a> <a href="struct.html#__svg__SVGSVGElement__createSVGRect">createSVGRect</a>();
-  <a>SVGTransform</a> <a href="struct.html#__svg__SVGSVGElement__createSVGTransform">createSVGTransform</a>();
-  <a>SVGTransform</a> <a href="struct.html#__svg__SVGSVGElement__createSVGTransformFromMatrix">createSVGTransformFromMatrix</a>(optional <a>DOMMatrix2DInit</a> matrix = {});
+  <a>NSVGNumber</a> <a href="struct.html#__nsvg__NSVGNSVGElement__createNSVGNumber">createNSVGNumber</a>();
+  <a>NSVGLength</a> <a href="struct.html#__nsvg__NSVGNSVGElement__createNSVGLength">createNSVGLength</a>();
+  <a>NSVGAngle</a> <a href="struct.html#__nsvg__NSVGNSVGElement__createNSVGAngle">createNSVGAngle</a>();
+  <a>DOMPoint</a> <a href="struct.html#__nsvg__NSVGNSVGElement__createNSVGPoint">createNSVGPoint</a>();
+  <a>DOMMatrix</a> <a href="struct.html#__nsvg__NSVGNSVGElement__createNSVGMatrix">createNSVGMatrix</a>();
+  <a>DOMRect</a> <a href="struct.html#__nsvg__NSVGNSVGElement__createNSVGRect">createNSVGRect</a>();
+  <a>NSVGTransform</a> <a href="struct.html#__nsvg__NSVGNSVGElement__createNSVGTransform">createNSVGTransform</a>();
+  <a>NSVGTransform</a> <a href="struct.html#__nsvg__NSVGNSVGElement__createNSVGTransformFromMatrix">createNSVGTransformFromMatrix</a>(optional <a>DOMMatrix2DInit</a> matrix = {});
 
-  <a>Element</a> <a href="struct.html#__svg__SVGSVGElement__getElementById">getElementById</a>(DOMString elementId);
+  <a>Element</a> <a href="struct.html#__nsvg__NSVGNSVGElement__getElementById">getElementById</a>(DOMString elementId);
 
   <span class="comment">// Deprecated methods that have no effect when called,</span>
   <span class="comment">// but which are kept for compatibility reasons.</span>
-  unsigned long <a href="struct.html#__svg__SVGSVGElement__suspendRedraw">suspendRedraw</a>(unsigned long maxWaitMilliseconds);
-  undefined <a href="struct.html#__svg__SVGSVGElement__unsuspendRedraw">unsuspendRedraw</a>(unsigned long suspendHandleID);
-  undefined <a href="struct.html#__svg__SVGSVGElement__unsuspendRedrawAll">unsuspendRedrawAll</a>();
-  undefined <a href="struct.html#__svg__SVGSVGElement__forceRedraw">forceRedraw</a>();
+  unsigned long <a href="struct.html#__nsvg__NSVGNSVGElement__suspendRedraw">suspendRedraw</a>(unsigned long maxWaitMilliseconds);
+  undefined <a href="struct.html#__nsvg__NSVGNSVGElement__unsuspendRedraw">unsuspendRedraw</a>(unsigned long suspendHandleID);
+  undefined <a href="struct.html#__nsvg__NSVGNSVGElement__unsuspendRedrawAll">unsuspendRedrawAll</a>();
+  undefined <a href="struct.html#__nsvg__NSVGNSVGElement__forceRedraw">forceRedraw</a>();
 };
 
-<a>SVGSVGElement</a> includes <a>SVGFitToViewBox</a>;
-<a>SVGSVGElement</a> includes <a>WindowEventHandlers</a>;</pre>
+<a>NSVGNSVGElement</a> includes <a>NSVGFitToViewBox</a>;
+<a>NSVGNSVGElement</a> includes <a>WindowEventHandlers</a>;</pre>
 
 <p>The
-<b id="__svg__SVGSVGElement__x">x</b>,
-<b id="__svg__SVGSVGElement__y">y</b>,
-<b id="__svg__SVGSVGElement__width">width</b> and
-<b id="__svg__SVGSVGElement__height">height</b> IDL attributes
+<b id="__nsvg__NSVGNSVGElement__x">x</b>,
+<b id="__nsvg__NSVGNSVGElement__y">y</b>,
+<b id="__nsvg__NSVGNSVGElement__width">width</b> and
+<b id="__nsvg__NSVGNSVGElement__height">height</b> IDL attributes
 <a>reflect</a> the computed values of the <a>'x'</a>, <a>'y'</a>, <a>'width'</a> and
 <a>'height'</a> properties and their corresponding
 presentation attributes, respectively.</p>
 
-<p>The <b id="__svg__SVGSVGElement__currentScale">currentScale</b> and
-<b id="__svg__SVGSVGElement__currentTranslate">currentTranslate</b> IDL
-attributes represent an additional transform applied to the SVG.
-They only have an effect on the <a>outermost svg element</a> of an <a>SVG document fragment</a>.</p>
+<p>The <b id="__nsvg__NSVGNSVGElement__currentScale">currentScale</b> and
+<b id="__nsvg__NSVGNSVGElement__currentTranslate">currentTranslate</b> IDL
+attributes represent an additional transform applied to the NSVG.
+They only have an effect on the <a>outermost nsvg element</a> of an <a>NSVG document fragment</a>.</p>
 
 <p>The document's magnification and panning
 transform is a 2x3 matrix of the form
 <code>[currentScale 0 0 currentScale currentTranslate.x currentTranslate.y]</code>.
 The value of the <a>'transform'</a> property does not affect
-<a href="#__svg__SVGSVGElement__currentScale">currentScale</a> or
-<a href="#__svg__SVGSVGElement__currentTranslate">currentTranslate</a>.</p>
+<a href="#__nsvg__NSVGNSVGElement__currentScale">currentScale</a> or
+<a href="#__nsvg__NSVGNSVGElement__currentTranslate">currentTranslate</a>.</p>
 
 <div class="note">
-<p>Previous versions of SVG recommended that user agents implement controls, by default,
+<p>Previous versions of NSVG recommended that user agents implement controls, by default,
 for the user to set the scale (zoom) and translate (pan) of the graphic.
 Transformations from these user actions <em>would</em> be reflected
 in the values of <code>currentScale</code> and <code>currentTranslate</code>.
 These user controls were not well implemented, and are no longer recommended.
 However, authors should be aware that the user agent may update these values.
 </p>
-<p>The obsolete attribute <code>zoomAndPan="disable"</code>, on the outermost SVG element,
+<p>The obsolete attribute <code>zoomAndPan="disable"</code>, on the outermost NSVG element,
 should disable any user agent manipulation of the values based on user action,
 but may have unwanted side effects in some user agents.</p>
 </div>
 
 <p class="issue" data-issue="360">
 The interaction of currentScale and currentTranslate
-with other ways of transforming the document root (transforms and SVG views)
+with other ways of transforming the document root (transforms and NSVG views)
 is poorly defined.
-See the <a href="https://github.com/w3c/svgwg/issues/360">GitHub issue</a> for more.
+See the <a href="https://github.com/w3c/nsvgwg/issues/360">GitHub issue</a> for more.
 </p>
 
-<p>On getting <a href="#__svg__SVGSVGElement__currentScale">currentScale</a>,
+<p>On getting <a href="#__nsvg__NSVGNSVGElement__currentScale">currentScale</a>,
 the following steps are run:</p>
 
 <ol class='algorithm'>
-  <li>If the current <a>'svg'</a> element is not the <a>outermost svg element</a>,
+  <li>If the current <a>'nsvg'</a> element is not the <a>outermost nsvg element</a>,
   then return 1.</li>
   <li>Let [<var>a</var> <var>b</var> <var>c</var> <var>d</var> <var>e</var> <var>f</var>]
   be the 2x3 matrix that represents the document's magnification and panning
@@ -2753,14 +2753,14 @@ the following steps are run:</p>
   <li>Return <var>a</var>.</li>
 </ol>
 
-<p>On setting <a href="#__svg__SVGSVGElement__currentScale">currentScale</a>,
+<p>On setting <a href="#__nsvg__NSVGNSVGElement__currentScale">currentScale</a>,
 the following steps are run:</p>
 
 <ol class='algorithm'>
-  <li>If the current <a>'svg'</a> element is not the <a>outermost svg element</a>,
+  <li>If the current <a>'nsvg'</a> element is not the <a>outermost nsvg element</a>,
   then return.</li>
   <li>Let <var>scale</var> be the value being assigned to
-  <a href="#__svg__SVGSVGElement__currentScale">currentScale</a>.</li>
+  <a href="#__nsvg__NSVGNSVGElement__currentScale">currentScale</a>.</li>
   <li>Let [<var>a</var> <var>b</var> <var>c</var> <var>d</var> <var>e</var> <var>f</var>]
   be the 2x3 matrix that represents the document's magnification and panning
   transform.</li>
@@ -2768,13 +2768,13 @@ the following steps are run:</p>
   [<var>scale</var> 0 0 <var>scale</var> <var>e</var> <var>f</var>].</li>
 </ol>
 
-<p>On getting <a href="#__svg__SVGSVGElement__currentTranslate">currentTranslate</a>,
-the <a>SVGSVGElement</a> object's <a href="#CurrentTranslatePointObject">current
+<p>On getting <a href="#__nsvg__NSVGNSVGElement__currentTranslate">currentTranslate</a>,
+the <a>NSVGNSVGElement</a> object's <a href="#CurrentTranslatePointObject">current
 translate point object</a> is returned.  This object
 <a href="shapes.html#PointMode">represents the current translation</a>
-for the <a>'svg'</a> element.  A <a href="#CurrentTranslatePointObject">current
+for the <a>'nsvg'</a> element.  A <a href="#CurrentTranslatePointObject">current
 translate point object</a> must be <a href="shapes.html#ReadOnlyPoint">read only</a>
-when its <a>'svg'</a> element is not the <a>outermost svg element</a>,
+when its <a>'nsvg'</a> element is not the <a>outermost nsvg element</a>,
 and writable otherwise.</p>
 
 <p class="note">See the rules for <a href="shapes.html#AssignToDOMPoint">assigning to a DOMPoint</a>
@@ -2782,40 +2782,40 @@ for how modifying the <a href="#CurrentTranslatePointObject">current
 translate point object</a> affects the document's magnification and panning transform.</p>
 
 <p>Whenever the document's magnification and panning transform changes
-in response to user interaction or whenever the <a>outermost svg element</a>
+in response to user interaction or whenever the <a>outermost nsvg element</a>
 changes, the following steps are run:</p>
 
 <ol class='algorithm'>
   <li>Let [<var>a</var> <var>b</var> <var>c</var> <var>d</var> <var>e</var> <var>f</var>]
   be the 2x3 matrix that represents the document's magnification and panning
   transform.</li>
-  <li>Let <var>element</var> be the <a>outermost svg element</a>.</li>
+  <li>Let <var>element</var> be the <a>outermost nsvg element</a>.</li>
   <li>Update the x and y components of <var>element</var>'s
   <a href="#CurrentTranslatePointObject">current translate point object</a>
   to <var>e</var> and <var>f</var>, respectively.</li>
 </ol>
 
-<p class="note">Running these steps when the <a>outermost svg element</a>
+<p class="note">Running these steps when the <a>outermost nsvg element</a>
 changes will ensure that if the document element is replaced with a different
-<a>'svg'</a> element, that its <a href="#__svg__SVGSVGElement__currentTranslate">currentTranslate</a>
+<a>'nsvg'</a> element, that its <a href="#__nsvg__NSVGNSVGElement__currentTranslate">currentTranslate</a>
 will be immediately updated to reflect the translation component of
 the document's magnification and panning transform.</p>
 
-<p>Whenever an <a>'svg'</a> element is no longer <a>outermost svg element</a>,
+<p>Whenever an <a>'nsvg'</a> element is no longer <a>outermost nsvg element</a>,
 the x and y components of its <a href="#CurrentTranslatePointObject">current
 translate point object</a> must be set to 0.</p>
 
-<p>The <b id="__svg__SVGSVGElement__suspendRedraw">suspendRedraw</b>,
-<b id="__svg__SVGSVGElement__unsuspendRedraw">unsuspendRedraw</b>,
-<b id="__svg__SVGSVGElement__unsuspendRedrawAll">unsuspendRedrawAll</b>
-and <b id="__svg__SVGSVGElement__forceRedraw">forceRedraw</b>
+<p>The <b id="__nsvg__NSVGNSVGElement__suspendRedraw">suspendRedraw</b>,
+<b id="__nsvg__NSVGNSVGElement__unsuspendRedraw">unsuspendRedraw</b>,
+<b id="__nsvg__NSVGNSVGElement__unsuspendRedrawAll">unsuspendRedrawAll</b>
+and <b id="__nsvg__NSVGNSVGElement__forceRedraw">forceRedraw</b>
 methods are all deprecated and defined to have no effect.  When
 the suspendRedraw method is called, it must return 1.</p>
 
-<p>The <b id="__svg__SVGSVGElement__getIntersectionList">getIntersectionList</b>,
-<b id="__svg__SVGSVGElement__getEnclosureList">getEnclosureList</b>,
-<b id="__svg__SVGSVGElement__checkIntersection">checkIntersection</b> and
-<b id="__svg__SVGSVGElement__checkEnclosure">checkEnclosure</b> methods are
+<p>The <b id="__nsvg__NSVGNSVGElement__getIntersectionList">getIntersectionList</b>,
+<b id="__nsvg__NSVGNSVGElement__getEnclosureList">getEnclosureList</b>,
+<b id="__nsvg__NSVGNSVGElement__checkIntersection">checkIntersection</b> and
+<b id="__nsvg__NSVGNSVGElement__checkEnclosure">checkEnclosure</b> methods are
 used to perform geometry operations on <a>graphics elements</a> to find
 those whose (or check whether their) graphical content lies partially or
 completely within a given rectangle.</p>
@@ -2834,7 +2834,7 @@ to be interpreted, the following steps are run:</p>
   of a <a>'switch'</a>, then return <var>result</var>.</li>
   <li>For each child element <var>child</var> of <var>element</var>, in document order:
     <ol>
-      <li>If <var>child</var> is an <a>'svg'</a> or <a>'g'</a> element, then:
+      <li>If <var>child</var> is an <a>'nsvg'</a> or <a>'g'</a> element, then:
         <ol>
           <li>Let <var>descendants</var> be the result of
           <a href="#TermFindIntersectingOrEnclosedDescendants">finding the
@@ -2883,7 +2883,7 @@ steps are run:</p>
 
 <ol class='algorithm'>
   <li>Let <var>result</var> be an initially empty list.</li>
-  <li>If <var>element</var> is an <a>'svg'</a> or <a>'g'</a> element,
+  <li>If <var>element</var> is an <a>'nsvg'</a> or <a>'g'</a> element,
   then for each child element <var>child</var> of <var>element</var>,
   in document order:
     <ol>
@@ -2905,16 +2905,16 @@ the following steps are run:</p>
 <ol class='algorithm'>
   <li>Let <var>descendants</var> be a list, depending on what method we are in:
     <dl class='switch'>
-      <dt><a href="#__svg__SVGSVGElement__getIntersectionList">getIntersectionList</a></dt>
+      <dt><a href="#__nsvg__NSVGNSVGElement__getIntersectionList">getIntersectionList</a></dt>
       <dd><var>descendants</var> is the result of
       <a href="#TermFindIntersectingOrEnclosedDescendants">finding the intersecting descendants</a>
-      of the current <a>'svg'</a> element with rectangle <var>rect</var>
-      in the current <a>'svg'</a> element's coordinate system.</dd>
-      <dt><a href="#__svg__SVGSVGElement__getEnclosureList">getEnclosureList</a></dt>
+      of the current <a>'nsvg'</a> element with rectangle <var>rect</var>
+      in the current <a>'nsvg'</a> element's coordinate system.</dd>
+      <dt><a href="#__nsvg__NSVGNSVGElement__getEnclosureList">getEnclosureList</a></dt>
       <dd><var>descendants</var> is the result of
       <a href="#TermFindIntersectingOrEnclosedDescendants">finding the enclosed descendants</a>
-      of the current <a>'svg'</a> element with rectangle <var>rect</var>
-      in the current <a>'svg'</a> element's coordinate system.</dd>
+      of the current <a>'nsvg'</a> element with rectangle <var>rect</var>
+      in the current <a>'nsvg'</a> element's coordinate system.</dd>
     </dl>
   </li>
   <li>If <var>referenceElement</var> is not null, then remove from
@@ -2932,16 +2932,16 @@ the following steps are run:</p>
 <ol class='algorithm'>
   <li>Let <var>descendants</var> be a list, depending on what method we are in:
     <dl class='switch'>
-      <dt><a href="#__svg__SVGSVGElement__getIntersectionList">getIntersectionList</a></dt>
+      <dt><a href="#__nsvg__NSVGNSVGElement__getIntersectionList">getIntersectionList</a></dt>
       <dd><var>descendants</var> is the result of
       <a href="#TermFindIntersectingOrEnclosedDescendants">finding the intersecting descendants</a>
-      of the current <a>'svg'</a> element with rectangle <var>rect</var>
-      in the current <a>'svg'</a> element's coordinate system.</dd>
-      <dt><a href="#__svg__SVGSVGElement__getEnclosureList">getEnclosureList</a></dt>
+      of the current <a>'nsvg'</a> element with rectangle <var>rect</var>
+      in the current <a>'nsvg'</a> element's coordinate system.</dd>
+      <dt><a href="#__nsvg__NSVGNSVGElement__getEnclosureList">getEnclosureList</a></dt>
       <dd><var>descendants</var> is the result of
       <a href="#TermFindIntersectingOrEnclosedDescendants">finding the enclosed descendants</a>
-      of the current <a>'svg'</a> element with rectangle <var>rect</var>
-      in the current <a>'svg'</a> element's coordinate system.</dd>
+      of the current <a>'nsvg'</a> element with rectangle <var>rect</var>
+      in the current <a>'nsvg'</a> element's coordinate system.</dd>
     </dl>
   </li>
   <li>Let <var>elements</var> be the result of
@@ -2954,7 +2954,7 @@ the following steps are run:</p>
 </ol>
 
 <div class='ready-for-wider-review'>
-<p>The <b id="__svg__SVGSVGElement__deselectAll">deselectAll</b> method is
+<p>The <b id="__nsvg__NSVGNSVGElement__deselectAll">deselectAll</b> method is
 used to remove any selections from the document.  When deselectAll() is called,
 all <a href="https://www.w3.org/TR/2014/WD-dom-20140204/#concept-range">ranges</a>
 from the document's <a href="http://w3c.github.io/selection-api/#dom-selection">selection</a>
@@ -2964,172 +2964,172 @@ forwards. [<a href="refs.html#ref-dom">DOM</a>][<a href="refs.html#ref-editing">
 This method is deprecated, as it duplicates functionality from the Selection API.</p>
 
 <p class="note">This is equivalent to calling <code>document.getSelection().removeAllRanges()</code>
-on the document that this <a>'svg'</a> element is in.</p>
+on the document that this <a>'nsvg'</a> element is in.</p>
 </div>
 
 <p>The
-<b id="__svg__SVGSVGElement__createSVGNumber">createSVGNumber</b>,
-<b id="__svg__SVGSVGElement__createSVGLength">createSVGLength</b>,
-<b id="__svg__SVGSVGElement__createSVGAngle">createSVGAngle</b>,
-<b id="__svg__SVGSVGElement__createSVGPoint">createSVGPoint</b>,
-<b id="__svg__SVGSVGElement__createSVGMatrix">createSVGMatrix</b>,
-<b id="__svg__SVGSVGElement__createSVGRect">createSVGRect</b> and
-<b id="__svg__SVGSVGElement__createSVGTransform">createSVGTransform</b>
+<b id="__nsvg__NSVGNSVGElement__createNSVGNumber">createNSVGNumber</b>,
+<b id="__nsvg__NSVGNSVGElement__createNSVGLength">createNSVGLength</b>,
+<b id="__nsvg__NSVGNSVGElement__createNSVGAngle">createNSVGAngle</b>,
+<b id="__nsvg__NSVGNSVGElement__createNSVGPoint">createNSVGPoint</b>,
+<b id="__nsvg__NSVGNSVGElement__createNSVGMatrix">createNSVGMatrix</b>,
+<b id="__nsvg__NSVGNSVGElement__createNSVGRect">createNSVGRect</b> and
+<b id="__nsvg__NSVGNSVGElement__createNSVGTransform">createNSVGTransform</b>
 methods are all factory functions used to create a new datatype object
 of a particular type.  When one of these methods is called, a new
 object is returned according to the following table:</p>
 
 <table class='vert'>
   <tr><th>Method</th><th>Object and details</th></tr>
-  <tr><td><a href="#__svg__SVGSVGElement__createSVGNumber">createSVGNumber</a></td><td>A new, <a href="types.html#NumberMode">detached</a> <a>SVGNumber</a> object whose value is 0.</td></tr>
-  <tr><td><a href="#__svg__SVGSVGElement__createSVGLength">createSVGLength</a></td><td>A new, <a href="types.html#LengthMode">detached</a> <a>SVGLength</a> object whose value is the unitless <a>&lt;number&gt;</a> 0.</td></tr>
-  <tr><td><a href="#__svg__SVGSVGElement__createSVGAngle">createSVGAngle</a></td><td>A new, <a href="types.html#AngleMode">detached</a> <a>SVGAngle</a> object whose value is the unitless <a>&lt;number&gt;</a> 0.</td></tr>
-  <tr><td><a href="#__svg__SVGSVGElement__createSVGPoint">createSVGPoint</a></td><td>A new, <a href="shapes.html#PointMode">detached</a> <a>DOMPoint</a> object whose coordinates are all 0.</td></tr>
-  <tr><td><a href="#__svg__SVGSVGElement__createSVGMatrix">createSVGMatrix</a></td><td>A new, <a href="coords.html#MatrixMode">detached</a> <a>DOMMatrix</a> object representing the identity matrix.</td></tr>
-  <tr><td><a href="#__svg__SVGSVGElement__createSVGRect">createSVGRect</a></td><td>A new, <a>DOMRect</a> object whose x, y, width and height are all 0.</td></tr>
-  <tr><td><a href="#__svg__SVGSVGElement__createSVGTransform">createSVGTransform</a></td><td>A new, <a href="coords.html#TransformMode">detached</a> <a>SVGTransform</a> object whose value is <span class='prop-value'>matrix(1, 0, 0, 1, 0, 0)</span>.</td></tr>
+  <tr><td><a href="#__nsvg__NSVGNSVGElement__createNSVGNumber">createNSVGNumber</a></td><td>A new, <a href="types.html#NumberMode">detached</a> <a>NSVGNumber</a> object whose value is 0.</td></tr>
+  <tr><td><a href="#__nsvg__NSVGNSVGElement__createNSVGLength">createNSVGLength</a></td><td>A new, <a href="types.html#LengthMode">detached</a> <a>NSVGLength</a> object whose value is the unitless <a>&lt;number&gt;</a> 0.</td></tr>
+  <tr><td><a href="#__nsvg__NSVGNSVGElement__createNSVGAngle">createNSVGAngle</a></td><td>A new, <a href="types.html#AngleMode">detached</a> <a>NSVGAngle</a> object whose value is the unitless <a>&lt;number&gt;</a> 0.</td></tr>
+  <tr><td><a href="#__nsvg__NSVGNSVGElement__createNSVGPoint">createNSVGPoint</a></td><td>A new, <a href="shapes.html#PointMode">detached</a> <a>DOMPoint</a> object whose coordinates are all 0.</td></tr>
+  <tr><td><a href="#__nsvg__NSVGNSVGElement__createNSVGMatrix">createNSVGMatrix</a></td><td>A new, <a href="coords.html#MatrixMode">detached</a> <a>DOMMatrix</a> object representing the identity matrix.</td></tr>
+  <tr><td><a href="#__nsvg__NSVGNSVGElement__createNSVGRect">createNSVGRect</a></td><td>A new, <a>DOMRect</a> object whose x, y, width and height are all 0.</td></tr>
+  <tr><td><a href="#__nsvg__NSVGNSVGElement__createNSVGTransform">createNSVGTransform</a></td><td>A new, <a href="coords.html#TransformMode">detached</a> <a>NSVGTransform</a> object whose value is <span class='prop-value'>matrix(1, 0, 0, 1, 0, 0)</span>.</td></tr>
 </table>
 
-<p>The <a href="#__svg__SVGSVGElement__createSVGPoint">createSVGPoint</a>,
-<a href="#__svg__SVGSVGElement__createSVGMatrix">createSVGMatrix</a> and
-<a href="#__svg__SVGSVGElement__createSVGRect">createSVGRect</a> methods
+<p>The <a href="#__nsvg__NSVGNSVGElement__createNSVGPoint">createNSVGPoint</a>,
+<a href="#__nsvg__NSVGNSVGElement__createNSVGMatrix">createNSVGMatrix</a> and
+<a href="#__nsvg__NSVGNSVGElement__createNSVGRect">createNSVGRect</a> methods
 are all deprecated and kept only for compatibility with legacy content.
 Authors are encouraged to use the <a>DOMPoint</a>, <a>DOMMatrix</a> and
 <a>DOMRect</a> constructors instead.</p>
 
-<p>The <b id="__svg__SVGSVGElement__createSVGTransformFromMatrix">createSVGTransformFromMatrix</b>
-method is used to create a new <a>SVGTransform</a> object from a matrix object.
+<p>The <b id="__nsvg__NSVGNSVGElement__createNSVGTransformFromMatrix">createNSVGTransformFromMatrix</b>
+method is used to create a new <a>NSVGTransform</a> object from a matrix object.
 Its behavior is the same as the
-<a href="coords.html#__svg__SVGTransformList__createSVGTransformFromMatrix">createSVGTransformFromMatrix</a>
-method on <a>SVGTransformList</a>.</p>
+<a href="coords.html#__nsvg__NSVGTransformList__createNSVGTransformFromMatrix">createNSVGTransformFromMatrix</a>
+method on <a>NSVGTransformList</a>.</p>
 
 <div class='ready-for-wider-review'>
-<p>The <b id="__svg__SVGSVGElement__getElementById">getElementById</b> method,
+<p>The <b id="__nsvg__NSVGNSVGElement__getElementById">getElementById</b> method,
 must return the first element in <a>tree order</a>, within the
-<a>'svg'</a> element's descendants, whose ID is <var>elementId</var>, or
+<a>'nsvg'</a> element's descendants, whose ID is <var>elementId</var>, or
 null if there is no such element.</p>
 </div>
 
 </edit:with>
 
 
-<h3 id="InterfaceSVGGElement">Interface SVGGElement</h3>
+<h3 id="InterfaceNSVGGElement">Interface NSVGGElement</h3>
 
 <edit:with element="g">
 
-<p>An <a>SVGGElement</a> object represents a <a>'g'</a> element in the DOM.</p>
+<p>An <a>NSVGGElement</a> object represents a <a>'g'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGGElement</b> : <a>SVGGraphicsElement</a> {
+interface <b>NSVGGElement</b> : <a>NSVGGraphicsElement</a> {
 };</pre>
 
 </edit:with>
 
 
-<h3 id="InterfaceSVGDefsElement">Interface SVGDefsElement</h3>
+<h3 id="InterfaceNSVGDefsElement">Interface NSVGDefsElement</h3>
 
 <edit:with element="defs">
 
-<p>An <a>SVGDefsElement</a> object represents a <a>'defs'</a> element in the DOM.</p>
+<p>An <a>NSVGDefsElement</a> object represents a <a>'defs'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGDefsElement</b> : <a>SVGGraphicsElement</a> {
+interface <b>NSVGDefsElement</b> : <a>NSVGGraphicsElement</a> {
 };</pre>
 
 </edit:with>
 
 
-<h3 id="InterfaceSVGDescElement">Interface SVGDescElement</h3>
+<h3 id="InterfaceNSVGDescElement">Interface NSVGDescElement</h3>
 
 <edit:with element="desc">
 
-<p>An <a>SVGDescElement</a> object represents a <a>'desc'</a> element in the DOM.</p>
+<p>An <a>NSVGDescElement</a> object represents a <a>'desc'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGDescElement</b> : <a>SVGElement</a> {
+interface <b>NSVGDescElement</b> : <a>NSVGElement</a> {
 };</pre>
 
 </edit:with>
 
 
-<h3 id="InterfaceSVGMetadataElement">Interface SVGMetadataElement</h3>
+<h3 id="InterfaceNSVGMetadataElement">Interface NSVGMetadataElement</h3>
 
 <edit:with element="metadata">
 
-<p>An <a>SVGMetadataElement</a> object represents a <a>'metadata'</a> element in the DOM.</p>
+<p>An <a>NSVGMetadataElement</a> object represents a <a>'metadata'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGMetadataElement</b> : <a>SVGElement</a> {
+interface <b>NSVGMetadataElement</b> : <a>NSVGElement</a> {
 };</pre>
 
 </edit:with>
 
 
-<h3 id="InterfaceSVGTitleElement">Interface SVGTitleElement</h3>
+<h3 id="InterfaceNSVGTitleElement">Interface NSVGTitleElement</h3>
 
 <edit:with element="title">
 
-<p>An <a>SVGTitleElement</a> object represents a <a>'title'</a> element in the DOM.</p>
+<p>An <a>NSVGTitleElement</a> object represents a <a>'title'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGTitleElement</b> : <a>SVGElement</a> {
+interface <b>NSVGTitleElement</b> : <a>NSVGElement</a> {
 };</pre>
 
 </edit:with>
 
 
-<h3 id="InterfaceSVGSymbolElement">Interface SVGSymbolElement</h3>
+<h3 id="InterfaceNSVGSymbolElement">Interface NSVGSymbolElement</h3>
 
 <edit:with element="symbol">
 
-<p>An <a>SVGSymbolElement</a> object represents a <a>'symbol'</a> element in the DOM.</p>
+<p>An <a>NSVGSymbolElement</a> object represents a <a>'symbol'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGSymbolElement</b> : <a>SVGGraphicsElement</a> {
+interface <b>NSVGSymbolElement</b> : <a>NSVGGraphicsElement</a> {
 };
 
-<a>SVGSymbolElement</a> includes <a>SVGFitToViewBox</a>;</pre>
+<a>NSVGSymbolElement</a> includes <a>NSVGFitToViewBox</a>;</pre>
 
 <p class="note">
-  New in SVG 2.
-  The <a>SVGSymbolElement</a> interface now inherits from <a>SVGGraphicsElement</a>,
+  New in NSVG 2.
+  The <a>NSVGSymbolElement</a> interface now inherits from <a>NSVGGraphicsElement</a>,
   so that the instantiated symbol in the shadow DOM can be queried as a graphics element.
 </p>
 
 </edit:with>
 
 
-<h3 id="InterfaceSVGUseElement">Interface SVGUseElement</h3>
+<h3 id="InterfaceNSVGUseElement">Interface NSVGUseElement</h3>
 
 <edit:with element="use">
 
-<p>An <a>SVGUseElement</a> object represents a <a>'use'</a> element in the DOM.</p>
+<p>An <a>NSVGUseElement</a> object represents a <a>'use'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGUseElement</b> : <a>SVGGraphicsElement</a> {
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="struct.html#__svg__SVGUseElement__x">x</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="struct.html#__svg__SVGUseElement__y">y</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="struct.html#__svg__SVGUseElement__width">width</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="struct.html#__svg__SVGUseElement__height">height</a>;
-  [SameObject] readonly attribute <a>SVGElement</a>? <a href="struct.html#__svg__SVGUseElement__instanceRoot">instanceRoot</a>;
-  [SameObject] readonly attribute <a>SVGElement</a>? <a href="struct.html#__svg__SVGUseElement__animatedInstanceRoot">animatedInstanceRoot</a>;
+interface <b>NSVGUseElement</b> : <a>NSVGGraphicsElement</a> {
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="struct.html#__nsvg__NSVGUseElement__x">x</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="struct.html#__nsvg__NSVGUseElement__y">y</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="struct.html#__nsvg__NSVGUseElement__width">width</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="struct.html#__nsvg__NSVGUseElement__height">height</a>;
+  [SameObject] readonly attribute <a>NSVGElement</a>? <a href="struct.html#__nsvg__NSVGUseElement__instanceRoot">instanceRoot</a>;
+  [SameObject] readonly attribute <a>NSVGElement</a>? <a href="struct.html#__nsvg__NSVGUseElement__animatedInstanceRoot">animatedInstanceRoot</a>;
 };
 
-<a>SVGUseElement</a> includes <a>SVGURIReference</a>;</pre>
+<a>NSVGUseElement</a> includes <a>NSVGURIReference</a>;</pre>
 
 <p>The
-<b id="__svg__SVGUseElement__x">x</b>,
-<b id="__svg__SVGUseElement__y">y</b>,
-<b id="__svg__SVGUseElement__width">width</b> and
-<b id="__svg__SVGUseElement__height">height</b> IDL attributes
+<b id="__nsvg__NSVGUseElement__x">x</b>,
+<b id="__nsvg__NSVGUseElement__y">y</b>,
+<b id="__nsvg__NSVGUseElement__width">width</b> and
+<b id="__nsvg__NSVGUseElement__height">height</b> IDL attributes
 <a>reflect</a> the computed values of the <a>'x'</a>, <a>'y'</a>, <a>'width'</a> and
 <a>'height'</a> properties and their corresponding
 presentation attributes, respectively.</p>
 
-<p>The <b id="__svg__SVGUseElement__instanceRoot">instanceRoot</b> and
-<b id="__svg__SVGUseElement__animatedInstanceRoot">animatedInstanceRoot</b>
+<p>The <b id="__nsvg__NSVGUseElement__instanceRoot">instanceRoot</b> and
+<b id="__nsvg__NSVGUseElement__animatedInstanceRoot">animatedInstanceRoot</b>
 IDL attributes both point to the <a>instance root</a>,
-the <a>SVGElementInstance</a> that is a direct child
+the <a>NSVGElementInstance</a> that is a direct child
 of this element's shadow root
 (<code>u.instanceRoot</code> is equivalent to getting <code>u.shadowRoot.firstChild</code>).
 If this element does not have a shadow tree
@@ -3140,10 +3140,10 @@ then getting these attributes returns null.</p>
 </edit:with>
 
 
-<h3 id="InterfaceSVGUseElementShadowRoot">Interface SVGUseElementShadowRoot</h3>
+<h3 id="InterfaceNSVGUseElementShadowRoot">Interface NSVGUseElementShadowRoot</h3>
 
 <p>The root object of each <a>use-element shadow tree</a>
-  implements the <a>SVGUseElementShadowRoot</a> interface.
+  implements the <a>NSVGUseElementShadowRoot</a> interface.
   This interface does not currently define any extensions
   to the properties and methods defined for the
   <a>ShadowRoot</a> interface
@@ -3152,21 +3152,21 @@ then getting these attributes returns null.</p>
   is entirely read-only from the perspective of author scripts.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGUseElementShadowRoot</b> : <a>ShadowRoot</a> {
+interface <b>NSVGUseElementShadowRoot</b> : <a>ShadowRoot</a> {
 };</pre>
 
-<h3 id="InterfaceSVGElementInstance" data-dfn-type="interface" data-lt="SVGElementInstance">Mixin SVGElementInstance</h3>
+<h3 id="InterfaceNSVGElementInstance" data-dfn-type="interface" data-lt="NSVGElementInstance">Mixin NSVGElementInstance</h3>
 
-<p>The <a>SVGElementInstance</a> interface defines extensions to the <a>SVGElement</a> interface,
+<p>The <a>NSVGElementInstance</a> interface defines extensions to the <a>NSVGElement</a> interface,
   which are only used for elements in a <a>use-element shadow tree</a>.</p>
 
 <p class="note">
-  In previous versions of SVG,
-  SVG element instances were defined as non-element objects
+  In previous versions of NSVG,
+  NSVG element instances were defined as non-element objects
   that were valid event targets but not full DOM nodes.
   This specification re-defines the <a>use-element shadow tree</a>
   to be consistent with the Shadow DOM specification,
-  which means that instances are actual SVGElement objects.
+  which means that instances are actual NSVGElement objects.
   This interface adds the missing functionality for backwards compatibility.
   However, authors should be aware that compatibility is not perfect,
   and design their scripts accordingly.
@@ -3174,12 +3174,12 @@ interface <b>SVGUseElementShadowRoot</b> : <a>ShadowRoot</a> {
   on HTML-namespaced element objects in the shadow tree.
 </p>
 
-<pre class="idl">interface mixin <b>SVGElementInstance</b> {
-  [SameObject] readonly attribute <a>SVGElement</a>? <a href="#__svg__SVGElementInstance__correspondingElement">correspondingElement</a>;
-  [SameObject] readonly attribute <a>SVGUseElement</a>? <a href="#__svg__SVGElementInstance__correspondingUseElement">correspondingUseElement</a>;
+<pre class="idl">interface mixin <b>NSVGElementInstance</b> {
+  [SameObject] readonly attribute <a>NSVGElement</a>? <a href="#__nsvg__NSVGElementInstance__correspondingElement">correspondingElement</a>;
+  [SameObject] readonly attribute <a>NSVGUseElement</a>? <a href="#__nsvg__NSVGElementInstance__correspondingUseElement">correspondingUseElement</a>;
 };</pre>
 
-<p>The <b id="__svg__SVGElementInstance__correspondingElement">correspondingElement</b> IDL attribute
+<p>The <b id="__nsvg__NSVGElementInstance__correspondingElement">correspondingElement</b> IDL attribute
 points to the <a>corresponding element</a> if this element is an <a>element instance</a> in a <a>use-element shadow tree</a>,
 or is null otherwise.</p>
 
@@ -3195,7 +3195,7 @@ or is null otherwise.</p>
   with external file references to be at-risk.
 </p>
 
-<p>The <b id="__svg__SVGElementInstance__correspondingUseElement">correspondingUseElement</b> IDL attribute
+<p>The <b id="__nsvg__NSVGElementInstance__correspondingUseElement">correspondingUseElement</b> IDL attribute
 points to the <a>corresponding use element</a> if this element is an <a>element instance</a> in a <a>use-element shadow tree</a>,
 or is null otherwise.</p>
 
@@ -3211,10 +3211,10 @@ or is null otherwise.</p>
 
 <pre class="idl">[<i>Constructor</i>(<a>Animation</a> source, <a>Animatable</a> newTarget), Exposed=Window]
 interface <b>ShadowAnimation</b> : <a>Animation</a> {
-  [SameObject] readonly attribute <a>Animation</a> <a href="#__svg__ShadowAnimation__sourceAnimation">sourceAnimation</a>;
+  [SameObject] readonly attribute <a>Animation</a> <a href="#__nsvg__ShadowAnimation__sourceAnimation">sourceAnimation</a>;
 };</pre>
 
-<p>The <b id="__svg__ShadowAnimation__sourceAnimation">sourceAnimation</b> IDL property
+<p>The <b id="__nsvg__ShadowAnimation__sourceAnimation">sourceAnimation</b> IDL property
   points to the <a>Animation</a> object passed in the constructor.
 </p>
 
@@ -3240,27 +3240,27 @@ interface <b>ShadowAnimation</b> : <a>Animation</a> {
   in changes to the <a>ShadowAnimation</a>.
 </p>
 
-<h3 id="InterfaceSVGSwitchElement">Interface SVGSwitchElement</h3>
+<h3 id="InterfaceNSVGSwitchElement">Interface NSVGSwitchElement</h3>
 
 <edit:with element="switch">
 
-<p>An <a>SVGSwitchElement</a> object represents a <a>'switch'</a> element in the DOM.</p>
+<p>An <a>NSVGSwitchElement</a> object represents a <a>'switch'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGSwitchElement</b> : <a>SVGGraphicsElement</a> {
+interface <b>NSVGSwitchElement</b> : <a>NSVGGraphicsElement</a> {
 };</pre>
 
 </edit:with>
 
 
-<h3 id="InterfaceGetSVGDocument" data-dfn-type="interface" data-lt="GetSVGDocument">Mixin GetSVGDocument</h3>
+<h3 id="InterfaceGetNSVGDocument" data-dfn-type="interface" data-lt="GetNSVGDocument">Mixin GetNSVGDocument</h3>
 
-<p>This interface provides access to an SVG document embedded by reference
+<p>This interface provides access to an NSVG document embedded by reference
 in another DOM-based language. The expectation is that the interface is
-implemented on DOM objects that allow such SVG document references.</p>
+implemented on DOM objects that allow such NSVG document references.</p>
 
 <p>This interface is deprecated and may be dropped from future versions of
-the SVG specification.  To access the SVG document inside an
+the NSVG specification.  To access the NSVG document inside an
 <span class="element-name">'iframe'</span> or
 <span class="element-name">'object'</span> element,
 authors are suggested to use the <code>contentDocument</code>
@@ -3268,24 +3268,24 @@ attribute on the <a>HTMLIFrameElement</a> or <a>HTMLObjectElement</a>
 interface, respectively.</p>
 
 <p class="note">The <a>HTMLIFrameElement</a>, <a>HTMLEmbedElement</a>
-and <a>HTMLObjectElement</a> interfaces all define their own getSVGDocument
-method, which provides access to the SVG document in the same way that
-the <a>GetSVGDocument</a> does.  Those three interfaces therefore do not need
-to implement <a>GetSVGDocument</a>.  Still, authors are strongly recommended
+and <a>HTMLObjectElement</a> interfaces all define their own getNSVGDocument
+method, which provides access to the NSVG document in the same way that
+the <a>GetNSVGDocument</a> does.  Those three interfaces therefore do not need
+to implement <a>GetNSVGDocument</a>.  Still, authors are strongly recommended
 to use contentDocument instead.</p>
 
-<pre class="idl">interface mixin <b>GetSVGDocument</b> {
-  <a>Document</a> <a href="struct.html#__svg__GetSVGDocument__getSVGDocument">getSVGDocument</a>();
+<pre class="idl">interface mixin <b>GetNSVGDocument</b> {
+  <a>Document</a> <a href="struct.html#__nsvg__GetNSVGDocument__getNSVGDocument">getNSVGDocument</a>();
 };</pre>
 
-<p>The <b id="__svg__GetSVGDocument__getSVGDocument">getSVGDocument</b> method
-is used to return a referenced SVG document.  When getSVGDocument() is called,
+<p>The <b id="__nsvg__GetNSVGDocument__getNSVGDocument">getNSVGDocument</b> method
+is used to return a referenced NSVG document.  When getNSVGDocument() is called,
 it must return the <a>Document</a> object referenced by the embedding element
-that implements the <a>GetSVGDocument</a> interface; if there is no document,
+that implements the <a>GetNSVGDocument</a> interface; if there is no document,
 null is returned.</p>
 
 <p class="note">Note that this does no check to see whether the referenced
-document is indeed an SVG document.  Instead, any document is returned.</p>
+document is indeed an NSVG document.  Instead, any document is returned.</p>
 </div>
 
 </body>

@@ -1,4 +1,4 @@
-<!-- Definitions for SVG Markers. -->
+<!-- Definitions for NSVG Markers. -->
 
 <definitions xmlns='http://mcc.id.au/ns/local' xmlns:x='http://mcc.id.au/ns/local'>
 
@@ -12,7 +12,7 @@
       elements='a, clipPath, cursor, filter, foreignObject, image, marker, mask, script, style, switch, view, text'
       attributecategories='core, global event, document element event, presentation, style'
       attributes='viewBox, preserveAspectRatio'
-      interfaces='SVGMarkerElement'>
+      interfaces='NSVGMarkerElement'>
     <attribute name='refX' href='#MarkerElementRefXAttribute' animatable='yes'/>
     <attribute name='refY' href='#MarkerElementRefYAttribute' animatable='yes'/>
     <attribute name='markerUnits' href='#MarkerUnitsAttribute' animatable='yes'/>
@@ -32,10 +32,10 @@
   <property name='marker-segment' href='#MarkerSegmentProperty'/>
   <property name='marker-start' href='#MarkerStartProperty'/>
 
-  <interface name='SVGMarkableElement' href='#InterfaceSVGMarkableElement'/>
-  <interface name='SVGMarkerElement' href='#InterfaceSVGMarkerElement'/>
-  <interface name='SVGMarkerInstance' href='#InterfaceSVGMarkerInstance'/>
-  <interface name='SVGMarkerList' href='#InterfaceSVGMarkerList'/>
+  <interface name='NSVGMarkableElement' href='#InterfaceNSVGMarkableElement'/>
+  <interface name='NSVGMarkerElement' href='#InterfaceNSVGMarkerElement'/>
+  <interface name='NSVGMarkerInstance' href='#InterfaceNSVGMarkerInstance'/>
+  <interface name='NSVGMarkerList' href='#InterfaceNSVGMarkerList'/>
 
   <term name='marker'             href='#TermMarker'/>
   <term name='markers'            href='#TermMarker'/>

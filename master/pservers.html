@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
   <title>Paint Servers: Solid Colors, Gradients, and Patterns</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,7 +9,7 @@
   <!-- Style sheets for local dev. Will be standardized in processing.
   Add attribute data-keep="" to any extra stylesheet link you do not want removed
   (or use <style>), and include it before here. -->
-  <link rel="stylesheet" href="style/svg.css" type="text/css" />
+  <link rel="stylesheet" href="style/nsvg.css" type="text/css" />
   <link rel="stylesheet" href="style/W3C-ED.css" type="text/css" />
 </head>
 <body>
@@ -30,7 +30,7 @@
 redefine them here. -->
 
 <p>
-  SVG defines several types of paint servers:
+  NSVG defines several types of paint servers:
 </p>
 
 <ul>
@@ -38,15 +38,15 @@ redefine them here. -->
   <li><a href="#Patterns">Patterns</a>.</li>
 </ul>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Arbitrary fills for shapes.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/10/28-svg-irc#T18-32-32">SVG 2 shall support filling and stroking from arbitrary elements.</a></td>
+      <td><a href="http://www.w3.org/2011/10/28-nsvg-irc#T18-32-32">NSVG 2 shall support filling and stroking from arbitrary elements.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -62,7 +62,7 @@ redefine them here. -->
 <div class="figure">
   <img
      alt="Image of two types of paint servers."
-     src="images/pservers/pservers_example.svg"/>
+     src="images/pservers/pservers_example.nsvg"/>
   <p class="caption">Two types of paint servers. From left to right:
     A linear gradient.
     A pattern.
@@ -116,13 +116,13 @@ redefine them here. -->
 
 <div class="note">
   <p>
-  The exclusion of descriptive content is new in SVG 2 for <a>'pattern'</a>,
+  The exclusion of descriptive content is new in NSVG 2 for <a>'pattern'</a>,
   consistent with the behavior of gradients,
-  and with changes to make descriptive content valid for any SVG element.
+  and with changes to make descriptive content valid for any NSVG element.
   </p>
   <p>
   Also new: template cross-references may be to external file resources
-  (different chapters in SVG 1.1 had inconsistent guidance on this point),
+  (different chapters in NSVG 1.1 had inconsistent guidance on this point),
   and the "inheritance" of child elements is represented through a shadow tree.
   </p>
 </div>
@@ -200,14 +200,14 @@ as if they were the paint server element's own children.
 <p class="note">
   The <a>use-element shadow tree</a> model for templating
   allows cloned content to inherit different styles than the original.
-  This behavior is newly defined in SVG 2;
-  SVG 1.1 did not define how styles applied to inherited paint server content.
+  This behavior is newly defined in NSVG 2;
+  NSVG 1.1 did not define how styles applied to inherited paint server content.
 </p>
 
 <h2 id="Gradients">Gradients</h2>
 
 <p>Gradients consist of smooth color transitions between points on a
-drawing surface. SVG provides for three types of gradients:</p>
+drawing surface. NSVG provides for three types of gradients:</p>
 
 <ul>
   <li><a href="#LinearGradients">linear gradients</a>,</li>
@@ -330,7 +330,7 @@ Where, for each channel:
     for the <a>'transform'</a> property.
   </p>
 
-  <dl class="attrdef-list-svg2">
+  <dl class="attrdef-list-nsvg2">
 
     <dt id="LinearGradientElementGradientUnitsAttribute"><span class="adef">gradientUnits</span></dt>
     <dd>
@@ -340,7 +340,7 @@ Where, for each channel:
         <a>'y1'</a>, <a>'x2'</a> and <a>'y2'</a>.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 
 	<dt>Value</dt>                <dd>userSpaceOnUse | objectBoundingBox</dd>
 	<dt><a>Initial value</a></dt>  <dd>objectBoundingBox</dd>
@@ -364,7 +364,7 @@ Where, for each channel:
             gradient element via a <a>'fill'</a> or <a>'stroke'</a>
             property) and then applying the transform specified by
             attribute <a>'gradientTransform'</a>. Percentages
-            represent values relative to the current SVG viewport.
+            represent values relative to the current NSVG viewport.
 	  </p>
 	</dd>
 
@@ -431,7 +431,7 @@ Where, for each channel:
         box units</a> to user coordinate system.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd><a>&lt;transform-list&gt;</a></dd>
 	<dt><a>Initial value</a></dt>  <dd>identity transform</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -452,7 +452,7 @@ Where, for each channel:
         be either numbers or percentages.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd><a>&lt;length&gt;</a></dd>
 	<dt><a>Initial value</a></dt>  <dd>0%</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -467,7 +467,7 @@ Where, for each channel:
 	See <a>'x1'</a>.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd><a>&lt;length&gt;</a></dd>
 	<dt><a>Initial value</a></dt>  <dd>0%</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -482,7 +482,7 @@ Where, for each channel:
 	See <a>'x1'</a>.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd><a>&lt;length&gt;</a></dd>
 	<dt><a>Initial value</a></dt>  <dd>100%</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -496,7 +496,7 @@ Where, for each channel:
 	See <a>'x1'</a>.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd><a>&lt;length&gt;</a></dd>
 	<dt><a>Initial value</a></dt>  <dd>0%</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -512,7 +512,7 @@ Where, for each channel:
         inside the bounds of the <em>target rectangle</em>.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd>pad | reflect | repeat</dd>
 	<dt><a>Initial value</a></dt>  <dd>pad</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -584,7 +584,7 @@ Where, for each channel:
         <li><a>'spreadMethod'</a></li>
       </ul>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd>URL <a href="types.html#attribute-url" class="syntax">[URL]</a></dd>
 	<dt><a>Initial value</a></dt>  <dd>empty</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -603,7 +603,7 @@ single color using the color and opacity of the last
 <p id="ExampleLinGrad01"><span class="example-ref">Example lingrad01</span>
 shows how to fill a rectangle by referencing a linear gradient paint server.</p>
 
-<edit:example href='images/pservers/lingrad01.svg' name='lingrad01'
+<edit:example href='images/pservers/lingrad01.nsvg' name='lingrad01'
   description='Fill a rectangle by referencing a linear gradient paint server'
   image='yes' link='yes'/>
 
@@ -629,7 +629,7 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
     for the <a>'transform'</a> property.
   </p>
 
-  <dl class="attrdef-list-svg2">
+  <dl class="attrdef-list-nsvg2">
 
     <dt id="RadialGradientElementGradientUnitsAttribute">
       <span class="adef">gradientUnits</span> =
@@ -642,7 +642,7 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
         <a>'cx'</a>, <a>'cy'</a>, <a>'r'</a>, <a>'fx'</a>, <a>'fy'</a>, and <a>'fr'</a>.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 
 	<!--
 	<dt>Value</dt>                <dd>userSpaceOnUse | objectBoundingBox</dd>
@@ -669,7 +669,7 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
             gradient element via a <a>'fill'</a> or <a>'stroke'</a>
             property) and then applying the transform specified by
             attribute <a>'gradientTransform'</a>. Percentages
-            represent values relative to the current SVG viewport.
+            represent values relative to the current NSVG viewport.
 	  </p>
 	</dd>
 
@@ -734,7 +734,7 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
         box units</a> to user coordinate system.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 <!--	<dt>Value</dt>                <dd><a>&lt;transform-list&gt;</a></dd> -->
 	<dt><a>Initial value</a></dt>  <dd>identity transform</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -755,7 +755,7 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
         to the perimeter of this end circle.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 <!--	<dt>Value</dt>                <dd><a>&lt;length&gt;</a></dd> -->
 	<dt><a>Initial value</a></dt>  <dd>50%</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -773,7 +773,7 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
 	See <a>'cx'</a>.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 <!--	<dt>Value</dt>                <dd><a>&lt;length&gt;</a></dd> -->
 	<dt><a>Initial value</a></dt>  <dd>50%</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -797,7 +797,7 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
         processing</a>).
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 <!--	<dt>Value</dt>                <dd><a>&lt;length&gt;</a></dd> -->
 	<dt><a>Initial value</a></dt>  <dd>50%</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -819,7 +819,7 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
         to the perimeter of this start circle.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 <!--	<dt>Value</dt>                <dd><a>&lt;length&gt;</a></dd> -->
 	<dt><a>Initial value</a></dt>  <dd>see below</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -863,7 +863,7 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
 	See <a>'fx'</a>.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 <!--	<dt>Value</dt>                <dd><a>&lt;length&gt;</a></dd> -->
 	<dt><a>Initial value</a></dt>  <dd>see below</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -885,7 +885,7 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
     </dt>
     <dd>
 
-      <p class="note">New in SVG 2. Added to align with Canvas.</p>
+      <p class="note">New in NSVG 2. Added to align with Canvas.</p>
 
       <p>
 	<a>'fr'</a> is the radius of the focal circle. See <a>'fx'</a>.
@@ -897,7 +897,7 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
         processing</a>).
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 <!--	<dt>Value</dt>                <dd><a>&lt;length&gt;</a></dd> -->
 	<dt><a>Initial value</a></dt>  <dd>0%, see below</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -911,15 +911,15 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
 	inherited from the referenced element.
       </p>
 
-      <div class="annotation svg2-requirement">
+      <div class="annotation nsvg2-requirement">
         <table>
           <tr>
-            <th>SVG 2 Requirement:</th>
+            <th>NSVG 2 Requirement:</th>
             <td>Allow specifying focal circle radius in radial gradients.</td>
           </tr>
           <tr>
             <th>Resolution:</th>
-            <td><a href="http://www.w3.org/2011/07/29-svg-minutes.html#item06">Add an <span class="attr-name">'fr'</span> attribute to <span class="element-name">'radialGradient'</span>> for SVG 2.</a></td>
+            <td><a href="http://www.w3.org/2011/07/29-nsvg-minutes.html#item06">Add an <span class="attr-name">'fr'</span> attribute to <span class="element-name">'radialGradient'</span>> for NSVG 2.</a></td>
           </tr>
           <tr>
             <th>Purpose:</th>
@@ -929,7 +929,7 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
           </tr>
           <tr>
             <th>Owner:</th>
-            <td>Erik (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3098">ACTION-3098</a>)</td>
+            <td>Erik (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3098">ACTION-3098</a>)</td>
           </tr>
         </table>
       </div>
@@ -947,7 +947,7 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
         attribute on <a>'linearGradient'</a> element.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 <!--	<dt>Value</dt>                <dd>pad | reflect | repeat</dd> -->
 	<dt><a>Initial value</a></dt>  <dd>pad</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -991,7 +991,7 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
         <a href="linking.html#XLinkRefAttrs">deprecated XLink attributes</a>.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 <!--	<dt>Value</dt>                <dd><a>&lt;url&gt;</a></dd> -->
 	<dt><a>Initial value</a></dt>  <dd>empty</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -1000,15 +1000,15 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
     </dd>
   </dl>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Clarify radial gradients with focal point on the circle.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/07/29-svg-minutes.html#item05">When the focal point is on the circle edge, with repeat, then the distance between the first and last stop for the repeating colors is 0 and the paint should generate a color that is the average of all the gradient stops.</a></td>
+      <td><a href="http://www.w3.org/2011/07/29-nsvg-minutes.html#item05">When the focal point is on the circle edge, with repeat, then the distance between the first and last stop for the repeating colors is 0 and the paint should generate a color that is the average of all the gradient stops.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -1016,11 +1016,11 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Erik (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3097">ACTION-3097</a>)</td>
+      <td>Erik (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3097">ACTION-3097</a>)</td>
     </tr>
     <tr>
       <th>Note:</th>
-      <td>SVG 1.1 does not define what to do when the focal point
+      <td>NSVG 1.1 does not define what to do when the focal point
       is on the circle edge, with 'repeat'. The distance between the
       first and last stop for the repeating colors is 0. It was
       resolved that the paint should generate a color that is the
@@ -1031,13 +1031,13 @@ shows how to fill a rectangle by referencing a linear gradient paint server.</p>
 
 <h4 id="RadialGradientNotes">Notes on radial gradients</h4>
 
-<p class="note">Changed in SVG 2. SVG 1.1 required that the focal
+<p class="note">Changed in NSVG 2. NSVG 1.1 required that the focal
 point, if outside the end circle, be moved to be on the end
 circle. The change was made to align with Canvas.</p>
 
 <p class="annotation">Allowing the focal point to lie outside the end
 circle was resolved at the
-<a href="http://www.w3.org/2012/09/19-svg-minutes.html#item01">Rigi
+<a href="http://www.w3.org/2012/09/19-nsvg-minutes.html#item01">Rigi
 Kaltbad working group meeting</a>.</p>
 
 <p>If the start circle defined by <a>'fx'</a>, <a>'fy'</a> and <a>'fr'</a> lies
@@ -1079,18 +1079,18 @@ gradient is drawn. The area stays untouched (transparent black).</p>
 <p class="note">The treatment of the area to the right of the gradient
 in the right-hand side of the above figure is different from that of
 Canvas where the area would be transparent black. The difference is to
-maintain compatibility with SVG 1.1.</p>
+maintain compatibility with NSVG 1.1.</p>
 
 <p class="annotation">The color space for the weighted average is the
 same as in which the gradient is interpolated. See
-<a href="http://www.w3.org/2012/09/19-svg-minutes.html#item01">Rigi
+<a href="http://www.w3.org/2012/09/19-nsvg-minutes.html#item01">Rigi
 Kaltbad working group meeting</a>.</p>
 
 <p id="ExampleRadGrad01"><span class="example-ref">Example radgrad01</span>
 shows how to fill a rectangle by referencing a radial gradient paint
 server.</p>
 
-<edit:example href='images/pservers/radgrad01.svg' name='radgrad01'
+<edit:example href='images/pservers/radgrad01.nsvg' name='radgrad01'
   description='Fill a rectangle by referencing a radial gradient paint server'
   image='yes' link='yes'/>
 
@@ -1106,14 +1106,14 @@ defined by the <a>'stop'</a> elements that are child elements to a
 <a>'linearGradient'</a>, or <a>'radialGradient'</a>
 element.</p>
 
-<p class="annotation">In SVG 1.1, the above read: "The ramp of
+<p class="annotation">In NSVG 1.1, the above read: "The ramp of
 colors..." but "ramp" is used nowhere else in this section.</p>
 
 <edit:elementsummary name='stop'/>
 
 <h4 id="GradientStopAttributes">Attributes</h4>
 
-  <dl class="attrdef-list-svg2">
+  <dl class="attrdef-list-nsvg2">
 
     <dt id="StopElementOffsetAttribute">
       <span class="adef">offset</span>
@@ -1129,7 +1129,7 @@ colors..." but "ramp" is used nowhere else in this section.</p>
 	circle.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 
 	<dt>Value</dt>                <dd><a>&lt;number&gt;</a> | <a>&lt;percentage&gt;</a></dd>
 	<dt><a>Initial value</a></dt>  <dd>0</dd>
@@ -1152,7 +1152,7 @@ colors..." but "ramp" is used nowhere else in this section.</p>
 
 <h4 id="StopColorProperties">Properties</h4>
 
-  <dl class="propdef-list-svg2">
+  <dl class="propdef-list-nsvg2">
     <dt id="StopColorProperty"><span class="propdef-title property">'stop-color'</span></dt>
     <dd>
       <p>
@@ -1165,14 +1165,14 @@ colors..." but "ramp" is used nowhere else in this section.</p>
       properties.
       </p>
       <p class="note">
-      With respect to gradients, SVG treats the 'transparent' keyword
-      differently than CSS. SVG does not calculate gradients in pre-multiplied
+      With respect to gradients, NSVG treats the 'transparent' keyword
+      differently than CSS. NSVG does not calculate gradients in pre-multiplied
       space, so 'transparent' really means transparent black. Specifying
       a <a>'stop-color'</a> with the value 'transparent' is equivalent to
       specifying a <a>'stop-color'</a> with the value 'black' and a
       <a>'stop-opacity'</a> with the value '0'.
       </p>
-      <dl class="propdef-svg2">
+      <dl class="propdef-nsvg2">
         <dt>Value</dt>              <dd>&lt;‘<a>'color'</a>’&gt;</dd>
         <dt>Initial</dt>            <dd>black</dd>
         <dt>Applies to</dt>         <dd><a>'stop'</a> elements</dd>
@@ -1194,7 +1194,7 @@ colors..." but "ramp" is used nowhere else in this section.</p>
       don't include explicit opacity information, the opacity of that
       component must be treated as 1.</span>
       </p>
-      <dl class="propdef-svg2">
+      <dl class="propdef-nsvg2">
         <dt>Value</dt>              <dd>&lt;‘<a>'opacity'</a>’&gt;</dd>
         <dt>Initial</dt>            <dd>1</dd>
         <dt>Applies to</dt>         <dd><a>'stop'</a> elements</dd>
@@ -1303,7 +1303,7 @@ and <em>n</em>.</p>
     The <a>'patternTransform'</a> attribute is a presentation attribute for the <a>'transform'</a> property.
   </p>
 
-  <dl class="attrdef-list-svg2">
+  <dl class="attrdef-list-nsvg2">
 
     <dt id="PatternElementPatternUnitsAttribute"><span class="adef">patternUnits</span></dt>
     <dd>
@@ -1313,7 +1313,7 @@ and <em>n</em>.</p>
 	<a>'x'</a>, <a>'y'</a>, <a>'width'</a> and <a>'height'</a>.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 
 	<dt>Value</dt>                <dd>userSpaceOnUse | objectBoundingBox</dd>
 	<dt><a>Initial value</a></dt>  <dd>objectBoundingBox</dd>
@@ -1338,7 +1338,7 @@ and <em>n</em>.</p>
             <a>'fill'</a> or <a>'stroke'</a> property) and then
             applying the transform specified by attribute
             <a>'patternTransform'</a>. Percentages
-            represent values relative to the current SVG viewport.
+            represent values relative to the current NSVG viewport.
 	  </p>
 	</dd>
 
@@ -1375,7 +1375,7 @@ and <em>n</em>.</p>
 	attribute <a>'viewBox'</a> is specified.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 
 	<dt>Value</dt>                <dd>userSpaceOnUse | objectBoundingBox</dd>
 	<dt><a>Initial value</a></dt>  <dd>userSpaceOnUse</dd>
@@ -1441,7 +1441,7 @@ and <em>n</em>.</p>
         box units</a> to user coordinate system.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd><a>&lt;transform-list&gt;</a></dd>
 	<dt><a>Initial value</a></dt>  <dd>identity transform</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -1460,7 +1460,7 @@ and <em>n</em>.</p>
         and <a>'patternTransform'</a>.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd><a>&lt;length&gt;</a></dd>
 	<dt><a>Initial value</a></dt>  <dd>0</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -1475,7 +1475,7 @@ and <em>n</em>.</p>
 	See <a>'x'</a>.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd><a>&lt;length&gt;</a></dd>
 	<dt><a>Initial value</a></dt>  <dd>0</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -1490,7 +1490,7 @@ and <em>n</em>.</p>
 	See <a>'x'</a>.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd><a>&lt;length&gt;</a></dd>
 	<dt><a>Initial value</a></dt>  <dd>0</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -1512,7 +1512,7 @@ and <em>n</em>.</p>
 	See <a>'x'</a>.
       </p>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd><a>&lt;length&gt;</a></dd>
 	<dt><a>Initial value</a></dt>  <dd>0</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -1553,7 +1553,7 @@ and <em>n</em>.</p>
         <li><a>'patternContentUnits'</a></li>
       </ul>
 
-      <dl class="attrdef-svg2">
+      <dl class="attrdef-nsvg2">
 	<dt>Value</dt>                <dd>URL <a href="types.html#attribute-url" class="syntax">[URL]</a></dd>
 	<dt><a>Initial value</a></dt>  <dd>empty</dd>
 	<dt><a>Animatable</a></dt>    <dd>yes</dd>
@@ -1564,7 +1564,7 @@ and <em>n</em>.</p>
 
 <h3 id="PatternNotes">Notes on patterns</h3>
 
-<p>SVG's <a href="styling.html#UAStyleSheet">user agent style sheet</a> sets
+<p>NSVG's <a href="styling.html#UAStyleSheet">user agent style sheet</a> sets
 the <a>'overflow'</a> property for <a>'pattern'</a> elements to
 <span class="prop-value">hidden</span>, which causes a rectangular clipping
 path to be created at the bounds of the pattern tile.  Unless the
@@ -1577,14 +1577,14 @@ effect of clipping to the pattern tile.</p>
   Note that if the <a>'overflow'</a> property is set to
   <span class="prop-value">visible</span> the rendering behavior
   for the pattern outside the bounds of the pattern is currently
-  undefined. A future version of SVG may require the overflow to be
-  shown. SVG implementers are encouraged to render the overflow as
+  undefined. A future version of NSVG may require the overflow to be
+  shown. NSVG implementers are encouraged to render the overflow as
   this is the behavior expected by authors. If overflow is rendered,
   the pattern tiles should be rendered left to right in rows and the
   rows from top to bottom.
 </p>
 <p class="annotation">
-  See <a href="https://github.com/w3c/svgwg/issues/129">GitHub Issue 129</a>
+  See <a href="https://github.com/w3c/nsvgwg/issues/129">GitHub Issue 129</a>
 </p>
 
 <p>The contents of the <a>'pattern'</a> are relative to a new coordinate
@@ -1622,54 +1622,54 @@ processed.</p>
 <p id="ExamplePattern01"><span class="example-ref">Example pattern01</span>
 shows how to fill a rectangle by referencing a pattern paint
 server. Note how the blue stroke of each triangle has been
-slightly clipped at the top and the left. This is due to SVG's
+slightly clipped at the top and the left. This is due to NSVG's
 <a href="styling.html#UAStyleSheet">user agent style sheet</a> setting
 the <a>'overflow'</a> property for <a>'pattern'</a> elements to
 <span class="prop-value">hidden</span>, which causes the pattern to be clipped
 to the bounds of the pattern tile.</p>
 
-<edit:example href='images/pservers/pattern01.svg' name='pattern01'
+<edit:example href='images/pservers/pattern01.nsvg' name='pattern01'
   description='fill a rectangle by referencing a pattern paint server' image='yes' link='yes'/>
 
 </edit:with>
 
 <h2 id="DOMInterfaces">DOM interfaces</h2>
 
-<h3 id="InterfaceSVGGradientElement">Interface SVGGradientElement</h3>
+<h3 id="InterfaceNSVGGradientElement">Interface NSVGGradientElement</h3>
 
-<p>The <a>SVGGradientElement</a> interface is used as a base interface
+<p>The <a>NSVGGradientElement</a> interface is used as a base interface
 for gradient paint server element interfaces.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGGradientElement</b> : <a>SVGElement</a> {
+interface <b>NSVGGradientElement</b> : <a>NSVGElement</a> {
 
   // Spread Method Types
-  const unsigned short <a href="pservers.html#__svg__SVGGradientElement__SVG_SPREADMETHOD_UNKNOWN">SVG_SPREADMETHOD_UNKNOWN</a> = 0;
-  const unsigned short <a href="pservers.html#__svg__SVGGradientElement__SVG_SPREADMETHOD_PAD">SVG_SPREADMETHOD_PAD</a> = 1;
-  const unsigned short <a href="pservers.html#__svg__SVGGradientElement__SVG_SPREADMETHOD_REFLECT">SVG_SPREADMETHOD_REFLECT</a> = 2;
-  const unsigned short <a href="pservers.html#__svg__SVGGradientElement__SVG_SPREADMETHOD_REPEAT">SVG_SPREADMETHOD_REPEAT</a> = 3;
+  const unsigned short <a href="pservers.html#__nsvg__NSVGGradientElement__NSVG_SPREADMETHOD_UNKNOWN">NSVG_SPREADMETHOD_UNKNOWN</a> = 0;
+  const unsigned short <a href="pservers.html#__nsvg__NSVGGradientElement__NSVG_SPREADMETHOD_PAD">NSVG_SPREADMETHOD_PAD</a> = 1;
+  const unsigned short <a href="pservers.html#__nsvg__NSVGGradientElement__NSVG_SPREADMETHOD_REFLECT">NSVG_SPREADMETHOD_REFLECT</a> = 2;
+  const unsigned short <a href="pservers.html#__nsvg__NSVGGradientElement__NSVG_SPREADMETHOD_REPEAT">NSVG_SPREADMETHOD_REPEAT</a> = 3;
 
-  [SameObject] readonly attribute <a>SVGAnimatedEnumeration</a> <a href="pservers.html#__svg__SVGGradientElement__gradientUnits">gradientUnits</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedTransformList</a> <a href="pservers.html#__svg__SVGGradientElement__gradientTransform">gradientTransform</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedEnumeration</a> <a href="pservers.html#__svg__SVGGradientElement__spreadMethod">spreadMethod</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedEnumeration</a> <a href="pservers.html#__nsvg__NSVGGradientElement__gradientUnits">gradientUnits</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedTransformList</a> <a href="pservers.html#__nsvg__NSVGGradientElement__gradientTransform">gradientTransform</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedEnumeration</a> <a href="pservers.html#__nsvg__NSVGGradientElement__spreadMethod">spreadMethod</a>;
 };
 
-<a>SVGGradientElement</a> includes <a>SVGURIReference</a>;
+<a>NSVGGradientElement</a> includes <a>NSVGURIReference</a>;
 </pre>
 
-<p>The numeric spread method type constants defined on <a>SVGGradientElement</a>
+<p>The numeric spread method type constants defined on <a>NSVGGradientElement</a>
 are used to represent the keyword values that the <span class='attr-name'>'spreadMethod'</span>
 attribute can take.  Their meanings are as follows:</p>
 
 <table class='vert'>
   <tr><th>Constant</th><th>Meaning</th></tr>
-  <tr><td><b id="__svg__SVGGradientElement__SVG_SPREADMETHOD_PAD">SVG_SPREADMETHOD_PAD</b></td><td>The <span class="attr-value">pad</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGGradientElement__SVG_SPREADMETHOD_REFLECT">SVG_SPREADMETHOD_REFLECT</b></td><td>The <span class="attr-value">reflect</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGGradientElement__SVG_SPREADMETHOD_REPEAT">SVG_SPREADMETHOD_REPEAT</b></td><td>The <span class="attr-value">repeat</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGGradientElement__SVG_SPREADMETHOD_UNKNOWN">SVG_SPREADMETHOD_UNKNOWN</b></td><td>Some other value.</td></tr>
+  <tr><td><b id="__nsvg__NSVGGradientElement__NSVG_SPREADMETHOD_PAD">NSVG_SPREADMETHOD_PAD</b></td><td>The <span class="attr-value">pad</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGGradientElement__NSVG_SPREADMETHOD_REFLECT">NSVG_SPREADMETHOD_REFLECT</b></td><td>The <span class="attr-value">reflect</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGGradientElement__NSVG_SPREADMETHOD_REPEAT">NSVG_SPREADMETHOD_REPEAT</b></td><td>The <span class="attr-value">repeat</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGGradientElement__NSVG_SPREADMETHOD_UNKNOWN">NSVG_SPREADMETHOD_UNKNOWN</b></td><td>Some other value.</td></tr>
 </table>
 
-<p>The <b id="__svg__SVGGradientElement__gradientUnits">gradientUnits</b> IDL attribute
+<p>The <b id="__nsvg__NSVGGradientElement__gradientUnits">gradientUnits</b> IDL attribute
 <a>reflects</a> the <span class='attr-name'>'gradientUnits'</span> content attribute.
 The <a>numeric type values</a> for <span class='attr-name'>'gradientUnits'</span>
 attributes on gradient elements are as follows:</p>
@@ -1678,125 +1678,125 @@ attributes on gradient elements are as follows:</p>
   <tr><th>Value</th><th>Numeric type value</th></tr>
   <tr>
     <td><span class='attr-value'>userSpaceOnUse</span></td>
-    <td><a href='types.html#__svg__SVGUnitTypes__SVG_UNIT_TYPE_USERSPACEONUSE'>SVG_UNIT_TYPE_USERSPACEONUSE</a></td>
+    <td><a href='types.html#__nsvg__NSVGUnitTypes__NSVG_UNIT_TYPE_USERSPACEONUSE'>NSVG_UNIT_TYPE_USERSPACEONUSE</a></td>
   </tr>
   <tr>
     <td><span class='attr-value'>objectBoundingBox</span></td>
-    <td><a href='types.html#__svg__SVGUnitTypes__SVG_UNIT_TYPE_OBJECTBOUNDINGBOX'>SVG_UNIT_TYPE_OBJECTBOUNDINGBOX</a></td>
+    <td><a href='types.html#__nsvg__NSVGUnitTypes__NSVG_UNIT_TYPE_OBJECTBOUNDINGBOX'>NSVG_UNIT_TYPE_OBJECTBOUNDINGBOX</a></td>
   </tr>
 </table>
 
-<p>The <b id="__svg__SVGGradientElement__gradientTransform">gradientTransform</b> IDL
+<p>The <b id="__nsvg__NSVGGradientElement__gradientTransform">gradientTransform</b> IDL
 attribute <a>reflects</a> the computed value of the <a>'transform'</a> property
 and  the <span class='gradientTransform'>'gradientTransform'</span> presentation attribute
 for <a>'linearGradient'</a> and <a>'radialGradient'</a> elements.</p>
 
-<p>The <b id="__svg__SVGGradientElement__spreadMethod">spreadMethod</b> IDL attribute
+<p>The <b id="__nsvg__NSVGGradientElement__spreadMethod">spreadMethod</b> IDL attribute
 <a>reflects</a> the <span class='attr-name'>'spreadMethod'</span> content attribute.
 The <a>numeric type values</a> for <span class='attr-name'>'spreadMethod'</span>
 attributes on gradient elements are as described above in the
 numeric spread type constant table.</p>
 
 
-<h3 id="InterfaceSVGLinearGradientElement">Interface SVGLinearGradientElement</h3>
+<h3 id="InterfaceNSVGLinearGradientElement">Interface NSVGLinearGradientElement</h3>
 
 <edit:with element="linearGradient">
 
-<p>An <a>SVGLinearGradientElement</a> object represents an <a>'linearGradient'</a>
+<p>An <a>NSVGLinearGradientElement</a> object represents an <a>'linearGradient'</a>
 in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGLinearGradientElement</b> : <a>SVGGradientElement</a> {
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="pservers.html#__svg__SVGLinearGradientElement__x1">x1</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="pservers.html#__svg__SVGLinearGradientElement__y1">y1</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="pservers.html#__svg__SVGLinearGradientElement__x2">x2</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="pservers.html#__svg__SVGLinearGradientElement__y2">y2</a>;
+interface <b>NSVGLinearGradientElement</b> : <a>NSVGGradientElement</a> {
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="pservers.html#__nsvg__NSVGLinearGradientElement__x1">x1</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="pservers.html#__nsvg__NSVGLinearGradientElement__y1">y1</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="pservers.html#__nsvg__NSVGLinearGradientElement__x2">x2</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="pservers.html#__nsvg__NSVGLinearGradientElement__y2">y2</a>;
 };</pre>
 
 <p>The
-<b id="__svg__SVGLinearGradientElement__x1">x1</b>,
-<b id="__svg__SVGLinearGradientElement__y1">y1</b>,
-<b id="__svg__SVGLinearGradientElement__x2">x2</b> and
-<b id="__svg__SVGLinearGradientElement__y2">y2</b> IDL attributes
+<b id="__nsvg__NSVGLinearGradientElement__x1">x1</b>,
+<b id="__nsvg__NSVGLinearGradientElement__y1">y1</b>,
+<b id="__nsvg__NSVGLinearGradientElement__x2">x2</b> and
+<b id="__nsvg__NSVGLinearGradientElement__y2">y2</b> IDL attributes
 <a>reflect</a> the <a>'x1'</a>, <a>'y1'</a>, <a>'x2'</a> and <a>'y2'</a>
 content attributes, respectively</p>
 
 </edit:with>
 
 
-<h3 id="InterfaceSVGRadialGradientElement">Interface SVGRadialGradientElement</h3>
+<h3 id="InterfaceNSVGRadialGradientElement">Interface NSVGRadialGradientElement</h3>
 
 <edit:with element="radialGradient">
 
-<p>An <a>SVGRadialGradientElement</a> object represents an <a>'radialGradient'</a>
+<p>An <a>NSVGRadialGradientElement</a> object represents an <a>'radialGradient'</a>
 in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGRadialGradientElement</b> : <a>SVGGradientElement</a> {
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="pservers.html#__svg__SVGRadialGradientElement__cx">cx</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="pservers.html#__svg__SVGRadialGradientElement__cy">cy</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="pservers.html#__svg__SVGRadialGradientElement__r">r</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="pservers.html#__svg__SVGRadialGradientElement__fx">fx</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="pservers.html#__svg__SVGRadialGradientElement__fy">fy</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="pservers.html#__svg__SVGRadialGradientElement__fr">fr</a>;
+interface <b>NSVGRadialGradientElement</b> : <a>NSVGGradientElement</a> {
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="pservers.html#__nsvg__NSVGRadialGradientElement__cx">cx</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="pservers.html#__nsvg__NSVGRadialGradientElement__cy">cy</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="pservers.html#__nsvg__NSVGRadialGradientElement__r">r</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="pservers.html#__nsvg__NSVGRadialGradientElement__fx">fx</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="pservers.html#__nsvg__NSVGRadialGradientElement__fy">fy</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="pservers.html#__nsvg__NSVGRadialGradientElement__fr">fr</a>;
 };</pre>
 
 <p>The
-<b id="__svg__SVGRadialGradientElement__cx">cx</b>,
-<b id="__svg__SVGRadialGradientElement__cy">cy</b>,
-<b id="__svg__SVGRadialGradientElement__r">r</b>,
-<b id="__svg__SVGRadialGradientElement__fx">fx</b>,
-<b id="__svg__SVGRadialGradientElement__fy">fy</b> and
-<b id="__svg__SVGRadialGradientElement__fr">fr</b> IDL attributes
+<b id="__nsvg__NSVGRadialGradientElement__cx">cx</b>,
+<b id="__nsvg__NSVGRadialGradientElement__cy">cy</b>,
+<b id="__nsvg__NSVGRadialGradientElement__r">r</b>,
+<b id="__nsvg__NSVGRadialGradientElement__fx">fx</b>,
+<b id="__nsvg__NSVGRadialGradientElement__fy">fy</b> and
+<b id="__nsvg__NSVGRadialGradientElement__fr">fr</b> IDL attributes
 <a>reflect</a> the <a>'cx'</a>, <a>'cy'</a>, <a>'r'</a>, <a>'fx'</a>,
 <a>'fy'</a> and <a>'fr'</a> content attributes, respectively</p>
 
 </edit:with>
 
-<h3 id="InterfaceSVGStopElement">Interface SVGStopElement</h3>
+<h3 id="InterfaceNSVGStopElement">Interface NSVGStopElement</h3>
 
 <edit:with element="stop">
 
-<p>An <a>SVGStopElement</a> object represents a <a>'stop'</a> element
+<p>An <a>NSVGStopElement</a> object represents a <a>'stop'</a> element
 in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGStopElement</b> : <a>SVGElement</a> {
-  [SameObject] readonly attribute <a>SVGAnimatedNumber</a> <a href="pservers.html#__svg__SVGStopElement__offset">offset</a>;
+interface <b>NSVGStopElement</b> : <a>NSVGElement</a> {
+  [SameObject] readonly attribute <a>NSVGAnimatedNumber</a> <a href="pservers.html#__nsvg__NSVGStopElement__offset">offset</a>;
 };</pre>
 
-<p>The <b id="__svg__SVGStopElement__offset">offset</b> IDL attribute
+<p>The <b id="__nsvg__NSVGStopElement__offset">offset</b> IDL attribute
 <a>reflects</a> the <a>'offset'</a> content attribute.</p>
 
-<p class="note">Note that <a>SVGStopElement</a> does not have a
+<p class="note">Note that <a>NSVGStopElement</a> does not have a
 <a>reflecting</a> IDL attribute for its <a>'path'</a> attribute.</p>
 </edit:with>
 
 
-<h3 id="InterfaceSVGPatternElement">Interface SVGPatternElement</h3>
+<h3 id="InterfaceNSVGPatternElement">Interface NSVGPatternElement</h3>
 
 <edit:with element="pattern">
 
-<p>An <a>SVGPatternElement</a> object represents a <a>'pattern'</a> element
+<p>An <a>NSVGPatternElement</a> object represents a <a>'pattern'</a> element
 in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGPatternElement</b> : <a>SVGElement</a> {
-  [SameObject] readonly attribute <a>SVGAnimatedEnumeration</a> <a href="pservers.html#__svg__SVGPatternElement__patternUnits">patternUnits</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedEnumeration</a> <a href="pservers.html#__svg__SVGPatternElement__patternContentUnits">patternContentUnits</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedTransformList</a> <a href="pservers.html#__svg__SVGPatternElement__patternTransform">patternTransform</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="pservers.html#__svg__SVGPatternElement__x">x</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="pservers.html#__svg__SVGPatternElement__y">y</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="pservers.html#__svg__SVGPatternElement__width">width</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="pservers.html#__svg__SVGPatternElement__height">height</a>;
+interface <b>NSVGPatternElement</b> : <a>NSVGElement</a> {
+  [SameObject] readonly attribute <a>NSVGAnimatedEnumeration</a> <a href="pservers.html#__nsvg__NSVGPatternElement__patternUnits">patternUnits</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedEnumeration</a> <a href="pservers.html#__nsvg__NSVGPatternElement__patternContentUnits">patternContentUnits</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedTransformList</a> <a href="pservers.html#__nsvg__NSVGPatternElement__patternTransform">patternTransform</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="pservers.html#__nsvg__NSVGPatternElement__x">x</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="pservers.html#__nsvg__NSVGPatternElement__y">y</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="pservers.html#__nsvg__NSVGPatternElement__width">width</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="pservers.html#__nsvg__NSVGPatternElement__height">height</a>;
 };
 
-<a>SVGPatternElement</a> includes <a>SVGFitToViewBox</a>;
-<a>SVGPatternElement</a> includes <a>SVGURIReference</a>;
+<a>NSVGPatternElement</a> includes <a>NSVGFitToViewBox</a>;
+<a>NSVGPatternElement</a> includes <a>NSVGURIReference</a>;
 </pre>
 
-<p>The <b id="__svg__SVGPatternElement__patternUnits">patternUnits</b>
-and <b id="__svg__SVGPatternElement__patternContentUnits">patternContentUnits</b>
+<p>The <b id="__nsvg__NSVGPatternElement__patternUnits">patternUnits</b>
+and <b id="__nsvg__NSVGPatternElement__patternContentUnits">patternContentUnits</b>
 IDL attributes <a>reflect</a> the <a>'patternUnits'</a> and
 <a>'patternContentUnits'</a> content attributes, respectively.
 The <a>numeric type values</a> for <a>'patternUnits'</a> and
@@ -1806,23 +1806,23 @@ The <a>numeric type values</a> for <a>'patternUnits'</a> and
   <tr><th>Value</th><th>Numeric type value</th></tr>
   <tr>
     <td><span class='attr-value'>userSpaceOnUse</span></td>
-    <td><a href='types.html#__svg__SVGUnitTypes__SVG_UNIT_TYPE_USERSPACEONUSE'>SVG_UNIT_TYPE_USERSPACEONUSE</a></td>
+    <td><a href='types.html#__nsvg__NSVGUnitTypes__NSVG_UNIT_TYPE_USERSPACEONUSE'>NSVG_UNIT_TYPE_USERSPACEONUSE</a></td>
   </tr>
   <tr>
     <td><span class='attr-value'>objectBoundingBox</span></td>
-    <td><a href='types.html#__svg__SVGUnitTypes__SVG_UNIT_TYPE_OBJECTBOUNDINGBOX'>SVG_UNIT_TYPE_OBJECTBOUNDINGBOX</a></td>
+    <td><a href='types.html#__nsvg__NSVGUnitTypes__NSVG_UNIT_TYPE_OBJECTBOUNDINGBOX'>NSVG_UNIT_TYPE_OBJECTBOUNDINGBOX</a></td>
   </tr>
 </table>
 
-<p>The <b id="__svg__SVGPatternElement__patternTransform">patternTransform</b> IDL
+<p>The <b id="__nsvg__NSVGPatternElement__patternTransform">patternTransform</b> IDL
 attribute <a>reflects</a> the computed value of the <a>'transform'</a> property
 and the <span class='attr-name'>'patternTransform'</span> presentation attribute.</p>
 
 <p>The
-<b id="__svg__SVGPatternElement__x">x</b>,
-<b id="__svg__SVGPatternElement__y">y</b>,
-<b id="__svg__SVGPatternElement__width">width</b> and
-<b id="__svg__SVGPatternElement__height">height</b>
+<b id="__nsvg__NSVGPatternElement__x">x</b>,
+<b id="__nsvg__NSVGPatternElement__y">y</b>,
+<b id="__nsvg__NSVGPatternElement__width">width</b> and
+<b id="__nsvg__NSVGPatternElement__height">height</b>
 IDL attributes <a>reflect</a> the <a>'x'</a>, <a>'y'</a>,
 <a>'width'</a> and <a>'height'</a> content attributes, respectively.</p>
 

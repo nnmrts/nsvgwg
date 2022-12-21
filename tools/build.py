@@ -77,7 +77,7 @@ publish_dir = join(build_dir, 'publish')
 tools_dir = join(repo_dir, 'tools')
 
 if not exists(master_dir):
-  exit(1, 'FAIL: build.py must be run from the root of the \'svg2\' repository '
+  exit(1, 'FAIL: build.py must be run from the root of the \'nsvg2\' repository '
           'or from one of the directories under \'specs/\'.')
 
 if not exists(tools_dir):
@@ -141,8 +141,8 @@ if which("nodejs") != []:
     node = "nodejs"
 elif which("node") != []:
     node = "node"
-elif getstatus("[ -e /home/svgwg/bin/node ]") == 0:
-    node = "/home/svgwg/bin/node"
+elif getstatus("[ -e /home/nsvgwg/bin/node ]") == 0:
+    node = "/home/nsvgwg/bin/node"
 else:
     exit(1, 'FAIL: could not find "nodejs" or "node" on the PATH')
   
@@ -235,13 +235,13 @@ if tobuild:
       native_path(join(tools_dir, join("publish","publish.js"))) +
       "\" --build " +
       " ".join(tobuild_names) +
-      (" --local-style" if os.environ.get("SVG_BUILD_LOCAL_STYLE_SHEETS") else ""))
+      (" --local-style" if os.environ.get("NSVG_BUILD_LOCAL_STYLE_SHEETS") else ""))
   toremove = []
   os.chdir(repo_dir) # chdir back
 
 # Build single page spec as required:
 
-if len(all) > 1 and not os.environ.get("SVG_BUILD_NO_SINGLE_PAGE"):
+if len(all) > 1 and not os.environ.get("NSVG_BUILD_NO_SINGLE_PAGE"):
   buildSinglePage = False
   single_page = join(publish_dir, "single-page.html")
   

@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
-  <title>SVG Markers</title>
+  <title>NSVG Markers</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-  <link rel="stylesheet" title="Default" type="text/css" href="style/default_svg.css"/>
+  <link rel="stylesheet" title="Default" type="text/css" href="style/default_nsvg.css"/>
   <link rel="alternate stylesheet" title="No issues/annotations" type="text/css" href="style/default_no_issues.css"/>
 </head>
 <body>
 
 <div class="head">
   <p><a href="http://www.w3.org/"><img height="39" width="77" alt="W3C" src="http://www.w3.org/Icons/w3c_home"/></a></p>
-  <h1 id="pagetitle">SVG Markers</h1>
+  <h1 id="pagetitle">NSVG Markers</h1>
   <h2 id="pagesubtitle">W3C <edit:maturity/> <em><edit:date/></em></h2>
   <dl>
     <dt>This version:</dt>
@@ -25,9 +25,9 @@
     <dd><edit:previousversion/></dd>
     -->
     <dt>GitHub repository:</dt>
-    <dd><a href="https://github.com/w3c/svgwg/tree/main/specs/markers">https://github.com/w3c/svgwg/tree/main/specs/markers</a></dd>
+    <dd><a href="https://github.com/w3c/nsvgwg/tree/main/specs/markers">https://github.com/w3c/nsvgwg/tree/main/specs/markers</a></dd>
     <dt>Feedback:</dt>
-    <dd><a href="mailto:www-svg@w3.org" class='url'>www-svg@w3.org</a> with subject line “<code>[svg-markers] … <i>message topic</i> …</code>” (<a href="http://lists.w3.org/Archives/Public/www-svg/">archive</a>)</dd>
+    <dd><a href="mailto:www-nsvg@w3.org" class='url'>www-nsvg@w3.org</a> with subject line “<code>[nsvg-markers] … <i>message topic</i> …</code>” (<a href="http://lists.w3.org/Archives/Public/www-nsvg/">archive</a>)</dd>
     <dt class="top-editors">Editor:</dt>
     <dd>Cameron McCormack, Mozilla Corporation &lt;<a href="mailto:cam@mcc.id.au" class='url'>cam@mcc.id.au</a>&gt;</dd>
   </dl>
@@ -38,8 +38,8 @@
 
 <h2 id="abstract">Abstract</h2>
 
-<p>This specification defines SVG markers, a feature for placing re-usable
-graphical elements along the outline of an SVG shape.</p>
+<p>This specification defines NSVG markers, a feature for placing re-usable
+graphical elements along the outline of an NSVG shape.</p>
 
 <h2 id="status">Status of This Document</h2>
 
@@ -49,35 +49,35 @@ publications and the latest revision of this technical report can be found in
 the <a href="http://www.w3.org/TR/">W3C technical reports index</a> at http://www.w3.org/TR/</em>.</p>
 
 <p>This document is the <edit:date/> <strong><edit:maturity/></strong> of <edit:shorttitle/>.
-The purpose of this specification is to define a number of improved SVG marker
+The purpose of this specification is to define a number of improved NSVG marker
 features.</p>
 
 <p class="note">This specification is an early draft that largely contains
-features that were dropped during the development of SVG 2.
+features that were dropped during the development of NSVG 2.
 In the future, this specification will supercede the
-<a href="https://www.w3.org/TR/SVG2/painting.html#Markers">SVG 2 Markers definition</a>,
-however at this time the <a href="https://www.w3.org/TR/SVG2/painting.html#Markers">SVG 2 Markers definition</a>
+<a href="https://www.w3.org/TR/NSVG2/painting.html#Markers">NSVG 2 Markers definition</a>,
+however at this time the <a href="https://www.w3.org/TR/NSVG2/painting.html#Markers">NSVG 2 Markers definition</a>
 must be considered the normative definition.</p>
 
 <p>Comments on this <edit:maturity/> are welcome.
-Comments can be sent to <a href="mailto:www-svg@w3.org" class='url'>www-svg@w3.org</a>,
+Comments can be sent to <a href="mailto:www-nsvg@w3.org" class='url'>www-nsvg@w3.org</a>,
 the public email list for issues related to vector graphics on the Web. This list is
-<a href="http://lists.w3.org/Archives/Public/www-svg/">archived</a> and
+<a href="http://lists.w3.org/Archives/Public/www-nsvg/">archived</a> and
 senders must agree to have their message publicly archived from their
 first posting. To subscribe send an email to
-<a href="mailto:www-svg-request@w3.org" class='url'>www-svg-request@w3.org</a> with
+<a href="mailto:www-nsvg-request@w3.org" class='url'>www-nsvg-request@w3.org</a> with
 the word <code>subscribe</code> in the subject line.</p>
 
 <p>This document has been produced by the
-<a href="http://www.w3.org/Graphics/SVG/WG">W3C SVG Working Group</a> as part of
+<a href="http://www.w3.org/Graphics/NSVG/WG">W3C NSVG Working Group</a> as part of
 the <a href="http://www.w3.org/Graphics/Activity">Graphics Activity</a> within
 the <a href="http://www.w3.org/Interaction/">W3C Interaction Domain</a>. The
-goals of the W3C SVG Working Group are discussed in the
-<a href="https://www.w3.org/Graphics/SVG/svg-2019.html">W3C SVG Charter</a>.
-The W3C SVG Working Group maintains a public Web page,
-<a href="http://www.w3.org/Graphics/SVG/" class='url'>http://www.w3.org/Graphics/SVG/</a>,
+goals of the W3C NSVG Working Group are discussed in the
+<a href="https://www.w3.org/Graphics/NSVG/nsvg-2019.html">W3C NSVG Charter</a>.
+The W3C NSVG Working Group maintains a public Web page,
+<a href="http://www.w3.org/Graphics/NSVG/" class='url'>http://www.w3.org/Graphics/NSVG/</a>,
 that contains further background information. The authors of
-this document are the SVG Working Group participants.</p>
+this document are the NSVG Working Group participants.</p>
 
 <p>This document was produced by a group operating under the
 <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</a>.
@@ -103,13 +103,13 @@ may be updated, replaced, or obsoleted by other documents at any time.</p>
 <!--
 <h2 id="feedback" edit:toc="no">How to read this document and give feedback</h2>
 
-<p>This draft of SVG Integration introduces new normative prose for
-integrating the SVG language into other markup languages. One of
+<p>This draft of NSVG Integration introduces new normative prose for
+integrating the NSVG language into other markup languages. One of
 the goals is that this specification can be re-used more easily by
 other specifications that want to have well-defined interaction and
-interoperability with SVG. Future drafts of this specification may
-introduce syntax and markup for the SVG language that may not be
-backwards compatible with older SVG User Agents, and the use of this
+interoperability with NSVG. Future drafts of this specification may
+introduce syntax and markup for the NSVG language that may not be
+backwards compatible with older NSVG User Agents, and the use of this
 syntax should be accompanied by a fallback using the <a>'switch'</a>
 element.</p>
 -->
@@ -184,8 +184,8 @@ bottom to top:</p>
 <h3 id="placement">Module interactions</h3>
 
 <p>This module replaces and extends the definition of markers in
-SVG 2 (the "Markers" section in the "Painting: Filling, Stroking and Marker Symbols"
-chapter). <a href='#ref-SVG2'>[SVG2]</a></p>
+NSVG 2 (the "Markers" section in the "Painting: Filling, Stroking and Marker Symbols"
+chapter). <a href='#ref-NSVG2'>[NSVG2]</a></p>
 
 <h2 id="MarkerElement">The <span class="element-name">'marker'</span> element</h2>
 
@@ -265,7 +265,7 @@ be fitted according to the <a>'viewBox'</a> and <a>'preserveAspectRatio'</a>
 attributes.  A value of zero for either
 attribute results in nothing being rendered for the marker.  A negative value
 for either attribute is an error (see
-<a href="[SVG2]/implnote.html#ErrorProcessing">Error processing</a>).</p>
+<a href="[NSVG2]/implnote.html#ErrorProcessing">Error processing</a>).</p>
 
 </dd>
 <dt>
@@ -297,7 +297,7 @@ for either attribute is an error (see
     <p class="annotation">
       We will add top/center/bottom, left/center/right keywords to
       refX/refY on marker/symbol. Resolved at
-      <a href="http://www.w3.org/2014/08/26-svg-minutes.html#item07">London
+      <a href="http://www.w3.org/2014/08/26-nsvg-minutes.html#item07">London
       F2F</a>. Values inspired by
       <a href="http://www.w3.org/TR/css3-background/#the-background-position">'background-position'</a>.
     </p>
@@ -353,10 +353,10 @@ Values have the following meaning:</p>
     <ul>
       <li>the first path segment of the <em>following</em> subpath,
       if the following subpath does not begin with a
-      <a href="[SVG2]/paths.html#PathDataMovetoCommands">'moveto'</a> command, and</li>
+      <a href="[NSVG2]/paths.html#PathDataMovetoCommands">'moveto'</a> command, and</li>
       <li>the first path segment of the <em>current</em> subpath,
       if the following subpath does begin with a
-      <a href="[SVG2]/paths.html#PathDataMovetoCommands">'moveto'</a> command
+      <a href="[NSVG2]/paths.html#PathDataMovetoCommands">'moveto'</a> command
       or if there is no following subpath.</li>
     </ul>
   </dd>
@@ -434,7 +434,7 @@ an "in error" / "unsupported" value?</p>
   </tr>
   <tr>
     <td><dfn id="HrefAttribute">href</dfn></td>
-    <td>URL <a href="[SVG2]/types.html#attribute-url" class="syntax">[URL]</a></td>
+    <td>URL <a href="[NSVG2]/types.html#attribute-url" class="syntax">[URL]</a></td>
     <td>as&#160;if&#160;not&#160;specified</td>
     <td>yes</td>
   </tr>
@@ -482,7 +482,7 @@ attribute has the origin of the viewBox coincident with the origin
 of the viewport and the width/height of the viewBox the same as the
 width/height of the viewport.</p>
 
-<p>The <a href="[SVG2]/styling.html#UAStyleSheet">user agent style sheet</a> sets
+<p>The <a href="[NSVG2]/styling.html#UAStyleSheet">user agent style sheet</a> sets
 the <a>'overflow'</a> property for <a>'marker element'</a> elements to
 <span class="prop-value">hidden</span>, which causes a rectangular clipping
 path to be created at the bounds of marker's viewport.  Unless the
@@ -514,8 +514,8 @@ elements that are used as <a>positioned markers</a> can simultaneously be refere
 by the <a href='#TermMarkerProperties'>marker properties</a> to be used as
 <a>segment markers</a> and <a>repeating markers</a>.</p>
 
-<p><a href="[SVG2]/interact.html#EventAttributes">Event attributes</a> and
-<a href="[SVG2]/svgdom.html#EventListeners">event listeners</a> attached
+<p><a href="[NSVG2]/interact.html#EventAttributes">Event attributes</a> and
+<a href="[NSVG2]/nsvgdom.html#EventListeners">event listeners</a> attached
 to the contents of a <a>'marker element'</a> element are not processed;
 only the rendering aspects of <a>'marker element'</a> elements are
 processed.</p>
@@ -533,7 +533,7 @@ specified to render in that order?</p>
   place symbols at particular distances along a path.</p>
 
   <pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg"
+<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="600" height="200" viewBox="0 0 600 200">
 
    <defs>
@@ -559,11 +559,11 @@ specified to render in that order?</p>
              fill="none" stroke="black" stroke-width="2"/>
      </marker>
    </path>
-</svg>
+</nsvg>
 ]]></pre>
 
   <div class="figure">
-    <img class="bordered" src="images/markers-positioned.svg"
+    <img class="bordered" src="images/markers-positioned.nsvg"
          alt="Image showing the use of positioned markers."/>
     <p class="caption">Child <a>'marker element'</a> elements are used to position
     two square and two circular markers.  The cross marker is defined inline
@@ -597,7 +597,7 @@ specified to render in that order?</p>
   <dt><span class='prop-value'>&lt;url&gt;</span></dt>
   <dd>Indicates that the <a>'marker element'</a> element referenced
   by the <a>&lt;url&gt;</a> value will be used.
-  If the <a href="[SVG2]/linking.html#URLReference">URL reference</a> is not valid
+  If the <a href="[NSVG2]/linking.html#URLReference">URL reference</a> is not valid
   (e.g., it points to an object that is undefined or the object is not
   a <a>'marker element'</a> element), then the marker reference is also not
   valid.</dd>
@@ -698,10 +698,10 @@ refer to the first and last vertex of the entire path, not each subpath.</p>
   <p>The following example shows a triangular marker symbol used as a
   <a>vertex marker</a> to form an arrowhead at the end of two paths.</p>
 
-  <edit:includefile href='images/marker.svg'/>
+  <edit:includefile href='images/marker.nsvg'/>
 
   <div class="figure">
-    <img class="bordered" src="images/marker-rendering.svg"
+    <img class="bordered" src="images/marker-rendering.nsvg"
          alt="Image showing the use of an automatically oriented marker."/>
     <p class="caption">The triangle is placed at the end of the path and
     oriented automatically so that it points in the right direction.
@@ -780,7 +780,7 @@ are:</p>
   <a>segment markers</a> to construct a line graph.</p>
 
   <pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
+<nsvg xmlns="http://www.w3.org/2000/nsvg" width="400" height="200">
 
   <marker id="Circle" markerWidth="8" markerHeight="8" refX="4" refY="4"
           markerUnits="userSpaceOnUse">
@@ -803,11 +803,11 @@ are:</p>
   <polyline points="50,100 100,20 150,50 200,130 250,80 300,170 350,100"
             fill="none" stroke="deeppink" stroke-width="2"
             marker="url(#Circle)" marker-segment="url(#Cross)"/>
-</svg>
+</nsvg>
 ]]></pre>
 
   <div class="figure">
-    <img class="bordered" src="images/markers-segment.svg"
+    <img class="bordered" src="images/markers-segment.nsvg"
          alt="Image showing the use of segment markers."/>
     <p class="caption">Segment markers are used to place crosses at the center
     of each line segment in the line graph.</p>
@@ -907,7 +907,7 @@ at its position.</p>
   path.</p>
 
   <pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="200">
+<nsvg xmlns="http://www.w3.org/2000/nsvg" width="600" height="200">
 
   <marker id="DoubleDash" markerWidth="8" markerHeight="12" refX="0" refY="0"
           viewBox="-4 -6 8 12" markerUnits="userSpaceOnUse" orient="auto">
@@ -923,11 +923,11 @@ at its position.</p>
                       350,136 400,87 450,166 500,87 550,96"
         stroke="deeppink" stroke-width="2" fill="none"
         marker-pattern="40 url(#DoubleDash) 40 url(#SingleDash)"/>
-</svg>
+</nsvg>
 ]]></pre>
 
   <div class="figure">
-    <img class="bordered" src="images/markers-repeating.svg"
+    <img class="bordered" src="images/markers-repeating.nsvg"
          alt="Image showing the use of repeating markers."/>
     <p class="caption">Markers specified with the <a>'marker-pattern'</a> property
     are placed along the path at fixed distances, not relative to the path
@@ -1256,7 +1256,7 @@ both properties would obviously cause an intersection, and so would not
 be allowed.</p>
 
 <div class="figure">
-  <img class="bordered" src="images/knockout-shapes.svg" style="max-width: none"
+  <img class="bordered" src="images/knockout-shapes.nsvg" style="max-width: none"
        alt="Image showing various marker knockout shapes."/>
   <p class="caption">An illustration of the use of inverted and non-inverted circle,
   rectangle and triangle knockout shapes, at both 0px and 10px offsets.
@@ -1294,17 +1294,17 @@ be allowed.</p>
     <p class="issue" data-issue="2">This needs to reference a definition for how
     directionality of a given start/mid/end vertex is calculated.
     Part of that (which should be moved somewhere more appropriate) is in
-    the <a href="[SVG2]/paths.html#PathElementImplementationNotes">path element implementation notes</a>.
-    Some wording from SVG 1.1 appears to have been lost, compare with <a href="http://www.w3.org/TR/SVG11/painting.html#OrientAttribute">this</a>.
+    the <a href="[NSVG2]/paths.html#PathElementImplementationNotes">path element implementation notes</a>.
+    Some wording from NSVG 1.1 appears to have been lost, compare with <a href="http://www.w3.org/TR/NSVG11/painting.html#OrientAttribute">this</a>.
 	<br/><br/>
     Here's an example that is a bit unclear currently:
     <code style="white-space:pre">
-&lt;svg>
+&lt;nsvg>
   &lt;marker id="m" orient="auto" overflow="visible">
     &lt;rect x="-1" y="-0.5" width="1" height="1" fill="green"/>
   &lt;/marker>
   &lt;path d="M50,0C50,50 50,100 50,100" marker-end="url(#m)" stroke-width="100" stroke="red"/>
-&lt;/svg>
+&lt;/nsvg>
 	</code>
 	<br/>
 	The second control point and the endpoint coincide, should this mean that the direction of the endpoint is a) <em>unknown [aka default to 0 degrees]</em> or
@@ -1346,9 +1346,9 @@ correctly, as follows:</p>
 <p>The rendering effect of a marker is as if the contents of the
 referenced <a>'marker element'</a> element were deeply cloned
 into a separate non-exposed DOM tree for each instance of the
-marker. Because the cloned DOM tree is non-exposed, the SVG DOM
+marker. Because the cloned DOM tree is non-exposed, the NSVG DOM
 does not show the cloned instance of the marker.</p> <p>For user
-agents that support <a href="[SVG2]/styling.html">Styling
+agents that support <a href="[NSVG2]/styling.html">Styling
 with CSS</a>, the conceptual deep cloning of the referenced
 <a>'marker element'</a> element into a non-exposed DOM tree also
 copies any property values resulting from
@@ -1363,9 +1363,9 @@ contents are not part of the formal document structure.</p>
 
 <pre>
 &lt;?xml version="1.0" standalone="no"?&gt;
-&lt;svg width="4in" height="2in"
+&lt;nsvg width="4in" height="2in"
      viewBox="0 0 4000 2000"
-     xmlns="http://www.w3.org/2000/svg"&gt;
+     xmlns="http://www.w3.org/2000/nsvg"&gt;
   &lt;defs&gt;
     &lt;marker id="Triangle"
       viewBox="0 0 10 10" refX="0" refY="5"
@@ -1382,7 +1382,7 @@ contents are not part of the formal document structure.</p>
   &lt;path d="M 1000 750 L 2000 750 L 2500 1250"
         fill="none" stroke="black" stroke-width="100"
         marker-end="url(#Triangle)"  /&gt;
-&lt;/svg&gt;
+&lt;/nsvg&gt;
 </pre>
 
 <p>The rendering effect of the above file will be visually identical to
@@ -1390,9 +1390,9 @@ the following:</p>
 
 <pre>
 &lt;?xml version="1.0" standalone="no"?&gt;
-&lt;svg width="4in" height="2in"
+&lt;nsvg width="4in" height="2in"
      viewBox="0 0 4000 2000"
-     xmlns="http://www.w3.org/2000/svg"&gt;
+     xmlns="http://www.w3.org/2000/nsvg"&gt;
   &lt;desc&gt;File which produces the same effect
       as the marker example file, but without
       using markers.
@@ -1457,45 +1457,45 @@ the following:</p>
       <strong>&lt;/g&gt;</strong>
     <strong>&lt;/g&gt;</strong>
   <strong>&lt;/g&gt;</strong>
-&lt;/svg&gt;
+&lt;/nsvg&gt;
 </pre>
-<p class="view-as-svg"><a href="images/marker-simulated.svg">View this example as SVG (SVG-enabled browsers only)</a></p>
+<p class="view-as-nsvg"><a href="images/marker-simulated.nsvg">View this example as NSVG (NSVG-enabled browsers only)</a></p>
 
 </edit:with>
 
 
 <h2 id="idl">IDL</h2>
 
-<h3 id="InterfaceSVGMarkableElement" data-dfn-type="interface" data-lt="SVGMarkableElement">Mixin SVGMarkableElement</h3>
+<h3 id="InterfaceNSVGMarkableElement" data-dfn-type="interface" data-lt="NSVGMarkableElement">Mixin NSVGMarkableElement</h3>
 
-<p>The <a>SVGMarkableElement</a> interface is implemented on all
+<p>The <a>NSVGMarkableElement</a> interface is implemented on all
 <a>shape</a> elements, and provides access to the markers that are placed on
 the element's path.</p>
 
-<pre class="idl">interface mixin <b>SVGMarkableElement</b> {
-  readonly attribute <a>SVGMarkerList</a> <a href="#__svg__SVGMarkableElement__markers">markers</a>;
+<pre class="idl">interface mixin <b>NSVGMarkableElement</b> {
+  readonly attribute <a>NSVGMarkerList</a> <a href="#__nsvg__NSVGMarkableElement__markers">markers</a>;
 
-  long <a href="#__svg__SVGMarkableElement__getMarkerIndexFromPoint">getMarkerIndexFromPoint</a>(<a>DOMPoint</a> point);
+  long <a href="#__nsvg__NSVGMarkableElement__getMarkerIndexFromPoint">getMarkerIndexFromPoint</a>(<a>DOMPoint</a> point);
 };
 
-<a>SVGLineElement</a> includes <a>SVGMarkableElement</a>;
-<a>SVGPathElement</a> includes <a>SVGMarkableElement</a>;
-<a>SVGPolygonElement</a> includes <a>SVGMarkableElement</a>;
-<a>SVGPolylineElement</a> includes <a>SVGMarkableElement</a>;</pre>
+<a>NSVGLineElement</a> includes <a>NSVGMarkableElement</a>;
+<a>NSVGPathElement</a> includes <a>NSVGMarkableElement</a>;
+<a>NSVGPolygonElement</a> includes <a>NSVGMarkableElement</a>;
+<a>NSVGPolylineElement</a> includes <a>NSVGMarkableElement</a>;</pre>
 
 <dl class="interface">
   <dt class="attributes-header">Attributes:</dt>
   <dd>
     <dl class="attributes">
-      <dt id="__svg__SVGMarkableElement__markers" class="attribute first-child"><b>markers</b><span class="idl-type-parenthetical"> (readonly <a>SVGMarkerList</a>)</span></dt>
+      <dt id="__nsvg__NSVGMarkableElement__markers" class="attribute first-child"><b>markers</b><span class="idl-type-parenthetical"> (readonly <a>NSVGMarkerList</a>)</span></dt>
       <dd class="attribute">The list of markers on this element.</dd>
     </dl>
   </dd>
   <dt class="operations-header">Operations:</dt>
   <dd>
     <dl class="attributes">
-      <dt id="__svg__SVGMarkableElement__getMarkerIndexFromPoint" class="operation first-child">long <b>getMarkerIndexFromPoint</b>(<a>DOMPoint</a> point)</dt>
-      <dd class="operation">Returns the index into the <a>SVGMarkerList</a> of the marker that is at
+      <dt id="__nsvg__NSVGMarkableElement__getMarkerIndexFromPoint" class="operation first-child">long <b>getMarkerIndexFromPoint</b>(<a>DOMPoint</a> point)</dt>
+      <dd class="operation">Returns the index into the <a>NSVGMarkerList</a> of the marker that is at
       the specified point.  Normal hit testing rules apply; the value of the
       <a>'pointer-events'</a> property on the elements that comprise the markers,
       as well as its value on this element, is honored, and the top-most marker
@@ -1514,7 +1514,7 @@ the element's path.</p>
             </ol>
           </dd>
           <dt class="returns-header">Returns</dt>
-          <dd>The index into this element's <a>SVGMarkerList</a> of the marker
+          <dd>The index into this element's <a>NSVGMarkerList</a> of the marker
           at the given point, or -1 if there is no such marker.</dd>
         </dl>
       </dd>
@@ -1522,56 +1522,56 @@ the element's path.</p>
   </dd>
 </dl>
 
-<h3 id="InterfaceSVGMarkerElement">Interface SVGMarkerElement</h3>
+<h3 id="InterfaceNSVGMarkerElement">Interface NSVGMarkerElement</h3>
 
 <edit:with element="marker">
 
-The <a>SVGMarkerElement</a> interface corresponds to the
+The <a>NSVGMarkerElement</a> interface corresponds to the
 <a>'marker element'</a> element.
 
-<pre class="idl">interface <b>SVGMarkerElement</b> : <a>SVGElement</a> {
+<pre class="idl">interface <b>NSVGMarkerElement</b> : <a>NSVGElement</a> {
 
   // Marker Unit Types
-  const unsigned short <a href="#__svg__SVGMarkerElement__SVG_MARKERUNITS_UNKNOWN">SVG_MARKERUNITS_UNKNOWN</a> = 0;
-  const unsigned short <a href="#__svg__SVGMarkerElement__SVG_MARKERUNITS_USERSPACEONUSE">SVG_MARKERUNITS_USERSPACEONUSE</a> = 1;
-  const unsigned short <a href="#__svg__SVGMarkerElement__SVG_MARKERUNITS_STROKEWIDTH">SVG_MARKERUNITS_STROKEWIDTH</a> = 2;
+  const unsigned short <a href="#__nsvg__NSVGMarkerElement__NSVG_MARKERUNITS_UNKNOWN">NSVG_MARKERUNITS_UNKNOWN</a> = 0;
+  const unsigned short <a href="#__nsvg__NSVGMarkerElement__NSVG_MARKERUNITS_USERSPACEONUSE">NSVG_MARKERUNITS_USERSPACEONUSE</a> = 1;
+  const unsigned short <a href="#__nsvg__NSVGMarkerElement__NSVG_MARKERUNITS_STROKEWIDTH">NSVG_MARKERUNITS_STROKEWIDTH</a> = 2;
 
   // Marker Orientation Types
-  const unsigned short <a href="#__svg__SVGMarkerElement__SVG_MARKER_ORIENT_UNKNOWN">SVG_MARKER_ORIENT_UNKNOWN</a> = 0;
-  const unsigned short <a href="#__svg__SVGMarkerElement__SVG_MARKER_ORIENT_AUTO">SVG_MARKER_ORIENT_AUTO</a> = 1;
-  const unsigned short <a href="#__svg__SVGMarkerElement__SVG_MARKER_ORIENT_ANGLE">SVG_MARKER_ORIENT_ANGLE</a> = 2;
+  const unsigned short <a href="#__nsvg__NSVGMarkerElement__NSVG_MARKER_ORIENT_UNKNOWN">NSVG_MARKER_ORIENT_UNKNOWN</a> = 0;
+  const unsigned short <a href="#__nsvg__NSVGMarkerElement__NSVG_MARKER_ORIENT_AUTO">NSVG_MARKER_ORIENT_AUTO</a> = 1;
+  const unsigned short <a href="#__nsvg__NSVGMarkerElement__NSVG_MARKER_ORIENT_ANGLE">NSVG_MARKER_ORIENT_ANGLE</a> = 2;
 
-  readonly attribute <a>SVGAnimatedLength</a> <a href="#__svg__SVGMarkerElement__refX">refX</a>;
-  readonly attribute <a>SVGAnimatedLength</a> <a href="#__svg__SVGMarkerElement__refY">refY</a>;
-  readonly attribute <a>SVGAnimatedEnumeration</a> <a href="#__svg__SVGMarkerElement__markerUnits">markerUnits</a>;
-  readonly attribute <a>SVGAnimatedLength</a> <a href="#__svg__SVGMarkerElement__markerWidth">markerWidth</a>;
-  readonly attribute <a>SVGAnimatedLength</a> <a href="#__svg__SVGMarkerElement__markerHeight">markerHeight</a>;
-  readonly attribute <a>SVGAnimatedEnumeration</a> <a href="#__svg__SVGMarkerElement__orientType">orientType</a>;
-  readonly attribute <a>SVGAnimatedAngle</a> <a href="#__svg__SVGMarkerElement__orientAngle">orientAngle</a>;
-           attribute DOMString <a href="#__svg__SVGMarkerElement__orient">orient</a>;
+  readonly attribute <a>NSVGAnimatedLength</a> <a href="#__nsvg__NSVGMarkerElement__refX">refX</a>;
+  readonly attribute <a>NSVGAnimatedLength</a> <a href="#__nsvg__NSVGMarkerElement__refY">refY</a>;
+  readonly attribute <a>NSVGAnimatedEnumeration</a> <a href="#__nsvg__NSVGMarkerElement__markerUnits">markerUnits</a>;
+  readonly attribute <a>NSVGAnimatedLength</a> <a href="#__nsvg__NSVGMarkerElement__markerWidth">markerWidth</a>;
+  readonly attribute <a>NSVGAnimatedLength</a> <a href="#__nsvg__NSVGMarkerElement__markerHeight">markerHeight</a>;
+  readonly attribute <a>NSVGAnimatedEnumeration</a> <a href="#__nsvg__NSVGMarkerElement__orientType">orientType</a>;
+  readonly attribute <a>NSVGAnimatedAngle</a> <a href="#__nsvg__NSVGMarkerElement__orientAngle">orientAngle</a>;
+           attribute DOMString <a href="#__nsvg__NSVGMarkerElement__orient">orient</a>;
 
-  undefined <a href="#__svg__SVGMarkerElement__setOrientToAuto">setOrientToAuto</a>();
-  undefined <a href="#__svg__SVGMarkerElement__setOrientToAngle">setOrientToAngle</a>(<a>SVGAngle</a> angle);
+  undefined <a href="#__nsvg__NSVGMarkerElement__setOrientToAuto">setOrientToAuto</a>();
+  undefined <a href="#__nsvg__NSVGMarkerElement__setOrientToAngle">setOrientToAngle</a>(<a>NSVGAngle</a> angle);
 };
 
-<a>SVGMarkerElement</a> includes <a>SVGFitToViewBox</a>;</pre>
+<a>NSVGMarkerElement</a> includes <a>NSVGFitToViewBox</a>;</pre>
 
 <dl class="interface">
   <dt class="constants-header">Constants in group “Marker Unit Types”:</dt>
   <dd>
     <dl class="constants">
-      <dt id="__svg__SVGMarkerElement__SVG_MARKERUNITS_UNKNOWN" class="constant first-child"><b>SVG_MARKERUNITS_UNKNOWN</b><span class="idl-type-parenthetical"> (unsigned short)</span></dt>
+      <dt id="__nsvg__NSVGMarkerElement__NSVG_MARKERUNITS_UNKNOWN" class="constant first-child"><b>NSVG_MARKERUNITS_UNKNOWN</b><span class="idl-type-parenthetical"> (unsigned short)</span></dt>
       <dd class="constant">
         <div>The marker unit type is not one of othe other predefined types. It is invalid to
         attempt to define a new value of this type or to attempt to switch an
         existing value to this type.</div>
       </dd>
-      <dt id="__svg__SVGMarkerElement__SVG_MARKERUNITS_USERSPACEONUSE" class="constant"><b>SVG_MARKERUNITS_USERSPACEONUSE</b><span class="idl-type-parenthetical"> (unsigned short)</span></dt>
+      <dt id="__nsvg__NSVGMarkerElement__NSVG_MARKERUNITS_USERSPACEONUSE" class="constant"><b>NSVG_MARKERUNITS_USERSPACEONUSE</b><span class="idl-type-parenthetical"> (unsigned short)</span></dt>
       <dd class="constant">
         <div>The value of attribute <a>'markerUnits'</a> is
         <span class="attr-value">'userSpaceOnUse'</span>.</div>
       </dd>
-      <dt id="__svg__SVGMarkerElement__SVG_MARKERUNITS_STROKEWIDTH" class="constant"><b>SVG_MARKERUNITS_STROKEWIDTH</b><span class="idl-type-parenthetical"> (unsigned short)</span></dt>
+      <dt id="__nsvg__NSVGMarkerElement__NSVG_MARKERUNITS_STROKEWIDTH" class="constant"><b>NSVG_MARKERUNITS_STROKEWIDTH</b><span class="idl-type-parenthetical"> (unsigned short)</span></dt>
       <dd class="constant">
         <div>The value of attribute <a>'markerUnits'</a> is
         <span class="attr-value">'strokeWidth'</span>.</div>
@@ -1581,19 +1581,19 @@ The <a>SVGMarkerElement</a> interface corresponds to the
   <dt class="constants-header">Constants in group “Marker Orientation Types”:</dt>
   <dd>
     <dl class="constants">
-      <dt id="__svg__SVGMarkerElement__SVG_MARKER_ORIENT_UNKNOWN" class="constant first-child"><b>SVG_MARKER_ORIENT_UNKNOWN</b><span class="idl-type-parenthetical"> (unsigned short)</span></dt>
+      <dt id="__nsvg__NSVGMarkerElement__NSVG_MARKER_ORIENT_UNKNOWN" class="constant first-child"><b>NSVG_MARKER_ORIENT_UNKNOWN</b><span class="idl-type-parenthetical"> (unsigned short)</span></dt>
       <dd class="constant">
         <div>The marker orientation is <span class="attr-value">'auto-start-rotate'</span> or
         is not one of the predefined types. It is invalid to
         attempt to define a new value of this type or to attempt to switch an
         existing value to this type.</div>
       </dd>
-      <dt id="__svg__SVGMarkerElement__SVG_MARKER_ORIENT_AUTO" class="constant"><b>SVG_MARKER_ORIENT_AUTO</b><span class="idl-type-parenthetical"> (unsigned short)</span></dt>
+      <dt id="__nsvg__NSVGMarkerElement__NSVG_MARKER_ORIENT_AUTO" class="constant"><b>NSVG_MARKER_ORIENT_AUTO</b><span class="idl-type-parenthetical"> (unsigned short)</span></dt>
       <dd class="constant">
         <div>Attribute <a>'orient'</a> has value
         <span class="attr-value">'auto'</span>.</div>
       </dd>
-      <dt id="__svg__SVGMarkerElement__SVG_MARKER_ORIENT_ANGLE" class="constant"><b>SVG_MARKER_ORIENT_ANGLE</b><span class="idl-type-parenthetical"> (unsigned short)</span></dt>
+      <dt id="__nsvg__NSVGMarkerElement__NSVG_MARKER_ORIENT_ANGLE" class="constant"><b>NSVG_MARKER_ORIENT_ANGLE</b><span class="idl-type-parenthetical"> (unsigned short)</span></dt>
       <dd class="constant">
         <div>Attribute <a>'orient'</a> has an angle value.</div>
       </dd>
@@ -1602,50 +1602,50 @@ The <a>SVGMarkerElement</a> interface corresponds to the
   <dt class="attributes-header">Attributes:</dt>
   <dd>
     <dl class="attributes">
-      <dt id="__svg__SVGMarkerElement__refX" class="attribute first-child"><b>refX</b><span class="idl-type-parenthetical"> (readonly <a>SVGAnimatedLength</a>)</span></dt>
+      <dt id="__nsvg__NSVGMarkerElement__refX" class="attribute first-child"><b>refX</b><span class="idl-type-parenthetical"> (readonly <a>NSVGAnimatedLength</a>)</span></dt>
       <dd class="attribute">
         <div>Corresponds to attribute <a>'refX'</a> on the given
         <a>'marker element'</a> element.</div>
       </dd>
-      <dt id="__svg__SVGMarkerElement__refY" class="attribute"><b>refY</b><span class="idl-type-parenthetical"> (readonly <a>SVGAnimatedLength</a>)</span></dt>
+      <dt id="__nsvg__NSVGMarkerElement__refY" class="attribute"><b>refY</b><span class="idl-type-parenthetical"> (readonly <a>NSVGAnimatedLength</a>)</span></dt>
       <dd class="attribute">
         <div>Corresponds to attribute <a>'refY'</a> on the given
         <a>'marker element'</a> element.</div>
       </dd>
-      <dt id="__svg__SVGMarkerElement__markerUnits" class="attribute"><b>markerUnits</b><span class="idl-type-parenthetical"> (readonly <a>SVGAnimatedEnumeration</a>)</span></dt>
+      <dt id="__nsvg__NSVGMarkerElement__markerUnits" class="attribute"><b>markerUnits</b><span class="idl-type-parenthetical"> (readonly <a>NSVGAnimatedEnumeration</a>)</span></dt>
       <dd class="attribute">
         <div>Corresponds to attribute <a>'markerUnits'</a> on the given
         <a>'marker element'</a> element.  One of the Marker Unit Types
         defined on this interface.</div>
       </dd>
-      <dt id="__svg__SVGMarkerElement__markerWidth" class="attribute"><b>markerWidth</b><span class="idl-type-parenthetical"> (readonly <a>SVGAnimatedLength</a>)</span></dt>
+      <dt id="__nsvg__NSVGMarkerElement__markerWidth" class="attribute"><b>markerWidth</b><span class="idl-type-parenthetical"> (readonly <a>NSVGAnimatedLength</a>)</span></dt>
       <dd class="attribute">
         <div>Corresponds to attribute <a>'markerWidth'</a> on the given
         <a>'marker element'</a> element.</div>
       </dd>
-      <dt id="__svg__SVGMarkerElement__markerHeight" class="attribute"><b>markerHeight</b><span class="idl-type-parenthetical"> (readonly <a>SVGAnimatedLength</a>)</span></dt>
+      <dt id="__nsvg__NSVGMarkerElement__markerHeight" class="attribute"><b>markerHeight</b><span class="idl-type-parenthetical"> (readonly <a>NSVGAnimatedLength</a>)</span></dt>
       <dd class="attribute">
         <div>Corresponds to attribute <a>'markerHeight'</a> on the given
         <a>'marker element'</a> element.</div>
       </dd>
-      <dt id="__svg__SVGMarkerElement__orientType" class="attribute"><b>orientType</b><span class="idl-type-parenthetical"> (readonly <a>SVGAnimatedEnumeration</a>)</span></dt>
+      <dt id="__nsvg__NSVGMarkerElement__orientType" class="attribute"><b>orientType</b><span class="idl-type-parenthetical"> (readonly <a>NSVGAnimatedEnumeration</a>)</span></dt>
       <dd class="attribute">
         <div>Corresponds to attribute <a>'orient'</a> on the given
         <a>'marker element'</a> element.  One of the Marker Orientation
         Types defined on this interface.  If the <a>'orient'</a>
         attribute is set to <span class="attr-value">'auto-start-rotate'</span>,
-        then the value of orientType is SVG_MARKER_ORIENT_UNKNOWN.</div>
+        then the value of orientType is NSVG_MARKER_ORIENT_UNKNOWN.</div>
       </dd>
-      <dt id="__svg__SVGMarkerElement__orientAngle" class="attribute"><b>orientAngle</b><span class="idl-type-parenthetical"> (readonly <a>SVGAnimatedAngle</a>)</span></dt>
+      <dt id="__nsvg__NSVGMarkerElement__orientAngle" class="attribute"><b>orientAngle</b><span class="idl-type-parenthetical"> (readonly <a>NSVGAnimatedAngle</a>)</span></dt>
       <dd class="attribute">
         <div>Corresponds to attribute <a>'orient'</a> on the given
         <a>'marker element'</a> element.  If <a>markerUnits</a> is
-        SVG_MARKER_ORIENT_ANGLE, the angle value for attribute <a>'orient'</a>;
+        NSVG_MARKER_ORIENT_ANGLE, the angle value for attribute <a>'orient'</a>;
         otherwise, it will be set to zero.</div>
       </dd>
     </dl>
     <dl class="attributes">
-      <dt id="__svg__SVGMarkerElement__orient" class="attribute"><b>orient</b><span class="idl-type-parenthetical"> (DOMString)</span></dt>
+      <dt id="__nsvg__NSVGMarkerElement__orient" class="attribute"><b>orient</b><span class="idl-type-parenthetical"> (DOMString)</span></dt>
       <dd class="attribute">
         <div>Corresponds to attribute <a>'orient'</a> on the
         given <a>'marker element'</a> element.  This attribute
@@ -1657,12 +1657,12 @@ The <a>SVGMarkerElement</a> interface corresponds to the
   <dt class="operations-header">Operations:</dt>
   <dd>
     <dl class="attributes">
-      <dt id="__svg__SVGMarkerElement__setOrientToAuto" class="operation first-child">undefined <b>setOrientToAuto</b>()</dt>
+      <dt id="__nsvg__NSVGMarkerElement__setOrientToAuto" class="operation first-child">undefined <b>setOrientToAuto</b>()</dt>
       <dd class="operation">
         <div>Sets the value of attribute <a>'orient'</a> to
         <span class="attr-value">'auto'</span>.</div>
       </dd>
-      <dt id="__svg__SVGMarkerElement__setOrientToAngle" class="operation">undefined <b>setOrientToAngle</b>(<a>SVGAngle</a> <var>angle</var>)</dt>
+      <dt id="__nsvg__NSVGMarkerElement__setOrientToAngle" class="operation">undefined <b>setOrientToAngle</b>(<a>NSVGAngle</a> <var>angle</var>)</dt>
       <dd class="operation">
         <div>Sets the value of attribute <a>'orient'</a> to the given angle.</div>
         <dl class="operation">
@@ -1670,7 +1670,7 @@ The <a>SVGMarkerElement</a> interface corresponds to the
           <dd>
             <ol class="parameters">
               <li class="parameter first-child">
-                <div><a>SVGAngle</a> <var>angle</var></div>
+                <div><a>NSVGAngle</a> <var>angle</var></div>
                 <div>The angle value to use for attribute <a>'orient'</a>.</div>
               </li>
             </ol>
@@ -1681,18 +1681,18 @@ The <a>SVGMarkerElement</a> interface corresponds to the
   </dd>
 </dl>
 
-<h3 id="InterfaceSVGMarkerInstance">Interface SVGMarkerInstance</h3>
+<h3 id="InterfaceNSVGMarkerInstance">Interface NSVGMarkerInstance</h3>
 
-<p>The <a>SVGMarkerInstance</a> interface is used to represent an instance
-of a marker that is on a <a>shape</a>.  An <a>SVGMarkerInstance</a>
+<p>The <a>NSVGMarkerInstance</a> interface is used to represent an instance
+of a marker that is on a <a>shape</a>.  An <a>NSVGMarkerInstance</a>
 can represent any kind of marker, including <a>positioned markers</a>.</p>
 <p class="issue" data-issue="11">What should we do about liveness?  If it is live, we
 could have it know what index it is for, and always return information
 about the marker at that index (and return null for the element if
 that index is no longer valid).</p>
 
-<pre class="idl">interface <b>SVGMarkerInstance</b> {
-  readonly attribute <a>SVGMarkerElement</a> element;
+<pre class="idl">interface <b>NSVGMarkerInstance</b> {
+  readonly attribute <a>NSVGMarkerElement</a> element;
   readonly attribute float position;
   readonly attribute <a>DOMPointReadOnly</a> point;
   readonly attribute float angle;
@@ -1702,21 +1702,21 @@ that index is no longer valid).</p>
   <dt class="attributes-header">Attributes:</dt>
   <dd>
     <dl class="attributes">
-      <dt id="__svg__SVGMarkerInstance__element" class="attribute first-child"><b>element</b><span class="idl-type-parenthetical"> (readonly <a>SVGMarkerElement</a>)</span></dt>
+      <dt id="__nsvg__NSVGMarkerInstance__element" class="attribute first-child"><b>element</b><span class="idl-type-parenthetical"> (readonly <a>NSVGMarkerElement</a>)</span></dt>
       <dd class="attribute">The <a>'marker element'</a> element that defines
       the marker.  If the marker is a <a>vertex marker</a>, <a>segment marker</a>
       or <a>repeating marker</a>, then this will be the <a>'marker element'</a>
       element that the relevant marker property referenced.  If the marker is
       a <a>positioned marker</a>, then this will be the child <a>'marker element'</a>
       element of the <a>shape</a>.</dd>
-      <dt id="__svg__SVGMarkerInstance__position" class="attribute"><b>position</b><span class="idl-type-parenthetical"> (readonly float)</span></dt>
+      <dt id="__nsvg__NSVGMarkerInstance__position" class="attribute"><b>position</b><span class="idl-type-parenthetical"> (readonly float)</span></dt>
       <dd class="attribute">The distance along the <a>equivalent path</a> of the
       <a>shape</a> that the marker is positioned at.</dd>
-      <dt id="__svg__SVGMarkerInstance__point" class="attribute"><b>point</b><span class="idl-type-parenthetical"> (readonly <a>DOMPointReadOnly</a>)</span></dt>
+      <dt id="__nsvg__NSVGMarkerInstance__point" class="attribute"><b>point</b><span class="idl-type-parenthetical"> (readonly <a>DOMPointReadOnly</a>)</span></dt>
       <dd class="attribute">The point, in the local coordinate system of the
       <a>shape</a>, that the marker is positioned at.
       The <a>DOMPointReadOnly</a> object is read only.</dd>
-      <dt id="__svg__SVGMarkerInstance__angle" class="attribute"><b>angle</b><span class="idl-type-parenthetical"> (readonly float)</span></dt>
+      <dt id="__nsvg__NSVGMarkerInstance__angle" class="attribute"><b>angle</b><span class="idl-type-parenthetical"> (readonly float)</span></dt>
       <dd class="attribute">The orientation of the marker relative to a
       vector pointing in the direction of the positive y-axis of the
       <a>shape</a>'s local coordinate system.</dd>
@@ -1724,35 +1724,35 @@ that index is no longer valid).</p>
   </dd>
 </dl>
 
-<h3 id="InterfaceSVGMarkerList">Interface SVGMarkerList</h3>
+<h3 id="InterfaceNSVGMarkerList">Interface NSVGMarkerList</h3>
 
-<p>The <a>SVGMarkerList</a> interface is used to expose the list of markers that
+<p>The <a>NSVGMarkerList</a> interface is used to expose the list of markers that
 are painted on a given <a>shape</a>.  This list includes all
 <a>vertex markers</a>, <a>segment markers</a>, <a>repeating markers</a> and
-<a>positioned markers</a>.  The list of <a>SVGMarkerInstance</a> objects
+<a>positioned markers</a>.  The list of <a>NSVGMarkerInstance</a> objects
 is maintained in the order that the markers are painted.</p>
 <p>The <a href="http://heycam.github.io/webidl/#dfn-supported-property-indices">supported property indices</a>
-of an <a>SVGMarkerList</a> object is all non-negative integers less than
+of an <a>NSVGMarkerList</a> object is all non-negative integers less than
 the length of the list.</p>
 
-<pre class="idl">interface <b>SVGMarkerList</b> {
-  readonly attribute unsigned long <a href="#__svg__SVGMarkerList__length">length</a>;
-  getter <a>SVGMarkerInstance</a>? <a href="#__svg__SVGMarkerList__item">item</a>(unsigned long index);
+<pre class="idl">interface <b>NSVGMarkerList</b> {
+  readonly attribute unsigned long <a href="#__nsvg__NSVGMarkerList__length">length</a>;
+  getter <a>NSVGMarkerInstance</a>? <a href="#__nsvg__NSVGMarkerList__item">item</a>(unsigned long index);
 };</pre>
 
 <dl class="interface">
   <dt class="attributes-header">Attributes:</dt>
   <dd>
     <dl class="attributes">
-      <dt id="__svg__SVGMarkerList__length" class="attribute first-child"><b>length</b><span class="idl-type-parenthetical"> (readonly unsigned long)</span></dt>
+      <dt id="__nsvg__NSVGMarkerList__length" class="attribute first-child"><b>length</b><span class="idl-type-parenthetical"> (readonly unsigned long)</span></dt>
       <dd class="attribute">The number of markers on this element.</dd>
     </dl>
   </dd>
   <dt class="operations-header">Operations:</dt>
   <dd>
     <dl class="attributes">
-      <dt id="__svg__SVGMarkerList__item" class="operation first-child"><a>SVGMarkerInstance</a>? <b>item</b>(unsigned long <var>index</var>)</dt>
-      <dd class="operation">Gets the <a>SVGMarkerInstance</a> at the given position in the
+      <dt id="__nsvg__NSVGMarkerList__item" class="operation first-child"><a>NSVGMarkerInstance</a>? <b>item</b>(unsigned long <var>index</var>)</dt>
+      <dd class="operation">Gets the <a>NSVGMarkerInstance</a> at the given position in the
       list of markers on this element.
         <dl class="operation">
           <dt class="parameters-header">Parameters</dt>
@@ -1760,12 +1760,12 @@ the length of the list.</p>
             <ol class="parameters">
               <li class="parameter first-child">
                 <div>unsigned long <var>index</var></div>
-                <div>The index of the <a>SVGMarkerInstance</a> to return.</div>
+                <div>The index of the <a>NSVGMarkerInstance</a> to return.</div>
               </li>
             </ol>
           </dd>
           <dt class="returns-header">Returns</dt>
-          <dd>Returns the <a>SVGMarkerInstance</a> at position <var>index</var>
+          <dd>Returns the <a>NSVGMarkerInstance</a> at position <var>index</var>
           in the list of markers on this element, or null if <var>index</var>
           is out of range.</dd>
         </dl>
@@ -1788,20 +1788,20 @@ the length of the list.</p>
   <br />Available at http://tools.ietf.org/html/rfc2119.</dd>
 
 <!--
-  <dt id="ref-SVG11"><strong class="normref">[SVG11]</strong></dt>
-  <dd><cite class="w3crec"><a href="http://www.w3.org/TR/2003/REC-SVG11-20030114/">Scalable Vector Graphics (SVG) 1.1</a></cite>,
+  <dt id="ref-NSVG11"><strong class="normref">[NSVG11]</strong></dt>
+  <dd><cite class="w3crec"><a href="http://www.w3.org/TR/2003/REC-NSVG11-20030114/">Not Scalable Vector Graphics (NSVG) 1.1</a></cite>,
   J. Ferraiolo, <span class="ruby"><span class="rb">&#x85E4;&#x6CA2; &#x6DF3;</span><span class="rp">(</span><span class="rt"><span class="familyname">Fujisawa</span> Jun</span><span class="rp">)</span></span>, D. Jackson, eds.
   World Wide Web Consortium, 14 January 2003.
-  <br />This edition of SVG 1.1 is http://www.w3.org/TR/2003/REC-SVG11-20030114/.
-  <br />The <a href="http://www.w3.org/TR/SVG11/">latest edition of SVG 1.1</a> is available at http://www.w3.org/TR/SVG11/.</dd>
+  <br />This edition of NSVG 1.1 is http://www.w3.org/TR/2003/REC-NSVG11-20030114/.
+  <br />The <a href="http://www.w3.org/TR/NSVG11/">latest edition of NSVG 1.1</a> is available at http://www.w3.org/TR/NSVG11/.</dd>
 -->
 
-  <dt id="ref-SVG2"><strong class="normref">[SVG2]</strong></dt>
-  <dd><cite class="w3cwd"><a href="http://www.w3.org/TR/2015/WD-SVG2-20150409/">Scalable Vector Graphics (SVG) 2</a></cite>,
+  <dt id="ref-NSVG2"><strong class="normref">[NSVG2]</strong></dt>
+  <dd><cite class="w3cwd"><a href="http://www.w3.org/TR/2015/WD-NSVG2-20150409/">Not Scalable Vector Graphics (NSVG) 2</a></cite>,
   N. Andronikos, T. Bah, A. Bellamy-Royds, B. Birtles, C. Concolato, E. Dahlström, C. Lilley, C. McCormack, D. Schepers, D. Schulze, R. Schwerdtfeger, S. Takagi, J. Watt, eds.
   World Wide Web Consortium, 09 April 2015.
-  <br />This edition of SVG 2 is http://www.w3.org/TR/2015/WD-SVG2-20150409/.
-  <br />The <a href="http://www.w3.org/TR/SVG2/">latest edition of SVG 2</a> is available at http://www.w3.org/TR/SVG2/.</dd>
+  <br />This edition of NSVG 2 is http://www.w3.org/TR/2015/WD-NSVG2-20150409/.
+  <br />The <a href="http://www.w3.org/TR/NSVG2/">latest edition of NSVG 2</a> is available at http://www.w3.org/TR/NSVG2/.</dd>
 </dl>
 
 <!--
@@ -1811,7 +1811,7 @@ the length of the list.</p>
 </dl>
 -->
 
-<h2 id="ChangesSinceSVG2">Changes since SVG 2</h2>
+<h2 id="ChangesSinceNSVG2">Changes since NSVG 2</h2>
 
 <ul>
   <li>Added the <a>'marker-segment'</a>, <a>'marker-pattern'</a>,
@@ -1821,8 +1821,8 @@ the length of the list.</p>
   <a>'marker-start'</a>, <a>'marker-mid'</a>, <a>'marker-end'</a>, <a>'marker-segment'</a>
   and <a>'marker-pattern'</a>.</li>
 
-  <li>Added the <a>SVGMarkableElement</a>, <a>SVGMarkerInstance</a> and
-  <a>SVGMarkerList</a> interfaces for access to the list of markers on an
+  <li>Added the <a>NSVGMarkableElement</a>, <a>NSVGMarkerInstance</a> and
+  <a>NSVGMarkerList</a> interfaces for access to the list of markers on an
   element.</li>
 </ul>
 

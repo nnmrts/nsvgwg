@@ -1,4 +1,4 @@
-<!-- Definitions for SVG Animation. -->
+<!-- Definitions for NSVG Animation. -->
 
 <definitions xmlns='http://mcc.id.au/ns/local' xmlns:x='http://mcc.id.au/ns/local'>
 
@@ -11,13 +11,13 @@
     elementcategories='descriptive'
     elements='script'
     attributecategories='animation addition, animation event, animation target element, animation attribute target, animation timing, animation value, conditional processing, core, global event, document element event, presentation'
-    interfaces='SVGAnimateElement'/>
+    interfaces='NSVGAnimateElement'/>
 
   <element
       name='animateMotion'
       href='#AnimateMotionElement'
       attributecategories='animation addition, animation event, animation target element, animation timing, animation value, conditional processing, core, global event, document element event'
-      interfaces='SVGAnimateMotionElement'>
+      interfaces='NSVGAnimateMotionElement'>
     <x:contentmodel xmlns='http://www.w3.org/1999/xhtml'>Any number of <a>descriptive elements</a>, <a>'script'</a> and at most one <a>'mpath'</a> element, in any order.</x:contentmodel>
     <!--
     <attribute name='calcMode' href='#AnimateMotionElementCalcModeAttribute'/>
@@ -35,7 +35,7 @@
       elementcategories='descriptive'
       elements='script'
       attributecategories='animation addition, animation event, animation target element, animation attribute target, animation timing, animation value, conditional processing, core, global event, document element event'
-      interfaces='SVGAnimateTransformElement'>
+      interfaces='NSVGAnimateTransformElement'>
     <attribute name='type' href='#AnimateTransformElementTypeAttribute'/>
   </element>
 
@@ -46,7 +46,7 @@
     elementcategories='descriptive'
     elements='script'
     attributecategories='conditional processing, core, aria'
-    interfaces='SVGDiscardElement'>
+    interfaces='NSVGDiscardElement'>
     <attribute name='begin' href='#DiscardElementBeginAttribute' animatable='no'/>
     <attribute name='href' href='#DiscardElementHrefAttribute' animatable='no'/>
   </element>
@@ -58,7 +58,7 @@
       elementcategories='descriptive'
       elements='script'
       attributecategories='core, global event, document element event'
-      interfaces='SVGMPathElement'>
+      interfaces='NSVGMPathElement'>
     <attribute name='href' href='#MPathElementHrefAttribute'/>
   </element>
 
@@ -69,7 +69,7 @@
       elementcategories='descriptive'
       elements='script'
       attributecategories='animation event, animation target element, animation attribute target, animation timing, conditional processing, core, global event, document element event'
-      interfaces='SVGSetElement'>
+      interfaces='NSVGSetElement'>
     <attribute name='to' href='#SetElementToAttribute'/>
   </element>
 
@@ -87,17 +87,17 @@
 
   <!-- attribute common to all animation elements -->
   <attribute name='href' elements='animate, animateMotion, animateTransform, set' href='#HrefAttribute'/>
-  <attribute name='timelinebegin' elements='svg' href="#SVGElementTimelinebeginAttribute"/>
-  <attribute name='playbackorder' elements='svg' href="#SVGElementPlaybackorderAttribute"/>
+  <attribute name='timelinebegin' elements='nsvg' href="#NSVGElementTimelinebeginAttribute"/>
+  <attribute name='playbackorder' elements='nsvg' href="#NSVGElementPlaybackorderAttribute"/>
 
   <!-- ... attribute categories .......................................... -->
 
   <attributecategory
       name='animation event'
       href='#TermAnimationEventAttribute'>
-    <attribute name='onbegin' href='http://svgwg.org/svg2-draft/interact.html#OnBeginEventAttribute'/>
-    <attribute name='onend' href='http://svgwg.org/svg2-draft/interact.html#OnEndEventAttribute'/>
-    <attribute name='onrepeat' href='http://svgwg.org/svg2-draft/interact.html#OnRepeatEventAttribute'/>
+    <attribute name='onbegin' href='http://nsvgwg.org/nsvg2-draft/interact.html#OnBeginEventAttribute'/>
+    <attribute name='onend' href='http://nsvgwg.org/nsvg2-draft/interact.html#OnEndEventAttribute'/>
+    <attribute name='onrepeat' href='http://nsvgwg.org/nsvg2-draft/interact.html#OnRepeatEventAttribute'/>
   </attributecategory>
 
   <attributecategory
@@ -147,14 +147,14 @@
 
   <!-- ... interfaces ..................................................... -->
 
-  <interface name='SVGAnimateElement' href='#InterfaceSVGAnimateElement'/>
-  <interface name='SVGSetElement' href='#InterfaceSVGSetElement'/>
-  <interface name='SVGDiscardElement' href='#InterfaceSVGDiscardElement'/>
-  <interface name='SVGAnimateMotionElement' href='#InterfaceSVGAnimateMotionElement'/>
-  <interface name='SVGMPathElement' href='#InterfaceSVGMPathElement'/>
-  <interface name='SVGAnimateTransformElement' href='#InterfaceSVGAnimateTransformElement'/>
+  <interface name='NSVGAnimateElement' href='#InterfaceNSVGAnimateElement'/>
+  <interface name='NSVGSetElement' href='#InterfaceNSVGSetElement'/>
+  <interface name='NSVGDiscardElement' href='#InterfaceNSVGDiscardElement'/>
+  <interface name='NSVGAnimateMotionElement' href='#InterfaceNSVGAnimateMotionElement'/>
+  <interface name='NSVGMPathElement' href='#InterfaceNSVGMPathElement'/>
+  <interface name='NSVGAnimateTransformElement' href='#InterfaceNSVGAnimateTransformElement'/>
   <interface name='TimeEvent' href='#InterfaceTimeEvent'/>
-  <interface name='SVGAnimationElement' href='#InterfaceSVGAnimationElement'/>
+  <interface name='NSVGAnimationElement' href='#InterfaceNSVGAnimationElement'/>
 
   <!-- ... grammar symbols ................................................ -->
 

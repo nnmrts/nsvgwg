@@ -45,16 +45,16 @@ exports.insertStyleSheets = function(conf, page, doc) {
     }
   }
 
-  var isSVG2 = conf.shortTitle == 'SVG 2';
+  var isNSVG2 = conf.shortTitle == 'NSVG 2';
   // Add a link to the default style sheet.
   doc.head.appendChild(utils.parse('<link rel="stylesheet" title="Default" href="{{href}}" type="text/css" media="screen"/>',
-                                   { href: conf.maturity == 'ED' && isSVG2 ? 'style/svg.css' : 'style/default_no_maturity.css' }));
+                                   { href: conf.maturity == 'ED' && isNSVG2 ? 'style/nsvg.css' : 'style/default_no_maturity.css' }));
 
-  if (isSVG2) {
+  if (isNSVG2) {
     // Add a link to alternate style sheet to hide background colors
     // if this is an Editor's Draft, or to show them otherwise.
     doc.head.appendChild(utils.parse('<link rel="alternate stylesheet" title="{{title}}" href="{{href}}" type="text/css" media="screen"/>',
-                                     { href: conf.maturity == 'ED' ? 'style/default_no_maturity.css' : 'style/svg.css',
+                                     { href: conf.maturity == 'ED' ? 'style/default_no_maturity.css' : 'style/nsvg.css',
                                        title: conf.maturity == 'ED' ? 'Only annotations for publication' : 'All annotations' }));
   }
 
@@ -100,7 +100,7 @@ function hasMathElements(n) {
 }
 
 exports.getMathJaxScript = function() {
-  return utils.parse('<script data-script-mathjax="" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_SVG"></script>')
+  return utils.parse('<script data-script-mathjax="" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_NSVG"></script>')
 }
 
 exports.insertMathJaxScript = function(conf, page, doc) {
@@ -420,8 +420,8 @@ function doCompleteIDL(conf, page, n) {
       if (n.nodeType == n.ELEMENT_NODE &&
           n.localName == "pre" &&
           /\bidl\b/.test(n.getAttribute("class")) ) {        
-        if (n.svg_excludefromidl||n.hasAttribute("edit:excludefromidl")) {
-          delete n.svg_excludefromidl;
+        if (n.nsvg_excludefromidl||n.hasAttribute("edit:excludefromidl")) {
+          delete n.nsvg_excludefromidl;
           return;
         }
         if (idl.length) {
@@ -463,9 +463,9 @@ function doExample(conf, page, n) {
                                     utils.parse('<div class="figure"><img alt="Example {{name}}{{description}}" src="{{image}}"/><p class="caption">Example {{name}}</p></div>',
                                                 { name: n.getAttribute('name'),
                                                   description: desc ? ' — ' + desc : '',
-                                                  image: href.replace(/\.svg$/, '.png') }) : '',
+                                                  image: href.replace(/\.nsvg$/, '.png') }) : '',
                           link: n.getAttribute('link') == 'yes' ?
-                                  utils.parse('<p class="view-as-svg"><a href="{{href}}">View this example as SVG (SVG-enabled browsers only)</a></p>',
+                                  utils.parse('<p class="view-as-nsvg"><a href="{{href}}">View this example as NSVG (NSVG-enabled browsers only)</a></p>',
                                               { href: href }) : '' });
   utils.replace(n, div);
 }
@@ -875,7 +875,7 @@ exports.formatMarkup = function(conf, page, doc) {
       }
       n.removeAttribute("edit:toc");
       if (n.hasAttribute("edit:excludefromidl")) {
-        n.svg_excludefromidl = true;
+        n.nsvg_excludefromidl = true;
         n.setAttribute("class", n.getAttribute("class")+" extract");
         //`extract` class is used by Reffy when building IDL indexes
         n.removeAttribute("edit:excludefromidl");
@@ -1000,7 +1000,7 @@ exports.processLinks = function(conf, page, doc) {
       var memberName = RegExp.$2;
       if (/^(.*)#/.test(definitions.interfaces[interfaceName].href)) {
         var beforeHash = RegExp.$1;
-        utils.replace(n, utils.parse('<a href="{{base}}#__svg__{{interface}}__{{member}}">{{prefix}}{{member}}</a>',
+        utils.replace(n, utils.parse('<a href="{{base}}#__nsvg__{{interface}}__{{member}}">{{prefix}}{{member}}</a>',
                                      { base: beforeHash,
                                        interface: interfaceName,
                                        prefix: n.getAttributeNS(namespaces.edit, 'format') == "expanded" ? interfaceName + '::' : '',

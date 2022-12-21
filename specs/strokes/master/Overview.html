@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
-  <title>SVG Strokes</title>
+  <title>NSVG Strokes</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-  <link rel="stylesheet" title="Default" type="text/css" href="style/default_svg.css"/>
+  <link rel="stylesheet" title="Default" type="text/css" href="style/default_nsvg.css"/>
   <link rel="alternate stylesheet" title="No issues/annotations" type="text/css" href="style/default_no_issues.css"/>
-  <style>.svg2-requirement { display: none !important; }</style>
+  <style>.nsvg2-requirement { display: none !important; }</style>
 </head>
 <body>
 
 <div class="head">
   <p><a href="https://www.w3.org/"><img height="48" width="72" alt="W3C" src="https://www.w3.org/Icons/w3c_home"/></a></p>
-  <h1 id="pagetitle">SVG Strokes</h1>
+  <h1 id="pagetitle">NSVG Strokes</h1>
   <h2 id="pagesubtitle">W3C <edit:maturity/> <em><edit:date/></em></h2>
   <dl>
     <dt>This version:</dt>
@@ -26,9 +26,9 @@
     <dd><edit:previousversion/></dd>
     -->
     <dt>GitHub repository:</dt>
-    <dd><a href="https://github.com/w3c/svgwg/tree/main/specs/strokes">https://github.com/w3c/svgwg/tree/main/specs/strokes</a></dd>
+    <dd><a href="https://github.com/w3c/nsvgwg/tree/main/specs/strokes">https://github.com/w3c/nsvgwg/tree/main/specs/strokes</a></dd>
     <dt>Feedback:</dt>
-    <dd><a href="mailto:www-svg@w3.org" class='url'>www-svg@w3.org</a> with subject line “<code>[svg-strokes] … <i>message topic</i> …</code>” (<a href="https://lists.w3.org/Archives/Public/www-svg/">archive</a>)</dd>
+    <dd><a href="mailto:www-nsvg@w3.org" class='url'>www-nsvg@w3.org</a> with subject line “<code>[nsvg-strokes] … <i>message topic</i> …</code>” (<a href="https://lists.w3.org/Archives/Public/www-nsvg/">archive</a>)</dd>
     <dt class="top-editors">Editors:</dt>
     <dd>Cameron McCormack, Mozilla Corporation &lt;<a href="mailto:cam@mcc.id.au" class='url'>cam@mcc.id.au</a>&gt;</dd>
     <dd>Dirk Schulze, Adobe Systems &lt;<a href="mailto:dschulze@adobe.com" class='url'>dschulze@adobe.com</a>&gt;</dd>
@@ -41,7 +41,7 @@
 <h2 id="abstract">Abstract</h2>
 
 <p>This specification defines properties for controlling the appearance
-of strokes painted for SVG shapes.</p>
+of strokes painted for NSVG shapes.</p>
 
 <h2 id="status">Status of This Document</h2>
 
@@ -51,35 +51,35 @@ publications and the latest revision of this technical report can be found in
 the <a href="https://www.w3.org/TR/">W3C technical reports index</a> at https://www.w3.org/TR/</em>.</p>
 
 <p>This document is the <edit:date/> <strong><edit:maturity/></strong> of <edit:shorttitle/>.
-The purpose of this specification is to define a number of improved SVG stroking
+The purpose of this specification is to define a number of improved NSVG stroking
 features.</p>
 
 <p class="note">This specification is an early draft that largely contains
-features that were dropped during the development of SVG 2.
+features that were dropped during the development of NSVG 2.
 In the future, this specification will supercede the
-<a href="https://www.w3.org/TR/SVG2/painting.html#StrokeProperties">SVG 2 Stroke definition</a>,
-however at this time the <a href="https://www.w3.org/TR/SVG2/painting.html#StrokeProperties">SVG 2 Stroke definition</a>
+<a href="https://www.w3.org/TR/NSVG2/painting.html#StrokeProperties">NSVG 2 Stroke definition</a>,
+however at this time the <a href="https://www.w3.org/TR/NSVG2/painting.html#StrokeProperties">NSVG 2 Stroke definition</a>
 must be considered the normative definition.</p>
 
 <p>Comments on this <edit:maturity/> are welcome.
-Comments can be sent to <a href="mailto:www-svg@w3.org" class='url'>www-svg@w3.org</a>,
+Comments can be sent to <a href="mailto:www-nsvg@w3.org" class='url'>www-nsvg@w3.org</a>,
 the public email list for issues related to vector graphics on the Web. This list is
-<a href="https://lists.w3.org/Archives/Public/www-svg/">archived</a> and
+<a href="https://lists.w3.org/Archives/Public/www-nsvg/">archived</a> and
 senders must agree to have their message publicly archived from their
 first posting. To subscribe send an email to
-<a href="mailto:www-svg-request@w3.org" class='url'>www-svg-request@w3.org</a> with
+<a href="mailto:www-nsvg-request@w3.org" class='url'>www-nsvg-request@w3.org</a> with
 the word <code>subscribe</code> in the subject line.</p>
 
 <p>This document has been produced by the
-<a href="https://www.w3.org/Graphics/SVG/WG">W3C SVG Working Group</a> as part of
+<a href="https://www.w3.org/Graphics/NSVG/WG">W3C NSVG Working Group</a> as part of
 the <a href="https://www.w3.org/Graphics/Activity">Graphics Activity</a> within
 the <a href="https://www.w3.org/Interaction/">W3C Interaction Domain</a>. The
-goals of the W3C SVG Working Group are discussed in the
-<a href="https://www.w3.org/Graphics/SVG/svg-2019.html">W3C SVG Charter</a>.
-The W3C SVG Working Group maintains a public Web page,
-<a href="https://www.w3.org/Graphics/SVG/" class='url'>https://www.w3.org/Graphics/SVG/</a>,
+goals of the W3C NSVG Working Group are discussed in the
+<a href="https://www.w3.org/Graphics/NSVG/nsvg-2019.html">W3C NSVG Charter</a>.
+The W3C NSVG Working Group maintains a public Web page,
+<a href="https://www.w3.org/Graphics/NSVG/" class='url'>https://www.w3.org/Graphics/NSVG/</a>,
 that contains further background information. The authors of
-this document are the SVG Working Group participants.</p>
+this document are the NSVG Working Group participants.</p>
 
 <p>This document was produced by a group operating under the
 <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</a>.
@@ -105,13 +105,13 @@ may be updated, replaced, or obsoleted by other documents at any time.</p>
 <!--
 <h2 id="feedback" edit:toc="no">How to read this document and give feedback</h2>
 
-<p>This draft of SVG Integration introduces new normative prose for
-integrating the SVG language into other markup languages. One of
+<p>This draft of NSVG Integration introduces new normative prose for
+integrating the NSVG language into other markup languages. One of
 the goals is that this specification can be re-used more easily by
 other specifications that want to have well-defined interaction and
-interoperability with SVG. Future drafts of this specification may
-introduce syntax and markup for the SVG language that may not be
-backwards compatible with older SVG User Agents, and the use of this
+interoperability with NSVG. Future drafts of this specification may
+introduce syntax and markup for the NSVG language that may not be
+backwards compatible with older NSVG User Agents, and the use of this
 syntax should be accompanied by a fallback using the <a>'switch'</a>
 element.</p>
 -->
@@ -127,23 +127,23 @@ element.</p>
 
 <p><em>This section is non-normative.</em></p>
 
-<p>SVG graphical elements that define a shape – <a>'path'</a> elements, <a>basic shapes</a>,
+<p>NSVG graphical elements that define a shape – <a>'path'</a> elements, <a>basic shapes</a>,
 and <a>text content elements</a> – are rendered by being <strong>filled</strong>,
 which is painting the interior of the object, and <strong>stroked</strong>, which is
 painting along the outline of the object.</p>
 
-<p>This specification describes how SVG graphical elements are stroked, by
+<p>This specification describes how NSVG graphical elements are stroked, by
 <a href="#StrokeProperties">defining a number of properties</a> that control the appearance of a stroke
 and by <a href="#StrokeShape">specifying the shape of an element's stroke</a>.</p>
 
-<p class="issue" data-issue="1">SVG 2 supports multiple strokes, which we will need updated
+<p class="issue" data-issue="1">NSVG 2 supports multiple strokes, which we will need updated
 wording to handle in this specification.</p>
 
 <h3 id="placement">Module interactions</h3>
 
 <p>This module replaces and extends the definition of stroking properties in
-SVG 2 (the "Stroke properties" section in the "Painting: Filling, Stroking and Marker Symbols"
-chapter). <a href='#ref-SVG2'>[SVG2]</a></p>
+NSVG 2 (the "Stroke properties" section in the "Painting: Filling, Stroking and Marker Symbols"
+chapter). <a href='#ref-NSVG2'>[NSVG2]</a></p>
 
 
 <h2 id="StrokeProperties">Stroke properties</h2>
@@ -162,8 +162,8 @@ elements, the start of the path is the first point of the initial
 
 <p>For stroking properties such as dash patterns whose computations
 are dependent on progress along the outline of the graphics element,
-distance calculations are required to utilize the SVG user agent's
-standard <a href="[SVG2]/paths.html#DistanceAlongAPath">Distance along a path</a>
+distance calculations are required to utilize the NSVG user agent's
+standard <a href="[NSVG2]/paths.html#DistanceAlongAPath">Distance along a path</a>
 algorithms.</p>
 
 <p>When stroking is performed using a complex paint server, such as a
@@ -219,8 +219,8 @@ property</h3>
 <p>The <a>'stroke'</a> property paints along the outline of the given
 graphical element.</p>
 
-<p>A subpath (see <a href="[SVG2]/paths.html">Paths</a>) consisting of
-a single <a href="[SVG2]/paths.html#PathDataMovetoCommands">moveto</a>
+<p>A subpath (see <a href="[NSVG2]/paths.html">Paths</a>) consisting of
+a single <a href="[NSVG2]/paths.html#PathDataMovetoCommands">moveto</a>
 shall not be stroked. Any zero length subpath shall not be
 stroked if the <a>'stroke-linecap'</a> property has a value of
 <span class="prop-value">butt</span> but shall be stroked if the
@@ -237,15 +237,15 @@ Examples of zero length subpaths include
 shape computation requirements below.  In this section, we should phrase
 the requirements descriptively rather than normatively.</p>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Include a way to specify stroke position.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="https://www.w3.org/2011/10/28-svg-irc#T18-09-48">SVG 2 shall include a way to specify stroke position.</a></td>
+      <td><a href="https://www.w3.org/2011/10/28-nsvg-irc#T18-09-48">NSVG 2 shall include a way to specify stroke position.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -253,11 +253,11 @@ the requirements descriptively rather than normatively.</p>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Cameron (<a href="https://www.w3.org/Graphics/SVG/WG/track/actions/3162">ACTION-3162</a>)</td>
+      <td>Cameron (<a href="https://www.w3.org/Graphics/NSVG/WG/track/actions/3162">ACTION-3162</a>)</td>
     </tr>
     <tr>
       <th>Note:</th>
-      <td>See <a href="https://www.w3.org/Graphics/SVG/WG/wiki/Proposals/Stroke_position">proposal page</a>.</td>
+      <td>See <a href="https://www.w3.org/Graphics/NSVG/WG/wiki/Proposals/Stroke_position">proposal page</a>.</td>
     </tr>
   </table>
 </div>
@@ -338,7 +338,7 @@ property</h3>
   segments? One suggestion is to alias 'outside' to 'left' and
   'inside' to 'right' for open paths. How are end caps handled?
   <div class="figure">
-    <img class="bordered" src="images/stroke-alignment-openpath.svg"
+    <img class="bordered" src="images/stroke-alignment-openpath.nsvg"
 	 alt=""/>
     <p class="caption">
       PART OF ABOVE ISSUE: From top to bottom:
@@ -359,7 +359,7 @@ property</h3>
   rule is 'nonzero'; if so how? (Shown without stroking below.)
 
   <div class="figure">
-    <img class="bordered" src="images/stroke-alignment-loops.svg"
+    <img class="bordered" src="images/stroke-alignment-loops.nsvg"
 	 alt=""/>
     <p class="caption">
       PART OF ABOVE ISSUE:
@@ -381,7 +381,7 @@ property</h3>
 
 <div class="issue" data-issue="7">How are dashes handled? Are they based on original path?
   <div class="figure">
-    <img class="bordered" src="images/stroke-alignment-dashes.svg"
+    <img class="bordered" src="images/stroke-alignment-dashes.nsvg"
 	 alt=""/>
     <p class="caption">
       PART OF ABOVE ISSUE: From left to right:
@@ -392,15 +392,15 @@ property</h3>
   </div>
 </div>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Allow more author control over positions of dashes.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="https://www.w3.org/2011/10/28-svg-irc#T18-17-51">SVG 2 shall allow more author control over positions of dashes.</a></td>
+      <td><a href="https://www.w3.org/2011/10/28-nsvg-irc#T18-17-51">NSVG 2 shall allow more author control over positions of dashes.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -408,11 +408,11 @@ property</h3>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Cameron (<a href="https://www.w3.org/Graphics/SVG/WG/track/actions/3163">ACTION-3163</a>)</td>
+      <td>Cameron (<a href="https://www.w3.org/Graphics/NSVG/WG/track/actions/3163">ACTION-3163</a>)</td>
     </tr>
     <tr>
       <th>Note:</th>
-      <td>See <a href="https://www.w3.org/Graphics/SVG/WG/wiki/Proposals/Stroke_dash_adjustment">proposal page</a>.</td>
+      <td>See <a href="https://www.w3.org/Graphics/NSVG/WG/wiki/Proposals/Stroke_dash_adjustment">proposal page</a>.</td>
     </tr>
   </table>
 </div>
@@ -461,7 +461,7 @@ property</h3>
 
 <p>The <a>'stroke-opacity'</a> property specifies the opacity of the
 painting operation used to stroke the current object.  (See
-<a href="[SVG2]/render.html#PaintingShapesAndText">Painting shapes and text</a>.)
+<a href="[NSVG2]/render.html#PaintingShapesAndText">Painting shapes and text</a>.)
 As with <a>'fill-opacity'</a>, a value of 0 means fully transparent, and a value of 1
 means fully opaque.</p>
 
@@ -494,7 +494,7 @@ property</h3>
   </tr>
   <tr>
     <th>Percentages:</th>
-    <td>refer to the size of the current viewport (see <a href="[SVG2]/coords.html#Units">Units</a>)</td>
+    <td>refer to the size of the current viewport (see <a href="[NSVG2]/coords.html#Units">Units</a>)</td>
   </tr>
   <tr>
     <th>Media:</th>
@@ -584,14 +584,14 @@ open subpaths when they are stroked.  The possible values are:</p>
     equal to the stroke width, centered at the subpath's point, and oriented
     such that two of its sides are parallel to the effective tangent
     at that subpath's point.  See
-    <a href="[SVG2]/paths.html#PathElementImplementationNotes"><span class='element-name'>'path'</span>
+    <a href="[NSVG2]/paths.html#PathElementImplementationNotes"><span class='element-name'>'path'</span>
     element implementation notes</a> for details on how to determine the tangent
     at a zero-length subpath.</p>
   </dd>
 </dl>
 
 <div class="figure">
-  <img class="bordered" src="images/linecap.svg"
+  <img class="bordered" src="images/linecap.nsvg"
        alt="Image showing three paths, each with a different line cap."/>
   <p class="caption">The three types of line caps.</p>
 </div>
@@ -643,7 +643,7 @@ and <span class="property">'stroke-miterlimit'</span> properties</h3>
 
 <p><a>'stroke-linejoin'</a> specifies the shape to be used at the
 corners of paths or basic shapes when they are stroked. For further details see
-the <a href="[SVG2]/paths.html#PathElementImplementationNotes">path implementation notes</a>.</p>
+the <a href="[NSVG2]/paths.html#PathElementImplementationNotes">path implementation notes</a>.</p>
 
 <dl>
   <dt><span class='prop-value'>miter</span></dt>
@@ -676,7 +676,7 @@ the <a href="[SVG2]/paths.html#PathElementImplementationNotes">path implementati
 
 <p class="note">
   The <span class='prop-value'>miter-clip</span> and
-  <span class='prop-value'>arcs</span> values are new in SVG 2.
+  <span class='prop-value'>arcs</span> values are new in NSVG 2.
   The <span class='prop-value'>miter-clip</span> value offers a more
   consistent presentation for a path with multiple joins as well as
   better behavior when a path is animated.
@@ -686,18 +686,18 @@ the <a href="[SVG2]/paths.html#PathElementImplementationNotes">path implementati
 
 <p class="annotation">
   Adding 'arcs' line join was resolved at the
-  <a href="https://www.w3.org/2012/09/19-svg-minutes.html#item08">Rigi
+  <a href="https://www.w3.org/2012/09/19-nsvg-minutes.html#item08">Rigi
   Kaltbad group meeting</a>.
 </p>
 
 <p class="annotation">
   Adding 'miter-clip' line join was resolved at the
-  <a href="https://www.w3.org/2015/02/12-svg-minutes.html#item03">Sydney
+  <a href="https://www.w3.org/2015/02/12-nsvg-minutes.html#item03">Sydney
   (2015) group meeting</a>.
 </p>
 
 <div class="figure">
-  <img class="bordered" src="images/linejoin-four.svg"
+  <img class="bordered" src="images/linejoin-four.nsvg"
        alt="Image showing four paths, each with a different line join."/>
   <p class="caption">Four types of line joins.</p>
 </div>
@@ -762,7 +762,7 @@ the <a href="[SVG2]/paths.html#PathElementImplementationNotes">path implementati
     the <a>'stroke-width'</a> value. The value of
     <a>'stroke-miterlimit'</a> must be a <a>&lt;number&gt;</a> greater
     than or equal to 1. Any other value is an error (see
-    <a href="[SVG2]/implnote.html#ErrorProcessing">Error processing</a>).
+    <a href="[NSVG2]/implnote.html#ErrorProcessing">Error processing</a>).
   </dd>
 </dl>
 
@@ -812,7 +812,7 @@ the <a href="[SVG2]/paths.html#PathElementImplementationNotes">path implementati
 </dl>
 
 <div class="figure">
-  <img class="bordered" src="images/miter-limit.svg"
+  <img class="bordered" src="images/miter-limit.nsvg"
        alt="Image showing resulting stroke when stroke miter limit is exceeded."/>
   <p class="caption">
     Effect on line join when <a>'stroke-miterlimit'</a> is
@@ -836,7 +836,7 @@ the <a href="[SVG2]/paths.html#PathElementImplementationNotes">path implementati
 
 <p class="annotation">
   The effect of 'stroke-miterlimit' on an 'arcs' line join was resolved
-  at <a href="https://www.w3.org/2015/02/12-svg-minutes.html#item12">Sydney
+  at <a href="https://www.w3.org/2015/02/12-nsvg-minutes.html#item12">Sydney
   (2015) group meeting</a>.
 </p>
 
@@ -872,7 +872,7 @@ and <span class="property">'stroke-dashadjust'</span> properties</h3>
   </tr>
   <tr>
     <th>Percentages:</th>
-    <td>refer to the size of the current viewport (see <a href="[SVG2]/coords.html#Units">Units</a>)</td>
+    <td>refer to the size of the current viewport (see <a href="[NSVG2]/coords.html#Units">Units</a>)</td>
   </tr>
   <tr>
     <th>Media:</th>
@@ -925,7 +925,7 @@ a path's stroke.</p>
 </dl>
 
 <div class="figure">
-  <img class="bordered" src="images/dashes.svg" alt="Image showing a thick, dashed stroke."/>
+  <img class="bordered" src="images/dashes.nsvg" alt="Image showing a thick, dashed stroke."/>
   <p class="caption">A dashed stroke.  The dashing pattern is <span class="prop-value">20,10</span>.
   The red line shows the actual path that is stroked.</p>
 </div>
@@ -953,7 +953,7 @@ a path's stroke.</p>
   </tr>
   <tr>
     <th>Percentages:</th>
-    <td>refer to the size of the current viewport (see <a href="[SVG2]/coords.html#Units">Units</a>)</td>
+    <td>refer to the size of the current viewport (see <a href="[NSVG2]/coords.html#Units">Units</a>)</td>
   </tr>
   <tr>
     <th>Media:</th>
@@ -993,7 +993,7 @@ value is negative, then the effect is the same as dash offset <var>d</var>:</p>
 <p>where <var>s</var> is the sum of the dash array values.</p>
 
 <div class="figure">
-  <img class="bordered" src="images/dashoffset.svg"
+  <img class="bordered" src="images/dashoffset.nsvg"
        alt="Image showing a thick, dashed stroke with a non-zero dash offset."/>
   <p class="caption">A dashed stroke with a non-zero dash offset.  The dashing
   pattern is <span class="prop-value">20,10</span> and the dash offset is
@@ -1027,7 +1027,7 @@ description of positions along a path that dashes will be placed.</p>
   </tr>
   <tr>
     <th>Percentages:</th>
-    <td>refer to the size of the current viewport (see <a href="[SVG2]/coords.html#Units">Units</a>)</td>
+    <td>refer to the size of the current viewport (see <a href="[NSVG2]/coords.html#Units">Units</a>)</td>
   </tr>
   <tr>
     <th>Media:</th>
@@ -1089,7 +1089,7 @@ two adjacent corner dashes.</p>
 <p class="issue" data-issue="11">Need to define what happens when corner dashes would overlap.</p>
 
 <div class="figure">
-  <img class="bordered" src="images/dashcorner.svg"
+  <img class="bordered" src="images/dashcorner.nsvg"
        alt="Image showing a rectangle at each corner and short dashes in between."/>
   <p class="caption">A rectangle painted with a dashed stroke and with
   corner dashes.  The dashing pattern is <span class="prop-value">0,8</span>
@@ -1212,7 +1212,7 @@ while for a non-closed path, a dash at the end is probably better. Omit control
 for this, but just do it automatically based on whether the path is closed?</p>
 
 <div class="figure">
-  <img class="bordered" src="images/dashadjust.svg"
+  <img class="bordered" src="images/dashadjust.nsvg"
        alt="Image showing three shapes stroked with the same dash pattern, all adjusted to their individual path lengths."/>
   <p class="caption">The same dash stroke used on three
   different paths, adjusted to fit a whole number of
@@ -1221,15 +1221,15 @@ for this, but just do it automatically based on whether the path is closed?</p>
 
 <h2 id="StrokeShape">Computing the shape of the stroke</h2>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Specify stroke dashing more precisely.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="https://www.w3.org/2011/10/28-svg-irc#T18-14-14">SVG 2 shall specify stroke dashing more precisely.</a></td>
+      <td><a href="https://www.w3.org/2011/10/28-nsvg-irc#T18-14-14">NSVG 2 shall specify stroke dashing more precisely.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -1408,7 +1408,7 @@ determined as follows:</p>
 </ol>
 
 <div class="figure">
-  <img class="bordered" src="images/linecap-construction.svg"
+  <img class="bordered" src="images/linecap-construction.nsvg"
        alt="Image showing how to construct the three types of line caps"/>
   <p class="caption">The three different <a>'stroke-linecap'</a> values used on
   paths with a single, non-zero length subpath.  The white line is the path
@@ -1512,7 +1512,7 @@ a subpath is determined as follows:</p>
 </ol>
 
 <div class="figure">
-  <img class="bordered" src="images/linejoin-construction.svg"
+  <img class="bordered" src="images/linejoin-construction.nsvg"
        alt="Image showing the lines and points computed to construct a round line join."/>
   <p class="caption">Construction of a round line join shape, shown in pink.
   The white line is the original path, which has two segments that come to a
@@ -1520,7 +1520,7 @@ a subpath is determined as follows:</p>
 </div>
 
 <div class="figure">
-  <img class="bordered" src="images/linejoin-construction-arcs.svg"
+  <img class="bordered" src="images/linejoin-construction-arcs.nsvg"
        alt="Image showing the lines and points computed to construct an arcs line join."/>
   <p class="caption">Construction of an arcs line join shape, shown in
     pink. The white line is the original path, which has two segments
@@ -1646,7 +1646,7 @@ a subpath is determined as follows:</p>
 
   <p>The parameter <var>&#x03B8;</var> at the beginning or end of an
     arc segment can be found by using the formulas in
-    the <a href="[SVG2]/implnote.html#ArcImplementationNotes">Elliptical arc
+    the <a href="[NSVG2]/implnote.html#ArcImplementationNotes">Elliptical arc
     implementation notes</a>. (Note, some renderers convert elliptical
     arcs to cubic Béziers prior to rendering so the equations here may
     not be needed.)</p>
@@ -1944,20 +1944,20 @@ a subpath is determined as follows:</p>
   <br />Available at https://tools.ietf.org/html/rfc2119.</dd>
 
 <!--
-  <dt id="ref-SVG11"><strong class="normref">[SVG11]</strong></dt>
-  <dd><cite class="w3crec"><a href="http://www.w3.org/TR/2003/REC-SVG11-20030114/">Scalable Vector Graphics (SVG) 1.1</a></cite>,
+  <dt id="ref-NSVG11"><strong class="normref">[NSVG11]</strong></dt>
+  <dd><cite class="w3crec"><a href="http://www.w3.org/TR/2003/REC-NSVG11-20030114/">Not Scalable Vector Graphics (NSVG) 1.1</a></cite>,
   J. Ferraiolo, <span class="ruby"><span class="rb">&#x85E4;&#x6CA2; &#x6DF3;</span><span class="rp">(</span><span class="rt"><span class="familyname">Fujisawa</span> Jun</span><span class="rp">)</span></span>, D. Jackson, eds.
   World Wide Web Consortium, 14 January 2003.
-  <br />This edition of SVG 1.1 is http://www.w3.org/TR/2003/REC-SVG11-20030114/.
-  <br />The <a href="http://www.w3.org/TR/SVG11/">latest edition of SVG 1.1</a> is available at http://www.w3.org/TR/SVG11/.</dd>
+  <br />This edition of NSVG 1.1 is http://www.w3.org/TR/2003/REC-NSVG11-20030114/.
+  <br />The <a href="http://www.w3.org/TR/NSVG11/">latest edition of NSVG 1.1</a> is available at http://www.w3.org/TR/NSVG11/.</dd>
 -->
 
-  <dt id="ref-SVG2"><strong class="normref">[SVG2]</strong></dt>
-  <dd><cite class="w3cwd"><a href="https://www.w3.org/TR/2015/WD-SVG2-20150409/">Scalable Vector Graphics (SVG) 2</a></cite>,
+  <dt id="ref-NSVG2"><strong class="normref">[NSVG2]</strong></dt>
+  <dd><cite class="w3cwd"><a href="https://www.w3.org/TR/2015/WD-NSVG2-20150409/">Not Scalable Vector Graphics (NSVG) 2</a></cite>,
   N. Andronikos, T. Bah, A. Bellamy-Royds, B. Birtles, C. Concolato, E. Dahlström, C. Lilley, C. McCormack, D. Schepers, D. Schulze, R. Schwerdtfeger, S. Takagi, J. Watt, eds.
   World Wide Web Consortium, 09 April 2015.
-  <br />This edition of SVG 2 is https://www.w3.org/TR/2015/WD-SVG2-20150409/.
-  <br />The <a href="https://www.w3.org/TR/SVG2/">latest edition of SVG 2</a> is available at https://www.w3.org/TR/SVG2/.</dd>
+  <br />This edition of NSVG 2 is https://www.w3.org/TR/2015/WD-NSVG2-20150409/.
+  <br />The <a href="https://www.w3.org/TR/NSVG2/">latest edition of NSVG 2</a> is available at https://www.w3.org/TR/NSVG2/.</dd>
 </dl>
 
 <!--
@@ -1967,7 +1967,7 @@ a subpath is determined as follows:</p>
 </dl>
 -->
 
-<h2 id="ChangesSinceSVG2">Changes since SVG 2</h2>
+<h2 id="ChangesSinceNSVG2">Changes since NSVG 2</h2>
 
 <ul>
   <li>Added the <a>'stroke-alignment'</a>, <a>'stroke-dashadjust'</a> and

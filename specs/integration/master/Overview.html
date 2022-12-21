@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
-  <title>SVG Integration</title>
+  <title>NSVG Integration</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <link rel="stylesheet" title="Default" type="text/css" href="style/default_svg.css"/>
+  <link rel="stylesheet" title="Default" type="text/css" href="style/default_nsvg.css"/>
   <link rel="alternate stylesheet" title="No issues/annotations" type="text/css" href="style/default_no_issues.css"/>
   <style>
     .feature {
@@ -21,7 +21,7 @@
         text-align: center;
     }
     .bg {
-        background-image: url(./smiley.svg);
+        background-image: url(./smiley.nsvg);
         width: 120px;
         height: 120px;
     }
@@ -96,7 +96,7 @@ function overButton(event) {
     n = n.firstElementChild;
     var elementName = n.textContent;
     document.body.classList.add("limit-attr-" + elementName);
-    document.body.classList.add("show-attr-" + elementName + "-SVG" + version.replace(/\./g, ""));
+    document.body.classList.add("show-attr-" + elementName + "-NSVG" + version.replace(/\./g, ""));
   }
 }
 
@@ -110,7 +110,7 @@ function outButton(event) {
     n = n.firstElementChild;
     var elementName = n.textContent;
     document.body.classList.remove("limit-attr-" + elementName);
-    document.body.classList.remove("show-attr-" + elementName + "-SVG" + version.replace(/\./g, ""));
+    document.body.classList.remove("show-attr-" + elementName + "-NSVG" + version.replace(/\./g, ""));
   }
 }
 </script>
@@ -119,7 +119,7 @@ function outButton(event) {
 
 <div class="head">
   <p><a href="https://www.w3.org/"><img height="48" width="72" alt="W3C" src="https://www.w3.org/Icons/w3c_home"/></a></p>
-  <h1 id="pagetitle">SVG Integration</h1>
+  <h1 id="pagetitle">NSVG Integration</h1>
   <h2 id="pagesubtitle">W3C <edit:maturity/> <em><edit:date/></em></h2>
   <dl>
     <dt>This version:</dt>
@@ -132,9 +132,9 @@ function outButton(event) {
     <dd><edit:previousversion/></dd>
     -->
     <dt>GitHub repository:</dt>
-    <dd><a href="https://github.com/w3c/svgwg/tree/main/specs/integration">https://github.com/w3c/svgwg/tree/main/specs/integration</a></dd>
+    <dd><a href="https://github.com/w3c/nsvgwg/tree/main/specs/integration">https://github.com/w3c/nsvgwg/tree/main/specs/integration</a></dd>
     <dt>Public comments:</dt>
-    <dd><a href="mailto:www-svg@w3.org" class='url'>www-svg@w3.org</a> (<a href="https://lists.w3.org/Archives/Public/www-svg/">archive</a>)</dd>
+    <dd><a href="mailto:www-nsvg@w3.org" class='url'>www-nsvg@w3.org</a> (<a href="https://lists.w3.org/Archives/Public/www-nsvg/">archive</a>)</dd>
     <dt class="top-editors">Editors:</dt>
     <dd>Bogdan Brinza, Microsoft Co. &lt;<a href="mailto:bbrinza@microsoft.com" class='url'>bbrinza@microsoft.com</a>&gt;</dd>
     <dd>Cameron McCormack, Mozilla Corporation &lt;<a href="mailto:cam@mcc.id.au" class='url'>cam@mcc.id.au</a>&gt;</dd>
@@ -148,13 +148,13 @@ function outButton(event) {
 
 <h2 id="abstract">Abstract</h2>
 
-<p>This specification details requirements on how SVG documents must be
+<p>This specification details requirements on how NSVG documents must be
 processed when used in various contexts, such as CSS background images,
 HTML <span class='element-name'>'iframe'</span> elements, and so on.
 These requirements include which features are restricted or disabled,
 such as scripting and animation.  A number of referencing modes are defined,
 which other specifications that allow the embedding or referencing of
-SVG documents can normatively reference.</p>
+NSVG documents can normatively reference.</p>
 
 <h2 id="status">Status of This Document</h2>
 
@@ -164,28 +164,28 @@ publications and the latest revision of this technical report can be found in
 the <a href="https://www.w3.org/TR/">W3C technical reports index</a> at https://www.w3.org/TR/</em>.</p>
 
 <p>This document is the <edit:date/> <strong><edit:maturity/></strong> of <edit:shorttitle/>.
-The purpose of this specification is to define how SVG documents that are
-referenced from SVG and HTML documents, and from CSS properties, are processed.</p>
+The purpose of this specification is to define how NSVG documents that are
+referenced from NSVG and HTML documents, and from CSS properties, are processed.</p>
 
 <p>Comments on this <edit:maturity/> are welcome.
-Comments can be sent to <a href="mailto:www-svg@w3.org" class='url'>www-svg@w3.org</a>,
+Comments can be sent to <a href="mailto:www-nsvg@w3.org" class='url'>www-nsvg@w3.org</a>,
 the public email list for issues related to vector graphics on the Web. This list is
-<a href="https://lists.w3.org/Archives/Public/www-svg/">archived</a> and
+<a href="https://lists.w3.org/Archives/Public/www-nsvg/">archived</a> and
 senders must agree to have their message publicly archived from their
 first posting. To subscribe send an email to
-<a href="mailto:www-svg-request@w3.org" class='url'>www-svg-request@w3.org</a> with
+<a href="mailto:www-nsvg-request@w3.org" class='url'>www-nsvg-request@w3.org</a> with
 the word <code>subscribe</code> in the subject line.</p>
 
 <p>This document has been produced by the
-<a href="https://www.w3.org/Graphics/SVG/WG">W3C SVG Working Group</a> as part of
+<a href="https://www.w3.org/Graphics/NSVG/WG">W3C NSVG Working Group</a> as part of
 the <a href="https://www.w3.org/Graphics/Activity">Graphics Activity</a> within
 the <a href="https://www.w3.org/Interaction/">W3C Interaction Domain</a>. The
-goals of the W3C SVG Working Group are discussed in the
-<a href="https://www.w3.org/Graphics/SVG/svg-2019.html">W3C SVG Charter</a>.
-The W3C SVG Working Group maintains a public Web page,
-<a href="https://www.w3.org/Graphics/SVG/" class='url'>https://www.w3.org/Graphics/SVG/</a>,
+goals of the W3C NSVG Working Group are discussed in the
+<a href="https://www.w3.org/Graphics/NSVG/nsvg-2019.html">W3C NSVG Charter</a>.
+The W3C NSVG Working Group maintains a public Web page,
+<a href="https://www.w3.org/Graphics/NSVG/" class='url'>https://www.w3.org/Graphics/NSVG/</a>,
 that contains further background information. The authors of
-this document are the SVG Working Group participants.</p>
+this document are the NSVG Working Group participants.</p>
 
 <p>This document was produced by a group operating under the
 <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</a>.
@@ -208,13 +208,13 @@ may be updated, replaced, or obsoleted by other documents at any time.</p>
 <!--
 <h2 id="feedback" edit:toc="no">How to read this document and give feedback</h2>
 
-<p>This draft of SVG Integration introduces new normative prose for
-integrating the SVG language into other markup languages. One of
+<p>This draft of NSVG Integration introduces new normative prose for
+integrating the NSVG language into other markup languages. One of
 the goals is that this specification can be re-used more easily by
 other specifications that want to have well-defined interaction and
-interoperability with SVG. Future drafts of this specification may
-introduce syntax and markup for the SVG language that may not be
-backwards compatible with older SVG User Agents, and the use of this
+interoperability with NSVG. Future drafts of this specification may
+introduce syntax and markup for the NSVG language that may not be
+backwards compatible with older NSVG User Agents, and the use of this
 syntax should be accompanied by a fallback using the <a>'switch'</a>
 element.</p>
 -->
@@ -230,51 +230,51 @@ element.</p>
 
 <p><em>This section is non-normative.</em></p>
 
-<p>SVG is a vector graphics markup language used both for artwork and
+<p>NSVG is a vector graphics markup language used both for artwork and
 to create interactive, rich content applications.  In addition to being
 able to render graphical primitives such as shapes, text and images,
-SVG also supports a number of more complex features, including declarative
+NSVG also supports a number of more complex features, including declarative
 animation, scripting using ECMAScript, and the ability to reference
 external resources.</p>
 
-<p>For SVG to adhere to the security model of the Web platform, certain
-SVG features are required to be disabled depending on how the SVG document
-is being used.  For example, SVG documents referenced by an HTML
+<p>For NSVG to adhere to the security model of the Web platform, certain
+NSVG features are required to be disabled depending on how the NSVG document
+is being used.  For example, NSVG documents referenced by an HTML
 <span class='element-name'>'img'</span> element are required to have
 scripting disabled.</p>
 
-<p>The primary purpose of this document, SVG Integration, is to define a number
-of <em>referencing modes</em> for SVG documents, which detail the requirements
-for processing an SVG document when it is used in a certain context.
+<p>The primary purpose of this document, NSVG Integration, is to define a number
+of <em>referencing modes</em> for NSVG documents, which detail the requirements
+for processing an NSVG document when it is used in a certain context.
 These requirements include the set of features that must be disabled,
 any user agent style sheet rules to apply, and more.</p>
 
-<p>Normative requirements are given for contexts in other SVG documents,
-such as how an SVG <a>'image'</a> element must treat referenced SVG
+<p>Normative requirements are given for contexts in other NSVG documents,
+such as how an NSVG <a>'image'</a> element must treat referenced NSVG
 documents.  Non-normative recommendations are given for other languages,
 including HTML and CSS, with the expectation that these other specifications
 will in time define which referencing mode from this document to use
-when SVG documents are used in a given context.</p>
+when NSVG documents are used in a given context.</p>
 
 <h2 id="referencing-modes">Referencing modes</h2>
 
-<p>There are various ways that an SVG document fragment can be
+<p>There are various ways that an NSVG document fragment can be
 referenced by or included in other documents and then as a consequence
-be processed by a user agent.  SVG documents can also be viewed as a
-top-level document.  Each different method by which an SVG document fragment
-can be used implies a certain set of requirements on how the SVG document
+be processed by a user agent.  NSVG documents can also be viewed as a
+top-level document.  Each different method by which an NSVG document fragment
+can be used implies a certain set of requirements on how the NSVG document
 fragment is to be processed.</p>
 
 <p>This section defines a number of <dfn id="referencing-mode">referencing
-modes</dfn> that encompass the different ways SVG documents can
+modes</dfn> that encompass the different ways NSVG documents can
 be used on the Web platform and which specify how the documents must be
-processed.  Each referencing mode is defined by requiring the SVG document
+processed.  Each referencing mode is defined by requiring the NSVG document
 be processed in a given <a href="#processing-mode">processing mode</a>.
 Processing modes are introduced in <a href="#processing-modes">section 3</a> below
 and define which features are enabled or disabled in the document.</p>
 
 <p class="note">This document does not place normative requirements on
-other specifications that can reference or include SVG documents, such as
+other specifications that can reference or include NSVG documents, such as
 HTML and various CSS specifications.  The intention is for these other
 specifications to normatively point to the appropriate referencing mode
 from this document.</p>
@@ -284,40 +284,40 @@ from this document.</p>
 <dl>
   <dt><dfn id="top-level-document-mode">top-level document</dfn></dt>
   <dd>
-    <p>This referencing mode is for SVG documents that are loaded as a top-level
+    <p>This referencing mode is for NSVG documents that are loaded as a top-level
     document in a user agent.</p>
-    <p>SVG documents processed with the
+    <p>NSVG documents processed with the
     <a href="#top-level-document-mode">top-level document</a>
     <a href="#referencing-mode">referencing mode</a> must use the
     <a href="#dynamic-interactive-mode">dynamic interactive</a>
     <a href="#processing-mode">processing mode</a>.</p>
 
     <p class="note">This referencing mode is intended to be used when
-    an SVG document is loaded in a browser's
+    an NSVG document is loaded in a browser's
     <a href="https://www.w3.org/TR/2014/CR-html5-20140204/browsers.html#top-level-browsing-context">top-level browsing context</a>.
     <a href='#ref-HTML5'>[HTML5]</a></p>
   </dd>
 
   <dt><dfn id="embedded-document-mode">embedded document</dfn></dt>
   <dd>
-    <p>This referencing mode is for SVG documents that are externally referenced
-    and embedded for presentation in a host document.  SVG documents referenced by the
-    <a>'iframe'</a> element from SVG 2 or the
-    <a>'animation'</a> element from SVG Tiny 1.2 must use the
+    <p>This referencing mode is for NSVG documents that are externally referenced
+    and embedded for presentation in a host document.  NSVG documents referenced by the
+    <a>'iframe'</a> element from NSVG 2 or the
+    <a>'animation'</a> element from NSVG Tiny 1.2 must use the
     <a href="#embedded-document-mode">embedded document</a>
     <a href="#referencing-mode">referencing mode</a>.</p>
 
     <p class="note">Note that the embedded document referencing mode
-    is not used for inline SVG fragments within an HTML document.</p>
+    is not used for inline NSVG fragments within an HTML document.</p>
 
-    <p>SVG documents processed with the
+    <p>NSVG documents processed with the
     <a href="#embedded-document-mode">embedded document</a>
     <a href="#referencing-mode">referencing mode</a> must use the
     <a href="#dynamic-interactive-mode">dynamic interactive</a>
     <a href="#processing-mode">processing mode</a>.</p>
 
     <p class="note">This referencing mode is intended to be used when
-    an SVG document is loaded in an HTML
+    an NSVG document is loaded in an HTML
     <span class='element-name'>'embed'</span>,
     <span class='element-name'>'iframe'</span> or
     <span class='element-name'>'object'</span> element.</p>
@@ -325,24 +325,24 @@ from this document.</p>
 
   <dt><dfn id="animated-image-document-mode">animated image document</dfn></dt>
   <dd>
-    <p>This referencing mode is for SVG documents that are used as images,
+    <p>This referencing mode is for NSVG documents that are used as images,
     where the context would typically be expecting a raster image that can
-    animate.  SVG documents referenced by the SVG <a>'image'</a> element must
+    animate.  NSVG documents referenced by the NSVG <a>'image'</a> element must
     use the <a href="#animated-image-document-mode">animated image document</a>
     <a href="#referencing-mode">referencing mode</a> if
-    the referencing SVG document is using the
+    the referencing NSVG document is using the
     <a href='#top-level-document-mode'>top-level document</a>,
     <a href='#embedded-document-mode'>embedded document</a> or
     <a href='#animated-image-document-mode'>animated image document mode</a>.</p>
 
-    <p>SVG documents processed with the
+    <p>NSVG documents processed with the
     <a href="#animated-image-document-mode">animated image document</a>
     <a href="#referencing-mode">referencing mode</a> must use the
     <a href="#secure-animated-mode">secure animated</a>
     <a href="#processing-mode">processing mode</a>.</p>
 
     <p class="note">This referencing mode is intended to be used when
-    an SVG document is referenced by an HTML
+    an NSVG document is referenced by an HTML
     <span class='element-name'>'img'</span> element or
     by any CSS property that takes an
     <a href='https://www.w3.org/TR/css3-values/#images'>&lt;image&gt;</a>
@@ -351,23 +351,23 @@ from this document.</p>
 
   <dt><dfn id="static-image-document-mode">static image document</dfn></dt>
   <dd>
-    <p>This referencing mode is for SVG documents that are used as images,
+    <p>This referencing mode is for NSVG documents that are used as images,
     where the context would typically be expecting a raster image but where
-    animations are unable to run.  SVG documents
-    referenced by the SVG <a>'image'</a> element must use the
+    animations are unable to run.  NSVG documents
+    referenced by the NSVG <a>'image'</a> element must use the
     <a href="#static-image-document-mode">static image document</a>
     <a href="#referencing-mode">referencing mode</a> if
-    the referencing SVG document is using the
+    the referencing NSVG document is using the
     <a href='#static-image-document-mode'>static image document mode</a>.</p>
 
-    <p>SVG documents processed with the
+    <p>NSVG documents processed with the
     <a href="#static-image-document-mode">static image document</a>
     <a href="#referencing-mode">referencing mode</a> must use the
     <a href="#secure-static-mode">secure static</a>
     <a href="#processing-mode">processing mode</a>.</p>
 
     <p class="note">This referencing mode is intended to be used when
-    an SVG document is referenced by an HTML
+    an NSVG document is referenced by an HTML
     <span class='element-name'>'img'</span> element or
     by any CSS property that takes an
     <a href='https://www.w3.org/TR/css3-values/#images'>&lt;image&gt;</a>
@@ -376,10 +376,10 @@ from this document.</p>
 
   <dt><dfn id="resource-document-mode">resource document</dfn></dt>
   <dd>
-    <p>This referencing mode is for SVG documents that are loaded
+    <p>This referencing mode is for NSVG documents that are loaded
     as resource documents in order to use their <a>'mask element'</a>,
     <a>'pattern element'</a>, gradient, or other resource elements.
-    SVG documents loaded due to a reference to an external document from any
+    NSVG documents loaded due to a reference to an external document from any
     of the following features must use the
     <a href="#resource-document-mode">resource document</a>
     <a href="#referencing-mode">referencing mode</a>:</p>
@@ -396,7 +396,7 @@ from this document.</p>
       <a>'tref'</a> and <a>'use'</a> elements</li>
     </ul>
 
-    <p>SVG documents processed with the
+    <p>NSVG documents processed with the
     <a href="#resource-document-mode">resource document</a>
     <a href="#referencing-mode">referencing mode</a> must use the
     <a href="#secure-animated-mode">secure animated</a>
@@ -407,23 +407,23 @@ from this document.</p>
 
   <dt><dfn id="font-document-mode">font document</dfn></dt>
   <dd>
-    <p>This referencing mode is for SVG documents that are being used
+    <p>This referencing mode is for NSVG documents that are being used
     to define font glyphs.</p>
 
-    <p>SVG documents processed with the
+    <p>NSVG documents processed with the
     <a href="#font-document-mode">font document</a>
     <a href="#referencing-mode">referencing mode</a> must use the
     <a href="#secure-animated-mode">secure animated</a>
     <a href="#processing-mode">processing mode</a>.</p>
 
-    <p>Additionally, SVG documents processed with the
+    <p>Additionally, NSVG documents processed with the
     <a href="#font-document-mode">font document</a>
     <a href="#referencing-mode">referencing mode</a> must apply the
     following user agent style sheet:</p>
 
-    <pre style="background-color: #eee; padding: 0.5em">@namespace svg url(http://www.w3.org/2000/svg);
+    <pre style="background-color: #eee; padding: 0.5em">@namespace nsvg url(http://www.w3.org/2000/nsvg);
 
-svg|text, svg|foreignObject {
+nsvg|text, nsvg|foreignObject {
   display: none !important;
 }
 
@@ -437,7 +437,7 @@ svg|text, svg|foreignObject {
   stroke-dashoffset: context-value;
 }</pre>
     <p class="note">This referencing mode is intended to used by the
-    OpenType specification for processing documents from the "SVG"
+    OpenType specification for processing documents from the "NSVG"
     table.</p>
     <p class="issue" data-issue="4">Should the CSS Variables that map the palette
     colors into the document be defined here too?  It probably makes
@@ -445,17 +445,17 @@ svg|text, svg|foreignObject {
   </dd>
 </dl>
 
-<p>SVG document fragments that are included inline in a host document
+<p>NSVG document fragments that are included inline in a host document
 use a <a href='#referencing-mode'>referencing mode</a> that matches
-that of the host document.  SVG document fragments included as
-children of an SVG <a>'foreignObject'</a> element must use the
+that of the host document.  NSVG document fragments included as
+children of an NSVG <a>'foreignObject'</a> element must use the
 <a href='#referencing-mode'>referencing mode</a> of the referencing
-SVG document.</p>
+NSVG document.</p>
 
-<p class='note'>For example, if an SVG document is being used in
+<p class='note'>For example, if an NSVG document is being used in
 <a href='#animated-image-document-mode'>animated image document mode</a>
 due to being referenced by an HTML <a>'image'</a> element, then any
-inline SVG fragment that is a child of a <a>'foreignObject'</a> element
+inline NSVG fragment that is a child of a <a>'foreignObject'</a> element
 within that document is also processed using
 <a href='#animated-image-document-mode'>animated image document mode</a>.</p>
 
@@ -463,8 +463,8 @@ within that document is also processed using
 <h2 id="processing-modes">Processing modes</h2>
 
 <p>This section defines a number of <dfn id="processing-mode">processing modes</dfn>
-for SVG documents.  Each processing mode specifies whether certain high level
-SVG features are enabled.</p>
+for NSVG documents.  Each processing mode specifies whether certain high level
+NSVG features are enabled.</p>
 
 <h3 id="features">Features</h3>
 
@@ -474,10 +474,10 @@ on the processing mode are as follows:</p>
 <dl>
   <dt>declarative animation</dt>
   <dd>
-    <p>Declarative animation includes both the SMIL animation elements in SVG –
+    <p>Declarative animation includes both the SMIL animation elements in NSVG –
     <a>'animate'</a>, <a>'animateColor'</a>, <a>'animateMotion'</a>,
     <a>'animateTransform'</a> and <a>'set'</a> – and CSS Transitions and Animations.
-    When declarative animations are disabled in an SVG document, any SMIL
+    When declarative animations are disabled in an NSVG document, any SMIL
     animations or CSS Transitions or Animations must not be applied or run.</p>
     <p class='note'>This is not the same as pausing the document's animated
     state at 0s document time; if a SMIL animation is defined to begin at 0s,
@@ -487,7 +487,7 @@ on the processing mode are as follows:</p>
   <dt>references to external resources</dt>
   <dd>
     <p>References to external resources are URLs that can be used in any of the following
-    SVG features, where any of the URL's components, ignoring the fragment,
+    NSVG features, where any of the URL's components, ignoring the fragment,
     do not match the document's URL:</p>
     <ul>
       <li>the <a>'clip-path'</a>, <a>'cursor property'</a>, <a>'fill'</a>,
@@ -506,7 +506,7 @@ on the processing mode are as follows:</p>
       Web platform features used in the document</li>
     </ul>
     <p>User agents must apply <a href="#ref-CORS">CORS</a> policies when fetching external resources
-      used in any of the SVG features listed above.</p>
+      used in any of the NSVG features listed above.</p>
     <p>To protect against unlimited resource fetching and cycles in external
       resources, user agents must limit external resources to a single level of
       depth, so that referenced external resources
@@ -514,7 +514,7 @@ on the processing mode are as follows:</p>
     <p>As noted in <a href="#processing-modes">Referencing modes</a> section, external resources must use
       <a href="#resource-document-mode">resource document</a>
       <a href="#referencing-mode">referencing mode</a>.</p>
-    <p>When external references are disabled in an SVG document, any attempt to
+    <p>When external references are disabled in an NSVG document, any attempt to
     fetch a document through an external reference must instead be treated as
     if a network error occurred and no data was received.</p>
     <p class='issue' data-issue="5">This is all too handwavy.  And we perhaps shouldn't try
@@ -524,11 +524,11 @@ on the processing mode are as follows:</p>
 
   <dt>script execution</dt>
   <dd>
-    <p>Script execution is the execution of any SVG <a>'script'</a> elements,
+    <p>Script execution is the execution of any NSVG <a>'script'</a> elements,
     script found in event listener attributes (such as <a>'onclick'</a> on
-    SVG elements), or any other script defined by other Web platform features
+    NSVG elements), or any other script defined by other Web platform features
     used in the document such as any HTML <a>'script'</a> elements.
-    When script execution is disabled in an SVG document, no script in the
+    When script execution is disabled in an NSVG document, no script in the
     document must be run.</p>
   </dd>
 
@@ -538,7 +538,7 @@ on the processing mode are as follows:</p>
     any user agent specific UI behaviors such as text selection, focus changing,
     link traversal, or animation or transition triggering that is done in
     response to user input such as mouse or keyboard activity.  When
-    interaction is disabled in an SVG document, any user input events that would
+    interaction is disabled in an NSVG document, any user input events that would
     be targetted at the document or any elements within the document must have
     no effect.</p>
   </dd>
@@ -547,7 +547,7 @@ on the processing mode are as follows:</p>
 <h3 id="dynamic-interactive-mode">Dynamic interactive mode</h3>
 
 <p>This <a>processing mode</a> imposes no restrictions on any
-feature of the SVG language.</p>
+feature of the NSVG language.</p>
 
 <table class="features">
   <thead>
@@ -578,7 +578,7 @@ feature of the SVG language.</p>
 <h3 id="animated-mode">Animated mode</h3>
 
 <p>This <a>processing mode</a> is intended for circumstances where
-an SVG document is to be used as an animated image that is allowed
+an NSVG document is to be used as an animated image that is allowed
 to resolve external references, but which is not intended to be used
 as an interactive document.</p>
 
@@ -616,7 +616,7 @@ by any of the <a>referencing modes</a> defined in this specification.</p>
 <h3 id="secure-animated-mode">Secure animated mode</h3>
 
 <p>This <a>processing mode</a> is intended for circumstances where
-an SVG document is to be used as an animated image that is not allowed
+an NSVG document is to be used as an animated image that is not allowed
 to resolve external references, and which is not intended to be used
 as an interactive document.  This mode might be used where image support
 has traditionally been limited to raster images (such as JPEG, PNG and
@@ -651,7 +651,7 @@ GIF).</p>
 <h3 id="static-mode">Static mode</h3>
 
 <p>This <a>processing mode</a> is intended for circumstances where
-an SVG document is to be used as a non-animated image that is allowed
+an NSVG document is to be used as a non-animated image that is allowed
 to resolve external references, but which is not intended to be used
 as an interactive document.</p>
 
@@ -689,7 +689,7 @@ by any of the <a>referencing modes</a> defined in this specification.</p>
 <h3 id="secure-static-mode">Secure static mode</h3>
 
 <p>This <a>processing mode</a> is intended for circumstances where
-an SVG document is to be used as a non-animated image that is not allowed
+an NSVG document is to be used as a non-animated image that is not allowed
 to resolve external references, and which is not intended to be used
 as an interactive document.  This mode might be used where image support
 has traditionally been limited to non-animated raster images (such as JPEG
@@ -726,7 +726,7 @@ and PNG.)</p>
 <p><em>This section is non-normative.</em></p>
 
 <div class="example">
-<p>Below are various methods of embedding SVG in an HTML page by
+<p>Below are various methods of embedding NSVG in an HTML page by
 reference. Each <a>referencing mode</a> element should display a yellow
 smiley face. In each example below, clicking on the eyes tests link
 traversal, and clicking on the face tests declarative interactivity
@@ -750,18 +750,18 @@ animation is supported if the left eye is winking.</p>
     </tr>
     <tr>
       <td>
-        <object class="embedcontext" type="image/svg+xml" data="smiley.svg">Please use FF1.5+, Opera 9+, WebKit/Safari3.0, or IE with an SVG plugin!</object>
+        <object class="embedcontext" type="image/nsvg+xml" data="smiley.nsvg">Please use FF1.5+, Opera 9+, WebKit/Safari3.0, or IE with an NSVG plugin!</object>
       </td>
       <td>
-        <iframe class="embedcontext" src="smiley.svg" style="border: 0">Please use FF1.5+, Opera 9+, WebKit/Safari3.0, or IE with an SVG plugin!</iframe>
+        <iframe class="embedcontext" src="smiley.nsvg" style="border: 0">Please use FF1.5+, Opera 9+, WebKit/Safari3.0, or IE with an NSVG plugin!</iframe>
       </td>
       <!--
       <td>
-        <embed class="embedcontext" src="smiley.svg" type="image/svg+xml">
+        <embed class="embedcontext" src="smiley.nsvg" type="image/nsvg+xml">
       </td>
       -->
       <td>
-        <img class="embedcontext" alt="smiley face" src="smiley.svg" />
+        <img class="embedcontext" alt="smiley face" src="smiley.nsvg" />
       </td>
       <td><div class="bg">&#xA0;</div></td>
     </tr>
@@ -769,41 +769,41 @@ animation is supported if the left eye is winking.</p>
 </table>
 </div>
 
-<h2 id="svg-css-sizing">Sizing SVG content in CSS context</h2>
+<h2 id="nsvg-css-sizing">Sizing NSVG content in CSS context</h2>
 
-<p>To present SVG content in CSS context (such as 'background-image',
-  inline SVG in HTML or 'img' element referencing SVG document),
+<p>To present NSVG content in CSS context (such as 'background-image',
+  inline NSVG in HTML or 'img' element referencing NSVG document),
   user agents must use the rules below.</p>
 
-  <p>Initial <a>'svg'</a> element <a>'width'</a> and <a>'height'</a> are set to 'auto',
-    except cases when SVG element is the top level element in the document
-    (including embedded documents). When SVG element is the top level element,
+  <p>Initial <a>'nsvg'</a> element <a>'width'</a> and <a>'height'</a> are set to 'auto',
+    except cases when NSVG element is the top level element in the document
+    (including embedded documents). When NSVG element is the top level element,
     the <a>'width'</a> and <a>'height'</a> are set to '100%'</p>
-  <p>To resolve 'auto' value on <a>'svg'</a> element if the <a>'viewBox'</a> attribute is not specified:</p>
+  <p>To resolve 'auto' value on <a>'nsvg'</a> element if the <a>'viewBox'</a> attribute is not specified:</p>
   <ul>
-    <li>Use author specified <a>'width'</a> and <a>'height'</a> <a>'svg'</a> element attributes.</li>
-    <li>If any of the sizing attributes are missing, resolve the missing <a>'svg'</a> element <a>'width'</a>
+    <li>Use author specified <a>'width'</a> and <a>'height'</a> <a>'nsvg'</a> element attributes.</li>
+    <li>If any of the sizing attributes are missing, resolve the missing <a>'nsvg'</a> element <a>'width'</a>
       to '300px' and missing <a>'height'</a> to '150px' (using
       <a href='https://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width'>
         CSS 2.1 replaced elements size calculation</a>).</li>
   </ul>
-  <p>To resolve 'auto' value on <a>'svg'</a> element if the <a>'viewBox'</a> attribute is specified:</p>
+  <p>To resolve 'auto' value on <a>'nsvg'</a> element if the <a>'viewBox'</a> attribute is specified:</p>
   <ul>
-    <li>Use the <a>'viewBox'</a> attribute to calculate the intrinsic aspect ratio of the <a>'svg'</a> element.</li>
+    <li>Use the <a>'viewBox'</a> attribute to calculate the intrinsic aspect ratio of the <a>'nsvg'</a> element.</li>
     <li>If the <a>'width'</a> or <a>'height'</a> attributes are not specified -
       keep not specified <a>'width'</a> or <a>'height'</a> as 'auto'.</li>
   </ul>
-  <p>The resolved <a>'svg'</a> element width, height and aspect ratio are then used
+  <p>The resolved <a>'nsvg'</a> element width, height and aspect ratio are then used
     in CSS sizing as intrinsic element size properties
     (using <a href='https://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width'>
       CSS 2.1 replaced elements size calculations</a>).</p>
 
-<h2 id="foreign-content">Embedding foreign content in SVG</h2>
+<h2 id="foreign-content">Embedding foreign content in NSVG</h2>
 
-<p>The SVG <a>'foreignObject'</a> element is an extension point that
+<p>The NSVG <a>'foreignObject'</a> element is an extension point that
 can be used to include document fragments from other languages to
-be rendered in an SVG document.  This section defines how HTML and
-SVG elements are handled as children of <a>'foreignObject'</a>.</p>
+be rendered in an NSVG document.  This section defines how HTML and
+NSVG elements are handled as children of <a>'foreignObject'</a>.</p>
 
 <h3 id="foreign-content-html">Using HTML in <span class='element-name'>'foreignObject'</span></h3>
 
@@ -812,12 +812,12 @@ CSS, the viewport establishes the initial containing block (as defined in CSS
 2.1).  The dimensions of the CSS viewport in pixels are the width and height
 attribute values of the <a>'foreignObject'</a> element in user units.</p>
 
-<p>If <a>'foreignObject'</a> contains SVG element, the viewport of this element is
+<p>If <a>'foreignObject'</a> contains NSVG element, the viewport of this element is
 established according to
-<a href='[SVG2]/coords.html#ViewportSpace'>initial viewport</a> definition.</p>
+<a href='[NSVG2]/coords.html#ViewportSpace'>initial viewport</a> definition.</p>
 
 <div class="example">
-  <p>For example, if HTML content is included inline in SVG inside a
+  <p>For example, if HTML content is included inline in NSVG inside a
   <a>'foreignObject'</a> element with a <a>'width'</a> of
   <span class="attr-value">'400'</span> and a
   <a>'height'</a> of <span class="attr-value">'600'</span>,
@@ -826,61 +826,61 @@ established according to
 </div>
 
 <!--
-<h2 id="extend">Extending SVG</h2>
+<h2 id="extend">Extending NSVG</h2>
 
-<h3 id="ConformingSVGExtensions">Extension conformance requirements</h3>
+<h3 id="ConformingNSVGExtensions">Extension conformance requirements</h3>
 
-<p>Specifications and implementations are allowed to extend the SVG
+<p>Specifications and implementations are allowed to extend the NSVG
 specification but in order to claim conformance the following criteria
 need to be met:</p>
 
 <ul>
-  <li>An extension must support the normative chapters of the SVG
-  specifications that define conformance to SVG.</li>
+  <li>An extension must support the normative chapters of the NSVG
+  specifications that define conformance to NSVG.</li>
 
-  <li>An extension must support the normative chapters of the SVG
+  <li>An extension must support the normative chapters of the NSVG
   specifications that detail extensibility.</li>
 
-  <li>An extension must support the normative chapters of the SVG
+  <li>An extension must support the normative chapters of the NSVG
   specifications that define conditional processing.</li>
 
-  <li>If using features defined in SVG, an extension must not
+  <li>If using features defined in NSVG, an extension must not
   redefine the syntax of those features.</li>
 
-  <li>An extension must not redefine the semantics of any existing SVG
+  <li>An extension must not redefine the semantics of any existing NSVG
   element or attribute.</li>
 
-  <li>SVG attribute and element names must not be reused in extensions,
+  <li>NSVG attribute and element names must not be reused in extensions,
   even in a separate namespace, in order to avoid author confusion.</li>
 </ul>
 
 <h3 id="ForeignNamespacesPrivateData">Foreign namespaces and private data</h3>
 
-<p>SVG allows inclusion of elements from foreign namespaces
-anywhere with the SVG content. In general, the SVG user agent
+<p>NSVG allows inclusion of elements from foreign namespaces
+anywhere with the NSVG content. In general, the NSVG user agent
 must include any unknown elements in the DOM, but must otherwise
 ignore unknown elements. (The notable exception is described under
-<a href="http://www.w3.org/TR/SVGTiny12/extend.html#ForeignObjectElement">Embedding foreign object types</a>.)</p>
+<a href="http://www.w3.org/TR/NSVGTiny12/extend.html#ForeignObjectElement">Embedding foreign object types</a>.)</p>
 
-<p>Extension elements in the SVG namespace must not be used.</p>
+<p>Extension elements in the NSVG namespace must not be used.</p>
 
-<p>Additionally, SVG allows inclusion of attributes from foreign namespaces
-on any SVG element.
-Extensions of SVG-namespaced elements in the form of attributes must be
-in a namespace other than the SVG namespace.  Any attributes which are not
-in a namespace and which are not defined by an SVG specification must be
-treated as unknown attributes.  The SVG user agent must include unknown
+<p>Additionally, NSVG allows inclusion of attributes from foreign namespaces
+on any NSVG element.
+Extensions of NSVG-namespaced elements in the form of attributes must be
+in a namespace other than the NSVG namespace.  Any attributes which are not
+in a namespace and which are not defined by an NSVG specification must be
+treated as unknown attributes.  The NSVG user agent must include unknown
 attributes in the DOM, but may otherwise ignore unknown attributes.
 Attributes bound to a foreign
-namespace may extend the semantics or behavior of SVG elements
+namespace may extend the semantics or behavior of NSVG elements
 in user agents that support that foreign namespace.</p>
 
-<p>SVG's ability to include foreign namespaces can be used for
+<p>NSVG's ability to include foreign namespaces can be used for
 the following purposes:</p>
 
 <ul>
   <li>Application-specific information to allow authoring
-  applications to include model-level data in the SVG content
+  applications to include model-level data in the NSVG content
   to serve their "roundtripping" purposes (i.e., the ability to
   write, then read a file without loss of higher-level
   information).</li>
@@ -889,24 +889,24 @@ the following purposes:</p>
   you have an extrusion extension which takes any 2D graphics
   and extrudes it in three dimensions. When applying the
   extrusion extension, you probably will need to set some
-  parameters. The parameters can be included in the SVG content
+  parameters. The parameters can be included in the NSVG content
   by inserting elements from an extrusion extension
   namespace.</li>
 
-  <li>Metadata to add supplementary semantics to the SVG file, or
+  <li>Metadata to add supplementary semantics to the NSVG file, or
   to specific elements or attributes within the file.</li>
 </ul>
 
 <p>To illustrate, a business graphics authoring application
-might want to include some private data within an SVG document
+might want to include some private data within an NSVG document
 so that it could properly reassemble the chart (a pie chart in
 this case) upon reading it back in:</p>
 
 <div class="example">
-  <div class="exampleheader"><strong>Example:</strong> 23_01.svg</div>
+  <div class="exampleheader"><strong>Example:</strong> 23_01.nsvg</div>
   <div class="examplesource">
     <pre>&lt;?xml version="1.0"?&gt;
-&lt;svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny"
+&lt;nsvg xmlns="http://www.w3.org/2000/nsvg" version="1.2" baseProfile="tiny"
      width="4in" height="3in"&gt;
 
   &lt;defs&gt;
@@ -924,34 +924,34 @@ this case) upon reading it back in:</p>
 
   &lt;desc&gt;This chart includes private data in another namespace&lt;/desc&gt;
 
-  &lt;!_- In here would be the actual SVG graphics elements which
+  &lt;!_- In here would be the actual NSVG graphics elements which
        draw the pie chart -_&gt;
-&lt;/svg&gt;</pre>
+&lt;/nsvg&gt;</pre>
   </div>
 </div>
 
 
-<h2 id="SVGEncoding">SVG Encoding</h2>
+<h2 id="NSVGEncoding">NSVG Encoding</h2>
 
 <h3 id="XMLEncoding">XML encoding conformance requirements</h3>
 
-<p>An <a>SVG Document Fragment</a>, <a>SVG Stand-Alone Document</a>,
-or <a>SVG Included Document Fragment</a> encoded using XML conforms to the SVG
+<p>An <a>NSVG Document Fragment</a>, <a>NSVG Stand-Alone Document</a>,
+or <a>NSVG Included Document Fragment</a> encoded using XML conforms to the NSVG
 specifications if it is valid, well-formed, and uses namespaces according
 to the Namespaces in XML specification.  Non-conforming documents
 may be rendered according to the behavior specified for error-correction
-in the SVG or XML specifications.</p>
+in the NSVG or XML specifications.</p>
 
-<p class="issue" data-issue="11">Which SVG spec should define better error handling?</p>
+<p class="issue" data-issue="11">Which NSVG spec should define better error handling?</p>
 
 <h3 id="NonXMLEncoding">Non-XML encoding conformance requirements</h3>
 
-<p>An <a>SVG Document Fragment</a>, <a>SVG Stand-Alone Document</a>, or
-<a>SVG Included Document Fragment</a> encoded using a non-XML encoding (e.g.
+<p>An <a>NSVG Document Fragment</a>, <a>NSVG Stand-Alone Document</a>, or
+<a>NSVG Included Document Fragment</a> encoded using a non-XML encoding (e.g.
 efficient XML compression, or HTML5 parser)
-conforms to the SVG specifications if and only if the non-XML encoding in question
+conforms to the NSVG specifications if and only if the non-XML encoding in question
 guarantees roundtripping from XML to the encoding and back in such a way that the
-resulting document when processed by an <a>SVG user agent</a>
+resulting document when processed by an <a>NSVG user agent</a>
 must always render, animate, and interact in the exact same way as the
 original. Note that this requires a high-level of fidelity from the encoding
 including, but not limited to, the ability to encode non-conforming content
@@ -962,10 +962,10 @@ or elements not included in the <a>rendering tree</a> through use of
 <a>conditional processing attributes</a>.</p>
 
 
-<h2 id="svg-tokens">SVG Elements, Attributes, and Properties</h2>
+<h2 id="nsvg-tokens">NSVG Elements, Attributes, and Properties</h2>
 
-<p>This is a comprehensive list of all SVG elements from the SVG 1.1 [SVG11]
-and SVG Tiny 1.2 [SVGT12] specifications.  This document will be updated as
+<p>This is a comprehensive list of all NSVG elements from the NSVG 1.1 [NSVG11]
+and NSVG Tiny 1.2 [NSVGT12] specifications.  This document will be updated as
 new elements are minted.</p>
 
 <h3 id="case-matching">Case Matching</h3>
@@ -982,7 +982,7 @@ class <abbr title="Letter, Uppercase">Lu</abbr> character.  In other words,
 for mixed-case element names, the lowercase-only strings must be changed to
 the mixed-case string.</p>
 
-<h3 id="svg-elements">SVG Elements</h3>
+<h3 id="nsvg-elements">NSVG Elements</h3>
 
 <edit:script><![CDATA[
 function doElementTable(conf, page, n) {
@@ -1003,24 +1003,24 @@ function doElementTable(conf, page, n) {
     for (var specid in conf.definitionsBySpec) {
       var element = conf.definitionsBySpec[specid].elements[elementName];
       if (element) {
-        if (specid == 'SVG11' || conf.definitionMainSpecs[specid] == 'SVG11') {
+        if (specid == 'NSVG11' || conf.definitionMainSpecs[specid] == 'NSVG11') {
           href11 = element.href;
-        } else if (specid == 'SVG12T' || conf.definitionMainSpecs[specid] == 'SVG12T') {
+        } else if (specid == 'NSVG12T' || conf.definitionMainSpecs[specid] == 'NSVG12T') {
           href12T = element.href;
-        } else if (specid == 'SVG2' || conf.definitionMainSpecs[specid] == 'SVG2') {
+        } else if (specid == 'NSVG2' || conf.definitionMainSpecs[specid] == 'NSVG2') {
           href2 = element.href;
         }
       }
     }
     var buttons = [
-      makeElementButton('SVG11', '1.1', href11),
-      makeElementButton('SVG12T', '1.2T', href12T),
-      makeElementButton('SVG2', '2', href2)
+      makeElementButton('NSVG11', '1.1', href11),
+      makeElementButton('NSVG12T', '1.2T', href12T),
+      makeElementButton('NSVG2', '2', href2)
     ];
 
-    var element11 = conf.lookupElementBySpec('SVG11', elementName),
-        element12T = conf.lookupElementBySpec('SVG12T', elementName),
-        element2 = conf.lookupElementBySpec('SVG2', elementName);
+    var element11 = conf.lookupElementBySpec('NSVG11', elementName),
+        element12T = conf.lookupElementBySpec('NSVG12T', elementName),
+        element2 = conf.lookupElementBySpec('NSVG2', elementName);
 
     var attributeNames = Object.keys(utils.set([].concat(element11  ? Object.keys(element11.attributes)  : [],
                                                          element12T ? Object.keys(element12T.attributes) : [],
@@ -1028,13 +1028,13 @@ function doElementTable(conf, page, n) {
 
     var attributes =
       utils.list([].concat((conf.definitions.elements[elementName].attributeCategories.indexOf('aria') != -1 ? [utils.parse('<a class="{{classes}}" href="#aria-attributes">aria attributes</a>',
-                                                                                                                            { classes: [conf.lookupElementAttributeCategoryBySpec('SVG11' , elementName, 'aria') ? 'attr-' + elementName + '-SVG11'  : '',
-                                                                                                                                        conf.lookupElementAttributeCategoryBySpec('SVG12T', elementName, 'aria') ? 'attr-' + elementName + '-SVG12T' : '',
-                                                                                                                                        conf.lookupElementAttributeCategoryBySpec('SVG2',   elementName, 'aria') ? 'attr-' + elementName + '-SVG2'   : ''].join(' ') })] : []),
+                                                                                                                            { classes: [conf.lookupElementAttributeCategoryBySpec('NSVG11' , elementName, 'aria') ? 'attr-' + elementName + '-NSVG11'  : '',
+                                                                                                                                        conf.lookupElementAttributeCategoryBySpec('NSVG12T', elementName, 'aria') ? 'attr-' + elementName + '-NSVG12T' : '',
+                                                                                                                                        conf.lookupElementAttributeCategoryBySpec('NSVG2',   elementName, 'aria') ? 'attr-' + elementName + '-NSVG2'   : ''].join(' ') })] : []),
                            (conf.definitions.elements[elementName].attributeCategories.indexOf('presentation') != -1 ? [utils.parse('<a class="{{classes}}" href="#presentation-attributes">presentation attributes</a>',
-                                                                                                                                    { classes: [conf.lookupElementAttributeCategoryBySpec('SVG11' , elementName, 'presentation') ? 'attr-' + elementName + '-SVG11'  : '',
-                                                                                                                                                conf.lookupElementAttributeCategoryBySpec('SVG12T', elementName, 'presentation') ? 'attr-' + elementName + '-SVG12T' : '',
-                                                                                                                                                conf.lookupElementAttributeCategoryBySpec('SVG2',   elementName, 'presentation') ? 'attr-' + elementName + '-SVG2'   : ''].join(' ') })] : []),
+                                                                                                                                    { classes: [conf.lookupElementAttributeCategoryBySpec('NSVG11' , elementName, 'presentation') ? 'attr-' + elementName + '-NSVG11'  : '',
+                                                                                                                                                conf.lookupElementAttributeCategoryBySpec('NSVG12T', elementName, 'presentation') ? 'attr-' + elementName + '-NSVG12T' : '',
+                                                                                                                                                conf.lookupElementAttributeCategoryBySpec('NSVG2',   elementName, 'presentation') ? 'attr-' + elementName + '-NSVG2'   : ''].join(' ') })] : []),
                            attributeNames
                              .filter(function(a) { return !ariaAttributes[a] })
                              .sort()
@@ -1044,9 +1044,9 @@ function doElementTable(conf, page, n) {
                              .map(function(a) { return utils.parse('<span class="{{classes}}"><a href="{{href}}"><span>{{attribute}}</span></a></span>',
                                                                    { attribute: a.name,
                                                                      classes: ['attr-name',
-                                                                               conf.lookupElementAttributeBySpec('SVG11', elementName, a.name)  ? 'attr-' + elementName + '-SVG11'  : '',
-                                                                               conf.lookupElementAttributeBySpec('SVG12T', elementName, a.name) ? 'attr-' + elementName + '-SVG12T' : '',
-                                                                               conf.lookupElementAttributeBySpec('SVG2', elementName, a.name)   ? 'attr-' + elementName + '-SVG2'   : ''].join(' '),
+                                                                               conf.lookupElementAttributeBySpec('NSVG11', elementName, a.name)  ? 'attr-' + elementName + '-NSVG11'  : '',
+                                                                               conf.lookupElementAttributeBySpec('NSVG12T', elementName, a.name) ? 'attr-' + elementName + '-NSVG12T' : '',
+                                                                               conf.lookupElementAttributeBySpec('NSVG2', elementName, a.name)   ? 'attr-' + elementName + '-NSVG2'   : ''].join(' '),
                                                                      href: (function() {
                                                                              var an = a.name.replace(':', '-');
                                                                              if (a.specific) {
@@ -1089,18 +1089,18 @@ function doElementTable(conf, page, n) {
       return childElementsForSpec;
     }
 
-    var childElements11 = gatherChildElements(element11, 'SVG11'),
-        childElements12T = gatherChildElements(element12T, 'SVG12T'),
-        childElements2 = gatherChildElements(element2, 'SVG2');
+    var childElements11 = gatherChildElements(element11, 'NSVG11'),
+        childElements12T = gatherChildElements(element12T, 'NSVG12T'),
+        childElements2 = gatherChildElements(element2, 'NSVG2');
 
     var contentModel11 = element11 && (element11.contentModelDescription || element11.contentModel);
     var contentModel12T = element12T && (element12T.contentModelDescription || element12T.contentModel);
     var contentModel2 = element2 && (element2.contentModelDescription || element2.contentModel);
 
     function formatContentModel(contentModel, childElements, specid) {
-      var classes = [childElements11  ? 'attr-' + elementName + '-SVG11'  : '',
-                     childElements12T ? 'attr-' + elementName + '-SVG12T' : '',
-                     childElements2   ? 'attr-' + elementName + '-SVG2'   : ''].join(' ');
+      var classes = [childElements11  ? 'attr-' + elementName + '-NSVG11'  : '',
+                     childElements12T ? 'attr-' + elementName + '-NSVG12T' : '',
+                     childElements2   ? 'attr-' + elementName + '-NSVG2'   : ''].join(' ');
       if (typeof contentModel == 'string') {
         var intro;
         switch (contentModel) {
@@ -1127,9 +1127,9 @@ function doElementTable(conf, page, n) {
                                       .map(function(name) { return utils.parse('<span class="{{classes}}"><a href="#element-{{name}}"><span>{{name}}</span></a></span>',
                                                                                { name: name,
                                                                                  classes: ['element-name',
-                                                                                           childElements11  && childElements11[name]  ? 'attr-' + elementName + '-SVG11'  : '',
-                                                                                           childElements12T && childElements12T[name] ? 'attr-' + elementName + '-SVG12T' : '',
-                                                                                           childElements2   && childElements2[name]   ? 'attr-' + elementName + '-SVG2'   : ''].join(' ') }) })) });
+                                                                                           childElements11  && childElements11[name]  ? 'attr-' + elementName + '-NSVG11'  : '',
+                                                                                           childElements12T && childElements12T[name] ? 'attr-' + elementName + '-NSVG12T' : '',
+                                                                                           childElements2   && childElements2[name]   ? 'attr-' + elementName + '-NSVG2'   : ''].join(' ') }) })) });
       } else {
         var n = utils.parse('<div>{{description}}</div>', { description: contentModel.cloneNode(true) });
         n.setAttributeNS(namespaces.edit, 'edit:speclinks', specid);
@@ -1142,9 +1142,9 @@ function doElementTable(conf, page, n) {
       contentModel = formatContentModel(contentModels[0], childElements[0], '');
     } else {
       var entries = [];
-      if (element11)  entries.push(utils.parse('<dt class="attr-{{name}}-SVG11">For SVG 1.1</dt><dd class="attr-{{name}}-SVG11">{{contentModel}}</dd>', { name: elementName, contentModel: formatContentModel(contentModel11, childElements11, 'SVG11') }));
-      if (element12T) entries.push(utils.parse('<dt class="attr-{{name}}-SVG12T">For SVG 1.2 Tiny</dt><dd class="attr-{{name}}-SVG12T">{{contentModel}}</dd>', { name: elementName, contentModel: formatContentModel(contentModel12T, childElements12T, 'SVG12T') }));
-      if (element2)   entries.push(utils.parse('<dt class="attr-{{name}}-SVG2">For SVG 2</dt><dd class="attr-{{name}}-SVG2">{{contentModel}}</dd>', { name: elementName, contentModel: formatContentModel(contentModel2, childElements2, 'SVG2') }));
+      if (element11)  entries.push(utils.parse('<dt class="attr-{{name}}-NSVG11">For NSVG 1.1</dt><dd class="attr-{{name}}-NSVG11">{{contentModel}}</dd>', { name: elementName, contentModel: formatContentModel(contentModel11, childElements11, 'NSVG11') }));
+      if (element12T) entries.push(utils.parse('<dt class="attr-{{name}}-NSVG12T">For NSVG 1.2 Tiny</dt><dd class="attr-{{name}}-NSVG12T">{{contentModel}}</dd>', { name: elementName, contentModel: formatContentModel(contentModel12T, childElements12T, 'NSVG12T') }));
+      if (element2)   entries.push(utils.parse('<dt class="attr-{{name}}-NSVG2">For NSVG 2</dt><dd class="attr-{{name}}-NSVG2">{{contentModel}}</dd>', { name: elementName, contentModel: formatContentModel(contentModel2, childElements2, 'NSVG2') }));
       contentModel = utils.parse('<dl>{{entries}}</dl>', { entries: entries });
     }
 
@@ -1157,13 +1157,13 @@ function doElementTable(conf, page, n) {
   });
   var style = utils.parse('<style></style>');
   style.textContent =
-    elementNames.map(function(attributeName) { return ['.limit-attr-' + attributeName + ' #element-index .attr-' + attributeName + '-SVG11',
-                                                       '.limit-attr-' + attributeName + ' #element-index .attr-' + attributeName + '-SVG12T',
-                                                       '.limit-attr-' + attributeName + ' #element-index .attr-' + attributeName + '-SVG2'].join(', ') }).join(', ') +
+    elementNames.map(function(attributeName) { return ['.limit-attr-' + attributeName + ' #element-index .attr-' + attributeName + '-NSVG11',
+                                                       '.limit-attr-' + attributeName + ' #element-index .attr-' + attributeName + '-NSVG12T',
+                                                       '.limit-attr-' + attributeName + ' #element-index .attr-' + attributeName + '-NSVG2'].join(', ') }).join(', ') +
     ' { opacity: 0.25; } ' +
-    elementNames.map(function(attributeName) { return ['.show-attr-' + attributeName + '-SVG11 #element-index .attr-' + attributeName + '-SVG11',
-                                                       '.show-attr-' + attributeName + '-SVG12T #element-index .attr-' + attributeName + '-SVG12T',
-                                                       '.show-attr-' + attributeName + '-SVG2 #element-index .attr-' + attributeName + '-SVG2'].join(', ') }).join(', ') +
+    elementNames.map(function(attributeName) { return ['.show-attr-' + attributeName + '-NSVG11 #element-index .attr-' + attributeName + '-NSVG11',
+                                                       '.show-attr-' + attributeName + '-NSVG12T #element-index .attr-' + attributeName + '-NSVG12T',
+                                                       '.show-attr-' + attributeName + '-NSVG2 #element-index .attr-' + attributeName + '-NSVG2'].join(', ') }).join(', ') +
     ' { opacity: 1; }';
   utils.replace(n, utils.fragment([style, table]));
 }
@@ -1173,27 +1173,27 @@ processing.defineReplacement("elementtable", doElementTable);
 
 <edit:elementtable/>
 
-<h3 id="svg-attributes">SVG Attributes</h3>
+<h3 id="nsvg-attributes">NSVG Attributes</h3>
 
 <p class="issue" data-issue="12">TODO: auto-generate a table of attributes.</p>
 
-<h3 id="svg-properties">SVG Properties</h3>
+<h3 id="nsvg-properties">NSVG Properties</h3>
 
 <p class="issue" data-issue="13">TODO: auto-generate a table of properties.</p>
 
-<h2 id="svg-sizing">Dynamic Sizing of SVG Content</h2>
+<h2 id="nsvg-sizing">Dynamic Sizing of NSVG Content</h2>
 
 <p class="issue" data-issue="14">TODO</p>
 
-<h2 id="RelaxNG">RelaxNG Schema for SVG Integration 1.0</h2>
+<h2 id="RelaxNG">RelaxNG Schema for NSVG Integration 1.0</h2>
 
-<p>The schema for SVG Integration 1.0 is written in
+<p>The schema for NSVG Integration 1.0 is written in
 <a href="http://www.y12.doe.gov/sgml/sc34/document/0362_files/relaxng-is.pdf">RelaxNG</a>
 [<a href="#ref-RNG">RelaxNG</a>], a namespace-aware schema language that uses
 the datatypes from <a href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/">XML Schema Part 2</a>
 [<a href="#ref-Schema2">Schema2</a>]. This allows namespaces and modularity to
 be much more naturally expressed than using DTD syntax. The RelaxNG schema for
-SVG Filter 1.2 may be imported by other RelaxNG schemas, or combined with
+NSVG Filter 1.2 may be imported by other RelaxNG schemas, or combined with
 other schemas in other languages into a multi-namespace, multi-grammar schema
 using <a href="http://www.asahi-net.or.jp/~eb2m-mrt/dsdl/">Namespace-based Validation Dispatching Language</a>
 [<a href="#ref-NVDL">NVDL</a>].</p>
@@ -1219,26 +1219,26 @@ schema. The individual RNG files are available <a href="rng">here</a>.</p>
   S. Bradner, March 1997.
   <br />Available at https://tools.ietf.org/html/rfc2119.</dd>
 
-  <dt id="ref-SVG11"><strong class="normref">[SVG11]</strong></dt>
-  <dd><cite class="w3crec"><a href="https://www.w3.org/TR/2003/REC-SVG11-20030114/">Scalable Vector Graphics (SVG) 1.1</a></cite>,
+  <dt id="ref-NSVG11"><strong class="normref">[NSVG11]</strong></dt>
+  <dd><cite class="w3crec"><a href="https://www.w3.org/TR/2003/REC-NSVG11-20030114/">Not Scalable Vector Graphics (NSVG) 1.1</a></cite>,
   J. Ferraiolo, <span class="ruby"><span class="rb">&#x85E4;&#x6CA2; &#x6DF3;</span><span class="rp">(</span><span class="rt"><span class="familyname">Fujisawa</span> Jun</span><span class="rp">)</span></span>, D. Jackson, eds.
   World Wide Web Consortium, 14 January 2003.
-  <br />This edition of SVG 1.1 is https://www.w3.org/TR/2003/REC-SVG11-20030114/.
-  <br />The <a href="https://www.w3.org/TR/SVG11/">latest edition of SVG 1.1</a> is available at https://www.w3.org/TR/SVG11/.</dd>
+  <br />This edition of NSVG 1.1 is https://www.w3.org/TR/2003/REC-NSVG11-20030114/.
+  <br />The <a href="https://www.w3.org/TR/NSVG11/">latest edition of NSVG 1.1</a> is available at https://www.w3.org/TR/NSVG11/.</dd>
 
-  <dt id="ref-SVGT12"><strong class="normref">[SVGT12]</strong></dt>
-  <dd><cite class="w3crec"><a href="https://www.w3.org/TR/2008/REC-SVGTiny12-20081222/">Scalable Vector Graphics (SVG) Tiny 1.2</a></cite>,
+  <dt id="ref-NSVGT12"><strong class="normref">[NSVGT12]</strong></dt>
+  <dd><cite class="w3crec"><a href="https://www.w3.org/TR/2008/REC-NSVGTiny12-20081222/">Not Scalable Vector Graphics (NSVG) Tiny 1.2</a></cite>,
   O. Andersson, R. Berjon, E. Dahlstr&#xF6;m, A. Emmons, J. Ferraiolo, A. Grasso, V. Hardy, S. Hayman, D. Jackson, C. Lilley, C. McCormack, A. Neumann, C. Northway, A. Quint, N. Ramani, D. Schepers, A. Shellshear, eds.
   World Wide Web Consortium, 22 December 2008.
-  <br />This edition of SVG Tiny 1.2 is https://www.w3.org/TR/2008/REC-SVGTiny12-20081222/.
-  <br />The <a href="https://www.w3.org/TR/SVGTiny12/">latest edition of SVG Tiny 1.2</a> is available at https://www.w3.org/TR/SVGTiny12/.</dd>
+  <br />This edition of NSVG Tiny 1.2 is https://www.w3.org/TR/2008/REC-NSVGTiny12-20081222/.
+  <br />The <a href="https://www.w3.org/TR/NSVGTiny12/">latest edition of NSVG Tiny 1.2</a> is available at https://www.w3.org/TR/NSVGTiny12/.</dd>
 
-  <dt id="ref-SVG2"><strong class="normref">[SVG2]</strong></dt>
-  <dd><cite class="w3cwd"><a href="https://www.w3.org/TR/2014/WD-SVG2-20140211/">Scalable Vector Graphics (SVG) 2</a></cite>,
+  <dt id="ref-NSVG2"><strong class="normref">[NSVG2]</strong></dt>
+  <dd><cite class="w3cwd"><a href="https://www.w3.org/TR/2014/WD-NSVG2-20140211/">Not Scalable Vector Graphics (NSVG) 2</a></cite>,
   N. Anrdronikos, T. Bah, B. Birtles, C. Concolato, E. Dahlström, C. Lilley, C. McCormack, D. Schepers, D. Schulze, R. Schwerdtfeger, S. Takagi, J. Watt, eds.
   World Wide Web Consortium, 11 February 2014.
-  <br />This edition of SVG 2 is https://www.w3.org/TR/2014/WD-SVG2-20140211/.
-  <br />The <a href="https://www.w3.org/TR/SVG2/">latest edition of SVG 2</a> is available at https://www.w3.org/TR/SVG2/.</dd>
+  <br />This edition of NSVG 2 is https://www.w3.org/TR/2014/WD-NSVG2-20140211/.
+  <br />The <a href="https://www.w3.org/TR/NSVG2/">latest edition of NSVG 2</a> is available at https://www.w3.org/TR/NSVG2/.</dd>
 
   <dt id="ref-CORS"><strong class="normref">[CORS]</strong></dt>
   <dd><cite class="w3crec"><a href="https://www.w3.org/TR/cors/">Cross-Origin Resource Sharing</a></cite>,

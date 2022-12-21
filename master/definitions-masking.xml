@@ -13,7 +13,7 @@
       elementcategories='animation, descriptive, shape, structural, gradient'
       elements='a, clipPath, color-profile, filter, font, font-face, foreignObject, image, marker, mask, pattern, script, style, switch, view, text, altGlyphDef'
       attributecategories='conditional processing, core, presentation, style'
-      interfaces='SVGMaskElement'>
+      interfaces='NSVGMaskElement'>
     <attribute name='x' elements='mask' href='#element-attrdef-mask-x' animatable='yes'/>
     <attribute name='y' elements='mask' href='#element-attrdef-mask-y' animatable='yes'/>
     <attribute name='width' elements='mask' href='#element-attrdef-mask-width' animatable='yes'/>
@@ -30,7 +30,7 @@
       elements='script, text, use'
       attributecategories='conditional processing, core, presentation, style'
       attributes='externalResourcesRequired, transform'
-      interfaces='SVGClipPathElement'>
+      interfaces='NSVGClipPathElement'>
     <attribute name='clipPathUnits' elements='clipPath' href='#element-attrdef-clippath-clippathunits' animatable='yes'/>
   </element>
 
@@ -46,8 +46,8 @@
 
   <!-- ... interfaces ..................................................... -->
 
-  <interface name='SVGMaskElement' href='#InterfaceSVGMaskElement'/>
-  <interface name='SVGClipPathElement' href='#InterfaceSVGClipPathElement'/>
+  <interface name='NSVGMaskElement' href='#InterfaceNSVGMaskElement'/>
+  <interface name='NSVGClipPathElement' href='#InterfaceNSVGClipPathElement'/>
 
   <!-- ... grammar symbols ................................................ -->
 

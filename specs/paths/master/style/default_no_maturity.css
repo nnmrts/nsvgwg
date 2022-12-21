@@ -1,4 +1,4 @@
-@import url(default_svg.css);
+@import url(default_nsvg.css);
 
 p.annotation, div.annotation { display: none }
-div.annotation.svg2-requirement { display: block }
+div.annotation.nsvg2-requirement { display: block }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
   <title>Accessibility Support</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,7 +9,7 @@
   <!-- Style sheets for local dev. Will be standardized in processing.
   Add attribute data-keep="" to any extra stylesheet link you do not want removed
   (or use <style>), and include it before here. -->
-  <link rel="stylesheet" href="style/svg.css" type="text/css" />
+  <link rel="stylesheet" href="style/nsvg.css" type="text/css" />
   <link rel="stylesheet" href="style/W3C-ED.css" type="text/css" />
 </head>
 <body>
@@ -18,9 +18,9 @@
 
 <p class="normativity"><em>This appendix is informative, not normative.</em></p>
 
-<h2 id="AccessibilityAndSVG">SVG Accessibility Features</h2>
+<h2 id="AccessibilityAndNSVG">NSVG Accessibility Features</h2>
 
-<p>This appendix highlights the accessibility features of SVG and accessibility related specifications used to support SVG and the associated <a href="https://www.w3.org/TR/WCAG21/"><cite>W3C Web Content Accessibility Guidelines (WCAG) 2.0 [WCAG2]</cite></a> requirements they are designed to support.</p>
+<p>This appendix highlights the accessibility features of NSVG and accessibility related specifications used to support NSVG and the associated <a href="https://www.w3.org/TR/WCAG21/"><cite>W3C Web Content Accessibility Guidelines (WCAG) 2.0 [WCAG2]</cite></a> requirements they are designed to support.</p>
 <dl>
  <dt><span class="gl"><a href="https://www.w3.org/TR/WCAG21/#content-structure-separation">[WCAG2] Create content that can be presented in different ways (for example simpler layout) without losing information or structure: Information and Relationships.</a></span></dt>
   <dd>
@@ -43,11 +43,11 @@
       <li><a href="interact.html#EventAttributes">Keyboard Event attribute support along with Mouse Event support</a>
  for script authors
       </li>
-      <li><a href="interact.html#SVGEvents">Keyboard Events</a> for script authors
+      <li><a href="interact.html#NSVGEvents">Keyboard Events</a> for script authors
       </li>
-      <li>Script support for setting focus on each <a href="types.html#InterfaceSVGElement">SVG Element</a> in the DOM</li>
+      <li>Script support for setting focus on each <a href="types.html#InterfaceNSVGElement">NSVG Element</a> in the DOM</li>
       <li>Script support for acquiring the <a>'tabindex'</a> attribute
-on each <a href="types.html#InterfaceSVGElement">SVG Element</a> in the DOM</li>
+on each <a href="types.html#InterfaceNSVGElement">NSVG Element</a> in the DOM</li>
       <li>Script support for the HTML activeElement property in the <a href="struct.html#InterfaceDocumentExtensions">Document interface</a></li>
     </ul>
   </dd>
@@ -56,7 +56,7 @@ on each <a href="types.html#InterfaceSVGElement">SVG Element</a> in the DOM</li>
  <dt><span class="gl"><a href="https://www.w3.org/TR/WCAG21/#navigation-mechanisms">[WCAG2] Navigable: Provide ways to help users navigate, find content, and determine where they are. </a></span></dt>
   <dd>
     <ul>
-      <li>To enable bypassing of blocks of content SVG supports the: WAI-ARIA <a href="https://www.w3.org/TR/wai-aria-1.1/#landmark_roles">landmark</a> roles.</li>
+      <li>To enable bypassing of blocks of content NSVG supports the: WAI-ARIA <a href="https://www.w3.org/TR/wai-aria-1.1/#landmark_roles">landmark</a> roles.</li>
       <li>Supports <a>'title'</a> to provide page titles.</li>
       <li>Supports <a>'tabindex'</a> to provide a sequential focus navigation order.</li>
       <li>Supports the <a>'a'</a> element, enabling authors to supply the link purpose both from its content.</li>
@@ -92,16 +92,16 @@ on each <a href="types.html#InterfaceSVGElement">SVG Element</a> in the DOM</li>
   </dd>
 </dl>
 
-<h2 id="SVGRelatedAccessibilityDocuments">Supporting SVG Accessibility Specifications and Guidelines</h2>
+<h2 id="NSVGRelatedAccessibilityDocuments">Supporting NSVG Accessibility Specifications and Guidelines</h2>
 
-<p>This section enumerates the SVG accessibility-related specifications and authoring guidelines.
+<p>This section enumerates the NSVG accessibility-related specifications and authoring guidelines.
 </p>
 
 <dl>
-  <dt><span class="gl">Related SVG Accessibility Specifications for User Agents</span></dt>
+  <dt><span class="gl">Related NSVG Accessibility Specifications for User Agents</span></dt>
   <dd>
     <ul>
-      <li>The <a href="https://www.w3.org/TR/svg-aam-1.0/"><cite>SVG Accessibility API Mappings [SVG-AAM]</cite></a> specification.</li>
+      <li>The <a href="https://www.w3.org/TR/nsvg-aam-1.0/"><cite>NSVG Accessibility API Mappings [NSVG-AAM]</cite></a> specification.</li>
       <li>The <a href="https://www.w3.org/TR/core-aam-1.1/"><cite>Core Accessibility API Mappings 1.1 [CORE-AAM]</cite></a>specification.</li>
       <li>The <a href="https://www.w3.org/TR/accname-aam-1.1/"><cite>Accessible Name and Description: Computation and API Mappings 1.1 [ACCNAME-AAM]</cite></a> specification.
       </li>

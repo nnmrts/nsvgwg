@@ -13,9 +13,9 @@
 
   <!-- === defined in other specifications ================================ -->
 
-  <term name='SVG document fragment' href='http://www.w3.org/TR/SVGTiny12/conform.html#ConformingSVGDocuments'/>
-  <term name='SVG stand-alone document' href='http://www.w3.org/TR/SVGTiny12/conform.html#ConformingSVGStandAloneFiles'/>
-  <term name='SVG included document fragment' href='http://www.w3.org/TR/SVGTiny12/conform.html#ConformingSVGIncludedDocuments'/>
-  <term name='rendering tree' href='http://www.w3.org/TR/SVGTiny12/intro.html#TermRenderingTree'/>
+  <term name='NSVG document fragment' href='http://www.w3.org/TR/NSVGTiny12/conform.html#ConformingNSVGDocuments'/>
+  <term name='NSVG stand-alone document' href='http://www.w3.org/TR/NSVGTiny12/conform.html#ConformingNSVGStandAloneFiles'/>
+  <term name='NSVG included document fragment' href='http://www.w3.org/TR/NSVGTiny12/conform.html#ConformingNSVGIncludedDocuments'/>
+  <term name='rendering tree' href='http://www.w3.org/TR/NSVGTiny12/intro.html#TermRenderingTree'/>
 
 </definitions>

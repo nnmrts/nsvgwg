@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
   <title>Painting: Filling, Stroking and Marker Symbols</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,7 +9,7 @@
   <!-- Style sheets for local dev. Will be standardized in processing.
   Add attribute data-keep="" to any extra stylesheet link you do not want removed
   (or use <style>), and include it before here. -->
-  <link rel="stylesheet" href="style/svg.css" type="text/css" />
+  <link rel="stylesheet" href="style/nsvg.css" type="text/css" />
   <link rel="stylesheet" href="style/W3C-ED.css" type="text/css" />
 </head>
 <body>
@@ -38,7 +38,7 @@
 and <a>text content elements</a> – are rendered by being <strong>filled</strong>,
 which is painting the interior of the object, and <strong>stroked</strong>, which is
 painting along the outline of the object.  Filling and stroking are both
-<strong>painting</strong> operations.  SVG 2 supports a number of
+<strong>painting</strong> operations.  NSVG 2 supports a number of
 different paints that the fill and stroke of a graphical element can be painted with:</p>
 
 <ul>
@@ -63,11 +63,11 @@ drawn at their vertices or at other positions along the path that
 they describe.  The <a href='#Markers'>Markers</a> section below describes
 how markers can be defined and used.</p>
 
-<p class="annotation">SVG 2 adds markers on shapes. Resolved at
-<a href="http://www.w3.org/2013/06/03-svg-minutes.html#item03">Tokyo F2F</a>.</p>
+<p class="annotation">NSVG 2 adds markers on shapes. Resolved at
+<a href="http://www.w3.org/2013/06/03-nsvg-minutes.html#item03">Tokyo F2F</a>.</p>
 
 <!--
-<p>SVG uses the general notion of a <strong>paint server</strong>. Paint
+<p>NSVG uses the general notion of a <strong>paint server</strong>. Paint
 servers are specified using a <a href="linking.html#URLReference">URL reference</a>
 on a <a>'fill'</a> or <a>'stroke'</a> property.
 <a href="pservers.html">Gradients and patterns</a> are just specific types of
@@ -76,15 +76,15 @@ paint servers.</p>
 
 <h2 id="SpecifyingPaint">Specifying paint</h2>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Add new paint values for referencing current fill paint, stroke paint, etc.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/07/29-svg-minutes.html#item02">We will add new paint values currentFillPaint, currentStrokePaint etc. to SVG 2</a></td>
+      <td><a href="http://www.w3.org/2011/07/29-nsvg-minutes.html#item02">We will add new paint values currentFillPaint, currentStrokePaint etc. to NSVG 2</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -92,20 +92,20 @@ paint servers.</p>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Chris (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3094">ACTION-3094</a>)</td>
+      <td>Chris (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3094">ACTION-3094</a>)</td>
     </tr>
   </table>
 </div>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Addition:</th>
+      <th>NSVG 2 Addition:</th>
       <td>Allow multiple paints in fill and stroke.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2013/06/03-svg-minutes.html#item10">We will allow multiple paints in the fill and stroke properties in SVG 2.</a></td>
+      <td><a href="http://www.w3.org/2013/06/03-nsvg-minutes.html#item10">We will allow multiple paints in the fill and stroke properties in NSVG 2.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -113,11 +113,11 @@ paint servers.</p>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Tav (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3500">ACTION-3500</a>)</td>
+      <td>Tav (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3500">ACTION-3500</a>)</td>
     </tr>
     <tr>
       <th>Deferred:</th>
-      <td>This was dropped for SVG 2, but will be added later in sync with
+      <td>This was dropped for NSVG 2, but will be added later in sync with
         <a href="https://drafts.fxtf.org/paint/">CSS Fill and Stroke Level 3</a>
       </td>
     </tr>
@@ -177,7 +177,7 @@ value will result in both the image and color being rendered.</p>
 <p>If a paint server reference in a <a>&lt;paint&gt;</a> is invalid, and no
 fall-back value is given, no paint is rendered for that layer.</p>
 
-<p class="annotation">This is changed from SVG 1.1 behavior where the document
+<p class="annotation">This is changed from NSVG 1.1 behavior where the document
 is in error if a paint server reference is invalid and there is no fallback
 color specified.</p>
 
@@ -188,7 +188,7 @@ color specified.</p>
   <div class="figure">
     <img
        alt="An example with a fallback solid paint fill."
-       src="images/painting/fallback_paint.svg"/>
+       src="images/painting/fallback_paint.nsvg"/>
     <p class="caption">The left rectangle shows the expected fill if MyHatch is defined.
     The right rectangle shows the expected fill if MyHatch is missing.</p>
   </div>
@@ -200,7 +200,7 @@ must be supported, including <span class='prop-value'>rgb()</span>,
 <span class='prop-value'>rgba()</span>,
 <span class='prop-value'>hsl()</span>,
 <span class='prop-value'>hsla()</span>,
-the <a href="https://www.w3.org/TR/css-color-3/#svg-color">extended color keywords</a> and
+the <a href="https://www.w3.org/TR/css-color-3/#nsvg-color">extended color keywords</a> and
 the <span class='prop-value'>currentColor</span> value.</p>
 
 <p id="context-paint">The <span class='prop-value'>context-fill</span> and <span class='prop-value'>context-stroke</span>
@@ -237,11 +237,11 @@ or from one element within a <a>use-element shadow tree</a> to another.
 value, then those contextual referencing is recursive.</p>
 
 <div class="example">
-  <edit:includefile href="images/painting/marker-context.svg2.svg"/>
+  <edit:includefile href="images/painting/marker-context.nsvg2.nsvg"/>
   <div class="figure">
     <img
        alt="An example of the content-stroke keyword used in a marker"
-       src="images/painting/marker-context.svg11.svg" height="200"/>
+       src="images/painting/marker-context.nsvg11.nsvg" height="200"/>
     <p class="caption">The marker is defined using a shape whose
     <a>'stroke'</a> is set to <span class='prop-value'>context-stroke</span>.
     This causes the marker to take on the color of each <a>'path'</a>
@@ -260,41 +260,41 @@ definition of <a>'color'</a>.
 <span class="prop-value">currentColor</span>, for the <a>'fill'</a>,
 <a>'stroke'</a>, <a>'stop-color'</a>, <a>'flood-color'</a> and
 <a>'lighting-color'</a> properties.  The property has no other effect
-on SVG elements.</p>
+on NSVG elements.</p>
 
 <div class="example">
   <p>The following example shows how the inherited value of the
   <a>'color'</a> property from an HTML document can be used to
-  set the color of SVG text in an inline SVG fragment.</p>
+  set the color of NSVG text in an inline NSVG fragment.</p>
 
   <pre><![CDATA[
 <!DOCTYPE html>
 <style>
 body { color: #468; font: 16px sans-serif }
-svg { border: 1px solid #888; background-color: #eee }
+nsvg { border: 1px solid #888; background-color: #eee }
 </style>
 <p>Please see the diagram below:</p>
-<svg width="200" height="100">
+<nsvg width="200" height="100">
   <g fill="currentColor">
     <text x="70" y="55" text-anchor="end">START</text>
     <text x="130" y="55">STOP</text>
     <path d="M 85,45 h 25 v -5 l 10,10 -10,10 v -5 h -25 z"/>
   </g>
-</svg>
+</nsvg>
 ]]></pre>
 
   <div class="figure">
     <div class="bordered" style="color: #468; font: 16px sans-serif; display: inline-block; text-align: left; padding: 32px 128px 32px 32px">
       <p style="margin-top: 0; margin-bottom: 1em">Please see the diagram below:</p>
-      <svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" style="border: 1px solid #888; background-color: #eee">
+      <nsvg xmlns="http://www.w3.org/2000/nsvg" width="200" height="100" style="border: 1px solid #888; background-color: #eee">
         <g fill="currentColor">
           <text x="70" y="55" text-anchor="end">START</text>
           <text x="130" y="55">STOP</text>
           <path d="M 85,45 h 25 v -5 l 10,10 -10,10 v -5 h -25 z"/>
         </g>
-      </svg>
+      </nsvg>
     </div>
-    <p class="caption">The text and arrow in the SVG fragment are filled
+    <p class="caption">The text and arrow in the NSVG fragment are filled
     with the same color as the inherited <a>'color'</a> property.</p>
   </div>
 </div>
@@ -427,7 +427,7 @@ inside of a shape is determined:</p>
     rule:</p>
 
     <div class="figure">
-      <img class="bordered" src="images/painting/fillrule-nonzero.svg" alt="Image showing nonzero fill rule"/>
+      <img class="bordered" src="images/painting/fillrule-nonzero.nsvg" alt="Image showing nonzero fill rule"/>
       <p class="caption">The effect of a nonzero fill rule on paths with self-intersections
       and enclosed subpaths.</p>
     </div>
@@ -444,7 +444,7 @@ inside of a shape is determined:</p>
     rule:</p>
 
     <div class="figure">
-      <img class="bordered" src="images/painting/fillrule-evenodd.svg" alt="Image showing evenodd fill rule"/>
+      <img class="bordered" src="images/painting/fillrule-evenodd.nsvg" alt="Image showing evenodd fill rule"/>
       <p class="caption">The effect of an evenodd fill rule on paths with self-intersections
       and enclosed subpaths.</p>
     </div>
@@ -521,16 +521,16 @@ specifies group opacity.</p>
 
 <h2 id="StrokeProperties">Stroke properties</h2>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Support non-scaling stroke.</td>
     </tr>
     <tr>
       <th>Resolutions:</th>
-      <td><a href="http://www.w3.org/2011/10/28-svg-irc#T17-46-34">SVG 2 will include non-scaling stroke.</a><br/>
-          <a href="http://www.w3.org/2012/02/02-svg-minutes.html#item05">SVG 2 will have the <span class="property">'vector-effect'</span> property.</a></td>
+      <td><a href="http://www.w3.org/2011/10/28-nsvg-irc#T17-46-34">NSVG 2 will include non-scaling stroke.</a><br/>
+          <a href="http://www.w3.org/2012/02/02-nsvg-minutes.html#item05">NSVG 2 will have the <span class="property">'vector-effect'</span> property.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -561,7 +561,7 @@ elements, the start of the path is the first point of the initial
 
 <p>For stroking properties such as dash patterns whose computations
 are dependent on progress along the outline of the graphics element,
-distance calculations are required to utilize the SVG user agent's
+distance calculations are required to utilize the NSVG user agent's
 standard <a href="paths.html#DistanceAlongAPath">Distance along a path</a>
 algorithms.</p>
 
@@ -629,15 +629,15 @@ will also not be stroked if the <a>'stroke-linecap'</a> property has a value of
 the <a>stroke shape</a> below for the details of computing
 the stroke of a path.</p>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Include a way to specify stroke position.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/10/28-svg-irc#T18-09-48">SVG 2 shall include a way to specify stroke position.</a></td>
+      <td><a href="http://www.w3.org/2011/10/28-nsvg-irc#T18-09-48">NSVG 2 shall include a way to specify stroke position.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -645,11 +645,11 @@ the stroke of a path.</p>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Cameron (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3162">ACTION-3162</a>)</td>
+      <td>Cameron (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3162">ACTION-3162</a>)</td>
     </tr>
     <tr>
       <th>Note:</th>
-      <td>See <a href="http://www.w3.org/Graphics/SVG/WG/wiki/Proposals/Stroke_position">proposal page</a>.</td>
+      <td>See <a href="http://www.w3.org/Graphics/NSVG/WG/wiki/Proposals/Stroke_position">proposal page</a>.</td>
     </tr>
   </table>
 </div>
@@ -744,7 +744,7 @@ property</h3>
   </tr>
   <tr>
     <th>Percentages:</th>
-    <td>refer to the normalized diagonal of the current SVG viewport (see <a href="coords.html#Units">Units</a>)</td>
+    <td>refer to the normalized diagonal of the current NSVG viewport (see <a href="coords.html#Units">Units</a>)</td>
   </tr>
   <tr>
     <th>Media:</th>
@@ -843,7 +843,7 @@ subpaths whether they are open or closed.</span>  The possible values are:</p>
 </dl>
 
 <div class="figure">
-  <img class="bordered" src="images/painting/linecap.svg"
+  <img class="bordered" src="images/painting/linecap.nsvg"
        alt="Image showing three paths, each with a different line cap."/>
   <p class="caption">The three types of line caps.</p>
 </div>
@@ -857,7 +857,7 @@ and <span class="property">'stroke-miterlimit'</span> properties</h3>
 <p class="issue" data-issue="592">
     The values <span class="prop-value">miter-clip</span> and <span class="prop-value">arcs</span>
     of the <a>'stroke-linejoin'</a> property are at risk. There are no known browser implementations.
-    See issue <a href="https://github.com/w3c/svgwg/issues/592">GitHub issue #592</a>.</p>
+    See issue <a href="https://github.com/w3c/nsvgwg/issues/592">GitHub issue #592</a>.</p>
 
 <table class="propdef def">
   <tr>
@@ -934,7 +934,7 @@ the <a href="paths.html#PathElementImplementationNotes">path implementation note
 
 <p class="note">
   The <span class='prop-value'>miter-clip</span> and
-  <span class='prop-value'>arcs</span> values are new in SVG 2.
+  <span class='prop-value'>arcs</span> values are new in NSVG 2.
   The <span class='prop-value'>miter-clip</span> value offers a more
   consistent presentation for a path with multiple joins as well as
   better behavior when a path is animated.
@@ -944,18 +944,18 @@ the <a href="paths.html#PathElementImplementationNotes">path implementation note
 
 <p class="annotation">
   Adding 'arcs' line join was resolved at the
-  <a href="http://www.w3.org/2012/09/19-svg-minutes.html#item08">Rigi
+  <a href="http://www.w3.org/2012/09/19-nsvg-minutes.html#item08">Rigi
   Kaltbad group meeting</a>.
 </p>
 
 <p class="annotation">
   Adding 'miter-clip' line join was resolved at the
-  <a href="http://www.w3.org/2015/02/12-svg-minutes.html#item03">Sydney
+  <a href="http://www.w3.org/2015/02/12-nsvg-minutes.html#item03">Sydney
   (2015) group meeting</a>.
 </p>
 
 <div class="figure">
-  <img class="bordered" src="images/painting/linejoin-four.svg"
+  <img class="bordered" src="images/painting/linejoin-four.nsvg"
        alt="Image showing four paths, each with a different line join."/>
   <p class="caption">Four types of line joins.</p>
 </div>
@@ -1023,7 +1023,7 @@ the <a href="paths.html#PathElementImplementationNotes">path implementation note
 </dl>
 
 <p class="note">
-  Previous versions of the SVG specification
+  Previous versions of the NSVG specification
   also stated that values between 0 and 1 were in error,
   but this was not well implemented by user agent's CSS parsers.
   In practice, any miter join will exceed a miter limit between 0 and 1.
@@ -1073,7 +1073,7 @@ the <a href="paths.html#PathElementImplementationNotes">path implementation note
     the stroke width from the point the two path segments join.
   </p>
   <div class="figure">
-    <img class="bordered" src="images/painting/miter-limit-def.svg"
+    <img class="bordered" src="images/painting/miter-limit-def.nsvg"
 	 alt="Image showing the definition of the stroke miter length
 	      and consistency of clipping between different shaped
 	      path segments."/>
@@ -1107,7 +1107,7 @@ the <a href="paths.html#PathElementImplementationNotes">path implementation note
 </dl>
 
 <div class="figure">
-  <img class="bordered" src="images/painting/miter-limit.svg"
+  <img class="bordered" src="images/painting/miter-limit.nsvg"
        alt="Image showing resulting stroke when stroke miter limit is exceeded."/>
   <p class="caption">
     Effect on line join when <a>'stroke-miterlimit'</a> is
@@ -1131,7 +1131,7 @@ the <a href="paths.html#PathElementImplementationNotes">path implementation note
 
 <p class="annotation">
   The effect of 'stroke-miterlimit' on an 'arcs' line join was resolved
-  at <a href="http://www.w3.org/2015/02/12-svg-minutes.html#item12">Sydney
+  at <a href="http://www.w3.org/2015/02/12-nsvg-minutes.html#item12">Sydney
   (2015) group meeting</a>.
 </p>
 
@@ -1166,7 +1166,7 @@ the <a href="paths.html#PathElementImplementationNotes">path implementation note
   </tr>
   <tr>
     <th>Percentages:</th>
-    <td>refer to the normalized diagonal of the current SVG viewport (see <a href="coords.html#Units">Units</a>)</td>
+    <td>refer to the normalized diagonal of the current NSVG viewport (see <a href="coords.html#Units">Units</a>)</td>
   </tr>
   <tr>
     <th>Media:</th>
@@ -1220,7 +1220,7 @@ a path's stroke.</p>
 </dl>
 
 <div class="figure">
-  <img class="bordered" src="images/painting/dashes.svg" alt="Image showing a thick, dashed stroke."/>
+  <img class="bordered" src="images/painting/dashes.nsvg" alt="Image showing a thick, dashed stroke."/>
   <p class="caption">A dashed stroke.  The dashing pattern is <span class="prop-value">20,10</span>.
   The red line shows the actual path that is stroked.</p>
 </div>
@@ -1286,7 +1286,7 @@ After that, each item is then combined by computed value.
   </tr>
   <tr>
     <th>Percentages:</th>
-    <td>refer to the normalized diagonal of the current SVG viewport (see <a href="coords.html#Units">Units</a>)</td>
+    <td>refer to the normalized diagonal of the current NSVG viewport (see <a href="coords.html#Units">Units</a>)</td>
   </tr>
   <tr>
     <th>Media:</th>
@@ -1326,7 +1326,7 @@ value is negative, then the effect is the same as dash offset <var>d</var>:</p>
 <p>where <var>s</var> is the sum of the dash array values.</p>
 
 <div class="figure">
-  <img class="bordered" src="images/painting/dashoffset.svg"
+  <img class="bordered" src="images/painting/dashoffset.nsvg"
        alt="Image showing a thick, dashed stroke with a non-zero dash offset."/>
   <p class="caption">A dashed stroke with a non-zero dash offset.  The dashing
   pattern is <span class="prop-value">20,10</span> and the dash offset is
@@ -1343,10 +1343,10 @@ attribute on a <a>'path'</a> element.</p>
   different from the actual path length can be used to control stroke
   dashing more easily.</p>
 
-  <edit:includefile href='images/painting/dash-pathlength.svg' link="yes" image="yes"/>
+  <edit:includefile href='images/painting/dash-pathlength.nsvg' link="yes" image="yes"/>
 
   <div class="figure">
-    <img src="images/painting/dash-pathlength.svg"
+    <img src="images/painting/dash-pathlength.nsvg"
          alt="Image of three casino chips, each of which has a patterned border
               produced using stroke dashing."/>
     <p class="caption">The four broad white dashes and the eight small circular
@@ -1364,15 +1364,15 @@ description of positions along a path that dashes will be placed.</p>
 <div class="ready-for-wider-review">
 <h3 id="StrokeShape">Computing the shape of the stroke</h3>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Specify stroke dashing more precisely.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/10/28-svg-irc#T18-14-14">SVG 2 shall specify stroke dashing more precisely.</a></td>
+      <td><a href="http://www.w3.org/2011/10/28-nsvg-irc#T18-14-14">NSVG 2 shall specify stroke dashing more precisely.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -1411,8 +1411,8 @@ at extremely tight curves, differ across platforms.
   across platforms.</p>
 </div>
 The above example shows the possible rendered results for the following
-two SVG paths:
-<edit:includefile href='images/painting/stroke-tight-corner.svg' link="yes" image="no"/>
+two NSVG paths:
+<edit:includefile href='images/painting/stroke-tight-corner.nsvg' link="yes" image="no"/>
 </div>
 </div> <!-- end of class="ready-for-wider-review" -->
 
@@ -1594,7 +1594,7 @@ determined as follows:</p>
 </ol>
 
 <div class="figure">
-  <img class="bordered" src="images/painting/linecap-construction.svg"
+  <img class="bordered" src="images/painting/linecap-construction.nsvg"
        alt="Image showing how to construct the three types of line caps"/>
   <p class="caption">The three different <a>'stroke-linecap'</a> values used on
   paths with a single, non-zero length subpath.  The white line is the path
@@ -1709,7 +1709,7 @@ a subpath is determined as follows:</p>
 </ol>
 
 <div class="figure">
-  <img class="bordered" src="images/painting/linejoin-construction.svg"
+  <img class="bordered" src="images/painting/linejoin-construction.nsvg"
        alt="Image showing the lines and points computed to construct a round line join."/>
   <p class="caption">Construction of a round line join shape, shown in pink.
   The white line is the original path, which has two segments that come to a
@@ -1717,7 +1717,7 @@ a subpath is determined as follows:</p>
 </div>
 
 <div class="figure">
-  <img class="bordered" src="images/painting/linejoin-construction-arcs.svg"
+  <img class="bordered" src="images/painting/linejoin-construction-arcs.nsvg"
        alt="Image showing the lines and points computed to construct an arcs line join."/>
   <p class="caption">Construction of an arcs line join shape, shown in
     pink. The white line is the original path, which has two segments
@@ -2134,7 +2134,7 @@ a subpath is determined as follows:</p>
 
   <p class="annotation">
     The fallback behavior was resolved at
-    the <a href="https://www.w3.org/2016/02/03-svg-minutes.html#item02">Sydney
+    the <a href="https://www.w3.org/2016/02/03-nsvg-minutes.html#item02">Sydney
     2016 F2F</a>. It gives a smooth transition between the fallback
     and non-fallback states.
   </p>
@@ -2151,7 +2151,7 @@ a subpath is determined as follows:</p>
   </p>
 
   <div class="figure">
-    <img class="bordered" src="images/painting/linejoin-construction-fallback.svg"
+    <img class="bordered" src="images/painting/linejoin-construction-fallback.nsvg"
 	 alt="Image showing the lines and points computed to construct an arcs line join
 	      when the original offset circles do not intersect."/>
     <p class="caption">Construction of an arcs line join shape, shown
@@ -2174,7 +2174,7 @@ a subpath is determined as follows:</p>
   </p>
 
   <div class="figure">
-    <img class="bordered" src="images/painting/linejoin-construction-fallback2.svg"
+    <img class="bordered" src="images/painting/linejoin-construction-fallback2.nsvg"
 	 alt="Image showing the lines and points computed to construct an arcs line join
 	      when the original offset circles do not intersect."/>
     <p class="caption">Construction of an arcs line join shape, shown
@@ -2199,7 +2199,7 @@ a subpath is determined as follows:</p>
   </p>
 
   <div class="figure">
-    <img class="bordered" src="images/painting/linejoin-construction-fallback3.svg"
+    <img class="bordered" src="images/painting/linejoin-construction-fallback3.nsvg"
 	 alt="Image showing the lines and points computed to construct an arcs line join
 	      when the original offset circles do not intersect."/>
     <p class="caption">Construction of an arcs line join shape, shown
@@ -2235,7 +2235,7 @@ a subpath is determined as follows:</p>
   outline of the shape's path in current <a>user coordinate system</a> and filling that outline with the
   stroke paint (color or gradient). With the non-scaling-stroke vector effect, stroke outline
   shall be calculated in the "host" coordinate space instead of <a>user coordinate system</a>.
-  More precisely: the <a>viewport coordinate system</a> of the <a>furthest ancestral SVG viewport</a>.
+  More precisely: the <a>viewport coordinate system</a> of the <a>furthest ancestral NSVG viewport</a>.
   The stroke outline is calculated in the
   following manner: first, the shape's path is transformed into the host coordinate space.
   Stroke outline is calculated in the host coordinate space. The resulting outline is
@@ -2251,23 +2251,23 @@ a subpath is determined as follows:</p>
 <div class='ready-for-wider-review'>
 <h2 id="Markers">Markers</h2>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Improve markers.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/10/27-svg-irc#T18-12-30">We will improve markers for SVG 2.</a></td>
+      <td><a href="http://www.w3.org/2011/10/27-nsvg-irc#T18-12-30">We will improve markers for NSVG 2.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
-      <td>To solve the common problems authors have with SVG markers.</td>
+      <td>To solve the common problems authors have with NSVG markers.</td>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Cameron (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3286">ACTION-3286</a>)</td>
+      <td>Cameron (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3286">ACTION-3286</a>)</td>
     </tr>
   </table>
 </div>
@@ -2283,7 +2283,7 @@ The <a>'marker-start'</a> and <a>'marker-end'</a> can be used for example to
 add arrowheads to paths.  Markers placed using these properties are known as
 <dfn id="TermVertexMarker" data-dfn-type="dfn" data-export="">vertex markers</dfn>.</p>
 
-<p class='note'>In SVG 2, vertex markers are the only kind of markers
+<p class='note'>In NSVG 2, vertex markers are the only kind of markers
 available.  Other specifications will add new types of markers.</p>
 
 <p>The graphics for a marker are defined by a <a>'marker element'</a> element.
@@ -2387,7 +2387,7 @@ also being non scaling.</p>
 <dd>
 
 <p>The <a>'markerWidth'</a> and <a>'markerHeight'</a> attributes
-represent the size of the SVG viewport into which the marker is to
+represent the size of the NSVG viewport into which the marker is to
 be fitted according to the <a>'viewBox'</a> and <a>'preserveAspectRatio'</a>
 attributes.  A value of zero for either
 attribute results in nothing being rendered for the marker.  A negative value
@@ -2422,12 +2422,12 @@ for either attribute is an error (see
 <dd>
 
     <p class="note">
-      New in SVG 2: geometric keywords (matches use in <a>'symbol'</a>).
+      New in NSVG 2: geometric keywords (matches use in <a>'symbol'</a>).
     </p>
     <p class="annotation">
       We will add top/center/bottom, left/center/right keywords to
       refX/refY on marker/symbol. Resolved at
-      <a href="http://www.w3.org/2014/08/26-svg-minutes.html#item07">London
+      <a href="http://www.w3.org/2014/08/26-nsvg-minutes.html#item07">London
       F2F</a>. Values inspired by
       <a href="https://www.w3.org/TR/css3-background/#the-background-position">'background-position'</a>.
     </p>
@@ -2613,10 +2613,10 @@ rendered on the final vertex of the <a>path data</a>.
 vertex of the <a>path data</a> and the last vertex of the <a>path data</a>.
 </p>
 <div class="example">
-  <edit:includefile href='images/painting/marker-doubled.svg'/>
+  <edit:includefile href='images/painting/marker-doubled.nsvg'/>
 
   <div class="figure">
-    <img class="bordered" src="images/painting/marker-doubled.svg"
+    <img class="bordered" src="images/painting/marker-doubled.nsvg"
          alt="Image showing that for closed subpaths, two markers are painted at the start of each subpath."/>
     <p class="caption">For <a>path data</a> containing <a>closed subpaths</a>,
     two markers are drawn at the first/last vertex of each <a>closed subpath</a>.
@@ -2637,10 +2637,10 @@ refer to the first and last vertex of the entire path, not each subpath.</p>
   <p>The following example shows a triangular marker symbol used as a
   <a>vertex marker</a> to form an arrowhead at the end of two paths.</p>
 
-  <edit:includefile href='images/painting/marker.svg'/>
+  <edit:includefile href='images/painting/marker.nsvg'/>
 
   <div class="figure">
-    <img class="bordered" src="images/painting/marker-rendering.svg"
+    <img class="bordered" src="images/painting/marker-rendering.nsvg"
          alt="Image showing the use of an automatically oriented marker."/>
     <p class="caption">The triangle is placed at the end of the path and
     oriented automatically so that it points in the right direction.
@@ -2737,14 +2737,14 @@ correctly, as follows:</p>
   result due to attributes <a>'viewBox'</a> and <a>'preserveAspectRatio'</a>.</li>
 
   <li>If the <a>'overflow'</a> property on the <a>'marker element'</a> element
-  indicates that the marker needs to be clipped to its SVG viewport, then an
-  implicit clipping path is established at the bounds of the SVG viewport.</li>
+  indicates that the marker needs to be clipped to its NSVG viewport, then an
+  implicit clipping path is established at the bounds of the NSVG viewport.</li>
 </ul>
 
 <p class='note'>Note that the <a href="styling.html#UAStyleSheet">user agent style sheet</a> sets
 the <a>'overflow'</a> property for <a>'marker element'</a> elements to
 <span class="prop-value">hidden</span>, which causes a rectangular clipping
-path to be created at the bounds of marker's SVG viewport by default.</p>
+path to be created at the bounds of marker's NSVG viewport by default.</p>
 
 <p>Properties do not inherit from the element referencing the <a>'marker element'</a>
 into the contents of the marker.  However, by using the
@@ -2776,7 +2776,7 @@ ancestors is set to <span class="prop-value">none</span>.</p>
 <p>The rendering effect of a marker is as if the contents of the
 referenced <a>'marker element'</a> element were deeply cloned
 into a separate non-exposed DOM tree for each instance of the
-marker. Because the cloned DOM tree is non-exposed, the SVG DOM
+marker. Because the cloned DOM tree is non-exposed, the NSVG DOM
 does not show the cloned instance of the marker.</p>
 
 <p>The conceptual deep cloning of the referenced
@@ -2795,9 +2795,9 @@ contents are not part of the formal document structure.</p>
 
 <pre>
 &lt;?xml version="1.0" standalone="no"?&gt;
-&lt;svg width="4in" height="2in"
+&lt;nsvg width="4in" height="2in"
      viewBox="0 0 4000 2000"
-     xmlns="http://www.w3.org/2000/svg"&gt;
+     xmlns="http://www.w3.org/2000/nsvg"&gt;
   &lt;defs&gt;
     &lt;marker id="Triangle"
       viewBox="0 0 10 10" refX="0" refY="5"
@@ -2814,7 +2814,7 @@ contents are not part of the formal document structure.</p>
   &lt;path d="M 1000 750 L 2000 750 L 2500 1250"
         fill="none" stroke="black" stroke-width="100"
         marker-end="url(#Triangle)"  /&gt;
-&lt;/svg&gt;
+&lt;/nsvg&gt;
 </pre>
 
 <p>The rendering effect of the above file will be visually identical to
@@ -2822,9 +2822,9 @@ the following:</p>
 
 <pre>
 &lt;?xml version="1.0" standalone="no"?&gt;
-&lt;svg width="4in" height="2in"
+&lt;nsvg width="4in" height="2in"
      viewBox="0 0 4000 2000"
-     xmlns="http://www.w3.org/2000/svg"&gt;
+     xmlns="http://www.w3.org/2000/nsvg"&gt;
   &lt;desc&gt;File which produces the same effect
       as the marker example file, but without
       using markers.
@@ -2854,7 +2854,7 @@ the following:</p>
              In this case, we use the default value for preserveAspectRatio
              ('xMidYMid meet'), which means find a uniform scale factor
              (i.e., viewBoxToMarkerUnitsScaleX=viewBoxToMarkerUnitsScaleY)
-             such that the viewBox fits entirely within the SVG viewport ('meet') and
+             such that the viewBox fits entirely within the NSVG viewport ('meet') and
              is center-aligned ('xMidYMid'). In this case, the uniform scale factor
              is markerHeight/viewBoxHeight=3/10=.3. Therefore, translate by
              (-refX*.3,-refY*.3)=(0*.3,-5*.3)=(0,-1.5). --&gt;
@@ -2862,7 +2862,7 @@ the following:</p>
           &lt;!-- There is an implicit clipping path because the user agent style
                sheet says that the 'overflow' property for markers has the value
                'hidden'. To achieve this, create a clipping path at the bounds
-               of the SVG viewport. Note that in this case the SVG viewport extends
+               of the NSVG viewport. Note that in this case the NSVG viewport extends
                0.5 units to the left and right of the viewBox due to
                a uniform scale factor, different ratios for markerWidth/viewBoxWidth
                and markerHeight/viewBoxHeight, and 'xMidYMid' alignment --&gt;
@@ -2889,9 +2889,9 @@ the following:</p>
       <strong>&lt;/g&gt;</strong>
     <strong>&lt;/g&gt;</strong>
   <strong>&lt;/g&gt;</strong>
-&lt;/svg&gt;
+&lt;/nsvg&gt;
 </pre>
-<p class="view-as-svg"><a href="images/painting/marker-simulated.svg">View this example as SVG (SVG-enabled browsers only)</a></p>
+<p class="view-as-nsvg"><a href="images/painting/marker-simulated.nsvg">View this example as NSVG (NSVG-enabled browsers only)</a></p>
 </div>
 
 </div>
@@ -2902,16 +2902,16 @@ the following:</p>
 <h2 id="PaintOrder">Controlling paint operation order: the
 <span class="property">'paint-order'</span> property</h2>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Support control of the order of filling, stroke and painting markers on shapes.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2012/05/07-svg-minutes#item03">SVG 2 will adopt the <span class="property">'paint-order'</span> property proposal, though possibly with a different name.</a>
-      The property name is now resolved, see <a href="http://www.w3.org/2013/11/15-svg-minutes.html#item12">15 Nov 2013 minutes</a>.</td>
+      <td><a href="http://www.w3.org/2012/05/07-nsvg-minutes#item03">NSVG 2 will adopt the <span class="property">'paint-order'</span> property proposal, though possibly with a different name.</a>
+      The property name is now resolved, see <a href="http://www.w3.org/2013/11/15-nsvg-minutes.html#item12">15 Nov 2013 minutes</a>.</td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -2919,7 +2919,7 @@ the following:</p>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Cameron (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3285">ACTION-3285</a>)</td>
+      <td>Cameron (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3285">ACTION-3285</a>)</td>
     </tr>
   </table>
 </div>
@@ -2963,7 +2963,7 @@ the following:</p>
   </tr>
 </table>
 
-<p class="note">New in SVG 2.  Added primarily to allow painting the stroke
+<p class="note">New in NSVG 2.  Added primarily to allow painting the stroke
 of text below its fill without needing to duplicate the <a>'text'</a> element.</p>
 
 <p>The <a>'paint-order'</a> property controls the order that the three
@@ -2989,7 +2989,7 @@ has the same rendering behavior as
   be used to render stroked text in a more aesthetically pleasing manner.</p>
 
   <pre><![CDATA[
-<svg xmlns="http://www.w3.org/2000/svg"
+<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="600" height="150" viewBox="0 0 600 150">
 
   <style>
@@ -3001,11 +3001,11 @@ has the same rendering behavior as
 
   <text x="150" y="100" style="stroke-width: 6px;">pizazz</text>
   <text x="450" y="100" style="stroke-width: 12px; paint-order: stroke;">pizazz</text>
-</svg>
+</nsvg>
 ]]></pre>
 
   <div class="figure">
-    <img class="bordered" src="images/painting/paintorder.svg"
+    <img class="bordered" src="images/painting/paintorder.nsvg"
          alt="Image showing the effect of paint-order."/>
     <p class="caption">Text painted with its stroke below the fill.</p>
   </div>
@@ -3056,8 +3056,8 @@ has the same rendering behavior as
   </tr>
 </table>
 
-<p>The SVG user agent performs color interpolations and compositing
-at various points as it processes SVG content.  The <a>'color-interpolation'</a>
+<p>The NSVG user agent performs color interpolations and compositing
+at various points as it processes NSVG content.  The <a>'color-interpolation'</a>
 property controls which color space is used for the following graphics operations:</p>
 
 <ul>
@@ -3397,7 +3397,7 @@ image processing.  Values have the following meanings:</p>
   a resampling algorithm at least as good as nearest neighbor
   resampling, but bilinear resampling is strongly preferred.
   For <a>Conforming
-  High-Quality SVG Viewers</a>, the user agent shall employ a
+  High-Quality NSVG Viewers</a>, the user agent shall employ a
   resampling algorithm at least as good as bilinear
   resampling.</dd>
 
@@ -3420,7 +3420,7 @@ image processing.  Values have the following meanings:</p>
 
 <p>In all cases, resampling must be done in a truecolor (e.g.,
 24-bit) color space even if the original data and/or the target
-device is indexed color.  High quality SVG viewers should perform
+device is indexed color.  High quality NSVG viewers should perform
 image resampling using a linear color space.</p>
 
 
@@ -3435,8 +3435,8 @@ agent as to the types of changes that will be made to content, giving
 the user agent a better chance at performing rendering optimizations
 for a given element.</p>
 
-<p>The <a>'will-change'</a> property applies to all SVG <a>graphics elements</a>,
-however since SVG elements do not support scrolling, the
+<p>The <a>'will-change'</a> property applies to all NSVG <a>graphics elements</a>,
+however since NSVG elements do not support scrolling, the
 <span class='prop-value'>scroll-position</span> value will have no effect
 on them.</p>
 
@@ -3447,93 +3447,93 @@ on them.</p>
   element into its own GPU layer so that the scripted <a>'transform'</a>
   changes appear smooth.</p>
 
-  <edit:includefile href="images/painting/will-change.svg"/>
+  <edit:includefile href="images/painting/will-change.nsvg"/>
 
   <div class="figure">
-    <img class="bordered" src="images/painting/will-change-image.svg"
+    <img class="bordered" src="images/painting/will-change-image.nsvg"
          width="200" height="150"
          alt='A blue star with the text "Drag the star!" above.'/>
     <p class="caption">In a user agent that supports <a>'will-change'</a>
-    on SVG elements, the star might be rendered into a layer so that
+    on NSVG elements, the star might be rendered into a layer so that
     it can be composited quickly when it is dragged around the canvas.
-    <a href="images/painting/will-change.svg">View interactive SVG document.</a></p>
+    <a href="images/painting/will-change.nsvg">View interactive NSVG document.</a></p>
   </div>
 </div>
 
 <p class="note">The <a>'will-change'</a> property replaces the
 <span class='property'>'buffered-rendering'</span> property defined in
-SVG Tiny 1.2.</p>
+NSVG Tiny 1.2.</p>
 </div>
 
 
 <div class='ready-for-wider-review'>
 <h2 id="DOMInterfaces">DOM interfaces</h2>
 
-<h3 id="InterfaceSVGMarkerElement">Interface SVGMarkerElement</h3>
+<h3 id="InterfaceNSVGMarkerElement">Interface NSVGMarkerElement</h3>
 
 <edit:with element="marker">
 
-<p>An <a>SVGMarkerElement</a> object represents a <a>'marker element'</a>
+<p>An <a>NSVGMarkerElement</a> object represents a <a>'marker element'</a>
 element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGMarkerElement</b> : <a>SVGElement</a> {
+interface <b>NSVGMarkerElement</b> : <a>NSVGElement</a> {
 
   // Marker Unit Types
-  const unsigned short <a href="painting.html#__svg__SVGMarkerElement__SVG_MARKERUNITS_UNKNOWN">SVG_MARKERUNITS_UNKNOWN</a> = 0;
-  const unsigned short <a href="painting.html#__svg__SVGMarkerElement__SVG_MARKERUNITS_USERSPACEONUSE">SVG_MARKERUNITS_USERSPACEONUSE</a> = 1;
-  const unsigned short <a href="painting.html#__svg__SVGMarkerElement__SVG_MARKERUNITS_STROKEWIDTH">SVG_MARKERUNITS_STROKEWIDTH</a> = 2;
+  const unsigned short <a href="painting.html#__nsvg__NSVGMarkerElement__NSVG_MARKERUNITS_UNKNOWN">NSVG_MARKERUNITS_UNKNOWN</a> = 0;
+  const unsigned short <a href="painting.html#__nsvg__NSVGMarkerElement__NSVG_MARKERUNITS_USERSPACEONUSE">NSVG_MARKERUNITS_USERSPACEONUSE</a> = 1;
+  const unsigned short <a href="painting.html#__nsvg__NSVGMarkerElement__NSVG_MARKERUNITS_STROKEWIDTH">NSVG_MARKERUNITS_STROKEWIDTH</a> = 2;
 
   // Marker Orientation Types
-  const unsigned short <a href="painting.html#__svg__SVGMarkerElement__SVG_MARKER_ORIENT_UNKNOWN">SVG_MARKER_ORIENT_UNKNOWN</a> = 0;
-  const unsigned short <a href="painting.html#__svg__SVGMarkerElement__SVG_MARKER_ORIENT_AUTO">SVG_MARKER_ORIENT_AUTO</a> = 1;
-  const unsigned short <a href="painting.html#__svg__SVGMarkerElement__SVG_MARKER_ORIENT_ANGLE">SVG_MARKER_ORIENT_ANGLE</a> = 2;
+  const unsigned short <a href="painting.html#__nsvg__NSVGMarkerElement__NSVG_MARKER_ORIENT_UNKNOWN">NSVG_MARKER_ORIENT_UNKNOWN</a> = 0;
+  const unsigned short <a href="painting.html#__nsvg__NSVGMarkerElement__NSVG_MARKER_ORIENT_AUTO">NSVG_MARKER_ORIENT_AUTO</a> = 1;
+  const unsigned short <a href="painting.html#__nsvg__NSVGMarkerElement__NSVG_MARKER_ORIENT_ANGLE">NSVG_MARKER_ORIENT_ANGLE</a> = 2;
 
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="painting.html#__svg__SVGMarkerElement__refX">refX</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="painting.html#__svg__SVGMarkerElement__refY">refY</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedEnumeration</a> <a href="painting.html#__svg__SVGMarkerElement__markerUnits">markerUnits</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="painting.html#__svg__SVGMarkerElement__markerWidth">markerWidth</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedLength</a> <a href="painting.html#__svg__SVGMarkerElement__markerHeight">markerHeight</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedEnumeration</a> <a href="painting.html#__svg__SVGMarkerElement__orientType">orientType</a>;
-  [SameObject] readonly attribute <a>SVGAnimatedAngle</a> <a href="painting.html#__svg__SVGMarkerElement__orientAngle">orientAngle</a>;
-  attribute DOMString <a href="painting.html#__svg__SVGMarkerElement__orient">orient</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="painting.html#__nsvg__NSVGMarkerElement__refX">refX</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="painting.html#__nsvg__NSVGMarkerElement__refY">refY</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedEnumeration</a> <a href="painting.html#__nsvg__NSVGMarkerElement__markerUnits">markerUnits</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="painting.html#__nsvg__NSVGMarkerElement__markerWidth">markerWidth</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedLength</a> <a href="painting.html#__nsvg__NSVGMarkerElement__markerHeight">markerHeight</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedEnumeration</a> <a href="painting.html#__nsvg__NSVGMarkerElement__orientType">orientType</a>;
+  [SameObject] readonly attribute <a>NSVGAnimatedAngle</a> <a href="painting.html#__nsvg__NSVGMarkerElement__orientAngle">orientAngle</a>;
+  attribute DOMString <a href="painting.html#__nsvg__NSVGMarkerElement__orient">orient</a>;
 
-  undefined <a href="painting.html#__svg__SVGMarkerElement__setOrientToAuto">setOrientToAuto</a>();
-  undefined <a href="painting.html#__svg__SVGMarkerElement__setOrientToAngle">setOrientToAngle</a>(<a>SVGAngle</a> angle);
+  undefined <a href="painting.html#__nsvg__NSVGMarkerElement__setOrientToAuto">setOrientToAuto</a>();
+  undefined <a href="painting.html#__nsvg__NSVGMarkerElement__setOrientToAngle">setOrientToAngle</a>(<a>NSVGAngle</a> angle);
 };
 
-<a>SVGMarkerElement</a> includes <a>SVGFitToViewBox</a>;</pre>
+<a>NSVGMarkerElement</a> includes <a>NSVGFitToViewBox</a>;</pre>
 
-<p>The numeric marker unit type constants defined on <a>SVGMarkerElement</a>
+<p>The numeric marker unit type constants defined on <a>NSVGMarkerElement</a>
 are used to represent the keyword values that the <a>'markerUnits'</a>
 attribute can take.  Their meanings are as follows:</p>
 
 <table class='vert'>
   <tr><th>Constant</th><th>Meaning</th></tr>
-  <tr><td><b id="__svg__SVGMarkerElement__SVG_MARKERUNITS_USERSPACEONUSE">SVG_MARKERUNITS_USERSPACEONUSE</b></td><td>The <span class="attr-value">userSpaceOnUse</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGMarkerElement__SVG_MARKERUNITS_STROKEWIDTH">SVG_MARKERUNITS_STROKEWIDTH</b></td><td>The <span class="attr-value">strokeWidth</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGMarkerElement__SVG_MARKERUNITS_UNKNOWN">SVG_MARKERUNITS_UNKNOWN</b></td><td>Some other value.</td></tr>
+  <tr><td><b id="__nsvg__NSVGMarkerElement__NSVG_MARKERUNITS_USERSPACEONUSE">NSVG_MARKERUNITS_USERSPACEONUSE</b></td><td>The <span class="attr-value">userSpaceOnUse</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGMarkerElement__NSVG_MARKERUNITS_STROKEWIDTH">NSVG_MARKERUNITS_STROKEWIDTH</b></td><td>The <span class="attr-value">strokeWidth</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGMarkerElement__NSVG_MARKERUNITS_UNKNOWN">NSVG_MARKERUNITS_UNKNOWN</b></td><td>Some other value.</td></tr>
 </table>
 
-<p>The numeric marker orientation type constants defined on <a>SVGMarkerElement</a>
+<p>The numeric marker orientation type constants defined on <a>NSVGMarkerElement</a>
 are used to represent the types of values that the <a>'orient'</a>
 attribute can take.  Their meanings are as follows:</p>
 
 <table class='vert'>
   <tr><th>Constant</th><th>Meaning</th></tr>
-  <tr><td><b id="__svg__SVGMarkerElement__SVG_MARKER_ORIENT_AUTO">SVG_MARKER_ORIENT_AUTO</b></td><td>The <span class="attr-value">auto</span> keyword.</td></tr>
-  <tr><td><b id="__svg__SVGMarkerElement__SVG_MARKER_ORIENT_ANGLE">SVG_MARKER_ORIENT_ANGLE</b></td><td>An <a>&lt;angle&gt;</a> or <a>&lt;number&gt;</a> value indicating the orientation angle.</td></tr>
-  <tr><td><b id="__svg__SVGMarkerElement__SVG_MARKER_ORIENT_UNKNOWN">SVG_MARKER_ORIENT_UNKNOWN</b></td><td>Some other value.</td></tr>
+  <tr><td><b id="__nsvg__NSVGMarkerElement__NSVG_MARKER_ORIENT_AUTO">NSVG_MARKER_ORIENT_AUTO</b></td><td>The <span class="attr-value">auto</span> keyword.</td></tr>
+  <tr><td><b id="__nsvg__NSVGMarkerElement__NSVG_MARKER_ORIENT_ANGLE">NSVG_MARKER_ORIENT_ANGLE</b></td><td>An <a>&lt;angle&gt;</a> or <a>&lt;number&gt;</a> value indicating the orientation angle.</td></tr>
+  <tr><td><b id="__nsvg__NSVGMarkerElement__NSVG_MARKER_ORIENT_UNKNOWN">NSVG_MARKER_ORIENT_UNKNOWN</b></td><td>Some other value.</td></tr>
 </table>
 
-<p>The <b id="__svg__SVGMarkerElement__markerUnits">markerUnits</b> IDL attribute
+<p>The <b id="__nsvg__NSVGMarkerElement__markerUnits">markerUnits</b> IDL attribute
 <a>reflects</a> the <a>'markerUnits'</a> content attribute.  The
 <a>numeric type values</a> for <a>'markerUnits'</a> are as
 described above in the numeric marker unit type constant table.</p>
 
-<p>The <b id="__svg__SVGMarkerElement__orientType">orientType</b>,
-<b id="__svg__SVGMarkerElement__orientAngle">orientAngle</b> and
-<b id="__svg__SVGMarkerElement__orient">orient</b> IDL attributes
+<p>The <b id="__nsvg__NSVGMarkerElement__orientType">orientType</b>,
+<b id="__nsvg__NSVGMarkerElement__orientAngle">orientAngle</b> and
+<b id="__nsvg__NSVGMarkerElement__orient">orient</b> IDL attributes
 all reflect the <a>'orient'</a> content attribute.
 The <a>numeric type values</a> for <a>'orient'</a> are as follows:</p>
 
@@ -3541,31 +3541,31 @@ The <a>numeric type values</a> for <a>'orient'</a> are as follows:</p>
   <tr><th>Value</th><th>Numeric type value</th></tr>
   <tr>
     <td><span class='attr-value'>auto</span></td>
-    <td><a href='painting.html#__svg__SVGMarkerElement__SVG_MARKER_ORIENT_AUTO'>SVG_MARKER_ORIENT_AUTO</a></td>
+    <td><a href='painting.html#__nsvg__NSVGMarkerElement__NSVG_MARKER_ORIENT_AUTO'>NSVG_MARKER_ORIENT_AUTO</a></td>
   </tr>
   <tr>
     <td><span class='attr-value'>auto-start-reverse</span></td>
-    <td><a href='painting.html#__svg__SVGMarkerElement__SVG_MARKER_ORIENT_UNKNOWN'>SVG_MARKER_ORIENT_UNKNOWN</a></td>
+    <td><a href='painting.html#__nsvg__NSVGMarkerElement__NSVG_MARKER_ORIENT_UNKNOWN'>NSVG_MARKER_ORIENT_UNKNOWN</a></td>
   </tr>
   <tr>
     <td><a>&lt;angle&gt;</a> | <a>&lt;number&gt;</a></td>
-    <td><a href='painting.html#__svg__SVGMarkerElement__SVG_MARKER_ORIENT_ANGLE'>SVG_MARKER_ORIENT_ANGLE</a></td>
+    <td><a href='painting.html#__nsvg__NSVGMarkerElement__NSVG_MARKER_ORIENT_ANGLE'>NSVG_MARKER_ORIENT_ANGLE</a></td>
   </tr>
 </table>
 
-<p>The <b id="__svg__SVGMarkerElement__refX">refX</b>,
-<b id="__svg__SVGMarkerElement__refY">refY</b>,
-<b id="__svg__SVGMarkerElement__markerWidth">markerWidth</b> and
-<b id="__svg__SVGMarkerElement__markerHeight">markerHeight</b> IDL attributes
+<p>The <b id="__nsvg__NSVGMarkerElement__refX">refX</b>,
+<b id="__nsvg__NSVGMarkerElement__refY">refY</b>,
+<b id="__nsvg__NSVGMarkerElement__markerWidth">markerWidth</b> and
+<b id="__nsvg__NSVGMarkerElement__markerHeight">markerHeight</b> IDL attributes
 reflect the <a>'refX'</a>, <a>'refY'</a>, <a>'markerWidth'</a>
 and <a>'markerHeight'</a> content attributes, respectively.</p>
 
-<p>The <b id="__svg__SVGMarkerElement__setOrientToAuto">setOrientToAuto</b>
+<p>The <b id="__nsvg__NSVGMarkerElement__setOrientToAuto">setOrientToAuto</b>
 method is used to set the value of the <a>'orient'</a> attribute
 to <span class='attr-value'>'auto'</span>.  When setOrientToAuto() is
 called, the <a>'orient'</a> attribute is simply set to <span class='attr-value'>'auto'</span>.</p>
 
-<p>The <b id="__svg__SVGMarkerElement__setOrientToAngle">setOrientToAngle</b>
+<p>The <b id="__nsvg__NSVGMarkerElement__setOrientToAngle">setOrientToAngle</b>
 method is used to set the value of the <a>'orient'</a> attribute
 to a specific angle value.  When setOrientToAngle(<var>angle</var>) is
 called, the <a>'orient'</a> attribute is <a>reserialized</a> using

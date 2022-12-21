@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
   <title>Geometry Properties</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,18 +9,18 @@
   <!-- Style sheets for local dev. Will be standardized in processing.
   Add attribute data-keep="" to any extra stylesheet link you do not want removed
   (or use <style>), and include it before here. -->
-  <link rel="stylesheet" href="style/svg.css" type="text/css" />
+  <link rel="stylesheet" href="style/nsvg.css" type="text/css" />
   <link rel="stylesheet" href="style/W3C-ED.css" type="text/css" />
 </head>
 <body class="ready-for-wider-review">
 
 <h1>Geometry Properties</h1>
 
-<p>Beside SVG's styling properties, SVG also defines
+<p>Beside NSVG's styling properties, NSVG also defines
 <dfn id='geometry-properties' data-dfn-type="dfn" data-export="">geometry properties</dfn>. Geometry properties
 describe the position and dimension of the <a>graphics element</a>s <a>'circle'</a>,
 <a>'ellipse'</a>, <a>'rect'</a>, <a>'image'</a>, <a>'foreignObject'</a> and the
-<a>'svg'</a> element.</p>
+<a>'nsvg'</a> element.</p>
 
 <h2 id='CX'>Horizontal center coordinate: The
 <span class="property">'cx'</span> property</h2>
@@ -48,7 +48,7 @@ describe the position and dimension of the <a>graphics element</a>s <a>'circle'<
   </tr>
   <tr>
     <th>Percentages:</th>
-    <td>refer to the width of the current SVG viewport (see
+    <td>refer to the width of the current NSVG viewport (see
     <a href="coords.html#Units">Units</a>)</td>
   </tr>
   <tr>
@@ -94,7 +94,7 @@ property</h2>
   </tr>
   <tr>
     <th>Percentages:</th>
-    <td>refer to the height of the current SVG viewport (see
+    <td>refer to the height of the current NSVG viewport (see
     <a href="coords.html#Units">Units</a>)</td>
   </tr>
   <tr>
@@ -138,7 +138,7 @@ of the position of the element. </p>
   </tr>
   <tr>
     <th>Percentages:</th>
-    <td>refer to the normalized diagonal of the current SVG viewport (see
+    <td>refer to the normalized diagonal of the current NSVG viewport (see
     <a href="coords.html#Units">Units</a>)</td>
   </tr>
   <tr>
@@ -185,7 +185,7 @@ property</h2>
   </tr>
   <tr>
     <th>Percentages:</th>
-    <td>refer to the width of the current SVG viewport (see
+    <td>refer to the width of the current NSVG viewport (see
     <a href="coords.html#Units">Units</a>)</td>
   </tr>
   <tr>
@@ -212,7 +212,7 @@ element.
 </p>
 
 <p class="note">
-    The <span class="prop-value">auto</span> behavior is new in SVG 2 for <a>'ellipse'</a>,
+    The <span class="prop-value">auto</span> behavior is new in NSVG 2 for <a>'ellipse'</a>,
     matching the behavior for <a>'rect'</a> elements when <a>'rx'</a> was not specified.
 </p>
 
@@ -243,7 +243,7 @@ property</h2>
   </tr>
   <tr>
     <th>Percentages:</th>
-    <td>refer to the height of the current SVG viewport (see
+    <td>refer to the height of the current NSVG viewport (see
     <a href="coords.html#Units">Units</a>)</td>
   </tr>
   <tr>
@@ -270,7 +270,7 @@ property</h2>
 </p>
 
 <p class="note">
-    The <span class="prop-value">auto</span> behavior is new in SVG 2 for <a>'ellipse'</a>,
+    The <span class="prop-value">auto</span> behavior is new in NSVG 2 for <a>'ellipse'</a>,
     matching the behavior for <a>'rect'</a> elements when <a>'ry'</a> was not specified.
 </p>
 
@@ -292,7 +292,7 @@ property</h2>
   </tr>
   <tr>
     <th>Applies to:</th>
-    <td><a>'svg'</a>, <a>'rect'</a>,
+    <td><a>'nsvg'</a>, <a>'rect'</a>,
     <a>'image'</a>, <a>'foreignObject'</a> elements</td>
   </tr>
   <tr>
@@ -301,7 +301,7 @@ property</h2>
   </tr>
   <tr>
     <th>Percentages:</th>
-    <td>refer to the width of the current SVG viewport (see
+    <td>refer to the width of the current NSVG viewport (see
     <a href="coords.html#Units">Units</a>)</td>
   </tr>
   <tr>
@@ -338,7 +338,7 @@ property</h2>
   </tr>
   <tr>
     <th>Applies to:</th>
-    <td><a>'svg'</a>, <a>'rect'</a>,
+    <td><a>'nsvg'</a>, <a>'rect'</a>,
     <a>'image'</a>, <a>'foreignObject'</a> elements</td>
   </tr>
   <tr>
@@ -347,7 +347,7 @@ property</h2>
   </tr>
   <tr>
     <th>Percentages:</th>
-    <td>refer to the height of the current SVG viewport (see
+    <td>refer to the height of the current NSVG viewport (see
     <a href="coords.html#Units">Units</a>)</td>
   </tr>
   <tr>
@@ -376,8 +376,8 @@ properties</h2>
 <a href="https://www.w3.org/TR/CSS21/visudet.html#propdef-height"><span class="prop-name">height</span></a>.</p>
 
 <p>The CSS <a>'width'</a> and <a>'height'</a> properties are used for
-sizing some SVG elements.  Specifically, they are used to size
-<a>'rect'</a>, <a>'svg'</a>, <a>'image'</a> and
+sizing some NSVG elements.  Specifically, they are used to size
+<a>'rect'</a>, <a>'nsvg'</a>, <a>'image'</a> and
 <a>'foreignObject'</a>.  All of these elements have <span class='attr-name'>'width'</span>
 and <span class='attr-name'>'height'</span> presentation attributes.
 The properties are also used for laying out embedded elements from the HTML namespace.
@@ -394,13 +394,13 @@ may be constrained by the value of the
 </p>
 
 <p>The value <span class='prop-value'>auto</span> for <a>'width'</a>
-and <a>'height'</a> on the <a>'svg'</a> element is treated as 100%.</p>
+and <a>'height'</a> on the <a>'nsvg'</a> element is treated as 100%.</p>
 
 <p>The value <span class='prop-value'>auto</span> for <a>'width'</a>
 and <a>'height'</a> on the <a>'image'</a> element is calculated from the referenced image's intrinsic dimensions and aspect ratio, according to the CSS <a>Default Sizing Algorithm</a>.</p>
 
 <p class="note">
-    New in SVG 2.  Images embedded in SVG can now be auto-sized to the intrinsic size, or scaled to a fixed height or width according to the intrinsic aspect ratio.  This matches the behavior of embedded images in HTML.
+    New in NSVG 2.  Images embedded in NSVG can now be auto-sized to the intrinsic size, or scaled to a fixed height or width according to the intrinsic aspect ratio.  This matches the behavior of embedded images in HTML.
 </p>
 
 <p>The value <span class='prop-value'>auto</span> for <a>'width'</a>

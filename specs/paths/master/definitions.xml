@@ -1,4 +1,4 @@
-<!-- Definitions for SVG Paths. -->
+<!-- Definitions for NSVG Paths. -->
 
 <definitions xmlns='http://mcc.id.au/ns/local' xmlns:x='http://mcc.id.au/ns/local'>
 
@@ -8,9 +8,9 @@
 
   <!-- ... interfaces ..................................................... -->
 
-  <interface name='SVGPathData' href='#InterfaceSVGPathData'/>
-  <interface name='SVGPathDataSettings' href='#InterfaceSVGPathDataSettings'/>
-  <interface name='SVGPathSegment' href='#InterfaceSVGPathSegment'/>
+  <interface name='NSVGPathData' href='#InterfaceNSVGPathData'/>
+  <interface name='NSVGPathDataSettings' href='#InterfaceNSVGPathDataSettings'/>
+  <interface name='NSVGPathSegment' href='#InterfaceNSVGPathSegment'/>
 
   <!-- === defined in other specifications ================================ -->
 

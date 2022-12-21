@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
   <title>Rendering Model</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,7 +9,7 @@
   <!-- Style sheets for local dev. Will be standardized in processing.
   Add attribute data-keep="" to any extra stylesheet link you do not want removed
   (or use <style>), and include it before here. -->
-  <link rel="stylesheet" href="style/svg.css" type="text/css" />
+  <link rel="stylesheet" href="style/nsvg.css" type="text/css" />
   <link rel="stylesheet" href="style/W3C-ED.css" type="text/css" />
 </head>
 <body>
@@ -18,10 +18,10 @@
 
 <div class="annotation">
   <p>
-    The SVG 2 rendering model will follow the rules defined by the <a href="https://www.w3.org/TR/compositing/">Compositing and Blending specification</a>.
+    The NSVG 2 rendering model will follow the rules defined by the <a href="https://www.w3.org/TR/compositing/">Compositing and Blending specification</a>.
   </p>
   <p>
-    Resolution: <a href="http://www.w3.org/2012/07/24-svg-minutes.html#item09">Seattle/Paris 2012 F2F day 3</a>.
+    Resolution: <a href="http://www.w3.org/2012/07/24-nsvg-minutes.html#item09">Seattle/Paris 2012 F2F day 3</a>.
   </p>
   <p>
     Owner: Nikos (Action 3332).
@@ -33,7 +33,7 @@
 
 <h2 id="Introduction">Introduction</h2>
 <p>
-Implementations of SVG must implement the rendering model as described in this
+Implementations of NSVG must implement the rendering model as described in this
 chapter, as modified in the appendix on <a href="conform.html">conformance
 requirements</a> which describes
 situations where an implementation may deviate.
@@ -60,7 +60,7 @@ match the conformance requirements).</p>
 <div class='ready-for-wider-review'>
 <h2 id="RenderingTree">The rendering tree</h2>
 
-<p> The components of the final rendered representation of an SVG document
+<p> The components of the final rendered representation of an NSVG document
     do not have a one-to-one relationship with the underlying
     elements in the document model.
     The appearance of the graphic instead reflects a parallel structure,
@@ -68,7 +68,7 @@ match the conformance requirements).</p>
     in which some elements are excluded and others are repeated.
 </p>
 
-<p> Many elements in the SVG namespace do not directly represent
+<p> Many elements in the NSVG namespace do not directly represent
     a component of the graphical document.
     Instead, they define graphical effects, metadata,
     content to be used to represent other elements,
@@ -79,7 +79,7 @@ match the conformance requirements).</p>
     in the <a>rendering tree</a>.
 </p>
 <p>
-    Because SVG supports the reuse of graphical sub-components,
+    Because NSVG supports the reuse of graphical sub-components,
     some elements are rendered multiple times.
     The individual renderings may have context-dependent styling
     and may be rasterized at different scales or transformations.
@@ -92,7 +92,7 @@ match the conformance requirements).</p>
     <dd>
     <p>
         The rendering tree is the set of elements being rendered
-        in an <a>SVG document fragment</a>.
+        in an <a>NSVG document fragment</a>.
         It is generated from the document tree
         by excluding <a>non-rendered elements</a>
         and inserting additional fragments for <a>re-used graphics</a>.
@@ -168,7 +168,7 @@ match the conformance requirements).</p>
 
 <h3 id="Rendered-vs-NonRendered">Rendered versus non-rendered elements</h3>
 
-<p> At any given time, every SVG element
+<p> At any given time, every NSVG element
     (or <a>element instance</a> in a <a>use-element shadow tree</a>)
     is either rendered or non-rendered.
     Whether an element is currently rendered or not affects
@@ -225,7 +225,7 @@ class="property">'display'</span> and <span class="property">'visibility'</span>
 properties</h3>
 
 <p>
-    SVG uses two properties to toggle the visible display of
+    NSVG uses two properties to toggle the visible display of
     elements that are normally rendered:
     <a>'display'</a> and <a>'visibility'</a>.
     Although they have a similar visible effect in static documents,
@@ -331,7 +331,7 @@ of <a>'display'</a> and <a>'visibility'</a>.
 
 <p>
   In contrast,
-  graphical effects elements generate a self-contained SVG fragment
+  graphical effects elements generate a self-contained NSVG fragment
   which is rendered independently as a <a>stacking context</a>
   and an <a>isolated group</a>.
   The canvas for this fragment is scaled
@@ -355,7 +355,7 @@ of <a>'display'</a> and <a>'visibility'</a>.
 
 <h2 id="PaintersModel">The painters model</h2>
 
-<p>SVG uses a "painters model" of rendering. <a>Paint</a>
+<p>NSVG uses a "painters model" of rendering. <a>Paint</a>
 is applied in successive operations to the output device such
 that each operation paints onto some area of the output device,
 possibly obscuring paint that has previously been laid down.
@@ -363,32 +363,32 @@ possibly obscuring paint that has previously been laid down.
 After each object or group is painted, it becomes part of the background
 for the next painting operation.
 
-SVG 2 supports advanced blending modes and compositing operations that
+NSVG 2 supports advanced blending modes and compositing operations that
 control how each painting operation interacts with the background.
 The rules governing these painting operations are outlined in the
 <a href="https://www.w3.org/TR/compositing/">Compositing and Blending Specification</a>.
 </p>
 
 <h2 id="RenderingOrder">Rendering order</h2>
-<p>Elements in SVG are positioned in three dimensions. In addition to their
-position on the x and y axis of the <a>SVG viewport</a>, SVG elements are also
+<p>Elements in NSVG are positioned in three dimensions. In addition to their
+position on the x and y axis of the <a>NSVG viewport</a>, NSVG elements are also
 positioned on the z axis. The position on the z-axis defines the order that
 they are painted.</p>
 
 <p>Along the z axis, elements are grouped into <dfn id="TermStackingContext" data-dfn-type="dfn" data-export="">stacking contexts</dfn>.</p>
 </div>
 
-<h3 id="EstablishingStackingContex">Establishing a stacking context in SVG</h3>
-<p>A new stacking context must be established at an SVG element for its descendants if:</p>
+<h3 id="EstablishingStackingContex">Establishing a stacking context in NSVG</h3>
+<p>A new stacking context must be established at an NSVG element for its descendants if:</p>
 
 <ul>
   <li>it is the root element</li>
 
-  <li>the element is an <a>outermost svg element</a>, or a <a>'foreignObject'</a>,
+  <li>the element is an <a>outermost nsvg element</a>, or a <a>'foreignObject'</a>,
   <a>'image'</a>, <a>'marker element'</a>, <a>'mask element'</a>, <a>'pattern'</a>,
   <a>'symbol'</a> or <a>'use'</a> element</li>
 
-  <li>the element is an inner <a>'svg'</a> element and the computed value of its
+  <li>the element is an inner <a>'nsvg'</a> element and the computed value of its
   <a>'overflow'</a> property is a value other than <span class='prop-value'>visible</span></li>
 
   <li>the element is subject to explicit clipping:
@@ -411,7 +411,7 @@ they are painted.</p>
   computed value other than <span class='prop-value'>none</span></li>
 
   <li class="ready-for-wider-review">a property defined in another specification is
-  applied and that property is defined to establish a stacking context in SVG</li>
+  applied and that property is defined to establish a stacking context in NSVG</li>
 </ul>
 
 <p>Stacking contexts are conceptual tools used to describe the
@@ -430,7 +430,7 @@ ancestor stacking contexts may not come between any of its elements.</p>
 must be stacked according to document order.</p>
 
 <p>With the exception of the <a>'foreignObject'</a> element, the back to front
-stacking order for a stacking context created by an SVG element is:</p>
+stacking order for a stacking context created by an NSVG element is:</p>
 
 <ol>
   <li>the background and borders of the element forming the stacking
@@ -463,7 +463,7 @@ Grouping elements, such as the <a>'g'</a> element (see <a>container elements</a>
 Similarly, a <a>'use'</a> element creates a compositing group for its shadow content.
 The <a>Compositing and Blending</a>
 specification normatively describes how to render <a>compositing groups</a>.
-In SVG, effects may be applied to a group. For example, opacity, filters
+In NSVG, effects may be applied to a group. For example, opacity, filters
 or masking. These effects are applied to the rendered result of the group
 immediately before any transforms on the group are applied, which are applied
 immediately before the group is blended and composited with the
@@ -515,7 +515,7 @@ an individual rendering element, it is known as <em>object
 opacity</em>.  The principle for these two operations however
 is the same.</p>
 
-<p>There are several other opacity-related properties in SVG:</p>
+<p>There are several other opacity-related properties in NSVG:</p>
 
 <ul>
 <li><a>'fill-opacity'</a>, which specifies the opacity of a fill
@@ -539,18 +539,18 @@ Thus, the presence of <a>'opacity property'</a> causes the group to be
 </span>
 </p>
 
-<p>The <a>'opacity'</a> property applies to the following SVG elements:
-<a>'svg'</a>, <a>'g'</a>, <a>'symbol'</a>, <a>'marker element'</a>,
+<p>The <a>'opacity'</a> property applies to the following NSVG elements:
+<a>'nsvg'</a>, <a>'g'</a>, <a>'symbol'</a>, <a>'marker element'</a>,
 <a>'a'</a>, <a>'switch'</a>, <a>'use'</a> and <a>graphics elements</a>.</p>
 
 <div class="example">
 <p>The following example illustrates various usage of the <a>'opacity'</a>
 property on objects and groups.</p>
 
-<edit:includefile href='images/masking/opacity01.svg'/>
+<edit:includefile href='images/masking/opacity01.nsvg'/>
 
 <div class='figure'>
-<img class='bordered' src='images/masking/opacity01.svg' alt='Image showing different groups of circles blended into the background.'/>
+<img class='bordered' src='images/masking/opacity01.nsvg' alt='Image showing different groups of circles blended into the background.'/>
 <p class='caption'>Each group of red and green circles is first rendered
 to an offscreen image before being blended with the background
 blue rectangle as a whole, with the given <a>'opacity'</a> values.</p>
@@ -587,7 +587,7 @@ red and 75% blue.</li>
 
 <h2 id="TypesOfGraphicsElements">Types of graphics elements</h2>
 
-<p>SVG supports three fundamental types of <a>graphics elements</a>
+<p>NSVG supports three fundamental types of <a>graphics elements</a>
 that can be rendered onto the canvas:</p>
 
 <ul>
@@ -596,7 +596,7 @@ and curves</li>
 <li>Text, which represents some combination of character glyphs</li>
 <li>Raster images, which represent an array of values that
 specify the paint color and opacity (often termed alpha) at a
-series of points on a rectangular grid. (SVG requires support
+series of points on a rectangular grid. (NSVG requires support
 for specified raster image formats under
 <a href="conform.html">conformance requirements</a>.)</li>
 </ul>
@@ -612,7 +612,7 @@ symbols</a> (which themselves can consist of any combination of shapes,
 text and images) can be drawn at positions along the
 shape boundary. Each marker symbol
 is painted as if its graphical content were expanded into the
-SVG document tree just after the shape object which is using
+NSVG document tree just after the shape object which is using
 the given marker symbol. The graphical contents of a marker
 symbol are rendered using the same methods as graphics
 elements. Marker symbols are not applicable to text.</p>
@@ -627,7 +627,7 @@ end of the shape.</p>
 <p>The fill and stroke operations are entirely independent;
 for instance, each fill or stroke operation has its own opacity setting.</p>
 
-<p>SVG supports numerous built-in types of paint which can
+<p>NSVG supports numerous built-in types of paint which can
 be used in fill and stroke operations. These are described in
 <a href="pservers.html">Paint Servers</a>.</p>
 
@@ -653,7 +653,7 @@ animation from the beginning.
 </p>
 
 <h2 id="FilteringPaintRegions">Filtering painted regions</h2>
-<p>SVG allows any painting operation to be filtered. (See
+<p>NSVG allows any painting operation to be filtered. (See
 <a href="https://www.w3.org/TR/filter-effects/">Filter Effects</a>.)</p>
 
 <p>In this case the result must be as though the paint
@@ -666,7 +666,7 @@ filtered by the processes defined in
 <div class="ready-for-wider-review">
 <h2 id="ClippingAndMasking">Clipping and masking</h2>
 
-<p>SVG supports the following clipping/masking features:</p>
+<p>NSVG supports the following clipping/masking features:</p>
 
 <ul>
 <li>clipping paths, which either uses
@@ -690,16 +690,16 @@ foreground objects into the current background.</li>
 </div>
 
 <h2 id="ParentCompositing">Parent compositing</h2>
-<p>SVG document fragments can be semi-opaque.</p>
+<p>NSVG document fragments can be semi-opaque.</p>
 <p class="ready-for-wider-review">
 In accordance with the <a>Compositing and Blending</a> specification,
-the <a>'svg'</a> element always creates an <a>isolated</a> group.
-When an SVG document is a top-level document,
+the <a>'nsvg'</a> element always creates an <a>isolated</a> group.
+When an NSVG document is a top-level document,
 meaning it is not embedded in another document,
-the root <a>'svg'</a> element
+the root <a>'nsvg'</a> element
 is considered to be the <a>Page Group</a> and is composited with
 a backdrop of white with 100% opacity.
-In all other cases, the SVG document or document fragment is composited into the parent
+In all other cases, the NSVG document or document fragment is composited into the parent
 document with opacity preserved.
 </p>
 
@@ -711,7 +711,7 @@ Specification [<a href="refs.html#ref-css2">CSS2</a>] for the definition of
 <a>'overflow'</a>.</p>
 <div class="ready-for-wider-review">
 <table class="data compact">
-<caption>A summary of the behavior of the <a>'overflow'</a> property in SVG.
+<caption>A summary of the behavior of the <a>'overflow'</a> property in NSVG.
 </caption>
 <thead>
 <tr>
@@ -726,10 +726,10 @@ Specification [<a href="refs.html#ref-css2">CSS2</a>] for the definition of
 </thead>
 <tbody>
 <tr>
-<th>document root svg</th><td>visible</td><td>n/a</td><td>visible | scroll</td><td>visible</td><td>hidden</td><td>scroll</td>
+<th>document root nsvg</th><td>visible</td><td>n/a</td><td>visible | scroll</td><td>visible</td><td>hidden</td><td>scroll</td>
 </tr>
 <tr>
-<th>other svg</th><td>visible</td><td>hidden</td><td>visible | scroll</td><td>visible</td><td>hidden</td><td>scroll</td>
+<th>other nsvg</th><td>visible</td><td>hidden</td><td>visible | scroll</td><td>visible</td><td>hidden</td><td>scroll</td>
 </tr>
 <tr>
 <th>text</th><td>visible</td><td>hidden</td><td>visible</td><td>visible</td><td>hidden</td><td>hidden</td>
@@ -766,18 +766,18 @@ however, the following additional points apply:</p>
   <li>For those elements to which the <a>'overflow'</a> property can apply.
   If the <a>'overflow'</a> property has the value <span class='prop-value'>
   hidden</span> or <span class='prop-value'>scroll</span>, a clip,
-  the exact size of the SVG viewport is applied.
+  the exact size of the NSVG viewport is applied.
   </li>
 
   <li>
   When <span class='prop-value'>scroll</span> is specified on an
-  <a>'svg'</a> element and if the user agent uses a scrolling mechanism that
+  <a>'nsvg'</a> element and if the user agent uses a scrolling mechanism that
   is visible on the screen (such as a scroll bar or a panner), that mechanism
-  should be displayed for the SVG viewport whether or not any of its content is clipped.
+  should be displayed for the NSVG viewport whether or not any of its content is clipped.
   </li>
 
   <li>
-  Within SVG content, the value <span class='prop-value'>auto</span> implies
+  Within NSVG content, the value <span class='prop-value'>auto</span> implies
   that all rendered content for child elements must be
   <span class='prop-value'>visible</span>, either through a scrolling
   mechanism, or by rendering with no clip.
@@ -794,7 +794,7 @@ however, the following additional points apply:</p>
 
 <div class="note">
 Although the initial value for <a>'overflow'</a> is auto. In the User Agent style sheet,
-overflow is overridden for the <a>'svg'</a> element when it is not the root
+overflow is overridden for the <a>'nsvg'</a> element when it is not the root
 element of a stand-alone document, the <a>'pattern'</a> element, and the <a>'marker element'</a> element to be hidden by default.
 </div>
 </div> <!-- ready-for-wider-review -->

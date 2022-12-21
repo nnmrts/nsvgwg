@@ -1,8 +1,8 @@
-<!-- Publication script configuration for SVG 2. -->
+<!-- Publication script configuration for NSVG 2. -->
 
 <publish-conf xmlns='http://mcc.id.au/ns/local'>
-  <title>Scalable Vector Graphics (SVG) 2</title>
-  <short-title>SVG 2</short-title>
+  <title>Not Scalable Vector Graphics (NSVG) 2</title>
+  <short-title>NSVG 2</short-title>
   <maturity>ED</maturity>
   <output use-publish-directory='true' publish-directory='build/publish'/>
 
@@ -18,22 +18,22 @@
   -->
 
   <versions>
-    <cvs href='https://svgwg.org/svg2-draft/'/>
-    <cvs-single href='https://svgwg.org/svg2-draft/single-page.html'/>
-    <this href='https://www.w3.org/TR/2018/CR-SVG2-20180807/'/>
-    <this-single href='https://www.w3.org/TR/2018/CR-SVG2-20180807/single-page.html'/>
-    <previous href='https://www.w3.org/TR/2016/CR-SVG2-20160915/'/>
-    <latest href='https://www.w3.org/TR/SVG2/'/>
-    <latestrec href='https://www.w3.org/TR/SVG/'/>
+    <cvs href='https://nsvgwg.org/nsvg2-draft/'/>
+    <cvs-single href='https://nsvgwg.org/nsvg2-draft/single-page.html'/>
+    <this href='https://www.w3.org/TR/2018/CR-NSVG2-20180807/'/>
+    <this-single href='https://www.w3.org/TR/2018/CR-NSVG2-20180807/single-page.html'/>
+    <previous href='https://www.w3.org/TR/2016/CR-NSVG2-20160915/'/>
+    <latest href='https://www.w3.org/TR/NSVG2/'/>
+    <latestrec href='https://www.w3.org/TR/NSVG/'/>
   </versions>
 
   <definitions href='definitions.xml'/>
   <definitions href='definitions-filters.xml' base='https://drafts.fxtf.org/filter-effects/'/>
   <definitions href='definitions-masking.xml' base='https://drafts.fxtf.org/css-masking-1/'/>
   <definitions href='definitions-compositing.xml' base='https://drafts.fxtf.org/compositing-1/'/>
-  <definitions href='../specs/animations/master/definitions.xml' base='https://svgwg.org/specs/animations/'/>
+  <definitions href='../specs/animations/master/definitions.xml' base='https://nsvgwg.org/specs/animations/'/>
 
-  <interfaces idl='../build/svg.idlx'/>
+  <interfaces idl='../build/nsvg.idlx'/>
 
   <resource href='style'/>
   <resource href='images'/>
@@ -54,8 +54,8 @@
   <resource href='metadata.html'/>
   <resource href='minimize.html'/>
   <resource href='script.html'/>
-  <resource href='svgdom.html'/>
-  <resource href='svgdtd.html'/>
+  <resource href='nsvgdom.html'/>
+  <resource href='nsvgdtd.html'/>
 
   <toc href='Overview.html'/>
   <elementindex href='eltindex.html'/>

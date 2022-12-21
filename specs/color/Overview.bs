@@ -3,23 +3,23 @@
 Level: 1
 Status: ED
 ED: none
-Shortname: svg-color
-Group: svg
+Shortname: nsvg-color
+Group: nsvg
 Editor: Chris Lilley, W3C, chris@w3.org
 Warning: "Not Ready"
-Abstract: This is a temporary place for additions to CSS Colors 4 and moved from SVG2.
+Abstract: This is a temporary place for additions to CSS Colors 4 and moved from NSVG2.
 </pre>
 
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Support color management.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/10/28-svg-irc#T16-52-12">SVG 2 will depend on SVG color management subject to deciding the exact conformance classes required.</a></td>
+      <td><a href="http://www.w3.org/2011/10/28-nsvg-irc#T16-52-12">NSVG 2 will depend on NSVG color management subject to deciding the exact conformance classes required.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -27,24 +27,24 @@ Abstract: This is a temporary place for additions to CSS Colors 4 and moved from
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Chris (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3160">ACTION-3160</a>)</td>
+      <td>Chris (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3160">ACTION-3160</a>)</td>
     </tr>
     <tr>
       <th>Note:</th>
-      <td>SVG color management will become a chapter in SVG 2, no longer an independent module.</td>
+      <td>NSVG color management will become a chapter in NSVG 2, no longer an independent module.</td>
     </tr>
   </table>
 </div>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Support CSS3 Color syntax.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/07/29-svg-minutes.html#item08">SVG 2 will depend on CSS3 Color.</a></td>
+      <td><a href="http://www.w3.org/2011/07/29-nsvg-minutes.html#item08">NSVG 2 will depend on CSS3 Color.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -62,13 +62,13 @@ Abstract: This is a temporary place for additions to CSS Colors 4 and moved from
   
 <p class="normativity"><em>This introduction is informative, not normative.</em></p>
   
-  <p>Several properties used in SVG take a color specification. Also, external media such as images or video
+  <p>Several properties used in NSVG take a color specification. Also, external media such as images or video
   contain colors.</p>
 
-<p>All SVG colors used as property values include a fallback specified in the sRGB color space
+<p>All NSVG colors used as property values include a fallback specified in the sRGB color space
 [<a href="refs.html#ref-SRGB">SRGB</a>]. </p>
 
-<p>Additionally, SVG content can specify an alternate color specification
+<p>Additionally, NSVG content can specify an alternate color specification
 using an ICC profile [<a href="refs.html#ref-ICC42">ICC42</a>].
 <!-- check paint chapter for content that should be here, and move it -->
 If ICC-based colors are provided,
@@ -81,22 +81,22 @@ ICC-based color specification is provided, but this can be changed (see 'color-i
     <h2 id="color-managed-images">Color-managed images</h2>
     
     <p class="note">
-      New in SVG 2.</p>
+      New in NSVG 2.</p>
     
-    <p>Implementations of SVG 2 are required to color-manage all images. The embedded profile is used. If there is no embedded profile, sRGB is assumed, for RGB images.</p>
+    <p>Implementations of NSVG 2 are required to color-manage all images. The embedded profile is used. If there is no embedded profile, sRGB is assumed, for RGB images.</p>
       
     <p class="issue">Define processing for untagged greyscale and CMYK images. Could be a default profile, or an 'explicitly undefined' with a warning to avoid untagged non-RGB images when authoring.</p>
 
-    <p class="issue">References to "SVG 2 User Agent" might need to be replaced
+    <p class="issue">References to "NSVG 2 User Agent" might need to be replaced
     with one of the conformance classes listed in the <a href="conform.html">Conformance</a>
     appendix.</p>
     
     <p><span class="requirement" id="assert_taggedImages">If a referenced image
-    contains color profile information, a SVG 2 User Agent MUST use that profile
+    contains color profile information, a NSVG 2 User Agent MUST use that profile
     to render the image.</span>
     <span class="requirement" id="assert_untaggedImages">Otherwise,
     if a referenced image contains no color profile information, a
-    SVG 2 User Agent MUST use the sRGB profile to render the image.</span></p>
+    NSVG 2 User Agent MUST use the sRGB profile to render the image.</span></p>
     
 
     <h2 id="Color_syntax">Color syntax</h2>
@@ -118,7 +118,7 @@ ICC-based color specification is provided, but this can be changed (see 'color-i
       </div>
     
     <p class="note">
-       Includes all syntactic forms supported by  SVG 1.1, adds hsl() from  [<a href="refs.html#ref-CSS3COLOR">CSS3COLOR</a>].</p>
+       Includes all syntactic forms supported by  NSVG 1.1, adds hsl() from  [<a href="refs.html#ref-CSS3COLOR">CSS3COLOR</a>].</p>
     <p class="note">See the CSS Color Module Level 3 specification for the
       definition of the color type.
       [<a href="refs.html#ref-CSS3COLOR">CSS3COLOR</a>]</p>
@@ -126,15 +126,15 @@ ICC-based color specification is provided, but this can be changed (see 'color-i
       <p class="note">Must add the hsla and hsl forms.</p>
     
     <div class="requirement" id="assert_base_syntax">
-      <p>All the syntactic forms for an sRGB color, including the full set of color keywords, shall be supported by an SVG 2 User Agent.</p>
+      <p>All the syntactic forms for an sRGB color, including the full set of color keywords, shall be supported by an NSVG 2 User Agent.</p>
     </div>
     
-    <p>The rendering requirements for sRGB colors are more strict than for SVG 1.1  User Agents,
+    <p>The rendering requirements for sRGB colors are more strict than for NSVG 1.1  User Agents,
       where color management is optional.</p>
     <div class="requirement" id="assert_render_sRGB">
       <p>
         When an sRGB color is used - because it is the sole color specification, or in a
-        permitted fallback situation - a conformant SVG 2 User Agent 
+        permitted fallback situation - a conformant NSVG 2 User Agent 
         shall render it in conformance with the ICC profile for sRGB, to obtain the
         desired color appearance.
       </p>
@@ -157,10 +157,10 @@ ICC-based color specification is provided, but this can be changed (see 'color-i
 
     
     <p class="note">
-      New in SVG 2, added from  [<a href="refs.html#ref-CSS3COLOR">CSS3COLOR</a>].</p>
+      New in NSVG 2, added from  [<a href="refs.html#ref-CSS3COLOR">CSS3COLOR</a>].</p>
     
     <div class="requirement" id="assert_combine-alpha">
-      <p>When an sRGB color with alpha is used in a property value,  an SVG 2 User Agent shall combine the alpha value with any separately specified alpha value that applies to that property, by multiplying the alpha values together.</p>
+      <p>When an sRGB color with alpha is used in a property value,  an NSVG 2 User Agent shall combine the alpha value with any separately specified alpha value that applies to that property, by multiplying the alpha values together.</p>
     </div>
     
     <p>Example (these render as the same color)</p>
@@ -175,7 +175,7 @@ ICC-based color specification is provided, but this can be changed (see 'color-i
     <div class="requirement" id="assert_render_sRGB_alpha">
       <p>
         When an sRGB color with alpha is used - because it is the sole color specification, or in a
-        permitted fallback situation - a conformant SVG 2 User Agent 
+        permitted fallback situation - a conformant NSVG 2 User Agent 
         shall render it in conformance with the ICC profile for sRGB, to obtain the
         desired color appearance.
       </p>
@@ -203,16 +203,16 @@ ICC-based color specification is provided, but this can be changed (see 'color-i
 &lt;circle fill="#CD853F icc-color(acmecmyk, 0.11, 0.48, 0.83, 0.00)"/></pre>
     </div>
     
-    <p class="note">Same syntax as SVG 1.1, increased conformance requirement.</p>
+    <p class="note">Same syntax as NSVG 1.1, increased conformance requirement.</p>
     
-    <p>SVG 2  uses the extended ICC color specification from SVG 1.1.  In SVG 1.1,  parsing the syntax was required but implementing the ICC colour itself  was optional,  as indicated by  phrases such as "If ICC-based colors are provided and the SVG user agent supports ICC color, then...". An SVG 1.1 user agent which also conforms to this specification "supports ICC color" for the purposes of conforming to SVG 1.1.</p>
+    <p>NSVG 2  uses the extended ICC color specification from NSVG 1.1.  In NSVG 1.1,  parsing the syntax was required but implementing the ICC colour itself  was optional,  as indicated by  phrases such as "If ICC-based colors are provided and the NSVG user agent supports ICC color, then...". An NSVG 1.1 user agent which also conforms to this specification "supports ICC color" for the purposes of conforming to NSVG 1.1.</p>
     
     <p>
-      As with SVG Full 1.1, SVG 2 content may specify color using an ICC profile (see
+      As with NSVG Full 1.1, NSVG 2 content may specify color using an ICC profile (see
       [<a href="refs.html#ref-ICC42">ICC42</a>]); an sRGB fallback must still be provided.
     </p>
     
-    <p>An SVG 2 User Agent searches the color profile description database for
+    <p>An NSVG 2 User Agent searches the color profile description database for
       a <a href="#ColorProfileDescriptions">color profile description</a> entry whose
       name descriptor matches &lt;name&gt; and uses the last matching entry that is found;
       painting shall be done using the given ICC color, where the comma-separated list
@@ -224,19 +224,19 @@ ICC-based color specification is provided, but this can be changed (see 'color-i
     
     <div class="requirement" id="assert_ICCColorPrecedence">
       <p>
-        If ICC-based colors are provided, an SVG 2 User Agent
+        If ICC-based colors are provided, an NSVG 2 User Agent
         MUST use the ICC-based color in preference to the sRGB fallback color,
         unless the ICC color profile cannot be used (is unavailable, malformed, or uses an unsupported profile connection
         space).</p>
     </div>
     <div class="requirement" id="assert_useICC">
-      <p>When rendering, if both ICC and sRGB fallback colors are provided and the referenced ICC profile can be used, a SVG 2 User Agent MUST render using the ICC color values, using the specified ICC profile as the input profile.</p>
+      <p>When rendering, if both ICC and sRGB fallback colors are provided and the referenced ICC profile can be used, a NSVG 2 User Agent MUST render using the ICC color values, using the specified ICC profile as the input profile.</p>
     </div>
     
     <h3 id="LAB">LAB color</h3>
     
     <p class="note">
-      New in SVG 2.</p>
+      New in NSVG 2.</p>
     
     <p   class="prop-value"><a href="#fallback">&lt;fallback&gt;</a> 
       <a href="#cielabcolor">cielab(&lt;Lightness&gt;, &lt;a&gt; &lt;b&gt;)</a> | <br />
@@ -252,23 +252,23 @@ ICC-based color specification is provided, but this can be changed (see 'color-i
     </div>
   
     
-    <p>An SVG 2 User Agent directly uses the CIE LAB or CIE LCHab values, where the comma-separated list
+    <p>An NSVG 2 User Agent directly uses the CIE LAB or CIE LCHab values, where the comma-separated list
       (with optional white space) of <strong>&lt;icccolorvalue&gt;</strong>'s is a set
       of Lightness, a and b or Lightness, Hue and Chroma values, expressed as
-      <a>&lt;number&gt;</a>s. A color profile is not referenced in the SVG, although profile-based implementations may 
+      <a>&lt;number&gt;</a>s. A color profile is not referenced in the NSVG, although profile-based implementations may 
     choose to implement this by providing and using an LAB profile.</p>
           
           <p>The white point  is D50, which is the whitepoint defined by the CIE for CIELab profile connection space and the 
             whitepoint used for image editors that provide LAB functionality.
-          LAB measurements relative to a different whitepoint should be adapted to D50 to be used in SVG 2; the linear Bradford chromatic adaptation transform [<a href="refs.html#ref-BRADFORD">BRADFORD</a>] is suggested for this.</p>
+          LAB measurements relative to a different whitepoint should be adapted to D50 to be used in NSVG 2; the linear Bradford chromatic adaptation transform [<a href="refs.html#ref-BRADFORD">BRADFORD</a>] is suggested for this.</p>
     
     <div class="requirement" id="assert_LABColorPrecedence">
       <p>
-        If LAB-based colors are provided, an SVG 2 User Agent
+        If LAB-based colors are provided, an NSVG 2 User Agent
         MUST use the LAB-based color in preference to the sRGB fallback color.</p>
     </div>
     <div class="requirement" id="assert_useLAB">
-      <p>When rendering, if both LAB and sRGB fallback colors are provided, a SVG 2 User Agent MUST render using the ICC color values, using the specified ICC profile as the input profile.</p>
+      <p>When rendering, if both LAB and sRGB fallback colors are provided, a NSVG 2 User Agent MUST render using the ICC color values, using the specified ICC profile as the input profile.</p>
     </div>
           
           <p>A fallback sRGB color must still be provided, for non-color-managed user agents.</p>
@@ -277,7 +277,7 @@ ICC-based color specification is provided, but this can be changed (see 'color-i
     ICC named color</h3>
     
     <p class="note">
-      New in SVG 2.</p>
+      New in NSVG 2.</p>
     
     
     <p   class="prop-value"><a href="#fallback">&lt;fallback&gt;</a>
@@ -296,9 +296,9 @@ ICC-based color specification is provided, but this can be changed (see 'color-i
       </div>
     
     <p>
-      SVG 2 introduces the ability to specify a color using a 'Named Color Profile'.
+      NSVG 2 introduces the ability to specify a color using a 'Named Color Profile'.
     </p>
-    <p>An SVG 2 User Agent searches the color profile description database for
+    <p>An NSVG 2 User Agent searches the color profile description database for
       a <a href="#ColorProfileDescriptions">color profile description</a> entry whose
       name descriptor matches &lt;name&gt; and uses the last matching entry that is found;
       painting shall be done using the given ICC color, where namedColor is a
@@ -311,14 +311,14 @@ ICC-based color specification is provided, but this can be changed (see 'color-i
     
     <div class="requirement" id="assert_ICCNamedColorPrecedence">
       <p>
-        If ICC-based named colors are provided, a conformant SVG 2 User Agent 
+        If ICC-based named colors are provided, a conformant NSVG 2 User Agent 
         MUST use the ICC-based named color in preference to the sRGB fallback
         color, unless the ICC named color profile is unavailable, malformed, or uses a profile
         connection space other than CIE XYZ or CIE LAB.</p>
     </div>
     <div class="requirement" id="assert_useICCNamed">
       <p>
-        When an ICC named color is used, a conformant SVG 2 User Agent 
+        When an ICC named color is used, a conformant NSVG 2 User Agent 
         shall render it in conformance with the specified ICC profile to obtain the
         desired color appearance.</p>
     </div>
@@ -331,7 +331,7 @@ ICC-based color specification is provided, but this can be changed (see 'color-i
   Uncalibrated device color</h3>
   
   <p class="note">
-    New in SVG 2.</p>
+    New in NSVG 2.</p>
   
   <p  class="prop-value"><a href="#fallback">&lt;fallback&gt;</a>
     <a href="#devicegray">device-gray(&lt;gray&gt;)</a> |  <br />
@@ -351,11 +351,11 @@ ICC-based color specification is provided, but this can be changed (see 'color-i
   </div>
   
   <p>
-    SVG 2  introduces a method of specifying uncalibrated device colors. This
+    NSVG 2  introduces a method of specifying uncalibrated device colors. This
     is sometimes useful in print workflows, for example to produce patches of known 
     ink density used for quality control purposes. </p>
   
-  <p>An SVG 2 User Agent which supports the indicated class of output device
+  <p>An NSVG 2 User Agent which supports the indicated class of output device
     will pass the values through without color management. If the class of output device 
     (for example, cmyk) is not supported, then the fallback
     sRGB color is used.
@@ -377,41 +377,41 @@ definition of 'color'.
 <span class="prop-value">currentColor</span>, for the 'fill',
 'stroke', 'solid-color', 'stop-color', 'flood-color' and
 'lighting-color' properties.  The property has no other effect
-on SVG elements.</p>
+on NSVG elements.</p>
 
 <div class="example">
   <p>The following example shows how the inherited value of the
   'color' property from an HTML document can be used to
-  set the color of SVG text in an inline SVG fragment.</p>
+  set the color of NSVG text in an inline NSVG fragment.</p>
 
   <pre>
 &lt;!DOCTYPE html>
 &lt;style>
 body { color: #468; font: 16px sans-serif }
-svg { border: 1px solid #888; background-color: #eee }
+nsvg { border: 1px solid #888; background-color: #eee }
 &lt;/style>
 &lt;p>Please see the diagram below:&lt;/p>
-&lt;svg width="200" height="100">
+&lt;nsvg width="200" height="100">
   &lt;g fill="currentColor">
     &lt;text x="70" y="55" text-anchor="end">START&lt;/text>
     &lt;text x="130" y="55">STOP&lt;/text>
     &lt;path d="M 85,45 h 25 v -5 l 10,10 -10,10 v -5 h -25 z"/>
   &lt;/g>
-&lt;/svg>
+&lt;/nsvg>
 </pre>
 
   <div class="figure">
     <div class="bordered" style="color: #468; font: 16px sans-serif; display: inline-block; text-align: left; padding: 32px 128px 32px 32px">
       <p style="margin-top: 0; margin-bottom: 1em">Please see the diagram below:</p>
-      <svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" style="border: 1px solid #888; background-color: #eee">
+      <nsvg xmlns="http://www.w3.org/2000/nsvg" width="200" height="100" style="border: 1px solid #888; background-color: #eee">
         <g fill="currentColor">
           <text x="70" y="55" text-anchor="end">START</text>
           <text x="130" y="55">STOP</text>
           <path d="M 85,45 h 25 v -5 l 10,10 -10,10 v -5 h -25 z"/>
         </g>
-      </svg>
+      </nsvg>
     </div>
-    <p class="caption">The text and arrow in the SVG fragment are filled
+    <p class="caption">The text and arrow in the NSVG fragment are filled
     with the same color as the inherited 'color' property.</p>
   </div>
 </div>
@@ -428,8 +428,8 @@ svg { border: 1px solid #888; background-color: #eee }
     profiles, it is possible to build a transform and correct visual data for viewing
     on different devices.</p>
   <p>
-    A <span class="SVG-Term">color profile description</span> provides the bridge between
-    an ICC profile and references to that ICC profile within SVG content. The color
+    A <span class="NSVG-Term">color profile description</span> provides the bridge between
+    an ICC profile and references to that ICC profile within NSVG content. The color
     profile description is added to the user agent's list of known color profiles and
     then used to select the relevant profile. The color profile description contains
     descriptors for the location of the color profile on the Web, a name to reference

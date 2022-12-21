@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
-  <title>SVG Animations</title>
+  <title>NSVG Animations</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <link rel="stylesheet" title="Default" type="text/css" href="style/default_svg.css"/>
+  <link rel="stylesheet" title="Default" type="text/css" href="style/default_nsvg.css"/>
   <link rel="alternate stylesheet" title="No issues/annotations" type="text/css" href="style/default_no_issues.css"/>
 </head>
 <body>
 
 <div class="head">
   <p><a href="https://www.w3.org/"><img height="48" width="72" alt="W3C" src="https://www.w3.org/Icons/w3c_home"/></a></p>
-  <h1 id="pagetitle">SVG Animations Level 2</h1>
+  <h1 id="pagetitle">NSVG Animations Level 2</h1>
   <h2 id="pagesubtitle">W3C <edit:maturity/> <em><edit:date/></em></h2>
   <dl>
     <dt>This version:</dt>
@@ -24,9 +24,9 @@
     <dd><edit:previousversion/></dd>
     -->
     <dt>GitHub repository:</dt>
-    <dd><a href="https://github.com/w3c/svgwg/tree/main/specs/animations">https://github.com/w3c/svgwg/tree/main/specs/animations</a></dd>
+    <dd><a href="https://github.com/w3c/nsvgwg/tree/main/specs/animations">https://github.com/w3c/nsvgwg/tree/main/specs/animations</a></dd>
     <dt>Feedback:</dt>
-    <dd><a href="mailto:www-svg@w3.org" class='url'>www-svg@w3.org</a> with subject line “<code>[svg-animation] … <i>message topic</i> …</code>” (<a href="http://lists.w3.org/Archives/Public/www-svg/">archive</a>)</dd>
+    <dd><a href="mailto:www-nsvg@w3.org" class='url'>www-nsvg@w3.org</a> with subject line “<code>[nsvg-animation] … <i>message topic</i> …</code>” (<a href="http://lists.w3.org/Archives/Public/www-nsvg/">archive</a>)</dd>
     <dt class="top-editors">Editor:</dt>
     <dd>Brian Birtles, Mozilla&lt;<a href="mailto:bbirtles@mozilla.com" class='url'>bbirtles@mozilla.com</a>&gt;</dd>
   </dl>
@@ -37,8 +37,8 @@
 
 <h2 id="abstract">Abstract</h2>
 
-<p>This specification defines SVG Animations, a set of features based
-on SMIL for declaratively animating SVG content.</p>
+<p>This specification defines NSVG Animations, a set of features based
+on SMIL for declaratively animating NSVG content.</p>
 
 <h2 id="status">Status of This Document</h2>
 
@@ -48,28 +48,28 @@ publications and the latest revision of this technical report can be found in
 the <a href="http://www.w3.org/TR/">W3C technical reports index</a> at http://www.w3.org/TR/</em>.</p>
 
 <p>This document is the <edit:date/> <strong><edit:maturity/></strong> of <edit:shorttitle/>.
-The purpose of this specification is to separate out SVG's animation
+The purpose of this specification is to separate out NSVG's animation
 features into a separate document.</p>
 
 <p>Comments on this <edit:maturity/> are welcome.
-Comments can be sent to <a href="mailto:www-svg@w3.org" class='url'>www-svg@w3.org</a>,
+Comments can be sent to <a href="mailto:www-nsvg@w3.org" class='url'>www-nsvg@w3.org</a>,
 the public email list for issues related to vector graphics on the Web. This list is
-<a href="http://lists.w3.org/Archives/Public/www-svg/">archived</a> and
+<a href="http://lists.w3.org/Archives/Public/www-nsvg/">archived</a> and
 senders must agree to have their message publicly archived from their
 first posting. To subscribe send an email to
-<a href="mailto:www-svg-request@w3.org" class='url'>www-svg-request@w3.org</a> with
+<a href="mailto:www-nsvg-request@w3.org" class='url'>www-nsvg-request@w3.org</a> with
 the word <code>subscribe</code> in the subject line.</p>
 
 <p>This document has been produced by the
-<a href="http://www.w3.org/Graphics/SVG/WG">W3C SVG Working Group</a> as part of
+<a href="http://www.w3.org/Graphics/NSVG/WG">W3C NSVG Working Group</a> as part of
 the <a href="http://www.w3.org/Graphics/Activity">Graphics Activity</a> within
 the <a href="http://www.w3.org/Interaction/">W3C Interaction Domain</a>. The
-goals of the W3C SVG Working Group are discussed in the
-<a href="https://www.w3.org/Graphics/SVG/svg-2019.html">W3C SVG Charter</a>.
-The W3C SVG Working Group maintains a public Web page,
-<a href="http://www.w3.org/Graphics/SVG/" class='url'>http://www.w3.org/Graphics/SVG/</a>,
+goals of the W3C NSVG Working Group are discussed in the
+<a href="https://www.w3.org/Graphics/NSVG/nsvg-2019.html">W3C NSVG Charter</a>.
+The W3C NSVG Working Group maintains a public Web page,
+<a href="http://www.w3.org/Graphics/NSVG/" class='url'>http://www.w3.org/Graphics/NSVG/</a>,
 that contains further background information. The authors of
-this document are the SVG Working Group participants.</p>
+this document are the NSVG Working Group participants.</p>
 
 <p>This document was produced by a group operating under the
 <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</a>.
@@ -95,13 +95,13 @@ may be updated, replaced, or obsoleted by other documents at any time.</p>
 <!--
 <h2 id="feedback" edit:toc="no">How to read this document and give feedback</h2>
 
-<p>This draft of SVG Integration introduces new normative prose for
-integrating the SVG language into other markup languages. One of
+<p>This draft of NSVG Integration introduces new normative prose for
+integrating the NSVG language into other markup languages. One of
 the goals is that this specification can be re-used more easily by
 other specifications that want to have well-defined interaction and
-interoperability with SVG. Future drafts of this specification may
-introduce syntax and markup for the SVG language that may not be
-backwards compatible with older SVG User Agents, and the use of this
+interoperability with NSVG. Future drafts of this specification may
+introduce syntax and markup for the NSVG language that may not be
+backwards compatible with older NSVG User Agents, and the use of this
 syntax should be accompanied by a fallback using the <a>'switch'</a>
 element.</p>
 -->
@@ -117,12 +117,12 @@ element.</p>
 
 <p><em>This section is non-normative.</em></p>
 
-<p>SVG supports the ability to change vector graphics over time. SVG content can
+<p>NSVG supports the ability to change vector graphics over time. NSVG content can
 be animated in the following ways:</p>
 
 <ul>
-  <li>Using SVG's <a href="#AnimationElements">animation elements</a>.
-  SVG document fragments can describe time-based modifications
+  <li>Using NSVG's <a href="#AnimationElements">animation elements</a>.
+  NSVG document fragments can describe time-based modifications
   to the document's elements. Using the various animation
   elements, authors can define motion paths, or interpolate the element's
   attributes and style properties. These effects can be chained together
@@ -140,10 +140,10 @@ be animated in the following ways:</p>
   module that allows changes to values of CSS properties to occur
   smoothly over a specified duration.</li>
 
-  <li>Using the <a href="[SVG2]/svgdom.html">SVG DOM</a>. The SVG DOM
+  <li>Using the <a href="[NSVG2]/nsvgdom.html">NSVG DOM</a>. The NSVG DOM
   is defined based on the DOM4 specification [<a href="#ref-DOM4">DOM4</a>].
   Every attribute and style sheet setting is
-  accessible to scripting, and SVG offers a set of additional
+  accessible to scripting, and NSVG offers a set of additional
   DOM interfaces to support efficient animation via scripting.
   (See <a href="#DOMAnimationExample">example</a> below.)</li>
 
@@ -152,7 +152,7 @@ be animated in the following ways:</p>
 
 <h3 id="placement">Module interactions</h3>
 
-<p>This module extends definitions in SVG 2.<a href='#ref-SVG2'>[SVG2]</a></p>
+<p>This module extends definitions in NSVG 2.<a href='#ref-NSVG2'>[NSVG2]</a></p>
 
 
 <h2 id="AnimationElements">Animation elements</h2>
@@ -161,17 +161,17 @@ be animated in the following ways:</p>
 
 <h3 id="AnimationElementsIntro">Overview</h3>
 
-<p>SVG's animation elements were developed in collaboration
+<p>NSVG's animation elements were developed in collaboration
 with the W3C Synchronized Multimedia (SYMM) Working Group,
 developers of the <a href="http://www.w3.org/TR/2008/REC-SMIL3-20081201/"><cite>Synchronized Multimedia Integration Language
 (SMIL) 3.0 Specification</cite></a> [<a href="#ref-SMIL">SMIL</a>].</p>
 
-<p>The SYMM Working Group, in collaboration with the SVG
+<p>The SYMM Working Group, in collaboration with the NSVG
 Working Group, has authored the <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation specification</cite></a>
 [<a href="#ref-SMILANIM">SMILANIM</a>],
 which represents a general-purpose XML animation feature set.
-SVG incorporates the animation features defined in the SMIL
-Animation specification and provides some SVG-specific
+NSVG incorporates the animation features defined in the SMIL
+Animation specification and provides some NSVG-specific
 extensions.</p>
 
 <p>For an introduction to the approach and features available
@@ -180,7 +180,7 @@ in any language that supports SMIL Animation, see
 and <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/#AnimationModel">SMIL Animation animation model</a>
 ([<a href="#ref-SMILANIM">SMILANIM</a>], sections 2 and 3). For the list of animation
 features which go beyond SMIL Animation, see
-<a href="#SVGExtensionsToSMILAnimation">SVG extensions to SMIL Animation</a>.</p>
+<a href="#NSVGExtensionsToSMILAnimation">NSVG extensions to SMIL Animation</a>.</p>
 
 <h3 id="AnimationDefinitions">Definitions</h3>
 
@@ -193,22 +193,22 @@ features which go beyond SMIL Animation, see
   <dt id="TermAnimationEventAttribute"><dfn id="animation-event-attribute">animation event attribute</dfn></dt>
   <dd>An animation event attribute is an <a>event attribute</a> that specifies
   script to run for a particular animation-related event.  See
-  <a href="[SVG2]/interact.html#AnimationEvents">Animation event attributes</a>.
+  <a href="[NSVG2]/interact.html#AnimationEvents">Animation event attributes</a>.
   The animation event attributes are <edit:attributecategory name='animation event'/>.</dd>
 
 </dl>
 
 <h3 id="RelationshipToSMILAnimation">Relationship to SMIL Animation</h3>
 
-<p>SVG is a host language in terms of SMIL Animation and
+<p>NSVG is a host language in terms of SMIL Animation and
 therefore introduces additional constraints and features as
-permitted by that specification. Except for any SVG-specific
+permitted by that specification. Except for any NSVG-specific
 rules explicitly mentioned in this specification, the normative
-definition for SVG's animation elements and attributes is the
+definition for NSVG's animation elements and attributes is the
 <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a>
 specification [<a href="#ref-SMILANIM">SMILANIM</a>].</p>
 
-<p>SVG supports the following three animation elements which are
+<p>NSVG supports the following three animation elements which are
 defined in the SMIL Animation specification:</p>
 
     <table class='vert offset'>
@@ -230,47 +230,47 @@ defined in the SMIL Animation specification:</p>
       </tr>
     </table>
 
-<p id="SVGExtensionsToSMILAnimation">Additionally, SVG includes the following compatible
+<p id="NSVGExtensionsToSMILAnimation">Additionally, NSVG includes the following compatible
 extensions to SMIL Animation:</p>
 
 <table class='vert offset'>
   <tr>
     <td><a>'animateTransform'</a></td>
-    <td>modifies one of SVG's transformation values over
+    <td>modifies one of NSVG's transformation values over
     time, such as the <a>'transform'</a> property or the
     <a>'pattern/patternTransform'</a> attribute.</td>
   </tr>
   <tr>
     <td><a>'animateMotion/path'</a> attribute</td>
-    <td>SVG allows any feature from SVG's <a
-    href="[SVG2]/paths.html#PathData">path data</a> syntax to be
+    <td>NSVG allows any feature from NSVG's <a
+    href="[NSVG2]/paths.html#PathData">path data</a> syntax to be
     specified in a <a>'animateMotion/path'</a> attribute to the <a>'animateMotion'</a> element
-    (SMIL Animation only allows a subset of SVG's path data
+    (SMIL Animation only allows a subset of NSVG's path data
     syntax within a <a>'animateMotion/path'</a> attribute)</td>
   </tr>
   <tr>
     <td><a>'mpath'</a> element</td>
-    <td>SVG allows an <a>'animateMotion'</a> element to
+    <td>NSVG allows an <a>'animateMotion'</a> element to
     contain a child <a>'mpath'</a> element which
-    references an SVG <a>'path'</a> element or <a>shape</a> element
+    references an NSVG <a>'path'</a> element or <a>shape</a> element
     as the definition of the motion path</td>
   </tr>
   <tr>
     <td><a>'animateMotion/keyPoints'</a> attribute</td>
-    <td>SVG adds a <a>'animateMotion/keyPoints'</a> attribute to the <a>'animateMotion'</a> to provide
+    <td>NSVG adds a <a>'animateMotion/keyPoints'</a> attribute to the <a>'animateMotion'</a> to provide
     precise control of the velocity of motion path
     animations</td>
   </tr>
   <tr>
     <td><a>'animateMotion/rotate'</a> attribute</td>
-    <td>SVG adds a <a>'animateMotion/rotate'</a> attribute to the <a>'animateMotion'</a> to control
+    <td>NSVG adds a <a>'animateMotion/rotate'</a> attribute to the <a>'animateMotion'</a> to control
     whether an object is automatically rotated so that its
     x-axis points in the same direction (or opposite direction)
     as the directional tangent vector of the motion path</td>
   </tr>
 </table>
 
-<p>For compatibility with other aspects of the language, SVG
+<p>For compatibility with other aspects of the language, NSVG
 uses <a>URL references</a> via an <a>'set/href'</a> attribute to
 identify the elements which are to be targets of the animations,
 as allowed in SMIL 3.0.</p>
@@ -278,21 +278,21 @@ as allowed in SMIL 3.0.</p>
 <p>SMIL Animation requires that the host language define the
 meaning for <em id='DocumentBegin'>document begin</em> and the
 <em id='DocumentEnd'>document end</em>. Since an
-<a>'svg'</a> is sometimes the root of
+<a>'nsvg'</a> is sometimes the root of
 the XML document tree and other times can be a component of a
-parent XML grammar, the document begin for a given <a>SVG
+parent XML grammar, the document begin for a given <a>NSVG
 document fragment</a> is defined to be the exact time at which the
-<a>'svg'</a> element's <a href="[SVG2]/interact.html#LoadEvent">load event</a> is
-triggered. The document end of an SVG document
+<a>'nsvg'</a> element's <a href="[NSVG2]/interact.html#LoadEvent">load event</a> is
+triggered. The document end of an NSVG document
 fragment is the point at which the document fragment has been
 released and is no longer being processed by the user agent.
-However, nested <a>'svg'</a> elements within an SVG
+However, nested <a>'nsvg'</a> elements within an NSVG
 document do not constitute document fragments in this sense,
 and do not define a separate document begin; all times within
-the nested SVG fragment are relative to the document time
-defined for the root <a>'svg'</a> element.</p>
+the nested NSVG fragment are relative to the document time
+defined for the root <a>'nsvg'</a> element.</p>
 
-<p>For SVG, the term <dfn id="PresentationTime">presentation time</dfn>
+<p>For NSVG, the term <dfn id="PresentationTime">presentation time</dfn>
 indicates the position in the timeline relative
 to the document begin of a given document
 fragment.</p>
@@ -301,12 +301,12 @@ fragment.</p>
 
 <div class="example">
 <p id="ExampleAnim01"><span class="example-ref">Example anim01</span> below
-demonstrates each of SVG's four animation elements.</p>
+demonstrates each of NSVG's four animation elements.</p>
 
 <pre><![CDATA[
 <?xml version="1.0" standalone="no"?>
-<svg width="8cm" height="3cm"  viewBox="0 0 800 300"
-     xmlns="http://www.w3.org/2000/svg">
+<nsvg width="8cm" height="3cm"  viewBox="0 0 800 300"
+     xmlns="http://www.w3.org/2000/nsvg">
   <desc>Example anim01 - demonstrate animation elements</desc>
   <rect x="1" y="1" width="798" height="298"
         fill="none" stroke="blue" stroke-width="2" />
@@ -354,7 +354,7 @@ demonstrates each of SVG's four animation elements.</p>
            begin="3s" dur="6s" fill="freeze" />
     </text>
   </g>
-</svg>
+</nsvg>
 ]]></pre>
 
 <!--
@@ -390,8 +390,8 @@ demonstrates each of SVG's four animation elements.</p>
   </tr>
 </table>
 </div>
-<p class="view-as-svg"><a href="images/anim01.svg">View
-this example as SVG (SVG-enabled browsers only)</a></p>
+<p class="view-as-nsvg"><a href="images/anim01.nsvg">View
+this example as NSVG (NSVG-enabled browsers only)</a></p>
 </div>
 
 <p>The sections below describe the various animation attributes
@@ -421,7 +421,7 @@ elements and identifies the target element for the animation.</p>
       </tr>
       <tr>
         <td><dfn data-dfn-type="element-attr" data-dfn-for="animate" id="HrefAttribute">href</dfn></td>
-        <td>URL <a href="[SVG2]/types.html#attribute-url" class="syntax">[URL]</a></td>
+        <td>URL <a href="[NSVG2]/types.html#attribute-url" class="syntax">[URL]</a></td>
         <td>(none)</td>
         <td>no</td>
       </tr>
@@ -447,11 +447,11 @@ elements and identifies the target element for the animation.</p>
     parent element of the current animation element.
     The behavior when both <a>'href'</a> and <a>'xlink:href'</a> are
     specified is defined by the common handling for <a
-    href="[SVG2]/linking.html#XLinkRefAttrs">deprecated XLink attributes</a>.</p>
+    href="[NSVG2]/linking.html#XLinkRefAttrs">deprecated XLink attributes</a>.</p>
     <p>Refer to the descriptions of the individual animation
     elements for any restrictions on what types of elements can
     be targets of particular types of animations.</p>
-    <p>Except for any SVG-specific rules explicitly mentioned in
+    <p>Except for any NSVG-specific rules explicitly mentioned in
     this specification, the normative definition for this
     attribute is the <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a>
     specification.
@@ -464,7 +464,7 @@ elements and identifies the target element for the animation.</p>
 
 <p class='issue' data-issue="9">Reference the deprecated <a>'xlink:href'</a>
 attribute and its handling as defined in
-<a href="[SVG2]/linking.html#XLinkRefAttrs">SVG 2</a>.</p>
+<a href="[NSVG2]/linking.html#XLinkRefAttrs">NSVG 2</a>.</p>
 
 <h3 id="TargetAttributes">Attributes to identify the target attribute or property for an animation</h3>
 
@@ -485,7 +485,7 @@ changes over time.</p>
       </tr>
       <tr>
         <td><dfn data-dfn-type="element-attr" data-dfn-for="animate" id="AttributeNameAttribute">attributeName</dfn></td>
-        <td><a href="http://www.w3.org/TR/xml/#NT-Name">Name</a> <a href="[SVG2]/types.html#syntax" class="syntax">[EBNF]</a></td>
+        <td><a href="http://www.w3.org/TR/xml/#NT-Name">Name</a> <a href="[NSVG2]/types.html#syntax" class="syntax">[EBNF]</a></td>
         <td>(none)</td>
         <td>no</td>
       </tr>
@@ -496,8 +496,8 @@ changes over time.</p>
     <p>Unlike <a
     href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL
     Animation</cite></a>, the <span class="element-name">attributeType</span>
-    attribute is not supported by SVG.
-    SVG's animation elements follow the behavior defined for the <span
+    attribute is not supported by NSVG.
+    NSVG's animation elements follow the behavior defined for the <span
     class="attr-value">auto</span> value of <span
     class="element-name">attributeType</span>. That is, when determining if
     <a>'attributeName'</a> corresponds to an attribute name or a CSS property
@@ -532,7 +532,7 @@ changes over time.</p>
         with CSS properties.
       </p>
     </div>
-    <p>Except for any SVG-specific rules explicitly mentioned in
+    <p>Except for any NSVG-specific rules explicitly mentioned in
     this specification, the normative definition for this
     attribute is the <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a>
     specification.
@@ -555,7 +555,7 @@ that namespace name being used (regardless of the prefix which
 happens to be used in the target scope) to identify the
 attribute being animated.</p>
 
-<edit:example href="images/animns01.svg" link="yes" image="no"/>
+<edit:example href="images/animns01.nsvg" link="yes" image="no"/>
 
 
 <h3 id="complexDistances">Paced animation and complex types</h3>
@@ -579,11 +579,11 @@ values are <var>n</var>-dimensional vectors (including scalars, which are
 value, and a <a>&lt;color&gt;</a> value
 is a 3-dimensional vector. Thus attributes of these types can have paced
 animation applied to them.  On the other hand, a <a>&lt;dasharray&gt;</a>
-(as used by <a href="[SVG2]/painting.html#StrokeDasharrayProperty"><span class="property">'stroke-dasharray'</span></a>)
+(as used by <a href="[NSVG2]/painting.html#StrokeDasharrayProperty"><span class="property">'stroke-dasharray'</span></a>)
 is a list of scalars (1-dimensional vectors), and
 <a>&lt;points&gt;</a> (as used by
-the <a href="[SVG2]/shapes.html#PolygonElementPointsAttribute"><span class="attr-name">'points'</span></a>
-attribute on a <a href="[SVG2]/shapes.html#PolygonElement"><span class="element-name">'polygon'</span></a>)
+the <a href="[NSVG2]/shapes.html#PolygonElementPointsAttribute"><span class="attr-name">'points'</span></a>
+attribute on a <a href="[NSVG2]/shapes.html#PolygonElement"><span class="element-name">'polygon'</span></a>)
 is a list of 2-dimensional vectors.  Therefore, these types do not have a
 distance function defined and cannot have paced animation applied to them.</p>
 
@@ -678,7 +678,7 @@ distance function defined and cannot have paced animation applied to them.</p>
 If <span class='attr-value'>calcMode="paced"</span> is used on an
 animation of an attribute or property whose type is not one of
 those listed above, the animation effect is undefined.
-<a>SVG user agents</a> may choose to
+<a>NSVG user agents</a> may choose to
 perform the animation as if <span class='attr-value'>calcMode="linear"</span>,
 but this is not required.  Authors are recommended not to specify
 paced animation on types not listed above.</p>
@@ -698,7 +698,7 @@ space is indicated as "S", defined as follows:</p>
 <pre>
 S ::= (#x20 | #x9 | #xD | #xA)*
 </pre>
-<p class="issue" data-issue="2">Align with whitespace used in CSS and SVG, adding #xC to S.</p>
+<p class="issue" data-issue="2">Align with whitespace used in CSS and NSVG, adding #xC to S.</p>
 
 <p><em>Attribute definitions:</em></p>
 
@@ -749,7 +749,7 @@ S ::= (#x20 | #x9 | #xD | #xA)*
       href="#ClockValueSyntax">Clock-value</a>
       )</dt>
       <dd>For SMIL Animation, this describes the element
-      begin as an offset from an implicit syncbase. For SVG,
+      begin as an offset from an implicit syncbase. For NSVG,
       the implicit syncbase begin is defined to be relative
       to the document begin. Negative begin times are
       entirely valid and easy to compute, as long as there is
@@ -776,11 +776,11 @@ S ::= (#x20 | #x9 | #xD | #xA)*
       The list of event-symbols available for a given
       event-base element is the list of event attributes
       available for the given element as defined in the <a
-      href="[SVG2]/interact.html">Scripting and Interactivity</a> chapter, with the one difference
+      href="[NSVG2]/interact.html">Scripting and Interactivity</a> chapter, with the one difference
       that the leading 'on' is removed from the event name
       (i.e., the animation event name is 'click', not
-      'onclick'). A list of all events supported by SVG can
-      be found in <a href="[SVG2]/interact.html#SVGEvents">Complete
+      'onclick'). A list of all events supported by NSVG can
+      be found in <a href="[NSVG2]/interact.html#NSVGEvents">Complete
       list of supported events</a>. Details of event-based
       timing are described in <a
       href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/#Unifying">
@@ -818,7 +818,7 @@ S ::= (#x20 | #x9 | #xD | #xA)*
       href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/#HyperlinkSemantics">
       SMIL Animation: Hyperlinks and timing</a>.</p></dd>
     </dl>
-    <p>Except for any SVG-specific rules explicitly mentioned in
+    <p>Except for any NSVG-specific rules explicitly mentioned in
     this specification, the normative definition for this
     attribute is the <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a>
     specification.
@@ -856,7 +856,7 @@ S ::= (#x20 | #x9 | #xD | #xA)*
       <dd>Specifies the simple duration as the intrinsic
       media duration. This is only valid for elements that
       define media.<br />
-       (For SVG's <a href="#AnimationElements">animation elements</a>, if <span
+       (For NSVG's <a href="#AnimationElements">animation elements</a>, if <span
       class="attr-value">'media'</span> is specified, the
       attribute will be ignored.)</dd>
       <dt>"indefinite"</dt>
@@ -866,7 +866,7 @@ S ::= (#x20 | #x9 | #xD | #xA)*
     duration is indefinite. Note that interpolation will not
     work if the simple duration is indefinite (although this
     may still be useful for <a>'set'</a> elements). Except
-    for any SVG-specific rules explicitly mentioned in this
+    for any NSVG-specific rules explicitly mentioned in this
     specification, the normative definition for this
     attribute is the <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a>
     specification.
@@ -919,9 +919,9 @@ S ::= (#x20 | #x9 | #xD | #xA)*
     </dl>
     <p>A value of <span class="attr-value">'indefinite'</span>
     specifies that the end of the animation will be
-    determined by an <a>SVGAnimationElement::endElement</a> method call (the animation
+    determined by an <a>NSVGAnimationElement::endElement</a> method call (the animation
     DOM methods are described in <a href="#IDL">IDL</a>).</p>
-    <p>Except for any SVG-specific rules explicitly mentioned
+    <p>Except for any NSVG-specific rules explicitly mentioned
     in this specification, the normative definition for this
     attribute is the <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a>
     specification.
@@ -965,14 +965,14 @@ S ::= (#x20 | #x9 | #xD | #xA)*
       <dt>"media"</dt>
       <dd>Specifies the minimum value of the active duration
       as the intrinsic media duration. This is only valid for
-      elements that define media. (For SVG's <a href="#AnimationElements">animation elements</a>,
+      elements that define media. (For NSVG's <a href="#AnimationElements">animation elements</a>,
       if <span class="attr-value">'media'</span> is specified, the
       attribute will be ignored.)</dd>
     </dl>
     <p>The initial value for <a>'min'</a> is <span class='attr-value'>'0'</span> and
     there is no initial value for <a>'max'</a>.  In both cases, this does not
     constrain the active duration at all.</p>
-    <p>Except for any SVG-specific rules explicitly mentioned
+    <p>Except for any NSVG-specific rules explicitly mentioned
     in this specification, the normative definition for these
     attributes is the
     <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a> specification.
@@ -1008,12 +1008,12 @@ S ::= (#x20 | #x9 | #xD | #xA)*
       <dt><span class='attr-value'>never</span></dt>
       <dd>The element cannot be restarted for the remainder
       of the current simple duration of the parent time
-      container. (In the case of SVG, since the parent time
-      container is the SVG document fragment, then the
+      container. (In the case of NSVG, since the parent time
+      container is the NSVG document fragment, then the
       animation cannot be restarted for the remainder of the
       document duration.)</dd>
     </dl>
-    <p>Except for any SVG-specific rules explicitly mentioned in
+    <p>Except for any NSVG-specific rules explicitly mentioned in
     this specification, the normative definition for this
     attribute is the
     <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a> specification.
@@ -1052,7 +1052,7 @@ S ::= (#x20 | #x9 | #xD | #xA)*
       <dd>The animation is defined to repeat indefinitely
       (i.e. until the document ends).</dd>
     </dl>
-    <p>Except for any SVG-specific rules explicitly mentioned in
+    <p>Except for any NSVG-specific rules explicitly mentioned in
     this specification, the normative definition for this
     attribute is the
     <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a> specification.
@@ -1089,7 +1089,7 @@ S ::= (#x20 | #x9 | #xD | #xA)*
       <dd>The animation is defined to repeat indefinitely
       (i.e. until the document ends).</dd>
     </dl>
-    <p>Except for any SVG-specific rules explicitly mentioned in
+    <p>Except for any NSVG-specific rules explicitly mentioned in
     this specification, the normative definition for this
     attribute is the
     <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a> specification.
@@ -1133,7 +1133,7 @@ S ::= (#x20 | #x9 | #xD | #xA)*
       href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/#Restart">
       SMIL Animation: Restarting animation</a>).</p></dd>
     </dl>
-    <p>Except for any SVG-specific rules explicitly mentioned in
+    <p>Except for any NSVG-specific rules explicitly mentioned in
     this specification, the normative definition for this
     attribute is the
     <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a> specification.
@@ -1144,7 +1144,7 @@ S ::= (#x20 | #x9 | #xD | #xA)*
 
 <p>The <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a>
 specification [<a href="#ref-SMILANIM">SMILANIM</a>] defines the detailed processing
-rules associated with the above attributes. Except for any SVG-specific
+rules associated with the above attributes. Except for any NSVG-specific
 rules explicitly mentioned in this specification, the SMIL Animation
 specification is the normative definition of the processing rules for
 the above attributes.</p>
@@ -1273,7 +1273,7 @@ interpolation method between discrete values.</p>
       for each interval are defined in the
       <a>'keySplines'</a> attribute.</dd>
     </dl>
-    <p>Except for any SVG-specific rules explicitly mentioned in
+    <p>Except for any NSVG-specific rules explicitly mentioned in
     this specification, the normative definition for this
     attribute is the
     <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a> specification.
@@ -1316,7 +1316,7 @@ interpolation method between discrete values.</p>
     </div>
 
     <p>Except for
-    any SVG-specific rules explicitly mentioned in this
+    any NSVG-specific rules explicitly mentioned in this
     specification, the normative definition for this attribute
     is the
     <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a> specification.
@@ -1385,7 +1385,7 @@ interpolation method between discrete values.</p>
     <p>If there are any errors in the <a>'keyTimes'</a>
     specification (bad values, too many or too few values),
     the document fragment is in error (see <a
-    href="[SVG2]/implnote.html#ErrorProcessing">error
+    href="[NSVG2]/implnote.html#ErrorProcessing">error
     processing</a>).</p>
 
     <p>If the simple duration is indefinite, any
@@ -1400,7 +1400,7 @@ interpolation method between discrete values.</p>
       to achieve particular interpolation behavior for these types.
     </p>
 
-    <p>Except for any SVG-specific rules explicitly mentioned
+    <p>Except for any NSVG-specific rules explicitly mentioned
     in this specification, the normative definition for this
     attribute is the
     <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a> specification.
@@ -1457,10 +1457,10 @@ interpolation method between discrete values.</p>
     <p>If there are any errors in the <a>'keySplines'</a>
     specification (bad values, too many or too few values), the
     document fragment is in error (see <a
-    href="[SVG2]/implnote.html#ErrorProcessing">error
+    href="[NSVG2]/implnote.html#ErrorProcessing">error
     processing</a>).</p>
 
-    <p>Except for any SVG-specific rules explicitly mentioned in
+    <p>Except for any NSVG-specific rules explicitly mentioned in
     this specification, the normative definition for this
     attribute is the
     <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a> specification.
@@ -1502,7 +1502,7 @@ interpolation method between discrete values.</p>
     as a [<a>&lt;percentage&gt;</a> | <a>&lt;length&gt;</a>].</p>
     </div>
 
-    <p>Except for any SVG-specific rules explicitly mentioned in
+    <p>Except for any NSVG-specific rules explicitly mentioned in
     this specification, the normative definition for these
     attributes is the
     <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a> specification.
@@ -1514,7 +1514,7 @@ interpolation method between discrete values.</p>
 <p>The <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a> specification [<a href="#ref-SMILANIM">SMILANIM</a>]
 defines the detailed processing
 rules associated with the above attributes. Except for any
-SVG-specific rules explicitly mentioned in this
+NSVG-specific rules explicitly mentioned in this
 specification, the SMIL Animation specification is the normative definition of
 the processing rules for the above attributes.</p>
 
@@ -1526,7 +1526,7 @@ semicolon separators, will be ignored.</p>
 <p>All values specified must be legal values for the
 specified attribute (as defined in the associated namespace).
 If any values are not legal, the document fragment is in
-error (see <a href="[SVG2]/implnote.html#ErrorProcessing">error
+error (see <a href="[NSVG2]/implnote.html#ErrorProcessing">error
 processing</a>).</p>
 
 <p>If a list of values is used, the animation will apply the
@@ -1543,7 +1543,7 @@ Animation function values</a> with the following exception.</p>
 between discrete animations with an explicitly specified
 <a>'from'</a> attribute (e.g. "from-to animation") and those
 where the underlying value is used (e.g. "to animation"), the
-behavior of discrete to-animation in SVG deviates from the
+behavior of discrete to-animation in NSVG deviates from the
 definition in SMIL Animation.
 As with a discrete from-to animation, a discrete to animation
 will set the underlying value for the first half of the simple
@@ -1578,22 +1578,22 @@ Timing and real-world clock times</a>.</p>
   <tr>
     <td><img class="bordered" width="250" height="250"
     alt="Example keySplines01 - keySplines of 0 0 1 1 (the default)"
-     src="images/keySplines01.svg" /> <span
+     src="images/keySplines01.nsvg" /> <span
     class="table-heading-1">keySplines="0&nbsp;0&nbsp;1&nbsp;1"
     (the default)</span></td>
     <td><img class="bordered" width="250" height="250"
     alt="Example keySplines01 - keySplines of .5 0 .5 1"
-    src="images/keySplines02.svg" /> <span
+    src="images/keySplines02.nsvg" /> <span
     class="table-heading-1">keySplines=".5&nbsp;0&nbsp;.5&nbsp;1"</span></td>
   </tr>
   <tr>
     <td><img class="bordered" width="250" height="250"
     alt="Example keySplines01 - keySplines of 0 .75 .25 1"
-    src="images/keySplines03.svg" /> <span
+    src="images/keySplines03.nsvg" /> <span
     class="table-heading-1">keySplines="0&nbsp;.75&nbsp;.25&nbsp;1"</span></td>
     <td><img class="bordered" width="250" height="250"
     alt="Example keySplines01 - keySplines of 1 0 .25 .25"
-    src="images/keySplines04.svg" /><span
+    src="images/keySplines04.nsvg" /><span
     class="table-heading-1">keySplines="1&nbsp;0&nbsp;.25&nbsp;.25"</span></td>
   </tr>
 </table>
@@ -1747,7 +1747,7 @@ which are common to elements <edit:elementswithattributecategory name='animation
       underlying value of the attribute and other lower
       priority animations.</dd>
     </dl>
-    <p>Except for any SVG-specific rules explicitly mentioned
+    <p>Except for any NSVG-specific rules explicitly mentioned
     in this specification, the normative definition for this
     attribute is the
     <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a> specification.
@@ -1795,7 +1795,7 @@ which are common to elements <edit:elementswithattributecategory name='animation
     is specified with only the <a>'to'</a>
     attribute.</p>
 
-    <p>Except for any SVG-specific rules explicitly mentioned
+    <p>Except for any NSVG-specific rules explicitly mentioned
     in this specification, the normative definition for this
     attribute is the
     <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a> specification.
@@ -1808,7 +1808,7 @@ which are common to elements <edit:elementswithattributecategory name='animation
 
 <h3 id="Inheritance">Inheritance</h3>
 
-<p>SVG allows both attributes and properties to be animated. If
+<p>NSVG allows both attributes and properties to be animated. If
 a given attribute or property is inheritable by descendants,
 then animations on a parent element such as a <a>'g'</a> element has the effect of
 propagating the attribute or property animation values to
@@ -1833,7 +1833,7 @@ used to animate a single attribute or property over time.</p>
 ]]></pre>
 </div>
 
-<p>Except for any SVG-specific rules explicitly mentioned in this
+<p>Except for any NSVG-specific rules explicitly mentioned in this
 specification, the normative definition for this element is the
 <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a> specification.
 In particular, see <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/#animateElement">SMIL Animation: 'animate' element</a>
@@ -1863,7 +1863,7 @@ and boolean values. The <a>'set'</a>
 element is non-additive. The additive and accumulate attributes
 are not allowed, and will be ignored if specified.</p>
 
-<p>Except for any SVG-specific rules explicitly mentioned in this
+<p>Except for any NSVG-specific rules explicitly mentioned in this
 specification, the normative definition for this element is the
 <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a> specification.
 In particular, see <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/#setElement">SMIL Animation: 'set' element</a>
@@ -1909,15 +1909,15 @@ attributes and properties that can be animated</a>.</p>
 
 <edit:with element='discard'>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Have the <a>'discard'</a> element to declaratively discard elements from the document tree.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2012/03/29-svg-minutes.html">SVG 2 will support the discard element.</a></td>
+      <td><a href="http://www.w3.org/2012/03/29-nsvg-minutes.html">NSVG 2 will support the discard element.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -1925,7 +1925,7 @@ attributes and properties that can be animated</a>.</p>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Cyril (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3319">ACTION-3319</a>)</td>
+      <td>Cyril (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3319">ACTION-3319</a>)</td>
     </tr>
   </table>
 </div>
@@ -1935,16 +1935,16 @@ attributes and properties that can be animated</a>.</p>
 <p>
   The <a href="#DiscardElement"><span class="element-name">'discard'</span></a>
   element allows authors to specify the time at which particular elements are to
-  be discarded, thereby reducing the resources required by an <a>SVG user
+  be discarded, thereby reducing the resources required by an <a>NSVG user
   agent</a>.
-  This is particularly useful to help SVG viewers conserve memory while
+  This is particularly useful to help NSVG viewers conserve memory while
   displaying long-running documents.  This element will not be processed by
-  static SVG viewers.
+  static NSVG viewers.
 </p>
 <p>
   The <a href="#DiscardElement"><span class="element-name">'discard'</span></a>
   element may occur wherever the
-  <a href="https://svgwg.org/specs/animations/#AnimateElement"><span class="element-name">'animate'</span></a>
+  <a href="https://nsvgwg.org/specs/animations/#AnimateElement"><span class="element-name">'animate'</span></a>
   element may.
 </p>
 
@@ -1961,7 +1961,7 @@ attributes and properties that can be animated</a>.</p>
       </tr>
       <tr>
         <td><dfn id="DiscardElementHrefAttribute">href</dfn></td>
-        <td>URL <a href="[SVG2]/types.html#attribute-url" class="syntax">[URL]</a></td>
+        <td>URL <a href="[NSVG2]/types.html#attribute-url" class="syntax">[URL]</a></td>
         <td>(none)</td>
         <td>no</td>
       </tr>
@@ -1970,9 +1970,9 @@ attributes and properties that can be animated</a>.</p>
   <dd>
     <p>
       An <a>URL reference</a>
-      that identifies the <a href="https://svgwg.org/specs/animations/#TargetElement">target element</a>
+      that identifies the <a href="https://nsvgwg.org/specs/animations/#TargetElement">target element</a>
       to discard.
-      See the definition of <a href="https://svgwg.org/specs/animations/#HrefAttribute"><span
+      See the definition of <a href="https://nsvgwg.org/specs/animations/#HrefAttribute"><span
       class="attr-name">'href'</span></a> on <a>animation elements</a> for
       details on identifying a target element.
       Note, however, that unlike other <a>animation elements</a>, the
@@ -1981,7 +1981,7 @@ attributes and properties that can be animated</a>.</p>
     </p>
     <p>
       Note that if the target element is not part of the
-      <a>current SVG document fragment</a>
+      <a>current NSVG document fragment</a>
       then whether the target element will be removed or not is defined by the
       host language.
     </p>
@@ -2000,7 +2000,7 @@ attributes and properties that can be animated</a>.</p>
       </tr>
       <tr>
         <td><dfn id="DiscardElementBeginAttribute">begin</dfn></td>
-        <td><a href="https://svgwg.org/specs/animations/#BeginValueListSyntax">&lt;begin-value-list&gt;</a></td>
+        <td><a href="https://nsvgwg.org/specs/animations/#BeginValueListSyntax">&lt;begin-value-list&gt;</a></td>
         <td>0s</td>
         <td>no</td>
       </tr>
@@ -2010,7 +2010,7 @@ attributes and properties that can be animated</a>.</p>
     <p class="issue" data-issue="19">Attribute syntax needs fixing.</p>
     <p>
       Indicates when the target element will be discarded.  See the definition
-      of <a href="https://svgwg.org/specs/animations/#BeginAttribute"><span class="attr-name">'begin'</span></a>
+      of <a href="https://nsvgwg.org/specs/animations/#BeginAttribute"><span class="attr-name">'begin'</span></a>
       on <a>animation elements</a> for details.
     </p>
   </dd>
@@ -2022,18 +2022,18 @@ attributes and properties that can be animated</a>.</p>
   <a href="http://www.w3.org/TR/2008/REC-SMIL3-20081201/smil-timing.html#Timing-DefiningSimpleDur">simple duration</a>
   of <span class="attr-value">"indefinite"</span>.  As soon as the element's
   <a href="http://www.w3.org/TR/2008/REC-SMIL3-20081201/smil-timing.html#Timing-ComputingActiveDur">active duration</a>
-  starts, the <a>SVG user agent</a>
+  starts, the <a>NSVG user agent</a>
   discards the element identified by the
   <a href="#DiscardElementHrefAttribute"><span class="attr-name">'href'</span></a>
   attribute ([<a href="#ref-SMIL">SMIL</a>], section 5.4.5).
   The removal operation acts as if
   <a href="http://www.w3.org/TR/2012/WD-dom-20120405/#dom-node-removechild"><code>removeChild</code></a>
   were called on the parent of the target element with the target element as
-  parameter. [<a href="#ref-DOM4">DOM4</a>] The <a>SVG user agent</a>
+  parameter. [<a href="#ref-DOM4">DOM4</a>] The <a>NSVG user agent</a>
   must remove the target node as well as all of its attributes and descendants.
 </p>
 <p>
-  After removal of the <a href="https://svgwg.org/specs/animations/#TargetElement">target element</a>,
+  After removal of the <a href="https://nsvgwg.org/specs/animations/#TargetElement">target element</a>,
   the <a href="#DiscardElement"><span class="element-name">'discard'</span></a>
   element is no longer useful. It must also be discarded following the
   target element removal. If the
@@ -2048,7 +2048,7 @@ attributes and properties that can be animated</a>.</p>
   in the timeline ([<a href="#ref-SMIL">SMIL</a>], section 5.4.5)
   must not re-insert the discarded elements. Discarded elements are intended to
   be completely removed from memory. So, authors are encouraged to set the
-  <a href="#SVGElementPlaybackorderAttribute"><span class="attr-name">'playbackorder'</span></a>
+  <a href="#NSVGElementPlaybackorderAttribute"><span class="attr-name">'playbackorder'</span></a>
   attribute to <span class="attr-value">"forwardonly"</span> when using the
   <a href="#DiscardElement"><span class="element-name">'discard'</span></a> element.
 </p>
@@ -2056,7 +2056,7 @@ attributes and properties that can be animated</a>.</p>
   The <a href="#DiscardElement"><span class="element-name">'discard'</span></a>
   element itself can be discarded prior to its activation, in which case it will
   never trigger the removal of its own target element.
-  <a>SVG user agents</a>
+  <a>NSVG user agents</a>
   must allow the <a href="#DiscardElement"><span class="element-name">'discard'</span></a>
   element to be the target of another
   <a href="#DiscardElement"><span class="element-name">'discard'</span></a>
@@ -2077,14 +2077,14 @@ attributes and properties that can be animated</a>.</p>
   <dd>The red rectangle starts moving up the page.</dd>
   <dt>At time = 2 seconds:</dt>
   <dd>
-    The <a href="https://svgwg.org/specs/animations/#AnimateTransformElement"><span class="element-name">'animateTransform'</span></a>
-    on the <a href="[SVG2]/shapes.html#EllipseElement"><span class="element-name">'ellipse'</span></a>
-    ends. The <a href="[SVG2]/shapes.html#EllipseElement"><span class="element-name">'ellipse'</span></a>
+    The <a href="https://nsvgwg.org/specs/animations/#AnimateTransformElement"><span class="element-name">'animateTransform'</span></a>
+    on the <a href="[NSVG2]/shapes.html#EllipseElement"><span class="element-name">'ellipse'</span></a>
+    ends. The <a href="[NSVG2]/shapes.html#EllipseElement"><span class="element-name">'ellipse'</span></a>
     and its children are also discarded, as it is the
-    <a href="https://svgwg.org/specs/animations/#TargetElement">target element</a> of a
+    <a href="https://nsvgwg.org/specs/animations/#TargetElement">target element</a> of a
     <a href="#DiscardElement"><span class="element-name">'discard'</span></a>
     with <span class="attr-value">begin="2"</span>. The green
-    <a href="[SVG2]/shapes.html#PolygonElement"><span class="element-name">'polygon'</span></a>
+    <a href="[NSVG2]/shapes.html#PolygonElement"><span class="element-name">'polygon'</span></a>
     starts to move across the page.
   </dd>
   <dt>At time = 3 seconds:</dt>
@@ -2097,14 +2097,14 @@ attributes and properties that can be animated</a>.</p>
   <dt>At time = 4 seconds:</dt>
   <dd>
     The animation on the green triangle ends. The green
-    <a href="[SVG2]/shapes.html#PolygonElement"><span class="element-name">'polygon'</span></a>
+    <a href="[NSVG2]/shapes.html#PolygonElement"><span class="element-name">'polygon'</span></a>
     and its children are discarded as it is the target of a
     <a href="#DiscardElement"><span class="element-name">'discard'</span></a>
     element with <span class="attr-value">begin="4".</span>
   </dd>
 </dl>
 
-<edit:example href='examples/discard01.svg' name='discard01' link='yes' image='no'/>
+<edit:example href='examples/discard01.nsvg' name='discard01' link='yes' image='no'/>
 
 </edit:with>
 
@@ -2115,7 +2115,7 @@ attributes and properties that can be animated</a>.</p>
 <p>The <a>'animateMotion'</a> element causes a referenced element to
 move along a motion path.</p>
 
-<p>Except for any SVG-specific rules explicitly mentioned in this
+<p>Except for any NSVG-specific rules explicitly mentioned in this
 specification, the normative definition for this element is the
 <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/"><cite>SMIL Animation</cite></a> specification.
 In particular, see <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/#animateMotionElement">SMIL Animation: 'animateMotion' element</a>
@@ -2161,7 +2161,7 @@ In particular, see <a href="http://www.w3.org/TR/2001/REC-smil-animation-2001090
       </tr>
       <tr>
         <td><dfn data-dfn-type="element-attr" data-dfn-for="animateMotion" id="AnimateMotionElementPathAttribute">path</dfn></td>
-        <td><a href="[SVG2]/paths.html#PathDataBNF">svg-path</a> <a href="[SVG2]/types.html#syntax" class="syntax">[EBNF]</a></td>
+        <td><a href="[NSVG2]/paths.html#PathDataBNF">nsvg-path</a> <a href="[NSVG2]/types.html#syntax" class="syntax">[EBNF]</a></td>
         <td>(none)</td>
         <td>no</td>
       </tr>
@@ -2200,7 +2200,7 @@ In particular, see <a href="http://www.w3.org/TR/2001/REC-smil-animation-2001090
     object shall move at the moment in time specified by
     corresponding <a>'keyTimes'</a>
     value. Distance calculations use the user agent's <a
-    href="[SVG2]/paths.html#DistanceAlongAPath">distance along the
+    href="[NSVG2]/paths.html#DistanceAlongAPath">distance along the
     path</a> algorithm. Each progress value in the list
     corresponds to a value in the <a>'keyTimes'</a>
     attribute list.</p>
@@ -2214,7 +2214,7 @@ In particular, see <a href="http://www.w3.org/TR/2001/REC-smil-animation-2001090
     <p>If there are any errors in the <a>'keyPoints'</a>
     specification (bad values, too many or too few values),
     then the document is in error (see <a
-    href="[SVG2]/implnote.html#ErrorProcessing">Error
+    href="[NSVG2]/implnote.html#ErrorProcessing">Error
     processing</a>).</p>
   </dd>
   <dt>
@@ -2276,7 +2276,7 @@ In particular, see <a href="http://www.w3.org/TR/2001/REC-smil-animation-2001090
   <dd>
     <p>The <a>'origin'</a> attribute is <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/#MotionOriginAttribute">defined in the SMIL Animation
     specification</a> ([<a href="#ref-SMILANIM">SMILANIM</a>], section 4.3).
-    It has no effect in SVG.</p>
+    It has no effect in NSVG.</p>
   </dd>
 </dl>
 
@@ -2297,7 +2297,7 @@ In particular, see <a href="http://www.w3.org/TR/2001/REC-smil-animation-2001090
       </tr>
       <tr>
         <td><dfn data-dfn-type="element-attr" data-dfn-for="mpath" id="MPathElementHrefAttribute">href</dfn></td>
-        <td>URL <a href="[SVG2]/types.html#attribute-url" class="syntax">[URL]</a></td>
+        <td>URL <a href="[NSVG2]/types.html#attribute-url" class="syntax">[URL]</a></td>
         <td>(none)</td>
         <td>no</td>
       </tr>
@@ -2307,8 +2307,8 @@ In particular, see <a href="http://www.w3.org/TR/2001/REC-smil-animation-2001090
     <p>A <a>URL reference</a> to the <a>'path element'</a> element
     or <a>shape</a> element which defines the motion path.
     Refer to the common handling defined for <a
-    href="[SVG2]/linking.html#linkRefAttrs">URL reference attributes</a> and
-    <a href="[SVG2]/linking.html#XLinkRefAttrs">deprecated XLink attributes</a>.</p>
+    href="[NSVG2]/linking.html#linkRefAttrs">URL reference attributes</a> and
+    <a href="[NSVG2]/linking.html#XLinkRefAttrs">deprecated XLink attributes</a>.</p>
   </dd>
 </dl>
 
@@ -2329,12 +2329,12 @@ In particular, see <a href="http://www.w3.org/TR/2001/REC-smil-animation-2001090
     specify a shape on the current canvas which represents the motion path.</p>
 
     <p>Two options are available which allow definition of a motion
-    path using any of SVG's <a href="[SVG2]/paths.html#PathData">path
+    path using any of NSVG's <a href="[NSVG2]/paths.html#PathData">path
     data</a> commands:</p>
     <ul>
       <li>the <a>'path attribute'</a> attribute defines a motion path directly on
-      <a>'animateMotion'</a> element using any of SVG's
-      <a href="[SVG2]/paths.html#PathData">path data</a> commands.</li>
+      <a>'animateMotion'</a> element using any of NSVG's
+      <a href="[NSVG2]/paths.html#PathData">path data</a> commands.</li>
 
       <li>the <a>'mpath'</a> sub-element provides the ability to reference an
       external <a>'path element'</a> element or <a>shape</a> element as the
@@ -2344,10 +2344,10 @@ In particular, see <a href="http://www.w3.org/TR/2001/REC-smil-animation-2001090
       <a>shape</a> element.
       </li>
     </ul>
-    <p>Note that SVG's <a href="[SVG2]/paths.html#PathData">path data</a>
+    <p>Note that NSVG's <a href="[NSVG2]/paths.html#PathData">path data</a>
     commands can only contain values in local coordinate system, whereas <a>'from'</a>,
     <a>'by'</a>, <a>'to'</a> and <a>'values'</a> can specify coordinates in
-    local coordinate system or using unit identifiers. See <a href="[SVG2]/coords.html#Units">Units</a>.</p>
+    local coordinate system or using unit identifiers. See <a href="[NSVG2]/coords.html#Units">Units</a>.</p>
 
     <p>The various (x,y) points of the shape provide a supplemental
     transformation matrix onto the <a>CTM</a> for the referenced object
@@ -2413,7 +2413,7 @@ In particular, see <a href="http://www.w3.org/TR/2001/REC-smil-animation-2001090
     duration <em>dur</em>, the computed coordinate (x,y) along the
     motion path is determined by finding the point (x,y) which is
     <em>t/dur</em> distance along the motion path using the user
-    agent's <a href="[SVG2]/paths.html#DistanceAlongAPath">distance along
+    agent's <a href="[NSVG2]/paths.html#DistanceAlongAPath">distance along
     the path</a> algorithm.</p>
 
     <div class="example">
@@ -2425,8 +2425,8 @@ In particular, see <a href="http://www.w3.org/TR/2001/REC-smil-animation-2001090
     a triangle moving along a motion path.</p>
 <pre><![CDATA[
 <?xml version="1.0" standalone="no"?>
-<svg width="5cm" height="3cm"  viewBox="0 0 500 300"
-     xmlns="http://www.w3.org/2000/svg">
+<nsvg width="5cm" height="3cm"  viewBox="0 0 500 300"
+     xmlns="http://www.w3.org/2000/nsvg">
   <desc>Example animMotion01 - demonstrate motion animation computations</desc>
   <rect x="1" y="1" width="498" height="298"
         fill="none" stroke="blue" stroke-width="2" />
@@ -2447,7 +2447,7 @@ In particular, see <a href="http://www.w3.org/TR/2001/REC-smil-animation-2001090
        <mpath href="#path1"/>
     </animateMotion>
   </path>
-</svg>
+</nsvg>
 ]]></pre>
     <table >
       <caption>
@@ -2468,9 +2468,9 @@ In particular, see <a href="http://www.w3.org/TR/2001/REC-smil-animation-2001090
         class="table-heading-1">At six seconds</span></td>
       </tr>
     </table>
-    <p class="view-as-svg"><a
-    href="images/animMotion01.svg">View this example as SVG
-    (SVG-enabled browsers only)</a></p>
+    <p class="view-as-nsvg"><a
+    href="images/animMotion01.nsvg">View this example as NSVG
+    (NSVG-enabled browsers only)</a></p>
     <p>The following table shows the supplemental transformation
     matrices that are applied to achieve the effect of the motion
     path animation.</p>
@@ -2566,7 +2566,7 @@ type:</p>
   expressed as <span class="attr-value">&lt;skew-angle&gt;</span>.</li>
 </ul>
 
-<p>(See <a href="[SVG2]/coords.html#TransformProperty">The <span class="property">'transform'</span> property</a>.)</p>
+<p>(See <a href="[NSVG2]/coords.html#TransformProperty">The <span class="property">'transform'</span> property</a>.)</p>
 
 <p>The <a>'values'</a> attribute for the <a>'animateTransform'</a> element
 consists of a semicolon-separated list of values, where each individual value
@@ -2588,7 +2588,7 @@ Animation ([<a href="#ref-SMILANIM">SMILANIM</a>], section 3.3.6).
 <em>To animations</em> provide specific functionality to get a smooth
 change from the underlying value to the <a>'to'</a> attribute value, which
 conflicts mathematically with the requirement for additive transform
-animations to be post-multiplied.  As a consequence, in SVG 1.1 the behavior of
+animations to be post-multiplied.  As a consequence, in NSVG 1.1 the behavior of
 <em>to animations</em> for <a>'animateTransform'</a> is undefined.  Authors
 are suggested to use <em>from-to</em>, <em>from-by</em>, <em>by</em> or
 <em>values animations</em> to achieve any desired transform animation.</p>
@@ -2769,7 +2769,7 @@ is <span class='attr-value'>'0 30 40'</span>.</p>
 <a>'animateMotion'</a> element:</p>
 
 <ul>
-  <li><a>'svg'</a></li>
+  <li><a>'nsvg'</a></li>
   <li><a>'g'</a></li>
   <li><a>'defs'</a></li>
   <li><a>'use'</a></li>
@@ -2790,7 +2790,7 @@ is <span class='attr-value'>'0 30 40'</span>.</p>
 </ul>
 
 <p id="Animatable">Each attribute or property within this specification
-indicates whether or not it can be animated by SVG's animation
+indicates whether or not it can be animated by NSVG's animation
 elements. Animatable attributes and properties are designated
 as follows:</p>
 
@@ -2804,7 +2804,7 @@ as follows:</p>
 
 <p class='indented'><span class="anim-target">Animatable: yes (non-additive).</span></p>
 
-<p>SVG has a number of different data types used
+<p>NSVG has a number of different data types used
 for its various supported attributes and properties. For those
 attributes and properties that can be animated, the following
 table indicates which animation elements can be used to animate
@@ -2935,7 +2935,7 @@ the given attribute or property is defined.</p>
 <a>Animation elements</a> have no default implied ARIA semantics.
 Furthermore, no role may be applied to <a>animation elements</a>.
 
-<h2 id="DOMAnimationExample">Animation using the SVG DOM</h2>
+<h2 id="DOMAnimationExample">Animation using the NSVG DOM</h2>
 
 <div class="example">
 <p><span class="example-ref">Example dom01</span> shows a simple animation
@@ -2943,8 +2943,8 @@ using the DOM.</p>
 
 <pre><![CDATA[
 <?xml version="1.0" standalone="no"?>
-<svg width="4cm" height="2cm" viewBox="0 0 400 200"
-     xmlns="http://www.w3.org/2000/svg"
+<nsvg width="4cm" height="2cm" viewBox="0 0 400 200"
+     xmlns="http://www.w3.org/2000/nsvg"
      onload="StartAnimation(evt)">
   <script type="application/ecmascript">]]>&lt;![CDATA[<![CDATA[
     var timevalue = 0;
@@ -2973,9 +2973,9 @@ using the DOM.</p>
   <rect x="1" y="1" width="398" height="198"
         fill="none" stroke="blue" stroke-width="2"/>
   <g transform="translate(50,150)" fill="red" font-size="7">
-    <text id="TextElement">SVG</text>
+    <text id="TextElement">NSVG</text>
   </g>
-</svg>
+</nsvg>
 ]]></pre>
 
 <div class="figure">
@@ -3000,11 +3000,11 @@ using the DOM.</p>
 </table>
 </div>
 
-<p class="view-as-svg"><a href="images/dom01.svg">View
-this example as SVG (SVG-enabled browsers only)</a></p>
+<p class="view-as-nsvg"><a href="images/dom01.nsvg">View
+this example as NSVG (NSVG-enabled browsers only)</a></p>
 
-<p>The above SVG file contains a single graphics element, a
-text string that says "SVG". The animation loops for 5 seconds.
+<p>The above NSVG file contains a single graphics element, a
+text string that says "NSVG". The animation loops for 5 seconds.
 The text string starts out small and transparent and grows to
 be large and opaque. Here is an explanation of how this example
 works:</p>
@@ -3040,7 +3040,7 @@ works:</p>
 </div>
 
 <p>If scripts are modifying the same attributes or properties
-that are being animated by SVG's
+that are being animated by NSVG's
 <a href="#AnimationElements">animation elements</a>,
 the scripts modify the base value for the animation. If a base
 value is modified while an animation element is animating the
@@ -3053,23 +3053,23 @@ animating that property, the result is
 implementation-dependent; thus, it is recommended that this be
 avoided.</p>
 
-<h2 id="extensions">Extensions to SVG 2</h2>
+<h2 id="extensions">Extensions to NSVG 2</h2>
 
-This specification extends the definitions in SVG 2 [[SVG2]] in the following ways.
+This specification extends the definitions in NSVG 2 [[NSVG2]] in the following ways.
 
-<h3 id="SVGElement">Extensions to the <span class='element-name'>'svg'</span> element</h3>
+<h3 id="NSVGElement">Extensions to the <span class='element-name'>'nsvg'</span> element</h3>
 
-<edit:with element='svg'>
+<edit:with element='nsvg'>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
  <table>
   <tr>
-   <th>SVG 2 Requirement:</th>
+   <th>NSVG 2 Requirement:</th>
    <td>Should support the playbackorder attribute to inform UA to not display controls to seek backwards.</td>
  </tr>
  <tr>
    <th>Resolution:</th>
-   <td><a href="http://www.w3.org/2012/03/29-svg-irc#T20-39-02">Support the playbackorder attribute.</a></td>
+   <td><a href="http://www.w3.org/2012/03/29-nsvg-irc#T20-39-02">Support the playbackorder attribute.</a></td>
  </tr>
  <tr>
    <th>Purpose:</th>
@@ -3082,19 +3082,19 @@ This specification extends the definitions in SVG 2 [[SVG2]] in the following wa
 </table>
 </div>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
    <tr>
-    <th>SVG 2 Requirement:</th>
+    <th>NSVG 2 Requirement:</th>
     <td>Support a means for having SMIL animations start before their time container has fully loaded.</td>
   </tr>
   <tr>
     <th>Resolution:</th>
-    <td><a href="http://www.w3.org/2012/03/29-svg-irc#T20-23-57">Timeline control.</a></td>
+    <td><a href="http://www.w3.org/2012/03/29-nsvg-irc#T20-23-57">Timeline control.</a></td>
   </tr>
   <tr>
     <th>Purpose:</th>
-    <td>To start animations before the SVG document is fully loaded (useful for large SVG documents).</td>
+    <td>To start animations before the NSVG document is fully loaded (useful for large NSVG documents).</td>
   </tr>
   <tr>
     <th>Owner:</th>
@@ -3115,7 +3115,7 @@ This specification extends the definitions in SVG 2 [[SVG2]] in the following wa
         <th>Animatable</th>
       </tr>
       <tr>
-        <td><dfn id="SVGElementPlaybackorderAttribute">playbackorder</dfn></td>
+        <td><dfn id="NSVGElementPlaybackorderAttribute">playbackorder</dfn></td>
         <td>forwardonly | all</td>
         <td>all</td>
         <td>no</td>
@@ -3125,7 +3125,7 @@ This specification extends the definitions in SVG 2 [[SVG2]] in the following wa
   <dd>
     <p>
       Indicates whether it is possible to seek backwards in the document. In
-      earlier versions of SVG there was no need to put restrictions on the
+      earlier versions of NSVG there was no need to put restrictions on the
       direction of seeking but with the newly introduced facilities for
       long-running documents (e.g. the <a>'discard'</a> element) there is
       sometimes a need to restrict this.
@@ -3166,7 +3166,7 @@ This specification extends the definitions in SVG 2 [[SVG2]] in the following wa
         <th>Animatable</th>
       </tr>
       <tr>
-        <td><dfn id="SVGElementTimelinebeginAttribute">timelinebegin</dfn></td>
+        <td><dfn id="NSVGElementTimelinebeginAttribute">timelinebegin</dfn></td>
         <td>loadend | loadbegin</td>
         <td>loadend</td>
         <td>no</td>
@@ -3175,18 +3175,18 @@ This specification extends the definitions in SVG 2 [[SVG2]] in the following wa
   </dt>
   <dd>
     <p>
-      Controls the initialization of the timeline for the <a>SVG document
+      Controls the initialization of the timeline for the <a>NSVG document
       fragment</a>.
     </p>
     <p>
-      The <a>outermost svg element</a> of an <a>SVG document fragment</a>
+      The <a>outermost nsvg element</a> of an <a>NSVG document fragment</a>
       defines a <em>timeline</em>.
-      Absolute times used by <a>animation elements</a> in an <a>SVG document
+      Absolute times used by <a>animation elements</a> in an <a>NSVG document
       fragment</a> are relative to the document fragment's <em>timeline</em>.
     </p>
     <p>
       By default, the <em>timeline</em> is initialized when the document
-      fragment's <a href="[SVG2]/interact.html#LoadEvent"><code>load</code></a>
+      fragment's <a href="[NSVG2]/interact.html#LoadEvent"><code>load</code></a>
       event is fired but for progressively loaded animations, the author may set
       this attribute to <span class="attr-value">'loadend'</span>, thus allowing
       the timeline to begin as the document loads, rather than waiting until the
@@ -3197,13 +3197,13 @@ This specification extends the definitions in SVG 2 [[SVG2]] in the following wa
       <dt><span class="attr-value">'loadend'</span></dt>
       <dd>
         The document fragment's timeline starts the moment the
-        <a href="[SVG2]/interact.html#LoadEvent"><code>load</code></a> event for
-        the <a>outermost svg element</a> is triggered.
+        <a href="[NSVG2]/interact.html#LoadEvent"><code>load</code></a> event for
+        the <a>outermost nsvg element</a> is triggered.
       </dd>
       <dt><span class="attr-value">'loadbegin'</span></dt>
       <dd>
         The document's timeline starts at the moment the
-        <a>outermost svg element</a>'s <em>start-tag</em> (as defined in
+        <a>outermost nsvg element</a>'s <em>start-tag</em> (as defined in
         <a href="http://www.w3.org/TR/2006/REC-xml-20060816/#sec-starttags">XML
         1.0</a> [<a href="#ref-XML10">XML10</a>] or <a
         href="http://www.w3.org/TR/html5/syntax.html#syntax-start-tag">HTML</a>
@@ -3245,8 +3245,8 @@ contextual information associated with Time events.</p>
   repeats). It may be raised both in the course of normal
   (i.e. scheduled or interactive) timeline play, as well as
   in the case that the element was begun with the
-  <a>SVGAnimationElement::beginElement</a> or
-  <a>SVGAnimationElement::beginElementAt</a> methods. Note that if an
+  <a>NSVGAnimationElement::beginElement</a> or
+  <a>NSVGAnimationElement::beginElementAt</a> methods. Note that if an
   element is restarted while it is currently playing, the
   element will raise an end event and another begin event, as
   the element restarts.
@@ -3263,7 +3263,7 @@ contextual information associated with Time events.</p>
   repeat. This event may be raised both in the course of
   normal (i.e. scheduled or interactive) timeline play, as
   well as in the case that the element was ended with the
-  <a>SVGAnimationElement::endElement</a> or <a>SVGAnimationElement::endElementAt</a>
+  <a>NSVGAnimationElement::endElement</a> or <a>NSVGAnimationElement::endElementAt</a>
   methods. Note that if an element is restarted while it is
   currently playing, the element will raise an end event and
   another begin event, as the element restarts.
@@ -3295,22 +3295,22 @@ contextual information associated with Time events.</p>
 <pre class="idl">[Exposed=Window]
 interface <b>TimeEvent</b> : <a>Event</a> {
 
-  readonly attribute <a>WindowProxy</a>? <a href="#__svg__TimeEvent__view">view</a>;
-  readonly attribute long <a href="#__svg__TimeEvent__detail">detail</a>;
+  readonly attribute <a>WindowProxy</a>? <a href="#__nsvg__TimeEvent__view">view</a>;
+  readonly attribute long <a href="#__nsvg__TimeEvent__detail">detail</a>;
 
-  undefined <a href="#__svg__TimeEvent__initTimeEvent">initTimeEvent</a>(DOMString typeArg, <a>Window</a>? viewArg, long detailArg);
+  undefined <a href="#__nsvg__TimeEvent__initTimeEvent">initTimeEvent</a>(DOMString typeArg, <a>Window</a>? viewArg, long detailArg);
 };</pre>
 
 <dl class="interface">
   <dt class="attributes-header">Attributes:</dt>
   <dd>
     <dl class="attributes">
-      <dt id="__svg__TimeEvent__view" class="attribute first-child"><b>view</b><span class="idl-type-parenthetical"> (readonly <a>WindowProxy</a>?)</span></dt>
+      <dt id="__nsvg__TimeEvent__view" class="attribute first-child"><b>view</b><span class="idl-type-parenthetical"> (readonly <a>WindowProxy</a>?)</span></dt>
       <dd class="attribute">
         <div>The <a>TimeEvent::view</a> attribute identifies the <a>Window</a>
         from which the event was generated.</div>
       </dd>
-      <dt id="__svg__TimeEvent__detail" class="attribute"><b>detail</b><span class="idl-type-parenthetical"> (readonly long)</span></dt>
+      <dt id="__nsvg__TimeEvent__detail" class="attribute"><b>detail</b><span class="idl-type-parenthetical"> (readonly long)</span></dt>
       <dd class="attribute">
         <div>Specifies some detail information about the Event, depending on the type
         of the event. For this event type, indicates the repeat number for the
@@ -3321,7 +3321,7 @@ interface <b>TimeEvent</b> : <a>Event</a> {
   <dt class="operations-header">Operations:</dt>
   <dd>
     <dl class="attributes">
-      <dt id="__svg__TimeEvent__initTimeEvent" class="operation first-child">undefined <b>initTimeEvent</b>(DOMString <var>typeArg</var>, <a>Window</a>? <var>viewArg</var>, long <var>detailArg</var>)</dt>
+      <dt id="__nsvg__TimeEvent__initTimeEvent" class="operation first-child">undefined <b>initTimeEvent</b>(DOMString <var>typeArg</var>, <a>Window</a>? <var>viewArg</var>, long <var>detailArg</var>)</dt>
       <dd class="operation">
         <div>The <a>TimeEvent::initTimeEvent</a> method is used to initialize the value of a
         <a>TimeEvent</a> created with <code>document.createEvent()</code>. This
@@ -3353,18 +3353,18 @@ interface <b>TimeEvent</b> : <a>Event</a> {
   </dd>
 </dl>
 
-<h3 id="InterfaceSVGAnimationElement">Interface SVGAnimationElement</h3>
+<h3 id="InterfaceNSVGAnimationElement">Interface NSVGAnimationElement</h3>
 
-<p>The <a>SVGAnimationElement</a> interface is the base interface for all
-of the animation element interfaces: <a>SVGAnimateElement</a>,
-<a>SVGSetElement</a>,
-<a>SVGAnimateMotionElement</a> and <a>SVGAnimateTransformElement</a>.</p>
+<p>The <a>NSVGAnimationElement</a> interface is the base interface for all
+of the animation element interfaces: <a>NSVGAnimateElement</a>,
+<a>NSVGSetElement</a>,
+<a>NSVGAnimateMotionElement</a> and <a>NSVGAnimateTransformElement</a>.</p>
 
-<p>Unlike other SVG DOM interfaces, the SVG DOM does not specify
+<p>Unlike other NSVG DOM interfaces, the NSVG DOM does not specify
 convenience DOM properties corresponding to the various language
-attributes on SVG's animation elements. Specification of these
+attributes on NSVG's animation elements. Specification of these
 convenience properties in a way that will be compatible with future
-versions of SMIL Animation is expected in a future version of SVG. The
+versions of SMIL Animation is expected in a future version of NSVG. The
 current method for accessing and modifying the attributes on the
 animation elements is to use the standard <code>getAttribute</code>,
 <code>setAttribute</code>, <code>getAttributeNS</code> and
@@ -3403,52 +3403,52 @@ times, as described in
 </ul>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGAnimationElement</b> : <a>SVGElement</a> {
+interface <b>NSVGAnimationElement</b> : <a>NSVGElement</a> {
 
-  readonly attribute <a>SVGElement</a>? <a href="#__svg__SVGAnimationElement__targetElement">targetElement</a>;
+  readonly attribute <a>NSVGElement</a>? <a href="#__nsvg__NSVGAnimationElement__targetElement">targetElement</a>;
 
-  attribute <a>EventHandler</a> <a href="#__svg__SVGAnimationElement__onbegin">onbegin</a>;
-  attribute <a>EventHandler</a> <a href="#__svg__SVGAnimationElement__onend">onend</a>;
-  attribute <a>EventHandler</a> <a href="#__svg__SVGAnimationElement__onrepeat">onrepeat</a>;
+  attribute <a>EventHandler</a> <a href="#__nsvg__NSVGAnimationElement__onbegin">onbegin</a>;
+  attribute <a>EventHandler</a> <a href="#__nsvg__NSVGAnimationElement__onend">onend</a>;
+  attribute <a>EventHandler</a> <a href="#__nsvg__NSVGAnimationElement__onrepeat">onrepeat</a>;
 
-  float <a href="#__svg__SVGAnimationElement__getStartTime">getStartTime</a>();
-  float <a href="#__svg__SVGAnimationElement__getCurrentTime">getCurrentTime</a>();
-  float <a href="#__svg__SVGAnimationElement__getSimpleDuration">getSimpleDuration</a>();
+  float <a href="#__nsvg__NSVGAnimationElement__getStartTime">getStartTime</a>();
+  float <a href="#__nsvg__NSVGAnimationElement__getCurrentTime">getCurrentTime</a>();
+  float <a href="#__nsvg__NSVGAnimationElement__getSimpleDuration">getSimpleDuration</a>();
 
-  undefined <a href="#__svg__SVGAnimationElement__beginElement">beginElement</a>();
-  undefined <a href="#__svg__SVGAnimationElement__beginElementAt">beginElementAt</a>(float offset);
-  undefined <a href="#__svg__SVGAnimationElement__endElement">endElement</a>();
-  undefined <a href="#__svg__SVGAnimationElement__endElementAt">endElementAt</a>(float offset);
+  undefined <a href="#__nsvg__NSVGAnimationElement__beginElement">beginElement</a>();
+  undefined <a href="#__nsvg__NSVGAnimationElement__beginElementAt">beginElementAt</a>(float offset);
+  undefined <a href="#__nsvg__NSVGAnimationElement__endElement">endElement</a>();
+  undefined <a href="#__nsvg__NSVGAnimationElement__endElementAt">endElementAt</a>(float offset);
 };
 
-<a>SVGAnimationElement</a> includes <a>SVGTests</a>;</pre>
+<a>NSVGAnimationElement</a> includes <a>NSVGTests</a>;</pre>
 
 <dl class="interface">
   <dt class="attributes-header">Attributes:</dt>
   <dd>
     <dl class="attributes">
-      <dt id="__svg__SVGAnimationElement__targetElement" class="attribute first-child"><b>targetElement</b><span class="idl-type-parenthetical"> (readonly <a>SVGElement</a>?)</span></dt>
+      <dt id="__nsvg__NSVGAnimationElement__targetElement" class="attribute first-child"><b>targetElement</b><span class="idl-type-parenthetical"> (readonly <a>NSVGElement</a>?)</span></dt>
       <dd class="attribute">
         <div>The element which is being animated. If no target element is being animated (for example, because the URL in 'animate/href' does not match a valid element) the value returned is null.</div>
       </dd>
-      <dt id="__svg__SVGAnimationElement__onbegin" class="attribute"><b>onbegin</b><span class="idl-type-parenthetical"> (<a>EventHandler</a>)</span></dt>
+      <dt id="__nsvg__NSVGAnimationElement__onbegin" class="attribute"><b>onbegin</b><span class="idl-type-parenthetical"> (<a>EventHandler</a>)</span></dt>
       <dd class="attribute">
-        <div>The event handler for the <a class="event-name" href="[SVG2]/interact.html#BeginEvent">beginEvent</a>.</div>
+        <div>The event handler for the <a class="event-name" href="[NSVG2]/interact.html#BeginEvent">beginEvent</a>.</div>
       </dd>
-      <dt id="__svg__SVGAnimationElement__onend" class="attribute"><b>onend</b><span class="idl-type-parenthetical"> (<a>EventHandler</a>)</span></dt>
+      <dt id="__nsvg__NSVGAnimationElement__onend" class="attribute"><b>onend</b><span class="idl-type-parenthetical"> (<a>EventHandler</a>)</span></dt>
       <dd class="attribute">
-        <div>The event handler for the <a class="event-name" href="[SVG2]/interact.html#EndEvent">endEvent</a>.</div>
+        <div>The event handler for the <a class="event-name" href="[NSVG2]/interact.html#EndEvent">endEvent</a>.</div>
       </dd>
-      <dt id="__svg__SVGAnimationElement__onrepeat" class="attribute"><b>onrepeat</b><span class="idl-type-parenthetical"> (<a>EventHandler</a>)</span></dt>
+      <dt id="__nsvg__NSVGAnimationElement__onrepeat" class="attribute"><b>onrepeat</b><span class="idl-type-parenthetical"> (<a>EventHandler</a>)</span></dt>
       <dd class="attribute">
-        <div>The event handler for the <a class="event-name" href="[SVG2]/interact.html#RepeatEvent">repeatEvent</a>.</div>
+        <div>The event handler for the <a class="event-name" href="[NSVG2]/interact.html#RepeatEvent">repeatEvent</a>.</div>
       </dd>
     </dl>
   </dd>
   <dt class="operations-header">Operations:</dt>
   <dd>
     <dl class="attributes">
-      <dt id="__svg__SVGAnimationElement__getStartTime" class="operation first-child">float <b>getStartTime</b>()</dt>
+      <dt id="__nsvg__NSVGAnimationElement__getStartTime" class="operation first-child">float <b>getStartTime</b>()</dt>
       <dd class="operation">
         <div>Returns the begin time, in seconds, for this animation element's current
         interval, if it exists, regardless of whether the interval has begun yet.
@@ -3470,7 +3470,7 @@ interface <b>SVGAnimationElement</b> : <a>SVGElement</a> {
           </dd>
         </dl>
       </dd>
-      <dt id="__svg__SVGAnimationElement__getCurrentTime" class="operation">float <b>getCurrentTime</b>()</dt>
+      <dt id="__nsvg__NSVGAnimationElement__getCurrentTime" class="operation">float <b>getCurrentTime</b>()</dt>
       <dd class="operation">
         <div>Returns the current time in seconds relative to time zero for the given
         time container.</div>
@@ -3482,7 +3482,7 @@ interface <b>SVGAnimationElement</b> : <a>SVGElement</a> {
           </dd>
         </dl>
       </dd>
-      <dt id="__svg__SVGAnimationElement__getSimpleDuration" class="operation">float <b>getSimpleDuration</b>()</dt>
+      <dt id="__nsvg__NSVGAnimationElement__getSimpleDuration" class="operation">float <b>getSimpleDuration</b>()</dt>
       <dd class="operation">
         <div>Returns the number of seconds for the simple duration for this animation.
         If the simple duration is undefined (e.g., the end time is indefinite),
@@ -3502,13 +3502,13 @@ interface <b>SVGAnimationElement</b> : <a>SVGElement</a> {
           </dd>
         </dl>
       </dd>
-      <dt id="__svg__SVGAnimationElement__beginElement" class="operation first-child">undefined <b>beginElement</b>()</dt>
+      <dt id="__nsvg__NSVGAnimationElement__beginElement" class="operation first-child">undefined <b>beginElement</b>()</dt>
       <dd class="operation">
         <div>Creates a begin instance time for the current time. The new instance
         time is added to the <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/#Timing-BeginEnd-InstanceTimesLists"><em>begin instance times list</em></a>.
         The behavior of this method is equivalent to <code>beginElementAt(0)</code>.</div>
       </dd>
-      <dt id="__svg__SVGAnimationElement__beginElementAt" class="operation">undefined <b>beginElementAt</b>(float <var>offset</var>)</dt>
+      <dt id="__nsvg__NSVGAnimationElement__beginElementAt" class="operation">undefined <b>beginElementAt</b>(float <var>offset</var>)</dt>
       <dd class="operation">
         <div>Creates a begin instance time for the current time plus the specified
         offset. The new instance time is added to the
@@ -3526,13 +3526,13 @@ interface <b>SVGAnimationElement</b> : <a>SVGElement</a> {
           </dd>
         </dl>
       </dd>
-      <dt id="__svg__SVGAnimationElement__endElement" class="operation">undefined <b>endElement</b>()</dt>
+      <dt id="__nsvg__NSVGAnimationElement__endElement" class="operation">undefined <b>endElement</b>()</dt>
       <dd class="operation">
         <div>Creates an end instance time for the current time. The new instance time is added to the
         <a href="http://www.w3.org/TR/2001/REC-smil-animation-20010904/#Timing-BeginEnd-InstanceTimesLists"><em>end instance times list</em></a>.
         The behavior of this method is equivalent to <code>endElementAt(0)</code>.</div>
       </dd>
-      <dt id="__svg__SVGAnimationElement__endElementAt" class="operation">undefined <b>endElementAt</b>(float <var>offset</var>)</dt>
+      <dt id="__nsvg__NSVGAnimationElement__endElementAt" class="operation">undefined <b>endElementAt</b>(float <var>offset</var>)</dt>
       <dd class="operation">
         <div>Creates a end instance time for the current time plus the specified
         offset. The new instance time is added to the
@@ -3554,179 +3554,179 @@ interface <b>SVGAnimationElement</b> : <a>SVGElement</a> {
   </dd>
 </dl>
 
-<h3 id="InterfaceSVGAnimateElement">Interface SVGAnimateElement</h3>
+<h3 id="InterfaceNSVGAnimateElement">Interface NSVGAnimateElement</h3>
 
 <edit:with element="animate">
 
-<p>The <a>SVGAnimateElement</a> interface corresponds to the <a>'animate'</a>
+<p>The <a>NSVGAnimateElement</a> interface corresponds to the <a>'animate'</a>
 element.</p>
 
 <p>Object-oriented access to the attributes of the <a>'animate'</a> element
-via the SVG DOM is not available.</p>
+via the NSVG DOM is not available.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGAnimateElement</b> : <a>SVGAnimationElement</a> {
+interface <b>NSVGAnimateElement</b> : <a>NSVGAnimationElement</a> {
 };</pre>
 
 </edit:with>
 
-<h3 id="InterfaceSVGSetElement">Interface SVGSetElement</h3>
+<h3 id="InterfaceNSVGSetElement">Interface NSVGSetElement</h3>
 
 <edit:with element="set">
 
-<p>The <a>SVGSetElement</a> interface corresponds to the <a>'set'</a>
+<p>The <a>NSVGSetElement</a> interface corresponds to the <a>'set'</a>
 element.</p>
 
 <p>Object-oriented access to the attributes of the <a>'set'</a> element
-via the SVG DOM is not available.</p>
+via the NSVG DOM is not available.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGSetElement</b> : <a>SVGAnimationElement</a> {
+interface <b>NSVGSetElement</b> : <a>NSVGAnimationElement</a> {
 };</pre>
 
 </edit:with>
 
-<h3 id="InterfaceSVGAnimateMotionElement">Interface SVGAnimateMotionElement</h3>
+<h3 id="InterfaceNSVGAnimateMotionElement">Interface NSVGAnimateMotionElement</h3>
 
 <edit:with element="animateMotion">
 
-<p>The <a>SVGAnimateMotionElement</a> interface corresponds to the
+<p>The <a>NSVGAnimateMotionElement</a> interface corresponds to the
 <a>'animateMotion'</a> element.</p>
 
 <p>Object-oriented access to the attributes of the <a>'animateMotion'</a>
-element via the SVG DOM is not available.</p>
+element via the NSVG DOM is not available.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGAnimateMotionElement</b> : <a>SVGAnimationElement</a> {
+interface <b>NSVGAnimateMotionElement</b> : <a>NSVGAnimationElement</a> {
 };</pre>
 
 </edit:with>
 
-<h3 id="InterfaceSVGMPathElement">Interface SVGMPathElement</h3>
+<h3 id="InterfaceNSVGMPathElement">Interface NSVGMPathElement</h3>
 
 <edit:with element="mpath">
 
-<p>The <a>SVGMPathElement</a> interface corresponds to the <a>'mpath'</a>
+<p>The <a>NSVGMPathElement</a> interface corresponds to the <a>'mpath'</a>
 element.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGMPathElement</b> : <a>SVGElement</a> {
+interface <b>NSVGMPathElement</b> : <a>NSVGElement</a> {
 };
 
-<a>SVGMPathElement</a> includes <a>SVGURIReference</a>;</pre>
+<a>NSVGMPathElement</a> includes <a>NSVGURIReference</a>;</pre>
 
 </edit:with>
 
-<h3 id="InterfaceSVGAnimateTransformElement">Interface SVGAnimateTransformElement</h3>
+<h3 id="InterfaceNSVGAnimateTransformElement">Interface NSVGAnimateTransformElement</h3>
 
 <edit:with element="animateTransform">
 
-<p>The <a>SVGAnimateTransformElement</a> interface corresponds to the
+<p>The <a>NSVGAnimateTransformElement</a> interface corresponds to the
 <a>'animateTransform'</a> element.</p>
 
 <p>Object-oriented access to the attributes of the
-<a>'animateTransform'</a> element via the SVG DOM is not available.</p>
+<a>'animateTransform'</a> element via the NSVG DOM is not available.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGAnimateTransformElement</b> : <a>SVGAnimationElement</a> {
+interface <b>NSVGAnimateTransformElement</b> : <a>NSVGAnimationElement</a> {
 };</pre>
 
 </edit:with>
 
-<h3 id="InterfaceSVGDiscardElement">Interface SVGDiscardElement</h3>
+<h3 id="InterfaceNSVGDiscardElement">Interface NSVGDiscardElement</h3>
 
 <edit:with element="discard">
 
-<p>The <a>SVGDiscardElement</a> interface corresponds to the <a>'discard'</a>
+<p>The <a>NSVGDiscardElement</a> interface corresponds to the <a>'discard'</a>
 element.</p>
 
 <p>Object-oriented access to the attributes of the <a>'discard'</a> element
-via the SVG DOM is not available.</p>
+via the NSVG DOM is not available.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGDiscardElement</b> : <a>SVGAnimationElement</a> {
+interface <b>NSVGDiscardElement</b> : <a>NSVGAnimationElement</a> {
 };</pre>
 
 </edit:with>
 
-<h3 id="InterfaceSVGSVGElement">Extensions to interface SVGSVGElement</h3>
+<h3 id="InterfaceNSVGNSVGElement">Extensions to interface NSVGNSVGElement</h3>
 
-<edit:with element="svg">
+<edit:with element="nsvg">
 
-<pre class="idl">partial interface <b>SVGSVGElement</b> {
-  undefined <a href="#__svg__SVGSVGElement__pauseAnimations">pauseAnimations</a>();
-  undefined <a href="#__svg__SVGSVGElement__unpauseAnimations">unpauseAnimations</a>();
-  boolean <a href="#__svg__SVGSVGElement__animationsPaused">animationsPaused</a>();
-  float <a href="#__svg__SVGSVGElement__getCurrentTime">getCurrentTime</a>();
-  undefined <a href="#__svg__SVGSVGElement__setCurrentTime">setCurrentTime</a>(float seconds);
+<pre class="idl">partial interface <b>NSVGNSVGElement</b> {
+  undefined <a href="#__nsvg__NSVGNSVGElement__pauseAnimations">pauseAnimations</a>();
+  undefined <a href="#__nsvg__NSVGNSVGElement__unpauseAnimations">unpauseAnimations</a>();
+  boolean <a href="#__nsvg__NSVGNSVGElement__animationsPaused">animationsPaused</a>();
+  float <a href="#__nsvg__NSVGNSVGElement__getCurrentTime">getCurrentTime</a>();
+  undefined <a href="#__nsvg__NSVGNSVGElement__setCurrentTime">setCurrentTime</a>(float seconds);
 };</pre>
 
-<p>The <b id="__svg__SVGSVGElement__pauseAnimations">pauseAnimations</b>
-and <b id="__svg__SVGSVGElement__unpauseAnimations">unpauseAnimations</b>
+<p>The <b id="__nsvg__NSVGNSVGElement__pauseAnimations">pauseAnimations</b>
+and <b id="__nsvg__NSVGNSVGElement__unpauseAnimations">unpauseAnimations</b>
 methods are used to pause and unpause all of the animations within
-the <a>SVG document fragment</a>.</p>
+the <a>NSVG document fragment</a>.</p>
 
 <p>When pauseAnimations() is called, the following steps are run:</p>
 
 <ol class="algorithm">
-  <li>If the current <a>'svg'</a> element is not the <a>outermost svg element</a>,
+  <li>If the current <a>'nsvg'</a> element is not the <a>outermost nsvg element</a>,
   then return.</li>
-  <li>Pause the timeline that controls SVG animations for the <a>SVG document fragment</a> that
-  the <a>'svg'</a> element is in.</li>
+  <li>Pause the timeline that controls NSVG animations for the <a>NSVG document fragment</a> that
+  the <a>'nsvg'</a> element is in.</li>
 </ol>
 
 <p>When unpauseAnimations() is called, the following steps are run:</p>
 
 <ol class="algorithm">
-  <li>If the current <a>'svg'</a> element is not the <a>outermost svg element</a>,
+  <li>If the current <a>'nsvg'</a> element is not the <a>outermost nsvg element</a>,
   then return.</li>
-  <li>Unpause the timeline that controls SVG animations for the <a>SVG document fragment</a> that
-  the <a>'svg'</a> element is in.</li>
+  <li>Unpause the timeline that controls NSVG animations for the <a>NSVG document fragment</a> that
+  the <a>'nsvg'</a> element is in.</li>
 </ol>
 
-<p class="note">The <a href="#__svg__SVGSVGElement__pauseAnimations">pauseAnimations</a>
-and <a href="#__svg__SVGSVGElement__unpauseAnimations">unpauseAnimations</a>
-methods only affect animations defined using SVG's <a>animation elements</a>.
+<p class="note">The <a href="#__nsvg__NSVGNSVGElement__pauseAnimations">pauseAnimations</a>
+and <a href="#__nsvg__NSVGNSVGElement__unpauseAnimations">unpauseAnimations</a>
+methods only affect animations defined using NSVG's <a>animation elements</a>.
 They have no effect on CSS Transitions or Animations
 [<a href="#ref-CSS3ANIMATIONS">CSS3ANIMATIONS</a>][<a href="#ref-CSS3TRANSITIONS">CSS3TRANSITIONS</a>]
 or animations created using script.</p>
 
-<p>The <b id="__svg__SVGSVGElement__animationsPaused">animationsPaused</b>
-method returns whether SVG animation timeline has been paused.
+<p>The <b id="__nsvg__NSVGNSVGElement__animationsPaused">animationsPaused</b>
+method returns whether NSVG animation timeline has been paused.
 When animationsPaused() is called, true is returned if the timeline that
-controls SVG animations for the <a>SVG document fragment</a> that the
-<a>'svg'</a> element in has been paused by
-<a href="#__svg__SVGSVGElement__pauseAnimations">pauseAnimations</a>;
+controls NSVG animations for the <a>NSVG document fragment</a> that the
+<a>'nsvg'</a> element in has been paused by
+<a href="#__nsvg__NSVGNSVGElement__pauseAnimations">pauseAnimations</a>;
 otherwise, false is returned.</p>
 
-<p>The <b id="__svg__SVGSVGElement__getCurrentTime">getCurrentTime</b> and
-<b id="__svg__SVGSVGElement__setCurrentTime">setCurrentTime</b> methods
+<p>The <b id="__nsvg__NSVGNSVGElement__getCurrentTime">getCurrentTime</b> and
+<b id="__nsvg__NSVGNSVGElement__setCurrentTime">setCurrentTime</b> methods
 are used to get and set the current time of the timeline that controls
-SVG animations.  When getCurrentTime() is called, the following steps are run:</p>
+NSVG animations.  When getCurrentTime() is called, the following steps are run:</p>
 
 <ol class='algorithm'>
-  <li>If the timeline for the <a>current SVG document fragment</a> has not yet begun,
+  <li>If the timeline for the <a>current NSVG document fragment</a> has not yet begun,
   then return 0.
-    <p class='note'>This is the case, for example, if the <a>outermost svg element</a>
+    <p class='note'>This is the case, for example, if the <a>outermost nsvg element</a>
     has its <a>'timelinebegin'</a> attribute set to <span class='attr-value'>'loadend'</span>
     and the load event has not yet fired.</p>
   </li>
-  <li>Otherwise, the timeline for the <a>current SVG document fragment</a> has begun.
+  <li>Otherwise, the timeline for the <a>current NSVG document fragment</a> has begun.
   Return the current time in seconds relative to the start time of the timeline.</li>
 </ol>
 
 <p>When setCurrentTime(<var>seconds</var>) is called, the following steps are run:</p>
 
 <ol class='algorithm'>
-  <li>If the current <a>'svg'</a> element is not the <a>outermost svg element</a>,
+  <li>If the current <a>'nsvg'</a> element is not the <a>outermost nsvg element</a>,
   then return.</li>
-  <li>If the timeline for the <a>current SVG document fragment</a> has begun, then
+  <li>If the timeline for the <a>current NSVG document fragment</a> has begun, then
   the timeline's current time (in seconds, relative to the start time of the
   timeline) is set to <var>seconds</var>.</li>
   <li>Otherwise, the timeline has not begun.  <var>seconds</var> is recorded on
-  the <a>current SVG document fragment</a> as the time to be seeked to
+  the <a>current NSVG document fragment</a> as the time to be seeked to
   once the timeline has begun.  If multiple calls to
-  <a href="#__svg__SVGSVGElement__setCurrentTime">setCurrentTime</a> are made
+  <a href="#__nsvg__NSVGNSVGElement__setCurrentTime">setCurrentTime</a> are made
   before the timeline has begun, the most recent call's time will be used to
   seek the timeline once it begins.</li>
 </ol>
@@ -3783,12 +3783,12 @@ SVG animations.  When getCurrentTime() is called, the following steps are run:</
   <br />Available at http://tools.ietf.org/html/rfc2119.</dd>
 
 <!--
-  <dt id="ref-SVG11"><strong class="normref">[SVG11]</strong></dt>
-  <dd><cite class="w3crec"><a href="http://www.w3.org/TR/2003/REC-SVG11-20030114/">Scalable Vector Graphics (SVG) 1.1</a></cite>,
+  <dt id="ref-NSVG11"><strong class="normref">[NSVG11]</strong></dt>
+  <dd><cite class="w3crec"><a href="http://www.w3.org/TR/2003/REC-NSVG11-20030114/">Not Scalable Vector Graphics (NSVG) 1.1</a></cite>,
   J. Ferraiolo, <span class="ruby"><span class="rb">&#x85E4;&#x6CA2; &#x6DF3;</span><span class="rp">(</span><span class="rt"><span class="familyname">Fujisawa</span> Jun</span><span class="rp">)</span></span>, D. Jackson, eds.
   World Wide Web Consortium, 14 January 2003.
-  <br />This edition of SVG 1.1 is http://www.w3.org/TR/2003/REC-SVG11-20030114/.
-  <br />The <a href="http://www.w3.org/TR/SVG11/">latest edition of SVG 1.1</a> is available at http://www.w3.org/TR/SVG11/.</dd>
+  <br />This edition of NSVG 1.1 is http://www.w3.org/TR/2003/REC-NSVG11-20030114/.
+  <br />The <a href="http://www.w3.org/TR/NSVG11/">latest edition of NSVG 1.1</a> is available at http://www.w3.org/TR/NSVG11/.</dd>
 -->
 
   <dt id="ref-SMIL" class="normref">[SMIL]</dt>
@@ -3820,12 +3820,12 @@ SVG animations.  When getCurrentTime() is called, the following steps are run:</
     for technical data and color profiles.
   </dd>
 
-  <dt id="ref-SVG2"><strong class="normref">[SVG2]</strong></dt>
-  <dd><cite class="w3cwd"><a href="http://www.w3.org/TR/2015/WD-SVG2-20150409/">Scalable Vector Graphics (SVG) 2</a></cite>,
+  <dt id="ref-NSVG2"><strong class="normref">[NSVG2]</strong></dt>
+  <dd><cite class="w3cwd"><a href="http://www.w3.org/TR/2015/WD-NSVG2-20150409/">Not Scalable Vector Graphics (NSVG) 2</a></cite>,
   N. Andronikos, T. Bah, A. Bellamy-Royds, B. Birtles, C. Concolato, E. Dahlström, C. Lilley, C. McCormack, D. Schepers, D. Schulze, R. Schwerdtfeger, S. Takagi, J. Watt, eds.
   World Wide Web Consortium, 09 April 2015.
-  <br />This edition of SVG 2 is http://www.w3.org/TR/2015/WD-SVG2-20150409/.
-  <br />The <a href="http://www.w3.org/TR/SVG2/">latest edition of SVG 2</a> is available at http://www.w3.org/TR/SVG2/.</dd>
+  <br />This edition of NSVG 2 is http://www.w3.org/TR/2015/WD-NSVG2-20150409/.
+  <br />The <a href="http://www.w3.org/TR/NSVG2/">latest edition of NSVG 2</a> is available at http://www.w3.org/TR/NSVG2/.</dd>
 
   <dt id="ref-XML10" class="normref">[XML10]</dt>
   <dd>
@@ -3870,16 +3870,16 @@ SVG animations.  When getCurrentTime() is called, the following steps are run:</
   </dd>
 </dl>
 
-<h2 id="ChangesSinceSVG11">Changes since SVG 1.1 Second Edition</h2>
+<h2 id="ChangesSinceNSVG11">Changes since NSVG 1.1 Second Edition</h2>
 
 <ul>
   <li>Removed the <span class="attribute-name">attributeType</span>
       attribute.</li>
   <li>Folded the ElementTimeControl interface into
-      <a>SVGAnimationElement</a>.</li>
+      <a>NSVGAnimationElement</a>.</li>
   <li>Removed the <span class="element-name">animateColor</span> element.</li>
   <li>Added the onbegin, onend and onrepeat attributes to the
-      <a>SVGAnimationElement</a> interface.</li>
+      <a>NSVGAnimationElement</a> interface.</li>
   <li>The <a>'values'</a>, <a>'keyTimes'</a> and <a>'keySplines'</a> attributes
       now ignore the last semicolon separator if it's not followed by
       a value.</li>
@@ -3887,7 +3887,7 @@ SVG animations.  When getCurrentTime() is called, the following steps are run:</
       a <a>shape</a> element.</li>
   <li>Added the <a>'discard'</a> element</li>
   <li>Added the <a>'timelinebegin'</a> and <a>'playbackorder'</a> attributes on
-      the <a>'svg'</a> element.</li>
+      the <a>'nsvg'</a> element.</li>
 </ul>
 
 </body>

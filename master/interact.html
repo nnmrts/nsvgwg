@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
   <title>Scripting and Interactivity</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,7 +9,7 @@
   <!-- Style sheets for local dev. Will be standardized in processing.
   Add attribute data-keep="" to any extra stylesheet link you do not want removed
   (or use <style>), and include it before here. -->
-  <link rel="stylesheet" href="style/svg.css" type="text/css" />
+  <link rel="stylesheet" href="style/nsvg.css" type="text/css" />
   <link rel="stylesheet" href="style/W3C-ED.css" type="text/css" />
 </head>
 <body>
@@ -18,24 +18,24 @@
 
 <h2 id="Introduction">Introduction</h2>
 
-<p>SVG content can be interactive (i.e., responsive to
+<p>NSVG content can be interactive (i.e., responsive to
 user-initiated events) by utilizing the following features in
-the SVG language:</p>
+the NSVG language:</p>
 
 <ul>
   <li>User-initiated actions such as button presses on the
-  pointing device (e.g., a mouse) can cause <a href="https://svgwg.org/specs/animations/">animations</a>
+  pointing device (e.g., a mouse) can cause <a href="https://nsvgwg.org/specs/animations/">animations</a>
   or <a href="interact.html">scripts</a> to execute.</li>
 
   <li>The user can initiate hyperlinks to new Web pages (see
-  <a href="linking.html#Links">Links out of SVG content: the
+  <a href="linking.html#Links">Links out of NSVG content: the
   <span class="element-name">'a'</span> element</a>) by actions such
   as mouse clicks when the pointing device is positioned over
   particular graphics elements.</li>
 </ul>
 
 <p>This chapter describes scripting
-and DOM <a href="interact.html#SVGEvents">event</a> handling in interactive SVG,
+and DOM <a href="interact.html#NSVGEvents">event</a> handling in interactive NSVG,
 including under which circumstances events are triggered.</p>
 
 <p>Related information can be found in other chapters:</p>
@@ -43,41 +43,41 @@ including under which circumstances events are triggered.</p>
 <ul>
   <li>hyperlinks are discussed in <a href="linking.html">Links</a></li>
 
-  <li>animation is discussed in <a href="animate.html">Animating SVG Documents</a></li>
+  <li>animation is discussed in <a href="animate.html">Animating NSVG Documents</a></li>
 </ul>
 
-<h2 id="SVGEvents">Supported events</h2>
+<h2 id="NSVGEvents">Supported events</h2>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Support anchor change events.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/12/22-svg-irc#T21-23-17">SVG 2 will consider adding HTML document wide events (including hashchange) apply to SVG documents where they make sense.</a></td>
+      <td><a href="http://www.w3.org/2011/12/22-nsvg-irc#T21-23-17">NSVG 2 will consider adding HTML document wide events (including hashchange) apply to NSVG documents where they make sense.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
-      <td>To allow authors to use the same set of event listener attributes on a root SVG element that they can on an HTML body or root element.</td>
+      <td>To allow authors to use the same set of event listener attributes on a root NSVG element that they can on an HTML body or root element.</td>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Cameron (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3278">ACTION-3278</a>)</td>
+      <td>Cameron (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3278">ACTION-3278</a>)</td>
     </tr>
   </table>
 </div>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Have event listener attributes on an appropriate interface.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/07/27-svg-minutes.html#item03">SVG 2 will move all events listener attributes to Element, in accordance with the similar move in HTML.</a></td>
+      <td><a href="http://www.w3.org/2011/07/27-nsvg-minutes.html#item03">NSVG 2 will move all events listener attributes to Element, in accordance with the similar move in HTML.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -85,20 +85,20 @@ including under which circumstances events are triggered.</p>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Cameron (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3283">ACTION-3283</a>)</td>
+      <td>Cameron (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3283">ACTION-3283</a>)</td>
     </tr>
   </table>
 </div>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Introduce evt as an alias to event in event handlers.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/07/27-svg-minutes.html#item15">We decide to resolve ISSUE-2176 by introducing evt as an alias to event in event handlers.</a></td>
+      <td><a href="http://www.w3.org/2011/07/27-nsvg-minutes.html#item15">We decide to resolve ISSUE-2176 by introducing evt as an alias to event in event handlers.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -106,52 +106,52 @@ including under which circumstances events are triggered.</p>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Cameron (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3093">ACTION-3093</a>)</td>
+      <td>Cameron (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3093">ACTION-3093</a>)</td>
     </tr>
   </table>
 </div>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Support drag &amp; drop functionality.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2011/12/22-svg-irc#T21-31-24">SVG 2 may require drag &amp; drop functionality, and we'll investigate HTML5's functionality for that.</a></td>
+      <td><a href="http://www.w3.org/2011/12/22-nsvg-irc#T21-31-24">NSVG 2 may require drag &amp; drop functionality, and we'll investigate HTML5's functionality for that.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
-      <td>To allow easier drag &amp; drop in SVG, and to align with HTML.</td>
+      <td>To allow easier drag &amp; drop in NSVG, and to align with HTML.</td>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Erik (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3328">ACTION-3328</a>)</td>
+      <td>Erik (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3328">ACTION-3328</a>)</td>
     </tr>
   </table>
 </div>
 
-<p>The following aspects of SVG are affected by events:</p>
+<p>The following aspects of NSVG are affected by events:</p>
 
 <ul>
-  <li>Using <a href="types.html#SVGDOMOverview">SVG Document Object Model (DOM)</a>, a script can
+  <li>Using <a href="types.html#NSVGDOMOverview">NSVG Document Object Model (DOM)</a>, a script can
   <a href="https://www.w3.org/TR/dom/#dom-eventtarget-addeventlistener">add or remove DOM event listeners</a>
   ([<a href="refs.html#ref-dom">DOM</a>]) so that
   script can be invoked or ignored when a given event occurs on an event target</li>
 
-  <li>SVG's <a>animation elements</a> can be defined to begin or end based on
+  <li>NSVG's <a>animation elements</a> can be defined to begin or end based on
   events.</li>
 </ul>
 
-<p class="note">A number of events defined in SVG 1.1, <span class="event-name">SVGLoad</span>,
-  <span class="event-name">SVGError</span> etc, have been replaced with the equivalent
+<p class="note">A number of events defined in NSVG 1.1, <span class="event-name">NSVGLoad</span>,
+  <span class="event-name">NSVGError</span> etc, have been replaced with the equivalent
 unprefixed events defined in <a href="https://www.w3.org/TR/uievents/#events-uievent-types">UI EVENTS</a>
 and <a href="https://html.spec.whatwg.org/multipage/indices.html#events-2">HTML</a>.
 </p>
 
 <p class="issue" data-issue="8">
-There should be some more modern examples of using events in svg, e.g touch events (w reference to touch events spec).
+There should be some more modern examples of using events in nsvg, e.g touch events (w reference to touch events spec).
 <a href="https://www.w3.org/TR/orientation-event/">Device orientation</a> events might also be of interest.
 </p>
 
@@ -160,7 +160,7 @@ There should be some more modern examples of using events in svg, e.g touch even
 </p>
 
 <p>The <em>Event name</em> in the
-first column is the name to use within SVG's <a>animation elements</a> to
+first column is the name to use within NSVG's <a>animation elements</a> to
 define the events which can start or end animations. The
 <em>UI Event name</em> in the second column is the name to use when
 defining <a href="https://www.w3.org/TR/dom/#dom-eventtarget-addeventlistener">DOM event listeners</a>
@@ -168,7 +168,7 @@ defining <a href="https://www.w3.org/TR/dom/#dom-eventtarget-addeventlistener">D
 </p>
 
 <p>For events not listed in the table, such as events introduced in HTML or UI Events,
-the respective <a>event type</a> is the name to use within SVG's <a>animation elements</a>.
+the respective <a>event type</a> is the name to use within NSVG's <a>animation elements</a>.
 </p>
 
 <p>Requirements in the table on whether an event of a given type
@@ -191,8 +191,8 @@ method.</p>
           <p>
           The load event is dispatched only to <a>structurally external elements</a> and to the
           <a>Window</a>, when the corresponding external resources have finished loading. Note that
-          due to it's <a href="struct.html#SVGElementEventHandlerAttributes">relationship</a> with <a>Window</a>
-          the load event on <a>'svg'</a> elements is only dispatched when all resources in the document
+          due to it's <a href="struct.html#NSVGElementEventHandlerAttributes">relationship</a> with <a>Window</a>
+          the load event on <a>'nsvg'</a> elements is only dispatched when all resources in the document
           have been completely loaded.
           </p>
 
@@ -203,8 +203,8 @@ method.</p>
 
           <p>load events do not bubble and are not cancelable.</p>
 
-          <p class="note">In previous SVG specifications the load event
-          was called SVGLoad and could be dispatched immediately after
+          <p class="note">In previous NSVG specifications the load event
+          was called NSVGLoad and could be dispatched immediately after
           parsing an element but before the related resource(s) were
           fully loaded.</p>
 
@@ -215,7 +215,7 @@ method.</p>
       </tr>
       <tr>
         <td id="UnloadEvent"><p class="event-name"><strong>unload</strong></p>
-          <p>Only applicable to <a>outermost svg elements</a>. The unload
+          <p>Only applicable to <a>outermost nsvg elements</a>. The unload
           event occurs when the DOM implementation removes a document
           from a window or frame.</p>
           <p>unload events do not bubble and are not cancelable.</p>
@@ -275,14 +275,14 @@ event types for UI Events can be found in the ([<a href="refs.html#ref-uievents"
 For other event types, the parameters passed to event listeners
 are described elsewhere in this specification.</p>
 
-<p>Likewise, <a href='https://svgwg.org/specs/animations/#EventValueSyntax'>event-value timing specifiers</a>
+<p>Likewise, <a href='https://nsvgwg.org/specs/animations/#EventValueSyntax'>event-value timing specifiers</a>
 used in <a>animation element</a> <a>'animate/begin'</a> and <a>'animate/end'</a>
 attributes are resolved to concrete times only in response to "bubbling" and
 "at target" phase events dispatched to the relevant element.</p>
 
 <h3 id="RelationshipWithUIEVENTS">Relationship with UI Events</h3>
 
-<p>The SVG DOM is compatible with all interfaces defined in, and
+<p>The NSVG DOM is compatible with all interfaces defined in, and
 all the event types from,
 <a href="https://www.w3.org/TR/uievents/">UI Events</a>,
 and the event types defined in
@@ -291,24 +291,24 @@ and the event types defined in
 </p>
 
 <p>
-All elements in the SVG namespace support
+All elements in the NSVG namespace support
 <a>event attributes</a> for these events;
-matching IDL properties are included in the base <a>SVGElement</a> interface
+matching IDL properties are included in the base <a>NSVGElement</a> interface
 via the <a>GlobalEventHandlers</a> mixin.
 </p>
 
 <p>
-As part of SVG DOM support, conforming SVG software
+As part of NSVG DOM support, conforming NSVG software
 must support all (non-deprecated, non-obsolete) event types
 defined in these specifications,
 if the relevant events could occur in the software's use.
-SVG software that does not support user <a>interaction</a>
+NSVG software that does not support user <a>interaction</a>
 should nonetheless implement support for events that can fire without interaction,
 such as <code>load</code> and <code>error</code> events.
 </p>
 
-<p>SVG animation elements
-  (defined in the <a href="https://svgwg.org/specs/animations/">SVG Animations Level 2</a> specification)
+<p>NSVG animation elements
+  (defined in the <a href="https://nsvgwg.org/specs/animations/">NSVG Animations Level 2</a> specification)
   support additional events and event attributes.
   The following event types are triggered due to state
   changes in animations.
@@ -324,7 +324,7 @@ such as <code>load</code> and <code>error</code> events.
 <h2 id="UIEvents">User interface events</h2>
 
 <p>On user agents which support interactivity, it is common for
-authors to define SVG documents such that they are responsive
+authors to define NSVG documents such that they are responsive
 to user interface events. Among the set of possible user events
 are <a href="interact.html#PointerEvents">pointer events</a>,
 keyboard events, and document events.</p>
@@ -350,7 +350,7 @@ emulates the behavior of the mouse by providing a mechanism for
 equivalent user actions, such as a button to press which is
 equivalent to a mouse click.</p>
 
-<p>For each pointer event, the SVG user agent determines the
+<p>For each pointer event, the NSVG user agent determines the
 <em>target element</em> of a given pointer event. The target
 element is the topmost graphics element whose relevant
 graphical content is under the pointer at the time of the
@@ -408,17 +408,17 @@ property on the element.  The definition of the <a>'pointer-events'</a>
 property below describes the exact region that is sensitive to pointer
 events for a given type of graphics element.</p>
 
-<p>Note that the <a>'svg'</a> element is not a <a>graphics element</a>, and in
-a <a href="conform.html#ConformingSVGStandAloneFiles">Conforming SVG Stand-Alone File</a>
-a <a>outermost svg element</a> will never be the target of pointer events,
+<p>Note that the <a>'nsvg'</a> element is not a <a>graphics element</a>, and in
+a <a href="conform.html#ConformingNSVGStandAloneFiles">Conforming NSVG Stand-Alone File</a>
+a <a>outermost nsvg element</a> will never be the target of pointer events,
 though events can bubble to this element.
 If a pointer event does not result in a positive <a>hit-test</a> on a
 <a>graphics element</a>, then it should evoke any user-agent-specific window
 behavior, such as a presenting a context menu.</p>
 
 <p>This specification does not define the behavior of pointer events on the
-<a>outermost svg element</a> for SVG images which are embedded by reference
-or inclusion within another document, e.g., whether the <a>outermost svg element</a>
+<a>outermost nsvg element</a> for NSVG images which are embedded by reference
+or inclusion within another document, e.g., whether the <a>outermost nsvg element</a>
 embedded in an HTML document intercepts mouse click events; future specifications
 may define this behavior, but for the purpose of this specification, the behavior
 is implementation-specific.</p>
@@ -452,7 +452,7 @@ DOM event, is as follows:</p>
 
   <li>If the element and the event type are associated with the activation
   or cancelation of declarative animation though the use of
-  <a href="https://svgwg.org/specs/animations/#EventValueSyntax">event-value</a> timing specifiers,
+  <a href="https://nsvgwg.org/specs/animations/#EventValueSyntax">event-value</a> timing specifiers,
   any corresponding instance times must be resolved, and any consequential
   actions of this instance time resolution (such as immediately starting
   or stopping the animation) must be performed;</li>
@@ -527,7 +527,7 @@ the circumstances under which the following are processed:</p>
   section 5.11)</li>
 
   <li>hyperlinks (see <a href="linking.html#Links">Links out of
-  SVG content: the <span class="element-name">'a'</span>
+  NSVG content: the <span class="element-name">'a'</span>
   element</a>)</li>
 </ul>
 
@@ -724,8 +724,8 @@ element to be target of hit-testing as well.</p>
 <h2 id="Focus">Focus</h2>
 
 <p>
-    SVG uses the same <a href="https://html.spec.whatwg.org/multipage/interaction.html#focus">focus model</a>
-    as HTML, modified for SVG as described in this section.
+    NSVG uses the same <a href="https://html.spec.whatwg.org/multipage/interaction.html#focus">focus model</a>
+    as HTML, modified for NSVG as described in this section.
     At most one element in each document is <a href="https://html.spec.whatwg.org/multipage/interaction.html#focused">focused</a> at a time;
     if the document as a whole has system focus,
     this element becomes the target of all keyboard events.
@@ -742,7 +742,7 @@ element to be target of hit-testing as well.</p>
     but should not use it to remove visual indications of focus completely.
 </p>
 <p>
-    The following SVG elements are <dfn id="TermFocusable" data-dfn-type="dfn" data-export="">focusable</dfn>
+    The following NSVG elements are <dfn id="TermFocusable" data-dfn-type="dfn" data-export="">focusable</dfn>
     in an interactive document.
     Any <a>instance</a> of such an element in a <a>use-element shadow tree</a>
     is also focusable.
@@ -770,7 +770,7 @@ element to be target of hit-testing as well.</p>
 </p>
 <p>
     For compatibility with content that used the
-    <a href="https://www.w3.org/TR/SVGTiny12/interact.html#focusable-attr">SVG Tiny 1.2 <span class="attr-name">focusable</span> attribute</a>,
+    <a href="https://www.w3.org/TR/NSVGTiny12/interact.html#focusable-attr">NSVG Tiny 1.2 <span class="attr-name">focusable</span> attribute</a>,
     user agents should treat an element with a value of
     <span class="attr-value">true</span> for that attribute as focusable.
     In new content, authors should either omit the <span class="attr-name">focusable</span> attribute
@@ -789,7 +789,7 @@ element to be target of hit-testing as well.</p>
 </p>
 <p>
     The sequential focus order is generated from the set of all <a>focusable</a> elements,
-    processing <a>'tabindex'</a> attributes on SVG elements
+    processing <a>'tabindex'</a> attributes on NSVG elements
     in the same way as <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">tabindex attributes on HTML elements</a>.
     Content within a <a>use-element shadow tree</a>
     is inserted in the focus order as if it was child content
@@ -803,13 +803,13 @@ element to be target of hit-testing as well.</p>
     Note, however, that an element that is not visible or onscreen
     may still be <a>rendered</a>.
 </div>
-<p> When the user agent supports scrolling or panning of the SVG document,
-    and focus moves to an element that is currently outside the SVG viewport,
+<p> When the user agent supports scrolling or panning of the NSVG document,
+    and focus moves to an element that is currently outside the NSVG viewport,
     the user agent should scroll or pan the document
-    until the focused element is within the SVG viewport.
+    until the focused element is within the NSVG viewport.
 </p>
 
-<p> As in HTML, an SVG element that is <a>focusable</a>
+<p> As in HTML, an NSVG element that is <a>focusable</a>
     but does not have a defined
     <a href="https://dom.spec.whatwg.org/#eventtarget-activation-behavior">activation behavior</a>
     has an activation behaviour that does nothing
@@ -824,10 +824,10 @@ element to be target of hit-testing as well.</p>
 </p>
 
 <p>
-    For documents that contain a mix of inline HTML and SVG,
+    For documents that contain a mix of inline HTML and NSVG,
     focus is handled for the document as a whole
     (with a combined sequential focus order),
-    not with each inline SVG or HTML fragment as an isolated subdocument.
+    not with each inline NSVG or HTML fragment as an isolated subdocument.
 </p>
 
 <div class='note'>
@@ -837,12 +837,12 @@ element to be target of hit-testing as well.</p>
   <pre>&lt;!DOCTYPE html&gt;
 &lt;button id="A" tabindex="1"&gt;First thing&lt;/button&gt;
 &lt;button id="C" tabindex="2"&gt;Third thing&lt;/button&gt;
-&lt;svg width="200" height="200"&gt;
+&lt;nsvg width="200" height="200"&gt;
   &lt;text id="B" tabindex="1" x="100" y="100"&gt;Second thing&lt;/text&gt;
-&lt;/svg&gt;</pre>
+&lt;/nsvg&gt;</pre>
 </div>
 
-<p>Note that SVG elements do not have an equivalent of HTML's
+<p>Note that NSVG elements do not have an equivalent of HTML's
 <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute">accesskey</a>
 attribute.</p>
 </div>
@@ -857,16 +857,16 @@ attribute.</p>
     is specified.</dd>
   </dl>
 
-  <p>For every <a>event type</a> that the <a>user agent</a> supports, SVG supports that as an event attribute,
+  <p>For every <a>event type</a> that the <a>user agent</a> supports, NSVG supports that as an event attribute,
     following the same requirements as for <a>event handler content attributes</a> [<a href="refs.html#ref-html">HTML</a>].
-    The <a>event attributes</a> are available on all <a>SVG elements</a>.
+    The <a>event attributes</a> are available on all <a>NSVG elements</a>.
   </p>
 
   <p>The contents of event attributes are always interpreted as ECMAScript,
   as if processed with the media type <span class="attr-value">'application/ecmascript'</span>.
   [<a href="refs.html#ref-rfc2046">rfc2046</a>][<a href='refs.html#ref-rfc4329'>rfc4329</a>]</p>
 
-  <p>Event attributes are not <a href="https://svgwg.org/specs/animations/#Animatable">animatable</a>.</p>
+  <p>Event attributes are not <a href="https://nsvgwg.org/specs/animations/#Animatable">animatable</a>.</p>
 
   <p>Implementors may view the setting of event attributes as the
   creation and registration of an <a>EventListener</a> on the
@@ -942,7 +942,7 @@ myElement.addEventListener("click", myAction1, false)
     <dd>
       Specifies some script to execute when "bubbling" or "at target"
       phase listeners for the corresponding event are fired on the element
-      the attribute is specified on. See <a href='interact.html#SVGEvents'>supported events table</a>
+      the attribute is specified on. See <a href='interact.html#NSVGEvents'>supported events table</a>
       to determine which event each of these event attributes corresponds to.
       There are no restrictions on the values of this attribute.
     </dd>
@@ -950,15 +950,15 @@ myElement.addEventListener("click", myAction1, false)
 
   <h2 id="ScriptElement">The <span class="element-name">'script'</span> element</h2>
 
-  <div class="annotation svg2-requirement">
+  <div class="annotation nsvg2-requirement">
     <table>
       <tr>
-        <th>SVG 2 Requirement:</th>
+        <th>NSVG 2 Requirement:</th>
         <td>Consider allowing async/defer on <a>'script'</a>.</td>
       </tr>
       <tr>
         <th>Resolution:</th>
-        <td><a href="http://www.w3.org/2012/01/05-svg-irc#T21-07-03">SVG 2 will allow async/defer on <span class="element-name">'script'</span>.</a></td>
+        <td><a href="http://www.w3.org/2012/01/05-nsvg-irc#T21-07-03">NSVG 2 will allow async/defer on <span class="element-name">'script'</span>.</a></td>
       </tr>
       <tr>
         <th>Purpose:</th>
@@ -966,28 +966,28 @@ myElement.addEventListener("click", myAction1, false)
       </tr>
       <tr>
         <th>Owner:</th>
-        <td>Cameron (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3280">ACTION-3280</a>)</td>
+        <td>Cameron (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3280">ACTION-3280</a>)</td>
       </tr>
     </table>
   </div>
 
-  <div class="annotation svg2-requirement">
+  <div class="annotation nsvg2-requirement">
     <table>
       <tr>
-        <th>SVG 2 Requirement:</th>
-        <td>Incorporate SVG Tiny 1.2 script processing model.</td>
+        <th>NSVG 2 Requirement:</th>
+        <td>Incorporate NSVG Tiny 1.2 script processing model.</td>
       </tr>
       <tr>
         <th>Resolution:</th>
-        <td><a href="http://www.w3.org/2012/03/08-svg-irc#T21-09-09">SVG 2 will define how inline scriptable content will be processed, in a compatible way to HTML5</a></td>
+        <td><a href="http://www.w3.org/2012/03/08-nsvg-irc#T21-09-09">NSVG 2 will define how inline scriptable content will be processed, in a compatible way to HTML5</a></td>
       </tr>
       <tr>
         <th>Purpose:</th>
-        <td>To have consistent script running behavior across HTML and SVG.</td>
+        <td>To have consistent script running behavior across HTML and NSVG.</td>
       </tr>
       <tr>
         <th>Owner:</th>
-        <td>Cameron (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3282">ACTION-3282</a>)</td>
+        <td>Cameron (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3282">ACTION-3282</a>)</td>
       </tr>
     </table>
   </div>
@@ -1006,7 +1006,7 @@ myElement.addEventListener("click", myAction1, false)
 
   <p id="ScriptElementExecution">Before attempting to execute the <a>'script'</a>
   element the resolved media type value for <a>'script/type'</a> must be inspected.
-  If the <a>SVG user agent</a> does not support the scripting language then the
+  If the <a>NSVG user agent</a> does not support the scripting language then the
   <a>'script'</a> element must not be executed.</p>
 
   <div class="example">
@@ -1018,8 +1018,8 @@ myElement.addEventListener("click", myAction1, false)
 
   <pre class="xml"><![CDATA[
   <?xml version="1.0" standalone="no"?>
-  <svg width="6cm" height="5cm" viewBox="0 0 600 500"
-       xmlns="http://www.w3.org/2000/svg">
+  <nsvg width="6cm" height="5cm" viewBox="0 0 600 500"
+       xmlns="http://www.w3.org/2000/nsvg">
     <desc>Example script01 - invoke an ECMAScript function from an onclick event
     </desc>
     <!-- ECMAScript to change the radius with each click -->
@@ -1046,7 +1046,7 @@ myElement.addEventListener("click", myAction1, false)
 
       Click on circle to change its size
     </text>
-  </svg>
+  </nsvg>
   ]]></pre>
 
   <!--
@@ -1055,7 +1055,7 @@ myElement.addEventListener("click", myAction1, false)
     -->
   <table >
     <caption>An example demonstrating the effect of the <a>'onclick'</a> event
-    handler on an SVG shape.</caption>
+    handler on an NSVG shape.</caption>
     <tbody>
       <tr>
         <td><img alt="An example demonstrating how to invoke an ECMAScript function from an onclick event — before first click" src="images/script/script01.png"/>&nbsp;
@@ -1063,7 +1063,7 @@ myElement.addEventListener("click", myAction1, false)
       </tr>
     </tbody>
   </table>
-  <p class="view-as-svg"><a href="images/script/script01.svg">View this example as SVG (SVG-enabled browsers only)</a></p>
+  <p class="view-as-nsvg"><a href="images/script/script01.nsvg">View this example as NSVG (NSVG-enabled browsers only)</a></p>
   </div>
 
 
@@ -1147,24 +1147,24 @@ myElement.addEventListener("click", myAction1, false)
 
 <h2 id="DOMInterfaces">DOM interfaces</h2>
 
-<h3 id="InterfaceSVGScriptElement">Interface SVGScriptElement</h3>
+<h3 id="InterfaceNSVGScriptElement">Interface NSVGScriptElement</h3>
 
 <edit:with element="script">
 
-<p>An <a>SVGScriptElement</a> object represents a <a>'script'</a> element in the DOM.</p>
+<p>An <a>NSVGScriptElement</a> object represents a <a>'script'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGScriptElement</b> : <a>SVGElement</a> {
-  attribute DOMString <a href="interact.html#__svg__SVGScriptElement__type">type</a>;
-  attribute DOMString? <a href="interact.html#__svg__SVGScriptElement__crossOrigin">crossOrigin</a>;
+interface <b>NSVGScriptElement</b> : <a>NSVGElement</a> {
+  attribute DOMString <a href="interact.html#__nsvg__NSVGScriptElement__type">type</a>;
+  attribute DOMString? <a href="interact.html#__nsvg__NSVGScriptElement__crossOrigin">crossOrigin</a>;
 };
 
-<a>SVGScriptElement</a> includes <a>SVGURIReference</a>;</pre>
+<a>NSVGScriptElement</a> includes <a>NSVGURIReference</a>;</pre>
 
-<p>The <b id="__svg__SVGScriptElement__type">type</b> IDL attribute
+<p>The <b id="__nsvg__NSVGScriptElement__type">type</b> IDL attribute
 <a>reflects</a> the <a>'type'</a> content attribute.</p>
 
-<p>The <b id="__svg__SVGScriptElement__crossOrigin">crossOrigin</b> IDL
+<p>The <b id="__nsvg__NSVGScriptElement__crossOrigin">crossOrigin</b> IDL
 attribute <a>reflects</a> the <a>'crossorigin'</a> content attribute.</p>
 
 </edit:with>

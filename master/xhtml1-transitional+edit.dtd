@@ -452,7 +452,7 @@
   %i18n;
   id          ID             #IMPLIED
   xmlns       %URI;          #FIXED 'http://www.w3.org/1999/xhtml'
-  xmlns:edit       %URI;          #FIXED 'http://xmlns.grorg.org/SVGT12NG/'
+  xmlns:edit       %URI;          #FIXED 'http://xmlns.grorg.org/NSVGT12NG/'
   >
 
 <!--================ Document Head =======================================-->

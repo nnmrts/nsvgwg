@@ -1,18 +1,18 @@
 <?xml version="1.0"?> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
-  <title>SVG Paths</title>
+  <title>NSVG Paths</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-  <link rel="stylesheet" title="Default" type="text/css" href="style/default_svg.css"/>
+  <link rel="stylesheet" title="Default" type="text/css" href="style/default_nsvg.css"/>
   <link rel="alternate stylesheet" title="No issues/annotations" type="text/css" href="style/default_no_issues.css"/>
-  <style>.svg2-requirement { display: none !important; }</style>
+  <style>.nsvg2-requirement { display: none !important; }</style>
 </head>
 <body>
 
 <div class="head">
   <p><a href="https://www.w3.org/"><img height="39" width="77" alt="W3C" src="https://www.w3.org/Icons/w3c_home"/></a></p>
-  <h1 id="pagetitle">SVG Paths</h1>
+  <h1 id="pagetitle">NSVG Paths</h1>
   <h2 id="pagesubtitle">W3C <edit:maturity/> <em><edit:date/></em></h2>
   <dl>
     <dt>This version:</dt>
@@ -25,9 +25,9 @@
     <dd><edit:previousversion/></dd>
     -->
     <dt>GitHub repository:</dt>
-    <dd><a href="https://github.com/w3c/svgwg/tree/main/specs/paths">https://github.com/w3c/svgwg/tree/main/specs/paths</a></dd>
+    <dd><a href="https://github.com/w3c/nsvgwg/tree/main/specs/paths">https://github.com/w3c/nsvgwg/tree/main/specs/paths</a></dd>
     <dt>Feedback:</dt>
-    <dd><a href="mailto:www-svg@w3.org" class='url'>www-svg@w3.org</a> with subject line “<code>[svg-paths] … <i>message topic</i> …</code>” (<a href="https://lists.w3.org/Archives/Public/www-svg/">archive</a>)</dd>
+    <dd><a href="mailto:www-nsvg@w3.org" class='url'>www-nsvg@w3.org</a> with subject line “<code>[nsvg-paths] … <i>message topic</i> …</code>” (<a href="https://lists.w3.org/Archives/Public/www-nsvg/">archive</a>)</dd>
     <dt class="top-editors">Editors:</dt>
     <dd>Cyril Concolato, Telecom ParisTech &lt;<a href="mailto:cyril.concolato@telecom-paristech.fr" class='url'>cyril.concolato@telecom-paristech.fr</a>&gt;</dd>
     <dd>Cameron McCormack, Mozilla Corporation &lt;<a href="mailto:cam@mcc.id.au" class='url'>cam@mcc.id.au</a>&gt;</dd>
@@ -43,7 +43,7 @@
 
 <p>This specification defines a syntax and DOM representation for
 paths, which are shapes that can be rendered in a document.
-Paths are primarily used for rendering shapes using the SVG
+Paths are primarily used for rendering shapes using the NSVG
 <a>'path'</a> element, but are also used by a number of other
 Web platform features, such as clipping paths and rendering in an
 HTML <span class='element-name'>'canvas'</span>.</p>
@@ -56,35 +56,35 @@ publications and the latest revision of this technical report can be found in
 the <a href="https://www.w3.org/TR/">W3C technical reports index</a> at https://www.w3.org/TR/</em>.</p>
 
 <p>This document is the <edit:date/> <strong><edit:maturity/></strong> of <edit:shorttitle/>.
-The purpose of this specification is to define a number of improved SVG stroking
+The purpose of this specification is to define a number of improved NSVG stroking
 features.</p>
 
 <p class="note">This specification is an early draft that largely contains
-features that were dropped during the development of SVG 2.
+features that were dropped during the development of NSVG 2.
 In the future, this specification will supercede the
-<a href="https://www.w3.org/TR/SVG2/paths.html">SVG 2 Paths chapter</a>,
-however at this time the <a href="https://www.w3.org/TR/SVG2/paths.html">SVG 2 Paths chapter</a>
-must be considered the normative definition for SVG Paths.</p>
+<a href="https://www.w3.org/TR/NSVG2/paths.html">NSVG 2 Paths chapter</a>,
+however at this time the <a href="https://www.w3.org/TR/NSVG2/paths.html">NSVG 2 Paths chapter</a>
+must be considered the normative definition for NSVG Paths.</p>
 
 <p>Comments on this <edit:maturity/> are welcome.
-Comments can be sent to <a href="mailto:www-svg@w3.org" class='url'>www-svg@w3.org</a>,
+Comments can be sent to <a href="mailto:www-nsvg@w3.org" class='url'>www-nsvg@w3.org</a>,
 the public email list for issues related to vector graphics on the Web. This list is
-<a href="https://lists.w3.org/Archives/Public/www-svg/">archived</a> and
+<a href="https://lists.w3.org/Archives/Public/www-nsvg/">archived</a> and
 senders must agree to have their message publicly archived from their
 first posting. To subscribe send an email to
-<a href="mailto:www-svg-request@w3.org" class='url'>www-svg-request@w3.org</a> with
+<a href="mailto:www-nsvg-request@w3.org" class='url'>www-nsvg-request@w3.org</a> with
 the word <code>subscribe</code> in the subject line.</p>
 
 <p>This document has been produced by the
-<a href="https://www.w3.org/Graphics/SVG/WG">W3C SVG Working Group</a> as part of
+<a href="https://www.w3.org/Graphics/NSVG/WG">W3C NSVG Working Group</a> as part of
 the <a href="https://www.w3.org/Graphics/Activity">Graphics Activity</a> within
 the <a href="https://www.w3.org/Interaction/">W3C Interaction Domain</a>. The
-goals of the W3C SVG Working Group are discussed in the
-<a href="https://www.w3.org/Graphics/SVG/svg-2019.html">W3C SVG Charter</a>.
-The W3C SVG Working Group maintains a public Web page,
-<a href="https://www.w3.org/Graphics/SVG/" class='url'>https://www.w3.org/Graphics/SVG/</a>,
+goals of the W3C NSVG Working Group are discussed in the
+<a href="https://www.w3.org/Graphics/NSVG/nsvg-2019.html">W3C NSVG Charter</a>.
+The W3C NSVG Working Group maintains a public Web page,
+<a href="https://www.w3.org/Graphics/NSVG/" class='url'>https://www.w3.org/Graphics/NSVG/</a>,
 that contains further background information. The authors of
-this document are the SVG Working Group participants.</p>
+this document are the NSVG Working Group participants.</p>
 
 <p>This document was produced by a group operating under the
 <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 W3C Patent Policy</a>.
@@ -110,13 +110,13 @@ may be updated, replaced, or obsoleted by other documents at any time.</p>
 <!--
 <h2 id="feedback" edit:toc="no">How to read this document and give feedback</h2>
 
-<p>This draft of SVG Integration introduces new normative prose for
-integrating the SVG language into other markup languages. One of
+<p>This draft of NSVG Integration introduces new normative prose for
+integrating the NSVG language into other markup languages. One of
 the goals is that this specification can be re-used more easily by
 other specifications that want to have well-defined interaction and
-interoperability with SVG. Future drafts of this specification may
-introduce syntax and markup for the SVG language that may not be
-backwards compatible with older SVG User Agents, and the use of this
+interoperability with NSVG. Future drafts of this specification may
+introduce syntax and markup for the NSVG language that may not be
+backwards compatible with older NSVG User Agents, and the use of this
 syntax should be accompanied by a fallback using the <a>'switch'</a>
 element.</p>
 -->
@@ -138,10 +138,10 @@ element.</p>
   stroked. A path can also be used as a clipping path, to describe
   animation, or position text. A path can be used for more than one of
   these functions at the same time. (See
-  <a href="[SVG2]/painting.html">Filling, Stroking and Paint Servers</a>,
-  <a href="[SVG2]/render.html#ClippingAndMasking">Clipping and Masking</a>,
+  <a href="[NSVG2]/painting.html">Filling, Stroking and Paint Servers</a>,
+  <a href="[NSVG2]/render.html#ClippingAndMasking">Clipping and Masking</a>,
   Animation (<a href="[Animations]#AnimateMotionElement">'animateMotion'</a>),
-  and <a href="[SVG2]/text.html#TextLayoutPath">Text on a Path</a>.)
+  and <a href="[NSVG2]/text.html#TextLayoutPath">Text on a Path</a>.)
 </p>
 
 <p>A path is described using the concept of a current point. In
@@ -162,15 +162,15 @@ Compound paths (i.e., a path with multiple subpaths) are
 possible to allow effects such as "donut holes" in objects.</p>
 
 <p>This chapter describes the syntax, behavior and DOM
-interfaces for SVG paths. Various implementation notes for SVG
+interfaces for NSVG paths. Various implementation notes for NSVG
 paths can be found in <a
 href="#PathElementImplementationNotes"><span
 class="element-name">'path'</span> element implementation
 Notes</a> and <a
-href="[SVG2]/implnote.html#ArcImplementationNotes">Elliptical arc
+href="[NSVG2]/implnote.html#ArcImplementationNotes">Elliptical arc
 implementation notes</a>.</p>
 
-<p>A path is defined in SVG using the <a>'path'</a> element.</p>
+<p>A path is defined in NSVG using the <a>'path'</a> element.</p>
 
 <p>The <a>basic shapes</a> are all described in terms of what their
 <dfn id="TermEquivalentPath">equivalent path</dfn> is, which is
@@ -179,10 +179,10 @@ what their shape is as a path.  (The equivalent path of a
 
 <h2 id="ModuleInteractions">Module interactions</h2>
 
-<p>This specification extends SVG 2 [<a href="#ref-SVG2">SVG2</a>].
-Specifically, it replaces the Paths chapter of SVG 2.</p>
+<p>This specification extends NSVG 2 [<a href="#ref-NSVG2">NSVG2</a>].
+Specifically, it replaces the Paths chapter of NSVG 2.</p>
 
-<h2 id="PathElement">The SVG <span class="element-name">'path'</span> element</h2>
+<h2 id="PathElement">The NSVG <span class="element-name">'path'</span> element</h2>
 
 <edit:elementsummary name='path'/>
 
@@ -197,7 +197,7 @@ Specifically, it replaces the Paths chapter of SVG 2.</p>
       </tr>
       <tr>
         <td><dfn id="DAttribute">d</dfn></td>
-        <td><a href="#PathDataBNF">svg-path</a> <a href="[SVG2]/types.html#syntax" class="syntax">[EBNF]</a></td>
+        <td><a href="#PathDataBNF">nsvg-path</a> <a href="[NSVG2]/types.html#syntax" class="syntax">[EBNF]</a></td>
         <td>(none)</td>
         <td>yes</td>
       </tr>
@@ -205,7 +205,7 @@ Specifically, it replaces the Paths chapter of SVG 2.</p>
   </dt>
   <dd>
     <p>The definition of the outline of a shape. See <a href="#PathData">Path data</a>.
-    Error processing for <a href="#PathDataBNF">svg-path</a> is done according to
+    Error processing for <a href="#PathDataBNF">nsvg-path</a> is done according to
     <a href="#PathDataErrorHandling">Path Data Error Handling</a>.</p>
     <p>Path data animation is only possible when each path data
     specification within an animation specification has exactly
@@ -245,24 +245,24 @@ Specifically, it replaces the Paths chapter of SVG 2.</p>
     scale all distance-along-a-path computations by the ratio
     of <a>'pathLength'</a> to the user
     agent's own computed value for total path length. <a>'pathLength'</a> potentially affects
-    calculations for <a href="[SVG2]/text.html#TextLayoutPath">text on a path</a>,
+    calculations for <a href="[NSVG2]/text.html#TextLayoutPath">text on a path</a>,
     <a href="[Animations]#AnimateMotionElement">motion animation</a> and
-    various <a href="[SVG2]/painting.html#StrokeProperties">stroke operations</a>.</p>
+    various <a href="[NSVG2]/painting.html#StrokeProperties">stroke operations</a>.</p>
     <p>A negative value is an error (see <a href="#PathDataErrorHandling">Error handling</a>).</p>
   </dd>
 </dl>
 
 <h2 id="PathData">Path data</h2>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Include smooth path between points functionality.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="https://www.w3.org/2011/07/27-svg-minutes.html#item11">We will add a Catmull Rom syntax to the path syntax with a tension parameter to control the whole curve (not per-point control).</a></td>
+      <td><a href="https://www.w3.org/2011/07/27-nsvg-minutes.html#item11">We will add a Catmull Rom syntax to the path syntax with a tension parameter to control the whole curve (not per-point control).</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -270,20 +270,20 @@ Specifically, it replaces the Paths chapter of SVG 2.</p>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Doug (<a href="https://www.w3.org/Graphics/SVG/WG/track/actions/3085">ACTION-3085</a>)</td>
+      <td>Doug (<a href="https://www.w3.org/Graphics/NSVG/WG/track/actions/3085">ACTION-3085</a>)</td>
     </tr>
   </table>
 </div>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
+      <th>NSVG 2 Requirement:</th>
       <td>Support turtle-graphics-like current rotation in path syntax.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="https://www.w3.org/2011/07/27-svg-minutes.html#item11">We will add a path rotation command.</a></td>
+      <td><a href="https://www.w3.org/2011/07/27-nsvg-minutes.html#item11">We will add a path rotation command.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -291,7 +291,7 @@ Specifically, it replaces the Paths chapter of SVG 2.</p>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Cameron (<a href="https://www.w3.org/Graphics/SVG/WG/track/actions/3125">ACTION-3125</a>)</td>
+      <td>Cameron (<a href="https://www.w3.org/Graphics/NSVG/WG/track/actions/3125">ACTION-3125</a>)</td>
     </tr>
   </table>
 </div>
@@ -311,7 +311,7 @@ specifies a path in the shape of a triangle. (The
 <strong>L</strong>s indicate <em>lineto</em>s, and the
 <strong>z</strong> indicates a <em>closepath</em>).</p>
 
-<edit:example href='images/triangle01.svg' link='yes' image='yes' name='triangle01' description="simple example of a 'path'"/>
+<edit:example href='images/triangle01.nsvg' link='yes' image='yes' name='triangle01' description="simple example of a 'path'"/>
 
 <p>Path data can contain newline characters and thus can be
 broken up into multiple lines to improve readability.
@@ -319,8 +319,8 @@ Newlines inside attributes in markup will be normalized to space
 characters while parsing.</p>
 
 <p>The syntax of path data is concise in order to allow for
-minimal file size and efficient downloads, since many SVG files
-will be dominated by their path data. Some of the ways that SVG
+minimal file size and efficient downloads, since many NSVG files
+will be dominated by their path data. Some of the ways that NSVG
 attempts to minimize the size of path data are as follows:</p>
 
 <ul>
@@ -524,7 +524,7 @@ position moved to is (<var>cpx</var> + <var>x</var> cos <var>cb</var>
 </ul>
 
 <p class="note">
-  SVG 2 adds the ability to fill in missing coordinate data with
+  NSVG 2 adds the ability to fill in missing coordinate data with
   the <strong>Z</strong> or <strong>z</strong> command to avoid the
   need to add a zero length (or very short in the case of relative
   paths with rounding errors) path segment to close a subpath. This
@@ -535,7 +535,7 @@ position moved to is (<var>cpx</var> + <var>x</var> cos <var>cb</var>
   The use of <strong>Z</strong> or <strong>z</strong> to replace
   missing coordinate data with the coordinate of the initial point in
   a subpath was resolved at the
-  <a href="https://www.w3.org/2015/02/12-svg-minutes.html#item04">Sydney
+  <a href="https://www.w3.org/2015/02/12-nsvg-minutes.html#item04">Sydney
     (2015)</a> meeting.
 </p>
 
@@ -742,7 +742,7 @@ computed automatically as the reflection of the control point
 for the previous "C" command relative to the start point of the
 "S" command.</p>
 
-<edit:example href='images/cubic01.svg' name='cubic01' description='cubic Bézier comamnds in path data' image='yes' link='yes'/>
+<edit:example href='images/cubic01.nsvg' name='cubic01' description='cubic Bézier comamnds in path data' image='yes' link='yes'/>
 
 <p>The following picture shows some how cubic Bézier
 curves change their shape depending on the position of the
@@ -752,8 +752,8 @@ right shows a "C" command followed by an "S" command.</p>
 <p><img
 alt="Example cubic02 - cubic Bézier commands in path data"
  src="images/cubic02.png" width="355" height="355" /></p>
-<p class="view-as-svg"><a href="images/cubic02.svg">View
-this example as SVG (SVG-enabled browsers only)</a><br />
+<p class="view-as-nsvg"><a href="images/cubic02.nsvg">View
+this example as NSVG (NSVG-enabled browsers only)</a><br />
  &nbsp;</p>
 
 <h3 id="PathDataQuadraticBezierCommands">The quadratic Bézier curve commands</h3>
@@ -821,19 +821,19 @@ automatically as the reflection of the control point for the
 previous "Q" command relative to the start point of the "T"
 command.</p>
 
-<edit:example href='images/quad01.svg' name='quad01' description='quadratic Bézier commands in path data' image='yes' link='yes'/>
+<edit:example href='images/quad01.nsvg' name='quad01' description='quadratic Bézier commands in path data' image='yes' link='yes'/>
 
 <h3 id="PathDataEllipticalArcCommands">The elliptical arc curve commands</h3>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
-      <td>Make it simpler to draw arcs in SVG path syntax.</td>
+      <th>NSVG 2 Requirement:</th>
+      <td>Make it simpler to draw arcs in NSVG path syntax.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="https://www.w3.org/2011/11/04-svg-minutes.html#item08">Make arcs in paths easier.</a></td>
+      <td><a href="https://www.w3.org/2011/11/04-nsvg-minutes.html#item08">Make arcs in paths easier.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -841,7 +841,7 @@ command.</p>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Cameron (<a href="https://www.w3.org/Graphics/SVG/WG/track/actions/3151">ACTION-3151</a>)</td>
+      <td>Cameron (<a href="https://www.w3.org/Graphics/NSVG/WG/track/actions/3151">ACTION-3151</a>)</td>
     </tr>
   </table>
 </div>
@@ -891,7 +891,7 @@ also affected by the current bearing: it is computed as
 <p><span class="example-ref">Example arcs01</span> shows some
 simple uses of arc commands within a path.</p>
 
-<edit:example href='images/arcs01.svg' name='arcs01' description='arc commands in path data' image='yes' link='yes'/>
+<edit:example href='images/arcs01.nsvg' name='arcs01' description='arc commands in path data' image='yes' link='yes'/>
 
 <p>The elliptical arc command draws a section of an ellipse
 which meets the following constraints:</p>
@@ -951,11 +951,11 @@ generate the four possible cases.</p>
 
 <p><img alt="Illustration of flags in arc commands"
 src="images/arcs02.png" width="426" height="187" /></p>
-<p class="view-as-svg"><a href="images/arcs02.svg">View
-this example as SVG (SVG-enabled browsers only)</a></p>
+<p class="view-as-nsvg"><a href="images/arcs02.nsvg">View
+this example as NSVG (NSVG-enabled browsers only)</a></p>
 
 <p>Refer to <a
-href="[SVG2]/implnote.html#ArcImplementationNotes">Elliptical arc
+href="[NSVG2]/implnote.html#ArcImplementationNotes">Elliptical arc
 implementation notes</a> for detailed implementation notes for
 the path data elliptical arc commands.</p>
 
@@ -1067,7 +1067,7 @@ it is possible to set the bearing to that tangent by using
   <p>The example below shows how bearing commands can be used
   to draw a regular pentagon.</p>
 
-  <pre class="xml"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg"
+  <pre class="xml"><![CDATA[<nsvg xmlns="http://www.w3.org/2000/nsvg"
      width="300" height="100" viewBox="0 0 300 100">
 
   <path fill="#eee"
@@ -1078,10 +1078,10 @@ it is possible to set the bearing to that tangent by using
            b 72 h 47
            b 72 h 47 z"/>
 
-</svg>]]></pre>
+</nsvg>]]></pre>
 
   <div class="figure">
-    <img class="bordered" src="images/bearing01.svg"
+    <img class="bordered" src="images/bearing01.nsvg"
          alt="Image showing the use of the bearing command."/>
     <p class="caption">Bearing commands can be used to position
     the end points of the sides of a regular polygon without
@@ -1096,10 +1096,10 @@ it is possible to set the bearing to that tangent by using
 
 <p class="issue" data-issue="13">Update for new 'Z'/'z' behavior.</p>
 
-<p>SVG path data matches the following EBNF grammar.</p>
+<p>NSVG path data matches the following EBNF grammar.</p>
 
 <pre class='grammar ready-for-wg-review'>
-svg_path::= wsp* moveto? (moveto drawto_command*)?
+nsvg_path::= wsp* moveto? (moveto drawto_command*)?
 
 drawto_command::=
     moveto
@@ -1237,20 +1237,20 @@ If path data not matching the grammar is encountered, then the path data is in e
 
 <h3 id="PathDataErrorHandling">Error handling in path data</h3>
 
-<p>A conforming SVG user agent must implement path rendering as follows:</p>
+<p>A conforming NSVG user agent must implement path rendering as follows:</p>
 
 <ul>
   <li>
     Error handling:
     <ul>
       <li>The general rule for error handling in path data is
-      that the SVG user agent shall render a <a>'path'</a> element up
+      that the NSVG user agent shall render a <a>'path'</a> element up
       to (but not including) the path command containing the
       first error in the path data specification. This will
       provide a visual clue to the user or developer about
       where the error might be in the path data specification.
       This rule will greatly discourage generation of invalid
-      SVG path data.</li>
+      NSVG path data.</li>
 
       <li>If a path data command contains an incorrect set of
       parameters, then the given path data command is rendered
@@ -1265,7 +1265,7 @@ If path data not matching the grammar is encountered, then the path data is in e
       reporting since <span class='attr-value'>'L 20 20'</span>
       is the last correctly defined segment of the path data specification.</li>
 
-      <li>Wherever possible, all SVG user agents shall report
+      <li>Wherever possible, all NSVG user agents shall report
       all errors to the user.</li>
     </ul>
   </li>
@@ -1304,7 +1304,7 @@ If path data not matching the grammar is encountered, then the path data is in e
       start and end points to align with the positive x-axis in
       local coordinate system.</li>
 
-      <li>As mentioned in <a href="[SVG2]/painting.html#StrokeProperties">Stroke Properties</a>,
+      <li>As mentioned in <a href="[NSVG2]/painting.html#StrokeProperties">Stroke Properties</a>,
       linecaps must be painted for zero length subpaths when
       <a>'stroke-linecap'</a> has a value of
       <span class='prop-value'>round</span> or
@@ -1337,9 +1337,9 @@ If path data not matching the grammar is encountered, then the path data is in e
 <h2 id="DistanceAlongAPath">Distance along a path</h2>
 
 <p>Various operations, including <a
-href="[SVG2]/text.html#TextLayoutPath">text on a path</a> and <a
+href="[NSVG2]/text.html#TextLayoutPath">text on a path</a> and <a
 href="[Animations]#AnimateMotionElement">motion animation</a>
-and various <a href="[SVG2]/painting.html#StrokeProperties">stroke
+and various <a href="[NSVG2]/painting.html#StrokeProperties">stroke
 operations</a>, require that the user agent compute the
 distance along the geometry of a graphics element, such as a <a>'path'</a>.</p>
 
@@ -1363,13 +1363,13 @@ commands contribute to path length calculations.</p>
 
 <h2 id="DOMInterfaces">DOM interfaces</h2>
 
-<h3 id="InterfaceSVGPathSegment">Interface SVGPathSegment</h3>
+<h3 id="InterfaceNSVGPathSegment">Interface NSVGPathSegment</h3>
 
-The <a>SVGPathSegment</a> interface is a base interface that corresponds to a
+The <a>NSVGPathSegment</a> interface is a base interface that corresponds to a
 single command within a path data specification.
 
 <pre class="idl">[NoInterfaceObject]
-interface <b>SVGPathSegment</b> {
+interface <b>NSVGPathSegment</b> {
   DOMString type;
   sequence&lt;float> values;
 };</pre>
@@ -1378,11 +1378,11 @@ interface <b>SVGPathSegment</b> {
   <dt class="attributes-header">Attributes:</dt>
   <dd>
     <dl class="attributes">
-      <dt id="__svg__SVGPathSegment__type" class="attribute first-child"><b>type</b><span class="idl-type-parenthetical"> (DOMString)</span></dt>
+      <dt id="__nsvg__NSVGPathSegment__type" class="attribute first-child"><b>type</b><span class="idl-type-parenthetical"> (DOMString)</span></dt>
       <dd class="attribute">
         <div>The type of the path segment as specified in the path grammar.</div>
       </dd>
-      <dt id="__svg__SVGPathSeg__pathSegTypeAsLetter" class="attribute"><b>values</b><span class="idl-type-parenthetical"> (sequence&lt;float>)</span></dt>
+      <dt id="__nsvg__NSVGPathSeg__pathSegTypeAsLetter" class="attribute"><b>values</b><span class="idl-type-parenthetical"> (sequence&lt;float>)</span></dt>
       <dd class="attribute">
         <div>The values corresponding to the path segment.</div>
       </dd>
@@ -1390,25 +1390,25 @@ interface <b>SVGPathSegment</b> {
   </dd>
 </dl>
 
-<h3 id="InterfaceSVGPathData" data-dfn-type="interface" data-lt="SVGPathData">Mixin SVGPathData</h3>
+<h3 id="InterfaceNSVGPathData" data-dfn-type="interface" data-lt="NSVGPathData">Mixin NSVGPathData</h3>
 
-The <a>SVGPathData</a> interface provides a way to get and set path data.
+The <a>NSVGPathData</a> interface provides a way to get and set path data.
 
 <pre class="idl">
-dictionary <b id="InterfaceSVGPathDataSettings">SVGPathDataSettings</b> {
+dictionary <b id="InterfaceNSVGPathDataSettings">NSVGPathDataSettings</b> {
    boolean normalize = false;
 }
 
-interface mixin <b>SVGPathData</b> {
-   sequence&lt;<a>SVGPathSegment</a>> getPathData(optional <a>SVGPathDataSettings</a> settings = {});
-   undefined setPathData(sequence&lt;<a>SVGPathSegment</a>> pathData);
+interface mixin <b>NSVGPathData</b> {
+   sequence&lt;<a>NSVGPathSegment</a>> getPathData(optional <a>NSVGPathDataSettings</a> settings = {});
+   undefined setPathData(sequence&lt;<a>NSVGPathSegment</a>> pathData);
 };</pre>
 
 <dl class="interface">
   <dt class="operations-header">Operations:</dt>
   <dd>
     <dl class="attributes">
-      <dt id="__svg__SVGPathData__getPathData" class="operation first-child">sequence&lt;<a>SVGPathSegment</a>> <b>getPathData</b>(optional <a>SVGPathDataSettings</a> <var>settings</var>)</dt>
+      <dt id="__nsvg__NSVGPathData__getPathData" class="operation first-child">sequence&lt;<a>NSVGPathSegment</a>> <b>getPathData</b>(optional <a>NSVGPathDataSettings</a> <var>settings</var>)</dt>
         <dd class="operation">
         <div>Returns the sequence of path segments that corresponds to the
              path data, optionally normalizing the values and segment types.
@@ -1419,7 +1419,7 @@ interface mixin <b>SVGPathData</b> {
           <dd>
             <ol class="parameters">
               <li class="parameter first-child">
-                <div>optional <a>SVGPathDataSettings</a> <var>settings</var></div>
+                <div>optional <a>NSVGPathDataSettings</a> <var>settings</var></div>
                 <div>The settings for the operation, if normalize is set to true then
                 the returned sequence of path segments is converted to the base set of
                 absolute commands ('M', 'L', 'C' and 'Z'), with the values adjusted
@@ -1433,7 +1433,7 @@ interface mixin <b>SVGPathData</b> {
           </dd>
         </dl>
       </dd>
-      <dt id="__svg__SVGPathData__setPathData" class="operation">undefined <b>setPathData</b>(sequence&lt;<a>SVGPathSegment</a>> <var>pathData</var>)</dt>
+      <dt id="__nsvg__NSVGPathData__setPathData" class="operation">undefined <b>setPathData</b>(sequence&lt;<a>NSVGPathSegment</a>> <var>pathData</var>)</dt>
         <dd class="operation">
         <div>
           Sets the sequence of path segments as the new path data.
@@ -1443,7 +1443,7 @@ interface mixin <b>SVGPathData</b> {
           <dd>
             <ol class="parameters">
               <li class="parameter first-child">
-                <div>sequence&lt;<a>SVGPathSegment</a>> <var>pathData</var></div>
+                <div>sequence&lt;<a>NSVGPathSegment</a>> <var>pathData</var></div>
                 <div>The sequence of path segments.</div>
               </li>
             </ol>
@@ -1454,28 +1454,28 @@ interface mixin <b>SVGPathData</b> {
   </dd>
 </dl>
 
-<h3 id="InterfaceSVGPathElement">Interface SVGPathElement</h3>
+<h3 id="InterfaceNSVGPathElement">Interface NSVGPathElement</h3>
 
-The <a>SVGPathElement</a> interface corresponds to the <a>'path'</a>
+The <a>NSVGPathElement</a> interface corresponds to the <a>'path'</a>
 element.
-The <a>SVGPathData</a> interface corresponds to the typed value of the <a>'d'</a> geometry property.
+The <a>NSVGPathData</a> interface corresponds to the typed value of the <a>'d'</a> geometry property.
 
-<pre class="idl">interface <b>SVGPathElement</b> : <a>SVGGeometryElement</a> {
+<pre class="idl">interface <b>NSVGPathElement</b> : <a>NSVGGeometryElement</a> {
 
-  readonly attribute <a>SVGAnimatedNumber</a> <a href="#__svg__SVGPathElement__pathLength">pathLength</a>;
+  readonly attribute <a>NSVGAnimatedNumber</a> <a href="#__nsvg__NSVGPathElement__pathLength">pathLength</a>;
 
-  float <a href="#__svg__SVGPathElement__getTotalLength">getTotalLength</a>();
-  <a>DOMPoint</a> <a href="#__svg__SVGPathElement__getPointAtLength">getPointAtLength</a>(float distance);
-  <a>SVGPathSegment</a>? <a href="#__svg__SVGPathElement__getPathSegmentAtLength">getPathSegmentAtLength</a>(float distance);
+  float <a href="#__nsvg__NSVGPathElement__getTotalLength">getTotalLength</a>();
+  <a>DOMPoint</a> <a href="#__nsvg__NSVGPathElement__getPointAtLength">getPointAtLength</a>(float distance);
+  <a>NSVGPathSegment</a>? <a href="#__nsvg__NSVGPathElement__getPathSegmentAtLength">getPathSegmentAtLength</a>(float distance);
 };
 
-<a>SVGPathElement</a> includes <a>SVGPathData</a>;</pre>
+<a>NSVGPathElement</a> includes <a>NSVGPathData</a>;</pre>
 
 <dl class="interface">
   <dt class="attributes-header">Attributes:</dt>
   <dd>
     <dl class="attributes">
-      <dt id="__svg__SVGPathElement__pathLength" class="attribute first-child"><b>pathLength</b><span class="idl-type-parenthetical"> (readonly <a>SVGAnimatedNumber</a>)</span></dt>
+      <dt id="__nsvg__NSVGPathElement__pathLength" class="attribute first-child"><b>pathLength</b><span class="idl-type-parenthetical"> (readonly <a>NSVGAnimatedNumber</a>)</span></dt>
       <dd class="attribute">
         <div>Corresponds to attribute <a>pathLength</a> on the given <a>'path'</a>
         element.</div>
@@ -1485,7 +1485,7 @@ The <a>SVGPathData</a> interface corresponds to the typed value of the <a>'d'</a
   <dt class="operations-header">Operations:</dt>
   <dd>
     <dl class="attributes">
-      <dt id="__svg__SVGPathElement__getTotalLength" class="operation first-child">float <b>getTotalLength</b>()</dt>
+      <dt id="__nsvg__NSVGPathElement__getTotalLength" class="operation first-child">float <b>getTotalLength</b>()</dt>
       <dd class="operation">
         <div>Returns the user agent's computed value for the total length of the path
         using the user agent's distance-along-a-path algorithm, as a distance
@@ -1497,7 +1497,7 @@ The <a>SVGPathData</a> interface corresponds to the typed value of the <a>'d'</a
           </dd>
         </dl>
       </dd>
-      <dt id="__svg__SVGPathElement__getPointAtLength" class="operation"><a>DOMPoint</a> <b>getPointAtLength</b>(float <var>distance</var>)</dt>
+      <dt id="__nsvg__NSVGPathElement__getPointAtLength" class="operation"><a>DOMPoint</a> <b>getPointAtLength</b>(float <var>distance</var>)</dt>
       <dd class="operation">
         <div>Returns the (x,y) coordinate in local coordinate system which is <var>distance</var>
         units along the path, utilizing the user agent's distance-along-a-path
@@ -1522,9 +1522,9 @@ The <a>SVGPathData</a> interface corresponds to the typed value of the <a>'d'</a
           </dd>
         </dl>
       </dd>
-      <dt id="__svg__SVGPathElement__getPathSegmentAtLength" class="operation"><a>SVGPathSegment</a>? <b>getPathSegmentAtLength</b>(float <var>distance</var>)</dt>
+      <dt id="__nsvg__NSVGPathElement__getPathSegmentAtLength" class="operation"><a>NSVGPathSegment</a>? <b>getPathSegmentAtLength</b>(float <var>distance</var>)</dt>
       <dd class="operation">
-        <div>Returns the <a>SVGPathSegment</a> which is <var>distance</var>
+        <div>Returns the <a>NSVGPathSegment</a> which is <var>distance</var>
         units along the path, utilizing the user agent's distance-along-a-path
         algorithm. The <var>distance</var> shall be clamped to the range
         [0, <em>total-length-of-path</em>] before passing it to the distance-along-a-path algorithm.
@@ -1562,20 +1562,20 @@ The <a>SVGPathData</a> interface corresponds to the typed value of the <a>'d'</a
   <br />Available at https://tools.ietf.org/html/rfc2119.</dd>
 
 <!--
-  <dt id="ref-SVG11"><strong class="normref">[SVG11]</strong></dt>
-  <dd><cite class="w3crec"><a href="http://www.w3.org/TR/2003/REC-SVG11-20030114/">Scalable Vector Graphics (SVG) 1.1</a></cite>,
+  <dt id="ref-NSVG11"><strong class="normref">[NSVG11]</strong></dt>
+  <dd><cite class="w3crec"><a href="http://www.w3.org/TR/2003/REC-NSVG11-20030114/">Not Scalable Vector Graphics (NSVG) 1.1</a></cite>,
   J. Ferraiolo, <span class="ruby"><span class="rb">&#x85E4;&#x6CA2; &#x6DF3;</span><span class="rp">(</span><span class="rt"><span class="familyname">Fujisawa</span> Jun</span><span class="rp">)</span></span>, D. Jackson, eds.
   World Wide Web Consortium, 14 January 2003.
-  <br />This edition of SVG 1.1 is http://www.w3.org/TR/2003/REC-SVG11-20030114/.
-  <br />The <a href="http://www.w3.org/TR/SVG11/">latest edition of SVG 1.1</a> is available at http://www.w3.org/TR/SVG11/.</dd>
+  <br />This edition of NSVG 1.1 is http://www.w3.org/TR/2003/REC-NSVG11-20030114/.
+  <br />The <a href="http://www.w3.org/TR/NSVG11/">latest edition of NSVG 1.1</a> is available at http://www.w3.org/TR/NSVG11/.</dd>
 -->
 
-  <dt id="ref-SVG2"><strong class="normref">[SVG2]</strong></dt>
-  <dd><cite class="w3cwd"><a href="https://www.w3.org/TR/2015/WD-SVG2-20150409/">Scalable Vector Graphics (SVG) 2</a></cite>,
+  <dt id="ref-NSVG2"><strong class="normref">[NSVG2]</strong></dt>
+  <dd><cite class="w3cwd"><a href="https://www.w3.org/TR/2015/WD-NSVG2-20150409/">Not Scalable Vector Graphics (NSVG) 2</a></cite>,
   N. Andronikos, T. Bah, A. Bellamy-Royds, B. Birtles, C. Concolato, E. Dahlström, C. Lilley, C. McCormack, D. Schepers, D. Schulze, R. Schwerdtfeger, S. Takagi, J. Watt, eds.
   World Wide Web Consortium, 09 April 2015.
-  <br />This edition of SVG 2 is http://www.w3.org/TR/2015/WD-SVG2-20150409/.
-  <br />The <a href="https://www.w3.org/TR/SVG2/">latest edition of SVG 2</a> is available at https://www.w3.org/TR/SVG2/.</dd>
+  <br />This edition of NSVG 2 is http://www.w3.org/TR/2015/WD-NSVG2-20150409/.
+  <br />The <a href="https://www.w3.org/TR/NSVG2/">latest edition of NSVG 2</a> is available at https://www.w3.org/TR/NSVG2/.</dd>
 
   <dt id="ref-UNICODE" class="normref">[UNICODE]</dt>
   <dd>
@@ -1592,11 +1592,11 @@ The <a>SVGPathData</a> interface corresponds to the typed value of the <a>'d'</a
 </dl>
 -->
 
-<h2 id="ChangesSinceSVG2">Changes since SVG 2</h2>
+<h2 id="ChangesSinceNSVG2">Changes since NSVG 2</h2>
 
 <ul>
   <li>Added the Catmull-Rom curve commands.</li>
-  <li>Replaced the SVGPathSeg DOM API with a new one, <a>SVGPathSegment</a> and <a>SVGPathData</a>.</li>
+  <li>Replaced the NSVGPathSeg DOM API with a new one, <a>NSVGPathSegment</a> and <a>NSVGPathData</a>.</li>
 </ul>
 
 <!--

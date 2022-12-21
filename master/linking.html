@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional+edit//EN" "xhtml1-transitional+edit.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/SVGT12NG/">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:edit="http://xmlns.grorg.org/NSVGT12NG/">
 <head>
   <title>Linking</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -9,7 +9,7 @@
   <!-- Style sheets for local dev. Will be standardized in processing.
   Add attribute data-keep="" to any extra stylesheet link you do not want removed
   (or use <style>), and include it before here. -->
-  <link rel="stylesheet" href="style/svg.css" type="text/css" />
+  <link rel="stylesheet" href="style/nsvg.css" type="text/css" />
   <link rel="stylesheet" href="style/W3C-ED.css" type="text/css" />
 </head>
 <body>
@@ -22,11 +22,11 @@
 
 <p>On the Internet, resources are identified using <a>URLs</a>
 (Internationalized Resource Identifiers). For
-example, an SVG file called someDrawing.svg located at
+example, an NSVG file called someDrawing.nsvg located at
 http://example.com might have the following <a>URL</a>:</p>
 
 <pre>
-http://example.com/someDrawing.svg
+http://example.com/someDrawing.nsvg
 </pre>
 
 <p>An <a>URL</a> can also address a particular element within an XML
@@ -35,17 +35,17 @@ identifier as part of the <a>URL</a>. An <a>URL</a> which includes an
 <a>URL</a> fragment identifier consists of an optional base <a>URL</a>, followed by a "#" character,
 followed by the <a>URL</a> fragment identifier. For example, the
 following <a>URL</a> can be used to specify the element whose ID is
-"Lamppost" within file someDrawing.svg:</p>
+"Lamppost" within file someDrawing.nsvg:</p>
 
 <pre>
-http://example.com/someDrawing.svg#Lamppost
+http://example.com/someDrawing.nsvg#Lamppost
 </pre>
 
 <!-- from 1.2T - add this too?
 
 <h4 id="AlteringHref">Altering the <span class="attr-name">'href'</span> attribute</h4>
 
-<p>If the <a href="https://svgwg.org/specs/animations/#HrefAttribute"><span class="attr-name">'href'</span></a>
+<p>If the <a href="https://nsvgwg.org/specs/animations/#HrefAttribute"><span class="attr-name">'href'</span></a>
 attribute of an element in the tree is altered by any means (e.g. script, declarative
 animation) such that a new resource is referenced, the new resource must replace
 the existing resource, and must be rendered as appropriate.  For specific effects
@@ -143,7 +143,7 @@ in XML documents, to identify resources. <a>URLs</a> can be converted to URIs
 for resolution on a network, if the protocol does not support <a>URLs</a>
 directly.</p>
 
-<p>Previous versions of SVG, following XLink, defined an URL reference type
+<p>Previous versions of NSVG, following XLink, defined an URL reference type
 as a URI <em>or as a sequence of characters which must result in an URL after a
 particular escaping procedure was applied</em>. The escaping procedure was repeated in the
 XLink 1.0 specification [<a href="refs.html#ref-xlink">xlink</a>], and in the
@@ -160,7 +160,7 @@ escaping procedure and to refer to <a>URL</a> directly.</p>
 
 <h3 id="URLforms">Syntactic forms: URL and &lt;url&gt;</h3>
 
-<p>In SVG, most structural relationships between two elements
+<p>In NSVG, most structural relationships between two elements
 are specified using a <a>URL</a> value in an <a href="#linkRefAttrs"><span
 class="attr-name">'href'</span></a> attribute.</p>
 
@@ -171,7 +171,7 @@ The linking guidelines in this chapter apply to URLs specified with either synta
 </p>
 
 <p>The <a>URL</a> data type is a simple URL string.
-In SVG, most structural relationships between two elements
+In NSVG, most structural relationships between two elements
 are specified using a <a>URL</a> value in an <a href="#linkRefAttrs"><span
 class="attr-name">'href'</span></a> attribute.
 </p>
@@ -184,7 +184,7 @@ may be used for <a>presentation attributes</a> and their corresponding CSS prope
 <p><a>URL</a> is not a valid value for <a>presentation attributes</a> for structural
 relationships purposes. No non-<a>presentation attribute</a> allows <a>&lt;url&gt;</a> as value.</p>
 
-<p>SVG makes extensive use of <a>URL</a> references, both absolute and relative,
+<p>NSVG makes extensive use of <a>URL</a> references, both absolute and relative,
 to other objects.
 For example, a <a>'linearGradient'</a> element
 may be based on another gradient element,
@@ -222,7 +222,7 @@ is the ID of the referenced element.</p>
 <span class="attr-value">#xpointer(id(&lt;elementID&gt;))</span>)
 are formulated in syntaxes compatible with "XML Pointer Language (XPointer)"
 [<a href="https://www.w3.org/TR/xptr">XPTR</a>]. These two formulations of URL
-references are the only XPointer formulations that are required in SVG 1.1 user
+references are the only XPointer formulations that are required in NSVG 1.1 user
 agents.)</p>
 
 -->
@@ -240,16 +240,16 @@ attribute must be a URL.</p>
 a value is an <a>URL reference</a>, this specification follows the lead
 of the <a href="http://www.ietf.org/rfc/rfc3986.txt">URL Specification</a>
 in this matter and imposes no such conformance testing
-requirement on <a>SVG authoring tools</a>.
-An invalid URL does not make an SVG document non-conforming.
-SVG user agents are only required to process URLs when needed,
+requirement on <a>NSVG authoring tools</a>.
+An invalid URL does not make an NSVG document non-conforming.
+NSVG user agents are only required to process URLs when needed,
 as specified in <a href="#processingURL">Processing of URL references</a>.
 </p>
 
 
 <h3 id="XLinkRefAttrs">Deprecated XLink URL reference attributes</h3>
 
-<p>In previous versions of SVG, the <span class="attr-name">'href'</span>
+<p>In previous versions of NSVG, the <span class="attr-name">'href'</span>
 attribute was specified in the XLink namespace [<a
 href="refs.html#ref-xlink">xlink</a>] namespace.
 This usage is now deprecated and instead <a>URL references</a> should be
@@ -290,7 +290,7 @@ been deprecated.</p>
     value of the attribute without a namespace shall be used. The attribute in
     the XLink namespace shall be ignored.</p>
 
-    <p>A <a>conforming SVG generator</a> must generate <span
+    <p>A <a>conforming NSVG generator</a> must generate <span
     class="attr-name">'href'</span> attributes without a namespace.
     However, it may <em>also</em> generate <span class="attr-name">'href'</span>
     attributes in the XLink namespace to provide backwards compatibility.</p>
@@ -340,13 +340,13 @@ been deprecated.</p>
 
 One simple way to provide such an XLink namespace declaration
 is to include an <span class="attr-name">'xmlns'</span> attribute
-for the XLink namespace on the <a>'svg'</a> element for content that uses
+for the XLink namespace on the <a>'nsvg'</a> element for content that uses
 XLink attributes. For example:</p>
 
 <pre class='xml'><![CDATA[
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" ...>
+<nsvg xmlns:xlink="http://www.w3.org/1999/xlink" ...>
   <image xlink:href="foo.png" .../>
-</svg>
+</nsvg>
 ]]></pre>
 
 
@@ -429,9 +429,9 @@ The absolute URL should be generated using one of the following methods:
 <p class="note">
   The <a href="https://www.w3.org/TR/xmlbase/#syntax"><span class="attr-name">'xml:base'</span></a> attribute
   will only have an effect in XML documents;
-  this includes SVG documents and XHTML documents but not HTML documents that are not XML.
+  this includes NSVG documents and XHTML documents but not HTML documents that are not XML.
   In contrast, a <a class="html" href="https://html.spec.whatwg.org/multipage/semantics.html#the-base-element"><code>base</code></a> element
-  affects relative URLs in any SVG or HTML document,
+  affects relative URLs in any NSVG or HTML document,
   by altering the <a href="https://html.spec.whatwg.org/multipage/urls-and-fetching.html#document-base-url">document base URL</a>.
 </p>
 
@@ -450,9 +450,9 @@ in section 3.1 of the <a href="http://www.ietf.org/rfc/rfc3987.txt">URL specific
       <a>'a/target'</a> browsing context and security restrictions between browsing contexts,
       and on whether the link is to the same document as is currently contained in that browsing context
       (in which case the fragment is navigated without reloading the document).
-      If the document that was navigated was an SVG document,
+      If the document that was navigated was an NSVG document,
       then adjust the target behavior as described in
-      <a href="#LinksIntoSVG">Linking into SVG content</a>.
+      <a href="#LinksIntoNSVG">Linking into NSVG content</a>.
     </p>
   </li>
   <li>
@@ -467,7 +467,7 @@ in section 3.1 of the <a href="http://www.ietf.org/rfc/rfc3987.txt">URL specific
   </li>
   <li>
     <p>
-      In all other cases, the URL is for a resource to be used in this SVG document.
+      In all other cases, the URL is for a resource to be used in this NSVG document.
       The user agent must parse the URL to separate out the target fragment from the rest of the URL,
       and compare it with the document base URL.
       If all parts other than the target fragment are equal,
@@ -497,7 +497,7 @@ in section 3.1 of the <a href="http://www.ietf.org/rfc/rfc3987.txt">URL specific
 <h4 id="processingURL-fetch">Fetching the document</h4>
 
 <p>
-  SVG properties and attributes may reference other documents.
+  NSVG properties and attributes may reference other documents.
   When processing such a URL,
   the user agent should fetch the referenced document
   as described in this section,
@@ -508,9 +508,9 @@ in section 3.1 of the <a href="http://www.ietf.org/rfc/rfc3987.txt">URL specific
   <li>
     <p>
       If the URL reference is from
-      the <span class="attr-name">href</span> attribute on <a href="https://svgwg.org/specs/animations/#TargetElement">SVG animation elements</a>,
+      the <span class="attr-name">href</span> attribute on <a href="https://nsvgwg.org/specs/animations/#TargetElement">NSVG animation elements</a>,
       only <a>same-document URL</a> references are allowed
-      [<a href="refs.html#ref-svg-animation">svg-animation</a>].
+      [<a href="refs.html#ref-nsvg-animation">nsvg-animation</a>].
       A URL referring to a different document is invalid
       and the document must not be fetched.
     </p>
@@ -559,14 +559,14 @@ in section 3.1 of the <a href="http://www.ietf.org/rfc/rfc3987.txt">URL specific
 <p>
   The request's <em>origin</em> is computed using the
   <a href="https://fetch.spec.whatwg.org/#concept-cors-check" >same rules as HTML</a>,
-  with an SVG <a>'script'</a> element treated like an HTML <code>script</code> element,
-  and an SVG <a>'image'</a> element treated like an HTML <code>img</code> element.
+  with an NSVG <a>'script'</a> element treated like an HTML <code>script</code> element,
+  and an NSVG <a>'image'</a> element treated like an HTML <code>img</code> element.
   The <em>default origin behaviour</em> must be set to <em>taint</em>.
 </p>
 
 <p class="note">
-  A future SVG specification may enable CORS references
-  on other SVG elements with <span class="attr-name">'href'</span> attributes.
+  A future NSVG specification may enable CORS references
+  on other NSVG elements with <span class="attr-name">'href'</span> attributes.
 </p>
 
 <p>
@@ -679,8 +679,8 @@ in section 3.1 of the <a href="http://www.ietf.org/rfc/rfc3987.txt">URL specific
   <li>the <a>'radialGradient'</a> element must reference a <a>'linearGradient'</a> or another <a>'radialGradient'</a> element</li>
   <li>the <a>'script'</a> element must reference an external document that provides the script content</li>
   <li>the <a>'textPath'</a> element must reference an element type
-    that implements the <a>SVGGeometryElement</a> interface</li>
-  <li>the <a>'use'</a> element must reference an SVG-namespaced element</li>
+    that implements the <a>NSVGGeometryElement</a> interface</li>
+  <li>the <a>'use'</a> element must reference an NSVG-namespaced element</li>
 </ul>
 
 <p>The valid target element types for style properties defined in this specification are as follows: </p>
@@ -692,7 +692,7 @@ in section 3.1 of the <a href="http://www.ietf.org/rfc/rfc3987.txt">URL specific
   <li>the <a>'fill'</a> property (see <a href="painting.html#SpecifyingPaint">Specifying paint</a> for reference rules)</li>
   <li>the <a>'marker property'</a>, <a>'marker-start'</a>, <a>'marker-mid'</a> and <a>'marker-end'</a> properties must reference a <a>'marker element'</a> element.</li>
   <li>the <a>'shape-inside'</a> and <a>'shape-subtract'</a> properties must reference an element type
-    that implements the <a>SVGGeometryElement</a> interface,
+    that implements the <a>NSVGGeometryElement</a> interface,
     or a document that can be processed as an image
   </li>
   <li>the <a>'stroke'</a> property (see <a href="painting.html#SpecifyingPaint">Specifying paint</a> for reference rules)</li>
@@ -713,24 +713,24 @@ in section 3.1 of the <a href="http://www.ietf.org/rfc/rfc3987.txt">URL specific
 
 </div>
 
-<h2 id="Links">Links out of SVG content: the <span class="element-name">'a'</span> element</h2>
+<h2 id="Links">Links out of NSVG content: the <span class="element-name">'a'</span> element</h2>
 
 <edit:with element='a'>
 
-<p>SVG provides an <a>'a'</a> element, to indicate links (also known
+<p>NSVG provides an <a>'a'</a> element, to indicate links (also known
 as <em>hyperlinks</em> or <em>Web links</em>).
 An <a>'a'</a> element forms a link if it has a <a>'href'</a> or <a>'xlink:href'</a> attribute; without these attributes the <a>'a'</a> element is an inactive placeholder for a link.</p>
 
-<p class="note">SVG 1.1 defined links in terms of the XLink specification ([<a href="https://www.w3.org/TR/2001/REC-xlink-20010627/">XLink</a>]),
+<p class="note">NSVG 1.1 defined links in terms of the XLink specification ([<a href="https://www.w3.org/TR/2001/REC-xlink-20010627/">XLink</a>]),
 using attributes defined in the XLink namespace.
-SVG 2 uses an alternative set of attributes in the default namespace that are consistent with HTML links, and <a href="#XLinkRefAttrs">deprecates the XLink attributes</a>.</p>
+NSVG 2 uses an alternative set of attributes in the default namespace that are consistent with HTML links, and <a href="#XLinkRefAttrs">deprecates the XLink attributes</a>.</p>
 
 <p>The <a>'a'</a> element may
 contain any element that its parent may contain, except for another <a>'a'</a> element;
 the same element is used for both graphical and textual linked content.
 Links may not be nested;
 if an <a>'a'</a> element is a descendent of another hyperlink element
-(whether in the SVG namespace or another namespace),
+(whether in the NSVG namespace or another namespace),
 user agents must ignore its href attribute and treat it as inactive.
 The invalid <a>'a'</a> element must still be rendered as a generic container element.
 </p>
@@ -747,7 +747,7 @@ User agents must also ensure that all links are <a>focusable</a> and can be acti
 <p>The remote resource (the destination for the link) is defined by
 a <a>URL</a> specified by the <a>'href'</a> attribute on the <a>'a'</a>
 element. The remote resource may be any Web resource (e.g., an image, a video
-clip, a sound bite, a program, another SVG document, an HTML document, an
+clip, a sound bite, a program, another NSVG document, an HTML document, an
 element within the current document, an element within a different document, etc.).
 In response to user activation of a link
 (by clicking with the mouse, through keyboard input, voice commands, etc.),
@@ -756,10 +756,10 @@ user agents should attempt to fetch the specified resource document and either d
 <p id="ExampleLink01"><span class="example-ref">Example link01</span> assigns
 a link to an ellipse.</p>
 
-<edit:example href='images/linking/link01.svg' name='link01' description='a link on an ellipse' image='yes' link='yes'/>
+<edit:example href='images/linking/link01.nsvg' name='link01' description='a link on an ellipse' image='yes' link='yes'/>
 
-<p>If the above SVG file is viewed by a user agent that supports both
-SVG and HTML, then clicking on the ellipse will cause the current window
+<p>If the above NSVG file is viewed by a user agent that supports both
+NSVG and HTML, then clicking on the ellipse will cause the current window
 or frame to be replaced by the W3C home page.</p>
 
 <div id="AElement">
@@ -815,10 +815,10 @@ or frame to be replaced by the W3C home page.</p>
     which a document is to be opened when the link is activated:</p>
     <dl>
       <dt><span class="attr-value">_self</span></dt>
-      <dd>The current SVG image is replaced by the linked content in the
-      same browsing context as the current SVG image.</dd>
+      <dd>The current NSVG image is replaced by the linked content in the
+      same browsing context as the current NSVG image.</dd>
       <dt><span class="attr-value">_parent</span></dt>
-      <dd>The immediate parent browsing context of the SVG image is replaced by the
+      <dd>The immediate parent browsing context of the NSVG image is replaced by the
       linked content, if it exists and can be securely accessed from this document.</dd>
       <dt><span class="attr-value">_top</span></dt>
       <dd>The content of the full active window or tab is replaced by the linked content,
@@ -846,7 +846,7 @@ or frame to be replaced by the W3C home page.</p>
             loading web pages</a>.
     </p>
     <!--
-       The SVG 1.1 text for "_blank" was:
+       The NSVG 1.1 text for "_blank" was:
 
       <dt><span class="attr-value">_blank</span></dt>
       <dd>A new un-named window or tab is requested for the display of the
@@ -855,16 +855,16 @@ or frame to be replaced by the W3C home page.</p>
         However, under HTML a request for a new tab may fail
         because of sandboxing/no-popups, in which case the link is simply not followed.
         The new language reflects this restriction while still supporting the old
-        behavior in single-window SVG viewers (if such exist).
+        behavior in single-window NSVG viewers (if such exist).
     -->
     <div class="note">
-        <p>Previous versions of SVG defined the special target value
+        <p>Previous versions of NSVG defined the special target value
             <span class="attr-value">'_replace'</span>.  It was never well implemented,
             and the distinction between <span class="attr-value">'_replace'</span>
             and <span class="attr-value">'_self'</span> has been made redundant by
             changes in the HTML definition of browsing contexts.  Use
              <span class="attr-value">'_self'</span> to replace the current
-            SVG document.</p>
+            NSVG document.</p>
         <p>The value <span class="attr-value">'_new'</span> is <em>not</em> a
             legal value for target.  Use <span class="attr-value">'_blank'</span>
             to open a document in a new tab/window.</p>
@@ -925,26 +925,26 @@ or frame to be replaced by the W3C home page.</p>
 
 </edit:with>
 
-<h2 id="LinksIntoSVG">Linking into SVG content: URL fragments and SVG views</h2>
+<h2 id="LinksIntoNSVG">Linking into NSVG content: URL fragments and NSVG views</h2>
 
-<p>Because SVG content often represents a picture or drawing
+<p>Because NSVG content often represents a picture or drawing
 of something, a common need is to link into a particular
 <em>view</em> of the document, where a view indicates
 the initial transformations so as to present a closeup of a particular
 section of the document.</p>
 
 <div class="ready-for-wider-review">
-<h3 id="SVGFragmentIdentifiers">SVG fragment identifiers</h3>
+<h3 id="NSVGFragmentIdentifiers">NSVG fragment identifiers</h3>
 
-<div class="annotation svg2-requirement">
+<div class="annotation nsvg2-requirement">
   <table>
     <tr>
-      <th>SVG 2 Requirement:</th>
-      <td>Merge the SVG 1.1 SE text and the SVG Tiny 1.2 text on fragment identifiers link traversal and add media fragments.</td>
+      <th>NSVG 2 Requirement:</th>
+      <td>Merge the NSVG 1.1 SE text and the NSVG Tiny 1.2 text on fragment identifiers link traversal and add media fragments.</td>
     </tr>
     <tr>
       <th>Resolution:</th>
-      <td><a href="http://www.w3.org/2012/03/08-svg-irc#T21-05-52">SVG 2 will have media fragment identifiers.</a></td>
+      <td><a href="http://www.w3.org/2012/03/08-nsvg-irc#T21-05-52">NSVG 2 will have media fragment identifiers.</a></td>
     </tr>
     <tr>
       <th>Purpose:</th>
@@ -952,56 +952,56 @@ section of the document.</p>
     </tr>
     <tr>
       <th>Owner:</th>
-      <td>Cyril (<a href="http://www.w3.org/Graphics/SVG/WG/track/actions/3442">ACTION-3442</a>)</td>
+      <td>Cyril (<a href="http://www.w3.org/Graphics/NSVG/WG/track/actions/3442">ACTION-3442</a>)</td>
     </tr>
   </table>
 </div>
 
-<p>To link into a particular view of an SVG document, the <a href="#TermURLReferenceWithFragmentIdentifier">URL reference with fragment
-identifier</a> needs to be a correctly formed <dfn id='svg-fragment-identifier' data-dfn-type="dfn" data-export="">SVG
-fragment identifier</dfn>. An SVG fragment identifier defines the
+<p>To link into a particular view of an NSVG document, the <a href="#TermURLReferenceWithFragmentIdentifier">URL reference with fragment
+identifier</a> needs to be a correctly formed <dfn id='nsvg-fragment-identifier' data-dfn-type="dfn" data-export="">NSVG
+fragment identifier</dfn>. An NSVG fragment identifier defines the
 meaning of the "selector" or "fragment identifier" portion of URLs that
-locate resources of MIME media type "image/svg+xml".</p>
+locate resources of MIME media type "image/nsvg+xml".</p>
 
-<p>An SVG fragment identifier can come in the following forms:</p>
+<p>An NSVG fragment identifier can come in the following forms:</p>
 
 <ul>
   <li>Shorthand <em>bare name</em> form of addressing (e.g.,
-  <span class="attr-value">MyDrawing.svg#MyView</span>).  This form of
-  addressing, which allows addressing an SVG element by its ID, is compatible
+  <span class="attr-value">MyDrawing.nsvg#MyView</span>).  This form of
+  addressing, which allows addressing an NSVG element by its ID, is compatible
   with the fragment addressing mechanism for older versions of HTML.</li>
 
-  <li>An <dfn id="SVGViewSpecification" data-dfn-type="dfn" data-export="">SVG view specification</dfn>
-  (e.g., <span class="attr-value">MyDrawing.svg#svgView(viewBox(0,200,1000,1000))</span>).
+  <li>An <dfn id="NSVGViewSpecification" data-dfn-type="dfn" data-export="">NSVG view specification</dfn>
+  (e.g., <span class="attr-value">MyDrawing.nsvg#nsvgView(viewBox(0,200,1000,1000))</span>).
   This form of addressing specifies the desired view of the
   document (e.g., the region of the document to view, the
-  initial zoom level) completely within the SVG fragment
-  specification. The contents of the SVG view specification are defined in
-  <a href="#SVGFragmentIdentifiersDefinitions">SVG fragment identifiers definitions</a> section.
+  initial zoom level) completely within the NSVG fragment
+  specification. The contents of the NSVG view specification are defined in
+  <a href="#NSVGFragmentIdentifiersDefinitions">NSVG fragment identifiers definitions</a> section.
   </li>
 
   <li id="MediaFragments"><em>Basic media fragments identifiers</em> of type spatial or temporal
-  (e.g., <span class="attr-value">MyDrawing.svg#xywh=0,200,1000,1000 or MyAnimation.svg#t=10)</span>)
-  as defined in [<a href="refs.html#ref-media-frags">Media Fragments URI 1.0 (basic)</a>] and possibly combined using the &amp; sign (e.g. <span class="attr-value">MyDrawing.svg#xywh=0,200,1000,1000&amp;t=10</span>).
+  (e.g., <span class="attr-value">MyDrawing.nsvg#xywh=0,200,1000,1000 or MyAnimation.nsvg#t=10)</span>)
+  as defined in [<a href="refs.html#ref-media-frags">Media Fragments URI 1.0 (basic)</a>] and possibly combined using the &amp; sign (e.g. <span class="attr-value">MyDrawing.nsvg#xywh=0,200,1000,1000&amp;t=10</span>).
   </li>
 </ul>
 
-<h3 id="SVGFragmentIdentifiersDefinitions">SVG fragment identifiers definitions</h3>
+<h3 id="NSVGFragmentIdentifiersDefinitions">NSVG fragment identifiers definitions</h3>
 
-<p>An SVG fragment identifier is defined as follows:</p>
+<p>An NSVG fragment identifier is defined as follows:</p>
 
 <pre class='grammar'>
-SVGFragmentIdentifier ::= BareName *( "&amp;" <a href="https://www.w3.org/TR/media-frags/#timesegment">timesegment</a> ) |
-                          SVGViewSpec *( "&amp;" <a href="https://www.w3.org/TR/media-frags/#timesegment">timesegment</a> ) |
+NSVGFragmentIdentifier ::= BareName *( "&amp;" <a href="https://www.w3.org/TR/media-frags/#timesegment">timesegment</a> ) |
+                          NSVGViewSpec *( "&amp;" <a href="https://www.w3.org/TR/media-frags/#timesegment">timesegment</a> ) |
                           <a href="https://www.w3.org/TR/media-frags/#spacesegment">spacesegment</a> *( "&amp;" timesegment ) |
                           <a href="https://www.w3.org/TR/media-frags/#timesegment">timesegment</a> *( "&amp;" spacesegment )
 
 BareName ::= XML_Name
-SVGViewSpec ::= 'svgView(' SVGViewAttributes ')'
-SVGViewAttributes ::= SVGViewAttribute |
-                      SVGViewAttribute ';' SVGViewAttributes
+NSVGViewSpec ::= 'nsvgView(' NSVGViewAttributes ')'
+NSVGViewAttributes ::= NSVGViewAttribute |
+                      NSVGViewAttribute ';' NSVGViewAttributes
 
-SVGViewAttribute ::= viewBoxSpec |
+NSVGViewAttribute ::= viewBoxSpec |
                      preserveAspectRatioSpec |
                      transformSpec
 viewBoxSpec ::= 'viewBox(' ViewBoxParams ')'
@@ -1030,15 +1030,15 @@ transformSpec ::= 'transform(' TransformParams ')'
 
 </ul>
 
-<p>SVG view box parameters are applied in order, as defined in
-<a href="https://www.w3.org/TR/css3-transforms/">CSS Transforms</a> specification (e.g. SVG view is transformed as defined in <em>ViewBoxParams</em>,
+<p>NSVG view box parameters are applied in order, as defined in
+<a href="https://www.w3.org/TR/css3-transforms/">CSS Transforms</a> specification (e.g. NSVG view is transformed as defined in <em>ViewBoxParams</em>,
 then as defined in <em>TransformParams</em>).</p>
 
 <p>Spaces are allowed in fragment specifications. Commas
-are used to separate numeric values within an SVG view specification
-(e.g., <span class="attr-value">#svgView(viewBox(0,0,200,200))</span>)
+are used to separate numeric values within an NSVG view specification
+(e.g., <span class="attr-value">#nsvgView(viewBox(0,0,200,200))</span>)
 and semicolons are used to separate attributes (e.g.,
-<span class="attr-value">#svgView(viewBox(0,0,200,200);preserveAspectRatio(none))</span>).</p>
+<span class="attr-value">#nsvgView(viewBox(0,0,200,200);preserveAspectRatio(none))</span>).</p>
 
 <div class="note">
   <p>Fragment identifiers may be url-escaped according to the rules defined in
@@ -1047,65 +1047,65 @@ and semicolons are used to separate attributes (e.g.,
     be interpreted as a list separator.</p>
 </div>
 
-<p>The four types of <em>SVGViewAttribute</em> may occur
+<p>The four types of <em>NSVGViewAttribute</em> may occur
 in any order, but each type may only occur at most one time in a correctly
-formed <em>SVGViewSpec</em>.</p>
+formed <em>NSVGViewSpec</em>.</p>
 
-<p>When a source document performs a link into an SVG document, for example
+<p>When a source document performs a link into an NSVG document, for example
 via an <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">HTML anchor element</a>
 ([<a href="refs.html#ref-html">HTML</a>]; i.e.,
 <span class="attr-value">&lt;a href=...&gt;</span> element in HTML) or an
 XLink specification [<a href="refs.html#ref-xlink">xlink</a>], then
-the SVG fragment identifier specifies the initial view into the SVG document,
+the NSVG fragment identifier specifies the initial view into the NSVG document,
 as follows:</p>
 
 <ul>
-  <li>If no SVG fragment identifier is provided (e.g, the specified URL did
-  not contain a "#" character, such as <span class="attr-value">MyDrawing.svg</span>),
-  then the initial view into the SVG document is established using the view
+  <li>If no NSVG fragment identifier is provided (e.g, the specified URL did
+  not contain a "#" character, such as <span class="attr-value">MyDrawing.nsvg</span>),
+  then the initial view into the NSVG document is established using the view
   specification attributes (i.e., <a>'viewBox'</a>, etc.) on the
-  <a>outermost svg element</a>.</li>
+  <a>outermost nsvg element</a>.</li>
 
-  <li>If the SVG fragment identifier addresses a <a href="https://www.w3.org/TR/media-frags/#spacesegment">space segment</a>
-  (e.g., <span class="attr-value">MyDrawing.svg#xywh=0,0,100,100</span>),then the initial
-  view into the SVG document is established using the view specification attributes
-  on the <a>outermost svg element</a> where the 'viewBox' is overriden by the
+  <li>If the NSVG fragment identifier addresses a <a href="https://www.w3.org/TR/media-frags/#spacesegment">space segment</a>
+  (e.g., <span class="attr-value">MyDrawing.nsvg#xywh=0,0,100,100</span>),then the initial
+  view into the NSVG document is established using the view specification attributes
+  on the <a>outermost nsvg element</a> where the 'viewBox' is overriden by the
   x, y, width and height values provided by the fragment identifier.
   </li>
 
   <li>Media fragments can be specified as "pixel:" (default) and "percent:". In the latter case the resulting 'viewBox' transformation is
-  calculated against referenced SVG resolved size (width and height). When the host document cannot resolve the width and height of the SVG document,
+  calculated against referenced NSVG resolved size (width and height). When the host document cannot resolve the width and height of the NSVG document,
   the used values for width and height should be calculated according to CSS rules for
   <a href="https://www.w3.org/TR/CSS21/visudet.html#inline-replaced-width">calculating width and ratio for inline replaced elements</a>.</li>
 
-  <li>If the SVG fragment identifier addresses a <a href="https://www.w3.org/TR/media-frags/#timesegment">time segment</a>
-  (e.g., <span class="attr-value">MyDrawing.svg#t=10</span>),then the initial
-  view into the SVG document is established as if no fragment identifier was
-  provided. The rendering of the SVG Document shall be as if the setCurrentTime
-  method on the SVG Document element had been called with the begin time value
+  <li>If the NSVG fragment identifier addresses a <a href="https://www.w3.org/TR/media-frags/#timesegment">time segment</a>
+  (e.g., <span class="attr-value">MyDrawing.nsvg#t=10</span>),then the initial
+  view into the NSVG document is established as if no fragment identifier was
+  provided. The rendering of the NSVG Document shall be as if the setCurrentTime
+  method on the NSVG Document element had been called with the begin time value
   from the fragment identifier. Additionally, if an end time value is provided
   in the fragment identifier, the effect is equivalent to calling the pauseAnimations
-  method on the SVG Document when the document time reaches the end time of the
+  method on the NSVG Document when the document time reaches the end time of the
   fragment identifier.
   </li>
 
-  <li>If the SVG fragment identifier addresses a <a>'view'</a> element within
-  an SVG document (e.g., <span class="attr-value">MyDrawing.svg#MyView</span>)
-  then the root <a>'svg'</a> element is displayed in the SVG viewport.
+  <li>If the NSVG fragment identifier addresses a <a>'view'</a> element within
+  an NSVG document (e.g., <span class="attr-value">MyDrawing.nsvg#MyView</span>)
+  then the root <a>'nsvg'</a> element is displayed in the NSVG viewport.
   Any view specification attributes included on the given <a>'view'</a>
   element override the corresponding view specification attributes on the
-  root <a>'svg'</a> element.</li>
+  root <a>'nsvg'</a> element.</li>
 
-  <li>If the SVG fragment identifier addresses specific SVG view (e.g.,
-  <span class="attr-value">MyDrawing.svg#svgView(viewBox(0,200,1000,1000))</span>),
-  then the document fragment defined by the root <a>'svg'</a>
-  element is displayed in the SVG viewport using the SVG view specification
-  provided by the SVG fragment identifier. Parameters of the svgView specification override
-  the parameters defined on the root <a>'svg'</a> element of the referenced document.
-  Unspecified parameters of the svgView specification don't reset the values defined on the root
-  <a>'svg'</a> element of the referenced document.</li>
+  <li>If the NSVG fragment identifier addresses specific NSVG view (e.g.,
+  <span class="attr-value">MyDrawing.nsvg#nsvgView(viewBox(0,200,1000,1000))</span>),
+  then the document fragment defined by the root <a>'nsvg'</a>
+  element is displayed in the NSVG viewport using the NSVG view specification
+  provided by the NSVG fragment identifier. Parameters of the nsvgView specification override
+  the parameters defined on the root <a>'nsvg'</a> element of the referenced document.
+  Unspecified parameters of the nsvgView specification don't reset the values defined on the root
+  <a>'nsvg'</a> element of the referenced document.</li>
 
-   <li>If the SVG fragment identifier addresses a combination of the above
+   <li>If the NSVG fragment identifier addresses a combination of the above
    non-time related identifiers with a time-related identifier (i.e. a timesegment),
   the behavior of each identifier is applied.
   </li>
@@ -1137,62 +1137,62 @@ as follows:</p>
 <h2 id="DOMInterfaces">DOM interfaces</h2>
 
 <div class='ready-for-wider-review'>
-<h3 id="InterfaceSVGAElement">Interface SVGAElement</h3>
+<h3 id="InterfaceNSVGAElement">Interface NSVGAElement</h3>
 
 <edit:with element="a">
 
-<p>An <a>SVGElement</a> object represents an <a>'a'</a> element in the DOM.</p>
+<p>An <a>NSVGElement</a> object represents an <a>'a'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGAElement</b> : <a>SVGGraphicsElement</a> {
-  [SameObject] readonly attribute <a>SVGAnimatedString</a> <a href="linking.html#__svg__SVGAElement__target">target</a>;
-  attribute DOMString <a href="linking.html#__svg__SVGAElement__download">download</a>;
-  attribute USVString <a href="linking.html#__svg__SVGAElement__ping">ping</a>;
-  attribute DOMString <a href="linking.html#__svg__SVGAElement__rel">rel</a>;
-  [SameObject, PutForwards=value] readonly attribute <a>DOMTokenList</a> <a href="linking.html#__svg__SVGAElement__rel">relList</a>;
-  attribute DOMString <a href="linking.html#__svg__SVGAElement__hreflang">hreflang</a>;
-  attribute DOMString <a href="linking.html#__svg__SVGAElement__type">type</a>;
+interface <b>NSVGAElement</b> : <a>NSVGGraphicsElement</a> {
+  [SameObject] readonly attribute <a>NSVGAnimatedString</a> <a href="linking.html#__nsvg__NSVGAElement__target">target</a>;
+  attribute DOMString <a href="linking.html#__nsvg__NSVGAElement__download">download</a>;
+  attribute USVString <a href="linking.html#__nsvg__NSVGAElement__ping">ping</a>;
+  attribute DOMString <a href="linking.html#__nsvg__NSVGAElement__rel">rel</a>;
+  [SameObject, PutForwards=value] readonly attribute <a>DOMTokenList</a> <a href="linking.html#__nsvg__NSVGAElement__rel">relList</a>;
+  attribute DOMString <a href="linking.html#__nsvg__NSVGAElement__hreflang">hreflang</a>;
+  attribute DOMString <a href="linking.html#__nsvg__NSVGAElement__type">type</a>;
 
-  attribute DOMString <a href="linking.html#__svg__SVGAElement__text">text</a>;
+  attribute DOMString <a href="linking.html#__nsvg__NSVGAElement__text">text</a>;
 
-  attribute DOMString <a href="linking.html#__svg__SVGAElement__referrerPolicy">referrerPolicy</a>;
+  attribute DOMString <a href="linking.html#__nsvg__NSVGAElement__referrerPolicy">referrerPolicy</a>;
 };
 
-<a>SVGAElement</a> includes <a>SVGURIReference</a>;
-<a>SVGAElement</a> includes <a>HTMLHyperlinkElementUtils</a>;</pre>
+<a>NSVGAElement</a> includes <a>NSVGURIReference</a>;
+<a>NSVGAElement</a> includes <a>HTMLHyperlinkElementUtils</a>;</pre>
 
-<p>The <b id="__svg__SVGAElement__target">target</b>,
-  <b id="__svg__SVGAElement__download">download</b>,
-  <b id="__svg__SVGAElement__ping">ping</b>,
-  <b id="__svg__SVGAElement__rel">rel</b>,
-  <b id="__svg__SVGAElement__hreflang">hreflang</b>,
-  <b id="__svg__SVGAElement__type">type</b>,
+<p>The <b id="__nsvg__NSVGAElement__target">target</b>,
+  <b id="__nsvg__NSVGAElement__download">download</b>,
+  <b id="__nsvg__NSVGAElement__ping">ping</b>,
+  <b id="__nsvg__NSVGAElement__rel">rel</b>,
+  <b id="__nsvg__NSVGAElement__hreflang">hreflang</b>,
+  <b id="__nsvg__NSVGAElement__type">type</b>,
   IDL attributes
 <a>reflect</a> the content attributes of the same name.</p>
-<p>The <b id="__svg__SVGAElement__relList">relList</b>
+<p>The <b id="__nsvg__NSVGAElement__relList">relList</b>
   IDL attribute
 <a>reflects</a> the <a>'rel'</a> content attribute.</p>
-<p>The <b id="__svg__SVGAElement__referrerPolicy">referrerPolicy</b>
+<p>The <b id="__nsvg__NSVGAElement__referrerPolicy">referrerPolicy</b>
   IDL attribute
 <a>reflects</a> the <a>'referrerpolicy'</a> content attribute,
  <a href="https://html.spec.whatwg.org/multipage/common-dom-interfaces.html#limited-to-only-known-values">limited to only known values</a>.</p>
-<p>The <b id="__svg__SVGAElement__text">text</b> IDL attribute,
+<p>The <b id="__nsvg__NSVGAElement__text">text</b> IDL attribute,
  on getting, must return the same value as the <a href="https://dom.spec.whatwg.org/#dom-node-textcontent">textContent</a> IDL attribute
  on the element, and on setting, must act as if the <a href="https://dom.spec.whatwg.org/#dom-node-textcontent">textContent</a> IDL attribute
  on the element had been set to the new value.</p>
 </edit:with>
 
 
-<h3 id="InterfaceSVGViewElement">Interface SVGViewElement</h3>
+<h3 id="InterfaceNSVGViewElement">Interface NSVGViewElement</h3>
 
 <edit:with element="view">
 
-<p>An <a>SVGViewElement</a> object represents a <a>'view'</a> element in the DOM.</p>
+<p>An <a>NSVGViewElement</a> object represents a <a>'view'</a> element in the DOM.</p>
 
 <pre class="idl">[Exposed=Window]
-interface <b>SVGViewElement</b> : <a>SVGElement</a> {};
+interface <b>NSVGViewElement</b> : <a>NSVGElement</a> {};
 
-<a>SVGViewElement</a> includes <a>SVGFitToViewBox</a>;</pre>
+<a>NSVGViewElement</a> includes <a>NSVGFitToViewBox</a>;</pre>
 
 </edit:with>
 </div>

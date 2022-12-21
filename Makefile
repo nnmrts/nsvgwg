@@ -1,4 +1,4 @@
-# Makefile for SVG 2.
+# Makefile for NSVG 2.
 
 TOOLS=./tools
 include tools/spec.mk
@@ -7,19 +7,19 @@ all-specs : all
 	@for spec in specs/*; do if [ -f $$spec/Makefile -a $$spec != 'specs/template' ]; then echo && echo "Building $$spec" && make -s -C $$spec/ all; fi; done
 
 pdf : all
-	prince --no-author-style -s build/publish/style/svg-style.css -s http://www.w3.org/StyleSheets/TR/W3C-REC -s build/publish/style/svg-style-print.css build/publish/single-page.html -o build/publish/single-page.pdf
+	prince --no-author-style -s build/publish/style/nsvg-style.css -s http://www.w3.org/StyleSheets/TR/W3C-REC -s build/publish/style/nsvg-style-print.css build/publish/single-page.html -o build/publish/single-page.pdf
 
 stabilize-issues-all-specs : stabilize-issues
-	@for spec in specs/*; do if [ -f $$spec/Makefile -a $$spec != 'specs/template' -a $$spec != 'specs/svg-native' ]; then make -s -C $$spec/ stabilize-issues; fi; done
+	@for spec in specs/*; do if [ -f $$spec/Makefile -a $$spec != 'specs/template' -a $$spec != 'specs/nsvg-native' ]; then make -s -C $$spec/ stabilize-issues; fi; done
 
-ZIPDIR=REC-SVG11-20110802
+ZIPDIR=REC-NSVG11-20110802
 
 zip : all
 	rm -rf build/publish/$(ZIPDIR) build/publish/$(ZIPDIR).zip
 	mkdir -p build/publish/$(ZIPDIR)/style
 	cp build/publish/*.html build/publish/$(ZIPDIR)
 	rm build/publish/$(ZIPDIR)/single-page.html
-	cp build/publish/style/svg-style.css build/publish/$(ZIPDIR)/style/
+	cp build/publish/style/nsvg-style.css build/publish/$(ZIPDIR)/style/
 	wget -O build/publish/$(ZIPDIR)/style/W3C-REC.css http://www.w3.org/StyleSheets/TR/W3C-REC.css
 	wget -O build/publish/$(ZIPDIR)/style/logo-REC.png http://www.w3.org/StyleSheets/TR/logo-REC.png
 	perl -i -pe 's{http://www.w3.org/StyleSheets/TR/logo-REC}{logo-REC.png}' build/publish/$(ZIPDIR)/style/W3C-REC.css
